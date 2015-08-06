@@ -5,9 +5,9 @@ class Controllertesttestfile extends Controller{
 		$string = file_get_contents(DIR_APPLICATION . '/shops.json');
 		$json = json_decode($string, true);
 		$queryArray = array();
-		foreach ($json as $restaurant) {		
-			$this->model_restaurant_information->addRestaurant($restaurant);
-		}
+		//foreach ($json as $restaurant) {		
+//			$this->model_restaurant_information->addRestaurant($restaurant);
+	//	}
 		$data['query'] = $queryArray;
 		
 		

@@ -56,7 +56,17 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
   UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC))
   ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+  
+  -- --------------------------------------------------------
 
+--
+-- Table structure for table `oc_restaurant_type`
+--
+
+CREATE TABLE `smartyourfood`.`oc_restaurant_type` (
+  `type_id` INT NOT NULL AUTO_INCREMENT ,
+  `type_name_cn` NVARCHAR(45) NOT NULL ,
+  PRIMARY KEY (`type_id`));
 
 
 -- --------------------------------------------------------
@@ -7794,3 +7804,23 @@ INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (107, 222, 3954, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (108, 222, 3955, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
+
+INSERT INTO `smartyourfood`.`oc_restaurant_type` (`type_name_cn`) 
+Values('不限'),
+('中餐'),
+('川菜'),
+('湘菜'),
+('西餐'),
+('韩餐'),
+('日餐'),
+('港式'),
+('台式'),
+('早茶'),
+('甜点'),
+('冰激凌'),
+('奶茶'),
+('炸鸡'),
+('快餐'),
+('火锅')
+;
+
