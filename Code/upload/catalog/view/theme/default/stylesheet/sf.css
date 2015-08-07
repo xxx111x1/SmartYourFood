@@ -105,9 +105,8 @@
 
 }
 .sf_filter{
-    clear: left;
     padding-top: 15px;
-    height: 50px;
+    height: 40px;
     width: 980px;
     color:#535353;
     /*background:#88ABDA;*/
@@ -170,11 +169,12 @@
 }
 
 .sf_product{
-    margin-top: 30px;
-    margin-right: 15px;
-    margin-left: 15px;
+    padding-top: 30px;
+    padding-right: 15px;
+    padding-left: 15px;
     width: 210px;
     height: 240px;
+    border: 0.5px solid #808080;
    /* background-color: #27ABE2;*/
     float: left;
     background-color: #ffffff;

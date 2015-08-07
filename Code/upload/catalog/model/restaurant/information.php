@@ -58,7 +58,7 @@ class ModelRestaurantInformation extends Model{
 	}
 	
 	public function getRestaurants() {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info ");	
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info limit 10");	
 		return $query->rows;
 	}
 	
