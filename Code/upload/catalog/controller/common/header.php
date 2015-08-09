@@ -17,7 +17,6 @@ class ControllerCommonHeader extends Controller {
 		$data['scripts'] = $this->document->getScripts();
 		$data['lang'] = $this->language->get('code');
 		$data['direction'] = $this->language->get('direction');
-
 		if ($this->config->get('config_google_analytics_status')) {
 			$data['google_analytics'] = html_entity_decode($this->config->get('config_google_analytics'), ENT_QUOTES, 'UTF-8');
 		} else {

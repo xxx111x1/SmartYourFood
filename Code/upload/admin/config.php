@@ -1,11 +1,11 @@
 <?php
 // HTTP
-define('HTTP_SERVER', 'http://localhost:8081/admin/');
-define('HTTP_CATALOG', 'http://localhost:8081/');
+define('HTTP_SERVER', 'http://localhost:8080/admin/');
+define('HTTP_CATALOG', 'http://localhost:8080/');
 
 // HTTPS
-define('HTTPS_SERVER', 'http://localhost:8081/admin/');
-define('HTTPS_CATALOG', 'http://localhost:8081/');
+define('HTTPS_SERVER', 'http://localhost:8080/admin/');
+define('HTTPS_CATALOG', 'http://localhost:8080/');
 
 // DIR
 define('DIR_APPLICATION', 'C:/Users/v-yhe/git/SmartYourFood/Code/upload/admin/');
