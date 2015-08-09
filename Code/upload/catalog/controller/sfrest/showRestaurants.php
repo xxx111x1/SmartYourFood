@@ -1,6 +1,4 @@
 <?php
-header("Content-Type: text/html; charset=gb2312");
-
 class ControllerSfrestShowRestaurants extends Controller{
 	public function index() {
 		/*if (!$this->customer->isLogged()) {
