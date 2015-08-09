@@ -36,15 +36,15 @@ CREATE TABLE IF NOT EXISTS `oc_address` (
 
 CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
   `restaurant_id` INT NOT NULL AUTO_INCREMENT,
-  `name` NVARCHAR(50) NOT NULL,
-  `description` NVARCHAR(1000) NULL,
+  `name` VARCHAR(50) NOT NULL,
+  `description` VARCHAR(1000) NULL,
   `lat` DECIMAL(10,8) NOT NULL,
   `lng` DECIMAL(11,8) NOT NULL,
-  `address` NVARCHAR(200) NULL,
+  `address` VARCHAR(200) NULL,
   `phone` INT(16) NULL,
-  `contacts` NVARCHAR(50) NULL,
+  `contacts` VARCHAR(50) NULL,
   `review_score` DECIMAL(3,2) NULL,
-  `tags` NVARCHAR(100) NULL,
+  `tags` VARCHAR(100) NULL,
   `img_url` VARCHAR(100) NULL,
   `avg_cost` DECIMAL(8,2) NULL,
   `available` INT(1) NULL,
@@ -63,9 +63,9 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
 -- Table structure for table `oc_restaurant_type`
 --
 
-CREATE TABLE IF NOT EXISTS `smartyourfood`.`oc_restaurant_type` (
+CREATE TABLE IF NOT EXISTS `oc_restaurant_type` (
   `type_id` INT NOT NULL AUTO_INCREMENT ,
-  `type_name_cn` NVARCHAR(45) NOT NULL ,
+  `type_name_cn` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`type_id`));
 
 
@@ -7805,7 +7805,7 @@ INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (108, 222, 3955, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
-INSERT INTO `smartyourfood`.`oc_restaurant_type` (`type_id`,`type_name_cn`) 
+INSERT INTO `oc_restaurant_type` (`type_id`,`type_name_cn`)
 Values
 (0,'不限'),
 (1,'中餐'),
