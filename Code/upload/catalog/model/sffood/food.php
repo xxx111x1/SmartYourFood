@@ -4,7 +4,6 @@
  * User: Min
  * Date: 2015/8/9
  * Time: 15:38
- * force push
  */
 class ModelSffoodFood extends Model{
 
