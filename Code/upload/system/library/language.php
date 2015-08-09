@@ -1,6 +1,6 @@
 <?php
 class Language {
-	private $default = 'english';
+	private $default = 'chinese';
 	private $directory;
 	private $data = array();
 
@@ -14,9 +14,8 @@ class Language {
 
 	public function load($filename) {
 		$_ = array();
-
+		
 		$file = DIR_LANGUAGE . $this->default . '/' . $filename . '.php';
-
 		if (file_exists($file)) {
 			require($file);
 		}
