@@ -126,14 +126,18 @@
     margin-top: 10px;
     margin-bottom: auto;
     font-size: 14px;
+    cursor: pointer;
+}
+.filter_field.focus{
+    color: #fff;
+    background-color: #0089dc;
+    border-radius: 3px;
 }
 
 .filter_field_selected{
-    color:whitesmoke;
-    margin-left: 10px;
-    margin-top: 5px;
-    font-size: 14px;
-    background: #27ABE2;
+    color: #fff;
+    background-color: #0089dc;
+    border-radius: 3px;
 }
 
 .sort_option{
@@ -169,12 +173,14 @@
 }
 
 .sf_product{
+	margin-top: -1px;
+	margin-right: -1px;
     padding-top: 30px;
     padding-right: 15px;
     padding-left: 15px;
     width: 210px;
     height: 240px;
-    border: 0.5px solid #808080;
+    border: 1px solid #808080;
    /* background-color: #27ABE2;*/
     float: left;
     background-color: #ffffff;

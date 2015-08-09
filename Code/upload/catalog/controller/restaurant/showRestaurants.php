@@ -8,9 +8,9 @@ class ControllerRestaurantShowRestaurants extends Controller{
 		
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}*/
-		
+		$filters = $this->request->post['product_id'];
 		$this->load->model('restaurant/information');
-		$data['restaurants'] = $this->model_restaurant_information->getRestaurants();
+		$data['restaurants'] = $this->model_restaurant_information->getRestaurants($filters);
 		$data['types'] = $this->model_restaurant_information->getTypes();
 		$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/restaurant/showRestaurant.tpl', $data));
 	}

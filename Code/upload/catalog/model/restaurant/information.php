@@ -57,8 +57,19 @@ class ModelRestaurantInformation extends Model{
 		return $query->row;
 	}
 	
-	public function getRestaurants() {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info limit 10");	
+	public function getRestaurants($filters = "0", $orders = " sell_number desc, review_score desc", $start = 0, $number = 16) {	
+		$sql = "SELECT * FROM " . DB_PREFIX . "restaurant_info ";
+		if($filters != "0"){
+			$sql .= "where restaurant_type in (" . $filters .") ";
+		}
+		$sql .= " order by " . $orders . " limit " . $start . "," . $number;
+		
+		$query = $this->db->query($sql);
+		return $query->rows;
+	}
+		
+	public function getRestaurantsByFilters($filters,$start = 0, $number = 16) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info where restaurant_type in (" . $filters .") limit " . $start . "," . $number);
 		return $query->rows;
 	}
 	

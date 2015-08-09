@@ -52,10 +52,10 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
   `atmosphere_score` DECIMAL(3,2) NULL,
   `service_score` DECIMAL(3,2) NULL,
   `review_number` VARCHAR(45) NULL,
+  `sell_number` int(11) DEFAULT '0',
   PRIMARY KEY (`restaurant_id`),
   UNIQUE INDEX `restaurant_id_UNIQUE` (`restaurant_id` ASC))
   ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
-
   
   -- --------------------------------------------------------
 
@@ -63,7 +63,7 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
 -- Table structure for table `oc_restaurant_type`
 --
 
-CREATE TABLE `smartyourfood`.`oc_restaurant_type` (
+CREATE TABLE IF NOT EXISTS `smartyourfood`.`oc_restaurant_type` (
   `type_id` INT NOT NULL AUTO_INCREMENT ,
   `type_name_cn` NVARCHAR(45) NOT NULL ,
   PRIMARY KEY (`type_id`));
@@ -7805,22 +7805,22 @@ INSERT INTO `oc_zone_to_geo_zone` (`zone_to_geo_zone_id`, `country_id`, `zone_id
 (108, 222, 3955, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00'),
 (109, 222, 3972, 3, '0000-00-00 00:00:00', '0000-00-00 00:00:00');
 
-INSERT INTO `smartyourfood`.`oc_restaurant_type` (`type_name_cn`) 
-Values('不限'),
-('中餐'),
-('川菜'),
-('湘菜'),
-('西餐'),
-('韩餐'),
-('日餐'),
-('港式'),
-('台式'),
-('早茶'),
-('甜点'),
-('冰激凌'),
-('奶茶'),
-('炸鸡'),
-('快餐'),
-('火锅')
-;
+INSERT INTO `smartyourfood`.`oc_restaurant_type` (`type_id`,`type_name_cn`) 
+Values
+(0,'不限'),
+(1,'中餐'),
+(2,'川菜'),
+(3,'湘菜'),
+(4,'西餐'),
+(5,'韩餐'),
+(6,'日餐'),
+(7,'港式'),
+(8,'台式'),
+(9,'早茶'),
+(10,'甜点'),
+(11,'冰激凌'),
+(12,'奶茶'),
+(13,'炸鸡'),
+(14,'快餐'),
+(15,'火锅')
 
