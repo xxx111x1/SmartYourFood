@@ -60,10 +60,9 @@ class ModelSfRestInformation extends Model{
 	public function getRestaurants($filters = "0", $orders = " sell_number desc, review_score desc", $start = 0, $number = 16) {	
 		$sql = "SELECT * FROM " . DB_PREFIX . "restaurant_info ";
 		if($filters != "0"){
-			$sql .= "where restaurant_type in (" . $filters .") ";
+			$sql .= "where tags in (" . $filters .") ";
 		}
 		$sql .= " order by " . $orders . " limit " . $start . "," . $number;
-		
 		$query = $this->db->query($sql);
 		return $query->rows;
 	}
