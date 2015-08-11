@@ -68,6 +68,27 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_type` (
   `type_name_cn` VARCHAR(45) NOT NULL ,
   PRIMARY KEY (`type_id`));
 
+CREATE TABLE IF NOT EXISTS `oc_food` (
+  `food_id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(50) NOT NULL,
+  `rest_id` INT(32) NOT NULL,
+  `desc` VARCHAR(1000) NULL,
+  `review_score` DECIMAL(3,2) NULL,
+  `tags` VARCHAR(128) NULL,
+  `img` VARCHAR(128) NOT NULL,
+  PRIMARY KEY (`food_id`)
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
+CREATE TABLE IF NOT EXISTS `oc_sfaddress` (
+  `address_id` INT NOT NULL AUTO_INCREMENT,
+  `customer_id` INT NULL,
+  `order` INT (128),
+  `detail` VARCHAR(256),
+  `lat` DECIMAL(10,8) NULL,
+  `lng` DECIMAL(10,8) NULL,
+  PRIMARY KEY (`address_id`)
+)  ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+
 
 -- --------------------------------------------------------
 
