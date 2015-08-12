@@ -36,21 +36,21 @@ CREATE TABLE IF NOT EXISTS `oc_address` (
 
 CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
   `restaurant_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(50) NOT NULL,
-  `description` VARCHAR(1000) NULL,
+  `name` NVARCHAR(50) NOT NULL,
+  `description` NVARCHAR(1000) NULL,
   `lat` DECIMAL(10,8) NOT NULL,
   `lng` DECIMAL(11,8) NOT NULL,
-  `address` VARCHAR(200) NULL,
+  `address` NVARCHAR(200) NULL,
   `phone` INT(16) NULL,
-  `contacts` VARCHAR(50) NULL,
-  `review_score` DECIMAL(3,2) NULL,
-  `tags` VARCHAR(100) NULL,
+  `contacts` NVARCHAR(50) NULL,
+  `review_score` DECIMAL(5,2) NULL,
+  `tags` NVARCHAR(100) NULL,
   `img_url` VARCHAR(100) NULL,
   `avg_cost` DECIMAL(8,2) NULL,
   `available` INT(1) NULL,
-  `taste_score` DECIMAL(3,2) NULL,
-  `atmosphere_score` DECIMAL(3,2) NULL,
-  `service_score` DECIMAL(3,2) NULL,
+  `taste_score` DECIMAL(5,2) NULL,
+  `atmosphere_score` DECIMAL(5,2) NULL,
+  `service_score` DECIMAL(5,2) NULL,
   `review_number` VARCHAR(45) NULL,
   `sell_number` int(11) DEFAULT '0',
   PRIMARY KEY (`restaurant_id`),
@@ -65,17 +65,20 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
 
 CREATE TABLE IF NOT EXISTS `oc_restaurant_type` (
   `type_id` INT NOT NULL AUTO_INCREMENT ,
-  `type_name_cn` VARCHAR(45) NOT NULL ,
+  `type_name_cn` NVARCHAR(45) NOT NULL ,
   PRIMARY KEY (`type_id`));
 
 CREATE TABLE IF NOT EXISTS `oc_food` (
   `food_id` INT NOT NULL AUTO_INCREMENT,
-  `name` VARCHAR(50) NOT NULL,
-  `rest_id` INT(32) NOT NULL,
-  `desc` VARCHAR(1000) NULL,
-  `review_score` DECIMAL(3,2) NULL,
-  `tags` VARCHAR(128) NULL,
-  `img` VARCHAR(128) NOT NULL,
+  `name` NVARCHAR(50) NOT NULL,
+  `restaurant_id` INT(11) NOT NULL,
+  `description` NVARCHAR(1000) NULL,
+  `review_score` DECIMAL(5,2) NULL,
+  `tags` NVARCHAR(128) NULL,
+  `img_url` VARCHAR(128) NOT NULL,
+  `price` DECIMAL(7,2) NULL,
+  `sell_number` int(11) NULL,
+  `available` int(1) NULL,
   PRIMARY KEY (`food_id`)
 )  ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -83,7 +86,7 @@ CREATE TABLE IF NOT EXISTS `oc_sfaddress` (
   `address_id` INT NOT NULL AUTO_INCREMENT,
   `customer_id` INT NULL,
   `order` INT (128),
-  `detail` VARCHAR(256),
+  `detail` NVARCHAR(256),
   `lat` DECIMAL(10,8) NULL,
   `lng` DECIMAL(10,8) NULL,
   PRIMARY KEY (`address_id`)
@@ -7845,3 +7848,27 @@ Values
 (14,'快餐'),
 (15,'火锅')
 
+INSERT INTO `smartyourfood`.`oc_food`
+(`price`,`sell_number`,`name`,`restaurant_id`,`description`,`review_score`,`tags`,`img_url`)
+VALUES
+ (12.5,10,'宫保鸡丁','1555','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
+,(12.5,11,'水煮肉片','1555','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
+,(12.5,10,'鱼香肉丝','1555','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
+,(12.5,10,'宫保鸡丁','1556','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
+,(12.5,10,'水煮肉片','1556','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
+,(12.5,10,'鱼香肉丝','1556','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
+,(12.5,10,'宫保鸡丁','1557','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
+,(12.5,10,'水煮肉片','1557','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
+,(12.5,10,'鱼香肉丝','1557','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
+,(12.5,14,'宫保鸡丁','1558','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
+,(12.5,77,'水煮肉片','1558','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
+,(12.5,10,'鱼香肉丝','1558','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
+,(12.5,99,'宫保鸡丁','1559','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
+,(12.5,10,'水煮肉片','1559','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
+,(12.5,10,'鱼香肉丝','1559','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
+,(12.5,112,'宫保鸡丁','1560','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
+,(12.5,10,'水煮肉片','1560','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
+,(12.5,1,'鱼香肉丝','1560','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
+,(12.5,10,'宫保鸡丁','1561','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
+,(12.5,10,'水煮肉片','1561','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
+,(12.5,10,'鱼香肉丝','1561','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg');

@@ -48,8 +48,7 @@ class ModelSfRestInformation extends Model{
 	}
 	
 	public function deleteRestaurant($restaurant_id){
-		$this->db->query("DELETE " . DB_PREFIX . "restaurant_info WHERE restaurant_id = '" . (int)$restaurant_id . "'");
-		
+		$this->db->query("DELETE " . DB_PREFIX . "restaurant_info WHERE restaurant_id = '" . (int)$restaurant_id . "'");		
 	}
 	
 	public function getRestaurant($restaurant_id) {

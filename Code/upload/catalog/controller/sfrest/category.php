@@ -5,7 +5,7 @@
  * Date: 2015/8/2
  * Time: 21:50
  */
-class ModelShopCategory extends Model{
+class ModelSfrestCategory extends Model{
 
     public function getCategories()
     {
