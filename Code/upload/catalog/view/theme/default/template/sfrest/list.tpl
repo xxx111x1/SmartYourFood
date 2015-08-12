@@ -3,9 +3,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>Smart Your Food</title>
-    <link rel="stylesheet" type="text/css" href="css/sf.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/css/sf.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
 </head>
 <body>
 <!--

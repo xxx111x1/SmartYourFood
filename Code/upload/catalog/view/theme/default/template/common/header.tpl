@@ -85,6 +85,7 @@
     </div>
   </div>
 </header>
+<!--
 <?php if ($categories) { ?>
 <div class="container">
   <nav id="menu" class="navbar">
@@ -117,3 +118,4 @@
   </nav>
 </div>
 <?php } ?>
+-->
