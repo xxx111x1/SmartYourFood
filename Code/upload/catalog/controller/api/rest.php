@@ -3,8 +3,11 @@ class ControllerApiRest extends Controller {
 	public function getData() {
 		$filters = $this->request->post['filters'];
 		$orders = $this->request->post['orders'];
+		$page_number = $this->request->post['page_number'];
+		$page_content_number = 12;
+		$start_position = $page_number * $page_content_number;
 		$this->load->model('sfrest/information');	
-		$restaurants = $this->model_sfrest_information->getRestaurants($filters,$orders,0,12);			
+		$restaurants = $this->model_sfrest_information->getRestaurants($filters,$orders,$start_position,$page_content_number);			
 		if ($restaurants) {			
 			$json['success'] = $this->language->get('text_success');
 			$json['restaurants'] = $restaurants;

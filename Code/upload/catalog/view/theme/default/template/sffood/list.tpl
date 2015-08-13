@@ -53,14 +53,13 @@
 	 <input type="hidden" class="orders" id="sell_number" value=""></input>
 	 <input type="hidden" class="orders" id="review_score" value=""></input>
 	 </div>
+	 <input type=hidden id=page_number value=0 />
 	 <div class=product_area >
 	
  	</div>
  	</div>
 </div>
-<!--<div class="page_nav">
-    Page Navigation
-</div>
+<!--
 <div class="footer">
 -->
 
