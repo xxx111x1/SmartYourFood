@@ -13,7 +13,9 @@ class ControllerSfrestList extends Controller{
         //$data = $this->model_shop_list->getInfo();
         //echo "ControllerShopList";
         $data = array();
-        $data['category'] = $this->load->controller('shop/category');
+        $this->load->model('sfrest/information');
+		//$data['restaurants'] = $this->model_sfrest_information->getRestaurants();
+		$data['types'] = $this->model_sfrest_information->getTypes();
         $data['header'] = $this->load->controller('common/header');
         if($this->customer->isLogged())
         {

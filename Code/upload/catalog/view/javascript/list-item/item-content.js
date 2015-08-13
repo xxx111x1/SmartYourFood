@@ -1,45 +1,81 @@
 $(document).ready(function () {
+	var type='rest';
+	
+	if(window.location.search.indexOf('food') >= 0){
+		type = 'food';
+	}
+	
+	loadData('filter_0');
+	
 	$('.filter_field').click(function() {
-		$(this).toggleClass("filter_field_selected");
-		if($(this).hasClass("filter_field_selected")){
-			var tagId = $(this).attr('value'); 
-			$("#filters").attr('value',($("#filters").attr('value')+","+tagId));
-			var filters = $("#filters").attr('value');
-			filters = filters.replace("0,", "").replace("0","");
-			var orders = "";
-			$(".orders").each(function(){
-				orders = orders + $(this).attr('id') + " " + $(this).attr('value') +", ";
-				});
-			orders = orders.substring(0,orders.length - 2)
-			$.ajax({
-				url: 'index.php?route=api/restaurant/getRestaurants',
-				type: 'post',
-				data: 'filters=' + filters + '&orders=' + orders,
-				dataType: 'json',
-				/*
-				 * beforeSend: function() { $('#cart >
-				 * button').button('loading'); }, complete: function() {
-				 * $('#cart > button').button('reset'); },
-				 */			
-				success: function(data) {
-					$(".product_area").empty();
-					$.each(data, function(i, v) {
-						var ele = "<div class=sf_product id="+v.restaurant_id+" title="+v.name+ " ><img class=sf_product_preview src="+v.img_url +" />"
-						+"<div class=sf_product_title >"+v.name+"</div><img class=sf_product_stars src='img/stars_2.png'> <div class=sf_product_sv>本月销量-份</div>"+
-						"<div class=sf_product_price><span style='MARGIN-RIGHT: 10px'>价格:"+v.avg_cost+"</span><span>配送: </span><span class='glyphicon glyphicon-time' style='FLOAT: right'>分钟</span> </div></div>";
-						$(".product_area").append(ele);
-
-					});					
-				}
-			});		
-		}
-		
-		
+		var id = $(this).attr('id');
+		loadData(id);
 	});
 	
-	$('.sf_product').click(function() {
-		var restaurantId = $(this).attr('id');
-		window.location = "index.php?id="+restaurantId;
+	$(document).on('click', '.sf_product', function(){
+		var id = $(this).attr('id');
+		alert(type + ' id:' + id + "! You can modify click action in $(document).on('click', '.sf_product', function() !" );
 	});
+	
+	function loadData(id){		
+		$('#'+id).toggleClass('filter_field_selected');
+		var tagId = $('#'+id).attr('value');
+		var filters = $('#filters').attr('value');
+		if($('#'+id).hasClass('filter_field_selected')){						
+			if(tagId=='0'){
+				$('.filter_field').removeClass('filter_field_selected');
+				$('#'+id).addClass('filter_field_selected');
+				filters = '0';
+			}
+			else{
+				$('#filter_0').removeClass('filter_field_selected');
+				filters = filters + ','+tagId;
+				filters = filters.replace('0,', '').replace('0','');
+			}				
+		}
+		else{
+			filters = filters.replace(','+ tagId,'').replace(tagId,'');
+			if(filters==''){
+				$('#filter_0').addClass('filter_field_selected');
+				filters='0';
+			}
+		}
+		if(filters.substring(0,1)==','){
+			filters = filters.replace(',','');
+		}
+		$('#filters').attr('value',filters);
+		var orders = '';
+		$('.orders').each(function(){
+			orders = orders + $(this).attr('id') + ' ' + $(this).attr('value') +', ';
+			});
+		orders = orders.substring(0,orders.length - 2)
+		$.ajax({
+			url: 'index.php?route=api/'+type+'/getData',
+			type: 'post',
+			data: 'filters=' + filters + '&orders=' + orders,
+			dataType: 'json',
+			/*
+			 * beforeSend: function() { $('#cart >
+			 * button').button('loading'); }, complete: function() {
+			 * $('#cart > button').button('reset'); },
+			 */			
+			success: function(data) {
+				$('.product_area').empty();
+				$.each(data, function(i, v) {
+					var id = v.restaurant_id;
+					var cost = v.avg_cost;
+					if(type=='food'){
+						id = v.food_id;
+						cost = v.price;
+					}
+					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><img class=sf_product_preview src='+v.img_url +' />'
+					+'<div class=sf_product_title >'+v.name+'</div><img class=sf_product_stars src="img/stars_2.png"> <div class=sf_product_sv>本月销量-份</div>'+
+					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> </div></div>';
+					$('.product_area').append(ele);
+
+				});					
+			}
+		});		
+	}
 
 });

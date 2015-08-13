@@ -92,6 +92,12 @@ CREATE TABLE IF NOT EXISTS `oc_sfaddress` (
   PRIMARY KEY (`address_id`)
 )  ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
+CREATE TABLE IF NOT EXISTS `oc_food_type` (
+  `type_id` int(11) NOT NULL AUTO_INCREMENT,
+  `type_name_cn` varchar(45) NOT NULL,
+  PRIMARY KEY (`type_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
+
 
 -- --------------------------------------------------------
 
@@ -7872,3 +7878,11 @@ VALUES
 ,(12.5,10,'宫保鸡丁','1561','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
 ,(12.5,10,'水煮肉片','1561','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
 ,(12.5,10,'鱼香肉丝','1561','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg');
+
+
+INSERT INTO `smartyourfood`.`oc_food_type`(`type_id`,`type_name_cn`)
+VALUES 
+(0,'不限')
+,(1,'牛肉')
+,(2,'鸡肉')
+,(3,'鱼肉');

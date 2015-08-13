@@ -50,4 +50,9 @@ class ModelSffoodFood extends Model{
     {
 
     }
+    
+    public function getTypes() {
+    	$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "food_type order by type_id");
+    	return $query->rows;
+    }
 }

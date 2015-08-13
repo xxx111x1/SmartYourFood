@@ -39,7 +39,7 @@
     </div>
     <div class=sf_product_content>
   	<div class=sf_filter>
-		<span class=filter_head>餐馆分类：</span>
+		<span class=filter_head>菜品分类：</span>
 		<?php foreach ($types as $type) { ?>
 		<span class=filter_field id=filter_<?php echo $type['type_id']?> value=<?php echo $type['type_id'] ?> ><?php echo $type['type_name_cn']?></span>
 		<?php } ?>
