@@ -152,10 +152,16 @@
     width: 930px;
     color:#535353;
     float:left;
+    cursor:pointer;
 }
 .sort_default{
     margin-left: 5px;
     font-size: 10px;
+}
+.sort_field_selected{
+    color: #fff;
+    background-color: #0089dc;
+    border-radius: 3px;
 }
 .by_time{
     margin-left: 10px;

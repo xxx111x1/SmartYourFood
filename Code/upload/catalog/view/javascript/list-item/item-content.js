@@ -1,45 +1,23 @@
 $(document).ready(function () {
-	var type='rest';
 	
+	var type='rest';	
 	if(window.location.search.indexOf('food') >= 0){
 		type = 'food';
 	}
 	
-	loadData('filter_0');
+	$('#filter_0').addClass('filter_field_selected');
+	$('#sort_default').addClass('sort_field_selected');
+	
+	addContents('0',getSortString('sort_default'),0,1);
 	
 	$('.filter_field').click(function() {
-		var id = $(this).attr('id');
-		loadData(id);
-	});
-	
-	$(document).on('click', '.sf_product', function(){
-		var id = $(this).attr('id');
-		alert(type + ' id:' + id + "! You can modify click action in $(document).on('click', '.sf_product', function() !" );
-	});
-	
-	$(window).scroll(function () { 
-		   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
-			  var pageNumber = $('#page_number').val();
-			  var filters = $('#filters').attr('value');
-			  var orders = '';
-				$('.orders').each(function(){
-					orders = orders + $(this).attr('id') + ' ' + $(this).attr('value') +', ';
-					});
-			  orders = orders.substring(0,orders.length - 2);
-			  pageNumber = parseInt(pageNumber) + 1;
-			  addContents(filters,orders,pageNumber,0);
-			  $('#page_number').val(pageNumber);
-		   }
-	});
-	
-	function loadData(id){		
-		$('#'+id).toggleClass('filter_field_selected');
-		var tagId = $('#'+id).attr('value');
+		$(this).toggleClass('filter_field_selected');
+		var tagId = $(this).attr('value');
 		var filters = $('#filters').attr('value');
-		if($('#'+id).hasClass('filter_field_selected')){						
+		if($(this).hasClass('filter_field_selected')){						
 			if(tagId=='0'){
 				$('.filter_field').removeClass('filter_field_selected');
-				$('#'+id).addClass('filter_field_selected');
+				$(this).addClass('filter_field_selected');
 				filters = '0';
 			}
 			else{
@@ -59,19 +37,44 @@ $(document).ready(function () {
 			filters = filters.replace(',','');
 		}
 		$('#filters').attr('value',filters);
-		var orders = '';
-		$('.orders').each(function(){
-			orders = orders + $(this).attr('id') + ' ' + $(this).attr('value') +', ';
-			});
-		orders = orders.substring(0,orders.length - 2);
-		addContents(filters,orders,0,1);
-	}
+		
+		var sortId = $('#sort').attr('value');
+		var sort = getSortString(sortId);				
+		addContents(filters,sort,0,1);
+	});
 	
-	function addContents(filters,orders,pageNumber,isRefresh){
+	$('.sort_field').click(function(){
+		$('.sort_field').removeClass('sort_field_selected');
+		$(this).addClass('sort_field_selected');
+		var filters = $('#filters').attr('value');
+		var sortId = $(this).attr('id');
+		$('#sort').val(sortId);
+		var sort = getSortString(sortId);				
+		addContents(filters,sort,0,1);
+	});
+	
+	$(document).on('click', '.sf_product', function(){
+		var id = $(this).attr('id');
+		alert(type + ' id:' + id + "! You can modify click action in $(document).on('click', '.sf_product', function() !" );
+	});
+	
+	$(window).scroll(function () { 
+		   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+			  var pageNumber = $('#page_number').val();
+			  var filters = $('#filters').attr('value');
+			  var sortId = $('#sort').attr('value');
+			  pageNumber = parseInt(pageNumber) + 1;
+			  var sort = getSortString(sortId);
+			  addContents(filters,sort,pageNumber,0);
+			  $('#page_number').val(pageNumber);
+		   }
+	});
+	
+	function addContents(filters,sort,pageNumber,isRefresh){
 		$.ajax({
 			url: 'index.php?route=api/'+type+'/getData',
 			type: 'post',
-			data: 'filters=' + filters + '&orders=' + orders+ '&page_number=' + pageNumber,
+			data: 'filters=' + filters + '&sort=' + sort+ '&page_number=' + pageNumber,
 			dataType: 'json',
 			/*
 			 * beforeSend: function() { $('#cart >
@@ -97,6 +100,16 @@ $(document).ready(function () {
 				});					
 			}
 		});		
+	}
+	
+	function getSortString(sortId){
+		if(sortId=="sell_number"){
+			return " sell_number desc, review_score desc ";
+		}else if(sortId=="review_score"){
+			return " review_score desc,sell_number desc ";
+		}else{
+			return " sell_number desc, review_score desc ";
+		}	
 	}
 
 });

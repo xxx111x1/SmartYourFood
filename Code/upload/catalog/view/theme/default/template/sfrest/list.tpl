@@ -46,12 +46,11 @@
 		<input type="hidden" id="filters" value="0"></input>
 	</div>
     <div class=sort_option>
-	 <span class=sort_default>默认排序</span>
-	 <span class="by_time glyphicon glyphicon-arrow-down">配送时间</span>
-	 <span class="by_sv glyphicon glyphicon-arrow-down">销量</span> 
-	 <span class="by_review glyphicon glyphicon-arrow-down">评价</span>
-	 <input type="hidden" class="orders" id="sell_number" value=""></input>
-	 <input type="hidden" class="orders" id="review_score" value=""></input>
+	 <span class="sort_field " id="sort_default" >默认排序</span>
+	 <span class="sort_field glyphicon glyphicon-arrow-up" id="send_time" >配送时间</span>
+	 <span class="sort_field glyphicon glyphicon-arrow-down" id="sell_number" >销量</span> 
+	 <span class="sort_field glyphicon glyphicon-arrow-down" id="review_score" >评价</span>
+	 <input type="hidden" id="sort" value="sort_default"></input>
 	 </div>
 	 <input type=hidden id=page_number value=0 />
 	 <div class=product_area >
