@@ -4,8 +4,11 @@
     <meta charset="UTF-8">
     <title></title>
     <title>登陆</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
+    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/list-item/item-content.js" type="text/javascript"></script>
 </head>
 <body class="container">
 <div class="row" style="color: #ffffff">
