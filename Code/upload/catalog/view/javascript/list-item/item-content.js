@@ -53,7 +53,7 @@ $(document).ready(function () {
 		addContents(filters,sort,0,1);
 	});
 	
-	$(document).on('click', '.sf_product', function(){
+	$(document).on('click', '.sf_product_preview', function(){
 		var id = $(this).attr('id');
 		alert(type + ' id:' + id + "! You can modify click action in $(document).on('click', '.sf_product', function() !" );
 	});
@@ -93,9 +93,12 @@ $(document).ready(function () {
 						id = v.food_id;
 						cost = v.price;
 					}
+								      
 					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><img class=sf_product_preview src='+v.img_url +' />'
 					+'<div class=sf_product_title >'+v.name+'</div><img class=sf_product_stars src="img/stars_2.png"> <div class=sf_product_sv>本月销量-份</div>'+
-					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> </div></div>';
+					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> </div>'
+					+'<div class="button-group"><button type="button" onclick="cart.add('+id+');"><i class="fa fa-shopping-cart"></i> <span class="hidden-xs hidden-sm hidden-md">添加到购物车</span></button>'
+					+'</div></div>'		;
 					$('.product_area').append(ele);
 				});					
 			}

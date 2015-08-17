@@ -62,18 +62,13 @@ class ControllerCheckoutCart extends Controller {
 
 			$data['action'] = $this->url->link('checkout/cart/edit', '', true);
 
-			if ($this->config->get('config_cart_weight')) {
-				$data['weight'] = $this->weight->format($this->cart->getWeight(), $this->config->get('config_weight_class_id'), $this->language->get('decimal_point'), $this->language->get('thousand_point'));
-			} else {
-				$data['weight'] = '';
-			}
-
 			$this->load->model('tool/image');
 			$this->load->model('tool/upload');
 
 			$data['products'] = array();
 
-			$products = $this->cart->getProducts();
+			//$products = $this->cart->getProducts();
+			$products = $this->cart->getFoods();
 
 			foreach ($products as $product) {
 				$product_total = 0;
@@ -155,9 +150,9 @@ class ControllerCheckoutCart extends Controller {
 					'key'       => $product['key'],
 					'thumb'     => $image,
 					'name'      => $product['name'],
-					'model'     => $product['model'],
-					'option'    => $option_data,
+					'model'     => $product['model'],					'option'    => $option_data,
 					'recurring' => $recurring,
+
 					'quantity'  => $product['quantity'],
 					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
 					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
@@ -278,6 +273,85 @@ class ControllerCheckoutCart extends Controller {
 
 	public function add() {
 		$this->load->language('checkout/cart');
+	
+		$json = array();
+	
+		if (isset($this->request->post['product_id'])) {
+			$product_id = (int)$this->request->post['product_id'];
+		} else {
+			$product_id = 0;
+		}
+	
+		$this->load->model('sffood/food');
+	
+		$product_info = $this->model_sffood_food->getFood($product_id);
+		if ($product_info) {
+			if (isset($this->request->post['quantity']) && ((int)$this->request->post['quantity'] >= $product_info['minimum'])) {
+				$quantity = (int)$this->request->post['quantity'];
+			} else {
+				$quantity = $product_info['minimum'] ? $product_info['minimum'] : 1;
+			}
+
+			if (!$json) {
+				$this->cart->add($this->request->post['product_id'], $quantity);
+				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('sffood/list', 'food_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
+	
+				// Edit customers cart
+				$this->load->model('account/customer');
+	
+				$this->model_account_customer->editCart($this->cart->getCart());
+				// Unset all shipping and payment methods
+				unset($this->session->data['shipping_method']);
+				unset($this->session->data['shipping_methods']);
+				unset($this->session->data['payment_method']);
+				unset($this->session->data['payment_methods']);
+				// Totals
+				$this->load->model('extension/extension');
+	
+				$total_data = array();
+				$total = 0;
+				$taxes = $this->cart->getTaxes();
+	
+				//Display prices
+				if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
+					$sort_order = array();
+	
+					$results = $this->model_extension_extension->getExtensions('total');
+	
+					foreach ($results as $key => $value) {
+						$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
+					}
+	
+					array_multisort($sort_order, SORT_ASC, $results);
+					foreach ($results as $result) {
+						if ($this->config->get($result['code'] . '_status')) {
+							$this->load->model('total/' . $result['code']);
+							$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
+						}
+					}
+	
+					$sort_order = array();
+	
+					foreach ($total_data as $key => $value) {
+						$sort_order[$key] = $value['sort_order'];
+					}
+	
+					array_multisort($sort_order, SORT_ASC, $total_data);
+				}
+
+				//$total = $quantity*$product_info['price'];
+				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countFoodProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+			} else {
+				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('sffood/list', 'food_id=' . $this->request->post['product_id']));
+			}
+		}
+	
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+	
+	public function addold() {
+		$this->load->language('checkout/cart');
 
 		$json = array();
 
@@ -287,9 +361,10 @@ class ControllerCheckoutCart extends Controller {
 			$product_id = 0;
 		}
 
-		$this->load->model('catalog/product');
+ 		$this->load->model('catalog/product');
 
-		$product_info = $this->model_catalog_product->getProduct($product_id);
+ 		$product_info = $this->model_catalog_product->getProduct($product_id);
+
 
 		if ($product_info) {
 			if (isset($this->request->post['quantity']) && ((int)$this->request->post['quantity'] >= $product_info['minimum'])) {
@@ -483,7 +558,7 @@ class ControllerCheckoutCart extends Controller {
 				array_multisort($sort_order, SORT_ASC, $total_data);
 			}
 
-			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
+			$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countFoodProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
 		}
 
 		$this->response->addHeader('Content-Type: application/json');

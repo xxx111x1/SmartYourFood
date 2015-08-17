@@ -12,6 +12,32 @@ class Cart {
 		if (!isset($this->session->data['cart']) || !is_array($this->session->data['cart'])) {
 			$this->session->data['cart'] = array();
 		}
+	}	
+	
+	public function getFoods(){
+		if (!$this->data) {
+			foreach ($this->session->data['cart'] as $key => $quantity) {
+				$product = unserialize(base64_decode($key));		
+				$product_id = $product['product_id'];		
+				$stock = true;	
+				$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "food Where food_id = '" . (int)$product_id . "' and available = 1 ");
+				if ($product_query->num_rows) {					
+					$price = $product_query->row['price'];	
+					$this->data[$key] = array(
+							'key'             => $key,
+							'product_id'      => $product_query->row['food_id'],
+							'name'            => $product_query->row['name'],
+							'image'           => $product_query->row['img_url'],
+							'quantity'        => $quantity,
+							'price'           => $price ,
+							'total'           => $price * $quantity,
+					);
+				} else {
+					$this->remove($key);
+				}
+			}
+		}		
+		return $this->data;
 	}
 
 	public function getProducts() {
@@ -292,18 +318,13 @@ class Cart {
 
 		$product['product_id'] = (int)$product_id;
 
-		if ($option) {
-			$product['option'] = $option;
-		}
-
 		if ($recurring_id) {
 			$product['recurring_id'] = (int)$recurring_id;
 		}
-
 		$key = base64_encode(serialize($product));
-
 		if ((int)$qty && ((int)$qty > 0)) {
 			if (!isset($this->session->data['cart'][$key])) {
+				
 				$this->session->data['cart'][$key] = (int)$qty;
 			} else {
 				$this->session->data['cart'][$key] += (int)$qty;
@@ -344,6 +365,16 @@ class Cart {
 
 		return $weight;
 	}
+	
+	public function getFoodSubTotal() {
+		$total = 0;
+	
+		foreach ($this->getFoods() as $product) {
+			$total += $product['total'];
+		}
+	
+		return $total;
+	}
 
 	public function getSubTotal() {
 		$total = 0;
@@ -355,21 +386,23 @@ class Cart {
 		return $total;
 	}
 
+	
+	//has changed
 	public function getTaxes() {
 		$tax_data = array();
 
-		foreach ($this->getProducts() as $product) {
-			if ($product['tax_class_id']) {
-				$tax_rates = $this->tax->getRates($product['price'], $product['tax_class_id']);
+		foreach ($this->getFoods() as $product) {
+// 			if ($product['tax_class_id']) {
+// 				$tax_rates = $this->tax->getRates($product['price'], $product['tax_class_id']);
 
-				foreach ($tax_rates as $tax_rate) {
-					if (!isset($tax_data[$tax_rate['tax_rate_id']])) {
-						$tax_data[$tax_rate['tax_rate_id']] = ($tax_rate['amount'] * $product['quantity']);
-					} else {
-						$tax_data[$tax_rate['tax_rate_id']] += ($tax_rate['amount'] * $product['quantity']);
-					}
-				}
-			}
+// 				foreach ($tax_rates as $tax_rate) {
+// 					if (!isset($tax_data[$tax_rate['tax_rate_id']])) {
+// 						$tax_data[$tax_rate['tax_rate_id']] = ($tax_rate['amount'] * $product['quantity']);
+// 					} else {
+// 						$tax_data[$tax_rate['tax_rate_id']] += ($tax_rate['amount'] * $product['quantity']);
+// 					}
+// 				}
+// 			}
 		}
 
 		return $tax_data;
@@ -385,6 +418,18 @@ class Cart {
 		return $total;
 	}
 
+	public function countFoodProducts() {
+		$product_total = 0;
+	
+		$products = $this->getFoods();
+	
+		foreach ($products as $product) {
+			$product_total += $product['quantity'];
+		}
+	
+		return $product_total;
+	}
+	
 	public function countProducts() {
 		$product_total = 0;
 
@@ -420,13 +465,13 @@ class Cart {
 	public function hasShipping() {
 		$shipping = false;
 
-		foreach ($this->getProducts() as $product) {
-			if ($product['shipping']) {
-				$shipping = true;
+// 		foreach ($this->getProducts() as $product) {
+// 			if ($product['shipping']) {
+// 				$shipping = true;
 
-				break;
-			}
-		}
+// 				break;
+// 			}
+// 		}
 
 		return $shipping;
 	}

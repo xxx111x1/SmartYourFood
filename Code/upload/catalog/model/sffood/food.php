@@ -19,7 +19,6 @@ class ModelSffoodFood extends Model{
     	if(array_key_exists('price'           , $data)){ $query .= ", price            = '" . $data['price']            . "'"; }
     	if(array_key_exists('available'       , $data)){ $query .= ", available        = '" . $data['available']        . "'"; }
     	if(array_key_exists('sell_number'     , $data)){ $query .= ", sell_number      = '" . $data['sell_number']      . "'"; }
-    	echo $query;
     	$this->db->query("" . $query);
     	$this->event->trigger('post.food.add', $data);
     }
@@ -44,6 +43,12 @@ class ModelSffoodFood extends Model{
     	$sql .= " order by " . $sort . " limit " . $start . "," . $number;
     	$query = $this->db->query($sql);
     	return $query->rows;
+    }
+    
+    public function getFood($food_id){
+    	$sql = "SELECT * FROM " . DB_PREFIX . "food where food_id = '" . (int)$food_id . "'" ;
+    	$query = $this->db->query($sql);
+    	return $query->row;
     }
 
     public function getFoodByRestID()

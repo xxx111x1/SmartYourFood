@@ -220,6 +220,7 @@ var cart = {
 				} else {
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 				}
+				
 			}
 		});
 	}

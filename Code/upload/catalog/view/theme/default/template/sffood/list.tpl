@@ -21,20 +21,16 @@
         <span class="address_info_address"><?php echo $address;?></span>
         <span class="address_info_chg">切换地址</span></div>
     <div class="section_header">
-        <div class="food_tab">外卖食品</div>
-        <div class="rest_tab">外卖餐馆</div>
-        <div class="browse_history">浏览历史</div>
-    </div>
-    <div class="search_area">
-        <div class="search_option">
-            <input type="checkbox" checked>餐厅
-            <input type="checkbox">菜品
-        </div>
+        <div class="type_tab selected_type_tab"><a href="/index.php?route=sffood/list" >外卖食品</a></div>
+        <div class="type_tab"><a href="/index.php?route=sfrest/list" >外卖餐馆</a></div>
+        <div class="type_tab">浏览历史</div>
+        <div class="search_area">
         <div class="search_box">
             <input type="search">
         </div>
         <div class="search_button">
             <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search"/></button>
+        </div>
         </div>
     </div>
     <div class=sf_product_content>
