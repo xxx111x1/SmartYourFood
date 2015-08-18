@@ -322,14 +322,16 @@ class Cart {
 			$product['recurring_id'] = (int)$recurring_id;
 		}
 		$key = base64_encode(serialize($product));
-		if ((int)$qty && ((int)$qty > 0)) {
-			if (!isset($this->session->data['cart'][$key])) {
+		$this->session->data['cart'][$key] = (int)$qty;
+// 		if ((int)$qty && ((int)$qty > 0)) {
+			
+// 			if (!isset($this->session->data['cart'][$key])) {
 				
-				$this->session->data['cart'][$key] = (int)$qty;
-			} else {
-				$this->session->data['cart'][$key] += (int)$qty;
-			}
-		}
+// 				$this->session->data['cart'][$key] = (int)$qty;
+// 			} else {
+// 				$this->session->data['cart'][$key] += (int)$qty;
+// 			}
+// 		}
 	}
 
 	public function update($key, $qty) {

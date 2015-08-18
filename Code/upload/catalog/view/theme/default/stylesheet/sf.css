@@ -255,3 +255,32 @@
     margin-right:30px;
 }
 
+.sf_food_cart{
+	float:right;
+	
+	margin-top:0px;
+	height:20px;
+	color:black;
+}
+
+.minus_food, .add_food {
+	float:left;
+	width:50px;
+	font-size: 20px;
+	font-weight: bolder;
+	text-align:center;
+	cursor:pointer;
+	
+}
+
+.minus_food:hover, .add_food:hover{
+   background-color: grey;
+}
+
+.food_number{
+	float:left;
+	width:50px;
+	border: 0px;
+	text-align:center;
+}
+

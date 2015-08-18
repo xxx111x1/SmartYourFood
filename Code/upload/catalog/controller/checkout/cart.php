@@ -286,11 +286,12 @@ class ControllerCheckoutCart extends Controller {
 	
 		$product_info = $this->model_sffood_food->getFood($product_id);
 		if ($product_info) {
-			if (isset($this->request->post['quantity']) && ((int)$this->request->post['quantity'] >= $product_info['minimum'])) {
-				$quantity = (int)$this->request->post['quantity'];
-			} else {
-				$quantity = $product_info['minimum'] ? $product_info['minimum'] : 1;
-			}
+// 			if (isset($this->request->post['quantity']) && ((int)$this->request->post['quantity'] >= $product_info['minimum'])) {
+// 				$quantity = (int)$this->request->post['quantity'];
+// 			} else {
+// 				$quantity = $product_info['minimum'] ? $product_info['minimum'] : 1;
+// 			}
+			$quantity = (int)$this->request->post['quantity'];
 
 			if (!$json) {
 				$this->cart->add($this->request->post['product_id'], $quantity);

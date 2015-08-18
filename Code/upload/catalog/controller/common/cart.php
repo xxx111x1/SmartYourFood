@@ -60,38 +60,40 @@ class ControllerCommonCart extends Controller {
 				$image = '';
 			}
 
-			$option_data = array();
+// 			$option_data = array();
 
-			foreach ($product['option'] as $option) {
-				if ($option['type'] != 'file') {
-					$value = $option['value'];
-				} else {
-					$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+// 			foreach ($product['option'] as $option) {
+// 				if ($option['type'] != 'file') {
+// 					$value = $option['value'];
+// 				} else {
+// 					$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
 
-					if ($upload_info) {
-						$value = $upload_info['name'];
-					} else {
-						$value = '';
-					}
-				}
+// 					if ($upload_info) {
+// 						$value = $upload_info['name'];
+// 					} else {
+// 						$value = '';
+// 					}
+// 				}
 
-				$option_data[] = array(
-					'name'  => $option['name'],
-					'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
-					'type'  => $option['type']
-				);
-			}
+// 				$option_data[] = array(
+// 					'name'  => $option['name'],
+// 					'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value),
+// 					'type'  => $option['type']
+// 				);
+// 			}
 
 			// Display prices
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));
+				//$price = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')));
+				$price = $this->currency->format($product['price']);
 			} else {
 				$price = false;
 			}
 
 			// Display prices
 			if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
-				$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+//				$total = $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']);
+				$total = $this->currency->format($product['price']* $product['quantity']);
 			} else {
 				$total = false;
 			}
@@ -100,9 +102,9 @@ class ControllerCommonCart extends Controller {
 				'key'       => $product['key'],
 				'thumb'     => $image,
 				'name'      => $product['name'],
-				'model'     => $product['model'],
-				'option'    => $option_data,
-				'recurring' => ($product['recurring'] ? $product['recurring']['name'] : ''),
+				//'model'     => $product['model'],
+				//'option'    => $option_data,
+				//'recurring' => ($product['recurring'] ? $product['recurring']['name'] : ''),
 				'quantity'  => $product['quantity'],
 				'price'     => $price,
 				'total'     => $total,

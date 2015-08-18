@@ -10,7 +10,7 @@
             <a href="<?php echo $product['href']; ?>"><img src="<?php echo $product['thumb']; ?>" alt="<?php echo $product['name']; ?>" title="<?php echo $product['name']; ?>" class="img-thumbnail" /></a>
             <?php } ?></td>
           <td class="text-left"><a href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></a>
-            <?php if ($product['option']) { ?>
+            <!--<?php if ($product['option']) { ?>
             <?php foreach ($product['option'] as $option) { ?>
             <br />
             - <small><?php echo $option['name']; ?> <?php echo $option['value']; ?></small>
@@ -20,6 +20,7 @@
             <br />
             - <small><?php echo $text_recurring; ?> <?php echo $product['recurring']; ?></small>
             <?php } ?></td>
+            -->
           <td class="text-right">x <?php echo $product['quantity']; ?></td>
           <td class="text-right"><?php echo $product['total']; ?></td>
           <td class="text-center"><button type="button" onclick="cart.remove('<?php echo $product['key']; ?>');" title="<?php echo $button_remove; ?>" class="btn btn-danger btn-xs"><i class="fa fa-times"></i></button></td>
