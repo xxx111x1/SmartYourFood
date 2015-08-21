@@ -194,7 +194,7 @@
     font-size: 10px;
 }
 
-.product_area{
+.product_area,, .rest_information{
     margin-top: 10px;
     width: 980px;
     height: 800px;

@@ -16,28 +16,30 @@ class Cart {
 	
 	public function getFoods(){
 		if (!$this->data) {
-			foreach ($this->session->data['cart'] as $key => $quantity) {
-				$product = unserialize(base64_decode($key));		
-				$product_id = $product['product_id'];		
-				$stock = true;	
-				$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "food Where food_id = '" . (int)$product_id . "' and available = 1 ");
-				if ($product_query->num_rows) {					
-					$price = $product_query->row['price'];	
-					$this->data[$key] = array(
-							'key'             => $key,
-							'product_id'      => $product_query->row['food_id'],
-							'name'            => $product_query->row['name'],
-							'image'           => $product_query->row['img_url'],
-							'quantity'        => $quantity,
-							'price'           => $price ,
-							'total'           => $price * $quantity,
-					);
-				} else {
-					$this->remove($key);
-				}
-			}
-		}		
-		return $this->data;
+            foreach ($this->session->data['cart'] as $key => $quantity) {
+                $product = unserialize(base64_decode($key));
+
+                $product_id = $product['product_id'];
+                #$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.product_id = '" . (int)$product_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.date_available <= NOW() AND p.status = '1'");
+                $product_query = $this->db->query("SELECT * FROM " . DB_PREFIX ."food f INNER JOIN ".DB_PREFIX."restaurant_info r ON f.restaurant_id=r.restaurant_id  WHERE food_id = ".$product_id);
+                if ($product_query->num_rows) {
+                    $price = $product_query->row['price'];
+                    $this->data[$key] = array(
+                        'key'             => $key,
+                        'product_id'      => $product_query->row['food_id'],
+                        'name'      => $product_query->row['name'],
+                        'image' => $product_query->row['img_url'],
+                        'price' => $product_query->row['price'],
+                        'rest_id' => $product_query->row['restaurant_id'],
+                        'rest_address'=>$product_query->row['address'],
+                        'phone'=>$product_query->row['phone'],
+                        'quantity' => $quantity,
+                        'total' => $price*$quantity
+                    );
+                }
+            }
+        }
+        return $this->data;
 	}
 
 	public function getProducts() {
@@ -322,7 +324,11 @@ class Cart {
 			$product['recurring_id'] = (int)$recurring_id;
 		}
 		$key = base64_encode(serialize($product));
-		$this->session->data['cart'][$key] = (int)$qty;
+		if ((int)$qty && (int)$qty > 0) {
+			$this->session->data['cart'][$key] = (int)$qty;
+		} else {
+			$this->remove($key);
+		}
 // 		if ((int)$qty && ((int)$qty > 0)) {
 			
 // 			if (!isset($this->session->data['cart'][$key])) {
@@ -334,6 +340,7 @@ class Cart {
 // 		}
 	}
 
+	
 	public function update($key, $qty) {
 		$this->data = array();
 

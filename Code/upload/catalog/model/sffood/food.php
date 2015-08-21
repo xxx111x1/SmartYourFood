@@ -34,9 +34,9 @@ class ModelSffoodFood extends Model{
     public function  search(){
 
     }
-    
+
     public function getFoods($filters = "0", $sort = " sell_number desc, review_score desc", $start = 0, $number = 16) {
-    	$sql = "SELECT * FROM " . DB_PREFIX . "food ";
+    	$sql = "SELECT *,0 as cart_number FROM " . DB_PREFIX . "food ";
     	if($filters != "0"){
     		$sql .= "where tags in (" . $filters .") ";
     	}
@@ -51,9 +51,11 @@ class ModelSffoodFood extends Model{
     	return $query->row;
     }
 
-    public function getFoodByRestID()
-    {
-
+    public function getFoodsByRestID($restaurant_id)
+    { 
+    	$sql = "SELECT * FROM " . DB_PREFIX . "food where restaurant_id = '" . $restaurant_id . "'";
+    	$query = $this->db->query($sql);
+    	return $query->rows;
     }
     
     public function getTypes() {

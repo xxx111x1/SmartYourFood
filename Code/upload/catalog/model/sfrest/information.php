@@ -52,7 +52,8 @@ class ModelSfRestInformation extends Model{
 	}
 	
 	public function getRestaurant($restaurant_id) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info WHERE restaurant_id = '" . (int)restaurant_id . "'");
+		$sql = "SELECT * FROM " . DB_PREFIX . "restaurant_info WHERE restaurant_id = '" . $restaurant_id . "'";
+		$query = $this->db->query($sql);
 		return $query->row;
 	}
 	

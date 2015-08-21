@@ -115,9 +115,13 @@ $(document).ready(function () {
 								      
 					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><img class=sf_product_preview src='+v.img_url +' />'
 					+'<div class=sf_product_title >'+v.name+'</div><img class=sf_product_stars src="img/stars_2.png"> <div class=sf_product_sv>本月销量-份</div>'+
-					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> </div>'
-					+'<div class="sf_food_cart">	<div class="minus_food" value="'+id+'" >-</div><input class="food_number" id="food_'+id+'_number" value="0" />'
-					+'<div class="add_food" value="'+id+'" >+</div> </div></div>'		;
+					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> </div>';
+					
+					if (type=='food'){
+						ele = ele +'<div class="sf_food_cart">	<div class="minus_food" value="'+id+'" >-</div><input class="food_number" id="food_'+id+'_number" value="'+v.cart_number+'" />'
+						+'<div class="add_food" value="'+id+'" >+</div> </div>';
+					}
+					ele = ele + '</div>';
 					$('.product_area').append(ele);
 				});					
 			}
