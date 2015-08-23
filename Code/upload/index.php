@@ -231,6 +231,7 @@ $registry->set('weight', new Weight($registry));
 $registry->set('length', new Length($registry));
 
 // Cart
+//$registry->set('sfcart', new SfCart($registry));
 $registry->set('cart', new Cart($registry));
 
 // Encryption

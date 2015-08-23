@@ -12,7 +12,7 @@
     margin-left: auto;
     margin-right: auto;
     position: relative;
-    width: 980px;
+    width: 970px;
     color:#F3F3F5;
     background:#F3F3F5;
 }
@@ -20,7 +20,7 @@
 .bill_board{
     margin-left: 0px;
     margin-top: 0px;
-    width: 980px;
+    width: 970px;
     height: 85px;
     color:#F9ED13;
     background:#F9ED13;
@@ -49,7 +49,7 @@
 .section_header{
     margin-left: 0px;
     margin-top: 10px;
-    width: 980px;
+    width: 970px;
     height: 25px;
     margin-bottom: 5px;
     color: #88ABDA;
@@ -97,8 +97,9 @@
 }
 
 .sf_product_content{
-	float:left;
-	width:980px;
+	margin-left: auto;
+	margin-right: auto;
+	width:970px;
 }
 
 .search_area{
@@ -130,7 +131,7 @@
 .sf_filter{
     padding-top: 15px;
     height: 40px;
-    width: 980px;
+    width: 970px;
     color:#535353;
     /*background:#88ABDA;*/
     background: white;
@@ -194,13 +195,44 @@
     font-size: 10px;
 }
 
-.product_area,, .rest_information{
+.product_area{
     margin-top: 10px;
-    width: 980px;
+    width: 970px;
     height: 800px;
     color:white;
     /*background:darkgray;*/
 
+}
+
+.rest_information{
+	margin-top: 40px;
+	height: 300px;
+	padding-bottom:20px;
+    width: 970px;
+    border-bottom: 2px solid #838679;    
+}
+
+.rest_img{	
+	margin-left:0px;
+	width:320px;
+	height:280px;
+	float:left;
+}
+
+.rest_details{
+	margin-left:20px;
+	width:630px;
+	float:left;
+	height:280px;	
+}
+
+.rest_detail{
+	margin-left:0px;
+	margin-top:10px;
+	height:25px;
+	float:left;
+	width:100%;
+	color:black;
 }
 
 .sf_product{
@@ -263,6 +295,9 @@
 	color:black;
 }
 
+.food_information{
+	margin-top:20px;
+}
 .minus_food, .add_food {
 	float:left;
 	width:50px;

@@ -54,8 +54,13 @@ $(document).ready(function () {
 	});
 	
 	$(document).on('click', '.sf_product_preview', function(){
-		var id = $(this).attr('id');
-		alert(type + ' id:' + id + "! You can modify click action in $(document).on('click', '.sf_product', function() !" );
+		var restId = $(this).attr('restid');
+		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId;
+		if (type=='food'){			
+			var foodId = $(this).attr('foodid');
+			url = url+ '&food_id=' + foodId;
+		}						
+		window.location.href = url;
 	});
 	
 	$(document).on('click', '.add_food', function(){
@@ -108,12 +113,14 @@ $(document).ready(function () {
 				$.each(data, function(i, v) {	
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;
+					var restId = id;
 					if(type=='food'){
 						id = v.food_id;
 						cost = v.price;
+						restId = v.restaurant_id;
 					}
 								      
-					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><img class=sf_product_preview src='+v.img_url +' />'
+					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><img class=sf_product_preview restId='+restId+' foodId='+id+' src='+v.img_url +' />'
 					+'<div class=sf_product_title >'+v.name+'</div><img class=sf_product_stars src="img/stars_2.png"> <div class=sf_product_sv>本月销量-份</div>'+
 					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> </div>';
 					

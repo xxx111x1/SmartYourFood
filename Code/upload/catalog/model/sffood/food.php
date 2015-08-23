@@ -53,7 +53,7 @@ class ModelSffoodFood extends Model{
 
     public function getFoodsByRestID($restaurant_id)
     { 
-    	$sql = "SELECT * FROM " . DB_PREFIX . "food where restaurant_id = '" . $restaurant_id . "'";
+    	$sql = "SELECT *,0 as cart_number FROM " . DB_PREFIX . "food where restaurant_id = '" . $restaurant_id . "'";
     	$query = $this->db->query($sql);
     	return $query->rows;
     }
