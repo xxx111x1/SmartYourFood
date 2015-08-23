@@ -4,6 +4,7 @@ class ModelTotalSubTotal extends Model {
 		$this->load->language('total/sub_total');
 		//$sub_total =$this->cart->getSubTotal();
 	    $sub_total =$this->cart->getFoodSubTotal();
+        $this->log->write('modeltotalSubtotal: $sub_total: .'.$sub_total);
 		if (isset($this->session->data['vouchers']) && $this->session->data['vouchers']) {
 			foreach ($this->session->data['vouchers'] as $voucher) {
 				$sub_total += $voucher['amount'];

@@ -11,7 +11,11 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data=array();
         $food_list = $this->cart->getFoods();
 
+        $this->log->write('food number: '.count($food_list));
+        $data['food_list']=$this->cart->getFoods();
+        /*
         foreach ($food_list as $food) {
+            $this->log->write('img: '.$food['image'].' name:'.$food['name'].' price: '.$food['price']);
             $data['food_list'] = array(
                 'img_url' => $food['image'],
                 'name' => $food['name'],
@@ -21,6 +25,7 @@ class ControllerSfcheckoutCheckout extends Controller{
                 'qty' => 2
             );
         }
+        $data['msg']='Hello World!';*/
         $this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));
     }
 }

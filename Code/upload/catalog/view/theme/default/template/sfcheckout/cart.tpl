@@ -36,6 +36,31 @@
                 小计
             </div>
         </div>
+        <?php foreach ($food_list as $food) { ?>
+        <div class="row" style="margin-top: 10px;">
+            <div class="col-md-3">
+                <img src="<?php echo $food['image'];?>" width="208px" height="156px"/>
+            </div>
+            <div class="col-md-3">
+                <div class="row"><h3><?php echo $food['food_name']; ?></h3></div>
+                <div class="row" style="margin-top: 20px"><?php echo $food['rest_name']; ?></div>
+                <div class="row" style="margin-top: 10px"><span class="glyphicon glyphicon-phone-alt"></span><?php echo $food['phone']; ?></div>
+                <div class="row" style="margin-top: 10px"><span class="glyphicon glyphicon-map-marker"></span><?php echo $food['rest_address']; ?></div>
+            </div>
+            <div class="col-md-2">
+                $<?php echo $food['price'];?>
+            </div>
+            <div class="col-md-2">
+                <button class="btn btn-primary"> <span class="glyphicon glyphicon-plus" style="font-size: 20px"></span></button>
+                <span style="font-size: 20px; margin-left: 10px;margin-right: 10px"><?php echo $food['quantity'];?></span>
+                <button class="btn btn-primary"> <span class="glyphicon glyphicon-minus" style="font-size: 20px"></span></button>
+            </div>
+            <div class="col-md-2">
+                $<?php echo $food['total'];?>
+            </div>
+        </div>
+        <?php } ?>
+        <!--
         <div class="row" style="margin-top: 10px;">
             <div class="col-md-3">
                 <img src="img\shop.1.jpg"/>
@@ -80,28 +105,7 @@
                 $20.00
             </div>
         </div>
-        <div class="row" style="margin-top: 10px;">
-            <div class="col-md-3">
-                <img src="img\shop.1.jpg"/>
-            </div>
-            <div class="col-md-3">
-                <div class="row"><h3>鱼香肉丝</h3></div>
-                <div class="row" style="margin-top: 20px">北疆饭店</div>
-                <div class="row" style="margin-top: 10px"><span class="glyphicon glyphicon-phone-alt"></span>778-888-8887</div>
-                <div class="row" style="margin-top: 10px"><span class="glyphicon glyphicon-map-marker"></span>4600 Number 3 Road, Richmond</div>
-            </div>
-            <div class="col-md-2">
-                $10.00
-            </div>
-            <div class="col-md-2">
-                <button class="btn btn-primary"> <span class="glyphicon glyphicon-plus" style="font-size: 20px"></span></button>
-                <span style="font-size: 20px; margin-left: 10px;margin-right: 10px">2</span>
-                <button class="btn btn-primary"> <span class="glyphicon glyphicon-minus" style="font-size: 20px"></span></button>
-            </div>
-            <div class="col-md-2">
-                $20.00
-            </div>
-        </div>
+        -->
         <div class="col-md-5 col-md-offset-8">
             <form class="form-horizontal">
                 <div class="form-group required">

@@ -7,7 +7,9 @@
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="catalog/view/javascript/list-item/item-content.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/register.js" type="text/javascript"></script>
+    <!--<script type="text/javascript" src="js/jquery-1.11.3.js"></script>-->
+    <!--<script type="text/javascript" src="js/register.js"></script>-->
 </head>
 <body class="container">
 <div class="row" style="color: #ffffff">
@@ -21,33 +23,36 @@
         <div class="row">
             <h2>使用手机注册</h2>
         </div>
-        <form class="form-horizontal">
+        <form class="form-horizontal" method="post" id="regform" onsubmit="return regsubmit()">
             <div class="form-group required">
                 <label class="col-sm-3 control-label" for="phonenumber">手机号码</label>
 
                 <div class="col-sm-7">
-                    <input type="text" name="phonenumber" value="" placeholder="" id="phonenumber"
-                           class="form-control">
+                    <input type="text" name="phonenumber" value="" placeholder="输入有效的手机号码" id="phonenumber"
+                           class="form-control" onchange="return validatephonenumber()">
                 </div>
+                 <label id="phonenum_chkres" class="col-sm-2 glyphicon" style="font-size: 16px; margin-left: -20px;margin-top: 5px;"></label>
             </div>
             <div class="form-group required">
-                <label class="col-sm-3 control-label" for="smscode">输入密码</label>
+                <label class="col-sm-3 control-label" for="pwd_1st">输入密码</label>
                 <div class="col-sm-7">
-                    <input type="text" name="smscode" value="" placeholder="" id="smscode"
-                           class="form-control">
+                    <input type="password" name="pwd_1st" value="" placeholder="至少六位数字字母组合" id="pwd_1st"
+                           class="form-control" onchange="return validate1stpwd()">
                 </div>
+                <label id="1stpwd_chkres" class="col-sm-2 glyphicon" style="font-size: 16px; margin-left: -20px;margin-top: 5px;"></label>
             </div>
             <div class="form-group required">
-                <label class="col-sm-3 control-label" for="password">再次输入密码</label>
+                <label class="col-sm-3 control-label" for="pwd_2nd">再次输入密码</label>
                 <div class="col-sm-7">
-                    <input type="password" name="smscode" value="" placeholder="" id="password"
-                           class="form-control">
+                    <input type="password" name="pwd_2nd" value="" placeholder="和上次输入一致" id="pwd_2nd"
+                           class="form-control" onkeyup="validate2ndpwd()">
                 </div>
+                <label id="2ndpwd_chkres" class="col-sm-2 glyphicon" style="font-size: 16px; margin-left: -20px;margin-top: 5px;"></label>
             </div>
             <div class="row">
                 <!--<button type="submit" class="btn btn-primary col-sm-7 col-sm-offset-3">同意并注册</button>-->
                 <div class="col-sm-7 col-sm-offset-3">
-                    <button type="submit" class="btn btn-primary col-sm-12">同意并注册</button>
+                    <input type="submit" class="btn btn-primary col-sm-12" id="registerbutton" value="同意并注册"/>
                 </div>
             </div>
             <div class="row">

@@ -40,7 +40,7 @@
 		<?php foreach ($types as $type) { ?>
 		<span class=filter_field id=filter_<?php echo $type['type_id']?> value=<?php echo $type['type_id'] ?> ><?php echo $type['type_name_cn']?></span>
 		<?php } ?>
-		<input type="hidden" id="filters" value="0"></input>
+		<input type="hidden" id="filters" value="0"/>
 	</div>
     <div class=sort_option>
 	 <span class="sort_field " id="sort_default" >默认排序</span>

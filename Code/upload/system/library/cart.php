@@ -21,13 +21,21 @@ class Cart {
 
                 $product_id = $product['product_id'];
                 #$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.product_id = '" . (int)$product_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.date_available <= NOW() AND p.status = '1'");
-                $product_query = $this->db->query("SELECT * FROM " . DB_PREFIX ."food f INNER JOIN ".DB_PREFIX."restaurant_info r ON f.restaurant_id=r.restaurant_id  WHERE food_id = ".$product_id);
+                $product_query = $this->db->query("SELECT f.food_id as food_id,
+                                                     f.price as price,
+                                                     f.name as food_name,
+                                                      r.name as rest_name,
+                                                      f.img_url as img_url,
+                                                      r.restaurant_id as restaurant_id,
+                                                      r.address as address,
+                                                       r.phone as phone FROM " . DB_PREFIX ."food f INNER JOIN ".DB_PREFIX."restaurant_info r ON f.restaurant_id=r.restaurant_id  WHERE food_id = ".$product_id);
                 if ($product_query->num_rows) {
                     $price = $product_query->row['price'];
                     $this->data[$key] = array(
                         'key'             => $key,
                         'product_id'      => $product_query->row['food_id'],
-                        'name'      => $product_query->row['name'],
+                        'food_name'      => $product_query->row['food_name'],
+                        'rest_name'      => $product_query->row['rest_name'],
                         'image' => $product_query->row['img_url'],
                         'price' => $product_query->row['price'],
                         'rest_id' => $product_query->row['restaurant_id'],
@@ -319,13 +327,14 @@ class Cart {
 		$this->data = array();
 
 		$product['product_id'] = (int)$product_id;
-
+        //$this->log->write('inside cart.add product id .'.$product_id.' qty: .'.$qty);
 		if ($recurring_id) {
 			$product['recurring_id'] = (int)$recurring_id;
 		}
 		$key = base64_encode(serialize($product));
 		if ((int)$qty && (int)$qty > 0) {
 			$this->session->data['cart'][$key] = (int)$qty;
+            //$this->log->write('session key: .'.$key.' qty: .'.$this->session->data['cart'][$key]);
 		} else {
 			$this->remove($key);
 		}

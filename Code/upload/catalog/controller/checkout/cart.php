@@ -273,7 +273,7 @@ class ControllerCheckoutCart extends Controller {
 
 	public function add() {
 		$this->load->language('checkout/cart');
-	
+	    $this->log->write('log for cart.add method. ');
 		$json = array();
 	
 		if (isset($this->request->post['product_id'])) {
@@ -281,7 +281,7 @@ class ControllerCheckoutCart extends Controller {
 		} else {
 			$product_id = 0;
 		}
-	
+        $this->log->write('product id. '.$product_id);
 		$this->load->model('sffood/food');
 	
 		$product_info = $this->model_sffood_food->getFood($product_id);
@@ -292,7 +292,7 @@ class ControllerCheckoutCart extends Controller {
 // 				$quantity = $product_info['minimum'] ? $product_info['minimum'] : 1;
 // 			}
 			$quantity = (int)$this->request->post['quantity'];
-
+            $this->log->write('quantity. '.$quantity);
 			if (!$json) {
 				$this->cart->add($this->request->post['product_id'], $quantity);
 				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('sffood/list', 'food_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));
