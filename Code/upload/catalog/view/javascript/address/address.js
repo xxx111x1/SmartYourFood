@@ -55,7 +55,7 @@
 	    }
 		var latitude = place.geometry.location.lat();
 		var longitude = place.geometry.location.lng(); 
-	    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude)+' >确定</a>' );
+	    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address)+' >确定</a>' );
 	    infowindow.open(map, marker);
 	  });
 	
@@ -72,10 +72,10 @@
 	  setupClickListener('changetype-geocode', ['geocode']);
 	}
 	
-	function getReturnUrl(lat,lng){
+	function getReturnUrl(lat,lng,address){
 		var returnUrl = document.getElementById("returnUrl").value;
 		if(returnUrl.indexOf("route") > 0){
-			return returnUrl +'&lat=' + lat + '&lng='+lng;
+			return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address);
 		} 
-		return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng;
+		return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address);
 	}	

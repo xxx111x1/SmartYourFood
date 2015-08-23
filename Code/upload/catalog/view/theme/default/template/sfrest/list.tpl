@@ -17,9 +17,9 @@
 <div class="main_body">
     <!--<div class="bill_board">billboard part</div>-->
     <div class="address_info">
-        <span class="address_info_label">送餐地址:</span>
+       <span class="address_info_label">送餐地址:</span>
         <span class="address_info_address"><?php echo $address;?></span>
-        <span class="address_info_chg">切换地址</span></div>
+        <a class="address_info_chg" href="index.php?route=address/address&returnUrl=index.php?route=sfrest/list">切换地址</a></div>
     <div class="section_header">
         <div class="type_tab selected_type_tab"><a href="/index.php?route=sffood/list" >外卖食品</a></div>
         <div class="type_tab"><a href="/index.php?route=sfrest/list" >外卖餐馆</a></div>
