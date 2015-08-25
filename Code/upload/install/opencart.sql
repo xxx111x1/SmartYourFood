@@ -1136,6 +1136,9 @@ CREATE TABLE IF NOT EXISTS `oc_customer` (
   `safe` tinyint(1) NOT NULL,
   `token` text NOT NULL,
   `date_added` datetime NOT NULL,
+  `lat` decimal(10,8) DEFAULT '0',
+  `lng` decimal(17,14) DEFAULT '0',
+  `address` varchar(200) DEFAULT '',
   PRIMARY KEY (`customer_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 

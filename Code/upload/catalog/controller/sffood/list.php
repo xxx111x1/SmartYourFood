@@ -10,15 +10,14 @@ class ControllerSffoodList extends Controller{
         	$this->session->data['lng'] = $this->request->get['lng'];
         	$this->session->data['address'] = $this->request->get['address'];
         	$data['address'] =$this->request->get['address'];
+        	if($this->customer->isLogged()){
+        		$this->load->model('account/customer');
+        		$this->model_account_customer->editAddress($this->session->data);
+        	}        	
         }
-        elseif(isset($this->session->data['address'])){
-        	$data['address'] =$this->session->data['address'];
-        }elseif($this->customer->isLogged())
+        elseif($this->customer->isLogged() || isset($this->session->data['address']))
         {
-        	$addressID = $this->customer->getAddressId();
-        	$this->load->model('account/address');
-        	$address = $this->model_account_address->getAddress($addressID);
-        	$data['address'] = $address['city'].",".$address['address_1'];
+        	$data['address'] =$this->session->data['address'];
         }
         else{
         	$data['address'] = "添加送餐地址";

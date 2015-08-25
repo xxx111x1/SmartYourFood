@@ -9,36 +9,34 @@ class ControllerCommonCart extends Controller {
 		$total_data = array();
 		$total = 0;
 		$taxes = $this->cart->getTaxes();
-
-		// Display prices
+		
+		//Display prices
 		if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
 			$sort_order = array();
-
+		
 			$results = $this->model_extension_extension->getExtensions('total');
-
+		
 			foreach ($results as $key => $value) {
 				$sort_order[$key] = $this->config->get($value['code'] . '_sort_order');
 			}
-
+		
 			array_multisort($sort_order, SORT_ASC, $results);
-
 			foreach ($results as $result) {
 				if ($this->config->get($result['code'] . '_status')) {
 					$this->load->model('total/' . $result['code']);
-
 					$this->{'model_total_' . $result['code']}->getTotal($total_data, $total, $taxes);
 				}
 			}
-
+		
 			$sort_order = array();
-
+		
 			foreach ($total_data as $key => $value) {
 				$sort_order[$key] = $value['sort_order'];
 			}
-
+		
 			array_multisort($sort_order, SORT_ASC, $total_data);
 		}
-
+		
 		$data['text_empty'] = $this->language->get('text_empty');
 		$data['text_cart'] = $this->language->get('text_cart');
 		$data['text_checkout'] = $this->language->get('text_checkout');
@@ -53,7 +51,7 @@ class ControllerCommonCart extends Controller {
 
 		$data['products'] = array();
 
-		foreach ($this->cart->getProducts() as $product) {
+		foreach ($this->cart->getFoods() as $product) {
 			if ($product['image']) {
 				$image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));
 			} else {

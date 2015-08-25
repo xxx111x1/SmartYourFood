@@ -116,11 +116,11 @@ class ControllerSfaccountLogin extends Controller{
         $this->event->trigger('pre.customer.login');
 
         // Check how many login attempts have been made.
-        $login_info = $this->model_account_customer->getLoginAttempts($this->request->post['phonenumber']);
+        //$login_info = $this->model_account_customer->getLoginAttempts($this->request->post['phonenumber']);
 
-        if ($login_info && ($login_info['total'] >= $this->config->get('config_login_attempts')) && strtotime('-1 hour') < strtotime($login_info['date_modified'])) {
-            $this->error['warning'] = $this->language->get('error_attempts');
-        }
+//         if ($login_info && ($login_info['total'] >= $this->config->get('config_login_attempts')) && strtotime('-1 hour') < strtotime($login_info['date_modified'])) {
+//             $this->error['warning'] = $this->language->get('error_attempts');
+//         }
 
         // Check if customer has been approved.
         $customer_info = $this->model_account_customer->getCustomerByPhone($this->request->post['phonenumber']);
@@ -133,7 +133,7 @@ class ControllerSfaccountLogin extends Controller{
             if (!$this->customer->loginbytelephone($this->request->post['phonenumber'], $this->request->post['password'])) {
                 $this->error['warning'] = $this->language->get('error_login');
 
-                $this->model_account_customer->addLoginAttempt($this->request->post['phonenumber']);
+                $this->model_account_customer->addLoginAttemptByPhone($this->request->post['phonenumber']);
             } else {
                 $this->model_account_customer->deleteLoginAttempts($this->request->post['phonenumber']);
             }

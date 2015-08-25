@@ -162,6 +162,14 @@ class ModelAccountCustomer extends Model {
 		$this->event->trigger('post.customer.edit.wishlist');
 	}	
 	
+	public function editAddress($address) {
+		$this->event->trigger('pre.customer.edit.address');
+	
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET lat = " . $address['lat'] . " , lng = ". $address['lng'] . " , address = '" . $address['address'] . "' WHERE customer_id = '" . (int)$this->customer->getId() . "'");
+	 
+		$this->event->trigger('post.customer.edit.address');
+	}
+	
 	public function getCustomer($customer_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$customer_id . "'");
 
@@ -215,6 +223,16 @@ class ModelAccountCustomer extends Model {
 			$this->db->query("UPDATE " . DB_PREFIX . "customer_login SET total = (total + 1), date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "' WHERE customer_login_id = '" . (int)$query->row['customer_login_id'] . "'");
 		}			
 	}	
+	
+	public function addLoginAttemptByPhone($phone_number) {
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE telephone = " . $this->db->escape($phone_number) . " AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
+	
+		if (!$query->num_rows) {
+			$this->db->query("INSERT INTO " . DB_PREFIX . "customer_login SET email = '" . $this->db->escape($phone_number) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', total = 1, date_added = '" . $this->db->escape(date('Y-m-d H:i:s')) . "', date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "'");
+		} else {
+			$this->db->query("UPDATE " . DB_PREFIX . "customer_login SET total = (total + 1), date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "' WHERE customer_login_id = '" . (int)$query->row['customer_login_id'] . "'");
+		}
+	}
 	
 	public function getLoginAttempts($email) {
 		$query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "customer_login` WHERE email = '" . $this->db->escape(utf8_strtolower($email)) . "'");

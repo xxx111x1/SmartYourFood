@@ -1,9 +1,6 @@
 <?php
 class ControllerSfrestDetail extends Controller{
     public function index(){
-        //$this->load->model('common/header');
-        //$data = $this->model_shop_list->getInfo();
-        //echo "ControllerShopList";
         $data = array();
         $restaurant_id = $this->request->get['restaurant_id'];
         $food_id = "-1";
@@ -25,18 +22,23 @@ class ControllerSfrestDetail extends Controller{
 			}
 		}
         $data['header'] = $this->load->controller('common/header');
-        if($this->customer->isLogged())
+    	if(isset($this->request->get['lat'])){
+        	$this->session->data['lat'] = $this->request->get['lat'];
+        	$this->session->data['lng'] = $this->request->get['lng'];
+        	$this->session->data['address'] = $this->request->get['address'];
+        	$data['address'] =$this->request->get['address'];
+        	if($this->customer->isLogged()){
+        		$this->load->model('account/customer');
+        		$this->model_account_customer->editAddress($this->session->data);
+        	}        	
+        }
+        elseif($this->customer->isLogged() || isset($this->session->data['address']))
         {
-            $addressID = $this->customer->getAddressId();
-            $this->load->model('account/address');
-            $address = $this->model_account_address->getAddress($addressID);
-            $data['address'] = $address['city'].",".$address['address_1'];
+        	$data['address'] =$this->session->data['address'];
         }
         else{
-            $data['address'] = "添加送餐地址";
+        	$data['address'] = "添加送餐地址";
         }
-        //$data['product_overview'] = $this->load->controller('product/overview');
         $this->response->setOutput($this->load->view('default/template/sfrest/detail.tpl', $data));
-        //$this->response->setOutput($data['category']);
     }
 }

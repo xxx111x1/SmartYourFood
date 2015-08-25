@@ -11,6 +11,11 @@ class Cart {
 
 		if (!isset($this->session->data['cart']) || !is_array($this->session->data['cart'])) {
 			$this->session->data['cart'] = array();
+// 			if(isset($this->cart)){
+// 				foreach ($this->session->data['cart'] as $key => $quantity){
+// 					$this->session->data['cart'][$key] = (int)$quantity;
+// 				}
+// 			}
 		}
 	}	
 	
