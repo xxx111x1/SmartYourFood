@@ -5,11 +5,11 @@ class ControllerCheckoutReward extends Controller {
 
 		$points_total = 0;
 
-		foreach ($this->cart->getProducts() as $product) {
-			if ($product['points']) {
-				$points_total += $product['points'];
-			}
-		}
+// 		foreach ($this->cart->getProducts() as $product) {
+// 			if ($product['points']) {
+// 				$points_total += $product['points'];
+// 			}
+// 		}
 
 		if ($points && $points_total && $this->config->get('reward_status')) {
 			$this->load->language('checkout/reward');
@@ -45,11 +45,11 @@ class ControllerCheckoutReward extends Controller {
 
 		$points_total = 0;
 
-		foreach ($this->cart->getProducts() as $product) {
-			if ($product['points']) {
-				$points_total += $product['points'];
-			}
-		}
+// 		foreach ($this->cart->getProducts() as $product) {
+// 			if ($product['points']) {
+// 				$points_total += $product['points'];
+// 			}
+// 		}
 
 		if (empty($this->request->post['reward'])) {
 			$json['error'] = $this->language->get('error_reward');

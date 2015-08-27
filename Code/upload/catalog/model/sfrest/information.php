@@ -18,7 +18,6 @@ class ModelSfRestInformation extends Model{
 			if(array_key_exists('atmosphere_score', $data)){ $query .= ", atmosphere_score = '" . $data['atmosphere_score'] . "'"; }
 			if(array_key_exists('service_score'   , $data)){ $query .= ", service_score    = '" . $data['service_score']    . "'"; }
 			if(array_key_exists('review_number'   , $data)){ $query .= ", review_number    = '" . $data['review_number']    . "'"; }
-			echo $query;
 		$this->db->query("" . $query);		
 		$this->event->trigger('post.restaurant.add', $data);
 	}

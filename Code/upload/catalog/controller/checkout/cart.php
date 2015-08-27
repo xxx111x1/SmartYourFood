@@ -67,9 +67,8 @@ class ControllerCheckoutCart extends Controller {
 
 			$data['products'] = array();
 
-			//$products = $this->cart->getProducts();
+			//$products = $this->cart->getFoods(); //$this->cart->getProducts();
 			$products = $this->cart->getFoods();
-
 			foreach ($products as $product) {
 				$product_total = 0;
 
@@ -150,12 +149,12 @@ class ControllerCheckoutCart extends Controller {
 					'key'       => $product['key'],
 					'thumb'     => $image,
 					'name'      => $product['name'],
-					'model'     => $product['model'],					'option'    => $option_data,
-					'recurring' => $recurring,
+// 					'model'     => $product['model'],					'option'    => $option_data,
+// 					'recurring' => $recurring,
 
 					'quantity'  => $product['quantity'],
-					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
-					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
+// 					'stock'     => $product['stock'] ? true : !(!$this->config->get('config_stock_checkout') || $this->config->get('config_stock_warning')),
+// 					'reward'    => ($product['reward'] ? sprintf($this->language->get('text_points'), $product['reward']) : ''),
 					'price'     => $price,
 					'total'     => $total,
 					'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
@@ -275,7 +274,6 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->language('checkout/cart');
 	    $this->log->write('log for cart.add method. ');
 		$json = array();
-	
 		if (isset($this->request->post['product_id'])) {
 			$product_id = (int)$this->request->post['product_id'];
 		} else {
@@ -503,7 +501,6 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->language('checkout/cart');
 
 		$json = array();
-
 		// Remove
 		if (isset($this->request->post['key'])) {
 			$this->cart->remove($this->request->post['key']);

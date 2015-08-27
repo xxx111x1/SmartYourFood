@@ -155,7 +155,7 @@ class ControllerPaymentAmazonLoginPay extends Controller {
 		$data['column_total'] = $this->language->get('column_total');
 		$data['text_confirm'] = $this->language->get('text_confirm');
 
-		$products = $this->cart->getProducts();
+		$products = $this->cart->getFoods(); //$this->cart->getProducts();
 
 		foreach ($products as $product) {
 			$product_total = 0;

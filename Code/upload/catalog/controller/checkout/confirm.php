@@ -35,7 +35,7 @@ class ControllerCheckoutConfirm extends Controller {
 		}
 
 		// Validate minimum quantity requirements.
-		$products = $this->cart->getProducts();
+		$products = $this->cart->getFoods(); //$this->cart->getProducts();
 
 		foreach ($products as $product) {
 			$product_total = 0;
@@ -196,33 +196,34 @@ class ControllerCheckoutConfirm extends Controller {
 
 			$order_data['products'] = array();
 
-			foreach ($this->cart->getProducts() as $product) {
-				$option_data = array();
+// 			foreach ($this->cart->getProducts() as $product) {
+			foreach ($this->cart->getFoods() as $product) {
+// 				$option_data = array();
 
-				foreach ($product['option'] as $option) {
-					$option_data[] = array(
-						'product_option_id'       => $option['product_option_id'],
-						'product_option_value_id' => $option['product_option_value_id'],
-						'option_id'               => $option['option_id'],
-						'option_value_id'         => $option['option_value_id'],
-						'name'                    => $option['name'],
-						'value'                   => $option['value'],
-						'type'                    => $option['type']
-					);
-				}
+// 				foreach ($product['option'] as $option) {
+// 					$option_data[] = array(
+// 						'product_option_id'       => $option['product_option_id'],
+// 						'product_option_value_id' => $option['product_option_value_id'],
+// 						'option_id'               => $option['option_id'],
+// 						'option_value_id'         => $option['option_value_id'],
+// 						'name'                    => $option['name'],
+// 						'value'                   => $option['value'],
+// 						'type'                    => $option['type']
+// 					);
+// 				}
 
 				$order_data['products'][] = array(
 					'product_id' => $product['product_id'],
-					'name'       => $product['name'],
-					'model'      => $product['model'],
-					'option'     => $option_data,
-					'download'   => $product['download'],
+// 					'name'       => $product['name'],
+// 					'model'      => $product['model'],
+// 					'option'     => $option_data,
+// 					'download'   => $product['download'],
 					'quantity'   => $product['quantity'],
-					'subtract'   => $product['subtract'],
+// 					'subtract'   => $product['subtract'],
 					'price'      => $product['price'],
 					'total'      => $product['total'],
 					'tax'        => $this->tax->getTax($product['price'], $product['tax_class_id']),
-					'reward'     => $product['reward']
+// 					'reward'     => $product['reward']
 				);
 			}
 
@@ -326,59 +327,60 @@ class ControllerCheckoutConfirm extends Controller {
 
 			$data['products'] = array();
 
-			foreach ($this->cart->getProducts() as $product) {
-				$option_data = array();
+// 			foreach ($this->cart->getProducts() as $product) {
+			foreach ($this->cart->getFoods() as $product) {
+// 				$option_data = array();
 
-				foreach ($product['option'] as $option) {
-					if ($option['type'] != 'file') {
-						$value = $option['value'];
-					} else {
-						$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
+// 				foreach ($product['option'] as $option) {
+// 					if ($option['type'] != 'file') {
+// 						$value = $option['value'];
+// 					} else {
+// 						$upload_info = $this->model_tool_upload->getUploadByCode($option['value']);
 
-						if ($upload_info) {
-							$value = $upload_info['name'];
-						} else {
-							$value = '';
-						}
-					}
+// 						if ($upload_info) {
+// 							$value = $upload_info['name'];
+// 						} else {
+// 							$value = '';
+// 						}
+// 					}
 
-					$option_data[] = array(
-						'name'  => $option['name'],
-						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
-					);
-				}
+// 					$option_data[] = array(
+// 						'name'  => $option['name'],
+// 						'value' => (utf8_strlen($value) > 20 ? utf8_substr($value, 0, 20) . '..' : $value)
+// 					);
+// 				}
 
-				$recurring = '';
+// 				$recurring = '';
 
-				if ($product['recurring']) {
-					$frequencies = array(
-						'day'        => $this->language->get('text_day'),
-						'week'       => $this->language->get('text_week'),
-						'semi_month' => $this->language->get('text_semi_month'),
-						'month'      => $this->language->get('text_month'),
-						'year'       => $this->language->get('text_year'),
-					);
+// 				if ($product['recurring']) {
+// 					$frequencies = array(
+// 						'day'        => $this->language->get('text_day'),
+// 						'week'       => $this->language->get('text_week'),
+// 						'semi_month' => $this->language->get('text_semi_month'),
+// 						'month'      => $this->language->get('text_month'),
+// 						'year'       => $this->language->get('text_year'),
+// 					);
 
-					if ($product['recurring']['trial']) {
-						$recurring = sprintf($this->language->get('text_trial_description'), $this->currency->format($this->tax->calculate($product['recurring']['trial_price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax'))), $product['recurring']['trial_cycle'], $frequencies[$product['recurring']['trial_frequency']], $product['recurring']['trial_duration']) . ' ';
-					}
+// 					if ($product['recurring']['trial']) {
+// 						$recurring = sprintf($this->language->get('text_trial_description'), $this->currency->format($this->tax->calculate($product['recurring']['trial_price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax'))), $product['recurring']['trial_cycle'], $frequencies[$product['recurring']['trial_frequency']], $product['recurring']['trial_duration']) . ' ';
+// 					}
 
-					if ($product['recurring']['duration']) {
-						$recurring .= sprintf($this->language->get('text_payment_description'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax'))), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
-					} else {
-						$recurring .= sprintf($this->language->get('text_payment_cancel'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax'))), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
-					}
-				}
+// 					if ($product['recurring']['duration']) {
+// 						$recurring .= sprintf($this->language->get('text_payment_description'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax'))), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
+// 					} else {
+// 						$recurring .= sprintf($this->language->get('text_payment_cancel'), $this->currency->format($this->tax->calculate($product['recurring']['price'] * $product['quantity'], $product['tax_class_id'], $this->config->get('config_tax'))), $product['recurring']['cycle'], $frequencies[$product['recurring']['frequency']], $product['recurring']['duration']);
+// 					}
+// 				}
 
 				$data['products'][] = array(
 					'key'        => $product['key'],
 					'product_id' => $product['product_id'],
 					'name'       => $product['name'],
-					'model'      => $product['model'],
-					'option'     => $option_data,
-					'recurring'  => $recurring,
+// 					'model'      => $product['model'],
+// 					'option'     => $option_data,
+// 					'recurring'  => $recurring,
 					'quantity'   => $product['quantity'],
-					'subtract'   => $product['subtract'],
+// 					'subtract'   => $product['subtract'],
 					'price'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax'))),
 					'total'      => $this->currency->format($this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity']),
 					'href'       => $this->url->link('product/product', 'product_id=' . $product['product_id']),

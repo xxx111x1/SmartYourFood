@@ -7,21 +7,21 @@ class ControllerCheckoutCheckout extends Controller {
 		}
 
 		// Validate minimum quantity requirements.
-		$products = $this->cart->getProducts();
+		$products = $this->cart->getFoods();
 
-		foreach ($products as $product) {
-			$product_total = 0;
+// 		foreach ($products as $product) {
+// 			$product_total = 0;
 
-			foreach ($products as $product_2) {
-				if ($product_2['product_id'] == $product['product_id']) {
-					$product_total += $product_2['quantity'];
-				}
-			}
+// 			foreach ($products as $product_2) {
+// 				if ($product_2['product_id'] == $product['product_id']) {
+// 					$product_total += $product_2['quantity'];
+// 				}
+// 			}
 
-			if ($product['minimum'] > $product_total) {
-				$this->response->redirect($this->url->link('checkout/cart'));
-			}
-		}
+// 			if ($product['minimum'] > $product_total) {
+// 				$this->response->redirect($this->url->link('checkout/cart'));
+// 			}
+// 		}
 
 		$this->load->language('checkout/checkout');
 
@@ -62,14 +62,13 @@ class ControllerCheckoutCheckout extends Controller {
 		$data['text_checkout_shipping_method'] = $this->language->get('text_checkout_shipping_method');
 		$data['text_checkout_payment_method'] = $this->language->get('text_checkout_payment_method');
 		$data['text_checkout_confirm'] = $this->language->get('text_checkout_confirm');
-
+		
 		if (isset($this->session->data['error'])) {
 			$data['error_warning'] = $this->session->data['error'];
 			unset($this->session->data['error']);
 		} else {
 			$data['error_warning'] = '';
 		}
-
 		$data['logged'] = $this->customer->isLogged();
 
 		if (isset($this->session->data['account'])) {
@@ -77,9 +76,7 @@ class ControllerCheckoutCheckout extends Controller {
 		} else {
 			$data['account'] = '';
 		}
-
 		$data['shipping_required'] = $this->cart->hasShipping();
-
 		$data['column_left'] = $this->load->controller('common/column_left');
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
@@ -88,8 +85,10 @@ class ControllerCheckoutCheckout extends Controller {
 		$data['header'] = $this->load->controller('common/header');
 
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/checkout/checkout.tpl')) {
+			
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/checkout/checkout.tpl', $data));
 		} else {
+			
 			$this->response->setOutput($this->load->view('default/template/checkout/checkout.tpl', $data));
 		}
 	}

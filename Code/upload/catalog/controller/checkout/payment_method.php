@@ -142,7 +142,7 @@ class ControllerCheckoutPaymentMethod extends Controller {
 		}
 
 		// Validate minimum quantity requirements.
-		$products = $this->cart->getProducts();
+		$products = $this->cart->getFoods(); //$this->cart->getProducts();
 
 		foreach ($products as $product) {
 			$product_total = 0;

@@ -50,7 +50,6 @@ class ControllerCommonCart extends Controller {
 		$this->load->model('tool/upload');
 
 		$data['products'] = array();
-
 		foreach ($this->cart->getFoods() as $product) {
 			if ($product['image']) {
 				$image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));

@@ -332,7 +332,6 @@ class Cart {
 		$this->data = array();
 
 		$product['product_id'] = (int)$product_id;
-        //$this->log->write('inside cart.add product id .'.$product_id.' qty: .'.$qty);
 		if ($recurring_id) {
 			$product['recurring_id'] = (int)$recurring_id;
 		}
@@ -367,13 +366,11 @@ class Cart {
 
 	public function remove($key) {
 		$this->data = array();
-
 		unset($this->session->data['cart'][$key]);
 	}
 
 	public function clear() {
 		$this->data = array();
-
 		$this->session->data['cart'] = array();
 	}
 
@@ -456,8 +453,8 @@ class Cart {
 	public function countProducts() {
 		$product_total = 0;
 
-		$products = $this->getProducts();
-
+		//$products = $this->getProducts();
+		$products = $this->getFoods();
 		foreach ($products as $product) {
 			$product_total += $product['quantity'];
 		}
@@ -476,11 +473,12 @@ class Cart {
 	public function hasStock() {
 		$stock = true;
 
-		foreach ($this->getProducts() as $product) {
-			if (!$product['stock']) {
-				$stock = false;
-			}
-		}
+		//foreach ($this->getProducts() as $product) {
+// 		foreach ($this->getFoods() as $product) {
+// 			if (!$product['stock']) {
+// 				$stock = false;
+// 			}
+// 		}
 
 		return $stock;
 	}

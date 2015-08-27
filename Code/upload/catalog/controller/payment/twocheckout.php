@@ -44,7 +44,7 @@ class ControllerPaymentTwoCheckout extends Controller {
 
 		$data['products'] = array();
 
-		$products = $this->cart->getProducts();
+		$products = $this->cart->getFoods(); //$this->cart->getProducts();
 
 		foreach ($products as $product) {
 			$data['products'][] = array(

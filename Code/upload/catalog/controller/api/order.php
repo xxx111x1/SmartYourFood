@@ -46,7 +46,7 @@ class ControllerApiOrder extends Controller {
 			}
 
 			// Validate minimum quantity requirements.
-			$products = $this->cart->getProducts();
+			$products = $this->cart->getFoods(); //$this->cart->getProducts();
 
 			foreach ($products as $product) {
 				$product_total = 0;
@@ -158,33 +158,34 @@ class ControllerApiOrder extends Controller {
 				// Products
 				$order_data['products'] = array();
 
-				foreach ($this->cart->getProducts() as $product) {
+				//foreach ($this->cart->getProducts() as $product) {
+				foreach ($this->cart->getFoods() as $product) {
 					$option_data = array();
 
-					foreach ($product['option'] as $option) {
-						$option_data[] = array(
-							'product_option_id'       => $option['product_option_id'],
-							'product_option_value_id' => $option['product_option_value_id'],
-							'option_id'               => $option['option_id'],
-							'option_value_id'         => $option['option_value_id'],
-							'name'                    => $option['name'],
-							'value'                   => $option['value'],
-							'type'                    => $option['type']
-						);
-					}
+// 					foreach ($product['option'] as $option) {
+// 						$option_data[] = array(
+// 							'product_option_id'       => $option['product_option_id'],
+// 							'product_option_value_id' => $option['product_option_value_id'],
+// 							'option_id'               => $option['option_id'],
+// 							'option_value_id'         => $option['option_value_id'],
+// 							'name'                    => $option['name'],
+// 							'value'                   => $option['value'],
+// 							'type'                    => $option['type']
+// 						);
+// 					}
 
 					$order_data['products'][] = array(
 						'product_id' => $product['product_id'],
 						'name'       => $product['name'],
-						'model'      => $product['model'],
-						'option'     => $option_data,
-						'download'   => $product['download'],
+// 						'model'      => $product['model'],
+// 						'option'     => $option_data,
+// 						'download'   => $product['download'],
 						'quantity'   => $product['quantity'],
-						'subtract'   => $product['subtract'],
+// 						'subtract'   => $product['subtract'],
 						'price'      => $product['price'],
 						'total'      => $product['total'],
 						'tax'        => $this->tax->getTax($product['price'], $product['tax_class_id']),
-						'reward'     => $product['reward']
+// 						'reward'     => $product['reward']
 					);
 				}
 
@@ -386,7 +387,7 @@ class ControllerApiOrder extends Controller {
 				}
 
 				// Validate minimum quantity requirements.
-				$products = $this->cart->getProducts();
+				$products = $this->cart->getFoods(); //$this->cart->getProducts();
 
 				foreach ($products as $product) {
 					$product_total = 0;
@@ -498,33 +499,34 @@ class ControllerApiOrder extends Controller {
 					// Products
 					$order_data['products'] = array();
 
-					foreach ($this->cart->getProducts() as $product) {
-						$option_data = array();
+					//foreach ($this->cart->getProducts() as $product) {
+					foreach ($this->cart->getFoods() as $product) {
+// 						$option_data = array();
 
-						foreach ($product['option'] as $option) {
-							$option_data[] = array(
-								'product_option_id'       => $option['product_option_id'],
-								'product_option_value_id' => $option['product_option_value_id'],
-								'option_id'               => $option['option_id'],
-								'option_value_id'         => $option['option_value_id'],
-								'name'                    => $option['name'],
-								'value'                   => $option['value'],
-								'type'                    => $option['type']
-							);
-						}
+// 						foreach ($product['option'] as $option) {
+// 							$option_data[] = array(
+// 								'product_option_id'       => $option['product_option_id'],
+// 								'product_option_value_id' => $option['product_option_value_id'],
+// 								'option_id'               => $option['option_id'],
+// 								'option_value_id'         => $option['option_value_id'],
+// 								'name'                    => $option['name'],
+// 								'value'                   => $option['value'],
+// 								'type'                    => $option['type']
+// 							);
+// 						}
 
 						$order_data['products'][] = array(
 							'product_id' => $product['product_id'],
 							'name'       => $product['name'],
-							'model'      => $product['model'],
-							'option'     => $option_data,
-							'download'   => $product['download'],
+// 							'model'      => $product['model'],
+// 							'option'     => $option_data,
+// 							'download'   => $product['download'],
 							'quantity'   => $product['quantity'],
-							'subtract'   => $product['subtract'],
+// 							'subtract'   => $product['subtract'],
 							'price'      => $product['price'],
 							'total'      => $product['total'],
 							'tax'        => $this->tax->getTax($product['price'], $product['tax_class_id']),
-							'reward'     => $product['reward']
+// 							'reward'     => $product['reward']
 						);
 					}
 
