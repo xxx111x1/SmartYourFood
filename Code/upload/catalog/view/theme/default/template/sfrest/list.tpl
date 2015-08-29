@@ -33,7 +33,7 @@
         </div>
     </div>
     </div>
-   
+
     <div class=sf_product_content>
   	<div class=sf_filter>
 		<span class=filter_head>餐馆分类：</span>
@@ -47,7 +47,7 @@
 	 <span class="sort_field glyphicon glyphicon-arrow-up" id="send_time" >配送时间</span>
 	 <span class="sort_field glyphicon glyphicon-arrow-down" id="sell_number" >销量</span> 
 	 <span class="sort_field glyphicon glyphicon-arrow-down" id="review_score" >评价</span>
-	 <input type="hidden" id="sort" value="sort_default"></input>
+	 <input type="hidden" id="sort" value="sort_default"/>
 	 </div>
 	 <input type=hidden id=page_number value=0 />
 	 <div class=product_area >
@@ -55,6 +55,7 @@
  	</div>
  	</div>
 </div>
+<div class="currentpage" id="sfrest"></div>
 <!--
 <div class="footer">
 -->

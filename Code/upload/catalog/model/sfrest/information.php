@@ -70,7 +70,14 @@ class ModelSfRestInformation extends Model{
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info where restaurant_type in (" . $filters .") limit " . $start . "," . $number);
 		return $query->rows;
 	}
-	
+
+    public function getRestaurantsByName($name) {
+        $sql = "SELECT * FROM " . DB_PREFIX."restaurant_info where name like '%".$name."%'";
+        $this->log->write($sql);
+        $query = $this->db->query($sql);
+        return $query->rows;
+    }
+
 	public function getTypes() {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_type ");
 		return $query->rows;

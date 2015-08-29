@@ -39,19 +39,20 @@
 		<?php foreach ($types as $type) { ?>
 		<span class=filter_field id=filter_<?php echo $type['type_id']?> value=<?php echo $type['type_id'] ?> ><?php echo $type['type_name_cn']?></span>
 		<?php } ?>
-		<input type="hidden" id="filters" value="0"></input>
+		<input type="hidden" id="filters" value="0"/>
 	</div>
     <div class=sort_option>
 	 <span class="sort_field " id="sort_default" >默认排序</span>
 	 <span class="sort_field glyphicon glyphicon-arrow-up" id="send_time" >配送时间</span>
 	 <span class="sort_field glyphicon glyphicon-arrow-down" id="sell_number" >销量</span> 
 	 <span class="sort_field glyphicon glyphicon-arrow-down" id="review_score" >评价</span>
-	 <input type="hidden" id="sort" value="sort_default"></input>
+	 <input type="hidden" id="sort" value="sort_default"/>
 	 </div>
 	 <input type=hidden id=page_number value=0 />
 	 <div class=product_area ></div>
  	</div>
 </div>
+<div class="currentpage" id="sfrest"></div>
 <!--
 <div class="footer">
 -->

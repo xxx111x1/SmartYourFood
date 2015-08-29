@@ -51,6 +51,13 @@ class ModelSffoodFood extends Model{
     	return $query->row;
     }
 
+    public function getFoodByName($foodName){
+        $sql = "SELECT * FROM ".DB_PREFIX."food where name like '%".$foodName."%'";
+        $this->log->write($sql);
+        $query = $this->db->query($sql);
+        return $query->rows;
+    }
+
     public function getFoodsByRestID($restaurant_id)
     { 
     	$sql = "SELECT *,0 as cart_number FROM " . DB_PREFIX . "food where restaurant_id = '" . $restaurant_id . "'";
