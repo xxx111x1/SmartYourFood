@@ -58,8 +58,10 @@ class ControllerSfaccountLogin extends Controller{
 
             // Restore customers cart
             if ($this->customer->getCart()) {
+            	//echo "in get cart";
                 foreach ($this->customer->getCart() as $key => $value) {
                     $this->cart->add($key, $value);
+                    $this->session->data['cart'][$key]= $value;
                 }
             }
 
@@ -104,7 +106,7 @@ class ControllerSfaccountLogin extends Controller{
             if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], $this->config->get('config_url')) !== false || strpos($this->request->post['redirect'], $this->config->get('config_ssl')) !== false)) {
                 $this->response->redirect(str_replace('&amp;', '&', $this->request->post['redirect']));
             } else {
-                $this->response->redirect($this->url->link('account/account', '', 'SSL'));
+                $this->response->redirect($this->url->link('sffood/list', '', 'SSL'));
             }
         }
 

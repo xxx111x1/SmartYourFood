@@ -166,7 +166,7 @@ class Customer {
 	}
 	
 	public function getCart() {
-		return $this->cart;
+        return $this->cart;	
 	}
 	
 	public function getWishlist() {

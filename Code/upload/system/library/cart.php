@@ -341,6 +341,7 @@ class Cart {
 			$this->session->data['cart'][$key] = (int)$qty;
             //$this->log->write('session key: .'.$key.' qty: .'.$this->session->data['cart'][$key]);
 		} else {
+			echo "in remove add";
 			$this->remove($key);
 		}
 // 		if ((int)$qty && ((int)$qty > 0)) {

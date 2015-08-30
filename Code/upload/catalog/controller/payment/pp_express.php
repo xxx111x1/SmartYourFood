@@ -1298,7 +1298,7 @@ class ControllerPaymentPPExpress extends Controller {
 			'METHOD'             => 'SetExpressCheckout',
 			'MAXAMT'             => $max_amount,
 			'RETURNURL'          => $this->url->link('payment/pp_express/checkoutReturn', '', 'SSL'),
-			'CANCELURL'          => $this->url->link('checkout/checkout', '', 'SSL'),
+			'CANCELURL'          => $this->url->link('sfcheckout/checkout', '', 'SSL'),
 			'REQCONFIRMSHIPPING' => 0,
 			'NOSHIPPING'         => $shipping,
 			'LOCALECODE'         => 'EN',
