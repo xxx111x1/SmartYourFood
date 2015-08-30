@@ -33,7 +33,7 @@ class Customer {
 				$this->address_id = $customer_query->row['address_id'];
 				$this->cart = unserialize($customer_query->row['cart']);
 				$this->wishlist = unserialize($customer_query->row['cart']);
-
+                //$this->address = $customer_query->row['address'];
 				$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
 				$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_ip WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
