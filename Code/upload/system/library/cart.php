@@ -304,7 +304,8 @@ class Cart {
 						'recurring'       => $recurring
 					);
 				} else {
-					$this->remove($key);
+					echo "in get products";
+					//$this->remove($key);
 				}
 			}
 		}
@@ -319,11 +320,11 @@ class Cart {
 	public function getRecurringProducts() {
 		$recurring_products = array();
 
-		foreach ($this->getProducts() as $key => $value) {
-			if ($value['recurring']) {
-				$recurring_products[$key] = $value;
-			}
-		}
+// 		foreach ($this->getFoods() as $key => $value) {
+// 			if ($value['recurring']) {
+// 				$recurring_products[$key] = $value;
+// 			}
+// 		}
 
 		return $recurring_products;
 	}
@@ -377,7 +378,7 @@ class Cart {
 	public function getWeight() {
 		$weight = 0;
 
-		foreach ($this->getProducts() as $product) {
+		foreach ($this->getFoods() as $product) { //foreach ($this->getProducts() as $product) {
 			if ($product['shipping']) {
 				$weight += $this->weight->convert($product['weight'], $product['weight_class_id'], $this->config->get('config_weight_class_id'));
 			}
@@ -399,7 +400,7 @@ class Cart {
 	public function getSubTotal() {
 		$total = 0;
 
-		foreach ($this->getProducts() as $product) {
+		foreach ($this->getFoods() as $product) { //foreach ($this->getProducts() as $product) {
 			$total += $product['total'];
 		}
 
@@ -431,8 +432,9 @@ class Cart {
 	public function getTotal() {
 		$total = 0;
 
-		foreach ($this->getProducts() as $product) {
-			$total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+		foreach ($this->getFoods() as $product) { //foreach ($this->getProducts() as $product) {
+			//$total += $this->tax->calculate($product['price'], $product['tax_class_id'], $this->config->get('config_tax')) * $product['quantity'];
+			$total += $product['price'];
 		}
 
 		return $total;
@@ -473,7 +475,7 @@ class Cart {
 	public function hasStock() {
 		$stock = true;
 
-		//foreach ($this->getProducts() as $product) {
+		//foreach ($this->getFoods() as $product) { //foreach ($this->getProducts() as $product) {
 // 		foreach ($this->getFoods() as $product) {
 // 			if (!$product['stock']) {
 // 				$stock = false;
@@ -486,7 +488,7 @@ class Cart {
 	public function hasShipping() {
 		$shipping = false;
 
-// 		foreach ($this->getProducts() as $product) {
+// 		foreach ($this->getFoods() as $product) { //foreach ($this->getProducts() as $product) {
 // 			if ($product['shipping']) {
 // 				$shipping = true;
 
@@ -500,7 +502,7 @@ class Cart {
 	public function hasDownload() {
 		$download = false;
 
-		foreach ($this->getProducts() as $product) {
+		foreach ($this->getFoods() as $product) { //foreach ($this->getProducts() as $product) {
 			if ($product['download']) {
 				$download = true;
 

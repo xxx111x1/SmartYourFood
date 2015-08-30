@@ -1275,6 +1275,7 @@ class ControllerPaymentPPExpress extends Controller {
 		$order_info = $this->model_checkout_order->getOrder($this->session->data['order_id']);
 
 		$max_amount = $this->cart->getTotal() * 1.5;
+		
 		$max_amount = $this->currency->format($max_amount, $this->currency->getCode(), '', false);
 
 		if ($this->cart->hasShipping()) {

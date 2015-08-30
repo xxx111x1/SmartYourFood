@@ -144,21 +144,21 @@ class ControllerCheckoutPaymentMethod extends Controller {
 		// Validate minimum quantity requirements.
 		$products = $this->cart->getFoods(); //$this->cart->getProducts();
 
-		foreach ($products as $product) {
-			$product_total = 0;
+// 		foreach ($products as $product) {
+// 			$product_total = 0;
 
-			foreach ($products as $product_2) {
-				if ($product_2['product_id'] == $product['product_id']) {
-					$product_total += $product_2['quantity'];
-				}
-			}
+// 			foreach ($products as $product_2) {
+// 				if ($product_2['product_id'] == $product['product_id']) {
+// 					$product_total += $product_2['quantity'];
+// 				}
+// 			}
 
-			if ($product['minimum'] > $product_total) {
-				$json['redirect'] = $this->url->link('checkout/cart');
+// 			if ($product['minimum'] > $product_total) {
+// 				$json['redirect'] = $this->url->link('checkout/cart');
 
-				break;
-			}
-		}
+// 				break;
+// 			}
+// 		}
 
 		if (!isset($this->request->post['payment_method'])) {
 			$json['error']['warning'] = $this->language->get('error_payment');
