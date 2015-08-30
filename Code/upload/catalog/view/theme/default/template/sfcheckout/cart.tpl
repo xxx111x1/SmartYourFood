@@ -98,7 +98,9 @@
                 -->
                 <div class="row">
                     <div class="col-md-5" style="margin-left: -60px;margin-top: 15px">
-                        <button class="btn btn-primary" type="submit" style="width: 156px;height: 88px;font-size: 32px;">结算</button>
+                        <a href="/index.php?route=sfcheckout/confirm">
+                            <div class="btn btn-primary" type="submit" style="width: 156px;height: 88px;font-size: 32px;">结算</div>
+                        </a>
                     </div>
                     <div class="col-md-6" style="margin-left: 0px">
                         <div class="row">
