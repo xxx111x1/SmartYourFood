@@ -59,14 +59,14 @@ class ControllerCommonHeader extends Controller {
 		$data['wishlist'] = $this->url->link('account/wishlist', '', 'SSL');
 		$data['logged'] = $this->customer->isLogged();
 		$data['account'] = $this->url->link('account/account', '', 'SSL');
-		$data['register'] = $this->url->link('account/register', '', 'SSL');
-		$data['login'] = $this->url->link('account/login', '', 'SSL');
+		$data['register'] = $this->url->link('sfaccount/register', '', 'SSL');
+		$data['login'] = $this->url->link('sfaccount/login', '', 'SSL');
 		$data['order'] = $this->url->link('account/order', '', 'SSL');
 		$data['transaction'] = $this->url->link('account/transaction', '', 'SSL');
 		$data['download'] = $this->url->link('account/download', '', 'SSL');
 		$data['logout'] = $this->url->link('account/logout', '', 'SSL');
-		$data['shopping_cart'] = $this->url->link('checkout/cart');
-		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
+		$data['shopping_cart'] = $this->url->link('sfcheckout/checkout');
+		$data['checkout'] = $this->url->link('sfcheckout/checkout', '', 'SSL');
 		$data['contact'] = $this->url->link('information/contact');
 		$data['telephone'] = $this->config->get('config_telephone');
 

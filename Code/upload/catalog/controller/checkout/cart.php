@@ -339,6 +339,17 @@ class ControllerCheckoutCart extends Controller {
 				}
 
 				//$total = $quantity*$product_info['price'];
+
+                $sf_tax = $total*0.12;
+                $sf_tips = $total*0.1;
+                $sf_deliverfee= 5;
+                $json['before_tax_total'] = $this->currency->format($total);
+                $json['tax'] = $this->currency->format($sf_tax);
+                $json['tips'] = $this->currency->format($sf_tips);
+                $json['deliverfee'] = $this->currency->format($sf_deliverfee);
+                $sf_total=$total+$sf_tips+$sf_deliverfee+$sf_tax;
+                $json['total_cost'] = $this->currency->format($sf_total);
+
 				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countFoodProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
 			} else {
 				$json['redirect'] = str_replace('&amp;', '&', $this->url->link('sffood/list', 'food_id=' . $this->request->post['product_id']));

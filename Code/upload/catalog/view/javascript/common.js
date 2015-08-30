@@ -63,7 +63,11 @@ $(document).ready(function() {
 
 	/* Search */
 	$('#search input[name=\'search\']').parent().find('button').on('click', function() {
-        var vertical = $('.currentpage').attr('id');
+        var vertical='sffood';
+        if($('.currentpage').length)
+        {
+            vertical = $('.currentpage').attr('id');
+        }
 		url = $('base').attr('href') + 'index.php?route='+vertical+'/search';
 
 		var value = $('header input[name=\'search\']').val();
@@ -145,6 +149,7 @@ var cart = {
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
+                console.error('before send');
 				$('#cart > button').button('loading');
 			},
 			complete: function() {
@@ -159,12 +164,11 @@ var cart = {
 
 				if (json['success']) {
 					$('#content').parent().before('<div class="alert alert-success"><i class="fa fa-check-circle"></i> ' + json['success'] + '<button type="button" class="close" data-dismiss="alert">&times;</button></div>');
-					
 					// Need to set timeout otherwise it wont update the total
 					setTimeout(function () {
 						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 					}, 100);
-				
+                    update_cost_info(json);
 					$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
@@ -214,6 +218,7 @@ var cart = {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
 					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                    console.error('cart updated successfully');
 				}, 100);
 					
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -224,7 +229,45 @@ var cart = {
 				
 			}
 		});
-	}
+	},
+    'gettotalcost':function(){
+        $.ajax({
+            url: 'index.php?route=checkout/cart/edit',
+            type: 'post',
+            data: 'key=' + key + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
+            dataType: 'json',
+            beforeSend: function() {
+                $('#cart > button').button('loading');
+            },
+            complete: function() {
+                $('#cart > button').button('reset');
+            },
+            success: function(json) {
+                // Need to set timeout otherwise it wont update the total
+                setTimeout(function () {
+                    $('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
+                }, 100);
+
+                if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
+                    location = 'index.php?route=checkout/cart';
+                } else {
+                    $('#cart > ul').load('index.php?route=common/cart/info ul li');
+                }
+            }
+        });
+    }
+}
+
+function update_cost_info(json){
+    if($('#cost_summary').length)
+    {
+        $('#totalcost').text(json['total_cost']);
+        $('#totalcost').text(json['total_cost']);
+        $('#beforetax').text(json['before_tax_total']);
+        $('#deliverfee').text(json['deliverfee']);
+        $('#taxcost').text(json['tax']);
+        $('#tipscost').text(json['tips']);
+    }
 }
 
 var voucher = {
