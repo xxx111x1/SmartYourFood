@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 	<script src="catalog/view/javascript/list-item/cart.js" type="text/javascript"></script>
+	<script src="catalog/view/javascript/starts.js" type="text/javascript"></script>
 </head>
 <body>
 <!--
@@ -19,7 +20,7 @@
     <div class="address_info">
         <span class="address_info_label">送餐地址:</span>
         <span class="address_info_address"><?php echo $address;?></span>
-        <span class="address_info_chg">切换地址</span></div>
+        <a class="address_info_chg" href="index.php?route=address/address&returnUrl=index.php?route=sffood/list">切换地址</a></div>
     </div>
    
     <div class=sf_product_content>
@@ -42,12 +43,12 @@
 				<div class=sf_product id="<?php echo $food['food_id'];?>" title="<?php echo $food['name'];?>" >
 					<img class=sf_product_preview src="<?php echo $food['img_url'];?>" />
 					<div class=sf_product_title ><?php echo $food['name'];?></div>
-					<img class=sf_product_stars src="img/stars_2.png">
-					<div class=sf_product_sv>本月销量-份</div>
+					<span class="sf_product_stars stars" rate="<?php echo $food['review_score']; ?>" ></span>
 					<div class=sf_product_price>
 						<span style="MARGIN-RIGHT: 10px">价格:<?php echo $food['price'];?></span>
 						<span>配送: </span>
-						<span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> 
+						<span >分钟</span>
+						<span class=sf_product_sv >销量<?php $food['sell_number']; ?>份</span> 
 					</div>
 					<div class="sf_food_cart">
 						<div class="minus_food" value="<?php echo $food['food_id'];?>" >-</div>

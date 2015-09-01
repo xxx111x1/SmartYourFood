@@ -21,8 +21,8 @@
         <span class="address_info_address"><?php echo $address;?></span>
         <a class="address_info_chg" href="index.php?route=address/address&returnUrl=index.php?route=sfrest/list">切换地址</a></div>
     <div class="section_header">
-        <div class="type_tab selected_type_tab"><a href="/index.php?route=sffood/list" >外卖食品</a></div>
-        <div class="type_tab"><a href="/index.php?route=sfrest/list" >外卖餐馆</a></div>
+        <div class="type_tab"><a href="/index.php?route=sffood/list" >外卖食品</a></div>
+        <div class="type_tab selected_type_tab"><a href="/index.php?route=sfrest/list" >外卖餐馆</a></div>
         <div class="search_area">
         <div class="search_box">
             <input type="search">
