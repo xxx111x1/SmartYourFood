@@ -7,7 +7,7 @@ class ControllerApiFood extends Controller {
 		$page_content_number = 12;
 		$start_position = $page_number * $page_content_number;
 		$this->load->model('sffood/food');
-		$foods = $this->model_sffood_food->getFoods($filters,$sort,$start_position,$page_content_number);	
+		$foods = $this->model_sffood_food->getFoodsWithRestaurantInfo($filters,$sort,$start_position,$page_content_number);	
 		$cart_foods = $this->cart->getFoods();
 		if(count($cart_foods)){
 			foreach ($foods as $key => $food) {

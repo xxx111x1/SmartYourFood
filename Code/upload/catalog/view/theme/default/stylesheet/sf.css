@@ -249,6 +249,26 @@
     float: left;
     background-color: #ffffff;
 }
+
+.image_container {
+   height: 200px;
+   width: 267px;
+   position: relative;
+}
+.tag {
+   float: left;
+   position: absolute;
+   left: 0px;
+   top: 0px;
+   z-index: 1000;
+   background-color: blue;
+   padding: 5px;
+   color: #FFFFFF;
+   font-weight: bold;
+   opacity:0.3;
+   filter:alpha(opacity=30);
+}
+
 .sf_product_preview{
     height: 200px;
     width: 267px;
@@ -264,27 +284,24 @@
     color:#535353;
     clear: both;
     float:left;
+    width:175px;
 }
 .sf_product_stars{
     height: 15px;
     float: left;
     margin-top:7px;
-    margin-left:7px;
 }
 
 .sf_product_sv{
-    float: right;
-    font-size: 12px;
-    color:red;
-    margin-right:0px;
-    margin-top:5px;
+    font-size: 11px;
+    margin-right:5px;
+    float:right;
 }
 
 .sf_product_price{
     clear: both;
     font-size: 11px;
     color:#535353;
-    margin-right:30px;
 }
 
 .sf_food_cart{
@@ -319,3 +336,14 @@
 	text-align:center;
 }
 
+
+span.stars, span.stars span {
+    display: block;
+    background: url(../image/stars.png) 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}

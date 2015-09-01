@@ -23,7 +23,6 @@
     <div class="section_header">
         <div class="type_tab selected_type_tab"><a href="/index.php?route=sffood/list" >外卖食品</a></div>
         <div class="type_tab"><a href="/index.php?route=sfrest/list" >外卖餐馆</a></div>
-        <div class="type_tab">浏览历史</div>
         <div class="search_area">
         <div class="search_box">
             <input type="search">

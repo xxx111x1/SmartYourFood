@@ -5,6 +5,13 @@ $(document).ready(function () {
 		type = 'food';
 	}
 	
+	$.fn.stars = function() {
+		return $(this).each(function() {
+			//alert(parseFloat($(this).html()));
+	        $(this).html($('<span />').width(Math.max(0, (Math.min(5, parseFloat($(this).attr('rate'))))) * 16));
+		});
+	}
+	
 	$('#filter_0').addClass('filter_field_selected');
 	$('#sort_default').addClass('sort_field_selected');
 	
@@ -113,16 +120,22 @@ $(document).ready(function () {
 				$.each(data, function(i, v) {	
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;
+					var review_score = v.review_score;
+					var name = v.name;
 					var restId = id;
+					var tag= "";
 					if(type=='food'){
 						id = v.food_id;
 						cost = v.price;
+						review_score = v.rest_review;
 						restId = v.restaurant_id;
+						name = v.rest_name
+						tag = '<div class="tag">'+v.review_score+'</div>';
 					}
 								      
-					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><img class=sf_product_preview restId='+restId+' foodId='+id+' src='+v.img_url +' />'
-					+'<div class=sf_product_title >'+v.name+'</div><img class=sf_product_stars src="img/stars_2.png"> <div class=sf_product_sv>本月销量-份</div>'+
-					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span class="glyphicon glyphicon-time" style="FLOAT: right">分钟</span> </div>';
+					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><div class="image_container">' + tag + '<img class=sf_product_preview restId='+restId+' foodId='+id+' src='+v.img_url +' /></div>'
+					+'<div class=sf_product_title >'+name+'</div><span class="sf_product_stars stars" rate="'+review_score+'" ></span>'+
+					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span >分钟</span><span class=sf_product_sv>本月销量'+v.sell_number+'份</span> </div>';
 					
 					if (type=='food'){
 						ele = ele +'<div class="sf_food_cart">	<div class="minus_food" value="'+id+'" >-</div><input class="food_number" id="food_'+id+'_number" value="'+v.cart_number+'" />'
@@ -131,6 +144,7 @@ $(document).ready(function () {
 					ele = ele + '</div>';
 					$('.product_area').append(ele);
 				});					
+				$('span.stars').stars();
 			}
 		});		
 	}
