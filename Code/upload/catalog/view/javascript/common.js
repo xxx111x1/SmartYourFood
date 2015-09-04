@@ -169,9 +169,10 @@ var cart = {
 						$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 					}, 100);
                     update_cost_info(json);
-					$('html, body').animate({ scrollTop: 0 }, 'slow');
+					//$('html, body').animate({ scrollTop: 0 }, 'slow');
 
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('#cart_preview').load('index.php?route=common/cartthumbnail/info');
 				}
 			}
 		});
@@ -202,7 +203,7 @@ var cart = {
 			}
 		});
 	},
-	'remove': function(key) {
+	'remove': function(key,productId) {
 		$.ajax({
 			url: 'index.php?route=checkout/cart/remove',
 			type: 'post',
@@ -225,6 +226,10 @@ var cart = {
 					location = 'index.php?route=checkout/cart';
 				} else {
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
+					$('#cart_preview').load('index.php?route=common/cartthumbnail/info');
+					if($('#' + 'food_'+productId+'_number').length > 0) {
+						$('#' + 'food_'+productId+'_number').val('0');
+					}
 				}
 				
 			}

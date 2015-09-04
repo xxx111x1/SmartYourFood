@@ -99,6 +99,17 @@ CREATE TABLE IF NOT EXISTS `oc_food_type` (
 ) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE IF NOT EXISTS `oc_feedback` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `email` varchar(100) DEFAULT NULL,
+  `phone` int(16) DEFAULT NULL,
+  `message` text,
+  `date_added` datetime DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+
+
 -- --------------------------------------------------------
 
 --

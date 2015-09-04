@@ -61,6 +61,9 @@
  		</div>
  	</div>
 </div>
+
+<?php echo $backtop; ?>
+
 <!--
 <div class="footer">
 -->

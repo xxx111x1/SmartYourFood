@@ -99,13 +99,14 @@ class ControllerCommonCart extends Controller {
 				'key'       => $product['key'],
 				'thumb'     => $image,
 				'name'      => $product['food_name'],
+				'product_id'    => $product['product_id'],
 				//'model'     => $product['model'],
 				//'option'    => $option_data,
 				//'recurring' => ($product['recurring'] ? $product['recurring']['name'] : ''),
 				'quantity'  => $product['quantity'],
 				'price'     => $price,
 				'total'     => $total,
-				'href'      => $this->url->link('product/product', 'product_id=' . $product['product_id'])
+				'href'      => $this->url->link('sfrest/detail', 'restaurant_id=' . $product['rest_id']. '&food_id='.$product['product_id'])
 			);
 		}
 

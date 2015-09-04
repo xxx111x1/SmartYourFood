@@ -5,6 +5,7 @@ class ControllerSffoodList extends Controller{
         $this->load->model('sffood/food');
 		$data['types'] = $this->model_sffood_food->getTypes();
         $data['header'] = $this->load->controller('common/header');
+        $data['backtop'] = $this->load->controller('common/backtop');
         if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];

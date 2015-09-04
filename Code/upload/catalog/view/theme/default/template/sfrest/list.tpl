@@ -54,7 +54,8 @@
  	</div>
  	</div>
 </div>
-<div class="currentpage" id="sfrest"></div>
+
+<?php echo $backtop; ?>
 <!--
 <div class="footer">
 -->

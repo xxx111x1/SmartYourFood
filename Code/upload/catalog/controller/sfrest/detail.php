@@ -11,6 +11,7 @@ class ControllerSfrestDetail extends Controller{
 		$data['restaurant'] = $this->model_sfrest_information->getRestaurant($restaurant_id);
 		$this->load->model('sffood/food');
 		$data['foods'] = $this->model_sffood_food->getFoodsByRestID($restaurant_id);
+		$data['backtop'] = $this->load->controller('common/backtop');
 		$cart_foods = $this->cart->getFoods();
 		if(count($cart_foods)){
 			foreach ($data['foods'] as $key => $food) {
