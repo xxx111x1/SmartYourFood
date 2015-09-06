@@ -1,10 +1,10 @@
 <?php
 class ModelCatalogMessage extends Model {
 	public function getMessage() {		
-		$customer_id = $this->customer->getId();
-		if(!$customer_id)
+		$customer_id = 0;
+		if($this->customer->getId())
 		{
-			$customer_id = 0;
+			$customer_id = $this->customer->getId();
 		}	
 		$this->event->trigger('pre.message.get', $customer_id);
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "message where customer_id = '". $customer_id ."' and is_read = 0 ");

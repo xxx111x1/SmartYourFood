@@ -4,12 +4,6 @@
 	<?php echo $cartthumbnail ; ?>
 </div>
 <div id="message" class="unvisible" >
-	<?php foreach ($my_message as $message) { ?>
-      <div class="message_content">
-      	<input type="hidden" class="message_id" value="<?php echo $message['message_id']; ?>" />
-      	<div class="content"> <?php echo $message['content']; ?> </div>
-      </div>
-    <?php } ?>
 </div>
 <div class="backtop_section" id="backtop_section" >	
 	<div id="cart_thumbnail"></div>

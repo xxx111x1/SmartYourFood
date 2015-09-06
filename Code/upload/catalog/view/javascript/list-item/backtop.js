@@ -18,8 +18,11 @@ $(document).ready(function () {
 	});
 	
 	$('#my_message').click(function(){
-		$('#message').toggleClass('unvisible');
-		if(!$('#message').hasClass('unvisible')) readMessage();
+		$('#message').empty();
+		$('#message').toggleClass('unvisible');		
+		if(!$('#message').hasClass('unvisible')) {			
+			getMessage();
+		}
 	});
 	
 	
@@ -35,7 +38,17 @@ $(document).ready(function () {
 		$.ajax({
 			url: 'index.php?route=api/message/get',
 			type: 'post',
-			dataType: 'json',		
+			dataType: 'json',	
+			success: function(data) {
+				$.each(data['my_message'], function(i, v) {	
+					var id = v.message_id;
+					var content = v.content;
+					var ele = '<div class="message_content"><input type="hidden" class="message_id" value="'+id+'" />'
+					+'<div class="content">'+content+'</div> </div>';					
+					$('#message').append(ele);
+				});		
+				readMessage();
+			}
 		});		
 	}
 	
@@ -43,8 +56,7 @@ $(document).ready(function () {
 		var messageIds = [];
 		$(".message_id").each(function() {
 		    messageIds.push($(this).val());
-		});;
-		//alert(messageIds);
+		});
 		$.ajax({
 			url: 'index.php?route=api/message/read',
 			type: 'post',
