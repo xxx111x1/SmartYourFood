@@ -354,10 +354,11 @@ span.stars span {
     bottom: 40px;
     right: 235px;
     width: 70px;
-    height: 195px;
+    height: 260px;
+    vertical-align: bottom;
 }
 
-#cart_thumbnail, #feedback, #back_top {
+#cart_thumbnail, #feedback, #back_top, #my_message {
 	width:65px;
 	height:60px;
 	margin-top:5px;
@@ -389,10 +390,27 @@ span.stars span {
 	background-position:-75px -140px;
 }
 
+#my_message {
+	background:url(../image/back_action.png) no-repeat;
+	background-position:0 -210px;
+}
+#my_message:hover {
+	background-position:-75px -210px;
+}
+
 .cart_dropdown, .cart_dropdown li{
 	float:left;
 	position: fixed;
 	bottom: 40px;
+	right: 25px;
+	background-color:#eee;
+	width: 200px;
+}
+
+#message{
+	float:left;
+	position: fixed;
+	top: 120px;
 	right: 25px;
 	background-color:#eee;
 	width: 200px;

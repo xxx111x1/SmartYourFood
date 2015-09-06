@@ -109,6 +109,15 @@ CREATE TABLE IF NOT EXISTS `oc_feedback` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 
+CREATE TABLE IF NOT EXISTS `oc_message` (
+  `message_id` int(11) NOT NULL,
+  `content` nvarchar(1000) DEFAULT NULL,
+  `customer_id` varchar(11) DEFAULT NULL,
+  `is_read` int(1) DEFAULT '0',
+  `added_date` datetime DEFAULT NULL,
+  PRIMARY KEY (`message_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 
 -- --------------------------------------------------------
 

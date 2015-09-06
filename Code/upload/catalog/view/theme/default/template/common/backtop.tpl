@@ -3,10 +3,20 @@
 <div id="cart_preview" class="unvisible" >
 	<?php echo $cartthumbnail ; ?>
 </div>
-<div class="backtop_section" id="backtop_section" >
+<div id="message" class="unvisible" >
+	<?php foreach ($my_message as $message) { ?>
+      <div class="message_content">
+      	<input type="hidden" class="message_id" value="<?php echo $message['message_id']; ?>" />
+      	<div class="content"> <?php echo $message['content']; ?> </div>
+      </div>
+    <?php } ?>
+</div>
+<div class="backtop_section" id="backtop_section" >	
 	<div id="cart_thumbnail"></div>
+	<div id="my_message"></div>
 	<div id="feedback"></div>
 	<div id="back_top"></div>
+		
 </div>
 
 <div class="mod-dialog-frame unvisible" style="overflow: auto; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 1000; background-color: rgba(0, 0, 0, 0.54902);">
