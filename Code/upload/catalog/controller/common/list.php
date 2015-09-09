@@ -1,12 +1,12 @@
 <?php
-class ControllerSffoodList extends Controller{
+class ControllerCommonList extends Controller{
     public function index(){
-        $data = array();
-        $this->load->model('sffood/food');
-		$data['types'] = $this->model_sffood_food->getTypes();
+    	$data = array();      
+        $this->load->model('sfrest/information');
+		$data['types'] = $this->model_sfrest_information->getTypes();
         $data['header'] = $this->load->controller('common/header');
         $data['backtop'] = $this->load->controller('common/backtop');
-        if(isset($this->request->get['lat'])){
+    	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];
         	$this->session->data['address'] = $this->request->get['address'];

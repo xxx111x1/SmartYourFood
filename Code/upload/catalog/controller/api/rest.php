@@ -17,4 +17,17 @@ class ControllerApiRest extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($restaurants));
 	}
+	
+	public function getType() {
+		$this->load->model('sfrest/information');
+		$types = $this->model_sfrest_information->getTypes();
+		if ($types) {
+			$json['success'] = $this->language->get('text_success');
+			$json['types'] = $types;
+		} else {
+			$json['error'] = $this->language->get('error');
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }

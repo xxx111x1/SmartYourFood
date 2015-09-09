@@ -1,9 +1,40 @@
 $(document).ready(function () {
 	
-	var type='rest';	
-	if(window.location.search.indexOf('food') >= 0){
-		type = 'food';
-	}
+	var type='food';	
+//	if(window.location.search.indexOf('restaurant') >= 0){
+//		$('#restaurant_tab').addClass('selected_type_tab');
+//		$('#food_tab').removeClass('selected_type_tab');
+//	}
+//	else{		
+//		type = 'food';
+//		$('#food_tab').addClass('selected_type_tab');
+//		$('#restaurant_tab').removeClass('selected_type_tab');
+//	}
+	var isRefreshType = true;
+	$('#food_tab').click(function() {
+		if(!$('#food_tab').hasClass('selected_type_tab')){
+			type = 'food';
+			isRefreshType = true;
+			$('#food_tab').addClass('selected_type_tab');
+			$('#restaurant_tab').removeClass('selected_type_tab');
+			$('.filter_field').remove();
+			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+			isRefreshType = false;
+		}		
+	});
+	
+	$('#restaurant_tab').click(function() {
+		if(!$('#restaurant_tab').hasClass('selected_type_tab')){
+			type='rest';
+			isRefreshType = true;
+			$('#restaurant_tab').addClass('selected_type_tab');
+			$('#food_tab').removeClass('selected_type_tab');
+			$('.filter_field').remove();
+			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+			isRefreshType = false;
+		}		
+	});
+	
 	
 	$.fn.stars = function() {
 		return $(this).each(function() {
@@ -14,9 +45,10 @@ $(document).ready(function () {
 	$('#filter_0').addClass('filter_field_selected');
 	$('#sort_default').addClass('sort_field_selected');
 	
-	addContents('0',getSortString('sort_default'),0,1);
+	addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+	isRefreshType = false;
 	
-	$('.filter_field').click(function() {
+	$(document).on('click', '.filter_field', function(){
 		$(this).toggleClass('filter_field_selected');
 		var tagId = $(this).attr('value');
 		var filters = $('#filters').attr('value');
@@ -46,7 +78,7 @@ $(document).ready(function () {
 		
 		var sortId = $('#sort').attr('value');
 		var sort = getSortString(sortId);				
-		addContents(filters,sort,0,1);
+		addContents(filters,sort,0,1,isRefreshType);
 	});
 	
 	$('.sort_field').click(function(){
@@ -56,7 +88,7 @@ $(document).ready(function () {
 		var sortId = $(this).attr('id');
 		$('#sort').val(sortId);
 		var sort = getSortString(sortId);				
-		addContents(filters,sort,0,1);
+		addContents(filters,sort,0,1,isRefreshType);
 	});
 	
 	$(document).on('click', '.sf_product_preview', function(){
@@ -100,7 +132,22 @@ $(document).ready(function () {
 		   }
 	});
 	
-	function addContents(filters,sort,pageNumber,isRefresh){
+	function addContents(filters,sort,pageNumber,isRefresh, isRefreshType){
+		if(isRefreshType){			
+			$.ajax({
+				url: 'index.php?route=api/'+type+'/getType',
+				dataType: 'json',
+				success: function(data) {
+					$('.filter_field').remove();
+					var ele = "";
+					$.each(data['types'], function(i, v) {							
+						ele = ele + '<span class=filter_field id=filter_'+v['type_id']+' value='+ v['type_id']+' > '+ v['type_name_cn']+'</span>';
+					});	
+					$('.sf_filter').append(ele);
+				}
+			});		
+		}	
+		
 		$.ajax({
 			url: 'index.php?route=api/'+type+'/getData',
 			type: 'post',

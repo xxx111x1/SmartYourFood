@@ -17,8 +17,7 @@ class ControllerApiFood extends Controller {
 					}
 				}	
 			}
-		}
-		
+		}		
 		if ($foods) {			
 			$json['success'] = $this->language->get('text_success');
 			$json['foods'] = $foods;
@@ -27,5 +26,18 @@ class ControllerApiFood extends Controller {
 		}						
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($foods));
+	}
+	
+	public function getType() {
+		$this->load->model('sffood/food');
+		$types = $this->model_sffood_food->getTypes();
+		if ($types) {
+			$json['success'] = $this->language->get('text_success');
+			$json['types'] = $types;
+		} else {
+			$json['error'] = $this->language->get('error');
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
 	}
 }

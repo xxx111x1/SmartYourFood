@@ -48,9 +48,10 @@ class ModelSffoodFood extends Model{
     public function getFoodsWithRestaurantInfo($filters = "0", $sort = " sell_number desc, review_score desc", $start = 0, $number = 16) {
     	$sql = "SELECT a.*, b.review_score as rest_review, b.name as rest_name, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b where a.restaurant_id = b.restaurant_id ";
     	if($filters != "0"){
-    		$sql .= " and tags in (" . $filters .") ";
+    		$sql .= " and a.tags in (" . $filters .") ";
     	}
     	$sql .= " order by " . $sort . " limit " . $start . "," . $number;
+    	//echo $sql;
     	$query = $this->db->query($sql);
     	return $query->rows;
     }
