@@ -1,0 +1,276 @@
+body{
+	width:1600px;
+	background: url(../image/bkg.jpg) no-repeat top left;
+	background-size: 100% 100%;
+	background-attachment:fixed;
+	min-height:400px;
+	float:left;
+}
+
+.header{
+	margin-top:40px;	
+	width:1100px;
+	margin-left:auto;
+	margin-right:auto;
+	color:white;
+	font-weight:bold;	
+	height:45px;
+}
+
+.language{
+	margin-left:800px;
+	margin-right:20px;
+	height:20px;
+	float:left;
+	cursor: pointer;
+}
+.dash{
+	float:left;
+}
+ .account{
+	margin-left:20px;
+	margin-right:0px;
+	height:20px;
+	float:left;
+	cursor: pointer;
+}
+
+.account-icon{
+	width:40px;
+	height:40px;
+	float:left;
+	background: url(../image/male.png);
+	margin-left:15px;
+	margin-top:-10px;
+	cursor: pointer;
+}
+.content{
+	width:1100px;
+	margin-left:auto;
+	margin-right:auto;
+	min-height:375px;	
+}
+
+.search-bar {
+    width: 650px;
+    border: solid 1px #f65053;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 50px;
+    background-color: #f65053;
+}
+
+#pac-input {
+    width: 500px;
+    height: 43px;
+    float: left;
+    margin-left: 1px;
+}
+
+
+#search-button {
+    margin-left: 0px;
+    width: 140px;
+    color: white;
+    height: 45px;
+    float: left;
+    padding-top:15px;
+    text-align: center;
+    font-size: 18px;
+    font-weight:bold;
+    cursor:pointer;
+}
+
+.click-point-first, .click-point-second{
+	width: 53px;
+	height: 53px;
+	background: url(../image/clickCircle.png);
+}
+
+.click-point-first{
+	float:left;
+	margin-top:150px;
+	margin-left: 230px;	
+}
+
+.click-point-second{
+	float:left;
+	margin-top:85px;
+	margin-left: 270px;
+}
+
+.first-triangle-left, .second-triangle-left {
+	width: 0;
+	height: 0;
+	float:left;
+	margin-left:5px;
+	border-top: 20px solid transparent;
+	border-right: 25px solid rgba(0, 0, 0, .4);
+	border-bottom: 20px solid transparent;
+}
+
+.first-triangle-left{
+	margin-top:156px;
+}
+
+.second-triangle-left{
+	margin-top:89px;
+}
+
+.first-tip, .second-tip{
+	background: rgba(0, 0, 0, .4);
+	margin-left:0px;
+	float: left;
+	padding:15px;
+	min-height:60px;
+}
+
+.first-tip{
+	margin-top:132px;
+}
+
+.second-tip{
+	margin-top:65px;
+}
+
+.display-none{
+	display:none;
+}
+
+.first-tip-content, .second-tip-content{
+	color:white;
+	font-size:18px;
+	font-weight:bolder;    
+}
+
+.special-foods {
+	background: rgba(0, 0, 0, .5);
+	height:265px;
+	width:100%;
+	color:white;
+	position:absolute;
+   	bottom:0;
+}
+
+.foods-content{
+	width:1000px;
+	height:265px;
+	margin-left:auto;
+	margin-right:auto;
+
+}
+
+.food {
+	width:250px;
+	margin:0;
+	min-height:265px;
+	float:left;	
+}
+
+.food-hover{
+	background: #f65053;
+}
+
+.food-background{
+	margin-top:28px;
+	margin-left:auto;
+	margin-right:auto;
+	padding-top:9px;
+	width:158px;
+	height:150px;
+	border-radius: 79px;
+	-webkit-border-radius: 79px;
+	-moz-border-radius: 79px;
+	background: rgba(83,31,33,.6);
+}
+.food-thumb1{
+	margin-left:auto;
+	margin-right:auto;
+	width: 140px;
+	height: 140px;
+	border-radius: 70px;
+	-webkit-border-radius: 70px;
+	-moz-border-radius: 70px;
+	background: url(../image/food1.jpg) no-repeat;
+	
+}
+
+.food-thumb2{
+	margin-left:auto;
+	margin-right:auto;
+	width: 140px;
+	height: 140px;
+	border-radius: 70px;
+	-webkit-border-radius: 70px;
+	-moz-border-radius: 70px;
+	background: url(../image/food2.jpg) no-repeat;
+	
+}
+
+.food-thumb3{
+	margin-left:auto;
+	margin-right:auto;
+	width: 140px;
+	height: 140px;
+	border-radius: 70px;
+	-webkit-border-radius: 70px;
+	-moz-border-radius: 70px;
+	background: url(../image/food3.jpg) no-repeat;
+	
+}
+
+.food-thumb4{
+	margin-left:auto;
+	margin-right:auto;
+	width: 140px;
+	height: 140px;
+	border-radius: 70px;
+	-webkit-border-radius: 70px;
+	-moz-border-radius: 70px;
+	background: url(../image/food4.jpg) no-repeat;
+	
+}
+
+.hide{
+	display: none;
+}
+.food-hover-content{
+    margin-top:15px;
+    padding-top:5px;
+	margin-left:auto;
+	margin-right:auto;
+	background: rgba(83,31,33,.5);
+	width: 110px;
+	height: 25px;
+	border-radius: 20px;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	text-align :center;
+	font-size:16px;
+	font-weight:bolder;
+}
+.food-name{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:15px;
+	text-align:center;
+	font-size:18px;
+	font-weight:bolder;
+}
+.food-desc{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:5px;
+	text-align:center;
+	font-size:13px;	
+}
+
+.buy-cart{
+	float:right;
+	margin-bottom:0px;
+	width: 55px;
+	height: 55px;
+	background: url(../image/cartCorner.png) no-repeat;
+	cursor:pointer;
+}

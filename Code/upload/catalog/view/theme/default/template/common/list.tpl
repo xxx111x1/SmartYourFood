@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>Smart Your Food</title>
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf_v2.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>

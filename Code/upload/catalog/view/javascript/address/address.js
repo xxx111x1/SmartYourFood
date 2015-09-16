@@ -1,6 +1,6 @@
 	function initMap() {
 	  var map = new google.maps.Map(document.getElementById('map'), {
-	    center: {lat: -33.8688, lng: 151.2195},
+	    center: {lat: 49.2827291, lng: -123.12073750000002 },
 	    zoom: 13
 	  });
 	  var input = /** @type {!HTMLInputElement} */(
@@ -9,8 +9,10 @@
 	  var types = document.getElementById('type-selector');
 	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
-	
-	  var autocomplete = new google.maps.places.Autocomplete(input);
+	  var options = {
+			  componentRestrictions: {country: "ca"}
+			 };
+	  var autocomplete = new google.maps.places.Autocomplete(input, options);
 	  autocomplete.bindTo('bounds', map);
 	
 	  var infowindow = new google.maps.InfoWindow();
