@@ -35,6 +35,9 @@ body{
 	cursor: pointer;
 }
 
+.account a{
+	color: white;!
+}
 .account-icon{
 	width:40px;
 	height:40px;
@@ -138,7 +141,7 @@ body{
 	display:none;
 }
 
-.first-tip-content, .second-tip-content{
+.first-tip-content a, .second-tip-content a{
 	color:white;
 	font-size:18px;
 	font-weight:bolder;    
@@ -184,52 +187,14 @@ body{
 	-moz-border-radius: 79px;
 	background: rgba(83,31,33,.6);
 }
-.food-thumb1{
+.food-thumb{
 	margin-left:auto;
 	margin-right:auto;
 	width: 140px;
 	height: 140px;
 	border-radius: 70px;
 	-webkit-border-radius: 70px;
-	-moz-border-radius: 70px;
-	background: url(../image/food1.jpg) no-repeat;
-	
-}
-
-.food-thumb2{
-	margin-left:auto;
-	margin-right:auto;
-	width: 140px;
-	height: 140px;
-	border-radius: 70px;
-	-webkit-border-radius: 70px;
-	-moz-border-radius: 70px;
-	background: url(../image/food2.jpg) no-repeat;
-	
-}
-
-.food-thumb3{
-	margin-left:auto;
-	margin-right:auto;
-	width: 140px;
-	height: 140px;
-	border-radius: 70px;
-	-webkit-border-radius: 70px;
-	-moz-border-radius: 70px;
-	background: url(../image/food3.jpg) no-repeat;
-	
-}
-
-.food-thumb4{
-	margin-left:auto;
-	margin-right:auto;
-	width: 140px;
-	height: 140px;
-	border-radius: 70px;
-	-webkit-border-radius: 70px;
-	-moz-border-radius: 70px;
-	background: url(../image/food4.jpg) no-repeat;
-	
+	-moz-border-radius: 70px;	
 }
 
 .hide{

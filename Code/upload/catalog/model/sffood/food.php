@@ -65,9 +65,16 @@ class ModelSffoodFood extends Model{
 
     public function getFoodByName($foodName){
         $sql = "SELECT * FROM ".DB_PREFIX."food where name like '%".$foodName."%'";
-        $this->log->write($sql);
         $query = $this->db->query($sql);
         return $query->rows;
+    }
+    
+    public function getSpecialFoods(){
+    	$sql = "(select a.name as rest_name, a.restaurant_id as restaurant_id, b.name as food_name, b.food_id as food_id,b.img_url as img_url from ".DB_PREFIX."restaurant_info a, oc_food b where a.restaurant_id = b.restaurant_id and b.available = 1 and a.restaurant_id=0  order by b.date_added desc limit 0,1) union ";
+    	$sql .= "(select a.name as rest_name, a.restaurant_id as restaurant_id, b.name as food_name, b.food_id as food_id,b.img_url as img_url from ".DB_PREFIX."restaurant_info a, oc_food b where a.restaurant_id = b.restaurant_id and b.available = 1";
+		$sql .= " order by b.sell_number desc limit 0,3)";
+    	$query = $this->db->query($sql);
+    	return $query->rows;
     }
 
     public function getFoodsByRestID($restaurant_id)

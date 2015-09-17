@@ -2,6 +2,8 @@
 class ControllerCommonSfhome extends Controller {
 	public function index() {
 		$data = array();
+		$this->load->model('sffood/food');
+		$data["foods"] = $this->model_sffood_food->getSpecialFoods();
 		if(isset($this->request->get['lat'])){
 			$this->session->data['lat'] = $this->request->get['lat'];
 			$this->session->data['lng'] = $this->request->get['lng'];
@@ -15,9 +17,11 @@ class ControllerCommonSfhome extends Controller {
 		elseif($this->customer->isLogged() || isset($this->session->data['address']))
 		{
 			$data['address'] =$this->session->data['address'];
+			$data['first_name'] = $this->customer->getFirstName();			
 		}
 		else{
-			$data['address'] = "添加送餐地址";
+			$data['address'] = "请输入送餐地址";
+			$data['first_name'] = "";
 		}
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/sfhome.tpl')) {

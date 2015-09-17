@@ -15,6 +15,13 @@ class ModelAccountAddress extends Model {
 
 		return $address_id;
 	}
+	
+	public function addAddressHistory($data) {
+		$this->event->trigger('pre.customer.add.addressHistory', $data);
+		$this->db->query("INSERT INTO " . DB_PREFIX . "address_search_history SET customer_id = '" . (int)$this->customer->getId() . "', lat = '" . $this->db->escape($data['lat']) . "', lng = '" . $this->db->escape($data['lng']) . "', address = '" . $this->db->escape($data['address']) . "', date_added = NOW()");		
+		$this->event->trigger('post.customer.add.addressHistory', $data);
+	}
+	
 
 	public function editAddress($address_id, $data) {
 		$this->event->trigger('pre.customer.edit.address', $data);
@@ -149,5 +156,10 @@ class ModelAccountAddress extends Model {
 		$query = $this->db->query("SELECT COUNT(*) AS total FROM " . DB_PREFIX . "address WHERE customer_id = '" . (int)$this->customer->getId() . "'");
 
 		return $query->row['total'];
+	}
+	
+	public function getAddressesHistory() {
+		$query = $this->db->query("SELECT distinct lat,lng,address FROM " . DB_PREFIX . "address_search_history WHERE customer_id = '" . (int)$this->customer->getId() . "' order by date_added desc");	
+		return $query->rows;
 	}
 }

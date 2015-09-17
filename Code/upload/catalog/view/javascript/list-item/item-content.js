@@ -1,15 +1,17 @@
 $(document).ready(function () {
 	
-	var type='food';	
-//	if(window.location.search.indexOf('restaurant') >= 0){
-//		$('#restaurant_tab').addClass('selected_type_tab');
-//		$('#food_tab').removeClass('selected_type_tab');
-//	}
-//	else{		
-//		type = 'food';
-//		$('#food_tab').addClass('selected_type_tab');
-//		$('#restaurant_tab').removeClass('selected_type_tab');
-//	}
+	var type='';	
+	if(window.location.search.indexOf('restaurant') >= 0){
+		type='rest'
+		$('#restaurant_tab').addClass('selected_type_tab');
+		$('#food_tab').removeClass('selected_type_tab');
+	
+	}
+	else{		
+		type = 'food';
+		$('#food_tab').addClass('selected_type_tab');
+		$('#restaurant_tab').removeClass('selected_type_tab');
+	}
 	var isRefreshType = true;
 	$('#food_tab').click(function() {
 		if(!$('#food_tab').hasClass('selected_type_tab')){

@@ -18,8 +18,14 @@ function initMap() {
 	    }
 		var latitude = place.geometry.location.lat();
 		var longitude = place.geometry.location.lng(); 
-		//alert('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address)+' >确定</a>' );
-	    //infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address)+' >确定</a>' );
+		$.ajax({
+			url: 'index.php?route=api/address/setAddress',
+			type: 'get',
+			data: 'lat=' + latitude + '&lng=' + longitude+ '&address=' + encodeURIComponent(address),
+			dataType: 'json',
+			success: function(data) {
+			}
+		});		
 	  });
 	}	
 	
@@ -28,6 +34,14 @@ function initMap() {
 	}	
 	
 $(document).ready(function () {
+	
+	$(document).on('click', '.buy-cart', function(){
+		var restId = $(this).attr('restid');
+		var foodId = $(this).attr('foodid');
+		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId + '&food_id=' + foodId;				
+		window.location.href = url;
+	});
+	
 	$(".click-point-first,.first-triangle-left,.first-tip").hover(
 			function(){
 				$(".second-tip").css("background","rgba(0, 0, 0, 0)");
@@ -50,6 +64,9 @@ $(document).ready(function () {
 			}
 	);
 	
+	$("#search-button").click(function (){
+		window.location.href = "index.php?route=common/list";		
+	});	
 	$(".food").hover(
 			function(){
 				$(this).addClass( "food-hover" );

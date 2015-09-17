@@ -69,18 +69,21 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_type` (
   PRIMARY KEY (`type_id`));
 
 CREATE TABLE IF NOT EXISTS `oc_food` (
-  `food_id` INT NOT NULL AUTO_INCREMENT,
-  `name` NVARCHAR(50) NOT NULL,
-  `restaurant_id` INT(11) NOT NULL,
-  `description` NVARCHAR(1000) NULL,
-  `review_score` DECIMAL(5,2) NULL,
-  `tags` NVARCHAR(128) NULL,
-  `img_url` VARCHAR(128) NOT NULL,
-  `price` DECIMAL(7,2) NULL,
-  `sell_number` int(11) NULL,
-  `available` int(1) NULL,
+  `food_id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(50) NOT NULL,
+  `restaurant_id` int(11) NOT NULL,
+  `desc` nvarchar(1000) DEFAULT NULL,
+  `review_score` decimal(5,2) DEFAULT NULL,
+  `tags` varchar(128) DEFAULT NULL,
+  `img_url` varchar(128) NOT NULL,
+  `price` decimal(7,2) DEFAULT NULL,
+  `sell_number` int(11) DEFAULT NULL,
+  `available` int(1) DEFAULT '1',
+  `minimum` int(2) DEFAULT '1',
+  `date_added` datetime DEFAULT NULL,
   PRIMARY KEY (`food_id`)
-)  ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
+
 
 CREATE TABLE IF NOT EXISTS `oc_sfaddress` (
   `address_id` INT NOT NULL AUTO_INCREMENT,
@@ -117,6 +120,16 @@ CREATE TABLE IF NOT EXISTS `oc_message` (
   `added_date` datetime DEFAULT NULL,
   PRIMARY KEY (`message_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+CREATE TABLE IF NOT EXISTS `oc_address_search_history` (
+  `customer_id` INT(11) NOT NULL COMMENT '',
+  `lat` DECIMAL(10,8) NULL COMMENT '',
+  `lng` DECIMAL(17,14) NULL COMMENT '',
+  `address` nVARCHAR(200) NULL COMMENT '',
+  `date_added` DATETIME NULL COMMENT '',
+  PRIMARY KEY (`customer_id`)  COMMENT '')
+  ENGINE=InnoDB DEFAULT CHARSET=utf8;;
+
 
 
 -- --------------------------------------------------------
@@ -1158,7 +1171,7 @@ CREATE TABLE IF NOT EXISTS `oc_customer` (
   `date_added` datetime NOT NULL,
   `lat` decimal(10,8) DEFAULT '0',
   `lng` decimal(17,14) DEFAULT '0',
-  `address` varchar(200) DEFAULT '',
+  `address` nvarchar(200) DEFAULT '',
   PRIMARY KEY (`customer_id`)
 ) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_general_ci;
 
@@ -7877,8 +7890,8 @@ Values
 (14,'快餐'),
 (15,'火锅')
 
-INSERT INTO `smartyourfood`.`oc_food`
-(`price`,`sell_number`,`name`,`restaurant_id`,`description`,`review_score`,`tags`,`img_url`)
+INSERT INTO `oc_food`
+(`price`,`sell_number`,`name`,`restaurant_id`,`desc`,`review_score`,`tags`,`img_url`)
 VALUES
  (12.5,10,'宫保鸡丁','1555','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
 ,(12.5,11,'水煮肉片','1555','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
@@ -7902,8 +7915,9 @@ VALUES
 ,(12.5,10,'水煮肉片','1561','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
 ,(12.5,10,'鱼香肉丝','1561','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg');
 
+INSERT INTO `oc_restaurant_info` (`restaurant_id`, `name`, `description`, `lat`, `lng`, `address`, `review_score`, `tags`, `avg_cost`, `sell_number`) VALUES ('0', 'Food Special', 'Monthly special food', '0', '0', 'Smart Your Food', '5', '0', '20', '0');
 
-INSERT INTO `smartyourfood`.`oc_food_type`(`type_id`,`type_name_cn`)
+INSERT INTO `oc_food_type`(`type_id`,`type_name_cn`)
 VALUES 
 (0,'不限')
 ,(1,'牛肉')

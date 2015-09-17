@@ -13,20 +13,30 @@
   	<div class="header">
   		<div class="language">English</div>
   		<div class="dash">|</div>
-  		<div class="account">登陆/注册</div>
-  		<div class="account-icon"></div>
-  		
+  		<div class="account">
+	  		<?php if ($first_name) { ?>
+	  			<?php if($first_name=='null') {?>
+	  			<?php echo "欢迎光临"; } else { ?>
+	            	<?php echo $first_name ;?>
+	            <?php }?>
+	            <?php } else { ?>
+	    		<a href="index.php?route=sfaccount/login">登陆/注册</a>
+	        <?php } ?>  		
+  		</div>
+  		<div class="account-icon"></div>  		
   	</div>
   	<div class="content">
   		<div class="search-bar">
-  			<input id="pac-input" class="controls" type="text" placeholder="Enter a location" />
+  			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
   			<div id="search-button">查找美食</div>
   		</div>  		
+  		<div class="history-addresses">
+  		</div>
   		<div class="click-point-first"></div>
   		<div class="first-info">
 	  		<div class="first-triangle-left"> </div>
 	  		<div class="first-tip">
-	  			<div class="first-tip-content">hello welcome!</div>
+	  			<div class="first-tip-content"><a href="index.php?route=common/list">更多美食</a></div>
 	  		</div>
   		</div>
   		
@@ -34,50 +44,25 @@
   		<div class="second-info">
   			<div class="second-triangle-left"> </div>
 	  		<div class="second-tip">
-	  			<div class="second-tip-content">hello welcome!</div>
+	  			<div class="second-tip-content"><a href="index.php?route=common/list&type=restaurante">精品餐馆</a></div>
 	  		</div>
   		</div>
   	</div>
   	<div class="special-foods">
-  			<div class="foods-content">
-  				<div class="food">
-  					<div class="food-background">
-  						<div class="food-thumb1"></div>
+  		<div class="foods-content">
+  			<?php foreach ($foods as $food) { ?>
+				<div class="food">
+	  				<div class="food-background">
+	  					<div class="food-thumb" style="background-image: url('<?php echo $food['img_url'] ;?>'); backgournd-repeat: no-repeat;background-size: 140px 140px;">
+	  					</div>
   					</div>
   					<div class="food-hover-content hide">推荐美食</div>
-  					<div class="food-name">烤蔬菜盒子沙拉</div>
+  					<div class="food-name"><?php echo $food['food_name'];?></div>
   					<div class="food-desc">Have fun！ 有饭</div>
-  					<div class="buy-cart hide"></div>  					
+  					<div class="buy-cart hide" restid="<?php echo $food['restaurant_id']; ?>" foodid="<?php echo $food['food_id'] ;?>"></div>  					
   				</div>
-  				<div class="food">
-  					<div class="food-background">
-  						<div class="food-thumb2"></div>
-  					</div>
-  					<div class="food-hover-content hide">推荐美食</div>
-  					<div class="food-name">烤蔬菜盒子沙拉</div>
-  					<div class="food-desc">Have fun！ 有饭</div>
-  					<div class="buy-cart hide"></div>  					
-  				</div>
-  				<div class="food">
-  					<div class="food-background">
-  						<div class="food-thumb3"></div>
-  					</div>
-  					<div class="food-hover-content hide">推荐美食</div>
-  					<div class="food-name">烤蔬菜盒子沙拉</div>
-  					<div class="food-desc">Have fun！ 有饭</div>
-  					<div class="buy-cart hide"></div>  					
-  				</div>
-  				<div class="food">
-  					<div class="food-background">
-  						<div class="food-thumb4"></div>
-  					</div>
-  					<div class="food-hover-content hide">推荐美食</div>
-  					<div class="food-name">烤蔬菜盒子沙拉</div>
-  					<div class="food-desc">Have fun！ 有饭</div>
-  					<div class="buy-cart hide"></div>  					
-  				</div>
-  			</div>
+			<?php } ?>  				
   		</div>
-    
+  	</div>    
   </body>
 </html>
