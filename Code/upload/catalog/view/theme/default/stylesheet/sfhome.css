@@ -55,7 +55,7 @@ body{
 }
 
 .search-bar {
-    width: 650px;
+    width: 655px;
     border: solid 1px #f65053;
     margin-top: 100px;
     margin-left: auto;
@@ -65,10 +65,35 @@ body{
 }
 
 #pac-input {
-    width: 500px;
-    height: 43px;
+    width: 210px;
+    height: 45px;
     float: left;
     margin-left: 1px;
+    border: 1px solid #d3d3d3;
+    border-right: 0px;
+}
+
+#dropdown{
+	width: 43px;
+    height: 47px;
+    float: left;
+    margin-left: -2px;
+    background-color:#ffffff;
+    background-image: url(../image/showMore.png);
+    background-repeat: no-repeat;
+    background-position: center; 
+    border: 1px solid #d3d3d3;   
+    border-left: 0px; 
+    cursor: pointer;
+}
+
+#serach-input {
+    width: 250px;
+    height: 45px;
+    float: left;
+    margin-left: -1px;
+    border: 1px solid #d3d3d3;
+    padding-left:5px;
 }
 
 
@@ -83,6 +108,44 @@ body{
     font-size: 18px;
     font-weight:bold;
     cursor:pointer;
+}
+
+.history-addresses{
+	width: 253px;
+	margin-top:48px;
+	margin-left:1px;
+	background: #ffffff;
+	min-height:100px;
+	border: 1px solid #d3d3d3;
+	z-index:100;
+}
+
+#history-label{
+	width: 213px;
+	height:45px;
+	padding-left: 40px;
+	background-image: url(../image/timeIcon.png);
+	background-repeat: no-repeat;
+	background-position: 10xp 10px;
+	color:#555555;
+	font-weight: bolder;
+	border-bottom: 1px solid #d3d3d3;
+}
+
+.address{
+	width:243px;
+	height:25px;
+	padding-left:10px;
+	padding-top:10px;
+	color: #686666;
+	font-size:14px;
+	border-bottom: 1px solid #d3d3d3;
+	cursor: pointer;
+	z-index:100;
+}
+
+.address:hover{
+	background-color: #e9e8e8;
 }
 
 .click-point-first, .click-point-second{
@@ -150,7 +213,7 @@ body{
 .special-foods {
 	background: rgba(0, 0, 0, .5);
 	height:265px;
-	width:100%;
+	width:105%;
 	color:white;
 	position:absolute;
    	bottom:0;
@@ -186,6 +249,7 @@ body{
 	-webkit-border-radius: 79px;
 	-moz-border-radius: 79px;
 	background: rgba(83,31,33,.6);
+	cursor:pointer;
 }
 .food-thumb{
 	margin-left:auto;
@@ -214,6 +278,7 @@ body{
 	text-align :center;
 	font-size:16px;
 	font-weight:bolder;
+	cursor:pointer;
 }
 .food-name{
 	margin-left:auto;
@@ -222,6 +287,7 @@ body{
 	text-align:center;
 	font-size:18px;
 	font-weight:bolder;
+	cursor:pointer;
 }
 .food-desc{
 	margin-left:auto;
@@ -229,6 +295,7 @@ body{
 	margin-top:5px;
 	text-align:center;
 	font-size:13px;	
+	cursor:pointer;
 }
 
 .buy-cart{

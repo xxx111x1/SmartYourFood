@@ -4,11 +4,13 @@ class ControllerApiAddress extends Controller {
 		$this->session->data['lat'] = $this->request->get['lat'];
         $this->session->data['lng'] = $this->request->get['lng'];
         $this->session->data['address'] = $this->request->get['address'];
+        $insert = $this->request->get['isInsert'];
         $data['address'] =$this->request->get['address'];
         if($this->customer->isLogged()){
         	$this->load->model('account/customer');
         	$this->load->model('account/address');
         	$this->model_account_customer->editAddress($this->session->data);
+        	if($insert>0)
         	$this->model_account_address->addAddressHistory($this->session->data);
         }        				
 		$json['success'] = $this->language->get('text_success');					

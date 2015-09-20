@@ -28,10 +28,16 @@
   	<div class="content">
   		<div class="search-bar">
   			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
+  			<div id="dropdown"></div>
+  			<input id="serach-input" class="controls" type="text" placeholder="请输入餐馆、菜品关键字" />
   			<div id="search-button">查找美食</div>
-  		</div>  		
-  		<div class="history-addresses">
-  		</div>
+  			<div class="history-addresses hide">
+  				<div id="history-label">历史记录</div>
+  				<?php foreach ($history_address as $address) { ?>
+					<div class='address' lat='<?php echo $address['lat']; ?>' lng='<?php echo $address['lng']; ?>'><?php echo $address['address']; ?></div>	
+				<?php } ?>  	
+  			</div>
+  		</div>  		  		
   		<div class="click-point-first"></div>
   		<div class="first-info">
 	  		<div class="first-triangle-left"> </div>
@@ -51,7 +57,7 @@
   	<div class="special-foods">
   		<div class="foods-content">
   			<?php foreach ($foods as $food) { ?>
-				<div class="food">
+				<div class="food" restid="<?php echo $food['restaurant_id']; ?>" foodid="<?php echo $food['food_id'] ;?>">
 	  				<div class="food-background">
 	  					<div class="food-thumb" style="background-image: url('<?php echo $food['img_url'] ;?>'); backgournd-repeat: no-repeat;background-size: 140px 140px;">
 	  					</div>
@@ -59,7 +65,7 @@
   					<div class="food-hover-content hide">推荐美食</div>
   					<div class="food-name"><?php echo $food['food_name'];?></div>
   					<div class="food-desc">Have fun！ 有饭</div>
-  					<div class="buy-cart hide" restid="<?php echo $food['restaurant_id']; ?>" foodid="<?php echo $food['food_id'] ;?>"></div>  					
+  					<div class="buy-cart hide" ></div>  					
   				</div>
 			<?php } ?>  				
   		</div>

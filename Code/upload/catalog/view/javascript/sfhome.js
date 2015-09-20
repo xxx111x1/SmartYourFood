@@ -1,45 +1,83 @@
 function initMap() {
-	  var input = /** @type {!HTMLInputElement} */(document.getElementById('pac-input'));
-	  var options = {	  componentRestrictions: {country: "ca"}	 };
-	  var autocomplete = new google.maps.places.Autocomplete(input, options);
-	  autocomplete.addListener('place_changed', function() {
-	    var place = autocomplete.getPlace();
-	    if (!place.geometry) {
-	      window.alert("Autocomplete's returned place contains no geometry");
-	      return;
-	    }	
-	    var address = '';
-	    if (place.address_components) {
-	      address = [
-	        (place.address_components[0] && place.address_components[0].short_name || ''),
-	        (place.address_components[1] && place.address_components[1].short_name || ''),
-	        (place.address_components[2] && place.address_components[2].short_name || '')
-	      ].join(' ');
-	    }
-		var latitude = place.geometry.location.lat();
-		var longitude = place.geometry.location.lng(); 
-		$.ajax({
-			url: 'index.php?route=api/address/setAddress',
-			type: 'get',
-			data: 'lat=' + latitude + '&lng=' + longitude+ '&address=' + encodeURIComponent(address),
-			dataType: 'json',
-			success: function(data) {
-			}
-		});		
-	  });
-	}	
-	
-	function getReturnUrl(lat,lng,address){
-		return 'index.php?route=common/sfhome&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address);
-	}	
+  var input = /** @type {!HTMLInputElement} */(document.getElementById('pac-input'));
+  var options = {	  componentRestrictions: {country: "ca"}	 };
+  var autocomplete = new google.maps.places.Autocomplete(input, options);
+  autocomplete.addListener('place_changed', function() {
+    var place = autocomplete.getPlace();
+    if (!place.geometry) {
+      window.alert("Autocomplete's returned place contains no geometry");
+      return;
+    }	
+    var address = '';
+    if (place.address_components) {
+      address = [
+        (place.address_components[0] && place.address_components[0].short_name || ''),
+        (place.address_components[1] && place.address_components[1].short_name || ''),
+        (place.address_components[2] && place.address_components[2].short_name || '')
+      ].join(' ');
+    }
+	var latitude = place.geometry.location.lat();
+	var longitude = place.geometry.location.lng(); 
+	$.ajax({
+		url: 'index.php?route=api/address/setAddress',
+		type: 'get',
+		data: 'lat=' + latitude + '&lng=' + longitude+ '&address=' + encodeURIComponent(address) + '&isInsert=1',
+		dataType: 'json',
+		success: function(data) {
+		}
+	});		
+  });
+}	
+
+function getReturnUrl(lat,lng,address){
+	return 'index.php?route=common/sfhome&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address);
+}
 	
 $(document).ready(function () {
 	
 	$(document).on('click', '.buy-cart', function(){
-		var restId = $(this).attr('restid');
-		var foodId = $(this).attr('foodid');
+		var foodId = $(this).parent().attr('foodid');
+		$.ajax({
+			url: 'index.php?route=checkout/cart/add',
+			type: 'post',
+			data: 'product_id=' + foodId + '&quantity=' + 1,
+			dataType: 'json',
+			success: function(json) {
+				var url = '/index.php?route=sfcheckout/checkout';				
+				window.location.href = url;
+			}
+		});		
+	});
+	
+	$(document).on('click', '.food-background,.food-hover-content,.food-name,.food-desc', function(){
+		var restId = $(this).parent().attr('restid');
+		var foodId = $(this).parent().attr('foodid');
 		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId + '&food_id=' + foodId;				
 		window.location.href = url;
+	});
+	
+	$(document).on('click', '#dropdown', function(){
+		$('.history-addresses').toggleClass("hide");
+	});
+	
+	$('div:not(#dropdown,.address,.search-bar)').click( function(){
+		$('.history-addresses').addClass("hide");
+	});
+	
+	$(document).on('click', '.address', function(){
+		var address = $(this).text();
+		var lat = $(this).attr('lat');
+		var lng = $(this).attr('lng');
+		$('#pac-input').val(address);
+		$.ajax({
+			url: 'index.php?route=api/address/setAddress',
+			type: 'get',
+			data: 'lat=' + lat + '&lng=' + lng + '&address=' + encodeURIComponent(address) + '&isInsert=0',
+			dataType: 'json',
+			success: function(data) {
+			}
+		});	
+		$('.history-addresses').addClass("hide");
 	});
 	
 	$(".click-point-first,.first-triangle-left,.first-tip").hover(
@@ -79,9 +117,7 @@ $(document).ready(function () {
 				$(this).find(".food-background").css("margin-top","28px");
 				$(this).find(".food-hover-content").addClass("hide");
 				$(this).find(".buy-cart").addClass("hide");
-				$(this).removeClass( "food-hover" );
-				
+				$(this).removeClass( "food-hover" );				
 			}
-	);
-	
+	);	
 });

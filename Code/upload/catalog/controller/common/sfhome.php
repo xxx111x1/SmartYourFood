@@ -17,7 +17,9 @@ class ControllerCommonSfhome extends Controller {
 		elseif($this->customer->isLogged() || isset($this->session->data['address']))
 		{
 			$data['address'] =$this->session->data['address'];
-			$data['first_name'] = $this->customer->getFirstName();			
+			$data['first_name'] = $this->customer->getFirstName();
+			$this->load->model('account/address');
+			$data['history_address'] = $this->model_account_address->getAddressesHistory();
 		}
 		else{
 			$data['address'] = "请输入送餐地址";
