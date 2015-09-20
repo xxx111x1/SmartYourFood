@@ -159,7 +159,7 @@ class ModelAccountAddress extends Model {
 	}
 	
 	public function getAddressesHistory() {
-		$query = $this->db->query("SELECT distinct lat,lng,address FROM " . DB_PREFIX . "address_search_history WHERE customer_id = '" . (int)$this->customer->getId() . "' order by date_added desc limit 0,5 ");	
+		$query = $this->db->query("SELECT distinct lat,lng,address FROM " . DB_PREFIX . "address_search_history WHERE customer_id = '" . (int)$this->customer->getId() . "' order by date_added desc limit 0,3 ");	
 		return $query->rows;
 	}
 }
