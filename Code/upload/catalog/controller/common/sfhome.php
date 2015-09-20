@@ -24,6 +24,7 @@ class ControllerCommonSfhome extends Controller {
 		else{
 			$data['address'] = "请输入送餐地址";
 			$data['first_name'] = "";
+			$data['history_address'] = "";
 		}
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/sfhome.tpl')) {

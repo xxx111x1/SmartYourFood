@@ -33,9 +33,10 @@
   			<div id="search-button">查找美食</div>
   			<div class="history-addresses hide">
   				<div id="history-label">历史记录</div>
+  				<?php if($history_address) {?>
   				<?php foreach ($history_address as $address) { ?>
 					<div class='address' lat='<?php echo $address['lat']; ?>' lng='<?php echo $address['lng']; ?>'><?php echo $address['address']; ?></div>	
-				<?php } ?>  	
+				<?php } } ?>
   			</div>
   		</div>  		  		
   		<div class="click-point-first"></div>
