@@ -5,6 +5,7 @@ body{
 	background-attachment:fixed;
 	min-height:400px;
 	float:left;
+	margin:0;
 }
 
 .header{
@@ -213,7 +214,7 @@ body{
 .special-foods {
 	background: rgba(0, 0, 0, .5);
 	height:265px;
-	width:105%;
+	width:100%;
 	color:white;
 	position:absolute;
    	bottom:0;
