@@ -219,7 +219,6 @@ var cart = {
 				// Need to set timeout otherwise it wont update the total
 				setTimeout(function () {
 					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
-                    console.error('cart updated successfully');
 				}, 100);
 					
 				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
@@ -227,8 +226,9 @@ var cart = {
 				} else {
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 					$('#cart_preview').load('index.php?route=common/cartthumbnail/info');
-					if($('#' + 'food_'+productId+'_number').length > 0) {
-						$('#' + 'food_'+productId+'_number').val('0');
+					if($('#food_'+productId+'_number').length > 0) {
+						$('#food_'+productId+'_number').val('0');
+						$('#food_'+productId+'_number').attr('number','0');
 					}
 				}
 				

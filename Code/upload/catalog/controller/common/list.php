@@ -4,7 +4,8 @@ class ControllerCommonList extends Controller{
     	$data = array();      
         $this->load->model('sfrest/information');
 		$data['types'] = $this->model_sfrest_information->getTypes();
-        $data['header'] = $this->load->controller('common/header');
+		$data['header'] = $this->load->controller('common/sfheader');
+		$data['footer'] = $this->load->controller('common/sffooter');
         $data['backtop'] = $this->load->controller('common/backtop');
     	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];

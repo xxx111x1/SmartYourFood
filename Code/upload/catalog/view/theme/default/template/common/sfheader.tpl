@@ -15,6 +15,7 @@
 <link href="catalog/view/javascript/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/sfcommon.css" rel="stylesheet">
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 </head>
 
 <body>

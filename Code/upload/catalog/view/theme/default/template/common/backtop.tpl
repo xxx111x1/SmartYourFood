@@ -1,5 +1,6 @@
-<script src="catalog/view/javascript/list-item/backtop.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/backtop.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/feedback.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/backtop.css">
 <div id="cart_preview" class="unvisible" >
 	<?php echo $cartthumbnail ; ?>
 </div>
@@ -7,10 +8,11 @@
 </div>
 <div class="backtop_section" id="backtop_section" >	
 	<div id="cart_thumbnail"></div>
+	<div id="orders"></div>
+	<div id="back_top"></div>
 	<div id="my_message"></div>
 	<div id="feedback"></div>
-	<div id="back_top"></div>
-		
+	<div id="call_center"></div>		
 </div>
 
 <div class="mod-dialog-frame unvisible" style="overflow: auto; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 1000; background-color: rgba(0, 0, 0, 0.54902);">

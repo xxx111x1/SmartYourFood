@@ -1,0 +1,201 @@
+$(document).ready(function () {
+	
+	var type='';	
+	if(window.location.search.indexOf('restaurant') >= 0){
+		type='rest'
+		$('#restaurant_tab').addClass('selected_type_tab');
+		$('#food_tab').removeClass('selected_type_tab');
+	
+	}
+	else{		
+		type = 'food';
+		$('#food_tab').addClass('selected_type_tab');
+		$('#restaurant_tab').removeClass('selected_type_tab');
+	}
+	var isRefreshType = true;
+	$('#food_tab').click(function() {
+		if(!$('#food_tab').hasClass('selected_type_tab')){
+			type = 'food';
+			isRefreshType = true;
+			$('#food_tab').addClass('selected_type_tab');
+			$('#restaurant_tab').removeClass('selected_type_tab');
+			$('.filter_field').remove();
+			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+			isRefreshType = false;
+		}		
+	});
+	
+	$('#restaurant_tab').click(function() {
+		if(!$('#restaurant_tab').hasClass('selected_type_tab')){
+			type='rest';
+			isRefreshType = true;
+			$('#restaurant_tab').addClass('selected_type_tab');
+			$('#food_tab').removeClass('selected_type_tab');
+			$('.filter_field').remove();
+			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+			isRefreshType = false;
+		}		
+	});	
+		
+	$('#filter_0').addClass('filter_field_selected');
+	$('#sort_default').addClass('sort_field_selected');
+	
+	addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+	isRefreshType = false;
+	
+	$(document).on('click', '.filteritem', function(){
+		$(this).toggleClass('filter_field_selected');
+		var tagId = $(this).attr('value');
+		var filters = $('#filters').attr('value');
+		var background = $(this).find('.filtericon').css('background-image');
+		if($(this).hasClass('filter_field_selected')){						
+			if(tagId=='0'){
+				$('.filteritem').removeClass('filter_field_selected');
+				$('.filtericon').each(function(){
+					var backgroundImage = $(this).css('background-image');
+					$(this).css('background-image',backgroundImage.replace('on.','off.'));
+				});
+				$(this).addClass('filter_field_selected');				
+				filters = '0';				
+			}
+			else{
+				if(filters == "0," || filters == "0"){
+					filters = "";
+				}
+				$('#filter_0').removeClass('filter_field_selected');
+				filters = filters + ','+tagId;
+				$(this).find('.filtericon').css('background-image',background.replace('off.','on.'));
+			}				
+		}
+		else{
+			filters = filters.replace(','+ tagId,'').replace(tagId,'');
+			if(filters==''){
+				$('#filter_0').addClass('filter_field_selected');
+				filters='0';
+			}
+			$(this).find('.filtericon').css('background-image',background.replace('on.','off.'));
+		}
+		if(filters.substring(0,1)==','){
+			filters = filters.replace(',','');
+		}
+		$('#filters').attr('value',filters);
+		
+		var sortId = $('#sort').attr('value');
+		var sort = getSortString(sortId);				
+		addContents(filters,sort,0,1,isRefreshType);
+	});
+	
+	$('.sort_field').click(function(){
+		$('.sort_field').removeClass('sort_selected');
+		$(this).addClass('sort_selected');
+		var filters = $('#filters').attr('value');
+		var sortId = $(this).attr('id');
+		$('#sort').val(sortId);
+		var sort = getSortString(sortId);				
+		addContents(filters,sort,0,1,isRefreshType);
+	});
+	
+	$(document).on('click', '.thumb_view', function(){
+		var restId = $(this).attr('restid');
+		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId;
+		if (type=='food'){			
+			var foodId = $(this).attr('foodid');
+			url = url+ '&food_id=' + foodId;
+		}						
+		window.location.href = url;
+	});
+	
+	$(document).on('mouseover','.thumb', function(){
+		$(this).find(".thumboverlay").show();
+	});
+	
+	$(document).on('mouseout','.thumb', function(){
+		$(this).find(".thumboverlay").hide();
+	});
+	
+	$(document).on('click', '.thumb_add2cart', function(){
+		var id = $(this).siblings( '.thumb_view' ).attr('foodid');
+		var number = $(this).attr('number');
+		number++;
+		cart.add(id,number);
+		$(this).attr('number',number);
+	});	
+	
+	
+	$(window).scroll(function () { 
+		   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+			  var pageNumber = $('#page_number').val();
+			  var filters = $('#filters').attr('value');
+			  var sortId = $('#sort').attr('value');
+			  pageNumber = parseInt(pageNumber) + 1;
+			  var sort = getSortString(sortId);
+			  addContents(filters,sort,pageNumber,0);
+			  $('#page_number').val(pageNumber);
+		   }
+	});
+	
+	function addContents(filters,sort,pageNumber,isRefresh, isRefreshType){
+		$.ajax({
+			url: 'index.php?route=api/'+type+'/getData',
+			type: 'post',
+			data: 'filters=' + filters + '&sort=' + sort+ '&page_number=' + pageNumber,
+			dataType: 'json',
+			/*
+			 * beforeSend: function() { $('#cart >
+			 * button').button('loading'); }, complete: function() {
+			 * $('#cart > button').button('reset'); },
+			 */			
+			success: function(data) {
+				if(isRefresh==1){
+					$('.product_area').empty();
+					$('#page_number').val(0);
+				}							
+				$.each(data, function(i, v) {	
+					var id = v.restaurant_id;
+					var cost = v.avg_cost;
+					var review_score = v.review_score;
+					var name = v.name;
+					var restId = id;
+					var tag= "";
+					if(type=='food'){
+						id = v.food_id;
+						cost = v.price;
+						review_score = v.rest_review;
+						restId = v.restaurant_id;
+						name = v.rest_name
+						tag = '<div class="tag">'+v.review_score+'</div>';
+					}
+								      
+//					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><div class="image_container">' + tag + '<img class=sf_product_preview restId='+restId+' foodId='+id+' src='+v.img_url +' /></div>'
+//					+'<div class=sf_product_title >'+name+'</div><span class="sf_product_stars stars" rate="'+review_score+'" ></span>'+
+//					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span >分钟</span><span class=sf_product_sv>本月销量'+v.sell_number+'份</span> </div>';
+//					
+//					if (type=='food'){
+//						ele = ele +'<div class="sf_food_cart">	<div class="minus_food" value="'+id+'" >-</div><input class="food_number" id="food_'+id+'_number" value="'+v.cart_number+'" />'
+//						+'<div class="add_food" value="'+id+'" >+</div> </div>';
+//					}
+//					ele = ele + '</div>';
+					
+					var thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_view" restId='+restId+' foodId='+id+' >看看</div><div class="thumb_add2cart" id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
+					var thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><div class="thumb_desc_restname">'+v.rest_name+'</div>' +
+										'<div class="thumb_desc_restdist">距离 0M</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
+										'<div class="thumb_desc_productprice">'+v.price+'</div></div></div>';
+					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';
+					$('.product_area').append(ele);
+				});					
+				//$('span.stars').stars();
+			}
+		});		
+	}
+	
+	function getSortString(sortId){
+		if(sortId=="sell_number"){
+			return " sell_number desc, review_score desc ";
+		}else if(sortId=="review_score"){
+			return " review_score desc,sell_number desc ";
+		}else{
+			return " sell_number desc, review_score desc ";
+		}	
+	}
+
+});
