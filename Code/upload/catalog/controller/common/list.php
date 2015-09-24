@@ -20,11 +20,15 @@ class ControllerCommonList extends Controller{
         elseif($this->customer->isLogged() || isset($this->session->data['address']))
         {
         	$data['address'] =$this->session->data['address'];
+        	$data['first_name'] = $this->customer->getFirstName();
+        	$this->load->model('account/address');
+        	$data['history_address'] = $this->model_account_address->getAddressesHistory();
         }
         else{
-        	$data['address'] = "添加送餐地址";
-        }
-        
+        	$data['address'] = "请输入送餐地址";
+        	$data['first_name'] = "";
+        	$data['history_address'] = "";
+        }        
         $this->response->setOutput($this->load->view('default/template/common/list.tpl', $data));
     }
 }

@@ -119,7 +119,50 @@ $(document).ready(function () {
 		number++;
 		cart.add(id,number);
 		$(this).attr('number',number);
+		
+		var cartIcon = $('#cart_thumbnail');
+        var imgtodrag = $(this).parent('.thumboverlay').siblings(".thumb_preview").eq(0);
+        if (imgtodrag) {
+            var imgclone = imgtodrag.clone()
+                .offset({
+                top: imgtodrag.offset().top,
+                left: imgtodrag.offset().left
+            })
+                .css({
+                'opacity': '0.5',
+                    'position': 'absolute',
+                    'height': '150px',
+                    'width': '150px',
+                    'z-index': '100'
+            })
+                .appendTo($('body'))
+                .animate({
+                'top': cartIcon.offset().top + 10,
+                    'left': cartIcon.offset().left + 10,
+                    'width': 75,
+                    'height': 75
+                	},          1000
+               );
+            
+            setTimeout(function () {
+            	cartIcon.effect("shake", {
+                    times: 2
+                }, 200);
+            }, 1500);
+
+            imgclone.animate({
+                'width': 0,
+                    'height': 0
+            }, function () {
+                $(this).detach()
+            });
+        }
 	});	
+	
+	$('.add-to-cart').on('click', function () {
+        
+    });
+	
 	
 	
 	$(window).scroll(function () { 
@@ -156,30 +199,27 @@ $(document).ready(function () {
 					var review_score = v.review_score;
 					var name = v.name;
 					var restId = id;
-					var tag= "";
+					var thumbEle = "";
+					var thumbDescEle = "";
 					if(type=='food'){
 						id = v.food_id;
 						cost = v.price;
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
 						name = v.rest_name
-						tag = '<div class="tag">'+v.review_score+'</div>';
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_view" restId='+restId+' foodId='+id+' >看看</div><div class="thumb_add2cart" id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><div class="thumb_desc_restname">'+v.rest_name+'</div>' +
+											'<div class="thumb_desc_restdist">距离 0M</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
+											'<div class="thumb_desc_productprice">'+v.price+'</div></div></div>';
 					}
-								      
-//					var ele = '<div class=sf_product id='+id+' title='+v.name+ ' name='+v.tagId+' ><div class="image_container">' + tag + '<img class=sf_product_preview restId='+restId+' foodId='+id+' src='+v.img_url +' /></div>'
-//					+'<div class=sf_product_title >'+name+'</div><span class="sf_product_stars stars" rate="'+review_score+'" ></span>'+
-//					'<div class=sf_product_price><span style="MARGIN-RIGHT: 10px">价格:'+cost+'</span><span>配送: </span><span >分钟</span><span class=sf_product_sv>本月销量'+v.sell_number+'份</span> </div>';
-//					
-//					if (type=='food'){
-//						ele = ele +'<div class="sf_food_cart">	<div class="minus_food" value="'+id+'" >-</div><input class="food_number" id="food_'+id+'_number" value="'+v.cart_number+'" />'
-//						+'<div class="add_food" value="'+id+'" >+</div> </div>';
-//					}
-//					ele = ele + '</div>';
+					else{
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_view" restId='+restId+' >看看</div></div></div>';
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname">'+v.name+'</div>' +
+											'<div class="thumb_desc_restdist">距离 0M</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
+											'<div class="thumb_desc_productprice">平均价格：'+cost+'</div></div></div>';
+					}
+								      					
 					
-					var thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_view" restId='+restId+' foodId='+id+' >看看</div><div class="thumb_add2cart" id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
-					var thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><div class="thumb_desc_restname">'+v.rest_name+'</div>' +
-										'<div class="thumb_desc_restdist">距离 0M</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
-										'<div class="thumb_desc_productprice">'+v.price+'</div></div></div>';
 					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';
 					$('.product_area').append(ele);
 				});					

@@ -10,7 +10,7 @@ class ControllerCommonSfheader extends Controller {
 		}
 		else{
 			$data['address'] = "请输入送餐地址";
-			$data['first_name'] = "欢迎光临";
+			$data['first_name'] = "";
 		}
 		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/sfheader.tpl')) {
