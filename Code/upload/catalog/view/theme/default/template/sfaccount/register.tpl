@@ -3,9 +3,9 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>注册</title>
-    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="catalog/view/javascript/register.js" type="text/javascript"></script>
     <!--<script type="text/javascript" src="js/jquery-1.11.3.js"></script>-->

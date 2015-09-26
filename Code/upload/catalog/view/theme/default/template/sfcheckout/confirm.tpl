@@ -2,10 +2,10 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>我的餐车</title>
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
-    <script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+    <title>订单确认</title>
+    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
+    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script type="application/javascript">
         $(document).ready(function() {
             $('input.paymethod').on('change', function () {
@@ -87,6 +87,5 @@
         <a href="/index.php?route=payment/pp_express/checkout" style="float: right"> <div class="btn btn-primary" type="submit">打印</div></a>
         <a href="/index.php?route=payment/pp_express/checkout" style="float: right; margin-right: 10px"> <div class="btn btn-primary" type="submit">付款</div></a>
     </div>
-<!--Test push-->
 </body>
 </html>
