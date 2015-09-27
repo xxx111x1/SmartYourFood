@@ -34,6 +34,16 @@ $(document).ready(function () {
 		$('.mod-dialog-frame').toggleClass('unvisible');
 	});
 	
+	$( ".backtopIcons" )
+	  .mouseover(function() {
+	    var backgroundImage = $(this).css("background-image");
+	    $(this).css("background-image",backgroundImage.replace("Off","On"));
+	  })
+	  .mouseout(function() {
+		  var backgroundImage = $(this).css("background-image");
+		    $(this).css("background-image",backgroundImage.replace("On","Off"));
+	  });
+	
 	function getMessage(){
 		$.ajax({
 			url: 'index.php?route=api/message/get',

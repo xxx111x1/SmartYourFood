@@ -27,16 +27,17 @@ body{
 	background-image: url(../image/logo.png);
 	background-repeat:no-repeat;
 	float:left;
-	margin-left:130px;
+	margin-left:20px;
 	margin-top:8px;
-	margin-right:80px;
+	margin-right:50px;
+	cursor:pointer;
 }
 
 .tag{
 	margin-top:12px;
 	float:left;
-	width:60px;
-	margin-left:10px;
+	margin-left:30px;
+	cursor:pointer;
 }
 
 .language{
@@ -103,9 +104,16 @@ footer{
 	color:#999999;
 }
 
-.powered{
-	
+.powered{	
 	width:100%;
 	text-align: center;
 	padding-bottom:30px;
+}
+
+#QRcode{
+	width:240px;
+	height:240px;
+	background-image: url(../image/QRcode.jpg);
+	background-repeat: no-repeat;
+	background-size: 80px 80px;
 }

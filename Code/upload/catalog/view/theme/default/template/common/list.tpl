@@ -12,6 +12,7 @@
             <div class="type_tab">猜你喜欢</div>
         </div>
 		<div class="search-bar">
+			<input id="searchType" type="hidden" value="food" />
   			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
   			<div id="dropdown"></div>
   			<input id="serach-input" class="controls" type="text" placeholder="请输入餐馆、菜品关键字" />

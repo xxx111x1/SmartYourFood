@@ -16,14 +16,16 @@
 <link href="//fonts.googleapis.com/css?family=Open+Sans:400,400i,300,700" rel="stylesheet" type="text/css" />
 <link href="catalog/view/theme/default/stylesheet/sfcommon.css" rel="stylesheet">
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/sfheader.js" type="text/javascript"></script>
 </head>
 
 <body>
 <div class="header">
 	<div class="header-content">
 	  <div id="logo"></div>
-	  <div class="tag">首页</div>
-	  <div class="tag">我的订单</div>
+	  <div class="tag" id="go-to-home">首页</div>
+	  <div class="tag" id="go-to-food">我的美食</div>
+	  <div class="tag" id="go-to-order">我的订单</div>
 	  <div class="language">English</div>
 	  		<div class="dash">|</div>
 	  		<div class="account">

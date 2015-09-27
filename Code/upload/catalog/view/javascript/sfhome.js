@@ -80,6 +80,13 @@ $(document).ready(function () {
 		$('.history-addresses').addClass("hide");
 	});
 	
+	$('#search-button').on('click', function () {		
+        var searchKeyWords = $('#serach-input').val();
+        var type=$('#searchType').val();	
+        var url = '/index.php?route=sf' + type+'/search&search=' +searchKeyWords;        
+        window.location.href = url;
+    });
+	
 	$(".click-point-first,.first-triangle-left,.first-tip").hover(
 			function(){
 				$(".second-tip").css("background","rgba(0, 0, 0, 0)");
@@ -102,9 +109,6 @@ $(document).ready(function () {
 			}
 	);
 	
-	$("#search-button").click(function (){
-		window.location.href = "index.php?route=common/list";		
-	});	
 	$(".food").hover(
 			function(){
 				$(this).addClass( "food-hover" );

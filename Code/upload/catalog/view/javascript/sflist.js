@@ -1,8 +1,8 @@
 $(document).ready(function () {
 	
-	var type='';	
+	var type=$('#searchType').val();	
 	if(window.location.search.indexOf('restaurant') >= 0){
-		type='rest'
+		type='rest';
 		$('#restaurant_tab').addClass('selected_type_tab');
 		$('#food_tab').removeClass('selected_type_tab');
 	
@@ -12,6 +12,7 @@ $(document).ready(function () {
 		$('#food_tab').addClass('selected_type_tab');
 		$('#restaurant_tab').removeClass('selected_type_tab');
 	}
+	$('#searchType').val(type);
 	var isRefreshType = true;
 	$('#food_tab').click(function() {
 		if(!$('#food_tab').hasClass('selected_type_tab')){
@@ -95,7 +96,7 @@ $(document).ready(function () {
 		addContents(filters,sort,0,1,isRefreshType);
 	});
 	
-	$(document).on('click', '.thumb_view', function(){
+	$(document).on('click', '.thumb_view,.thumb_desc_restname', function(){
 		var restId = $(this).attr('restid');
 		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId;
 		if (type=='food'){			
@@ -114,7 +115,7 @@ $(document).ready(function () {
 	});
 	
 	$(document).on('click', '.thumb_add2cart', function(){
-		var id = $(this).siblings( '.thumb_view' ).attr('foodid');
+		var id = $(this).attr('foodid');
 		var number = $(this).attr('number');
 		number++;
 		cart.add(id,number);
@@ -157,13 +158,7 @@ $(document).ready(function () {
                 $(this).detach()
             });
         }
-	});	
-	
-	$('.add-to-cart').on('click', function () {
-        
-    });
-	
-	
+	});		
 	
 	$(window).scroll(function () { 
 		   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
@@ -207,16 +202,16 @@ $(document).ready(function () {
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
 						name = v.rest_name
-						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_view" restId='+restId+' foodId='+id+' >看看</div><div class="thumb_add2cart" id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><div class="thumb_desc_restname">'+v.rest_name+'</div>' +
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
 											'<div class="thumb_desc_restdist">距离 0M</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
-											'<div class="thumb_desc_productprice">'+v.price+'</div></div></div>';
+											'<div class="thumb_desc_productprice">C$ '+v.price+'</div></div></div>';
 					}
 					else{
 						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_view" restId='+restId+' >看看</div></div></div>';
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname">'+v.name+'</div>' +
 											'<div class="thumb_desc_restdist">距离 0M</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
-											'<div class="thumb_desc_productprice">平均价格：'+cost+'</div></div></div>';
+											'<div class="thumb_desc_productprice">平均价格：C$ '+cost+'</div></div></div>';
 					}
 								      					
 					

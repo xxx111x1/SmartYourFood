@@ -24,9 +24,8 @@
         </ul>
       </div>
       <div class="foot-col">
-      	<h5>
-      		二维码
-      	</h5>
+      	<h5>二维码</h5>
+      	<div id="QRcode"></div>
       </div>
     <hr>
     <div class="powered"><?php echo $powered; ?></div>

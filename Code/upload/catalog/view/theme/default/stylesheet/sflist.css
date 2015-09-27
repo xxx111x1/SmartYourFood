@@ -366,6 +366,7 @@ body{
     float: left;
     font-weight: bold;
     font-size: 14;
+    cursor: pointer;
 }
 .thumb_desc_restdist{
 	background-image: url(../image/distanceIcon.png);

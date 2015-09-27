@@ -1,47 +1,60 @@
 .backtop_section {
     position: fixed;
     _position: absolute;
-    bottom: 40px;
-    right: 0px;
+    bottom: 60px;
+    right: 20px;
     width: 70px;
     height: 400px;
     vertical-align: bottom;
 }
 
 #cart_thumbnail,#orders, #back_top, #my_message, #feedback,#call_center {
-	width:65px;
-	height:60px;
-	margin-top:5px;
+	width:70px;
+	height:65px;
+	margin-top:-1px;
 }
 
+.backtopIcons{
+	padding-top:40px;
+	text-align: center;
+	color:#c0c0c0;
+	font-weight: bold;
+	background-color: #f6f6f6;
+	border: 1px solid #dcdcdc;
+}
+
+.backtopIcons:hover{
+	color:white;
+}
 #cart_thumbnail {
-	background:url(../image/cartBackTop.png) no-repeat;
-	background-position:center;
+	background:url(../image/cartBacktopOff.png) no-repeat;
+	background-position: top,center;
 }
 
 #orders {
-	background:url(../image/orders.png) no-repeat;
-	background-position:center;
+	background:url(../image/ordersOff.png) no-repeat;
+	background-position:top,center;
 }
 
 #back_top {	
-	background:url(../image/upArrow.png) no-repeat;
-	background-position:center;
+	background:url(../image/backtopOff.png) no-repeat;
+	background-position:top,center;
 }
 
 #my_message {
-	background:url(../image/message.png) no-repeat;
-	background-position:center;
+	background:url(../image/messageOff.png) no-repeat;
+	background-position:top,center;
+	margin-top:50px;
 }
 
 #feedback {
-	background:url(../image/feedback.png) no-repeat;
-	background-position:center;
+	background:url(../image/feedbackOff.png) no-repeat;
+	background-position:top,center;
 }
 
 #call_center {
-	background:url(../image/callCenter.png) no-repeat;
-	background-position:center;
+	background:url(../image/callCenterOff.png) no-repeat;
+	background-position:top,center;
 }
 
 #cart_thumbnail:hover, #orders:hover, #back_top:hover, #my_message:hover, #feedback:hover,#call_center:hover {
@@ -51,10 +64,10 @@
 .cart_dropdown, .cart_dropdown li{
 	float:left;
 	position: fixed;
-	bottom: 40px;
-	right: 40px;
+	bottom: 480px;
+	right: 20px;
 	background-color:#eee;
-	width: 200px;
+	width: 230px;
 }
 
 #message{
@@ -145,4 +158,59 @@
     background-color: #ff2d4b;
     cursor: pointer;
     font-size: 16px;
+}
+
+.empty-cart {
+	width: 230px;
+	height: 40px;
+	text-align: center;
+	background-color: #ed4346;
+	background-image: url(../image/cartBacktopOn.png);
+	background-repeat: no-repeat;
+	background-position: 15px 5px;
+	background-size: 30px 30px;
+	font-weight: bold;
+	color: white;
+	padding-top:10px;
+}
+
+.cart-thumbnail-table{
+	background-color: white;
+	font-size:12px;
+	font-color:black;
+}
+.cart-thumbnail-table tr{
+	height:30px;
+	border-bottom: 1px solid #ebebeb;
+	width: 230px;
+}
+.table-head{
+	color: #999999;
+}
+.food-name{
+	width: 100px;
+	padding-left:10px;
+}
+
+.food-number{
+	width:40px;
+	float:left;
+}
+
+.remove-food, .add-food{
+	width:15px;
+	background-color: #ed4346;
+	color: white;
+	font-weight:bold;
+	font-size:14px;
+	float:left;
+}
+
+.purchase-number{
+	float:left;
+	width:9px;
+}
+
+.food-price{
+	width:50px;
 }
