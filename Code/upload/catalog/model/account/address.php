@@ -163,7 +163,7 @@ class ModelAccountAddress extends Model {
 		return $query->rows;
 	}
 	
-	function getDistance($lat1, $lng1, $lat2, $lng2)
+	public function getDistance($lat1, $lng1, $lat2, $lng2)
 	{
 		$earthRadius = 6367000; //approximate radius of earth in meters
 	
