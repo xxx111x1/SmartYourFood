@@ -91,9 +91,9 @@ function isvalidusername( username)
 
     var str_name = username.toString();
     var len = str_name.length;
-    if(len<6 || len>24)
+    if(len<3 || len>24)
     {
-        err_msg='请输入6-24位的用户名 ';
+        err_msg='请输入3-24位的用户名 ';
         return false;
     }
     return true;
@@ -106,7 +106,7 @@ function isvalidphonenum(phonenum)
         err_msg='电话号码不能为空';
         return false;
     }
-    if(phonenum.length!=8)
+    if(phonenum.length!=10)
     {
         err_msg='电话号码长度长度不对';
         return false;
