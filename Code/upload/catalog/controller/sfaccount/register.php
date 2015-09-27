@@ -20,7 +20,7 @@ class ControllerSfaccountRegister extends Controller{
             $customer_data['password'] = $this->request->post['pwd_1st'];
             $customer_data['telephone'] = $this->request->post['phonenumber'];
             //$customer_data['telephone'] = 1234567;
-            $customer_data['firstname'] = 'null';
+            $customer_data['firstname'] =  $this->request->post['accountname'];
             $customer_data['lastname'] = 'null';
             $customer_data['lastname'] = 'null';
             $customer_data['address_1'] = 'null';
@@ -34,12 +34,15 @@ class ControllerSfaccountRegister extends Controller{
         }
 
         $data=array();
-        $this->response->setOutput($this->load->view('default/template/sfaccount/register.tpl', $data));
+        //$this->response->setOutput($this->load->view('default/template/sfaccount/register.tpl', $data));
+        $this->response->setOutput($this->load->view('default/template/sfaccount/registerv3.html', $data));
     }
 
     public function validate() {
 
-
+        if ((utf8_strlen(trim($this->request->post['accountname'])) < 1) || (utf8_strlen(trim($this->request->post['accountname'])) > 32)) {
+            $this->error['firstname'] = $this->language->get('error_firstname');
+        }
         if ((utf8_strlen($this->request->post['phonenumber']) < 3) || (utf8_strlen($this->request->post['phonenumber']) > 32)) {
             $this->error['phonenumber'] = $this->language->get('error_telephone');
         }

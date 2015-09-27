@@ -111,7 +111,7 @@ class ControllerSfaccountLogin extends Controller{
         }
 
         $data=array();
-        $this->response->setOutput($this->load->view('default/template/sfaccount/login.tpl', $data));
+        $this->response->setOutput($this->load->view('default/template/sfaccount/login.html', $data));
     }
 
     protected function validate() {
