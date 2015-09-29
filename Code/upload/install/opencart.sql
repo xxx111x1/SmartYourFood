@@ -45,7 +45,7 @@ CREATE TABLE IF NOT EXISTS `oc_restaurant_info` (
   `contacts` NVARCHAR(50) NULL,
   `review_score` DECIMAL(5,2) NULL,
   `tags` NVARCHAR(100) NULL,
-  `img_url` VARCHAR(100) NULL,
+  `img_url` VARCHAR(200) NULL,
   `avg_cost` DECIMAL(8,2) NULL,
   `available` INT(1) NULL,
   `taste_score` DECIMAL(5,2) NULL,

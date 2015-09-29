@@ -1,0 +1,62 @@
+Angel Roll;3;hamachi, jalapeno on top of spicy tuna, w/wasabi dressing;4;6;sushi_maro_angel_roll.png;12.99;1
+California Flower Roll;3;spicy tuna on top of deep fried California roll;4;6;sushi_maro_california _flower_roll.png;9.99;1
+Caterpillar Roll;3;crab, tempura prawn with avocado on top;4;6;sushi_maro_caterpillar_roll.png;10.99;1
+Dragon Roll;3;BBQ eel on top of California roll in aburi style;4;6;sushi_maro_dragon_roll.png;10.99;1
+Ginza Roll;3;spicy tuna, prawn with salmon on top, topping sashimi can be substituted to tuna;4;6;sushi_maro_ginza_roll.png;12.99;1
+Green House Roll;3;seaweed salad on top of tuna & avocado;4;6;sushi_maro_green_house_roll.png;9.99;1
+Halloween Roll;3;tuna sashimi & jalapeno on top of prawn tempura & crab;4;6;sushi_maro_halloween_roll.png;12.99;1
+Hamachi Roll;3;hamachi sashimi on top of king crab California roll;4;6;sushi_maro_hamachi_roll.png;12.99;1
+Hawaii Roll;3;salmon, avocado, cream cheese with smoke salmon & mango on top;4;6;sushi_maro_hawaii_roll.png;13.99;1
+King Crab California Roll;3;with tobiko;4;6;sushi_maro_king_crab_california_roll.png;9.99;1
+King Prawn Roll;3;wild Angel Botan prawn, crab, avocado w/tobiko;4;6;sushi_maro_king_prawn_roll.png;9.99;1
+Lemon Roll;3;spicy tuna, cucumber with red tuna and sliced lemon on top;4;6;sushi_maro_lemon_roll.png;12.99;1
+Lobster Roll (4oz);3;ebi, mango, tobiko on top of lobster tempura roll;4;6;sushi_maro_lobster_roll.png;16.99;1
+Mango Roll;3;mango roll wrapped with soy sheet and sliced avocado & pine nuts on top vegetarian;4;6;sushi_maro_mango_roll.png;9.99;1
+Ocean Roll;3;Spicy prawn and cucumber inside, crawfish tail, salmon, bbq eel on top w/green onions and sesame seeds;4;6;sushi_maro_ocean_roll.png;13.99;1
+Rainbow Roll;3;6 kinds of assorted sashimi on top of California roll;4;6;sushi_maro_rainbow_roll.png;10.99;1
+Round House Roll;3;spicy tuna, unagi, tobiko on top of prawn tempura in aburi style;4;6;sushi_maro_round_house_roll.png;14.99;1
+Salmon Lover Roll;3;aburi style salmon and mentaiko on top of salmon avocado;4;6;sushi_maro_salmon_lover_roll.png;13.99;1
+Spicy Lobster Roll (4oz);3;obster tempura with tobiko on top of spicy tuna;4;6;sushi_maro_spicy_lobster_roll.png;16.99;1
+Summerside Roll;3;salmon and jalapeno on top of king crab meat with avocado in aburi style;4;6;sushi_maro_summerside_roll.png;13.99;1
+Super Spider Roll;3;salmon & mentaiko on top of deep fried soft shell crab in aburi style;4;6;sushi_maro_super_spider_roll.png;14.99;1
+Wagyu Special Roll;3;wild Angel Botan prawn, crab, avocado w/wagyu beef in aburi style;4;6;sushi_maro_wagyu_special_roll.png;16.99;1
+Red-Cooked Chicken;1;;4;1;kungfu_noodle_red_cooked_chicken.jpg;4.99;1
+Five Spiced Beef;1;;4;1;kungfu_noodle_five_spiced_beef.jpg;4.99;1
+Lanzhou Streched Noodle;1;;4;1;kungfu_noodle_lanzhou_streched_noodle.jpg;8.5;1
+Kungfu Noodle Soup With Lamb;1;;4;1;kungfu_noodle_soup_with_lamb.jpg;11.99;1
+KungFu Dandan Mein;1;;4;1;kungfu_noodle_kungfu_dandan_mein.jpg;8.5;1
+Kungfu Noodle Beef With Tomato Soup;1;;4;1;kungfu_noodle_beef_with_tomato_toup.jpg;8.5;1
+KungFu Fried Rice;1;;4;1;kungfu_noodle_kungfu_fried_rice.jpg;9.95;1
+KungFu Dark Fried Rice;1;;4;1;kungfu_noodle_kungfu_dark_fried_rice.jpg;9.95;1
+KungFu Sweet & Sour Pork;1;;4;1;kungfu_noodle_kungfu_sweet_sour_pork.jpg;11.95;1
+Kungfu Beef With Broccoli;1;;4;1;kungfu_noodle_kungfu_beef_with_broccoli.jpg;11.95;1
+Hot and spicy Basa fillet soup;2;;4;1;beijiang_hot_and_spicy_basa_fillet_soup.png;20.99;1
+Hot and spicy Basa fillet soup with pickled vegetables;2;;4;1;beijiang_hot_and_spicy_basa_fillet_soup_with_pickled_vegetables.png;19.99;1
+Stir fried prawn with XO paste;2;;4;1;beijiang_stir_fried_prawn_with_xo_paste.png;22.99;1
+Sweet & sour red grouper;2;;4;1;beijiang_sweet & sour red grouper.png;22.99;1
+Stir fried prawn with salted egg yolk & corns;2;;4;1;beijiang_stir_fried_prawn_with_salted_egg_yolk_corns.png;22.99;1
+Poached Basa fillet with broccoli;2;;4;1;beijiang_poached_basa_fillet_with_broccoli.png;18.99;1
+Roasted cumin tilapia;2;;4;1;beijiang_roasted_cumin_tilapia.png;23.99;1
+Stir fried salt & pepper shrimp;2;;4;1;beijiang_stir_fried_salt_pepper_shrimp.png;25.99;1
+Stir fried shrimp with hot chili pepper sauce;2;;4;1;beijiang_stir_fried_shrimp_with_hot_chili_pepper_sauce.png;25.99;1
+Steamed tilapia with hot chili paper sauce;2;;4;1;beijiang_steamed_tilapia_with_hot_chili_paper_sauce.png;31.9;1
+Chicken Bento;4;chicken teriyaki on rice, 4pc california, salad, 1pc shrimp tempura and 3pc yam tempura;4;6;umi_chicken_bento.png;7.49;1
+Beef Bento;4;beef teriyaki on rice, 4pc california, salad, 1pc shrimp tempura and 3pc yam tempura;4;6;umi_beef_bento.png;7.49;1
+Unagi Bento;4;unagi teriyaki on rice, 4pc california, salad, 1pc shrimp tempura and 3pc yam tempura;4;6;umi_unagi_bento.png;9.99;1
+Beef Short Rib;4;beef short rib teriyaki on rice, 4pc california, salad, 1pc shrimp tempura and 3pc yam tempura;4;6;umi_short_rib.png;7.49;1
+Deluxe Tray;4;16pc sushi, 36pc roll;4;6;;38.99;1
+Shrimp Bento;4;shrimp teriyaki on rice, 4 pc california, salad, 1pc shrimp tempura and 3 pc yam tempura;4;6;umi_deluxe_platter.png;8.99;1
+Yam Fries mini;4;;4;6;umi_yam_fries.png;4.99;1
+Yam Fries large;4;;4;6;umi_yam_fries.png;7.99;1
+Chicken Donburi;4;;4;6;umi_chicken_teriyaki.png;6.99;1
+Beef Donburi;4;;4;6;umi_chicken_teriyaki.png;6.99;1
+Asparagus wrapped with Pork Belly;6;;4;5;shenyang_kebab_asparagus.png;1.99;1
+DolSot BiBimBob;6;;4;5;shenyang_kebab_bibimbab.png;9.99;1
+Black Cod (Jap);6;;4;5;shenyang_kebab_black_cod;8.99;1
+Chicken Wing(2pcs);6;;4;5;shenyang_kebab_chicken_wings.png;1.5;1
+Koroke 4pcs;6;;4;5;shenyang_kebab_japchae.png;4.5;1
+Salmon (Jap) ;6;;4;5;shenyang_kebab_salmon.png;6.99;1
+Seafood Pancake;6;;4;5;shenyang_kebab_seafood_pancakes.png;12.99;1
+Edamame;6;;4;5;shenyang_kebab_edmame.png;3.5;1
+Japchae (Kor);6;;4;5;shenyang_kebab_japchae.png;12.99;1
+Korean Kimchi Soup;6;;4;5;shenyang_kebab_kimchi_soup.png;;1

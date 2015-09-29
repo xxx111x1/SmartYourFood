@@ -11,14 +11,22 @@ class ModelSfRestInformation extends Model{
 			if(array_key_exists('contacts'        , $data)){ $query .= ", contacts         = '" . $data['contacts']         . "'"; }
 			if(array_key_exists('review_score'    , $data)){ $query .= ", review_score     = '" . $data['review_score']     . "'"; }
 			if(array_key_exists('tags'            , $data)){ $query .= ", tags             = '" . $data['tags']             . "'"; }
-			if(array_key_exists('img_url'         , $data)){ $query .= ", img_url          = '" . $data['img_url']          . "'"; }
+			if(array_key_exists('img_url'         , $data))
+		    	{ 
+		    		
+		    		$img_url = $data['img_url'];
+		    		if(strpos($img_url,'http') == false){
+		    			$img_url = "./catalog/view/theme/default/image/foodImages/" . $img_url;
+		    		}
+		    		$query .= ", img_url          = '" . $img_url . "'"; 
+		    	}
 			if(array_key_exists('avg_cost'        , $data)){ $query .= ", avg_cost         = '" . $data['avg_cost']         . "'"; }
 			if(array_key_exists('available'       , $data)){ $query .= ", available        = '" . $data['available']        . "'"; }
 			if(array_key_exists('taste_score'     , $data)){ $query .= ", taste_score      = '" . $data['taste_score']      . "'"; }
 			if(array_key_exists('atmosphere_score', $data)){ $query .= ", atmosphere_score = '" . $data['atmosphere_score'] . "'"; }
 			if(array_key_exists('service_score'   , $data)){ $query .= ", service_score    = '" . $data['service_score']    . "'"; }
 			if(array_key_exists('review_number'   , $data)){ $query .= ", review_number    = '" . $data['review_number']    . "'"; }
-		$this->db->query("" . $query);		
+		$this->db->query($query);		
 		$this->event->trigger('post.restaurant.add', $data);
 	}
 	

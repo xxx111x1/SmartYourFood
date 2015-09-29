@@ -20,12 +20,20 @@ class ControllerApiFood extends Controller {
 		}		
 		if ($foods) {			
 			$json['success'] = $this->language->get('text_success');
-			$json['foods'] = $foods;
+			$json['results'] = $foods;
+			if(isset($this->session->data['lat'])){
+				$json['lat'] = $this->session->data['lat'];
+				$json['lng'] = $this->session->data['lng'];
+			}
+			else{
+				$json['lat'] = 0;
+				$json['lng'] = 0;
+			}
 		} else {
 			$json['error'] = $this->language->get('error');
 		}						
 		$this->response->addHeader('Content-Type: application/json');
-		$this->response->setOutput(json_encode($foods));
+		$this->response->setOutput(json_encode($json));
 	}
 	
 	public function getType() {
