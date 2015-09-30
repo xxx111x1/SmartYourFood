@@ -53,6 +53,6 @@ class ControllerSfcheckoutCheckout extends Controller{
         else{
             $data['address'] = "选择收货地址";
         }
-        $this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));
+        $this->response->setOutput($this->load->view('default/template/sfcheckout/updatecart.html', $data));
     }
 }
