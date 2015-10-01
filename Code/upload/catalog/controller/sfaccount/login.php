@@ -49,6 +49,16 @@ class ControllerSfaccountLogin extends Controller{
             $this->response->redirect($this->url->link('account/account', '', 'SSL'));
         }
 
+        $data=array();
+        //initialize
+        if($this->request->server['REQUEST_METHOD'] == 'POST')
+        {
+            $data['validfailed']=true;
+        }
+        else{
+            $data['validfailed']=false;
+        }
+
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
             // Trigger customer pre login event
             $this->event->trigger('pre.customer.login');
@@ -106,11 +116,10 @@ class ControllerSfaccountLogin extends Controller{
             if (isset($this->request->post['redirect']) && (strpos($this->request->post['redirect'], $this->config->get('config_url')) !== false || strpos($this->request->post['redirect'], $this->config->get('config_ssl')) !== false)) {
                 $this->response->redirect(str_replace('&amp;', '&', $this->request->post['redirect']));
             } else {
-                $this->response->redirect($this->url->link('sffood/list', '', 'SSL'));
+                $this->response->redirect($this->url->link('common/list', '', 'SSL'));
             }
         }
 
-        $data=array();
         $this->response->setOutput($this->load->view('default/template/sfaccount/login.html', $data));
     }
 
@@ -126,7 +135,6 @@ class ControllerSfaccountLogin extends Controller{
 
         // Check if customer has been approved.
         $customer_info = $this->model_account_customer->getCustomerByPhone($this->request->post['phonenumber']);
-
         if ($customer_info && !$customer_info['approved']) {
             $this->error['warning'] = $this->language->get('error_approved');
         }
@@ -134,13 +142,11 @@ class ControllerSfaccountLogin extends Controller{
         if (!$this->error) {
             if (!$this->customer->loginbytelephone($this->request->post['phonenumber'], $this->request->post['password'])) {
                 $this->error['warning'] = $this->language->get('error_login');
-
                 $this->model_account_customer->addLoginAttemptByPhone($this->request->post['phonenumber']);
             } else {
                 $this->model_account_customer->deleteLoginAttempts($this->request->post['phonenumber']);
             }
         }
-
         return !$this->error;
     }
 }
