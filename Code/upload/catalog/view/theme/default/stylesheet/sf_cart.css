@@ -232,7 +232,7 @@ input[type="checkbox"]{
     margin-left:100px;    
 }
 
-.addressbox{
+.addressarea:first-child{
     margin-top:30px;
     margin-left:5px;
     border-style: solid;
@@ -243,6 +243,51 @@ input[type="checkbox"]{
     height: 138px;
     padding-left:10px;
     float:left;
+}
+.addressbox .mark{
+    display: none;
+}
+.addressbox{
+    margin-top:30px;
+    margin-left:5px;
+    border-style: solid;
+    border-color: #D0D0D0;
+    border-width: 1px;
+    font-weight:bolder;
+    width: 270px;
+    height: 138px;
+    padding-left:10px;
+    float:left;
+}
+.addressbox:hover{
+    margin-top:30px;
+    margin-left:5px;
+    border-style: solid;
+    border-color: #f65053;
+    border-width: 1px;
+    font-weight:bolder;
+    width: 270px;
+    height: 138px;
+    padding-left:10px;
+    float:left;
+}
+.addressbox:hover .mark{
+    display: block;
+}
+.addressbox_selected{
+    margin-top:30px;
+    margin-left:5px;
+    border-style: solid;
+    border-color: #f65053;
+    border-width: 1px;
+    font-weight:bolder;
+    width: 270px;
+    height: 138px;
+    padding-left:10px;
+    float:left;
+}
+.addressbox_selected .mark{
+    display: block;
 }
 
 #deliverlabel{
