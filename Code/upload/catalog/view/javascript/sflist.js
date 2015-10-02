@@ -157,6 +157,7 @@ $(document).ready(function () {
             }, function () {
                 $(this).detach()
             });
+        	$('#cart_preview').removeClass('unvisible');        	
         }
 	});		
 	

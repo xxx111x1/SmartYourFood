@@ -7,12 +7,12 @@
 <div id="message" class="unvisible" >
 </div>
 <div class="backtop_section" id="backtop_section" >	
-	<div class="backtopIcons" id="cart_thumbnail">餐车</div>
-	<div class="backtopIcons" id="orders">订单</div>
 	<div class="backtopIcons" id="my_message">消息</div>
+	<div class="backtopIcons" id="orders">订单</div>	
 	<div class="backtopIcons" id="feedback">反馈</div>
 	<div class="backtopIcons" id="call_center">客服</div>		
 	<div class="backtopIcons" id="back_top">返回顶部</div>
+	<div class="backtopIcons" id="cart_thumbnail">餐车</div>
 </div>
 
 <div class="mod-dialog-frame unvisible" style="overflow: auto; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 1000; background-color: rgba(0, 0, 0, 0.54902);">

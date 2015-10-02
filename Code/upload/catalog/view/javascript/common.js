@@ -221,8 +221,8 @@ var cart = {
 					$('#cart > button').html('<span id="cart-total"><i class="fa fa-shopping-cart"></i> ' + json['total'] + '</span>');
 				}, 100);
 					
-				if (getURLVar('route') == 'checkout/cart' || getURLVar('route') == 'checkout/checkout') {
-					location = 'index.php?route=checkout/cart';
+				if (getURLVar('route') == 'sfcheckout/cart' || getURLVar('route') == 'sfcheckout/checkout') {
+					location = 'index.php?route=sfcheckout/cart';
 				} else {
 					$('#cart > ul').load('index.php?route=common/cart/info ul li');
 					$('#cart_preview').load('index.php?route=common/cartthumbnail/info');
@@ -232,6 +232,22 @@ var cart = {
 					}
 				}
 				
+			}
+		});
+	},
+	'clear': function() {
+		$.ajax({
+			url: 'index.php?route=checkout/cart/clear',
+			type: 'post',
+			dataType: 'json',
+			beforeSend: function() {
+				$('#cart > button').button('loading');
+			},
+			complete: function() {
+				$('#cart > button').button('reset');
+			},			
+			success: function(json) {
+				$('#cart_preview').load('index.php?route=common/cartthumbnail/info');				
 			}
 		});
 	},

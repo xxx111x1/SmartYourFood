@@ -506,6 +506,15 @@ class ControllerCheckoutCart extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 
+	
+	public function clear(){
+		$this->load->language('checkout/cart');
+		$json = array();
+		$this->cart->clear();
+		$json["success"] = "success";
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 	public function remove() {
 		$this->load->language('checkout/cart');
 

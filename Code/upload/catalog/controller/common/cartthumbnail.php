@@ -50,6 +50,7 @@ class ControllerCommonCartthumbnail extends Controller {
 		$this->load->model('tool/upload');
 
 		$data['products'] = array();
+		$total_price = 0;
 		foreach ($this->cart->getFoods() as $product) {
 			if ($product['image']) {
 				$image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));
@@ -70,8 +71,8 @@ class ControllerCommonCartthumbnail extends Controller {
 				$total = $this->currency->format($product['price']* $product['quantity']);
 			} else {
 				$total = false;
-			}
-
+			}			
+			$total_price = $total_price + $product['price']* $product['quantity'];
 			$data['products'][] = array(
 				'key'       => $product['key'],
 				'thumb'     => $image,
@@ -110,8 +111,12 @@ class ControllerCommonCartthumbnail extends Controller {
 		}
 
 		$data['cart'] = $this->url->link('checkout/cart');
-		$data['checkout'] = $this->url->link('checkout/checkout', '', 'SSL');
-
+		$data['checkout'] = $this->url->link('sfcheckout/checkout', '', 'SSL');
+		$data['total_transffer'] = 5;
+		$data['total_price'] = $total_price;
+		$data['total_taxes'] = round($total_price*0.12,2);
+		$data['total_fees'] = round($total_price*0.1,2);
+		$data['total_sum'] = $data['total_transffer'] +$data['total_price']+$data['total_taxes']+$data['total_fees'];
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/cart_thumbnail.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/cart_thumbnail.tpl', $data);
 		} else {

@@ -1,7 +1,7 @@
 <div class="cart_dropdown" id="cart_dropdown">
     <?php if ($products) { ?>
       <div class="cart-thumbnail-head" >
-      	<div class="cart-head " style="float:left;width:100px;">购物车</div>
+      	<div class="cart-head " style="float:left;width:80px;">购物车</div>
       	<div class="cart-head claer-all" style="float:right;width:100px;margin-right:0px;">清空</div>
       </div>
       <table class="cart-thumbnail-table">
@@ -19,17 +19,33 @@
           <td class="food-remove" key="<?php echo $product['key']; ?>" id="<?php echo $product['product_id']; ?>"><div onclick="cart.remove('','');" ></div></td>
         </tr>
         <?php } ?>
+        <tr>
+          <td class="food-name" >运费</td>
+          <td></td>
+          <td class="food-price">$<?php echo $total_transffer; ?></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="food-name" >税(12%):</td>
+          <td></td>
+          <td class="food-price">$<?php echo $total_taxes; ?></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td class="food-name" >小费(10%):</td>
+          <td></td>
+          <td class="food-price">$<?php echo $total_fees; ?></td>
+          <td ></td>
+        </tr>
       </table>
       <div class="cart-thumbnail-bottom">
-        <table class="table table-bordered">
-          <?php foreach ($totals as $total) { ?>
-          <tr>
-            <td class="text-right"><strong><?php echo $total['title']; ?></strong></td>
-            <td class="text-right"><?php echo $total['text']; ?></td>
-          </tr>
-          <?php } ?>
-        </table>
-        <p class="text-right"><a href="<?php echo $cart; ?>"><strong><i class="fa fa-shopping-cart"></i> <?php echo $text_cart; ?></strong></a>&nbsp;&nbsp;&nbsp;<a href="<?php echo $checkout; ?>"><strong><i class="fa fa-share"></i> <?php echo $text_checkout; ?></strong></a></p>
+        <div class="sum-all">共 $<?php echo $total_sum; ?></div>
+        <div class="cart-checkout">
+        	<a href="<?php echo $checkout; ?>">
+        		结算
+        	</a>
+        </div>
+
       </div>
     <?php } else { ?>
     <div class="empty-cart">购物车是空的  </div>
