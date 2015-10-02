@@ -1,73 +1,63 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>Smart Your Food</title>
-    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf.css">
-    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
-    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-	<script src="catalog/view/javascript/list-item/cart.js" type="text/javascript"></script>
-	<script src="catalog/view/javascript/starts.js" type="text/javascript"></script>
-</head>
-<body>
-<!--
-<div class="header">Header part</div>
--->
 <?php echo $header;?>
-<div class="main_body">
-    <!--<div class="bill_board">billboard part</div>-->
-    <div class="address_info">
-        <span class="address_info_label">送餐地址:</span>
-        <span class="address_info_address"><?php echo $address;?></span>
-        <a class="address_info_chg" href="index.php?route=address/address&returnUrl=index.php?route=sffood/list">切换地址</a></div>
-    </div>
-   
-    <div class=sf_product_content>
-    	
-	 	<div class=product_area >
-	 	<div class=rest_information>
-    		<img class=rest_img  src="<?php echo $restaurant['img_url'];?>"></img>
-    		<div class=rest_details>
-    			<div class=rest_detail >餐厅名称：<?php echo $restaurant['name'];?></div>
-				<div class=rest_detail >餐厅简介：<?php echo $restaurant['description'];?></div>
-				<div class=rest_detail >餐厅地址：<?php echo $restaurant['address'];?></div>
-				<div class=rest_detail >联系人： <?php echo $restaurant['contacts'];?></div>
-				<div class=rest_detail >联系电话：<?php echo $restaurant['phone'];?></div>
-				<div class=rest_detail >餐厅评价：<?php echo $restaurant['review_score'];?></div>
-    		</div>
-			
-    	</div>
-    	<div class=food_information>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sflist.css">
+<script src="catalog/view/javascript/sfdetail.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&callback=initMap" async defer></script>
+
+<div class="container">
+	<img class="advertisement" src="./catalog/view/theme/default/image/ads.gif"></img>
+    <div class="tabmenu">
+        <div class="contenttab">
+        	<div id="food-tab" class="type_tab">全部菜品</div>
+            <div id="review-tab" class="type_tab">评价</div>            
+        </div>
+		<div class="search-bar">
+			<input id="searchType" type="hidden" value="food" />
+  			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
+  			<div id="dropdown"></div>
+  			<input id="serach-input" class="controls" type="text" placeholder="请输入餐馆、菜品关键字" />
+  			<div id="search-button">快速查找</div>
+  			<div class="history-addresses hide">
+  				<div id="history-label">历史记录</div>
+  				<?php if($history_address) {?>
+  				<?php foreach ($history_address as $address) { ?>
+					<div class='address' lat='<?php echo $address['lat']; ?>' lng='<?php echo $address['lng']; ?>'><?php echo $address['address']; ?></div>	
+				<?php } } ?>
+  			</div>
+  		</div>
+    </div>   
+        
+	<div class=sort_option>
+		<div class="sortlabel glyphicon">排序:</div>
+		<span class="sort_field glyphicon sort_selected" id="sort_default" >默认</span>
+		<span class="sort_field glyphicon down_arrow_icon" id="sell_number" >销量</span> 
+		<span class="sort_field glyphicon down_arrow_icon" id="review_score" >评价</span>
+		<span class="sort_field glyphicon up_arrow_icon" id="send_time" >配送时间</span>		
+		<input type="hidden" id="sort" value="sort_default"/>
+	</div>
+
+	<div class=product_content>
+		<input type=hidden id=page_number value=0 />
+		<div class=product_area >
 			<?php foreach ($foods as $food) { ?>
-				<div class=sf_product id="<?php echo $food['food_id'];?>" title="<?php echo $food['name'];?>" >
-					<img class=sf_product_preview src="<?php echo $food['img_url'];?>" />
-					<div class=sf_product_title ><?php echo $food['name'];?></div>
-					<span class="sf_product_stars stars" rate="<?php echo $food['review_score']; ?>" ></span>
-					<div class=sf_product_price>
-						<span style="MARGIN-RIGHT: 10px">价格:<?php echo $food['price'];?></span>
-						<span>配送: </span>
-						<span >分钟</span>
-						<span class=sf_product_sv >销量<?php $food['sell_number']; ?>份</span> 
+					<div class="thumb" id="<?php echo $food['food_id']; ?>">
+						<img class="thumb_preview" src="<?php echo $food['img_url']; ?>" />
+						<div class="thumboverlay" style="display: none;">
+							<div class="thumb_add2cart" foodId="<?php echo $food['food_id']; ?>" id="food_<?php echo $food['food_id']; ?>_number" number="<?php echo $food['cart_number']; ?>"> 添加到餐车</div>
+						</div>
 					</div>
-					<div class="sf_food_cart">
-						<div class="minus_food" value="<?php echo $food['food_id'];?>" >-</div>
-						<input class="food_number" id="food_<?php echo $food['food_id'];?>_number" value="<?php echo $food['cart_number'];?>" />
-						<div class="add_food" value="<?php echo $food['food_id'];?>" >+</div> 
-					</div>
-				</div>
-			<?php } ?>
+					<div class="thumb_desc">
+						<div class="thumb_desc_foodname"><?php echo $food['name']; ?></div>
+						<div class="thumb_desc_restname" >餐馆 <?php echo $restaurant['name']; ?></div>
+						<div class="thumb_desc_restdist">距离-KM</div>
+						<div class="thumb_desc_productinfo">
+							<div class="thumb_desc_productfav"><?php echo $food['review_score']; ?></div>
+							<div class="thumb_desc_productprice">C$ <?php echo $food['price']; ?></div>
+						</div>
+					</div>	
+			<?php }  ?>
 		</div>
- 		</div>
- 	</div>
+	</div>
+	<?php echo $backtop; ?>
 </div>
-
-<?php echo $backtop; ?>
-
-<!--
-<div class="footer">
--->
-
-</div>
-</body>
-</html>
+<?php echo $footer;?>
