@@ -1,21 +1,22 @@
 <div class="cart_dropdown" id="cart_dropdown">
     <?php if ($products) { ?>
       <div class="cart-thumbnail-head" >
-      	<div class="table-head" style="float:left;width:100px;">购物车</div>
-      	<div class="table-head" style="float:right;width:100px;margin-right:0px;">清空</div>
+      	<div class="cart-head " style="float:left;width:100px;">购物车</div>
+      	<div class="cart-head claer-all" style="float:right;width:100px;margin-right:0px;">清空</div>
       </div>
       <table class="cart-thumbnail-table">
       	<tr>
       		<td class="food-name table-head">菜品</td>
       		<td class="food-number table-head">份数</td>
-      		<td class="food-price table-head" colspan="2">单价</td>
+      		<td class="food-price table-head" >单价</td>
+      		<td></td>
       	</tr>
         <?php foreach ($products as $product) { ?>
         <tr>
           <td class="food-name" ><div class="food-name-detail" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></div></td>
           <td class="food-number" foodId ="<?php echo $product['product_id']; ?>" ><div class="remove-food"></div><div class="purchase-number"><?php echo $product['quantity']; ?></div><div class="add-food"></div></td>
           <td class="food-price"><?php echo $product['total']; ?></td>
-          <td class="food-remove"><div onclick="cart.remove('<?php echo $product['key']; ?>','<?php echo $product['product_id']; ?>');" title="<?php echo $button_remove; ?>" class="">X</div></td>
+          <td class="food-remove" key="<?php echo $product['key']; ?>" id="<?php echo $product['product_id']; ?>"><div onclick="cart.remove('','');" ></div></td>
         </tr>
         <?php } ?>
       </table>

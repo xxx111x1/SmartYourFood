@@ -17,14 +17,19 @@ $(document).ready(function () {
 		$('#cart_preview').toggleClass('unvisible');
 	});
 	
+	$(document).on('click', '.food-remove', function(){
+		var key = $(this).attr("key");
+		var id = $(this).attr("id");
+		cart.remove(key,id);
+	});
+	
 	$('#my_message').click(function(){
 		$('#message').empty();
 		$('#message').toggleClass('unvisible');		
 		if(!$('#message').hasClass('unvisible')) {			
 			getMessage();
 		}
-	});
-	
+	});	
 	
 	$('#feedback').click(function(){
 		$('.mod-dialog-frame').toggleClass('unvisible');
