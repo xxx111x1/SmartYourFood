@@ -188,29 +188,58 @@
 	color: #999999;
 }
 .food-name{
-	width: 100px;
-	padding-left:10px;
+	width: 110px;
+	height:30px;
+	padding-left:5px;
+}
+
+.food-name-detail{
+	width: 110px;
+	margin-top:5px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .food-number{
-	width:40px;
+	width:50px;
+	float:left;
+	height:30px;
+}
+.add-food{
+	width:15px;
+	height:15px;
+	margin-top:5px;
+	background: url(../image/addIcon.png) no-repeat;
+	background-size: 15px 15px;	
+	background-repeat: no-repeat;
+	background-position: bottom;
 	float:left;
 }
-
-.remove-food, .add-food{
+.remove-food{
 	width:15px;
-	background-color: #ed4346;
-	color: white;
-	font-weight:bold;
-	font-size:14px;
+	height:15px;
+	margin-top:5px;
+	background-image: url(../image/minusIcon.png);
+	background-size: 15px 15px;
+	background-repeat: no-repeat;
+	background-position: bottom;
 	float:left;
 }
 
 .purchase-number{
+	margin-top:4px;
+	margin-left:2px;
+	font-size:13px;
 	float:left;
-	width:9px;
+	width:15px;
+	text-align: center;
 }
 
 .food-price{
 	width:50px;
+}
+
+.food-remove{
+	width:30px;
 }

@@ -7890,45 +7890,12 @@ Values
 (5,'韩餐'),
 (6,'日餐'),
 (7,'港式'),
-(8,'台式'),
-(9,'早茶'),
-(10,'甜点'),
-(11,'冰激凌'),
-(12,'奶茶'),
-(13,'炸鸡'),
-(14,'快餐'),
-(15,'火锅')
-
-INSERT INTO `oc_food`
-(`price`,`sell_number`,`name`,`restaurant_id`,`desc`,`review_score`,`tags`,`img_url`)
-VALUES
- (12.5,10,'宫保鸡丁','1555','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
-,(12.5,11,'水煮肉片','1555','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
-,(12.5,10,'鱼香肉丝','1555','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
-,(12.5,10,'宫保鸡丁','1556','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
-,(12.5,10,'水煮肉片','1556','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
-,(12.5,10,'鱼香肉丝','1556','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
-,(12.5,10,'宫保鸡丁','1557','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
-,(12.5,10,'水煮肉片','1557','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
-,(12.5,10,'鱼香肉丝','1557','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
-,(12.5,14,'宫保鸡丁','1558','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
-,(12.5,77,'水煮肉片','1558','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
-,(12.5,10,'鱼香肉丝','1558','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
-,(12.5,99,'宫保鸡丁','1559','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
-,(12.5,10,'水煮肉片','1559','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
-,(12.5,10,'鱼香肉丝','1559','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
-,(12.5,112,'宫保鸡丁','1560','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
-,(12.5,10,'水煮肉片','1560','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
-,(12.5,1,'鱼香肉丝','1560','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg')
-,(12.5,10,'宫保鸡丁','1561','good',4,'2','http://img.epochtimes.com/i6/1105290902081983.jpg')
-,(12.5,10,'水煮肉片','1561','good',5,'1','http://images.meishij.net/p/20130131/2490e59477c5166e3c4e83203491419d.jpg')
-,(12.5,10,'鱼香肉丝','1561','good',7,'3','http://www.ttmeishi.com/Images/CaiPu/pic2247.jpg');
+(8,'早茶'),
+(9,'甜点'),
+(10,'冰激凌'),
+(11,'奶茶'),
+(12,'炸鸡'),
+(13,'快餐'),
+(14,'火锅')
 
 INSERT INTO `oc_restaurant_info` (`restaurant_id`, `name`, `description`, `lat`, `lng`, `address`, `review_score`, `tags`, `avg_cost`, `sell_number`) VALUES ('0', 'Food Special', 'Monthly special food', '0', '0', 'Smart Your Food', '5', '0', '20', '0');
-
-INSERT INTO `oc_food_type`(`type_id`,`type_name_cn`)
-VALUES 
-(0,'不限')
-,(1,'牛肉')
-,(2,'鸡肉')
-,(3,'鱼肉');
