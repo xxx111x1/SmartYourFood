@@ -1,7 +1,9 @@
 <?php
 class ControllerSfrestDetail extends Controller{
+
     public function index(){
         $data = array();
+        
         $restaurant_id = $this->request->get['restaurant_id'];
         $food_id = "-1";
         if (isset($this->request->get['food_id'])) {
@@ -11,7 +13,6 @@ class ControllerSfrestDetail extends Controller{
 		$data['restaurant'] = $this->model_sfrest_information->getRestaurant($restaurant_id);
 		$this->load->model('sffood/food');
 		$data['foods'] = $this->model_sffood_food->getFoodsByRestID($restaurant_id);
-		$data['backtop'] = $this->load->controller('common/backtop');
 		$cart_foods = $this->cart->getFoods();
 		if(count($cart_foods)){
 			foreach ($data['foods'] as $key => $food) {
@@ -22,7 +23,7 @@ class ControllerSfrestDetail extends Controller{
 				}
 			}
 		}
-        $data['header'] = $this->load->controller('common/header');
+		
     	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];
@@ -36,10 +37,20 @@ class ControllerSfrestDetail extends Controller{
         elseif($this->customer->isLogged() || isset($this->session->data['address']))
         {
         	$data['address'] =$this->session->data['address'];
+        	$data['first_name'] = $this->customer->getFirstName();
+        	$this->load->model('account/address');
+        	$data['history_address'] = $this->model_account_address->getAddressesHistory();
         }
         else{
-        	$data['address'] = "添加送餐地址";
-        }
+        	$data['address'] = "请输入送餐地址";
+        	$data['first_name'] = "";
+        	$data['history_address'] = "";
+        }        
+        
+        $data['header'] = $this->load->controller('common/sfheader');
+        $data['footer'] = $this->load->controller('common/sffooter');
+        $data['backtop'] = $this->load->controller('common/backtop');
+        
         $this->response->setOutput($this->load->view('default/template/sfrest/detail.tpl', $data));
     }
 }
