@@ -201,7 +201,7 @@ input[type="checkbox"]{
     margin-top:5px;
 }
 
-#summary{    
+#cost_summary{
     margin-top:20px;
     margin-left: 40px;
     padding-top:20px;
@@ -220,7 +220,7 @@ input[type="checkbox"]{
     margin-left:10px;
     margin-right:25px;
 }
-#total_cost{
+#totalcost{
     color:#f65053;
     font-size:20px;
     float:right;
