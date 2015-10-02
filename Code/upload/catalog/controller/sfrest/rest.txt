@@ -1,0 +1,5 @@
+Good Reastaurant;Kung Fu Noodle;49.2820669;-123.1165929;Parkwell Plaza 682 seymour Vancouver;6045635666;;4;1;kungfu_noodle_soup_with_lamb.jpg;20;1;;;
+Good Reastaurant;Beijiang Restaurant;49.2473425;-123.0964793;8580 Alexandra Rd Richmond;7782976656;;4;1;beijiang_stir_fried_shrimp_with_hot_chili_pepper_sauce.jpg;50;1;;;
+Good Reastaurant;Sushi Maro;49.2751912;-123.1220239;1168 Hamilton St Vancouver;7783718332;;4;6;sushi_maro_hawaii_roll.png;24;1;;;
+Good Reastaurant;Umi Sushi Express;49.2269083;-123.0693842;200 Burrard St;6046080881;;4;6;umi_unagi_bento.png;12;1;;;
+Good Reastaurant;Umi Sushi Express Inc;49.2269083;-123.0693842;Pacific Centre South 701 W Georgia St;6046339228;;4;6;umi_unagi_bento.png;12;1;;;
