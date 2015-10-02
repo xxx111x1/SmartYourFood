@@ -149,7 +149,6 @@ var cart = {
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-                console.error('before send');
 				$('#cart > button').button('loading');
 			},
 			complete: function() {

@@ -17,6 +17,13 @@ $(document).ready(function () {
 		$('#cart_preview').toggleClass('unvisible');
 	});
 	
+	$(document).on('mouseenter', '.food-row', function() {
+		$(this).find('.cart-remove').removeClass('unvisible');
+	});
+	$(document).on('mouseleave', '.food-row', function() {
+		$(this).find('.cart-remove').addClass('unvisible');
+	});
+	
 	$(document).on('click', '.remove-food,.add-food', function(){
 		var id = $(this).parent('.food-number').attr('foodId');
 		var number = $(this).siblings('.purchase-number').text();
@@ -35,7 +42,7 @@ $(document).ready(function () {
 		$('.thumb_add2cart').attr('number',0);
 	});	
 	
-	$(document).on('click', '.food-remove', function(){
+	$(document).on('click', '.cart-remove', function(){
 		var key = $(this).attr("key");
 		var id = $(this).attr("id");
 		cart.remove(key,id);

@@ -195,6 +195,10 @@
 	color: white;
 	margin:0;
 }
+
+.food-row:hover{
+	background-color: #ebebeb;
+}
 .sum-all{
 	float:left;
 	width: 145px;
@@ -312,7 +316,12 @@
 }
 
 .food-remove{
+	width:20px;	
+}
+
+.cart-remove{
 	width:20px;
+	height:30px;
 	cursor:pointer;
 	background-image: url(../image/deleteIcon.png);
 	background-size: 10px 10px;
