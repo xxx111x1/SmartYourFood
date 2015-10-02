@@ -13,7 +13,7 @@
       	</tr>
         <?php foreach ($products as $product) { ?>
         <tr class="food-row">
-          <td class="food-name" ><div class="food-name-detail" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></div></td>
+          <td class="cart-food-name" ><div class="food-name-detail" title="<?php echo $product['name']; ?>" href="<?php echo $product['href']; ?>"><?php echo $product['name']; ?></div></td>
           <td class="food-number" foodId ="<?php echo $product['product_id']; ?>" ><div class="remove-food"></div><div class="purchase-number"><?php echo $product['quantity']; ?></div><div class="add-food"></div></td>
           <td class="food-price"><?php echo $product['total']; ?></td>
           <td class="food-remove" >

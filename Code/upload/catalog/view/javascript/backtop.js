@@ -40,6 +40,11 @@ $(document).ready(function () {
 	$(document).on('click', '.claer-all', function(){
 		cart.clear();
 		$('.thumb_add2cart').attr('number',0);
+	});
+	
+	$(document).on('click', '.food-name-detail', function(){
+		var url = $(this).attr('href'); 
+		window.location.href = url;
 	});	
 	
 	$(document).on('click', '.cart-remove', function(){
