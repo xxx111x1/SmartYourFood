@@ -216,7 +216,7 @@ class ModelAccountCustomer extends Model {
 	
 	public function addLoginAttempt($email) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE email = '" . $this->db->escape(utf8_strtolower((string)$email)) . "' AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
-		
+
 		if (!$query->num_rows) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "customer_login SET email = '" . $this->db->escape(utf8_strtolower((string)$email)) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', total = 1, date_added = '" . $this->db->escape(date('Y-m-d H:i:s')) . "', date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "'");
 		} else {
@@ -225,8 +225,7 @@ class ModelAccountCustomer extends Model {
 	}	
 	
 	public function addLoginAttemptByPhone($phone_number) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE telephone = " . $this->db->escape($phone_number) . " AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
-	
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer_login WHERE email = " . $this->db->escape($phone_number) . " AND ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "'");
 		if (!$query->num_rows) {
 			$this->db->query("INSERT INTO " . DB_PREFIX . "customer_login SET email = '" . $this->db->escape($phone_number) . "', ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "', total = 1, date_added = '" . $this->db->escape(date('Y-m-d H:i:s')) . "', date_modified = '" . $this->db->escape(date('Y-m-d H:i:s')) . "'");
 		} else {
