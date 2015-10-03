@@ -80,7 +80,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
         if(count($addresses)>0)
         {
-            $addresses[0]['address_id'];
+
         }
         $data['addresslist']=$addresses;
         $this->response->setOutput($this->load->view('default/template/sfcheckout/updatecart.html', $data));
