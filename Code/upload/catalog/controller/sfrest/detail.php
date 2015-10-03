@@ -2,27 +2,15 @@
 class ControllerSfrestDetail extends Controller{
 
     public function index(){
-        $data = array();
-        
+        $data = array();        
         $restaurant_id = $this->request->get['restaurant_id'];
-        $food_id = "-1";
+        $data["rest_id"] = $restaurant_id;
         if (isset($this->request->get['food_id'])) {
         	$food_id = $this->request->get['food_id'];
+        	$data['food_id'] = $food_id;
         }        
         $this->load->model('sfrest/information');
 		$data['restaurant'] = $this->model_sfrest_information->getRestaurant($restaurant_id);
-		$this->load->model('sffood/food');
-		$data['foods'] = $this->model_sffood_food->getFoodsByRestID($restaurant_id);
-		$cart_foods = $this->cart->getFoods();
-		if(count($cart_foods)){
-			foreach ($data['foods'] as $key => $food) {
-				foreach($cart_foods as $product){
-					if((int)$food['food_id'] == (int)$product['product_id']){
-						$data['foods'][$key]['cart_number'] = $product['quantity'];
-					}
-				}
-			}
-		}
 		
     	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];

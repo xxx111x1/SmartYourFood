@@ -1,15 +1,45 @@
 <?php echo $header;?>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sflist.css">
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfdetail.css">
 <script src="catalog/view/javascript/sfdetail.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&callback=initMap" async defer></script>
 
 <div class="container">
-	<img class="advertisement" src="./catalog/view/theme/default/image/ads.gif"></img>
+	<input id="rest-id" type="hidden" value="<?php echo $rest_id; ?>" />
+	<div class="rest-info">
+		<img class="rest-img" src="<?php echo $restaurant['img_url']; ?>" />
+		<div class="rest-detail">
+			<div class="rest-basic">
+				<div class="rest-name"><?php echo $restaurant['name']; ?></div>
+				<div class="rest-average">人均： <?php echo $restaurant['avg_cost']; ?></div>
+			</div>
+			<div class="rest-review">
+				<div class="sf_product_stars stars" rate="<?php echo $restaurant['review_score']; ?>" ></div>
+				<div class="rest-review-score"><?php echo $restaurant['review_score']; ?>分</div>
+			</div>
+			<div class="rest-contact">联系电话： <?php echo $restaurant['phone']; ?></div>
+			<div class="rest-address">商户地址： <?php echo $restaurant['address']; ?></div>
+		</div>
+		<div class="rest-distance-info">
+			<div class="info-col">
+				<div class="info-value border-right">$5</div>
+				<div class="info-label border-right">配送费</div>
+			</div>
+			<div class="info-col">
+				<div class="info-value border-right">20</div>
+				<div class="info-label border-right">平均送达时间</div>
+			</div>
+			<div class="info-col">
+				<div class="info-value">15K</div>
+				<div class="info-label">商家距离</div>
+			</div>
+		</div>
+	</div>
     <div class="tabmenu">
         <div class="contenttab">
-        	<div id="food-tab" class="type_tab">全部菜品</div>
-            <div id="review-tab" class="type_tab">评价</div>            
+        	<div id="sepcial-tab" class="type_tab">特色菜品</div>
+        	<div id="food-tab" class="type_tab">全部菜品</div>                        
         </div>
 		<div class="search-bar">
 			<input id="searchType" type="hidden" value="food" />
@@ -32,32 +62,13 @@
 		<span class="sort_field glyphicon sort_selected" id="sort_default" >默认</span>
 		<span class="sort_field glyphicon down_arrow_icon" id="sell_number" >销量</span> 
 		<span class="sort_field glyphicon down_arrow_icon" id="review_score" >评价</span>
-		<span class="sort_field glyphicon up_arrow_icon" id="send_time" >配送时间</span>		
 		<input type="hidden" id="sort" value="sort_default"/>
 	</div>
 
 	<div class=product_content>
 		<input type=hidden id=page_number value=0 />
 		<div class=product_area >
-			<?php foreach ($foods as $food) { ?>
-				<div class="product">
-					<div class="thumb" id="<?php echo $food['food_id']; ?>">
-						<img class="thumb_preview" src="<?php echo $food['img_url']; ?>" />
-						<div class="thumboverlay" style="display: none;">
-							<div class="thumb_add2cart" foodId="<?php echo $food['food_id']; ?>" id="food_<?php echo $food['food_id']; ?>_number" number="<?php echo $food['cart_number']; ?>"> 添加到餐车</div>
-						</div>
-					</div>
-					<div class="thumb_desc">
-						<div class="thumb_desc_foodname"><?php echo $food['name']; ?></div>
-						<div class="thumb_desc_restname" >餐馆 <?php echo $restaurant['name']; ?></div>
-						<div class="thumb_desc_restdist">距离-KM</div>
-						<div class="thumb_desc_productinfo">
-							<div class="thumb_desc_productfav"><?php echo $food['review_score']; ?></div>
-							<div class="thumb_desc_productprice">C$ <?php echo $food['price']; ?></div>
-						</div>
-					</div>	
-				</div>
-			<?php }  ?>
+			
 		</div>
 	</div>
 	<?php echo $backtop; ?>

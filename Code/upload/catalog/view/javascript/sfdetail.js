@@ -54,29 +54,60 @@ $(document).ready(function () {
         }
 	});	
 	
+	$.fn.stars = function() {
+		return $(this).each(function() {
+	        $(this).html($('<div />').width(Math.max(0, (Math.min(5, parseFloat($(this).attr('rate'))))) * 29));
+		});
+	}
+	
+	$('div.stars').stars();
+	
+	$('#food-tab').addClass('selected_type_tab');
 	$('#sort_default').addClass('sort_field_selected');
+	initialContent();
+	
+	$('#food-tab').click(function() {
+		if(!$('#food-tab').hasClass('selected_type_tab')){
+			$('#food-tab').addClass('selected_type_tab');
+			$('#sepcial-tab').removeClass('selected_type_tab');
+			initialContent();
+		}		
+	});
+	
+	$('#sepcial-tab').click(function() {
+		if(!$('#sepcial-tab').hasClass('selected_type_tab')){
+			$('#sepcial-tab').addClass('selected_type_tab');
+			$('#food-tab').removeClass('selected_type_tab');
+		}		
+	});	
 	
 	$('.sort_field').click(function(){
 		$('.sort_field').removeClass('sort_selected');
 		$(this).addClass('sort_selected');
+		var restId = $('#rest-id').val();
 		var filters = $('#filters').attr('value');
 		var sortId = $(this).attr('id');
 		$('#sort').val(sortId);
 		var sort = getSortString(sortId);				
-		addContents(filters,sort,0,1,isRefreshType);
+		addContents(sort,restId);
 	});
+	
+	function initialContent(){
+		var restId = $('#rest-id').val();
+		var sortId = $('#sort_default').attr('id');
+		$('#sort').val(sortId);
+		var sort = getSortString(sortId);				
+		addContents(sort,restId);
+	}
 		
-	function addContents(sort,pageNumber,isRefresh, isRefreshType){
+	function addContents(sort,restId){
 		$.ajax({
-			url: 'index.php?route=api/food/getData',
+			url: 'index.php?route=api/food/getFoodByRestaurantId',
 			type: 'post',
-			data: 'sort=' + sort+ '&page_number=' + pageNumber,
+			data: 'sort=' + sort+ '&restid=' + restId,
 			dataType: 'json',	
 			success: function(data) {
-				if(isRefresh==1){
-					$('.product_area').empty();
-					$('#page_number').val(0);
-				}							
+				$('.product_area').empty();						
 				$.each(data['results'], function(i, v) {	
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;

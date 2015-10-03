@@ -84,11 +84,11 @@ class ModelSffoodFood extends Model{
     	$query = $this->db->query($sql);
     	return $query->rows;
     }
-
-    public function getFoodsByRestID($restaurant_id,$sort)
+    
+    public function getFoodsByRestID($restaurant_id, $sort)
     { 
-    	$sql = "SELECT *,0 as cart_number FROM " . DB_PREFIX . "food where restaurant_id = '" . $restaurant_id . "'";
-    	if($sort){
+    	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b where a.restaurant_id = '" . $restaurant_id . "' and a.restaurant_id = b.restaurant_id ";
+    	if(isset($sort)){
     		$sql .= " order by " . $sort ;
     	}    	
     	$query = $this->db->query($sql);
