@@ -40,6 +40,7 @@
 		<input type=hidden id=page_number value=0 />
 		<div class=product_area >
 			<?php foreach ($foods as $food) { ?>
+				<div class="product">
 					<div class="thumb" id="<?php echo $food['food_id']; ?>">
 						<img class="thumb_preview" src="<?php echo $food['img_url']; ?>" />
 						<div class="thumboverlay" style="display: none;">
@@ -55,6 +56,7 @@
 							<div class="thumb_desc_productprice">C$ <?php echo $food['price']; ?></div>
 						</div>
 					</div>	
+				</div>
 			<?php }  ?>
 		</div>
 	</div>

@@ -85,9 +85,12 @@ class ModelSffoodFood extends Model{
     	return $query->rows;
     }
 
-    public function getFoodsByRestID($restaurant_id)
+    public function getFoodsByRestID($restaurant_id,$sort)
     { 
     	$sql = "SELECT *,0 as cart_number FROM " . DB_PREFIX . "food where restaurant_id = '" . $restaurant_id . "'";
+    	if($sort){
+    		$sql .= " order by " . $sort ;
+    	}    	
     	$query = $this->db->query($sql);
     	return $query->rows;
     }
