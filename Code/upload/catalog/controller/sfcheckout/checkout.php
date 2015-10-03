@@ -10,9 +10,8 @@ class ControllerSfcheckoutCheckout extends Controller{
     {
         $data=array();
         $food_list = $this->cart->getFoods();
-
-        $this->log->write('food number: '.count($food_list));
-        $data['header'] = $this->load->controller('common/header');
+        $data['header'] = $this->load->controller('common/sfheader');
+        $data['footer'] = $this->load->controller('common/sffooter');
         $food_list = $this->cart->getFoods();
         $data['food_list']= $food_list;
         $total_before_tax = $this->cart->getFoodSubTotal();
