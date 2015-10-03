@@ -1,7 +1,7 @@
 <div class="cart_dropdown" id="cart_dropdown">
     <?php if ($products) { ?>
       <div class="cart-thumbnail-head" >
-      	<div class="cart-head " style="float:left;width:80px;">购物车</div>
+      	<div class="cart-head " style="float:left;width:60px;">购物车</div>
       	<div class="cart-head claer-all" style="float:right;width:100px;margin-right:0px;">清空</div>
       </div>
       <table class="cart-thumbnail-table">
@@ -22,19 +22,19 @@
         </tr>
         <?php } ?>
         <tr>
-          <td class="food-name" >运费</td>
+          <td class="food-name table-head" >运费</td>
           <td></td>
           <td class="food-price">$<?php echo $total_transffer; ?></td>
           <td></td>
         </tr>
         <tr>
-          <td class="food-name" >税(12%):</td>
+          <td class="food-name table-head" >税(12%):</td>
           <td></td>
           <td class="food-price">$<?php echo $total_taxes; ?></td>
           <td></td>
         </tr>
         <tr>
-          <td class="food-name" >小费(10%):</td>
+          <td class="food-name table-head" >小费(10%):</td>
           <td></td>
           <td class="food-price">$<?php echo $total_fees; ?></td>
           <td ></td>

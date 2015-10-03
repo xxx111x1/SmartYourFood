@@ -2,6 +2,7 @@ body{
     margin: 0;
     background-color: #f1f1f1;
     color: #555555;
+    font-weight:bold;
 }
 
 .container{
@@ -39,16 +40,17 @@ body{
 .type_tab{
     font-size: 18px;
     float: left;
+    height:44px;
     width:120px;
     color:#535353;
     margin-left: 0px;
-    padding-bottom: 10px;
     text-align: center;
     cursor:pointer;
 }
 
 .selected_type_tab{
 	border-bottom:3px #f65053 solid;
+	color: #f65053;
 }
 
 
@@ -137,11 +139,11 @@ body{
 }
 
 #history-label{
-	width: 100%;
+	width: 207px;
 	height:30px;
 	background-image: url(../image/timeIcon.png);
 	background-repeat: no-repeat;
-	background-position: 0px -6px;
+	background-position: 2px -6px;
 	padding-left: 40px;
 	padding-top:6px;
 	color:#555555;
@@ -150,7 +152,7 @@ body{
 }
 
 .address{	
-	width:100%;
+	width:237px;
 	height:25px;
 	padding-left: 10px;
 	padding-top:5px;
@@ -209,10 +211,14 @@ body{
 }
 .sort_option{
     width: 1100px;
-    height: 60px;
+    height: 50px;
     margin-top: 5px;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
+    margin-left:auto;
+    margin-right:auto;
     background-color: #f1f1f1;
+    float:left;
+    border-bottom:1px rgba(199,199,199,0.6) solid;
 }
 
 .sortlabel{
@@ -223,9 +229,9 @@ body{
 }
 .sort_field{
     padding-top: 15px;
-    width: 80px;
+    width: 100px;
     float: left;
-    margin-left:15px;
+    margin-left:0px;
     cursor:pointer;
 }
 .sort_selected{
@@ -240,14 +246,18 @@ body{
 
 .up_arrow_icon{
 	background-image: url(../image/upArrow.png);
-	background-position: 60px 8px;
+	background-position: 66px 11px;
 	background-repeat: no-repeat;
 }
 
 .down_arrow_icon{
 	background-image: url(../image/downArrow.png);
-	background-position: 40px 10px;
+	background-position: 38px 12px;
 	background-repeat: no-repeat;
+}
+
+.product_content{
+	margin-top:20px;
 }
 
 .product_area{
@@ -256,6 +266,7 @@ body{
     min-height: 830px;
     clear: both;
 }
+
 .product{
      width: 350px;
     height: 360px;
@@ -317,10 +328,10 @@ body{
 	color: white;
     float:right;
     margin-top: 12px;
-    padding-top:12px;
+    padding-top:15px;
     text-align: center;
-    width: 120px;
-    height: 45px;
+    width: 160px;
+    height: 35px;
     border-radius: 8px;
     font-size: 16px;
     font-weight: bold;
@@ -338,7 +349,7 @@ body{
     width: 160px;
     color:#f65053;
     font-weight: bold;
-    font-size: 16;
+    font-size: 16px;
 }
 .thumb_detail_cart{
     width: 160px;
@@ -359,17 +370,19 @@ body{
     width: 330px;
     height: 25px;
     float: left;
-    font-weight: bold;
-    font-size: 21;
+    font-size: 16px;
     color: #555555;
 }
 .thumb_desc_restname{
     width: 330px;
     height: 25px;
     float: left;
-    font-weight: bold;
-    font-size: 14;
+    font-size: 14px;
     cursor: pointer;
+}
+
+.thumb_desc_restname:hover{
+	color:blue;
 }
 .thumb_desc_restdist{
 	background-image: url(../image/distanceIcon.png);

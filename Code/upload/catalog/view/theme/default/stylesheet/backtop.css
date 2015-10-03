@@ -10,12 +10,16 @@
 
 #cart_thumbnail,#orders, #back_top, #my_message, #feedback,#call_center {
 	width:70px;
-	height:65px;
+	height: 25px;
 	margin-top:-1px;
+	background-repeat: no-repeat;
+	background-size: 35px, 35px;
+	background-position-x: 18px;
+	background-position-y: 8px;
 }
 
 .backtopIcons{
-	padding-top:40px;
+	padding-top:45px;
 	text-align: center;
 	color:#c0c0c0;
 	font-weight: bold;
@@ -27,34 +31,28 @@
 	color:white;
 }
 #cart_thumbnail {
-	background:url(../image/cartBacktopOff.png) no-repeat;
-	background-position: top,center;
+	background-image: url(../image/cartBacktopOff.png);	
 }
 
 #orders {
-	background:url(../image/ordersOff.png) no-repeat;
-	background-position:top,center;
+	background-image:url(../image/ordersOff.png);
 }
 
 #back_top {	
-	background:url(../image/backtopOff.png) no-repeat;
-	background-position:top,center;
+	background-image:url(../image/backtopOff.png);
 }
 
 #my_message {
-	background:url(../image/messageOff.png) no-repeat;
-	background-position:top,center;
+	background-image: url(../image/messageOff.png);
 }
 
 #feedback {
 	margin-top:25px;
-	background:url(../image/feedbackOff.png) no-repeat;
-	background-position:top,center;
+	background-image: url(../image/feedbackOff.png);
 }
 
 #call_center {
-	background:url(../image/callCenterOff.png) no-repeat;
-	background-position:top,center;
+	background-image: url(../image/callCenterOff.png);
 }
 
 #cart_thumbnail:hover, #orders:hover, #back_top:hover, #my_message:hover, #feedback:hover,#call_center:hover {
@@ -68,7 +66,7 @@
     border-color: black;    
     box-shadow: 0px -1px 10px 2px #e4e4e4; 
     max-height: 390px; /* sets max-height value for all standards-compliant browsers */
-    overflow-y: aotu;
+    overflow-y: auto;
     overflow-x:hidden;
     width: 228px;
 }
@@ -176,7 +174,7 @@
 
 .empty-cart {
 	width: 228px;
-	height: 40px;
+	height: 30px;
 	text-align: center;
 	background-color: #ed4346;
 	background-image: url(../image/cartBacktopOn.png);
@@ -201,8 +199,8 @@
 }
 .sum-all{
 	float:left;
-	width: 145px;
-	height: 40px;
+	width: 95px;
+	height: 30px;
 	background-color: #f96d70;
 	background-image: url(../image/cartBacktopOn.png);
 	background-repeat: no-repeat;
@@ -215,7 +213,7 @@
 .cart-checkout{
 	float:left;
 	width:83px;
-	height: 40px;
+	height: 30px;
 	background-color: #ed4346;
 	text-align:center;
 	padding-top:10px;
@@ -227,7 +225,7 @@
 }
 
 .cart-head{
-	height:50px;	
+	height:30px;	
 	padding-top: 16px;
 	margin-left: 10px;
 }
@@ -238,15 +236,24 @@
 	font-color:black;    
 	
 }
+
+table, div {
+	border-spacing:0px !important;
+}
+
 .cart-thumbnail-table tr{
 	height:30px;
-	border-bottom: 1px solid #ebebeb;
 	width: 230px;
+}
+
+.cart-thumbnail-table td{
+	border-bottom: 1px solid #ebebeb;		
 }
 
 .table-head,.cart-head{	
 	color: #999999;
 	font-weight:bold;
+	padding-left:5px;
 }
 
 .claer-all{
@@ -265,8 +272,8 @@
 }
 
 .food-name-detail{
-	width: 97px;
-	margin-top:5px;
+	width: 90px;
+	margin-top:4px;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
@@ -280,7 +287,7 @@
 .add-food{
 	width:15px;
 	height:15px;
-	margin-top:5px;
+	margin-top:4px;
 	background: url(../image/addIcon.png) no-repeat;
 	background-size: 15px 15px;	
 	background-repeat: no-repeat;
@@ -291,7 +298,7 @@
 .remove-food{
 	width:15px;
 	height:15px;
-	margin-top:5px;
+	margin-top:4px;
 	background-image: url(../image/minusIcon.png);
 	background-size: 15px 15px;
 	background-repeat: no-repeat;
@@ -310,17 +317,17 @@
 }
 
 .food-price{
-	width:60px;
+	width:40px;
 	margin-top:4px;
 	text-align: center;
 }
 
 .food-remove{
-	width:20px;	
+	width:12px;	
 }
 
 .cart-remove{
-	width:20px;
+	width:12px;
 	height:30px;
 	cursor:pointer;
 	background-image: url(../image/deleteIcon.png);
