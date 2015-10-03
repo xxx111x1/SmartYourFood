@@ -4,11 +4,15 @@
 $(document).ready(function () {
     $('.ck_add_food').click(function(){
             var id = $(this).attr('value');
+            console.log('id: '+id);
             var number = parseInt($('#food_'+id+'_number').text());
+            console.log('number: '+number);
             number++;
-            cart.add(id,number);
-            $('#food_'+id+'_number').text(number);
-
+            if(number<=1000)
+            {
+                cart.add(id,number);
+                $('#food_'+id+'_number').text(number);
+            }
         }
     );
 

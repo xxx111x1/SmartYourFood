@@ -149,10 +149,10 @@ var cart = {
 			data: 'product_id=' + product_id + '&quantity=' + (typeof(quantity) != 'undefined' ? quantity : 1),
 			dataType: 'json',
 			beforeSend: function() {
-				$('#cart > button').button('loading');
+				/*$('#cart > button').button('loading');*/
 			},
 			complete: function() {
-				$('#cart > button').button('reset');
+				/*$('#cart > button').button('reset');*/
 			},			
 			success: function(json) {
 				$('.alert, .text-danger').remove();
@@ -279,10 +279,12 @@ var cart = {
 }
 
 function update_cost_info(json){
+	console.log('start to update cost summary');
     if($('#cost_summary').length)
     {
+        console.log('total cost: '+json['total_cost']);
         $('#totalcost').text(json['total_cost']);
-        $('#totalcost').text(json['total_cost']);
+        console.log('before_tax_total: '+json['before_tax_total']);
         $('#beforetax').text(json['before_tax_total']);
         $('#deliverfee').text(json['deliverfee']);
         $('#taxcost').text(json['tax']);
