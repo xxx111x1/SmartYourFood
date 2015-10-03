@@ -12,7 +12,9 @@ class ControllerSffoodSearch extends Controller{
         $data=array();
         $this->load->model('sffood/food');
         $this->load->model('sfrest/information');
-        $data['header'] = $this->load->controller('common/header');
+        $data['header'] = $this->load->controller('common/sfheader');
+        $data['footer'] = $this->load->controller('common/sffooter');
+        $data['backtop'] = $this->load->controller('common/backtop');
         if (isset($this->request->get['search'])) {
             $food_name = $this->request->get['search'];
         }
@@ -56,6 +58,6 @@ class ControllerSffoodSearch extends Controller{
                     //$this->log->write('img: '.$food['img_url']);
                 }
         */
-        $this->response->setOutput($this->load->view('default/template/sffood/search.tpl', $data));
+        $this->response->setOutput($this->load->view('default/template/sffood/search.2.tpl', $data));
     }
 }
