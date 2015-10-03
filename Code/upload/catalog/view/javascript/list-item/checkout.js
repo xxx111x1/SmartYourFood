@@ -30,5 +30,35 @@ $(document).ready(function () {
             }
         }
     );
+
+    $('.addressbox').click(function(){
+            //console.error('add food cliked');
+            $('.addressbox').removeClass('addressbox_selected');
+            $(this).addClass('addressbox_selected');
+            var addr_id = $(this).attr('addr_id');
+            console.log('address id: '+addr_id);
+            shippaddress.set_address(addr_id);
+        }
+    );
 });
+
+//shipping address
+var shippaddress = {
+    'set_address': function(addr_id) {
+        console.log('start to set address: '+addr_id);
+        $.ajax({
+            url: 'index.php?route=sfcheckout/checkout/set_address',
+            type: 'post',
+            data: 'addr_id=' + addr_id,
+            dataType: 'json',
+            success: function(json) {
+                console.log('set address id succeeded');
+            }
+        });
+    },
+    'remove': function() {
+
+    }
+}
+
 

@@ -5,8 +5,18 @@
 	  });
 	  var input = /** @type {!HTMLInputElement} */(
 	      document.getElementById('pac-input'));
-	
+
+	  var contact = document.getElementById('contact_input');
+      var phone = document.getElementById('phone_input');
 	  var types = document.getElementById('type-selector');
+      if (typeof(contact) != 'undefined' && contact != null)
+      {
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(contact);
+      }
+      if (typeof(phone) != 'undefined' && phone != null)
+      {
+          map.controls[google.maps.ControlPosition.TOP_LEFT].push(phone);
+      }
 	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
 	  var options = {
@@ -56,8 +66,18 @@
 	      ].join(' ');
 	    }
 		var latitude = place.geometry.location.lat();
-		var longitude = place.geometry.location.lng(); 
-	    infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address)+' >确定</a>' );
+		var longitude = place.geometry.location.lng();
+        if (typeof(phone) != 'undefined' && phone != null&&typeof(contact) != 'undefined' && contact != null)
+        {
+            var phone_num = phone.value;
+            console.log(phone_num);
+            var contanct_name = contact.value;
+            console.log(contanct_name);
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address,contanct_name,phone_num)+' >确定</a>' );
+        }
+	    else{
+            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address)+' >确定</a>' );
+        }
 	    infowindow.open(map, marker);
 	  });
 	
@@ -80,4 +100,12 @@
 			return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address);
 		} 
 		return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address);
-	}	
+	}
+
+    function getReturnUrl(lat,lng,address,contact_name, phone_num){
+        var returnUrl = document.getElementById("returnUrl").value;
+        if(returnUrl.indexOf("route") > 0){
+            return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name);
+        }
+        return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name);
+    }

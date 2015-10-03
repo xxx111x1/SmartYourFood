@@ -25,7 +25,7 @@ class ControllerSfaccountRegister extends Controller{
             $customer_data['lastname'] = 'null';
             $customer_data['address_1'] = 'null';
             $customer_data['address_2'] = 'null';
-            $customer_data['email'] = 'minzou@live.com';
+            $customer_data['email'] = 'test@live.com';
             $customer_data['store_id']=1;
             $customer_data['fax']='null';
             $customer_id = $this->model_account_customer->addSFCustomer($customer_data);

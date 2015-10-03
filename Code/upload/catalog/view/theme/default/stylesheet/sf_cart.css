@@ -232,21 +232,6 @@ input[type="checkbox"]{
     margin-left:100px;    
 }
 
-.addressarea:first-child{
-    margin-top:30px;
-    margin-left:5px;
-    border-style: solid;
-    border-color: #f65053;
-    border-width: 1px;
-    font-weight:bolder;
-    width: 270px;
-    height: 138px;
-    padding-left:10px;
-    float:left;
-}
-.addressbox .mark{
-    display: none;
-}
 .addressbox{
     margin-top:30px;
     margin-left:5px;
@@ -255,10 +240,26 @@ input[type="checkbox"]{
     border-width: 1px;
     font-weight:bolder;
     width: 270px;
-    height: 138px;
+    height: 150px;
     padding-left:10px;
     float:left;
 }
+.addressarea:first-child{
+    margin-top:30px;
+    margin-left:5px;
+    border-style: solid;
+    border-color: #f65053;
+    border-width: 1px;
+    font-weight:bolder;
+    width: 270px;
+    height: 150px;
+    padding-left:10px;
+    float:left;
+}
+.addressbox .mark{
+    display: none;
+}
+
 .addressbox:hover{
     margin-top:30px;
     margin-left:5px;
@@ -267,7 +268,7 @@ input[type="checkbox"]{
     border-width: 1px;
     font-weight:bolder;
     width: 270px;
-    height: 138px;
+    height: 150px;
     padding-left:10px;
     float:left;
 }
@@ -282,7 +283,7 @@ input[type="checkbox"]{
     border-width: 1px;
     font-weight:bolder;
     width: 270px;
-    height: 138px;
+    height: 150px;
     padding-left:10px;
     float:left;
 }

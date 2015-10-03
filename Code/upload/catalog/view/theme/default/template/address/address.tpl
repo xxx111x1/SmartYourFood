@@ -11,9 +11,12 @@
   </head>
   <body>
   	<input type="hidden" id="returnUrl" value="<?php echo $return_url;?>"></input>
+    <input id="contact_input"class="controls"  type="text" placeholder="Enter Contact Name"/>
+    <input id="phone_input" class="controls" type="text" placeholder="Enter Contact Phone"/>
     <input id="pac-input" class="controls" type="text"
         placeholder="Enter a location">
     <div id="type-selector" class="controls">
+
       <input type="radio" name="type" id="changetype-all" checked="checked">
       <label for="changetype-all">All</label>
 
