@@ -15,9 +15,10 @@ class ControllerSfcheckoutCheckout extends Controller{
         $food_list = $this->cart->getFoods();
         $data['food_list']= $food_list;
         $total_before_tax = $this->cart->getFoodSubTotal();
-        $tax=0.12*$total_before_tax;
-        $tips = 0.1*$total_before_tax;
-        $data['beforetax'] = $total_before_tax;
+        $total_before_tax = round($total_before_tax,2);
+        $tax=round(0.12*$total_before_tax,2);
+        $tips = round(0.1*$total_before_tax,2);
+        $data['beforetax'] =  $total_before_tax;
         $data['tax'] = $tax;
         $data['tips'] = $tips;
         $deliverfee = 5;
