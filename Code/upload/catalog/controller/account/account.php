@@ -1,6 +1,6 @@
 <?php
 class ControllerAccountAccount extends Controller {
-	public function index() {
+	public function index_bkp() {
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('account/account', '', 'SSL');
 
@@ -69,10 +69,11 @@ class ControllerAccountAccount extends Controller {
 		$data['column_right'] = $this->load->controller('common/column_right');
 		$data['content_top'] = $this->load->controller('common/content_top');
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
-		$data['footer'] = $this->load->controller('common/footer');
-		$data['header'] = $this->load->controller('common/header');
-
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account.tpl')) {
+		/*$data['footer'] = $this->load->controller('common/footer');
+		$data['header'] = $this->load->controller('common/header');*/
+		$data['header'] = $this->load->controller('common/sfheader');
+		$data['footer'] = $this->load->controller('common/sffooter');
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account_full.html')) {
 			#$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account.tpl', $data));
             $this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account_full.html', $data));
 		} else {
@@ -80,7 +81,23 @@ class ControllerAccountAccount extends Controller {
 			$this->response->setOutput($this->load->view('default/template/account/account_full.html', $data));
 		}
 	}
+	public function index() {
+		if (!$this->customer->isLogged()) {
+			$this->session->data['redirect'] = $this->url->link('account/account', '', 'SSL');
 
+			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
+		}
+		$this->document->setTitle($this->language->get('heading_title'));
+		$data['header'] = $this->load->controller('common/sfheader');
+		$data['footer'] = $this->load->controller('common/sffooter');
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account_full.html')) {
+			#$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account.tpl', $data));
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account_full.html', $data));
+		} else {
+			#$this->response->setOutput($this->load->view('default/template/account/account.tpl', $data));
+			$this->response->setOutput($this->load->view('default/template/account/account_full.html', $data));
+		}
+	}
 	public function country() {
 		$json = array();
 
