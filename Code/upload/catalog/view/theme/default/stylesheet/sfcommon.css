@@ -108,7 +108,8 @@ footer{
 }
 
 .powered{	
-	width:100%;
+	float:left;
+	width:1100px;
 	text-align: center;
 	padding-bottom:30px;
 }
