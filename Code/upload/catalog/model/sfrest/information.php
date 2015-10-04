@@ -30,6 +30,17 @@ class ModelSfRestInformation extends Model{
 		$this->event->trigger('post.restaurant.add', $data);
 	}
 	
+	public function addRestReview($data){
+		$this->event->trigger('pre.RestReview.add', $data);
+		$query =  "INSERT INTO " . DB_PREFIX . "restaurant_reviews	SET restaurant_id             = '" . $data['restaurant_id'] . "' ";
+		if(array_key_exists('overall_score' , $data)){ $query .= ", overall_score      = '" . $data['overall_score']      ."'"; }
+		if(array_key_exists('taste_score'   , $data)){ $query .= ", taste_score              =  " . $data['taste_score']              . ""; } 
+		if(array_key_exists('service_score' , $data)){ $query .= ", service_score              =  " . $data['service_score']              . ""; } 
+		if(array_key_exists('comment'         , $data)){ $query .= ", comment          = '" . $data['comment']          . "'"; }
+		if(array_key_exists('customer_id'           , $data)){ $query .= ", customer_id            = '" . $data['customer_id']            . "', date_added = NOW() "; }		
+		$this->db->query($query);
+		$this->event->trigger('post.RestReview.add', $data);
+	}
 	public function editRestaurant($data){
 		$this->event->trigger('pre.restaurant.edit', $data);
 		$restaurant_id = $data['restaurant_id'];

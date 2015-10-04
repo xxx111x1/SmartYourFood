@@ -1,4 +1,5 @@
 <?php echo $header;?>
+<?php echo $review;?>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sflist.css">
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfdetail.css">
 <script src="catalog/view/javascript/sfdetail.js" type="text/javascript"></script>
@@ -17,6 +18,7 @@
 			<div class="rest-review">
 				<div class="sf_product_stars stars" rate="<?php echo $restaurant['review_score']; ?>" ></div>
 				<div class="rest-review-score"><?php echo $restaurant['review_score']; ?>分</div>
+				<div class="rest-score-label">(我要评价)</div>
 			</div>
 			<div class="rest-contact">联系电话： <?php echo $restaurant['phone']; ?></div>
 			<div class="rest-address">商户地址： <?php echo $restaurant['address']; ?></div>

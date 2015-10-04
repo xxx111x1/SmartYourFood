@@ -36,6 +36,7 @@ class ControllerSfrestDetail extends Controller{
         }        
         
         $data['header'] = $this->load->controller('common/sfheader');
+        $data['review'] = $this->load->controller('sfrest/review');
         $data['footer'] = $this->load->controller('common/sffooter');
         $data['backtop'] = $this->load->controller('common/backtop');
         

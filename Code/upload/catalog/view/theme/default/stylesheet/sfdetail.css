@@ -74,6 +74,13 @@ div.stars div {
 	margin-top: 2px;
 	
 }
+
+.rest-score-label{
+	font-size: 15px;
+	color: #8080ff;
+	margin-top: 5px;
+	cursor: pointer;
+}
 .rest-contact, .rest-address{
 	width: 100%;
 	float:left;
