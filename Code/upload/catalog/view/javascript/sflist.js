@@ -118,7 +118,8 @@ $(document).ready(function () {
 		var id = $(this).attr('foodid');
 		var number = $(this).attr('number');
 		number++;
-		cart.add(id,number);
+		//cart.add(id,number);
+		cart.addone(id);
 		$(this).attr('number',number);
 		
 		var cartIcon = $('#cart_thumbnail');

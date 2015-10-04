@@ -62,11 +62,19 @@ $(document).ready(function () {
 	});	
 	
 	$('#feedback').click(function(){
-		$('.mod-dialog-frame').toggleClass('unvisible');
+		$('.mod-dialog-frame').removeClass('unvisible');
+		$('.feedback-wrap').removeClass('unvisible');
+	});
+	
+	$('#call_center').click(function(){
+		$('.mod-dialog-frame').removeClass('unvisible');
+		$('.callcenter-wrap').removeClass('unvisible');
 	});
 	
 	$('.cancelBtn').click(function(){
-		$('.mod-dialog-frame').toggleClass('unvisible');
+		$('.mod-dialog-frame').addClass('unvisible');
+		$('.feedback-wrap').addClass('unvisible');
+		$('.callcenter-wrap').addClass('unvisible');
 	});
 	
 	$( ".backtopIcons" )

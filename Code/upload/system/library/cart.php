@@ -343,15 +343,21 @@ class Cart {
 		} else {
 			$this->remove($key);
 		}
-// 		if ((int)$qty && ((int)$qty > 0)) {
-			
-// 			if (!isset($this->session->data['cart'][$key])) {
-				
-// 				$this->session->data['cart'][$key] = (int)$qty;
-// 			} else {
-// 				$this->session->data['cart'][$key] += (int)$qty;
-// 			}
-// 		}
+	}
+	
+	public function addone($product_id, $option = array(), $recurring_id = 0) {
+		$this->data = array();
+	
+		$product['product_id'] = (int)$product_id;
+		if ($recurring_id) {
+			$product['recurring_id'] = (int)$recurring_id;
+		}
+		$key = base64_encode(serialize($product));
+		if (!isset($this->session->data['cart'][$key])) {	
+			$this->session->data['cart'][$key] = 1;
+		} else {
+			$this->session->data['cart'][$key] += 1;
+		}				
 	}
 
 	
