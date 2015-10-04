@@ -15,9 +15,9 @@
   		<div class="dash">|</div>
   		<div class="account">
 	  		<?php if ($first_name) { ?>
-	  			<?php if($first_name=='null') {?>
+	  			<?php if($first_name=='null') { ?>
 	  			<?php echo "欢迎光临"; } else { ?>
-	            	<?php echo $first_name ;?>
+	            	<a href="index.php?route=account/account" style="text-decoration: none;"> <?php echo $first_name ;?></a>
 	            <?php }?>
 	            <?php } else { ?>
 	    		<a href="index.php?route=sfaccount/login">登陆/注册</a>
