@@ -493,7 +493,7 @@ class Cart {
 
 	public function hasShipping() {
 		$shipping = false;
-
+		return isset($this->session->data['shipping_address']);
 // 		foreach ($this->getFoods() as $product) { //foreach ($this->getProducts() as $product) {
 // 			if ($product['shipping']) {
 // 				$shipping = true;
@@ -501,8 +501,6 @@ class Cart {
 // 				break;
 // 			}
 // 		}
-
-		return $shipping;
 	}
 
 	public function hasDownload() {
