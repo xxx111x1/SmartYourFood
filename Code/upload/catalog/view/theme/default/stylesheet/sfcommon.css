@@ -63,7 +63,7 @@ body{
 }
 
 .account a{
-	color: white;!
+	color: white;!important;
 }
 .account-icon{
 	width:40px;
@@ -122,4 +122,18 @@ footer{
 	background-size: 80px 80px;
 	margin-left: auto;
 	margin-right: auto;
+}
+.bold{
+	font-weight: bolder;
+	color: #555555;
+}
+
+.normal{
+	color: #A1A1A1;
+	font-weight: bolder;
+}
+
+.highlight{
+	color: #f65053;
+	font-weight: bolder;
 }
