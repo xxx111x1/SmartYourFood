@@ -125,11 +125,11 @@ footer{
 }
 .bold{
 	font-weight: bolder;
-	color: #A1A1A1;
+	color: #555555;
 }
 
 .normal{
-	color: #d3d3d3;
+	color: #A1A1A1;
 	font-weight: bolder;
 }
 
