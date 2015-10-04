@@ -18,6 +18,7 @@ class ControllerSffoodSearch extends Controller{
         if (isset($this->request->get['search'])) {
             $food_name = $this->request->get['search'];
         }
+        $data['query']=$food_name;
         if(isset($this->session->data['address'])){
             $data['address'] = $this->session->data['address'];
         }
@@ -29,7 +30,9 @@ class ControllerSffoodSearch extends Controller{
         $data['foods'] =$food_list;
         $rest_list = $this->model_sfrest_information->getRestaurantsByName($food_name);
         $data['rests'] = $rest_list;
-        if(count($food_list)==0)
+        $food_result_num =count($food_list);
+        $data['food_result_num'] = $food_result_num;
+        if($food_result_num==0)
         {
             $data['nofood']="style=\"display: none\"";
             $data['hasfood']="";
@@ -49,15 +52,15 @@ class ControllerSffoodSearch extends Controller{
             $data['norest']="";
         }
 
-        /*
+
                 //$data['foods'] = array();
-                $this->log->write('food number: '.count($food_list));
-                foreach( $food_list as $food)
-                {
-                    $this->log->write('img: '.$food['img_url'].' name:'.$food['name'].' price: '.$food['price']);
-                    //$this->log->write('img: '.$food['img_url']);
-                }
-        */
+        $this->log->write('food number: '.count($food_list));
+        foreach( $food_list as $food)
+        {
+            $this->log->write('rest_name: '.$food['rest_name'].' food_name:'.$food['food_name'].' price: '.$food['price']);
+            //$this->log->write('img: '.$food['img_url']);
+        }
+
         $this->response->setOutput($this->load->view('default/template/sffood/search.2.tpl', $data));
     }
 }
