@@ -337,3 +337,11 @@ border-bottom-color:#F1F1F1;
     float:left;
     margin-left:10px;
 }
+
+.ck_add_food{
+    cursor: pointer;
+}
+
+.ck_remove_food{
+    cursor: pointer;
+}

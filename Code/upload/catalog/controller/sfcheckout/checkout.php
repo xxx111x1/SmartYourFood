@@ -23,7 +23,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['tips'] = $tips;
         $deliverfee = 5;
         $data['deliverfee'] = $deliverfee;
-        $data['totalcost'] = $total_before_tax + $tax + $tips + $deliverfee;
+        $data['totalcost'] = round($total_before_tax + $tax + $tips + $deliverfee);
         if(count($food_list)==0)
         {
             $data['nofood']="display: none";
@@ -78,9 +78,9 @@ class ControllerSfcheckoutCheckout extends Controller{
         }
 
         $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
-        if(count($addresses)>0)
+        if(count($addresses)>0 && isset($addresses->rows[0]['address_id']))
         {
-
+            $this->set_shipping_address($addresses->rows[0]['address_id']);
         }
         $data['addresslist']=$addresses;
         $this->response->setOutput($this->load->view('default/template/sfcheckout/updatecart.html', $data));
@@ -92,9 +92,11 @@ class ControllerSfcheckoutCheckout extends Controller{
         $this->load->model('sfcheckout/shippingaddress');
         $this->session->data['shipping_address_id'] = $addr_id;
         $addr = $this->model_sfcheckout_shippingaddress->getAddress($addr_id);
-        $this->session->data['shipping_address'] = $addr['address'];
-        $this->session->data['shipping_contact'] = $addr['contact'];
-        $this->session->data['shipping_phone'] = $addr['phone'];
+        $shippingaddress = array();
+        $shippingaddress['firstname'] = $addr['contact'];
+        $shippingaddress['address_1'] = $addr['address'];
+        $shippingaddress['address_2'] = $addr['phone'];
+        $this->session->data['shipping_address'] = $shippingaddress;
     }
 
     public function set_address()

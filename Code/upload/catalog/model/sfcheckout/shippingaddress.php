@@ -9,6 +9,26 @@ class ModelSfcheckoutShippingaddress extends Model
 {
     public function addAddress($data) {
         $this->event->trigger('pre.shipping_address.add.address', $data);
+        //test if address already existed.
+        $query_str = "select address_id from " . DB_PREFIX . "shipping_address where customer_id = '" .
+            (int)$this->customer->getId() . "' and
+            contact = '" . $this->db->escape($data['contact']) . "' and
+            lat = '" . $this->db->escape($data['lat']) . "' and
+            lng = '" . $this->db->escape($data['lng']) . "' and
+            address = '" . $this->db->escape($data['address']) . "' and
+            phone = '" . $this->db->escape($data['phone'])."'";
+        $this->log->write($query_str);
+        $address_res = $this->db->query($query_str);
+        if(count($address_res)>0)
+        {
+            //already exist, exit;
+            $address_id = $address_res->rows[0]['address_id'];
+            $query_str="update ". DB_PREFIX . "shipping_address set date_updated=NOW() where address_id=".$address_id;
+            $this->log->write($query_str);
+            $this->db->query($query_str);
+            $this->event->trigger('post.shipping_address.add.address', $address_id);
+            return $address_id;
+        }
         $query_str = "INSERT INTO " . DB_PREFIX . "shipping_address SET customer_id = '" .
             (int)$this->customer->getId() . "',
             contact = '" . $this->db->escape($data['contact']) . "',
@@ -16,16 +36,8 @@ class ModelSfcheckoutShippingaddress extends Model
             lng = '" . $this->db->escape($data['lng']) . "',
             address = '" . $this->db->escape($data['address']) . "',
             phone = '" . $this->db->escape($data['phone']) . "',date_updated=NOW()";
-
         $this->log->write($query_str);
-        $this->db->query("INSERT INTO " . DB_PREFIX . "shipping_address SET customer_id = '" .
-            (int)$this->customer->getId() . "',
-            contact = '" . $this->db->escape($data['contact']) . "',
-            lat = '" . $this->db->escape($data['lat']) . "',
-            lng = '" . $this->db->escape($data['lng']) . "',
-            address = '" . $this->db->escape($data['address']) . "',
-            phone = '" . $this->db->escape($data['phone']) . "',
-            date_updated='now()'");
+        $this->db->query($query_str);
 
         $address_id = $this->db->getLastId();
         $this->event->trigger('post.shipping_address.add.address', $address_id);

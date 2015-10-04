@@ -1,91 +1,126 @@
-<!DOCTYPE html>
-<html>
-<head lang="en">
-    <meta charset="UTF-8">
-    <title>订单确认</title>
-    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
-    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script type="application/javascript">
-        $(document).ready(function() {
-            $('input.paymethod').on('change', function () {
-                $('input.paymethod').not(this).prop('checked', false);
-            });
-        });
-    </script>
-</head>
-<body class="container">
-    <table class="table" style="margin-top: 50px">
-        <caption class="text-left">订单编号: 201509110100</caption>
-        <thead>
-        <tr>
-            <th>#</th>
-            <th>菜品</th>
-            <th>单价</th>
-            <th>数量</th>
-            <th>小计</th>
-        </tr>
-        </thead>
-        <tbody>
-        <?php foreach ($food_list as $food) { ?>
-        <tr>
-            <th scope="row">1</th>
-            <td><?php echo $food['food_name']; ?> <span style="font-size: small">(<?php echo $food['rest_name']; ?>)</span></td>
-            <td> $<?php echo $food['price'];?></td>
-            <td><?php echo $food['quantity'];?></td>
-            <td> $<?php echo $food['total'];?></td>
-        </tr>
-        <?php } ?>
-        </tbody>
-    </table>
-    <div class="row" style="margin-top: 20px;">
-        <div class="col-md-2">
-            <span style="font-weight: bold">总金额: $<?php echo $totalcost;?></span>
+<?php echo $header;?>
+<title>订单确认</title>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf_cart.css">
+<script src="catalog/view/javascript/list-item/item-content.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/list-item/checkout.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+
+<div class="container" style="opacity: 1.0">
+    <div class="cart_panel">
+        <div class="cart_header">
+            <h2 style="float: left;">订单确认</h2>
         </div>
-        <div class="col-md-2">
-            菜品总价:$<?php echo $beforetax;?>
-        </div>
-        <div class="col-md-2">
-            配送费: $<?php echo $deliverfee;?>
-        </div>
-        <div class="col-md-2">
-            税(%12): $<?php echo $tax;?>
-        </div>
-        <div class="col-md-2">
-            小费 (%10): $<?php echo $tips;?>
-        </div>
-    </div>
-    <div class="row" style="margin-top: 20px;">
-        <div class="col-md-4">
-            <label>送餐联系人</label><input type="text" style="margin-left: 20px" value="邹敏">
-        </div>
-        <div class="col-md-3">
-            <label>送餐电话</label><input type="text" style="margin-left: 20px" value="15001326758">
-        </div>
-        <div class="col-md-4">
-            <label>送餐地址</label><input type="text" readonly="readonly" disabled="disabled" style="margin-left: 20px" value="中关村海淀黄庄"> <span class="glyphicon glyphicon-map-marker"></span>
+        <hr width="96%" color="#DFDFDF" style="margin-left: auto;margin-right: auto"/>
+        <table id="cart">
+            <caption>订单编号: <?php echo $order_id;?></caption>
+            <tbody>
+                <tr class="carttableheader">
+                    <th class="col1">
+                        <div class="header_foodname" style="margin-left: 40px">
+                            菜品
+                        </div>
+                    </th>
+                    <th class="col2">单价</th>
+                    <th class="col3">数量</th>
+                    <th class="col4">小计</th>
+                </tr>
+                <?php foreach ($food_list as $food) { ?>
+                <tr>
+                    <td class="col1">
+                        <div class="orderthumb">
+                            <div class="foodpic">
+                                <img width="65px" height="65px" src="<?php echo $food['image'];?>"/>
+                            </div>
+                            <div class="orderdesc">
+                                <div class="foodname">
+                                    <?php echo $food['food_name']; ?> (<?php echo $food['rest_name']; ?>)
+                                </div>
+                            </div>
+                        </div>
+                    </td>
+                    <td class="col2"> $<?php echo $food['price'];?></td>
+                    <td class="col3">
+                        <div style="margin-left:50px;margin-top:10px">
+                            <div class="foodnum" id="food_<?php echo $food['product_id']?>_number"><?php echo $food['quantity'];?></div>
+                        </div>
+                    </td>
+                    <td class="col4"> $<?php echo $food['total'];?></td>
+                </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+        <div id="cost_summary">
+            <span class="summary_item">菜品总价:<span id="beforetax">$<?php echo $beforetax;?></span></span>
+            <span class="summary_item">配送费:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>
+            <span class="summary_item">税(12%):<span id="taxcost"> $<?php echo $tax;?></span></span>
+            <span class="summary_item" style="margin-left:190px">小费(10%): <span id="tipscost">$<?php echo $tips;?></span></span>
+            <span class="summary_item" style="float:right;margin-right:120px">总金额: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
         </div>
     </div>
-    <div class="row" style="margin-top: 20px;">
-        <div class="col-md-2">
-            <span style="font-weight: bold;">付款方式</span>
-        </div>
-        <div class="col-md-2">
-            <label style="bottom: 0px">Paypal</label><input type="checkbox" checked class="paymethod">
-        </div>
-        <div class="col-md-2">
-            <label>MasterCard</label><input type="checkbox" class="paymethod">
-        </div>
-        <div class="col-md-2">
-            <label>Visa</label><input type="checkbox" class="paymethod">
-        </div>
-        <div class="col-md-2">
-            <label>Cash</label><input type="checkbox" class="paymethod">
-        </div>
+    <div id="deliverlabel">
+    配送信息
     </div>
-    <div class="row" style="margin-top: 20px">
-        <a href="/index.php?route=payment/pp_express/checkout" style="float: right"> <div class="btn btn-primary" type="submit">打印</div></a>
-        <a href="/index.php?route=payment/pp_express/checkout" style="float: right; margin-right: 10px"> <div class="btn btn-primary" type="submit">付款</div></a>
+    <div class="addressarea">
+        <?php if($validaddress){ ?>
+        <div class="addressbox">
+            <div style="margin-bottom: 20px;margin-top: 20px">
+                <span><?php echo $contact;?></span>
+            </div>
+            <br/>
+            <line><?php echo $address;?></line>
+            <br/>
+            <br/>
+            <span><?php echo $phone;?></span>
+        </div>
+        <?php } else { echo '配送信息不完整，请返回购物车修改';}?>
     </div>
-</body>
-</html>
+    <div id="payment">
+        <div id="paymentlabel">
+        付款方式
+        </div>
+        <table id="paymenttable">
+            <td style="vertical-align: middle">
+                <div class="paymentthumb">
+                    <input type="checkbox" class="payment_checkbox"/>
+                    <div class="paymentname">
+                        Master Card
+                    </div>
+                    <div class="paymenticon">
+                        <img src="catalog/view/theme/default/image/icons/mastercard.png"/>
+                    </div>
+                </div>
+            </td>
+            <td style="vertical-align: middle">
+                <div class="paymentthumb">
+                    <input type="checkbox" class="payment_checkbox"/>
+                    <div class="paymentname">
+                        Visa
+                    </div>
+                    <div class="paymenticon">
+                        <img src="catalog/view/theme/default/image/icons/visa.png"/>
+                    </div>
+                </div>
+            </td>
+            <td style="vertical-align: middle">
+                <div class="paymentthumb">
+                    <input type="checkbox" class="payment_checkbox"/>
+                    <div class="paymentname">
+                        Visa
+                    </div>
+                    <div class="paymenticon">
+                        <img src="catalog/view/theme/default/image/icons/visa.png"/>
+                    </div>
+                </div>
+            </td>
+        </table>
+    </div>
+    <div style="margin-top: 20px;margin-left: 60px">
+        预计到达时间13:40
+    </div>
+    <div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555">打印订单</div>
+    <a href="account.html">
+        <div class="btn" style="float: right;margin-right: 20px">确认付款</div>
+    </a>
+</div>
+
+<?php echo $footer;?>
