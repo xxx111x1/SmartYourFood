@@ -3,17 +3,29 @@
 <script type="text/javascript" src="catalog/view/javascript/ui.js"></script>
 <script src="catalog/view/javascript/sfsearch.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&callback=initMap" async defer></script>
 <div class="container">
-    <div id="search_top">
-        <div id="search_desc">
+    <div class="search_top">
+        <div class="search_desc">
             <span class="bold">搜索</span> <span class="highlight">[<?php echo $query;?>]</span><span class="bold">的结果:</span>  <span class="normal">共搜到<?php echo $food_result_num;?>个菜品</span>
+        </div>
+        <div class="search-bar">
+            <input id="searchType" type="hidden" value="food" />
+            <input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
+            <div id="dropdown"></div>
+            <input id="serach-input" class="controls" type="text" placeholder="请输入餐馆、菜品关键字" />
+            <div id="search-button">快速查找</div>
+            <div class="history-addresses hide">
+                <div id="history-label">历史记录</div>
+                <?php if($history_address) {?>
+                <?php foreach ($history_address as $address) { ?>
+                <div class='address' lat='<?php echo $address['lat']; ?>' lng='<?php echo $address['lng']; ?>'><?php echo $address['address']; ?></div>
+                <?php } } ?>
+            </div>
         </div>
     </div>
     <div class="sepline">
         <hr width="1230px" color="#DFDFDF"/>
-    </div>
-    <div id="search_location">
-        当前位置: <?php echo $address;?>
     </div>
     <div class="product_area">
         <?php $productnum=0; foreach ($foods as $food) { ?>
@@ -32,6 +44,37 @@
                 <div class="thumb_desc_productinfo">
                     <div class="thumb_desc_productfav"><?php echo $food['score'];?></div>
                     <div class="thumb_desc_productprice">$<?php echo $food['price'];?></div>
+                </div>
+            </div>
+        </div>
+        <?php  $productnum++; } ?>
+    </div>
+    <div style="clear: both"></div>
+    <div class="search_top" style="margin-top: 30px;">
+        <div class="search_desc">
+            <span class="bold">共搜到 <?php echo $rest_num;?>个和</span> <span class="highlight">[<?php echo $query;?>]</span><span class="bold">相关的餐馆:</span>
+        </div>
+    </div>
+    <div class="sepline">
+        <hr width="1230px" color="#DFDFDF"/>
+    </div>
+    <!--rest list-->
+
+    <div class="product_area">
+        <?php foreach ($rests as $restaurant) { ?>
+        <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
+            <div class="thumb" id="<?php echo $restaurant['restaurant_id']; ?> ">
+                <a href="/index.php?route=sfrest/detail&restaurant_id=<?php echo $restaurant['restaurant_id']; ?>">
+                <img  class="thumb_preview" width="370" height="256" src="<?php echo $restaurant['img_url']?>"/>
+                </a>
+            </div>
+            <div class="thumb_desc">
+                <div class="thumb_desc_foodname"><?php echo $restaurant['name']; ?></div>
+                <div class="thumb_desc_restname"></div>
+                <div class="thumb_desc_restdist">距离 7.5km</div>
+                <div class="thumb_desc_productinfo">
+                    <div class="thumb_desc_productfav">4.3</div>
+                    <div class="thumb_desc_productprice">$<?php echo $restaurant['avg_cost']; ?></div>
                 </div>
             </div>
         </div>

@@ -19,12 +19,7 @@ class ControllerSffoodSearch extends Controller{
             $food_name = $this->request->get['search'];
         }
         $data['query']=$food_name;
-        if(isset($this->session->data['address'])){
-            $data['address'] = $this->session->data['address'];
-        }
-        else{
-            $data['address'] = '选择送餐地址';
-        }
+
         $this->log->write('food name '.$food_name);
         $food_list = $this->model_sffood_food->getFoodByName($food_name);
         $data['foods'] =$food_list;
@@ -42,7 +37,9 @@ class ControllerSffoodSearch extends Controller{
             $data['hasfood']="style=\"display: none\"";
         }
 
-        if(count($rest_list)==0)
+        $rest_num=count($rest_list);
+        $data['rest_num']=$rest_num;
+        if($rest_num==0)
         {
             $data['norest']="style=\"display: none\"";
             $data['hasrest']="";
@@ -52,13 +49,28 @@ class ControllerSffoodSearch extends Controller{
             $data['norest']="";
         }
 
-
-                //$data['foods'] = array();
-        $this->log->write('food number: '.count($food_list));
-        foreach( $food_list as $food)
+        //set search history
+        if(isset($this->request->get['lat'])){
+            $this->session->data['lat'] = $this->request->get['lat'];
+            $this->session->data['lng'] = $this->request->get['lng'];
+            $this->session->data['address'] = $this->request->get['address'];
+            $data['address'] =$this->request->get['address'];
+            if($this->customer->isLogged()){
+                $this->load->model('account/customer');
+                $this->model_account_customer->editAddress($this->session->data);
+            }
+        }
+        elseif($this->customer->isLogged() || isset($this->session->data['address']))
         {
-            $this->log->write('rest_name: '.$food['rest_name'].' food_name:'.$food['food_name'].' price: '.$food['price']);
-            //$this->log->write('img: '.$food['img_url']);
+            $data['address'] =$this->session->data['address'];
+            $data['first_name'] = $this->customer->getFirstName();
+            $this->load->model('account/address');
+            $data['history_address'] = $this->model_account_address->getAddressesHistory();
+        }
+        else{
+            $data['address'] = "请输入送餐地址";
+            $data['first_name'] = "";
+            $data['history_address'] = "";
         }
 
         $this->response->setOutput($this->load->view('default/template/sffood/search.2.tpl', $data));
