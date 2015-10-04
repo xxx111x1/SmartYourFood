@@ -6,6 +6,9 @@ $(document).ready(function () {
 		window.location.href='/index.php?route=common/list';
 	});	
 	$(document).on('click','#go-to-order', function(){
-		window.location.href='/index.php?route=common/list';
+		window.location.href='/index.php?route=sfcheckout/checkout';
+	});
+	$('.account').click(function(){
+		window.location.href='/index.php?route=account/account';
 	});
 });
