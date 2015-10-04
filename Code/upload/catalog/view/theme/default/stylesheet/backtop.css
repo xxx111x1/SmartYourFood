@@ -2,7 +2,7 @@
     position: fixed;
     _position: absolute;
     top: 65px;
-    right: 20px;
+    right: 2px;
     width: 70px;
     height: 400px;
     vertical-align: bottom;
@@ -75,7 +75,7 @@
 	float:left;
 	position: fixed;
 	bottom: 3px;
-	right: 20px;
+	right: 2px;
 	background-color:#eee;
 	width: 228px;
 	z-index: 1;
