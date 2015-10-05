@@ -38,4 +38,25 @@ class ControllerApiRest extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+
+	public function addreview()
+	{
+		$data = array();
+		if($this->customer->isLogged()){
+			$data['restaurant_id'] = $this->request->post['restid'];
+			$data['overall_score'] = $this->request->post['overallScore'];
+			$data['taste_score'] = $this->request->post['tasteScore'];
+			$data['service_score'] = $this->request->post['serviceScore'];
+			$data['comment'] = $this->request->post['comment'];
+			$data['review_id'] = $this->customer->getId();
+			$this->load->model('sfrest/information');
+			$this->model_sfrest_information->addRestReview($data);
+			$json['success'] = $this->language->get('text_success');
+		}
+		else{
+			$json['error'] = $this->language->get('error');
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }
