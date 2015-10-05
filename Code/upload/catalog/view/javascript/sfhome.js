@@ -83,10 +83,20 @@ $(document).ready(function () {
 	$('#search-button').on('click', function () {		
         var searchKeyWords = $('#serach-input').val();
         var type=$('#searchType').val();	
-        var url = '/index.php?route=sf' + type+'/search&search=' +searchKeyWords;        
+        var url = '/index.php?route=sffood/search&search=' +searchKeyWords;
         window.location.href = url;
     });
-	
+	$('#serach-input').keypress(function (e) {
+		var key = e.which;
+		if(key == 13)  // the enter key code
+		{
+			var searchKeyWords = $('#serach-input').val();
+			var type=$('#searchType').val();
+			var url = '/index.php?route=sffood/search&search=' +searchKeyWords;
+			window.location.href = url;
+		}
+	});
+
 	$(".click-point-first,.first-triangle-left,.first-tip").hover(
 			function(){
 				$(".second-tip").css("background","rgba(0, 0, 0, 0)");
