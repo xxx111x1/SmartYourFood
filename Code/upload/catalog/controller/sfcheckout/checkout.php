@@ -9,7 +9,6 @@ class ControllerSfcheckoutCheckout extends Controller{
     public function index()
     {
         $data=array();
-        $food_list = $this->cart->getFoods();
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
         $food_list = $this->cart->getFoods();
@@ -23,7 +22,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['tips'] = $tips;
         $deliverfee = 5;
         $data['deliverfee'] = $deliverfee;
-        $data['totalcost'] = round($total_before_tax + $tax + $tips + $deliverfee);
+        $data['totalcost'] = round($total_before_tax + $tax + $tips + $deliverfee,2);
         if(count($food_list)==0)
         {
             $data['nofood']="display: none";
@@ -64,7 +63,6 @@ class ControllerSfcheckoutCheckout extends Controller{
             &&isset($this->request->get['contact'])
         )
         {
-            $this->log->write('returned url, start to insert new address');
             $address_data=array();
             $address_data['lat']=$this->request->get['lat'];
             $address_data['lng']=$this->request->get['lng'];
@@ -78,7 +76,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         }
 
         $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
-        if(count($addresses)>0 && isset($addresses->rows[0]['address_id']))
+        if(count($addresses->rows)>0 && isset($addresses->rows[0]['address_id']))
         {
             $this->set_shipping_address($addresses->rows[0]['address_id']);
         }
