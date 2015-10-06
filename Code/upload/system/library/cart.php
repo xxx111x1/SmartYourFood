@@ -29,6 +29,7 @@ class Cart {
                 $product_query = $this->db->query("SELECT f.food_id as food_id,
                                                      f.price as price,
                                                      f.name as food_name,
+                									 f.`desc` as food_desc,
                                                       r.name as rest_name,
                                                       f.img_url as img_url,
                                                       r.restaurant_id as restaurant_id,
@@ -40,6 +41,7 @@ class Cart {
                         'key'             => $key,
                         'product_id'      => $product_query->row['food_id'],
                         'food_name'      => $product_query->row['food_name'],
+                    	'food_desc'      => $product_query->row['food_desc'],
                         'rest_name'      => $product_query->row['rest_name'],
                         'image' => $product_query->row['img_url'],
                         'price' => $product_query->row['price'],
@@ -304,7 +306,6 @@ class Cart {
 						'recurring'       => $recurring
 					);
 				} else {
-					echo "in get products";
 					//$this->remove($key);
 				}
 			}

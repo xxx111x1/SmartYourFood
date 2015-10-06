@@ -15,7 +15,6 @@ class ModelCatalogMessage extends Model {
 	public function readMessage($message_ids) {
 
 		$this->event->trigger('pre.message.read', $message_ids);
-		echo "update " . DB_PREFIX . "message set is_read = 1 where message_id in (". $message_ids .")";
 		$query = $this->db->query("update " . DB_PREFIX . "message set is_read = 1 where message_id in (". $message_ids .")");
 		$this->event->trigger('post.message.read', $message_ids);
 	}

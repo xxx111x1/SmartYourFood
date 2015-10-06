@@ -240,7 +240,7 @@ $(document).ready(function () {
 	}
 	
 	function gpsDistance(lat1, lon1, lat2, lon2, unit) {
-		if(lat2<=0){
+		if(lat2==0){
 			return 0 ;
 		}
 		var radlat1 = Math.PI * lat1/180;

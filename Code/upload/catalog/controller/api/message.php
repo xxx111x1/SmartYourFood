@@ -25,7 +25,6 @@ class ControllerApiMessage extends Controller {
 			if(isset($this->request->post['message_ids'])){
 				$message_ids = $this->request->post['message_ids'];
 				$this->load->model('catalog/message');		
-				echo $message_ids;
 				$this->model_catalog_message->readMessage($message_ids);
 				$json['success'] = $this->language->get('text_success');
 			}				

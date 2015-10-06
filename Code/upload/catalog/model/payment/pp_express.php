@@ -162,7 +162,7 @@ class ModelPaymentPPExpress extends Model {
 
 		//foreach ($this->cart->getProducts() as $item) {
 		foreach ($this->cart->getFoods() as $item) {
-			$data['L_PAYMENTREQUEST_0_DESC' . $i] = '';
+// 			$data['L_PAYMENTREQUEST_0_DESC' . $i] = '';
 
 // 			$option_count = 0;
 // 			foreach ($item['option'] as $option) {
@@ -178,19 +178,18 @@ class ModelPaymentPPExpress extends Model {
 // 				$option_count++;
 // 			}
 
-			$data['L_PAYMENTREQUEST_0_DESC' . $i] = substr($data['L_PAYMENTREQUEST_0_DESC' . $i], 0, 126);
+// 			$data['L_PAYMENTREQUEST_0_DESC' . $i] = substr($data['L_PAYMENTREQUEST_0_DESC' . $i], 0, 126);
 
 			$item_price = $this->currency->format($item['price'], false, false, false);
-
-			$data['L_PAYMENTREQUEST_0_NAME' . $i] = 'FIRSTitem';
-			$data['L_PAYMENTREQUEST_0_NUMBER' . $i] = 0;
+			$data['L_PAYMENTREQUEST_0_NAME' . $i] = $item['food_name'];
+ 			$data['L_PAYMENTREQUEST_0_DESC' . $i] = substr($item['food_desc'], 0, 126);
 			$data['L_PAYMENTREQUEST_0_AMT' . $i] = $item_price;
 
 			$item_total += number_format($item_price * $item['quantity'], 2, '.', '');
 
 			$data['L_PAYMENTREQUEST_0_QTY' . $i] = $item['quantity'];
 
-			$data['L_PAYMENTREQUEST_0_ITEMURL' . $i] = $this->url->link('product/product', 'product_id=' . $item['product_id']);
+			//$data['L_PAYMENTREQUEST_0_ITEMURL' . $i] = $this->url->link('product/product', 'product_id=' . $item['product_id']);
 
 // 			if ($this->config->get('config_cart_weight')) {
 // 				$weight = $this->weight->convert($item['weight'], $item['weight_class_id'], $this->config->get('config_weight_class_id'));
@@ -210,6 +209,14 @@ class ModelPaymentPPExpress extends Model {
 
 			$i++;
 		}
+		
+		//tax
+		$data['L_PAYMENTREQUEST_0_NAME' . $i] = "tax(12%)";
+		$data['L_PAYMENTREQUEST_0_AMT' . $i] =  round($item_total*0.12,2);
+		$i++;
+		// delivery
+		$data['L_PAYMENTREQUEST_0_NAME' . $i] = "delivery";
+		$data['L_PAYMENTREQUEST_0_AMT' . $i] =  5;
 
 // 		if (!empty($this->session->data['vouchers'])) {
 // 			foreach ($this->session->data['vouchers'] as $voucher) {
@@ -224,7 +231,7 @@ class ModelPaymentPPExpress extends Model {
 // 			}
 // 		}
 
-		// Totals
+		// Totals must be same with all amount sum !!!
 		$this->load->model('extension/extension');
 
 		$total_data = array();
@@ -267,7 +274,7 @@ class ModelPaymentPPExpress extends Model {
 
 					$data['L_PAYMENTREQUEST_0_NUMBER' . $i] = $i;
 					$data['L_PAYMENTREQUEST_0_NAME' . $i] = 'Firstitem';
-					$data['L_PAYMENTREQUEST_0_AMT' . $i] = $this->currency->format($total_row['value'], false, false, false);
+					$data['L_PAYMENTREQUEST_0_AMT' . $i] = $this->currency->format($total_row['value']+round($item_total*0.12,2) + 5, false, false, false);
 					$data['L_PAYMENTREQUEST_0_QTY' . $i] = 1;
 
 					$item_total = $item_total + $item_price;
@@ -276,10 +283,10 @@ class ModelPaymentPPExpress extends Model {
 			}
 		}
 
-		$data['PAYMENTREQUEST_0_ITEMAMT'] = number_format($item_total, 2, '.', '');
-		$data['PAYMENTREQUEST_0_AMT'] = number_format($item_total, 2, '.', '');
+		$data['PAYMENTREQUEST_0_ITEMAMT'] = number_format($item_total, 2, '.', '') +round($item_total*0.12,2) +5;
+		$data['PAYMENTREQUEST_0_AMT'] = number_format($item_total, 2, '.', '')+round($item_total*0.12,2) + 5;
 
-		$z = 0;
+// 		$z = 0;
 
 // 		$recurring_products = $this->cart->getRecurringProducts();
 
