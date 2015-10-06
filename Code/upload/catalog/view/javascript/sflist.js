@@ -96,7 +96,7 @@ $(document).ready(function () {
 		addContents(filters,sort,0,1,isRefreshType);
 	});
 	
-	$(document).on('click', '.thumb_view,.thumb_desc_restname', function(){
+	$(document).on('click', '.thumb_view,.thumb_desc_restname,.thumb_rest_img', function(){
 		var restId = $(this).attr('restid');
 		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId;
 		if (type=='food'){			
@@ -214,7 +214,7 @@ $(document).ready(function () {
 											'<div class="thumb_desc_productprice">C$ '+v.price+'</div></div></div>';
 					}
 					else{
-						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_view" restId='+restId+' >看看</div></div></div>';
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  restId='+restId+' /></div>';
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname">'+v.name+'</div>' +
 											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
 											'<div class="thumb_desc_productprice">平均价格：C$ '+cost+'</div></div></div>';
