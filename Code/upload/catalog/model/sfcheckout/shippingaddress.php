@@ -19,7 +19,7 @@ class ModelSfcheckoutShippingaddress extends Model
             phone = '" . $this->db->escape($data['phone'])."'";
         $this->log->write($query_str);
         $address_res = $this->db->query($query_str);
-        if(count($address_res)>0)
+        if(count($address_res->rows)>0)
         {
             //already exist, exit;
             $address_id = $address_res->rows[0]['address_id'];
