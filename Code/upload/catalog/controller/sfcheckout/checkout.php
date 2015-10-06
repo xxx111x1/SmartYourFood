@@ -76,7 +76,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         }
 
         $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
-        if(count($addresses->rows)>0 && isset($addresses->rows[0]['address_id']))
+        if(count($addresses)>0 && isset($addresses->rows[0]['address_id']))
         {
             $this->set_shipping_address($addresses->rows[0]['address_id']);
         }
