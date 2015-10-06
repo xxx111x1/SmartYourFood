@@ -90,12 +90,13 @@ class ControllerAccountAccount extends Controller {
 		$this->document->setTitle($this->language->get('heading_title'));
 		$data['header'] = $this->load->controller('common/sfheader');
 		$data['footer'] = $this->load->controller('common/sffooter');
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account_full.html')) {
-			#$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account.tpl', $data));
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account_full.html', $data));
+		$data['profile'] = $this->load->controller('sfaccount/profile');
+		$data['orderhistory'] = $this->load->controller('sfaccount/order');
+		$data['addresses'] = $this->load->controller('sfaccount/address');
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account.tpl', $data));
 		} else {
-			#$this->response->setOutput($this->load->view('default/template/account/account.tpl', $data));
-			$this->response->setOutput($this->load->view('default/template/account/account_full.html', $data));
+			$this->response->setOutput($this->load->view('default/template/account/account.tpl', $data));
 		}
 	}
 	public function country() {
@@ -122,5 +123,66 @@ class ControllerAccountAccount extends Controller {
 
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}
+
+	public function editusername()
+	{
+        $user_name =$this->request->post['username'];
+        $this->log->write(__LINE__.'  new user name: '.$user_name);
+        $this->load->model('account/customer');
+        $this->model_account_customer->editUsername($user_name);
+        $json = array();
+        $json['status']='ok';
+        $this->response->addHeader('Content-Type: application/json');
+        $this->response->setOutput(json_encode($json));
+	}
+
+	public function editphone()
+	{
+		$phone =$this->request->post['phone'];
+		$this->load->model('account/customer');
+		$json = array();
+		if($this->model_account_customer->editPhone($phone))
+		{
+			$json['status']='ok';
+		}
+		else{
+			$json['status']='error';
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+	public function editemail()
+	{
+		$email =$this->request->post['email'];
+		$this->load->model('account/customer');
+		$json = array();
+		if($this->model_account_customer->editEmail($email))
+		{
+			$json['status']='ok';
+		}
+		else{
+			$json['status']='error';
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+
+
+	public function  editPassword()
+	{
+		$oldpassword = $this->request->post['oldpassword'];
+		$newpassword = $this->request->post['newpassword'];
+		$this->load->model('account/customer');
+		$status = $this->model_account_customer->editPasswordByCustomerID($oldpassword,$newpassword);
+		$json = array();
+		if($status)
+		{
+			$json['status']='ok';
+		}
+		else{
+			$json['status']='error';
+		}
 	}
 }

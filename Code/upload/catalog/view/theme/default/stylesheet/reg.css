@@ -90,6 +90,7 @@ body{
     margin-top: 15px;
     background-color: #f94e4e;
     border-radius: 5px;
+    cursor: pointer;
 }
 
 .regtxt{
@@ -98,4 +99,18 @@ body{
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
+}
+.invisible{
+    display: none;
+}
+
+.update-dialog-wrap {
+    overflow: hidden;
+    width: 560px;
+    height: 260px;
+    margin-top: 150px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgb(255, 255, 255);
+    border: 1px solid #f65053;
 }

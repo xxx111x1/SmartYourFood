@@ -40,4 +40,123 @@ $(document).ready(function() {
             $("#logout_").show();
         }
     );
+
+    $(".review-close").click(function(){
+        $('.review-dialog-frame').addClass('invisible');
+    });
+
+    $("#label_updateusername").click(function(){
+        $('#dialog_updateusername').removeClass('invisible');
+    });
+
+    $("#label_updatephone").click(function(){
+        $('#dialog_updatephone').removeClass('invisible');
+    });
+
+    $("#label_updateemail").click(function(){
+        $('#dialog_updateemail').removeClass('invisible');
+    });
+
+    $("#label_updatepassword").click(function(){
+        $('#dialog_updatepassowrd').removeClass('invisible');
+    });
+
+
+
+    $('#btn_confirmusername').click(function(){
+        var new_username = $('#updateusername').val();
+        $.ajax({
+            url: 'index.php?route=account/account/editusername',
+            type: 'post',
+            data: 'username='+new_username,
+            timeout: 32000,
+            dataType: 'json',
+            error: function(){
+                alert("用户名修改失败，请稍后再试.");
+                $('.review-dialog-frame').addClass('invisible');
+            },
+            success: function(data) {
+                if (data['status'] && data['status']==='ok'){
+                    alert(data['status']);
+                }
+                else{
+                    alert("用户名修改失败，请稍后再试.");
+                }
+                $('.review-dialog-frame').addClass('invisible');
+            }
+        });
+    });
+
+    $('#btn_confirmphone').click(function(){
+        var value = $('#updatephone').val();
+        $.ajax({
+            url: 'index.php?route=account/account/editphone',
+            type: 'post',
+            data: 'phone='+value,
+            timeout: 32000,
+            dataType: 'json',
+            error: function(){
+                alert("手机号码修改失败，请稍后再试.");
+                $('.review-dialog-frame').addClass('invisible');
+            },
+            success: function(data) {
+                alert(data['status']);
+                if (data['status']){
+                    alert(data['status']);
+                }
+                $('.review-dialog-frame').addClass('invisible');
+            }
+        });
+    });
+
+
+    $('#btn_confirmemail').click(function(){
+        var value = $('#updateemail').val();
+        $.ajax({
+            url: 'index.php?route=account/account/editemail',
+            type: 'post',
+            data: 'email='+value,
+            timeout: 32000,
+            dataType: 'json',
+            error: function(){
+                alert("update email failed.");
+                $('.review-dialog-frame').addClass('invisible');
+            },
+            success: function(data) {
+                if (data['status'] && data['status']==='ok'){
+                    alert(data['status']);
+                }
+                else{
+                    alert("update email failed.");
+                }
+                $('.review-dialog-frame').addClass('invisible');
+            }
+        });
+    });
+
+    $('#btn_confirmpassword').click(function(){
+        var value = $('#input_oldpassword').val();
+        var newpwd=$('#input_updatepassword').val();
+        $.ajax({
+            url: 'index.php?route=account/account/editpassword',
+            type: 'post',
+            data: 'oldpassword='+value+'&newpassword='+newpwd,
+            timeout: 32000,
+            dataType: 'json',
+            error: function(){
+                alert("密码修改失败，请稍后再试.");
+                $('.review-dialog-frame').addClass('invisible');
+            },
+            success: function(data) {
+                if (data['status'] && data['status']==='ok'){
+                    alert(data['status']);
+                }
+                else{
+                    alert("密码修改失败，请稍后再试.");
+                }
+                $('.review-dialog-frame').addClass('invisible');
+            }
+        });
+    });
+
 });

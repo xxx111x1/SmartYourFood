@@ -81,7 +81,7 @@ class ControllerSfcheckoutCheckout extends Controller{
             $this->set_shipping_address($addresses->rows[0]['address_id']);
         }
         $data['addresslist']=$addresses;
-        $this->response->setOutput($this->load->view('default/template/sfcheckout/updatecart.html', $data));
+        $this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));
     }
 
     public function set_shipping_address($addr_id)

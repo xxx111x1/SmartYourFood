@@ -130,6 +130,16 @@ class ModelAccountCustomer extends Model {
 		$this->event->trigger('post.customer.edit', $customer_id);
 	}
 
+	public function  editUsername($newName)
+	{
+        $this->event->trigger('pre.customer.editUsername', $newName);
+        $customer_id = $this->customer->getId();
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET firstname = '" .
+            $this->db->escape($newName) .
+             "' WHERE customer_id = '" . (int)$customer_id . "'");
+        $this->event->trigger('post.customer.editUsername', $customer_id);
+	}
+
 	public function editPassword($email, $password) {
 		$this->event->trigger('pre.customer.edit.password');
 
@@ -137,7 +147,63 @@ class ModelAccountCustomer extends Model {
 
 		$this->event->trigger('post.customer.edit.password');
 	}
-	
+
+    public function editPasswordByCustomerID($oldpassword, $newpassword) {
+        $this->event->trigger('pre.customer.edit.password');
+        $customer_id = $this->customer->getId();
+		$encrypted_pwd = $this->db->query("SELECT salt,password from ".DB_PREFIX."customer WHERE customer_id = '" . (int)$customer_id . "'");
+		if($encrypted_pwd['password']!=sha1($encrypted_pwd['salt'] . sha1($encrypted_pwd['salt'] . sha1($oldpassword))))
+		{
+			$this->event->trigger('post.customer.edit.password');
+			return false;
+		}
+		$this->db->query("UPDATE " . DB_PREFIX . "customer SET salt = '" . $this->db->escape($salt = substr(md5(uniqid(rand(), true)), 0, 9)) . "', password = '" . $this->db->escape(sha1($salt . sha1($salt . sha1($newpassword)))) .
+            "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        $this->event->trigger('post.customer.edit.password');
+		return true;
+    }
+
+    public function editPhone($phone) {
+        $this->event->trigger('pre.customer.edit.phone');
+		//check if phone already used.
+		$exist = $this->db->query("SELECT count(1) as num FROM " . DB_PREFIX . "customer where telephone = '" .
+			$this->db->escape($phone) . "'");
+		if($exist->row['num']>0)
+		{
+			$this->event->trigger('post.customer.edit.phone');
+			return false;
+		}
+
+        $customer_id = $this->customer->getId();
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET telephone = '" .
+            $this->db->escape($phone) .
+            "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        $this->event->trigger('post.customer.edit.phone');
+		return true;
+    }
+
+    public function editEmail($email) {
+        $this->event->trigger('pre.customer.edit.email');
+        //check if phone already used.
+        $exist = $this->db->query("SELECT count(1) as num FROM " . DB_PREFIX . "customer where email = '" .
+            $this->db->escape($email) . "'");
+        if($exist->row['num']>0)
+        {
+            $this->event->trigger('post.customer.edit.email');
+            return false;
+        }
+
+        $customer_id = $this->customer->getId();
+        $this->db->query("UPDATE " . DB_PREFIX . "customer SET email = '" .
+            $this->db->escape($email) .
+            "' WHERE customer_id = '" . (int)$customer_id . "'");
+
+        $this->event->trigger('post.customer.edit.email');
+        return true;
+    }
+
 	public function editNewsletter($newsletter) {
 		$this->event->trigger('pre.customer.edit.newsletter');
 
