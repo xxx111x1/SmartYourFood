@@ -13,12 +13,12 @@ class ModelSfcheckoutShippingaddress extends Model
         $query_str = "select address_id from " . DB_PREFIX . "shipping_address where customer_id = '" .
             (int)$this->customer->getId() . "' and
             contact = '" . $this->db->escape($data['contact']) . "' and
-            lat = '" . $this->db->escape($data['lat']) . "' and
-            lng = '" . $this->db->escape($data['lng']) . "' and
             address = '" . $this->db->escape($data['address']) . "' and
             phone = '" . $this->db->escape($data['phone'])."'";
         $this->log->write($query_str);
         $address_res = $this->db->query($query_str);
+        $row_num = count($address_res->rows);
+        $this->log->write('row num: '.$row_num);
         if(count($address_res->rows)>0)
         {
             //already exist, exit;

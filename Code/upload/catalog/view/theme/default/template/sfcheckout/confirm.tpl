@@ -81,7 +81,18 @@
         <table id="paymenttable">
             <td style="vertical-align: middle">
                 <div class="paymentthumb">
-                    <input type="checkbox" class="payment_checkbox"/>
+                    <input type="checkbox" class="payment_checkbox" checked/>
+                    <div class="paymentname">
+                        Paypal
+                    </div>
+                    <div class="paymenticon">
+                        <img src="catalog/view/theme/default/image/icons/paypal.png"/>
+                    </div>
+                </div>
+            </td>
+            <td style="vertical-align: middle">
+                <div class="paymentthumb">
+                    <input type="checkbox" class="payment_checkbox" disabled/>
                     <div class="paymentname">
                         Master Card
                     </div>
@@ -92,18 +103,7 @@
             </td>
             <td style="vertical-align: middle">
                 <div class="paymentthumb">
-                    <input type="checkbox" class="payment_checkbox"/>
-                    <div class="paymentname">
-                        Visa
-                    </div>
-                    <div class="paymenticon">
-                        <img src="catalog/view/theme/default/image/icons/visa.png"/>
-                    </div>
-                </div>
-            </td>
-            <td style="vertical-align: middle">
-                <div class="paymentthumb">
-                    <input type="checkbox" class="payment_checkbox"/>
+                    <input type="checkbox" class="payment_checkbox" disabled/>
                     <div class="paymentname">
                         Visa
                     </div>
@@ -118,7 +118,7 @@
         预计到达时间13:40
     </div>
     <div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555">打印订单</div>
-    <a href="account.html">
+    <a href="/index.php?route=payment/pp_express/checkout">
         <div class="btn" style="float: right;margin-right: 20px">确认付款</div>
     </a>
 </div>
