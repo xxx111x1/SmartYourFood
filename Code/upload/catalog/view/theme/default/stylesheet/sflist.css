@@ -296,6 +296,10 @@ body{
 	width: 330px;
     height: 224px;
 }
+
+.thumb_rest_img{
+	cursor:pointer;
+}
 .thumboverlay{
     position:absolute;
     left:0px;
@@ -372,6 +376,9 @@ body{
     float: left;
     font-size: 16px;
     color: #555555;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 .thumb_desc_restname{
     width: 330px;

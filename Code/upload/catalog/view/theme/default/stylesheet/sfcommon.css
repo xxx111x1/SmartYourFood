@@ -117,7 +117,7 @@ footer{
 #QRcode{
 	width:80px;
 	height:80px;
-	background-image: url(../image/QRcode.jpg);
+	background-image: url(../image/QRCode.jpg);
 	background-repeat: no-repeat;
 	background-size: 80px 80px;
 	margin-left: auto;
