@@ -1,2 +1,4 @@
 update smartyourfood.oc_restaurant_info set img_url = './catalog/view/theme/default/image/foodImages/umi_unagi_bento.png' where img_url is null and restaurant_id >= 0;
 update smartyourfood.oc_food set img_url = './catalog/view/theme/default/image/foodImages/umi_unagi_bento.png' where food_id = 255;
+update smartyourfood.oc_restaurant_info set img_url = './catalog/view/theme/default/image/foodImages/kungfu_noodle_soup_with_lamb.jpg' where restaurant_id =1;
+update smartyourfood.oc_restaurant_info set img_url = './catalog/view/theme/default/image/foodImages/beijiang_stir_fried_shrimp_with_hot_chili_pepper_sauce.png' where restaurant_id =2;
