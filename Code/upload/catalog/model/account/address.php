@@ -159,7 +159,8 @@ class ModelAccountAddress extends Model {
 	}
 	
 	public function getAddressesHistory() {
-		$query = $this->db->query("SELECT distinct lat,lng,address FROM " . DB_PREFIX . "address_search_history WHERE customer_id = '" . (int)$this->customer->getId() . "' order by date_added desc limit 0,3 ");	
+		$query = $this->db->query("select distinct lat,lng,address from (SELECT lat,lng,address, date_added FROM " . DB_PREFIX . "address_search_history WHERE customer_id = '" . (int)$this->customer->getId() . "' order by date_added desc limit 0,20) a limit 0,3 ");
+	
 		return $query->rows;
 	}
 	
@@ -193,6 +194,6 @@ class ModelAccountAddress extends Model {
 		$stepTwo = 2 * asin(min(1, sqrt($stepOne)));
 		$calculatedDistance = $earthRadius * $stepTwo;
 	
-		return round($calculatedDistance);
+		return round($calculatedDistance*1.00/1000,1);
 	}
 }

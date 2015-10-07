@@ -14,7 +14,7 @@ $(document).ready(function () {
 	}
 	$('#searchType').val(type);
 	var isRefreshType = true;
-	$('#food_tab').click(function() {
+	$(document).on('click','#food_tab',function() {
 		if(!$('#food_tab').hasClass('selected_type_tab')){
 			type = 'food';
 			isRefreshType = true;
@@ -37,7 +37,7 @@ $(document).ready(function () {
 			isRefreshType = false;
 		}		
 	});	
-		
+			
 	$('#filter_0').addClass('filter_field_selected');
 	$('#sort_default').addClass('sort_field_selected');
 	

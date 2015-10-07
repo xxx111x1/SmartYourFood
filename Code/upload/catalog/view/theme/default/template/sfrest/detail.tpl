@@ -33,7 +33,7 @@
 				<div class="info-label border-right">平均送达时间</div>
 			</div>
 			<div class="info-col">
-				<div class="info-value">15K</div>
+				<div class="info-value"><?php echo $distance; ?>K</div>
 				<div class="info-label">商家距离</div>
 			</div>
 		</div>

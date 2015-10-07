@@ -1,11 +1,13 @@
+var autocomplete;
 function initMap() {
   var input = /** @type {!HTMLInputElement} */(document.getElementById('pac-input'));
   var options = {	  componentRestrictions: {country: "ca"}	 };
-  var autocomplete = new google.maps.places.Autocomplete(input, options);
+  autocomplete = new google.maps.places.Autocomplete(input, options);
   autocomplete.addListener('place_changed', function() {
     var place = autocomplete.getPlace();
-    if (!place.geometry) {
-      window.alert("Autocomplete's returned place contains no geometry");
+    if (!place || !place.geometry) {
+      window.alert("Can not get this address's geometry. Please select an address in address list or input another correct address.");
+//      document.getElementById("pac-input").focus();
       return;
     }	
     var address = '';
@@ -24,6 +26,15 @@ function initMap() {
 		data: 'lat=' + latitude + '&lng=' + longitude+ '&address=' + encodeURIComponent(address) + '&isInsert=1',
 		dataType: 'json',
 		success: function(data) {
+			if(window.location.search.indexOf('common/list') >= 0){
+				var searchtype =document.getElementById('searchType').value;
+				if(searchtype=="food"){
+					window.location.href = "index.php?route=common/list";
+				}
+				else{
+					window.location.href = "index.php?route=common/list&type=restaurant";
+				}
+			}
 		}
 	});		
   });
@@ -33,7 +44,7 @@ function getReturnUrl(lat,lng,address){
 	return 'index.php?route=common/sfhome&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address);
 }
 	
-$(document).ready(function () {
+$(document).ready(function () {	
 	
 	$(document).on('click', '.buy-cart', function(){
 		var foodId = $(this).parent().attr('foodid');
@@ -56,6 +67,21 @@ $(document).ready(function () {
 		window.location.href = url;
 	});
 	
+	
+//	$(document).on('focusout', '#pac-input', function() {
+//		var focusClasses = $(":focus").attr('class');
+//		alert(focusClasses);
+//		if(focusClasses.indexOf('pac-item')<0 &&
+//		   focusClasses.indexOf('pac-icon')<0 &&
+//		   focusClasses.indexOf('pac-item-query')<0 &&
+//		   focusClasses.indexOf('pac-matched')<0 &&
+//		   focusClasses.indexOf('pac-container')<0 
+//			)			
+//		{
+//			google.maps.event.trigger(autocomplete, 'place_changed', {});
+//		}
+//    });
+//	
 	$(document).on('click', '#dropdown', function(){
 		$('.history-addresses').toggleClass("hide");
 	});
@@ -75,6 +101,15 @@ $(document).ready(function () {
 			data: 'lat=' + lat + '&lng=' + lng + '&address=' + encodeURIComponent(address) + '&isInsert=0',
 			dataType: 'json',
 			success: function(data) {
+				if(window.location.search.indexOf('common/list') >= 0){
+					var searchtype =document.getElementById('searchType').value;
+					if(searchtype=="food"){
+						window.location.href = "index.php?route=common/list";
+					}
+					else{
+						window.location.href = "index.php?route=common/list&type=restaurant";
+					}
+				}
 			}
 		});	
 		$('.history-addresses').addClass("hide");

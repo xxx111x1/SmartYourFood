@@ -35,6 +35,14 @@ class ControllerSfrestDetail extends Controller{
         	$data['history_address'] = "";
         }        
         
+        if(isset($this->session->data['address'])){
+        	$this->load->model('account/address');
+        	$data['distance'] = $this->model_account_address->getDistance($this->session->data['lat'], $this->session->data['lng'], $data['restaurant']['lat'], $data['restaurant']['lng']);
+        }
+        else{
+        	$data['distance'] = "未知";
+        }
+        
         $data['header'] = $this->load->controller('common/sfheader');
         $data['review'] = $this->load->controller('sfrest/review');
         $data['footer'] = $this->load->controller('common/sffooter');
