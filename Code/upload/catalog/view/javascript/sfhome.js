@@ -6,8 +6,8 @@ function initMap() {
   autocomplete.addListener('place_changed', function() {
     var place = autocomplete.getPlace();
     if (!place || !place.geometry) {
-      window.alert("Can not get this address's geometry. Please select an address in address list or input another correct address.");
-//      document.getElementById("pac-input").focus();
+      window.alert("Can not get this address's geometry. Please select an address in address list or input another correct address. If cannot find your location, please input a near address.");
+      document.getElementById("pac-input").focus();
       return;
     }	
     var address = '';
@@ -68,20 +68,20 @@ $(document).ready(function () {
 	});
 	
 	
-//	$(document).on('focusout', '#pac-input', function() {
-//		var focusClasses = $(":focus").attr('class');
-//		alert(focusClasses);
-//		if(focusClasses.indexOf('pac-item')<0 &&
-//		   focusClasses.indexOf('pac-icon')<0 &&
-//		   focusClasses.indexOf('pac-item-query')<0 &&
-//		   focusClasses.indexOf('pac-matched')<0 &&
-//		   focusClasses.indexOf('pac-container')<0 
-//			)			
-//		{
-//			google.maps.event.trigger(autocomplete, 'place_changed', {});
-//		}
-//    });
-//	
+	$(document).on('focusout', '#pac-input', function() {
+		var focusClasses = $(":focus").attr('class');
+		//alert(focusClasses);
+		if(focusClasses.indexOf('pac-item')<0 &&
+		   focusClasses.indexOf('pac-icon')<0 &&
+		   focusClasses.indexOf('pac-item-query')<0 &&
+		   focusClasses.indexOf('pac-matched')<0 &&
+		   focusClasses.indexOf('pac-container')<0 
+			)			
+		{
+			google.maps.event.trigger(autocomplete, 'place_changed', {});
+		}
+    });
+	
 	$(document).on('click', '#dropdown', function(){
 		$('.history-addresses').toggleClass("hide");
 	});
