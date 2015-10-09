@@ -14,7 +14,7 @@ $(document).ready(function () {
 	}
 	$('#searchType').val(type);
 	var isRefreshType = true;
-	$('#food_tab').click(function() {
+	$(document).on('click','#food_tab',function() {
 		if(!$('#food_tab').hasClass('selected_type_tab')){
 			type = 'food';
 			isRefreshType = true;
@@ -37,7 +37,7 @@ $(document).ready(function () {
 			isRefreshType = false;
 		}		
 	});	
-		
+			
 	$('#filter_0').addClass('filter_field_selected');
 	$('#sort_default').addClass('sort_field_selected');
 	
@@ -209,7 +209,7 @@ $(document).ready(function () {
 						restId = v.restaurant_id;
 						name = v.rest_name
 						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+v.name+'" >'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
 											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
 											'<div class="thumb_desc_productprice">C$ '+v.price+'</div></div></div>';
 					}

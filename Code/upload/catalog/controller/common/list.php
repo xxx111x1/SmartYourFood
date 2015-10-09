@@ -25,7 +25,7 @@ class ControllerCommonList extends Controller{
         	$data['history_address'] = $this->model_account_address->getAddressesHistory();
         }
         else{
-        	$data['address'] = "请输入送餐地址";
+        	$data['address'] = "请输入送餐地址按回车确认";
         	$data['first_name'] = "";
         	$data['history_address'] = "";
         }        

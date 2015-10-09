@@ -1,0 +1,1 @@
+UPDATE `smartyourfood`.`oc_setting` SET `value`='CAD' WHERE `setting_id`='190';

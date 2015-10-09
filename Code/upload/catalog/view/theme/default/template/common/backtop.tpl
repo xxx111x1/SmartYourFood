@@ -42,7 +42,7 @@
 		    <div class="callcenter-contact">
 		    	联系电话： 7788886311
 		    </div>
-		    <input type="button" value="返回" class="cancelBtn">
+		    <input type="button" value="返回" class="cancelBtn callcenter-cancel">
 		</div>
 	</div>
 </div>
