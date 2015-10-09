@@ -40,6 +40,7 @@
         <div style="padding-top: 36px;padding-bottom: 32px; font-size: 32px;font-weight: bolder; margin-left: 175px">
             注册
         </div>
+        <div style="margin-left: 30px;color: #f65053;<?php if(empty($error)) echo 'display:none;';?>"><?php if(!empty($error)) echo '*'.$error;?></div>
         <form method="post" id="regform">
             <div class="regitem">
                 <div class="regtips">

@@ -72,7 +72,7 @@ class ModelSffoodFood extends Model{
     }
 
     public function getFoodByName($foodName){
-		$sql = "select a.name as rest_name, a.restaurant_id as restaurant_id, b.name as food_name, b.price as price,b.review_score as score,b.sell_number as sells, b.food_id as food_id,b.img_url as img_url from "
+		$sql = "select a.name as rest_name,a.lat as lat, a.lng as lng, a.restaurant_id as restaurant_id, b.name as food_name, b.price as price,b.review_score as score,b.sell_number as sells, b.food_id as food_id,b.img_url as img_url, -1 as dist from "
 			.DB_PREFIX."food b inner join "
 			.DB_PREFIX."restaurant_info a on a.restaurant_id = b.restaurant_id where LOWER(b.name) like LOWER('%".$foodName."%') and b.available = 1 and a.restaurant_id>0 ";
 		$this->log->write($sql);

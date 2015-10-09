@@ -25,7 +25,7 @@ class ControllerSfaccountRegister extends Controller{
             $customer_data['lastname'] = 'null';
             $customer_data['address_1'] = 'null';
             $customer_data['address_2'] = 'null';
-            $customer_data['email'] = 'test@live.com';
+            $customer_data['email'] = 'null';
             $customer_data['store_id']=1;
             $customer_data['fax']='null';
             $customer_id = $this->model_account_customer->addSFCustomer($customer_data);
@@ -35,6 +35,10 @@ class ControllerSfaccountRegister extends Controller{
 
         $data=array();
         //$this->response->setOutput($this->load->view('default/template/sfaccount/register.tpl', $data));
+        if(isset($this->error['error']))
+        {
+            $data['error']=$this->error['error'];
+        }
         $this->response->setOutput($this->load->view('default/template/sfaccount/registerv3.html', $data));
     }
 
@@ -42,9 +46,23 @@ class ControllerSfaccountRegister extends Controller{
 
         if ((utf8_strlen(trim($this->request->post['accountname'])) < 1) || (utf8_strlen(trim($this->request->post['accountname'])) > 32)) {
             $this->error['firstname'] = $this->language->get('error_firstname');
+            $this->error['error'] = 'INVALID_NAME_LENGTH';
+            return false;
         }
+
         if ((utf8_strlen($this->request->post['phonenumber']) < 3) || (utf8_strlen($this->request->post['phonenumber']) > 32)) {
             $this->error['phonenumber'] = $this->language->get('error_telephone');
+            $this->error['error']='INVALID_PHONE_LENGTH';
+            return false;
+        }
+
+        $this->load->model('account/customer');
+        $customer = $this->model_account_customer->getCustomerByPhone($this->request->post['phonenumber']);
+
+        if(!empty($customer))
+        {
+            $this->error['error'] = 'PHONE_EXIST';
+            return false;
         }
 
         if ((utf8_strlen($this->request->post['pwd_1st']) < 4) || (utf8_strlen($this->request->post['pwd_1st']) > 20)) {

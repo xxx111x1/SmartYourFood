@@ -12,6 +12,7 @@ class ControllerSffoodSearch extends Controller{
         $data=array();
         $this->load->model('sffood/food');
         $this->load->model('sfrest/information');
+        $this->load->model('account/address');
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
         $data['backtop'] = $this->load->controller('common/backtop');
@@ -22,6 +23,18 @@ class ControllerSffoodSearch extends Controller{
 
         $this->log->write('food name '.$food_name);
         $food_list = $this->model_sffood_food->getFoodByName($food_name);
+        if(isset($this->session->data['lat'])&&isset($this->session->data['lng']))
+        {
+            foreach($food_list as $food)
+            {
+                $dist = $this->model_account_address->getDistance($this->session->data['lat'],
+                    $this->session->data['lng'],
+                    $food['lat'],
+                    $food['lng']);
+
+                $food['dist'] = round($dist/1000,2);
+            }
+        }
         $data['foods'] =$food_list;
         $rest_list = $this->model_sfrest_information->getRestaurantsByName($food_name);
         $data['rests'] = $rest_list;

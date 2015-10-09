@@ -45,15 +45,22 @@ class ControllerSfcheckoutCheckout extends Controller{
             );
         }
         $data['msg']='Hello World!';*/
-        if(isset($this->session->data['address']))
-        {
-            $data['address'] =$this->session->data['address'];
-        }
-        else{
-            $data['address'] = "选择收货地址";
-        }
 
         $this->load->model('sfcheckout/shippingaddress');
+        if(isset($this->session->data['address'])
+            && isset($this->session->data['lat'])
+            && isset($this->session->data['lng'])
+            && $this->customer->isLogged())
+        {
+            $address_data=array();
+            $address_data['lat']=$this->session->data['lat'];
+            $address_data['lng']=$this->session->data['lng'];
+            $address_data['address']=$this->session->data['address'];
+            $address_data['phone']=$this->customer->getTelephone();
+            $address_data['contact']=$this->customer->getFirstName();
+            $this->model_sfcheckout_shippingaddress->addAddress($address_data);
+        }
+
         //check if current page is returned from address pickup page
 
         if(isset($this->request->get['lat'])

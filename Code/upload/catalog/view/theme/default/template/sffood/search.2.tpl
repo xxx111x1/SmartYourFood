@@ -40,7 +40,7 @@
             <div class="thumb_desc">
                 <div class="thumb_desc_foodname"><?php echo $food['food_name'];?></div>
                 <div class="thumb_desc_restname"><?php echo $food['rest_name'];?></div>
-                <div class="thumb_desc_restdist">距离 7.5km</div>
+                <div class="thumb_desc_restdist">距离 <?php if($food['dist']==-1) echo '--'; else echo $food['dist'];?>km</div>
                 <div class="thumb_desc_productinfo">
                     <div class="thumb_desc_productfav"><?php echo $food['score'];?></div>
                     <div class="thumb_desc_productprice">$<?php echo $food['price'];?></div>
