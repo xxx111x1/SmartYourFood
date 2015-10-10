@@ -1298,7 +1298,8 @@ class ControllerPaymentPPExpress extends Controller {
 			'METHOD'             => 'SetExpressCheckout',
 			'MAXAMT'             => $max_amount,
 			'RETURNURL'          => $this->url->link('payment/pp_express/checkoutReturn', '', 'SSL'),
-			'CANCELURL'          => $this->url->link('sfcheckout/checkout', '', 'SSL'),
+// 			'CANCELURL'          => $this->url->link('sfcheckout/checkout', '', 'SSL'),
+			'CANCELURL'          => $this->url->link('payment/pp_express/checkoutReturn', '', 'SSL'),
 			'REQCONFIRMSHIPPING' => 0,
 			'NOSHIPPING'         => $shipping,
 			'LOCALECODE'         => 'EN',
@@ -1410,7 +1411,7 @@ class ControllerPaymentPPExpress extends Controller {
 					break;
 			}
 
-			$this->model_checkout_order->addOrderHistory($order_id, $order_status_id);
+			$this->model_checkout_order->updateOrderStatus($order_id, $order_status_id);
 
 			//add order to paypal table
 			$paypal_order_data = array(
@@ -1521,7 +1522,7 @@ class ControllerPaymentPPExpress extends Controller {
 						$this->session->data['paypal_redirect_count'] = 0;
 						$this->session->data['error'] = $this->language->get('error_too_many_failures');
 
-						$this->response->redirect($this->url->link('checkout/checkout', '', 'SSL'));
+						$this->response->redirect($this->url->link('sfcheckout/checkout'));
 					} else {
 						$this->session->data['paypal_redirect_count']++;
 					}
@@ -1535,45 +1536,10 @@ class ControllerPaymentPPExpress extends Controller {
 					$this->response->redirect('https://www.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=' . $this->session->data['paypal']['token']);
 				}
 			}
-
-			$this->language->load('payment/pp_express');
-
-			$data['breadcrumbs'] = array();
-
-			$data['breadcrumbs'][] = array(
-				'href' => $this->url->link('common/home'),
-				'text' => $this->language->get('text_home')
-			);
-
-			$data['breadcrumbs'][] = array(
-				'href' => $this->url->link('checkout/cart'),
-				'text' => $this->language->get('text_cart')
-			);
-
-			$data['heading_title'] = $this->language->get('error_heading_title');
-
-			$data['text_error'] = '<div class="warning">' . $result['L_ERRORCODE0'] . ' : ' . $result['L_LONGMESSAGE0'] . '</div>';
-
-			$data['button_continue'] = $this->language->get('button_continue');
-
-			$data['continue'] = $this->url->link('checkout/cart');
-
+			
+			$this->model_checkout_order->updateOrderStatus($order_id, $this->config->get('pp_express_canceled_reversal_status_id'));
 			unset($this->session->data['success']);
-
-			$this->response->addHeader($this->request->server['SERVER_PROTOCOL'] . ' 404 Not Found');
-
-			$data['column_left'] = $this->load->controller('common/column_left');
-			$data['column_right'] = $this->load->controller('common/column_right');
-			$data['content_top'] = $this->load->controller('common/content_top');
-			$data['content_bottom'] = $this->load->controller('common/content_bottom');
-			$data['footer'] = $this->load->controller('common/footer');
-			$data['header'] = $this->load->controller('common/header');
-
-			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/error/not_found.tpl')) {
-				$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/error/not_found.tpl'));
-			} else {
-				$this->response->setOutput($this->load->view('default/template/error/not_found.tpl'));
-			}
+			$this->response->redirect($this->url->link('sfcheckout/checkout'));
 		}
 	}
 
