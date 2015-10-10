@@ -731,4 +731,15 @@ class ControllerApiOrder extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+	
+	//Call: http://localhost:8080/index.php?route=Api/Order/getOrderByStatus&statusId=7 
+	public function getOrderByStatus(){
+		if($this->customer->isLogged()){
+			$order_status_id = $this->request->get['statusId'];
+			$this->load->model('checkout/order');
+			$json['orders'] = $this->model_checkout_order->getOrderByStatus($order_status_id);
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }
