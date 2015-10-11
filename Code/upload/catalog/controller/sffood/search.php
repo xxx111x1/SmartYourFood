@@ -7,8 +7,11 @@
  */
 class ControllerSffoodSearch extends Controller{
     public function index()
-    {
+    {    	
         $food_name="";
+        $lat = "";
+        $lng = "";
+        $address = "";
         $data=array();
         $this->load->model('sffood/food');
         $this->load->model('sfrest/information');
@@ -19,6 +22,18 @@ class ControllerSffoodSearch extends Controller{
         if (isset($this->request->get['search'])) {
             $food_name = $this->request->get['search'];
         }
+        
+        if(isset($this->request->get['address'])){
+        	$lat = $this->request->get['lat'];
+        	$lng = $this->request->get['lng'];
+        	$address = $this->request->get['address'];
+        }
+        
+        if(!$this->customer->isLogged()){
+        	$redirect = $this->url->link('sffood/search','search='.$food_name . '&lat='.$lat.'&lng='.$lng.'address='.$address);
+        	$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
+        }
+        
         $data['query']=$food_name;
 
         $this->log->write('food name '.$food_name);

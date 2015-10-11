@@ -8,6 +8,10 @@
 class ControllerSfcheckoutCheckout extends Controller{
     public function index()
     {
+    	if(!$this->customer->isLogged()){
+    		$redirect = $this->url->link('common/sfhome');
+    		$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
+    	}
         $data=array();
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
