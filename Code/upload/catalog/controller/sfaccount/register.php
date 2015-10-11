@@ -1,4 +1,4 @@
-<?php
+ï»¿<?php
 /**
  * Created by PhpStorm.
  * User: Min
@@ -46,13 +46,13 @@ class ControllerSfaccountRegister extends Controller{
 
         if ((utf8_strlen(trim($this->request->post['accountname'])) < 1) || (utf8_strlen(trim($this->request->post['accountname'])) > 32)) {
             $this->error['firstname'] = $this->language->get('error_firstname');
-            $this->error['error'] = 'ÓÃ»§Ãû³¤¶È²»·ûºÏÒªÇó';
+            $this->error['error'] = 'ç”¨æˆ·åé•¿åº¦ä¸ç¬¦åˆè¦æ±‚';
             return false;
         }
 
         if ((utf8_strlen($this->request->post['phonenumber']) < 3) || (utf8_strlen($this->request->post['phonenumber']) > 32)) {
             $this->error['phonenumber'] = $this->language->get('error_telephone');
-            $this->error['error']='µç»°ºÅÂë³¤¶È²»·ûºÏÒªÇó';
+            $this->error['error']='ç”µè¯å·ç é•¿åº¦ä¸ç¬¦åˆè¦æ±‚';
             return false;
         }
 
@@ -61,19 +61,19 @@ class ControllerSfaccountRegister extends Controller{
 
         if(!empty($customer))
         {
-            $this->error['error'] = 'µç»°ºÅÂëÒÑ¾­´æÔÚ';
+            $this->error['error'] = 'ç”µè¯å·ç å·²ç»å­˜åœ¨';
             return false;
         }
 
         if ((utf8_strlen($this->request->post['pwd_1st']) < 4) || (utf8_strlen($this->request->post['pwd_1st']) > 20)) {
             $this->error['password'] = $this->language->get('error_password');
-            $this->error['error'] = 'ÃÜÂë³¤¶È²»·ûºÏÒªÇó';
+            $this->error['error'] = 'å¯†ç é•¿åº¦ä¸ç¬¦åˆè¦æ±‚';
             return false;
         }
 
         if ($this->request->post['pwd_2nd'] != $this->request->post['pwd_2nd']) {
             $this->error['confirm'] = $this->language->get('error_confirm');
-            $this->error['error'] ='Á½´ÎÃÜÂëÊäÈë²»Ò»ÖÂ';
+            $this->error['error'] ='ä¸¤æ¬¡å¯†ç è¾“å…¥ä¸ä¸€è‡´';
         }
         return !$this->error;
     }
