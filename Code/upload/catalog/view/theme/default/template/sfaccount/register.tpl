@@ -3,78 +3,92 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>注册</title>
-    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
-    <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="catalog/view/javascript/register.js" type="text/javascript"></script>
-    <!--<script type="text/javascript" src="js/jquery-1.11.3.js"></script>-->
-    <!--<script type="text/javascript" src="js/register.js"></script>-->
+    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/reg.css">
+    <script type="text/javascript" src="/catalog/view/javascript/jquery/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="/catalog/view/javascript/owl-carousel/owl.carousel.js"></script>
+    <script type="text/javascript" src="/catalog/view/javascript/register.js"></script>
+    <link href="/catalog/view/javascript/owl-carousel/owl.theme.css" rel="stylesheet">
+    <link href="/catalog/view/javascript/owl-carousel/owl.transitions.css" rel="stylesheet">
+    <link href="/catalog/view/javascript/owl-carousel/owl.carousel.css" rel="stylesheet">
+    <link href="/catalog/view/javascript/jquery/google-code-prettify/prettify.css" rel="stylesheet">
 </head>
-<body class="container">
-<div class="row" style="color: #ffffff">
-       skip
-</div>
-<div class="row" style="color: #ffffff">
-    skip
-</div>
-<div class="row"> <!--style="border: 2px solid #86B0CD;">-->
-    <div class="col-md-5 col-md-offset-1">
-        <div class="row">
-            <h2>使用手机注册</h2>
+<body>
+    <a href="/">
+        <div id="gotohome" style="color: white; font-size: 64px;font-weight: bolder;position: absolute;margin-top: 140px;margin-left: 150px; text-decoration: none;text-decoration-line: none">
+            悠选
         </div>
-        <form class="form-horizontal" method="post" id="regform" onsubmit="return regsubmit()">
-            <div class="form-group required">
-                <label class="col-sm-3 control-label" for="phonenumber">手机号码</label>
-
-                <div class="col-sm-7">
-                    <input type="text" name="phonenumber" value="" placeholder="输入有效的手机号码" id="phonenumber"
-                           class="form-control" onchange="return validatephonenumber()">
+    </a>
+    <div id="welcome" class="welcome owl-carousel owl-theme" style="width: 540px;height: 330px">
+        <div class="item">
+            <line>Welcome to</line>
+            <p style="float: right;margin-right: 100px; margin-bottom: 30px"><span>U-Says</span></p>
+            <p style="font-size: 24px;margin-top: 0px;clear: both">Hungry? Empty fridge or no time to cook? You've come to the right place!</p>
+        </div>
+        <div class="item">
+            <line>Welcome to</line>
+            <p style="float: right;margin-right: 100px; margin-bottom: 30px"><span>U-Says</span></p>
+            <p style="font-size: 24px;margin-top: 0px;clear: both">Our website helps foodies spend less time wondering what to eat and more time enjoying food.</p>
+        </div>
+        <div class="item">
+            <line>Welcome to</line>
+            <p style="float: right;margin-right: 100px; margin-bottom: 30px"><span>U-Says</span></p>
+            <p style="font-size: 24px;margin-top: 0px;clear: both">We're here to help you make choices that satisfy your palette</p>
+        </div>
+    </div>
+    <div class="regarea">
+        <!--<div style="background-color: #FA7171;margin-top: 0px;width: 100%;height: 8px;border-top-left-radius: 5px;border-top-right-radius: 5px;"></div>-->
+        <div style="padding-top: 36px;padding-bottom: 32px; font-size: 32px;font-weight: bolder; margin-left: 175px">
+            注册
+        </div>
+        <div style="margin-left: 30px;color: #f65053;<?php if(empty($error)) echo 'display:none;';?>"><?php if(!empty($error)) echo '*'.$error;?></div>
+        <form method="post" id="regform">
+            <div class="regitem">
+                <div class="regtips">
+                    <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/account_icon.png);">
+                    </div>
                 </div>
-                 <label id="phonenum_chkres" class="col-sm-2 glyphicon" style="font-size: 16px; margin-left: -20px;margin-top: 5px;"></label>
+                <input class="reg_input" name="accountname" id="accountname" placeholder="您的姓名"/>
             </div>
-            <div class="form-group required">
-                <label class="col-sm-3 control-label" for="pwd_1st">输入密码</label>
-                <div class="col-sm-7">
-                    <input type="password" name="pwd_1st" value="" placeholder="至少六位数字字母组合" id="pwd_1st"
-                           class="form-control" onchange="return validate1stpwd()">
+            <div class="regitem">
+                <div class="regtips">
+                    <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/mobile_icon.png);">
+                    </div>
                 </div>
-                <label id="1stpwd_chkres" class="col-sm-2 glyphicon" style="font-size: 16px; margin-left: -20px;margin-top: 5px;"></label>
+                <input id="phonenumber"  name="phonenumber" class="reg_input"  placeholder="手机号码"/>
             </div>
-            <div class="form-group required">
-                <label class="col-sm-3 control-label" for="pwd_2nd">再次输入密码</label>
-                <div class="col-sm-7">
-                    <input type="password" name="pwd_2nd" value="" placeholder="和上次输入一致" id="pwd_2nd"
-                           class="form-control" onkeyup="validate2ndpwd()">
+            <div class="regitem">
+                <div class="regtips">
+                    <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
+                    </div>
                 </div>
-                <label id="2ndpwd_chkres" class="col-sm-2 glyphicon" style="font-size: 16px; margin-left: -20px;margin-top: 5px;"></label>
+                <input id="pwd_1st" class="reg_input"  name="pwd_1st" type="password" placeholder="输入密码"/>
             </div>
-            <div class="row">
-                <!--<button type="submit" class="btn btn-primary col-sm-7 col-sm-offset-3">同意并注册</button>-->
-                <div class="col-sm-7 col-sm-offset-3">
-                    <input type="submit" class="btn btn-primary col-sm-12" id="registerbutton" value="同意并注册"/>
+            <div class="regitem">
+                <div class="regtips">
+                    <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
+                    </div>
                 </div>
+                <input id="pwd_2nd" name="pwd_2nd" class="reg_input" type="password" placeholder="确认密码"/>
             </div>
-            <div class="row">
-                <label style="margin-top: 10px" class="col-sm-7 col-sm-offset-3"> <a href="register.html">《使用条款和协议》</a></label>
+            <!--<input type="submit" class="reg_btn"><img style="z-index: 10" src="catalog/view/theme/default/image/icons/regbtn.png" alt="同意并注册"></input>-->
+            <div class="reg_btn" type="submit">
+                <!--<a href="#" id="reg_btn" onclick="document.getElementById('regform').submit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="同意并注册"></a>-->
+                <a href="#" id="reg_btn" onclick="regsubmit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="同意并注册"></a>
             </div>
         </form>
+        <div class="regtxt">
+            <span style="color: #f94e4e;font-weight: bold">《使用条款和协议》</span>
+        </div>
+        <div class="regtxt">
+            <span style="font-weight: bold">已经注册过？ 请点击 </span><a href="/index.php?route=sfaccount/login" style="text-decoration: none"><span style="color: #f94e4e;font-weight: bold"> 直接登录</span></a>
+        </div>
+        <div class="regtxt">
+            <span style="font-weight: bold">可使用以下账号登陆:</span>
+        </div>
+        <div class="regtxt">
+            <img src="catalog/view/theme/default/image/icons/sociallogin.png">
+        </div>
+
     </div>
-    <div class="col-md-4">
-        <div class="row" style="margin-top: 40px">
-            <h3>已经注册过?</h3>
-        </div>
-        <div class="row" style="margin-top: 10px">
-            请点击 直接<a href="register.html">登陆</a>
-        </div>
-        <div class="row" style="margin-top: 30px">
-            可以使用以下账号登陆:
-        </div>
-        <div class="row">
-            <img src="img/login_icon.png">
-        </div>
-             
-    </div>
-</div>
 </body>
 </html>
