@@ -23,7 +23,9 @@
 	    		<a href="index.php?route=sfaccount/login">登陆/注册</a>
 	        <?php } ?>  		
   		</div>
-  		<div class="account-icon"></div>  		
+		<a href="index.php?route=sfaccount/login">
+  			<div class="account-icon"></div>
+		</a>
   	</div>
   	<div class="content">
   		<div class="search-bar">

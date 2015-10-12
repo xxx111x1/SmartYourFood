@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: Min
@@ -119,9 +119,16 @@ class ControllerSfaccountLogin extends Controller{
                 $this->response->redirect($this->url->link('common/list', '', 'SSL'));
             }
         }
-        
-        $data['redirect'] = $this->request->get['redirect'];
-        $this->response->setOutput($this->load->view('default/template/sfaccount/login.html', $data));
+
+        if(isset($this->request->get['redirect']))
+        {
+            $data['redirect'] = $this->request->get['redirect'];
+        }
+        else{
+            $data['redirect'] = '';
+        }
+
+        $this->response->setOutput($this->load->view('default/template/sfaccount/login.tpl', $data));
     }
 
     protected function validate() {

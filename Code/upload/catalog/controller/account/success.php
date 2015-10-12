@@ -48,7 +48,9 @@ class ControllerAccountSuccess extends Controller {
 		$data['content_bottom'] = $this->load->controller('common/content_bottom');
 		$data['footer'] = $this->load->controller('common/sffooter');
 		$data['header'] = $this->load->controller('common/sfheader');
-
+		$data['profile'] = $this->load->controller('sfaccount/profile');
+		$data['orderhistory'] = $this->load->controller('sfaccount/order');
+		$data['addresses'] = $this->load->controller('sfaccount/address');
 		/*
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/success.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/common/success.tpl', $data));
@@ -56,10 +58,10 @@ class ControllerAccountSuccess extends Controller {
 			$this->response->setOutput($this->load->view('default/template/common/success.tpl', $data));
 		}*/
         $data['pageid']='#newsletter_';
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account_full.html')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account_full.html', $data));
+		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account.tpl')) {
+			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account.tpl', $data));
 		} else {
-			$this->response->setOutput($this->load->view('default/template/account/account_full.html', $data));
+			$this->response->setOutput($this->load->view('default/template/account/account.tpl', $data));
 		}
 	}
 }

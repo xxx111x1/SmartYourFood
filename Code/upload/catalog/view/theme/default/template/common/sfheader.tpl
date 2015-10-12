@@ -35,6 +35,8 @@
 		    		<a href="index.php?route=sfaccount/login">登陆/注册</a>
 		        <?php } ?>  		
 	  		</div>
-	  <div class="account-icon"></div>
+		<a href="index.php?route=account/account">
+	  		<div class="account-icon"></div>
+		</a>
   	</div>  		
 </div>

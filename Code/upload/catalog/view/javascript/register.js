@@ -37,7 +37,6 @@ function regsubmit(){
     {
         return;
     }
-
     var name=$('#accountname').val();
     var phone_num = $('#phonenumber').val();
     var pwd_1st = $('#pwd_1st').val();
@@ -91,9 +90,14 @@ function isvalidusername( username)
 
     var str_name = username.toString();
     var len = str_name.length;
-    if(len<3 || len>24)
+    if(len<2)
     {
-        err_msg='请输入3-24位的用户名 ';
+        err_msg='用户名太短，至少要有2的字符 ';
+        return false;
+    }
+    if(len>24)
+    {
+        err_msg='用户名太长，不能超过24个字符 ';
         return false;
     }
     return true;
