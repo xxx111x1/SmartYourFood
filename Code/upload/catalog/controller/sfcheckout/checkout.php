@@ -20,13 +20,15 @@ class ControllerSfcheckoutCheckout extends Controller{
         $total_before_tax = $this->cart->getFoodSubTotal();
         $total_before_tax = round($total_before_tax,2);
         $tax=round(0.12*$total_before_tax,2);
-        $tips = round(0.1*$total_before_tax,2);
+        //$tips = round(0.1*$total_before_tax,2);
         $data['beforetax'] =  $total_before_tax;
         $data['tax'] = $tax;
-        $data['tips'] = $tips;
+        //$data['tips'] = $tips;
         $deliverfee = 5;
+        $fast_deliverfee = 5;
         $data['deliverfee'] = $deliverfee;
-        $data['totalcost'] = round($total_before_tax + $tax + $tips + $deliverfee,2);
+        $data['fast_deliverfee'] = $fast_deliverfee;
+        $data['totalcost'] = round($total_before_tax + $tax + $deliverfee +$fast_deliverfee,2);
         if(count($food_list)==0)
         {
             $data['nofood']="display: none";

@@ -58,8 +58,8 @@
         <div id="cost_summary">
             <span class="summary_item">菜品总价:<span id="beforetax">$<?php echo $beforetax;?></span></span>
             <span class="summary_item">配送费:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>
+            <span class="summary_item">优先配送:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>
             <span class="summary_item">税(12%):<span id="taxcost"> $<?php echo $tax;?></span></span>
-            <span class="summary_item" style="margin-left:190px">小费(10%): <span id="tipscost">$<?php echo $tips;?></span></span>
             <span class="summary_item" style="float:right;margin-right:120px">总金额: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
         </div>
     </div>
@@ -88,49 +88,8 @@
         </a>
     </div>
     <div id="payment">
-        <div id="paymentlabel">
-        付款方式
-        </div>
-        <table id="paymenttable">
-            <td style="vertical-align: middle">
-                <div class="paymentthumb">
-                    <input type="checkbox" class="payment_checkbox" checked/>
-                    <div class="paymentname">
-                        Paypal
-                    </div>
-                    <div class="paymenticon">
-                        <img src="catalog/view/theme/default/image/icons/paypal.png"/>
-                    </div>
-                </div>
-            </td>
-            <td style="vertical-align: middle">
-                <div class="paymentthumb">
-                    <input type="checkbox" class="payment_checkbox" disabled/>
-                    <div class="paymentname">
-                        Master Card
-                    </div>
-                    <div class="paymenticon">
-                        <img src="catalog/view/theme/default/image/icons/mastercard.png"/>
-                    </div>
-                </div>
-            </td>
-             <td style="vertical-align: middle">
-                <div class="paymentthumb">
-                    <input type="checkbox" class="payment_checkbox" disabled/>
-                    <div class="paymentname">
-                        Visa
-                    </div>
-                    <div class="paymenticon">
-                        <img src="catalog/view/theme/default/image/icons/visa.png"/>
-                    </div>
-                </div>
-            </td>
-        </table>
+        <div id="paymentlabel">	付款方式: 货到付款   </div>        
     </div>
-    <div style="margin-top: 20px;margin-left: 60px">
-        预计到达时间13:40
-    </div>
-
     <a href="/index.php?route=sfcheckout/confirm">
         <div class="btn" style="float: right;margin-right: 20px">结算</div>
     </a>
