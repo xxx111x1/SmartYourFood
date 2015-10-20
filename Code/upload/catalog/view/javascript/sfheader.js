@@ -10,5 +10,9 @@ $(document).ready(function () {
 	});
 	$('.account').click(function(){
 		window.location.href='/index.php?route=account/account';
+	});	
+	
+	$('.logout').click(function(){
+		window.location.href="index.php?route=common/sfhome&logout=1";
 	});
 });

@@ -12,32 +12,26 @@ $(document).ready(function() {
     console.log(curpage);
     $(curpage).show();
     // all jQuery code goes here
-    $("#orderhistory").hover(function(){
+    $("#orderhistory").click(function(){
             $(".rightpanel").hide();
             $("#orderhistory_").show();
         }
     );
-    $("#updateaddress").hover(function(){
+    $("#updateaddress").click(function(){
             $(".rightpanel").hide();
             $("#updateaddress_").show();
         }
     );
 
-    $("#updateaccount").hover(function(){
+    $("#updateaccount").click(function(){
             $(".rightpanel").hide();
             $("#updateaccount_").show();
         }
     );
 
-    $("#newsletter").hover(function(){
+    $("#newsletter").click(function(){
             $(".rightpanel").hide();
             $("#newsletter_").show();
-        }
-    );
-
-    $("#logout").hover(function(){
-            $(".rightpanel").hide();
-            $("#logout_").show();
         }
     );
 
@@ -72,7 +66,7 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("ÓÃ»§ÃûÐÞ¸ÄÊ§°Ü£¬ÇëÉÔºóÔÙÊÔ.");
+                alert("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½.");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
@@ -80,7 +74,7 @@ $(document).ready(function() {
                     alert(data['status']);
                 }
                 else{
-                    alert("ÓÃ»§ÃûÐÞ¸ÄÊ§°Ü£¬ÇëÉÔºóÔÙÊÔ.");
+                    alert("ï¿½Ã»ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½.");
                 }
                 $('.review-dialog-frame').addClass('invisible');
             }
@@ -96,7 +90,7 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("ÊÖ»úºÅÂëÐÞ¸ÄÊ§°Ü£¬ÇëÉÔºóÔÙÊÔ.");
+                alert("ï¿½Ö»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½.");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
@@ -144,7 +138,7 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("ÃÜÂëÐÞ¸ÄÊ§°Ü£¬ÇëÉÔºóÔÙÊÔ.");
+                alert("ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½.");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
@@ -152,7 +146,7 @@ $(document).ready(function() {
                     alert(data['status']);
                 }
                 else{
-                    alert("ÃÜÂëÐÞ¸ÄÊ§°Ü£¬ÇëÉÔºóÔÙÊÔ.");
+                    alert("ï¿½ï¿½ï¿½ï¿½ï¿½Þ¸ï¿½Ê§ï¿½Ü£ï¿½ï¿½ï¿½ï¿½Ôºï¿½ï¿½ï¿½ï¿½ï¿½.");
                 }
                 $('.review-dialog-frame').addClass('invisible');
             }

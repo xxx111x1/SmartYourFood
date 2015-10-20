@@ -7,7 +7,7 @@
             <span style="float: right;margin-right: 20px;color: red;">修改</span>
         </div>
         <br/>
-        <line><?php echo $address['address'];?></line>
+        <line title="<?php echo $address['address'];?>" ><?php echo $address['address'];?></line>
         <br/>
         <br/>
         <span><?php echo $address['phone'];?></span><span style="float: right;margin-top: -30px" class="mark"><img src="catalog/view/theme/default/image/icons/marked.png"></span>

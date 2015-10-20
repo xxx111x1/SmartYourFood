@@ -1,4 +1,4 @@
-﻿?<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfaccount.css">
+﻿<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfaccount.css">
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/review.css">
 <script type="text/javascript" src="catalog/view/javascript/account_ui.js"></script>
 <div class="review-dialog-frame invisible" id="dialog_updateusername">
@@ -147,28 +147,6 @@
                     <div id="bt_update">
                         修改头像
                     </div>
-                </div>
-            </th>
-            <th class="moneyarea">
-                <div class="moneylabel">
-                    <span style="font-size:16px">$</span>0.00
-                </div>
-                <div>
-                    <h3>账户余额</h3>
-                </div>
-                <div class="bt_update">
-                    充值
-                </div>
-            </th>
-            <th class="couponarea">
-                <div class="moneylabel">
-                    0<span style="font-size:16px">个</span>
-                </div>
-                <div>
-                    <h3>我的优惠券</h3>
-                </div>
-                <div class="bt_update">
-                    充值送优惠
                 </div>
             </th>
         </tr>

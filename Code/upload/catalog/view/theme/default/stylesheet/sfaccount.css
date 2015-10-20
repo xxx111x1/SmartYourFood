@@ -70,7 +70,7 @@ body{
     background-color: white;
     /* opacity: 0.5; */ 
     width: 1200px;
-    min-height:1400px;
+    min-height:600px;
 }
 .leftpanel{
     width: 250px;   
@@ -78,7 +78,7 @@ body{
     border-right-style: solid;
     border-right-width: 4px;
     float: left;
-    min-height: 1400px;
+    min-height: 600px;
     background-color: white;
 }
 .left_title{
@@ -100,6 +100,7 @@ body{
     font-weight: bolder;
     height: 25px;
     margin-top: 22px;
+    cursor: pointer;
 }
 
 .left_item:hover{
@@ -309,6 +310,15 @@ margin-top:15px;
     height: 138px;
     padding-left:10px;
     float:left;
+}
+
+.addressbox line{
+    width: 150px;
+    height: 25px;
+    float:left;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .regarea{

@@ -19,7 +19,7 @@
         <div class="left_item" id="newsletter">
             NewsLetter
         </div>
-        <div class="left_item" id="logout">
+        <div class="left_item logout" id="logout">
             退出登录
         </div>
     </div>
@@ -40,12 +40,8 @@
     </div>
     <div class="rightpanel" id="logout_">
         <div class="right_header">
-            <div class="btn" style="float: left">
-                退出
-            </div>
         </div>
     </div>
 </div>
-<?php if($pageid) echo "<div id='currentpage' pageid=$pageid></div>";
-?>
+<!--<?php if($pageid) echo "<div id='currentpage' pageid=$pageid></div>"; ?>-->
 <?php echo $footer;?>

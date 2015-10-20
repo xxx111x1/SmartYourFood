@@ -2,6 +2,9 @@
 class ControllerCommonSfhome extends Controller {
 	public function index() {
 		$data = array();
+		if(isset($this->request->get['logout'])){
+			$this->customer->logout();
+		}
 		$this->load->model('sffood/food');
 		$data["foods"] = $this->model_sffood_food->getSpecialFoods();
 		if(isset($this->request->get['lat'])){
