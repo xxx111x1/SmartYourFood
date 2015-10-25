@@ -40,6 +40,23 @@ $(document).ready(function () {
             shippaddress.set_address(addr_id);
         }
     );
+    
+    $('#fastDelivery').click(function(){
+    	var beforeTax = parseFloat($('#beforetax').text().replace('$', ''));
+    	var deliverfee = parseFloat($('#deliverfee').text().replace('$', ''));
+    	var taxcost = parseFloat($('#taxcost').text().replace('$', ''));
+    	var total = beforeTax + deliverfee + taxcost;
+    	if($("#fastDelivery").is(':checked')){
+    		total += 5;
+    		$('#orderConfirm').attr("href","/index.php?route=sfcheckout/confirm&isFast=true");
+    	}
+    	else{
+    		$('#orderConfirm').attr("href","/index.php?route=sfcheckout/confirm");
+    	}
+    	$('#totalcost').text("$" + total.toFixed(2));
+    });
+    
+    
 });
 
 //shipping address

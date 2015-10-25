@@ -1,7 +1,7 @@
 .backtop_section {
     position: fixed;
     _position: absolute;
-    top: 65px;
+    bottom: 65px;
     right: 2px;
     width: 70px;
     height: 400px;
@@ -75,7 +75,7 @@
 	float:left;
 	position: fixed;
 	bottom: 3px;
-	right: 2px;
+	right: 75px;
 	background-color:#eee;
 	width: 228px;
 	z-index: 1;

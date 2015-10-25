@@ -301,7 +301,13 @@ class ControllerSfcheckoutConfirm extends Controller{
         	$deliverfee += 2;
         }
         
-        $fast_deliverfee = 5;
+        if(isset($this->request->get['isFast'])){
+        	$fast_deliverfee = 5;
+        }
+        else{
+        	$fast_deliverfee = 0;
+        }
+        
         $data['deliverfee'] = $deliverfee;
         $data['fast_deliverfee'] = $fast_deliverfee;
         $data['totalcost'] = round($total_before_tax + $tax + $deliverfee + $fast_deliverfee,2);

@@ -363,7 +363,8 @@ class ControllerCheckoutCart extends Controller {
                 $json['tax'] = $this->currency->format($sf_tax);
                 $json['tips'] = $this->currency->format($sf_tips);
                 $json['deliverfee'] = $this->currency->format($sf_deliverfee);
-                $sf_total=$total+$sf_tips+$sf_deliverfee+$sf_tax;
+                $json['fastdeliverfee'] = $this->currency->format(5);
+                $sf_total=$total+$sf_tips+$sf_deliverfee+$sf_tax + 5;
                 $json['total_cost'] = $this->currency->format($sf_total);
 
 				$json['total'] = sprintf($this->language->get('text_items'), $this->cart->countFoodProducts() + (isset($this->session->data['vouchers']) ? count($this->session->data['vouchers']) : 0), $this->currency->format($total));
