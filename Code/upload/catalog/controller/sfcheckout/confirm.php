@@ -16,7 +16,55 @@ class ControllerSfcheckoutConfirm extends Controller{
         $order_data['store_name'] = $this->config->get('config_name');
         $order_data['invoice_prefix'] = $this->config->get('config_invoice_prefix');
         $order_data['store_url'] = 'smartyourfood';
-
+        
+        // Get price
+        $food_list = $this->cart->getFoods();
+        $data['food_list']= $food_list;
+        $total_before_tax = $this->cart->getFoodSubTotal();
+        $total_before_tax = round($total_before_tax,2);
+        $tax=round(0.12*$total_before_tax,2);
+        //$tips = round(0.1*$total_before_tax,2);
+        $data['beforetax'] = $total_before_tax;
+        $data['tax'] = $tax;
+        //$data['tips'] = $tips;
+        $deliverfee = 5;
+        
+        //Distance and price
+        $deliverfee = 5;
+        $lat_lng = $this->cart->getRestAddress();
+        if(isset($lat_lng['0'])){
+        	$this->load->model('account/address');
+        	$distance = $this->model_account_address->getDistance($this->session->data['lat'],$this->session->data['lng'],explode(',',$lat_lng['0'])['0'],explode(',',$lat_lng['0'])['1']);
+        	$deliverfee = 4 + max(0,round($distance-4,0,PHP_ROUND_HALF_UP)) + (max(0,round($distance-8,0,PHP_ROUND_HALF_UP)))*0.5;
+        }
+        
+        //GetTime Canada/Pacific
+        date_default_timezone_set('Canada/Pacific');
+        if (date('H') >= 22.5 || date('H')<9) {
+        	$deliverfee += 2;
+        }
+        
+        if(isset($this->request->get['isFast'])){
+        	$fast_deliverfee = 5;
+        }
+        else{
+        	$fast_deliverfee = 0;
+        }
+        
+        $data['deliverfee'] = $deliverfee;
+        $data['fast_deliverfee'] = $fast_deliverfee;
+        $data['totalcost'] = round($total_before_tax + $tax + $deliverfee + $fast_deliverfee,2);
+        if(count($food_list)==0)
+        {
+        	$data['nofood']="display: none";
+        	$data['hasfood']="";
+        }
+        else{
+        	$data['nofood']="";
+        	$data['hasfood']="display: none";
+        }
+        
+        // Create Order
         if ($this->customer->isLogged()) {
             $this->load->model('account/customer');
 
@@ -267,59 +315,14 @@ class ControllerSfcheckoutConfirm extends Controller{
             );
             $total+=$product['total'];
         }
-        $order_data['total'] = $total;
+        $order_data['total'] = $data['totalcost'];
         $this->load->model('checkout/order');
         $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
-
+        $data['order_id']=$this->session->data['order_id'];
         $this->log->write('food number: '.count($food_list));
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
-        $data['order_id']=$this->session->data['order_id'];
-        $food_list = $this->cart->getFoods();
-        $data['food_list']= $food_list;
-        $total_before_tax = $this->cart->getFoodSubTotal();
-        $total_before_tax = round($total_before_tax,2);
-        $tax=round(0.12*$total_before_tax,2);
-        //$tips = round(0.1*$total_before_tax,2);
-        $data['beforetax'] = $total_before_tax;
-        $data['tax'] = $tax;
-        //$data['tips'] = $tips;
-        $deliverfee = 5;
         
-        //Distance and price
-        $deliverfee = 5;
-        $lat_lng = $this->cart->getRestAddress();
-        if(isset($lat_lng['0'])){
-        	$this->load->model('account/address');
-        	$distance = $this->model_account_address->getDistance($this->session->data['lat'],$this->session->data['lng'],explode(',',$lat_lng['0'])['0'],explode(',',$lat_lng['0'])['1']);
-        	$deliverfee = 4 + max(0,round($distance-4,0,PHP_ROUND_HALF_UP)) + (max(0,round($distance-8,0,PHP_ROUND_HALF_UP)))*0.5;
-        }
-        
-        //GetTime Canada/Pacific
-        date_default_timezone_set('Canada/Pacific');
-        if (date('H') >= 22.5 || date('H')<9) {
-        	$deliverfee += 2;
-        }
-        
-        if(isset($this->request->get['isFast'])){
-        	$fast_deliverfee = 5;
-        }
-        else{
-        	$fast_deliverfee = 0;
-        }
-        
-        $data['deliverfee'] = $deliverfee;
-        $data['fast_deliverfee'] = $fast_deliverfee;
-        $data['totalcost'] = round($total_before_tax + $tax + $deliverfee + $fast_deliverfee,2);
-        if(count($food_list)==0)
-        {
-            $data['nofood']="display: none";
-            $data['hasfood']="";
-        }
-        else{
-            $data['nofood']="";
-            $data['hasfood']="display: none";
-        }
         if(isset($this->session->data['shipping_address'])
             &&isset($this->session->data['shipping_address']['address_1'])
             &&isset($this->session->data['shipping_address']['firstname'])

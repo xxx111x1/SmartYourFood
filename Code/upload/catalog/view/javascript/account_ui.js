@@ -3,6 +3,9 @@
  */
 $(document).ready(function() {
     var curpage="#updateaccount_";
+    if(window.location.href.indexOf("success")){
+    	curpage = "#orderhistory_";
+    }
     var pageid = $("#currentpage").attr('pageid');
     if(pageid)
     {

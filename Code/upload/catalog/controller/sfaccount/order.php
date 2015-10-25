@@ -3,16 +3,11 @@ class ControllerSfaccountOrder extends Controller {
 	public function index() {
 		if (!$this->customer->isLogged()) {
 			$this->session->data['redirect'] = $this->url->link('sfaccount/order', '', 'SSL');
-
 			$this->response->redirect($this->url->link('sfaccount/login', '', 'SSL'));
 		}
 
-
-
 		$data['orders'] = array();
-
 		$this->load->model('account/order');
-
 		$order_total = $this->model_account_order->getTotalOrders();
 		$page=1;
 		$results = $this->model_account_order->getOrders(($page - 1) * 10, 10);
@@ -29,11 +24,12 @@ class ControllerSfaccountOrder extends Controller {
 			$voucher_total = $this->model_account_order->getTotalOrderVouchersByOrderId($result['order_id']);
 
 			$data['orders'][] = array(
+				'shipping_address_1' => $result['shipping_address_1'],
 				'order_id'   => $result['order_id'],
-				'name'       => $result['firstname'] . ' ' . $result['lastname'],
+				'name'       => $result['firstname'],
 				'status'     => $result['status'],
 				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
-				'products'   => ($product_total + $voucher_total),
+				'products'   => ($product_total),
 				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
 				'href'       => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], 'SSL'),
 			);
@@ -58,12 +54,6 @@ class ControllerSfaccountOrder extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
-		/*
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl')) {
-			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl', $data));
-		} else {
-			$this->response->setOutput($this->load->view('default/template/sfaccount/orderhistory.tpl', $data));
-		}*/
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl', $data);
 		} else {

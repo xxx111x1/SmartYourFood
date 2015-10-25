@@ -44,6 +44,6 @@ class ControllerSfcheckoutSuccess extends Controller {
 			// 2 is processing.
 			$this->model_checkout_order->updateOrderStatus($order_id, 2);
 		}
-		$this->response->redirect($this->url->link('account/account'));
+		$this->response->redirect($this->url->link('account/account','success=1'));
 	}
 }
