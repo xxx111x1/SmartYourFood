@@ -78,7 +78,7 @@
         <div id="paymentlabel">付款方式：货到付款</div>
     </div>
     <div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555">打印订单</div>
-    <a href="/index.php?route=payment/pp_express/checkout">
+    <a href="/index.php?route=sfcheckout/success">
         <div class="btn" style="float: right;margin-right: 20px">确认付款</div>
     </a>
 </div>
