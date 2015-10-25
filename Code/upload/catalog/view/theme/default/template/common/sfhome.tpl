@@ -54,7 +54,7 @@
   		<div class="second-info">
   			<div class="second-triangle-left"> </div>
 	  		<div class="second-tip">
-	  			<div class="second-tip-content"><a href="index.php?route=common/list&type=restaurante">精品餐馆</a></div>
+	  			<div class="second-tip-content"><a href="index.php?route=common/list&type=restaurant">精品餐馆</a></div>
 	  		</div>
   		</div>
   	</div>
