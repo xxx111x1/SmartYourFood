@@ -34,6 +34,8 @@ class Cart {
                                                       f.img_url as img_url,
                                                       r.restaurant_id as restaurant_id,
                                                       r.address as address,
+                									  r.lat as rest_lat,
+                									  r.lng as rest_lng,
                                                        r.phone as phone FROM " . DB_PREFIX ."food f INNER JOIN ".DB_PREFIX."restaurant_info r ON f.restaurant_id=r.restaurant_id  WHERE food_id = ".$product_id);
                 if ($product_query->num_rows) {
                     $price = $product_query->row['price'];
@@ -47,6 +49,8 @@ class Cart {
                         'price' => $product_query->row['price'],
                         'rest_id' => $product_query->row['restaurant_id'],
                         'rest_address'=>$product_query->row['address'],
+                    	'rest_lat'=>$product_query->row['rest_lat'],
+                    	'rest_lng'=>$product_query->row['rest_lng'],
                         'phone'=>$product_query->row['phone'],
                         'quantity' => $quantity,
                         'total' => $price*$quantity
@@ -402,6 +406,21 @@ class Cart {
 		}
 	
 		return $total;
+	}
+	
+	public function getRestAddress() {
+		$rest_adresses = array();
+		$rest_latlng = array();
+		$count = 0;
+		foreach ($this->getFoods() as $product) {
+			$address = $product['rest_address'];
+			if(!array_search($address, $rest_adresses)){
+				$rest_adresses[''.$count] = $product['rest_address'];
+				$rest_latlng[''.$count] = $product['rest_lat'] . ',' . $product['rest_lng'];
+				$count = $count + 1;
+			}
+		}	
+		return $rest_latlng;
 	}
 
 	public function getSubTotal() {

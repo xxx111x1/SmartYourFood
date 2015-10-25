@@ -285,6 +285,22 @@ class ControllerSfcheckoutConfirm extends Controller{
         $data['tax'] = $tax;
         //$data['tips'] = $tips;
         $deliverfee = 5;
+        
+        //Distance and price
+        $deliverfee = 5;
+        $lat_lng = $this->cart->getRestAddress();
+        if(isset($lat_lng['0'])){
+        	$this->load->model('account/address');
+        	$distance = $this->model_account_address->getDistance($this->session->data['lat'],$this->session->data['lng'],explode(',',$lat_lng['0'])['0'],explode(',',$lat_lng['0'])['1']);
+        	$deliverfee = 4 + max(0,round($distance-4,0,PHP_ROUND_HALF_UP)) + (max(0,round($distance-8,0,PHP_ROUND_HALF_UP)))*0.5;
+        }
+        
+        //GetTime Canada/Pacific
+        date_default_timezone_set('Canada/Pacific');
+        if (date('H') >= 22.5 || date('H')<9) {
+        	$deliverfee += 2;
+        }
+        
         $fast_deliverfee = 5;
         $data['deliverfee'] = $deliverfee;
         $data['fast_deliverfee'] = $fast_deliverfee;
@@ -298,19 +314,6 @@ class ControllerSfcheckoutConfirm extends Controller{
             $data['nofood']="";
             $data['hasfood']="display: none";
         }
-        /*
-        foreach ($food_list as $food) {
-            $this->log->write('img: '.$food['image'].' name:'.$food['name'].' price: '.$food['price']);
-            $data['food_list'] = array(
-                'img_url' => $food['image'],
-                'name' => $food['name'],
-                'price' => $food['price'],
-                'rest_address'=>$food['rest_address'],
-                'phone' => $food['phone'],
-                'qty' => 2
-            );
-        }
-        $data['msg']='Hello World!';*/
         if(isset($this->session->data['shipping_address'])
             &&isset($this->session->data['shipping_address']['address_1'])
             &&isset($this->session->data['shipping_address']['firstname'])

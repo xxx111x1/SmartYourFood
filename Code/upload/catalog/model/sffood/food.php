@@ -30,6 +30,28 @@ class ModelSffoodFood extends Model{
     	$this->db->query($query);
     	$this->event->trigger('post.food.add', $data);
     }
+    
+    public function getAddSql($data){
+    	$this->event->trigger('pre.food.add', $data);
+    	$query =  "INSERT INTO " . DB_PREFIX . "food	SET name             = '" . $data['name'] . "' ";
+    	if(array_key_exists('description'     , $data)){ $query .= ", description      = '" . $data['description']      ."'"; }
+    	if(array_key_exists('restaurant_id'   , $data)){ $query .= ", restaurant_id    =  " . $data['restaurant_id']    . ""; }
+    	if(array_key_exists('review_score'    , $data)){ $query .= ", review_score     = '" . $data['review_score']     . "'"; }
+    	if(array_key_exists('tags'            , $data)){ $query .= ", tags             = '" . $data['tags']             . "'"; }
+    	if(array_key_exists('img_url'         , $data))
+    	{
+    
+    		$img_url = $data['img_url'];
+    		if(strpos($img_url,'http') == false){
+    			$img_url = "./catalog/view/theme/default/image/foodImages/" . $img_url;
+    		}
+    		$query .= ", img_url          = '" . $img_url . "'";
+    	}
+    	if(array_key_exists('price'           , $data)){ $query .= ", price            = '" . $data['price']            . "'"; }
+    	if(array_key_exists('available'       , $data)){ $query .= ", available        = '" . $data['available']        . "'"; }
+    	if(array_key_exists('sell_number'     , $data)){ $query .= ", sell_number      = '" . $data['sell_number']      . "'"; }
+    	return $query . ";\r\n";
+    }
 
     public function delete($food_id){
     	$this->db->query("DELETE " . DB_PREFIX . "food WHERE food_id = '" . (int)$food_id . "'");

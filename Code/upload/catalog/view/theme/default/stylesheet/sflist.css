@@ -423,14 +423,14 @@ body{
     width:120px;
     float: left;
     margin-top: 0px;
-    color: #999999;
+    color: #f65053;
     padding-left:30px;
 }
 .thumb_desc_productprice{
     height: 25px;
     float: right;
     margin-top: 0;
-    color: #f65053;
+    color: #999999;
 }
 /*rest detail page*/
 .restarea{
@@ -488,5 +488,22 @@ body{
     margin-right: auto;
 }
 
+
+.sf_product_stars{
+    height: 18px;
+    float: left;
+}
+
+div.stars, div.stars div {
+    display: block;
+    background: url(../image/smallStars.png) 0 -18px repeat-x;
+    width: 118px;
+    height: 18px;
+    margin-left: -1px;
+}
+
+div.stars div {
+    background-position: 0 0;
+}
 
 

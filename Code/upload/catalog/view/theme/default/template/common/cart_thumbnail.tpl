@@ -21,6 +21,7 @@
           </td>
         </tr>
         <?php } ?>
+        <!--
         <tr>
           <td class="food-name table-head" >运费</td>
           <td></td>
@@ -39,6 +40,7 @@
           <td class="food-price">$<?php echo $total_fees; ?></td>
           <td ></td>
         </tr>
+        -->
       </table>
       <div class="cart-thumbnail-bottom">
         <div class="sum-all">共 $<?php echo $total_sum; ?></div>
