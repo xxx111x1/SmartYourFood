@@ -122,6 +122,9 @@ $registry->set('response', $response);
 $cache = new Cache('file');
 $registry->set('cache', $cache);
 
+//wechat
+$wechat = new Wechat($registry);
+$registry->set('wechat',$wechat);
 // Session
 $session = new Session();
 

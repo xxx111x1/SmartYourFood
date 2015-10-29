@@ -966,7 +966,8 @@ class ModelCheckoutOrder extends Model {
 			'收货地址: '.$order_detail['shipping_address_1'].' '.$order_detail['shipping_address_2'].
 			'收货联系人: '.$order_detail['shipping_firstname'].
 			'收货联系电话: '.$order_detail['telephone'].
-            ' 订单时间: '.$order_detail['date_modified'];
+            ' 订单时间: '.$order_detail['date_modified'].
+            '\n 确认接单请回复:\n 接单: '.$order_detail['order_id'];
         /*
         $msg = 'OrderID: '.$order_detail['order_id'].
             'RestAddress: '.$order_detail['store_address'].

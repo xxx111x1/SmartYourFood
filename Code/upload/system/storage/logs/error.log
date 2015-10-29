@@ -246,3 +246,101 @@
 2015-10-29 13:07:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
 2015-10-29 13:07:42 - modeltotalSubtotal: $sub_total: .0
 2015-10-29 13:07:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 46
+2015-10-29 13:36:19 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\system\library\Wechat.php on line 14
+2015-10-29 13:36:19 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\Wechat.php on line 16
+2015-10-29 13:37:16 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:37:16 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:37:16 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:37:18 - log for cart.addone method. 
+2015-10-29 13:37:18 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:18 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:18 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:18 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:18 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:37:18 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:18 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 5:37:18 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 5:37:18 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:21 - log for cart.addone method. 
+2015-10-29 13:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:21 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 5:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 5:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 5:37:21 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 5:37:21 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - log for cart.addone method. 
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 5:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 5:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 5:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 5:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 5:37:25 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 5:37:25 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:31 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:31 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:32 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:32 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:32 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:32 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-29 13:37:32 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:37:32 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
