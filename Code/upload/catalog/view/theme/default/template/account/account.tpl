@@ -4,24 +4,12 @@
 <script type="text/javascript" src="catalog/view/javascript/account_ui.js"></script>
 <div class="mainpanel">
     <div class="leftpanel">
-        <div class="left_title">
-            我的账户
-        </div>
-        <div class="left_item" id="orderhistory">
-            历史订单
-        </div>
-        <div class="left_item"  id="updateaccount">
-            账户信息修改
-        </div>
-        <div class="left_item" id="updateaddress">
-            地址管理
-        </div>
-        <div class="left_item" id="newsletter">
-            NewsLetter
-        </div>
-        <div class="left_item logout" id="logout">
-            退出登录
-        </div>
+        <div class="left_title">我的账户 </div>
+        <div class="left_item" id="orderhistory">历史订单 </div>
+        <div class="left_item"  id="updateaccount">账户信息修改</div>
+        <div class="left_item" id="updateaddress">地址管理 </div>
+        <div class="left_item" id="newsletter">NewsLetter</div>
+        <div class="left_item logout" id="logout">退出登录 </div>
     </div>
     <?php echo $profile;?>
     <!--edit address-->

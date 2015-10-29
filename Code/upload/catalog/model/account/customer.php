@@ -151,8 +151,10 @@ class ModelAccountCustomer extends Model {
     public function editPasswordByCustomerID($oldpassword, $newpassword) {
         $this->event->trigger('pre.customer.edit.password');
         $customer_id = $this->customer->getId();
-		$encrypted_pwd = $this->db->query("SELECT salt,password from ".DB_PREFIX."customer WHERE customer_id = '" . (int)$customer_id . "'");
-		if($encrypted_pwd['password']!=sha1($encrypted_pwd['salt'] . sha1($encrypted_pwd['salt'] . sha1($oldpassword))))
+		$encrypted_pwd = $this->db->query("SELECT salt,password from ".DB_PREFIX."customer WHERE customer_id = '" . (int)$customer_id . "'")->row;
+		
+		$salt = $encrypted_pwd['salt'];
+		if($encrypted_pwd['password']!=sha1($salt . sha1($salt . sha1($oldpassword))))
 		{
 			$this->event->trigger('post.customer.edit.password');
 			return false;

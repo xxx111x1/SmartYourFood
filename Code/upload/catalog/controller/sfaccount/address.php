@@ -7,7 +7,8 @@
  */
 class ControllerSfaccountAddress extends Controller {
     public function index()
-    {
+    {	
+    	$data['returnUrl'] = $_SERVER['REQUEST_URI'];
         $this->load->model('sfcheckout/shippingaddress');
         $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
         $data['addresslist']=$addresses;

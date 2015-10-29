@@ -3,8 +3,10 @@
  */
 $(document).ready(function() {
     var curpage="#updateaccount_";
-    if(window.location.href.indexOf("success")){
+    if(window.location.href.indexOf("success")>0){
     	curpage = "#orderhistory_";
+    }else if(window.location.href.indexOf("address")>0){
+    	curpage = "#updateaddress_";
     }
     var pageid = $("#currentpage").attr('pageid');
     if(pageid)
@@ -69,17 +71,16 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("�û����޸�ʧ�ܣ����Ժ�����.");
+                alert("修改用户名失败");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
-                if (data['status'] && data['status']==='ok'){
-                    alert(data['status']);
+                if (!data['status'] || !(data['status']==='ok')){
+                    alert("修改用户名失败");
                 }
                 else{
-                    alert("�û����޸�ʧ�ܣ����Ժ�����.");
+                	window.location.href=window.location.href;
                 }
-                $('.review-dialog-frame').addClass('invisible');
             }
         });
     });
@@ -93,15 +94,16 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("�ֻ������޸�ʧ�ܣ����Ժ�����.");
+                alert("修改手机失败，请联系客服");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
-                alert(data['status']);
-                if (data['status']){
-                    alert(data['status']);
+                if (!data['status'] || !(data['status']==='ok')){
+                    alert("修改手机号码失败，该手机号已被注册，请使用其他手机号。");
                 }
-                $('.review-dialog-frame').addClass('invisible');
+                else{
+                	window.location.href=window.location.href;
+                }
             }
         });
     });
@@ -116,17 +118,16 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("update email failed.");
+                alert("修改邮箱失败");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
-                if (data['status'] && data['status']==='ok'){
-                    alert(data['status']);
+            	if (!data['status'] || !(data['status']==='ok')){
+                    alert("修改邮箱失败");
                 }
                 else{
-                    alert("update email failed.");
+                	window.location.href=window.location.href;
                 }
-                $('.review-dialog-frame').addClass('invisible');
             }
         });
     });
@@ -134,26 +135,32 @@ $(document).ready(function() {
     $('#btn_confirmpassword').click(function(){
         var value = $('#input_oldpassword').val();
         var newpwd=$('#input_updatepassword').val();
-        $.ajax({
-            url: 'index.php?route=account/account/editpassword',
-            type: 'post',
-            data: 'oldpassword='+value+'&newpassword='+newpwd,
-            timeout: 32000,
-            dataType: 'json',
-            error: function(){
-                alert("�����޸�ʧ�ܣ����Ժ�����.");
-                $('.review-dialog-frame').addClass('invisible');
-            },
-            success: function(data) {
-                if (data['status'] && data['status']==='ok'){
-                    alert(data['status']);
+        var newpwdConfirm=$('#input_confirmpassword').val();
+        if(newpwd != newpwdConfirm){
+        	alert("输入的新密码不一致，请重新输入新密码");
+        }
+        else{
+        	$.ajax({
+                url: 'index.php?route=account/account/editpassword',
+                type: 'post',
+                data: 'oldpassword='+value+'&newpassword='+newpwd,
+                timeout: 32000,
+                dataType: 'json',
+                error: function(){
+                    alert("修改密码失败");
+                    $('.review-dialog-frame').addClass('invisible');
+                },
+                success: function(data) {
+                	if (!data['status'] || !(data['status']==='ok')){
+                        alert("修改密码失败");
+                    }
+                	else{
+                		alert("密码修改成功");
+                		$('.review-dialog-frame').addClass('invisible');
+                	}
                 }
-                else{
-                    alert("�����޸�ʧ�ܣ����Ժ�����.");
-                }
-                $('.review-dialog-frame').addClass('invisible');
-            }
-        });
+            });
+        }        
     });
 
 });

@@ -87,6 +87,27 @@ class ControllerAccountAccount extends Controller {
 
 			$this->response->redirect($this->url->link('account/login', '', 'SSL'));
 		}
+		
+		if(isset($this->request->get['lat'])
+				&&isset($this->request->get['lng'])
+				&&isset($this->request->get['address'])
+				&&isset($this->request->get['phone'])
+				&&isset($this->request->get['contact'])
+		)
+		{
+			$this->load->model('sfcheckout/shippingaddress');
+			$address_data=array();
+			$this->session->data['lat'] = $this->request->get['lat'];
+			$this->session->data['lng'] = $this->request->get['lng'];
+			$this->session->data['address'] = $this->request->get['address'];
+			$address_data['lat']=$this->request->get['lat'];
+			$address_data['lng']=$this->request->get['lng'];
+			$address_data['address']=$this->request->get['address'];
+			$address_data['phone']=$this->request->get['phone'];
+			$address_data['contact']=$this->request->get['contact'];
+			$this->model_sfcheckout_shippingaddress->addAddress($address_data);
+		}
+		
 		$this->document->setTitle($this->language->get('heading_title'));
 		$data['header'] = $this->load->controller('common/sfheader');
 		$data['footer'] = $this->load->controller('common/sffooter');
@@ -184,5 +205,7 @@ class ControllerAccountAccount extends Controller {
 		else{
 			$json['status']='error';
 		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
 	}
 }

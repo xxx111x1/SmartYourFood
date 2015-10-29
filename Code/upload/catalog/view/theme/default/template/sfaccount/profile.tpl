@@ -1,6 +1,3 @@
-﻿<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfaccount.css">
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/review.css">
-<script type="text/javascript" src="catalog/view/javascript/account_ui.js"></script>
 <div class="review-dialog-frame invisible" id="dialog_updateusername">
     <div class="update-dialog-wrap">
         <div class="review-header">
@@ -16,13 +13,6 @@
                         </div>
                     </div>
                     <input class="reg_input" name="updateusername" id="updateusername" placeholder="输入新的用户名"/>
-                </div>
-                <div class="regitem">
-                    <div class="regtips">
-                        <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/account_icon.png);">
-                        </div>
-                    </div>
-                    <input class="reg_input" name="updateusername_confirm" id="updateusername_confirm" placeholder="再次输入新的用户名"/>
                 </div>
                 <div class="reg_btn" id="btn_confirmusername" style="vertical-align:middle;text-align: center;color: white;font-size: 22px;font-weight: bolder;line-height: 50px">
                     <span>确认</span>
@@ -76,14 +66,7 @@
                         <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/account_icon.png);">
                         </div>
                     </div>
-                    <input class="reg_input" name="updateemail" id="updateemail" placeholder="输入新的用户名"/>
-                </div>
-                <div class="regitem">
-                    <div class="regtips">
-                        <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/account_icon.png);">
-                        </div>
-                    </div>
-                    <input class="reg_input" name="updateemail_confirm" id="updateemail_confirm" placeholder="再次输入新的用户名"/>
+                    <input class="reg_input" name="updateemail" id="updateemail" placeholder="输入新的邮箱地址"/>
                 </div>
                 <div class="reg_btn" id="btn_confirmemail" style="vertical-align:middle;text-align: center;color: white;font-size: 22px;font-weight: bolder;line-height: 50px">
                     <span>确认</span>
@@ -107,23 +90,23 @@
                         <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
                         </div>
                     </div>
-                    <input class="reg_input" name="updatepassword" id="input_oldpassword" placeholder="请输入旧密码"/>
+                    <input class="reg_input" type="password" name="updatepassword" id="input_oldpassword" placeholder="请输入旧密码"/>
                 </div>
                 <div class="regitem">
                     <div class="regtips">
                         <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
                         </div>
                     </div>
-                    <input class="reg_input" name="updatepassword" id="input_updatepassword" placeholder="输入新的密码"/>
+                    <input class="reg_input" type="password" name="updatepassword" id="input_updatepassword" placeholder="输入新的密码"/>
                 </div>
                 <div class="regitem">
                     <div class="regtips">
                         <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
                         </div>
                     </div>
-                    <input class="reg_input" name="updatepassword_confirm" id="input_confirmpassword" placeholder="再次输入新的密码"/>
+                    <input class="reg_input" type="password" name="updatepassword_confirm" id="input_confirmpassword" placeholder="再次输入新的密码"/>
                 </div>
-                <div class="reg_btn" id="btn_confirmpasword" style="vertical-align:middle;text-align: center;color: white;font-size: 22px;font-weight: bolder;line-height: 50px">
+                <div class="reg_btn" id="btn_confirmpassword" style="vertical-align:middle;text-align: center;color: white;font-size: 22px;font-weight: bolder;line-height: 50px">
                     <span>确认</span>
                 </div>
             </form>
@@ -136,7 +119,7 @@
             基本信息
         </div>
     </div>
-    <table class="right_basicinfo">
+    <!--<table class="right_basicinfo">
         <tr>
             <th class="iconarea">
                 <div id="icon">
@@ -151,6 +134,7 @@
             </th>
         </tr>
     </table>
+    -->
     <table class="right_infodetail">
         <tr class="infoitem">
             <td style="font-size: 18px;font-weight: bolder">用户名</td><td><?php echo $firstname;?></td><td><div class="update" id="label_updateusername">修改</div></td>
