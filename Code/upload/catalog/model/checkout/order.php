@@ -979,6 +979,7 @@ class ModelCheckoutOrder extends Model {
             ' Order Time: '.$order_detail['date_modified'];*/
         $this->log->write($msg);
         $returnRes = $this->wechat->notifycarrior($msg);
+        $returnRes = 'http://128.199.199.160/wechat/sendmsg.php?msg='.$msg;
         $this->log->write($returnRes);
 	}
 }
