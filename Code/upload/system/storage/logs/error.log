@@ -1,10 +1,248 @@
-2015-07-31 9:24:23 - PHP 8:  Notice in C:\Users\v-yhe\workspace\SmartYourFood\opencart\upload\catalog\view\theme\default\template\common\home.tpl on line 3
-2015-07-31 9:24:23 - PHP 8:  Notice in C:\Users\v-yhe\workspace\SmartYourFood\opencart\upload\catalog\view\theme\default\template\common\home.tpl on line 4
-2015-07-31 9:24:23 - PHP 8:  Notice in C:\Users\v-yhe\workspace\SmartYourFood\opencart\upload\catalog\view\theme\default\template\common\home.tpl on line 6
-2015-07-31 9:24:23 - PHP 8:  Notice in C:\Users\v-yhe\workspace\SmartYourFood\opencart\upload\catalog\view\theme\default\template\common\home.tpl on line 6
-2015-07-31 9:24:23 - PHP 8:  Notice in C:\Users\v-yhe\workspace\SmartYourFood\opencart\upload\catalog\view\theme\default\template\common\home.tpl on line 11
-2015-07-31 9:24:23 - PHP 8:  Notice in C:\Users\v-yhe\workspace\SmartYourFood\opencart\upload\catalog\view\theme\default\template\common\home.tpl on line 11
-2015-07-31 9:24:23 - PHP 8:  Notice in C:\Users\v-yhe\workspace\SmartYourFood\opencart\upload\catalog\view\theme\default\template\common\home.tpl on line 12
-2015-08-09 13:34:41 - PHP Notice:  Error: Table 'opencart.oc_api_ip' doesn't exist<br />Error No: 1146<br />SELECT * FROM `oc_api_ip` WHERE api_id = '2' in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
-2015-08-09 13:34:41 - PHP Notice:  Trying to get property of non-object in D:\Projects\SmartYourFood\Code\upload\admin\model\user\api.php on line 93
-2015-08-09 13:34:41 - PHP Warning:  Invalid argument supplied for foreach() in D:\Projects\SmartYourFood\Code\upload\admin\controller\sale\order.php on line 354
+﻿2015-10-29 13:05:37 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:05:37 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:05:37 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:05:37 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:05:38 - log for cart.addone method. 
+2015-10-29 13:05:38 - modeltotalSubtotal: $sub_total: .12.5
+2015-10-29 13:05:38 - modeltotalSubtotal: $sub_total: .12.5
+2015-10-29 13:05:40 - log for cart.addone method. 
+2015-10-29 13:05:40 - modeltotalSubtotal: $sub_total: .25
+2015-10-29 13:05:40 - modeltotalSubtotal: $sub_total: .25
+2015-10-29 13:05:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:05:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:05:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:05:42 - no returned url
+2015-10-29 13:05:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\controller\sfcheckout\checkout.php on line 74
+2015-10-29 13:05:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\controller\sfcheckout\checkout.php on line 74
+2015-10-29 13:05:43 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:43 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:43 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:05:43 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:43 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:43 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:05:44 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:44 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:44 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:05:44 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:44 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:44 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:05:45 - set shipping address id: 25
+2015-10-29 13:05:45 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:45 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:45 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:05:45 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:45 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:45 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:05:45 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:45 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:45 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:05:45 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:05:45 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:05:45 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 5:05:46 - ' store_id = '1559
+2015-10-29 5:05:46 - ' store_name = 'Prospect Point Café
+2015-10-29 5:05:46 - ' store_url = 'smartyourfood
+2015-10-29 5:05:46 - ' customer_id = '27
+2015-10-29 5:05:46 - ' customer_group_id = '1
+2015-10-29 5:05:46 - ' firstname = 'testname
+2015-10-29 5:05:46 - ' lastname = 'null
+2015-10-29 5:05:46 - ' email = 'minzou@live.com
+2015-10-29 5:05:46 - ' telephone = '0000000000
+2015-10-29 5:05:46 - ' fax = 'null
+2015-10-29 5:05:46 - ' custom_field = 'b:0;
+2015-10-29 5:05:46 - ' payment_firstname = '
+2015-10-29 5:05:46 - ' payment_lastname = '
+2015-10-29 5:05:46 - ' payment_company = '
+2015-10-29 5:05:46 - ' payment_address_1 = '
+2015-10-29 5:05:46 - ' payment_address_2 = '
+2015-10-29 5:05:46 - ' payment_city = '
+2015-10-29 5:05:46 - ' payment_postcode = '
+2015-10-29 5:05:46 - ' payment_country = '
+2015-10-29 5:05:46 - ' payment_country_id = '0
+2015-10-29 5:05:46 - ' payment_zone = '
+2015-10-29 5:05:46 - ' payment_zone_id = '0
+2015-10-29 5:05:46 - ' payment_address_format = '
+2015-10-29 5:05:46 - ' payment_custom_field = 'a:0:{}
+2015-10-29 5:05:46 - ' payment_method = '
+2015-10-29 5:05:46 - ' payment_code = '
+2015-10-29 5:05:46 - ' shipping_firstname = 'testname
+2015-10-29 5:05:46 - ' shipping_lastname = '
+2015-10-29 5:05:46 - ' shipping_company = 'u-says.com
+2015-10-29 5:05:46 - ' shipping_address_1 = '5804 NB-102 Prince William
+2015-10-29 5:05:46 - ' shipping_address_2 = '0000000000
+2015-10-29 5:05:46 - ' shipping_city = 'Vancouvor
+2015-10-29 5:05:46 - ' shipping_postcode = '
+2015-10-29 5:05:46 - ' shipping_country = 'CA
+2015-10-29 5:05:46 - ' shipping_country_id = '0
+2015-10-29 5:05:46 - ' shipping_zone = '
+2015-10-29 5:05:46 - ' shipping_zone_id = '0
+2015-10-29 5:05:46 - ' shipping_address_format = '
+2015-10-29 5:05:46 - ' shipping_custom_field = 'a:0:{}
+2015-10-29 5:05:46 - ' shipping_method = '
+2015-10-29 5:05:46 - ' shipping_code = '
+2015-10-29 5:05:46 - ' comment = '
+2015-10-29 5:05:46 - ' total = '39
+2015-10-29 5:05:46 - ' affiliate_id = '0
+2015-10-29 5:05:46 - ' commission = '0
+2015-10-29 5:05:46 - ' marketing_id = '0
+2015-10-29 5:05:46 - ' tracking = '
+2015-10-29 5:05:46 - ' language_id = '1
+2015-10-29 5:05:46 - ' currency_id = '2
+2015-10-29 5:05:46 - ' currency_code = 'USD
+2015-10-29 5:05:46 - ' currency_value = '1
+2015-10-29 5:05:46 - ' ip = '127.0.0.1
+2015-10-29 5:05:46 - ' forwarded_ip = '
+2015-10-29 5:05:46 - ' user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36
+2015-10-29 5:05:46 - ' accept_language = 'en-US,en;q=0.8,zh-CN;q=0.6
+2015-10-29 5:05:46 - food number: 2
+2015-10-29 5:05:46 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 5:05:46 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 5:05:46 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:05:48 - set shipping address id: undefined
+2015-10-29 13:05:49 - start to notify admin, order id: 62
+2015-10-29 13:05:49 - OrderID: RestAddress: Restname: RestTelephone: CustomerAddress:  CustomerName: CustomerTelephone:  Order Time: 
+2015-10-29 13:05:50 - stdClass Object
+(
+    [errcode] => 0
+    [errmsg] => ok
+)
+
+2015-10-29 13:05:50 - OrderID: 62RestAddress: Stanley Park DrRestname: Prospect Point CaféRestTelephone: 0CustomerAddress: 5804 NB-102 Prince William 0000000000CustomerName: testnameCustomerTelephone: 0000000000 Order Time: 2015-10-29 20:05:46
+2015-10-29 13:05:50 - stdClass Object
+(
+    [errcode] => 0
+    [errmsg] => ok
+)
+
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 963
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 964
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 965
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 966
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 967
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 967
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 968
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 969
+2015-10-29 13:05:50 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\checkout\order.php on line 970
+2015-10-29 13:05:50 - OrderID: RestAddress: Restname: RestTelephone: CustomerAddress:  CustomerName: CustomerTelephone:  Order Time: 
+2015-10-29 13:05:51 - stdClass Object
+(
+    [errcode] => 0
+    [errmsg] => ok
+)
+
+2015-10-29 13:05:51 - end of notifying admin
+2015-10-29 13:05:51 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\mail\order.tpl on line 106
+2015-10-29 13:05:51 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\mail\order.tpl on line 106
+2015-10-29 13:05:51 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:05:51 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:05:51 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:05:51 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:05:51 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 46
+2015-10-29 13:07:28 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:07:28 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:07:28 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:07:28 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:07:30 - log for cart.addone method. 
+2015-10-29 13:07:30 - modeltotalSubtotal: $sub_total: .12.5
+2015-10-29 13:07:30 - modeltotalSubtotal: $sub_total: .12.5
+2015-10-29 13:07:32 - log for cart.addone method. 
+2015-10-29 13:07:32 - modeltotalSubtotal: $sub_total: .25
+2015-10-29 13:07:32 - modeltotalSubtotal: $sub_total: .25
+2015-10-29 13:07:35 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:07:35 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:07:35 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:07:35 - no returned url
+2015-10-29 13:07:35 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\controller\sfcheckout\checkout.php on line 74
+2015-10-29 13:07:35 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\controller\sfcheckout\checkout.php on line 74
+2015-10-29 13:07:36 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:07:36 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:07:36 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:07:36 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:07:36 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:07:36 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:07:36 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:07:36 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:07:36 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:07:36 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:07:36 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:07:36 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:07:36 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-29 13:07:36 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-29 13:07:36 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-29 13:07:37 - set shipping address id: 5
+2015-10-29 5:07:39 - ' store_id = '1558
+2015-10-29 5:07:39 - ' store_name = 'Secret Location
+2015-10-29 5:07:39 - ' store_url = 'smartyourfood
+2015-10-29 5:07:39 - ' customer_id = '27
+2015-10-29 5:07:39 - ' customer_group_id = '1
+2015-10-29 5:07:39 - ' firstname = 'testname
+2015-10-29 5:07:39 - ' lastname = 'null
+2015-10-29 5:07:39 - ' email = 'minzou@live.com
+2015-10-29 5:07:39 - ' telephone = '0000000000
+2015-10-29 5:07:39 - ' fax = 'null
+2015-10-29 5:07:39 - ' custom_field = 'b:0;
+2015-10-29 5:07:39 - ' payment_firstname = '
+2015-10-29 5:07:39 - ' payment_lastname = '
+2015-10-29 5:07:39 - ' payment_company = '
+2015-10-29 5:07:39 - ' payment_address_1 = '
+2015-10-29 5:07:39 - ' payment_address_2 = '
+2015-10-29 5:07:39 - ' payment_city = '
+2015-10-29 5:07:39 - ' payment_postcode = '
+2015-10-29 5:07:39 - ' payment_country = '
+2015-10-29 5:07:39 - ' payment_country_id = '0
+2015-10-29 5:07:39 - ' payment_zone = '
+2015-10-29 5:07:39 - ' payment_zone_id = '0
+2015-10-29 5:07:39 - ' payment_address_format = '
+2015-10-29 5:07:39 - ' payment_custom_field = 'a:0:{}
+2015-10-29 5:07:39 - ' payment_method = '
+2015-10-29 5:07:39 - ' payment_code = '
+2015-10-29 5:07:39 - ' shipping_firstname = 'Zou Min
+2015-10-29 5:07:39 - ' shipping_lastname = '
+2015-10-29 5:07:39 - ' shipping_company = 'u-says.com
+2015-10-29 5:07:39 - ' shipping_address_1 = '1123 Edinburgh St New Westminster
+2015-10-29 5:07:39 - ' shipping_address_2 = '15001326758
+2015-10-29 5:07:39 - ' shipping_city = 'Vancouvor
+2015-10-29 5:07:39 - ' shipping_postcode = '
+2015-10-29 5:07:39 - ' shipping_country = 'CA
+2015-10-29 5:07:39 - ' shipping_country_id = '0
+2015-10-29 5:07:39 - ' shipping_zone = '
+2015-10-29 5:07:39 - ' shipping_zone_id = '0
+2015-10-29 5:07:39 - ' shipping_address_format = '
+2015-10-29 5:07:39 - ' shipping_custom_field = 'a:0:{}
+2015-10-29 5:07:39 - ' shipping_method = '
+2015-10-29 5:07:39 - ' shipping_code = '
+2015-10-29 5:07:39 - ' comment = '
+2015-10-29 5:07:39 - ' total = '39
+2015-10-29 5:07:39 - ' affiliate_id = '0
+2015-10-29 5:07:39 - ' commission = '0
+2015-10-29 5:07:39 - ' marketing_id = '0
+2015-10-29 5:07:39 - ' tracking = '
+2015-10-29 5:07:39 - ' language_id = '1
+2015-10-29 5:07:39 - ' currency_id = '2
+2015-10-29 5:07:39 - ' currency_code = 'USD
+2015-10-29 5:07:39 - ' currency_value = '1
+2015-10-29 5:07:39 - ' ip = '127.0.0.1
+2015-10-29 5:07:39 - ' forwarded_ip = '
+2015-10-29 5:07:39 - ' user_agent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2272.101 Safari/537.36
+2015-10-29 5:07:39 - ' accept_language = 'en-US,en;q=0.8,zh-CN;q=0.6
+2015-10-29 5:07:39 - food number: 2
+2015-10-29 5:07:39 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 5:07:39 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 5:07:39 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:07:40 - set shipping address id: undefined
+2015-10-29 13:07:41 - start to notify admin, order id: 63
+2015-10-29 13:07:41 - OrderID: 63RestAddress: One Water Street, Vancouver, British Columbia V6B 2H9, Canada(Carrall Street)Restname: Secret LocationRestTelephone: 604CustomerAddress: 1123 Edinburgh St New Westminster 15001326758CustomerName: Zou MinCustomerTelephone: 0000000000 Order Time: 2015-10-29 20:07:39
+2015-10-29 13:07:42 - stdClass Object
+(
+    [errcode] => 0
+    [errmsg] => ok
+)
+
+2015-10-29 13:07:42 - end of notifying admin
+2015-10-29 13:07:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\mail\order.tpl on line 106
+2015-10-29 13:07:42 - PHP 2:  Warning in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\mail\order.tpl on line 106
+2015-10-29 13:07:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-29 13:07:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-29 13:07:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 6
+2015-10-29 13:07:42 - modeltotalSubtotal: $sub_total: .0
+2015-10-29 13:07:42 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 46

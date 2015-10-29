@@ -7,13 +7,14 @@ class ControllerSfcheckoutSuccess extends Controller {
 		// update state, 2 is processing.
 		$this->model_checkout_order->updateOrderStatus($order_id, 2);
 		
-			
-		// Generate content string. and send to wechat	
-		$content = $this->getOrderString($order_id);
-		//clear session
 		if (isset($this->session->data['order_id'])) {
+			$order_id = $this->session->data['order_id'];
+			$this->log->write('start to notify admin, order id: '.$order_id);
+			$this->model_checkout_order->notifyAdmin($order_id);
+			$this->log->write('end of notifying admin');
+
 			$this->cart->clear();
-			
+
 			// Add to activity log
 			$this->load->model('account/activity');
 
@@ -55,9 +56,9 @@ class ControllerSfcheckoutSuccess extends Controller {
 	public function getOrderString($order_id){
 		$order = $this->model_checkout_order->getOrder($order_id);
 		$foods = $this->model_checkout_order->getOrderProducts($order_id);
-		$content = "è®¢å•å·ï¼š  " .$order_id.  " æ€»é‡‘é¢ï¼ˆä¸å«å°è´¹ï¼‰ï¼šã€€" . $order['total'] . " é€é¤åœ°å€ï¼š " . $order['shipping_address_1']. " è”ç³»äººï¼š ". $order['firstname'] . " è”ç³»ç”µè¯ï¼š" . $order['shipping_address_2'] . "\n" ;
+		$content = "¶©µ¥ºÅ£º  " .$order_id.  " ×Ü½ğ¶î£¨²»º¬Ğ¡·Ñ£©£º¡¡" . $order['total'] . " ËÍ²ÍµØÖ·£º " . $order['shipping_address_1']. " ÁªÏµÈË£º ". $order['firstname'] . " ÁªÏµµç»°£º" . $order['shipping_address_2'] . "\n" ;
 		foreach ($foods as $key => $v) {
-			$content .= "é¤é¦†ï¼š " . $foods[$key]['model'] . " èœå“ï¼š " . $foods[$key]['name'] . " æ•°é‡ï¼š " . $foods[$key]['quantity'] . " å•ä»½ä»·æ ¼ï¼š" . $foods[$key]['price'] .  " èœå“æ€»ä»·ï¼š " . $foods[$key]['total'] . "\n";
+			$content .= "²Í¹İ£º " . $foods[$key]['model'] . " ²ËÆ·£º " . $foods[$key]['name'] . " ÊıÁ¿£º " . $foods[$key]['quantity'] . " µ¥·İ¼Û¸ñ£º" . $foods[$key]['price'] .  " ²ËÆ·×Ü¼Û£º " . $foods[$key]['total'] . "\n";
 		
 		}
 		$content .= "-------------------------------------------------------------------------------------------------------";

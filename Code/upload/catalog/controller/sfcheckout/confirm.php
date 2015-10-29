@@ -31,6 +31,21 @@ class ControllerSfcheckoutConfirm extends Controller{
         
         //Distance and price
         $deliverfee = 5;
+        $rest_addr = '';
+        $rest_id=-1;
+        $rest_phone = '';
+        $rest_name='';
+        foreach($food_list as $food)
+        {
+            $rest_addr = $food['rest_address'];
+            $rest_id = $food['rest_id'];
+            $rest_name = $food['rest_name'];
+            $rest_phone = $food['phone'];
+        }
+        $order_data['store_id'] = $rest_id;
+        $order_data['store_name'] = $rest_name;
+        $order_data['store_telephone'] = $rest_phone;
+        $order_data['store_address'] = $rest_addr;
         $lat_lng = $this->cart->getRestAddress();
         if(isset($lat_lng['0'])){
         	$this->load->model('account/address');
@@ -300,7 +315,9 @@ class ControllerSfcheckoutConfirm extends Controller{
             $order_data['products'][] = array(
                 'product_id' => $product['product_id'],
                 'name'=>$product['food_name'],
-                'model'=>$product['rest_name'] .' 地址:　'.  $product['rest_address'],
+                'model'=>$product['rest_name'],
+                'rest_address'=>$product['rest_address'],
+                'rest_phone'=>$product['phone'],
 // 					'name'       => $product['name'],
 // 					'model'      => $product['model'],
 // 					'option'     => $option_data,

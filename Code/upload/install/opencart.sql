@@ -7909,6 +7909,15 @@ Values
 (11,'奶茶'),
 (12,'炸鸡'),
 (13,'快餐'),
-(14,'火锅')
+(14,'火锅');
 
 INSERT INTO `oc_restaurant_info` (`restaurant_id`, `name`, `description`, `lat`, `lng`, `address`, `review_score`, `tags`, `avg_cost`, `sell_number`) VALUES ('0', 'Food Special', 'Monthly special food', '0', '0', 'Smart Your Food', '5', '0', '20', '0');
+
+CREATE TABLE IF NOT EXISTS `oc_shipping_address_history` (
+  `customer_id` int(11) NOT NULL,
+  `lat` decimal(10,8) DEFAULT NULL,
+  `lng` decimal(17,14) DEFAULT NULL,
+  `address` varchar(200) NOT NULL,
+  `phone` int(10) NOT NULL,
+  `date_updated` datetime DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;

@@ -52,6 +52,10 @@ $registry->set('document', $document);
 $session = new Session();
 $registry->set('session', $session);
 
+//Wechat
+$wechat = new Wechat();
+$registry->set('wechat',$wechat);
+
 // Upgrade
 $upgrade = false;
 

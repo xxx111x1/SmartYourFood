@@ -62,6 +62,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['addresslist']=$addresses;  
         
         $food_list = $this->cart->getFoods();
+        //foreach($food in $food_list)
         $data['food_list']= $food_list;              
         $total_before_tax = $this->cart->getFoodSubTotal();
         
