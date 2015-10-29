@@ -323,6 +323,12 @@ class ModelCheckoutOrder extends Model {
 		$order_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "order` WHERE order_status_id = " . (int)$order_status_id );
 		return $order_query->rows;
 	}
+	
+	public function getOrderProducts($order_id){
+		$order_product_query = $this->db->query("SELECT * FROM `" . DB_PREFIX . "order_product` WHERE order_id = '" . (int)$order_id . "'");
+		return $order_product_query->rows;
+	}
+	
 	public function addOrderHistory($order_id, $order_status_id, $comment = '', $notify = false) {
 		$event_data = array(
 			'order_id'		=> $order_id,

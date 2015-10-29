@@ -300,7 +300,7 @@ class ControllerSfcheckoutConfirm extends Controller{
             $order_data['products'][] = array(
                 'product_id' => $product['product_id'],
                 'name'=>$product['food_name'],
-                'model'=>$product['rest_name'],
+                'model'=>$product['rest_name'] .' 地址:　'.  $product['rest_address'],
 // 					'name'       => $product['name'],
 // 					'model'      => $product['model'],
 // 					'option'     => $option_data,

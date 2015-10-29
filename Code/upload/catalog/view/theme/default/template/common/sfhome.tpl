@@ -6,8 +6,8 @@
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfhome.css">
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
-    <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&callback=initMap" async defer></script>
+    <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>    
   </head>
   <body>
   	<div class="header">

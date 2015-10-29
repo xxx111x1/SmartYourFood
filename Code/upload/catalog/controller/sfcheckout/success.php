@@ -3,11 +3,17 @@ class ControllerSfcheckoutSuccess extends Controller {
 	public function index() {
 		$this->load->language('sfcheckout/success');
 		$this->load->model('checkout/order');
+		$order_id = $this->session->data['order_id'];
+		// update state, 2 is processing.
+		$this->model_checkout_order->updateOrderStatus($order_id, 2);
 		
+			
+		// Generate content string. and send to wechat	
+		$content = $this->getOrderString($order_id);
+		//clear session
 		if (isset($this->session->data['order_id'])) {
-			$order_id = $this->session->data['order_id'];
 			$this->cart->clear();
-
+			
 			// Add to activity log
 			$this->load->model('account/activity');
 
@@ -41,9 +47,20 @@ class ControllerSfcheckoutSuccess extends Controller {
 			unset($this->session->data['vouchers']);
 			unset($this->session->data['totals']);
 			
-			// 2 is processing.
-			$this->model_checkout_order->updateOrderStatus($order_id, 2);
+			
 		}
 		$this->response->redirect($this->url->link('account/account','success=1'));
+	}
+	
+	public function getOrderString($order_id){
+		$order = $this->model_checkout_order->getOrder($order_id);
+		$foods = $this->model_checkout_order->getOrderProducts($order_id);
+		$content = "订单号：  " .$order_id.  " 总金额（不含小费）：　" . $order['total'] . " 送餐地址： " . $order['shipping_address_1']. " 联系人： ". $order['firstname'] . " 联系电话：" . $order['shipping_address_2'] . "\n" ;
+		foreach ($foods as $key => $v) {
+			$content .= "餐馆： " . $foods[$key]['model'] . " 菜品： " . $foods[$key]['name'] . " 数量： " . $foods[$key]['quantity'] . " 单份价格：" . $foods[$key]['price'] .  " 菜品总价： " . $foods[$key]['total'] . "\n";
+		
+		}
+		$content .= "-------------------------------------------------------------------------------------------------------";
+		return $content;
 	}
 }
