@@ -111,7 +111,7 @@ class ModelSffoodFood extends Model{
     }
     
     public function getTempSpecialFoods(){
-    	$sql = "SELECT a.name as rest_name, a.restaurant_id as restaurant_id, b.name as food_name, b.food_id as food_id,b.img_url as img_url FROM smartyourfood.oc_food b inner join smartyourfood.oc_restaurant_info a on a.restaurant_id = b.restaurant_id where a.name = 8 and b.name like N'新疆大盘鸡' or b.name like N'干锅牛蛙' or b.name like N'香辣虾' or b.name like N'麻辣香锅'";
+    	$sql = "SELECT a.name as rest_name, a.restaurant_id as restaurant_id, b.name as food_name, b.food_id as food_id,b.img_url as img_url FROM smartyourfood.oc_food b inner join smartyourfood.oc_restaurant_info a on a.restaurant_id = b.restaurant_id where a.name = 8 and (b.name like N'新疆大盘鸡' or b.name like N'干锅牛蛙' or b.name like N'香辣虾' or b.name like N'麻辣香锅')";
     	$query = $this->db->query($sql);
     	return $query->rows;
     }
