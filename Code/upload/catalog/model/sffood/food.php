@@ -45,7 +45,7 @@ class ModelSffoodFood extends Model{
     		if(strpos($img_url,'http') == false){
     			$img_url = "./catalog/view/theme/default/image/foodImages/" . $img_url;
     		}
-    		$query .= ", img_url          = '" . $img_url . "'";
+    		$query .= ', img_url          = "' . $img_url . '"';
     	}
     	if(array_key_exists('price'           , $data)){ $query .= ", price            = '" . $data['price']            . "'"; }
     	if(array_key_exists('available'       , $data)){ $query .= ", available        = '" . $data['available']        . "'"; }
