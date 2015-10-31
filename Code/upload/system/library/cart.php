@@ -29,7 +29,7 @@ class Cart {
                 $product_query = $this->db->query("SELECT f.food_id as food_id,
                                                      f.price as price,
                                                      f.name as food_name,
-                									 f.`description` as food_desc,
+                									 f.`desc` as food_desc,
                                                       r.name as rest_name,
                                                       f.img_url as img_url,
                                                       r.restaurant_id as restaurant_id,
