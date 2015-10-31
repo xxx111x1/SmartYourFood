@@ -1,0 +1,13 @@
+update oc_restaurant_info set phone = '(604)278-7700' where restaurant_id=7;
+update oc_restaurant_info set phone = '(604)569-0726' where restaurant_id=8;
+update oc_restaurant_info set phone = '(604)276-1780' where restaurant_id=9;
+update oc_restaurant_info set phone = '(604)370-3888' where restaurant_id=10;
+update oc_restaurant_info set phone = '(604)332-0698' where restaurant_id=11;
+update oc_restaurant_info set phone = '(778)3794686 ' where restaurant_id=12;
+update oc_restaurant_info set phone = '(604)207-9889' where restaurant_id=13;
+update oc_restaurant_info set phone = '(604)276-1776' where restaurant_id=14;
+update oc_restaurant_info set phone = '(778)297-9777' where restaurant_id=15;
+update oc_restaurant_info set phone = '(604)303-8833' where restaurant_id=16;
+update oc_restaurant_info set phone = '(604)273-3388' where restaurant_id=17;
+update oc_restaurant_info set phone = '(778)297-6820' where restaurant_id=18;
+update oc_restaurant_info set phone = '(604)285-6162' where restaurant_id=19;
