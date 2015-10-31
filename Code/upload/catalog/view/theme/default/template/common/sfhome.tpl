@@ -59,6 +59,7 @@
   		</div>
   	</div>
   	<div class="special-foods">
+  		<input type="hidden" id="restId" value="<?php echo $cart_rest_id;?>" />
   		<div class="foods-content">
   			<?php foreach ($foods as $food) { ?>
 				<div class="food" restid="<?php echo $food['restaurant_id']; ?>" foodid="<?php echo $food['food_id'] ;?>">

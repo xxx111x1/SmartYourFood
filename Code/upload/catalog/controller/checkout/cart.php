@@ -283,6 +283,7 @@ class ControllerCheckoutCart extends Controller {
 	
 		$product_info = $this->model_sffood_food->getFood($product_id);
 		if ($product_info) {
+			$this->session->data['cart_rest_id'] = $product_info['restaurant_id'];
 // 			if (isset($this->request->post['quantity']) && ((int)$this->request->post['quantity'] >= $product_info['minimum'])) {
 // 				$quantity = (int)$this->request->post['quantity'];
 // 			} else {
@@ -388,8 +389,9 @@ class ControllerCheckoutCart extends Controller {
 		}
 		$this->load->model('sffood/food');
 	
-		$product_info = $this->model_sffood_food->getFood($product_id);
+		$product_info = $this->model_sffood_food->getFood($product_id);	
 		if ($product_info) {
+			$this->session->data['cart_rest_id'] = $product_info['restaurant_id'];
 			if (!$json) {
 				$this->cart->addone($this->request->post['product_id']);
 				$json['success'] = sprintf($this->language->get('text_success'), $this->url->link('sffood/list', 'food_id=' . $this->request->post['product_id']), $product_info['name'], $this->url->link('checkout/cart'));	

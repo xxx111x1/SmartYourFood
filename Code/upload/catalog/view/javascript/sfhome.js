@@ -48,16 +48,22 @@ $(document).ready(function () {
 	
 	$(document).on('click', '.buy-cart', function(){
 		var foodId = $(this).parent().attr('foodid');
-		$.ajax({
-			url: 'index.php?route=checkout/cart/add',
-			type: 'post',
-			data: 'product_id=' + foodId + '&quantity=' + 1,
-			dataType: 'json',
-			success: function(json) {
-				var url = '/index.php?route=sfcheckout/checkout';				
-				window.location.href = url;
-			}
-		});		
+		var restId = $(this).parent().attr('restid');
+		var cartRestId = $('#restId').attr('value');
+		if(cartRestId!="0" && cartRestId != restId){
+			alert("请在同一家餐厅选餐");
+		}else{
+			$.ajax({
+				url: 'index.php?route=checkout/cart/add',
+				type: 'post',
+				data: 'product_id=' + foodId + '&quantity=' + 1,
+				dataType: 'json',
+				success: function(json) {
+					var url = '/index.php?route=sfcheckout/checkout';				
+					window.location.href = url;
+				}
+			});	
+		}
 	});
 	
 	$(document).on('click', '.food-background,.food-hover-content,.food-name,.food-desc', function(){

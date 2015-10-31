@@ -31,6 +31,12 @@ class ControllerCommonSfhome extends Controller {
 			$data['history_address'] = "";
 		}
 		
+		if(isset($this->session->data['cart_rest_id'])){
+			$data['cart_rest_id'] = $this->session->data['cart_rest_id'];
+		}
+		else{
+			$data['cart_rest_id'] = 0;
+		}
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/sfhome.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/common/sfhome.tpl', $data));
 		} else {
