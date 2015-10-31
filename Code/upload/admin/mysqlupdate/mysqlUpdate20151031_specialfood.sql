@@ -1,0 +1,1 @@
+update oc_food a set img_url='./catalog/view/theme/default/image/foodImages/麻辣香锅_首页.png' where a.name like N'%麻辣香锅%' and food_id > 0;

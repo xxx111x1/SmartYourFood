@@ -6,7 +6,8 @@ class ControllerCommonSfhome extends Controller {
 			$this->customer->logout();
 		}
 		$this->load->model('sffood/food');
-		$data["foods"] = $this->model_sffood_food->getSpecialFoods();
+		//$data["foods"] = $this->model_sffood_food->getSpecialFoods();
+		$data["foods"] = $this->model_sffood_food->getTempSpecialFoods();
 		if(isset($this->request->get['lat'])){
 			$this->session->data['lat'] = $this->request->get['lat'];
 			$this->session->data['lng'] = $this->request->get['lng'];
