@@ -69,7 +69,7 @@
   					</div>
   					<div class="food-hover-content hide">推荐美食</div>
   					<div class="food-name"><?php echo $food['food_name'];?></div>
-					<div class="food-desc">(配米饭*2)</div>
+					<div class="food-desc">配米饭</div>
   					<div class="food-desc">Dragon House 龙顺园</div>
   					<div class="buy-cart hide" ></div>  					
   				</div>
