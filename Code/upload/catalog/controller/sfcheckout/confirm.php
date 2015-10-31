@@ -78,7 +78,8 @@ class ControllerSfcheckoutConfirm extends Controller{
         	$data['nofood']="";
         	$data['hasfood']="display: none";
         }
-        
+        $order_data['deliverfee'] = $deliverfee;
+        $order_data['extra_cost'] = $fast_deliverfee;
         // Create Order
         if ($this->customer->isLogged()) {
             $this->load->model('account/customer');
@@ -326,7 +327,7 @@ class ControllerSfcheckoutConfirm extends Controller{
 // 					'subtract'   => $product['subtract'],
                 'price'      => $product['price'],
                 'total'      => $product['total'],
-                'tax'        => $product['price']*0.1,//$this->tax->getTax($product['price'], $product['tax_class_id']),
+                'tax'        => $product['total']*0.12,//$this->tax->getTax($product['price'], $product['tax_class_id']),
  					'reward'     => 0,
                 'option' =>array()
             );

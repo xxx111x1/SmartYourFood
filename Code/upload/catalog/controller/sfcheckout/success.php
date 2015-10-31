@@ -10,7 +10,9 @@ class ControllerSfcheckoutSuccess extends Controller {
 		if (isset($this->session->data['order_id'])) {
 			$order_id = $this->session->data['order_id'];
 			$this->log->write('start to notify admin, order id: '.$order_id);
-			$this->model_checkout_order->notifyAdmin($order_id);
+			//$this->model_checkout_order->notifyAdmin($order_id);
+			$this->msg->notifydeliveryman($order_id);
+			$this->msg->sendOperatorDetail($order_id);
 			$this->log->write('end of notifying admin');
 
 			$this->cart->clear();
