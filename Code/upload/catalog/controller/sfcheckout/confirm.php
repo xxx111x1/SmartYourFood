@@ -6,6 +6,8 @@
  * Time: 16:45
  */
 class ControllerSfcheckoutConfirm extends Controller{
+    private $tax_rate = 0.05;
+    private $deliver_fee_rate = 0;
     public function index()
     {
         $data=array();
@@ -22,7 +24,7 @@ class ControllerSfcheckoutConfirm extends Controller{
         $data['food_list']= $food_list;
         $total_before_tax = $this->cart->getFoodSubTotal();
         $total_before_tax = round($total_before_tax,2);
-        $tax=round(0.12*$total_before_tax,2);
+        $tax=round($this->tax_rate*$total_before_tax,2);
         //$tips = round(0.1*$total_before_tax,2);
         $data['beforetax'] = $total_before_tax;
         $data['tax'] = $tax;
@@ -65,7 +67,7 @@ class ControllerSfcheckoutConfirm extends Controller{
         else{
         	$fast_deliverfee = 0;
         }
-        
+        $deliverfee = $this->deliver_fee_rate*$deliverfee;
         $data['deliverfee'] = $deliverfee;
         $data['fast_deliverfee'] = $fast_deliverfee;
         $data['totalcost'] = round($total_before_tax + $tax + $deliverfee + $fast_deliverfee,2);
@@ -327,7 +329,7 @@ class ControllerSfcheckoutConfirm extends Controller{
 // 					'subtract'   => $product['subtract'],
                 'price'      => $product['price'],
                 'total'      => $product['total'],
-                'tax'        => $product['total']*0.12,//$this->tax->getTax($product['price'], $product['tax_class_id']),
+                'tax'        => $product['total']*$this->tax_rate,//$this->tax->getTax($product['price'], $product['tax_class_id']),
  					'reward'     => 0,
                 'option' =>array()
             );

@@ -6,6 +6,8 @@
  * Time: 16:45
  */
 class ControllerSfcheckoutCheckout extends Controller{
+    private $tax_rate = 0.05;
+    private $deliver_fee_rate = 0;
     public function index()
     {
     	if(!$this->customer->isLogged()){
@@ -85,9 +87,10 @@ class ControllerSfcheckoutCheckout extends Controller{
 	    if (date('H') >= 22.5 || date('H')<9) {
 	    	$deliverfee += 2;
 	    }        
-        
+        $deliverfee = $deliverfee*$this->deliver_fee_rate;
+
         $total_before_tax = round($total_before_tax,2);
-        $tax=round(0.12*$total_before_tax,2);
+        $tax=round($this->tax_rate*$total_before_tax,2);
         //$tips = round(0.1*$total_before_tax,2);
         $data['beforetax'] =  $total_before_tax;
         $data['tax'] = $tax;

@@ -58,7 +58,7 @@
         <div id="cost_summary">
             <span class="summary_item">菜品总价:<span id="beforetax">$<?php echo $beforetax;?></span></span>
             <span class="summary_item">配送费:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>
-            <span class="summary_item">税(12%):<span id="taxcost"> $<?php echo $tax;?></span></span>
+            <span class="summary_item">税(5%):<span id="taxcost"> $<?php echo $tax;?></span></span>
             <span class="summary_item">优先配送:<span id="fastdeliverfee"> $<?php echo $fast_deliverfee;?> </span><input type="checkbox" id="fastDelivery" checked></span>
             <span class="summary_item" style="float:right;margin-right:120px">总金额: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
         </div>
