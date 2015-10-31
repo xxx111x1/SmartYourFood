@@ -135,7 +135,7 @@ class UsaysMessager{
         //1. first update database
 
         //2.send detail information to deliver man
-        return $this->makeOperatorDetail($orderid);
+        return $this->sendDeliverymanDetail($orderid);
     }
 
 
