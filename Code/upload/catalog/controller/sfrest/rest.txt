@@ -1,5 +1,13 @@
-Good Reastaurant;Kung Fu Noodle;49.2820669;-123.1165929;Parkwell Plaza 682 seymour Vancouver;6045635666;;4;1;kungfu_noodle_soup_with_lamb.jpg;20;1;;;
-Good Reastaurant;Beijiang Restaurant;49.2473425;-123.0964793;8580 Alexandra Rd Richmond;7782976656;;4;1;beijiang_stir_fried_shrimp_with_hot_chili_pepper_sauce.jpg;50;1;;;
-Good Reastaurant;Sushi Maro;49.2751912;-123.1220239;1168 Hamilton St Vancouver;7783718332;;4;6;sushi_maro_hawaii_roll.png;24;1;;;
-Good Reastaurant;Umi Sushi Express;49.2269083;-123.0693842;200 Burrard St;6046080881;;4;6;umi_unagi_bento.png;12;1;;;
-Good Reastaurant;Umi Sushi Express Inc;49.2269083;-123.0693842;Pacific Centre South 701 W Georgia St;6046339228;;4;6;umi_unagi_bento.png;12;1;;;
+Good Restaurant;九记_No.9_Restaurant;49.1755327;-123.1324264;5300_Number_3_Road,Richmond;(604)278-7700;;4;1,17;九记_上海排骨粗炒面.png;0;1;4;4;4
+Good Restaurant;龙顺园;49.234095;-123.0353991;3309 Kingsway ,Vancouver ;(604) 569-0726;;5;21,22,2;九记_上海排骨粗炒面.png;0;1;5;5;5
+Good Restaurant;一品川菜;49.1654536;-123.1364633;6610 Number 3 Road ,Richmond;(604) 276-1780;;4;1,2;;0;1;4;4;4
+Good Restaurant;老西安;49.1782788;-123.1279528;8580 Alexandra Rd ,Richmond ;(604) 370-3888;;4;1,19;;0;1;4;4;4
+Good Restaurant;红餐吧桂林米粉;49.1784647;-123.1284187;8531 Alexandra Rd ,Richmond ;(604) 332-0698;;4;1,23;;0;1;4;4;4
+Good Restaurant;武汉鸭脖;49.2295265;-123.0032085;4560 Kingsway ,Burnaby;(778)3794686 ;;4;1,2,3;;0;1;4;4;4
+Good Restaurant;凤鸣粥面;49.1726359;-123.1350834;8171 Ackroyd Rd ,Richmond ;(604) 207-9889;;4;1,17;;0;1;4;4;4
+Good Restaurant;精武鸭脖;49.1833506;-123.1359203;4200 Number 3 Rd ,Richmond ;(604)276-1776;;4;1,2,3;;0;1;4;4;4
+Good Restaurant;台湾台北原创花雕鸡;49.1782788;-123.1279528;8580 Alexandra Rd ,Richmond;(778) 297-9777;;4;1,7;;0;1;4;4;4
+Good Restaurant;麒麟海鲜酒家;49.1698716;-123.1376256;7900 Westminster Hwy ,Richmond ;(604) 303-8833;;4;;;0;1;4;4;4
+Good Restaurant;小四川;49.1833506;-123.1359203;4200 Number 3 Road ,Richmond ;(604) 273-3388;;4;1,2;;0;1;4;4;4
+Good Restaurant;桂花林;49.1686465;-123.1345938;8188 Saba Road ,Richmond ;(778) 297-6820;;4;7,10,12;;0;1;4;4;4
+Good Restaurant;Church's Chiken;49.184076;-123.093842;11580 Cambie Rd ,Richmond ;(604) 285-6162;;4;13;;0;1;4;4;4
