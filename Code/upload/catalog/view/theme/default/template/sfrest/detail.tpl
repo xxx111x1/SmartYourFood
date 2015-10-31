@@ -24,12 +24,14 @@
 			<div class="rest-address">商户地址： <?php echo $restaurant['address']; ?></div>
 		</div>
 		<div class="rest-distance-info">
+			<!--
 			<div class="info-col">
 				<div class="info-value border-right">$5</div>
 				<div class="info-label border-right">配送费</div>
 			</div>
+			-->
 			<div class="info-col">
-				<div class="info-value border-right">20</div>
+				<div class="info-value border-right">45min</div>
 				<div class="info-label border-right">平均送达时间</div>
 			</div>
 			<div class="info-col">

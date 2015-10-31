@@ -8,10 +8,10 @@
 class UsaysMessager{
     //只发送订单消息， 不发送订单详情
     //private $deliveryid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//zoumin
-    //private $operator_idlist = ['omiagw0Fg6sXNqbbq91jV9X2pS6w','omiagw8PiuGfQQfVabDMtAlQI_vo','omiagwyIv-qIg2UHGRoHAtHuN-Hk','omiagw6HuwXD95DmvmpY27rs1y1c'];
-    private $operator_idlist = ['omiagw6HuwXD95DmvmpY27rs1y1c'];
+    private $operator_idlist = ['omiagw0Fg6sXNqbbq91jV9X2pS6w','omiagw8PiuGfQQfVabDMtAlQI_vo','omiagwyIv-qIg2UHGRoHAtHuN-Hk','omiagw6HuwXD95DmvmpY27rs1y1c','omiagw0V89-YrnIfT_6ZqwdNjT0E','omiagwzBMqBnpGLL5o6qAhUNOZlg'];
+    //private $operator_idlist = ['omiagw6HuwXD95DmvmpY27rs1y1c','omiagw0V89-YrnIfT_6ZqwdNjT0E'];//zoumin, yuepeng
     //private $operatorid = 'omiagw0Fg6sXNqbbq91jV9X2pS6w';//
-    private $deliveryid = 'omiagwzBMqBnpGLL5o6qAhUNOZlg';//zoumin
+    private $deliveryid = 'omiagwxC73z9re0wK_JCy2-YtHGQ';//wang er
 
 
     public function __construct($registry) {

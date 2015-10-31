@@ -8,8 +8,8 @@
 class ControllerWechatMsghandler extends Controller{
    // private $operatorid='omiagw0Fg6sXNqbbq91jV9X2pS6w';
     //private $operator_idlist = ['omiagw0Fg6sXNqbbq91jV9X2pS6w','omiagw8PiuGfQQfVabDMtAlQI_vo','omiagwyIv-qIg2UHGRoHAtHuN-Hk','omiagw6HuwXD95DmvmpY27rs1y1c'];
-    private $operator_idlist = ['omiagw6HuwXD95DmvmpY27rs1y1c'];
-    private $deliveryid='omiagwzBMqBnpGLL5o6qAhUNOZlg';
+    private $operator_idlist = ['omiagw0Fg6sXNqbbq91jV9X2pS6w','omiagw8PiuGfQQfVabDMtAlQI_vo','omiagwyIv-qIg2UHGRoHAtHuN-Hk','omiagw6HuwXD95DmvmpY27rs1y1c','omiagw0V89-YrnIfT_6ZqwdNjT0E','omiagwzBMqBnpGLL5o6qAhUNOZlg'];
+    private $deliveryid = 'omiagwxC73z9re0wK_JCy2-YtHGQ';
 
     public function index()
     {
@@ -48,7 +48,7 @@ class ControllerWechatMsghandler extends Controller{
         }
         else if($this->fromDeliveryService($from))
         {
-            if($op_type=='已配送')
+            if($op_type=='已接单')
             {
                 return $this->start_to_deliver($orderid);
             }

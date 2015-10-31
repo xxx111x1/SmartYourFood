@@ -7,9 +7,9 @@
 	<img class="advertisement" src="./catalog/view/theme/default/image/ads.gif"></img>
     <div class="tabmenu">
         <div class="contenttab">
-        	<div id="food_tab" class="type_tab">菜品悠选</div>
-            <div id="restaurant_tab" class="type_tab">餐馆悠选</div>            
-            <div class="type_tab">猜你喜欢</div>
+            <div id="restaurant_tab" class="type_tab">餐馆悠选</div>
+            <div id="food_tab" class="type_tab">菜品悠选</div>
+            <!--<div class="type_tab">猜你喜欢</div>-->
         </div>
 		<div class="search-bar">
 			<input id="searchType" type="hidden" value="food" />
