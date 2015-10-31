@@ -103,6 +103,10 @@ class UsaysMessager{
     //确认配送人员收到消息，司机已经出发
     public function receive_logistic_confirmmsg($orderid)
     {
+        foreach($this->operator_idlist as $openid)
+        {
+            $this->sendmsg($openid,"跑腿帮已接单 ".$orderid);
+        }
         return "系统已经收到确认信息";
     }
 
