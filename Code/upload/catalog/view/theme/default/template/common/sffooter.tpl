@@ -19,8 +19,8 @@
       <div class="foot-col">
         <h5>商务合作</h5>
         <div class="list-unstyled">
-          <div class="footer-list-content">7788886311</div>
-          <div class="footer-list-content">royyue87@gmail.com</div>
+          <div class="footer-list-content"></div>
+          <div class="footer-list-content">info@usays.ca</div>
         </div>
       </div>
       <div class="foot-col">
