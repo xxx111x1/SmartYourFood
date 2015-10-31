@@ -18,7 +18,7 @@
 <div class="header">
 	<div class="header-content">
 	  <div id="logo"></div>
-	  <div class="tag" id="go-to-home">首页</div>
+	  <div class="tag" id="go-to-food">首页</div>
 	  <div class="tag" id="go-to-food">美食</div>
 	  <div class="tag" id="go-to-order">订单结算</div>
 	  <div class="language">English</div>
