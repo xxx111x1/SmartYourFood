@@ -630,6 +630,7 @@ class ControllerCheckoutCart extends Controller {
 		$this->load->language('checkout/cart');
 		$json = array();
 		$this->cart->clear();
+		$this->session->data['cart_rest_id'] = 0;
 		$json["success"] = "success";
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
@@ -650,7 +651,9 @@ class ControllerCheckoutCart extends Controller {
 			$this->load->model('account/customer');
 			
 			$this->model_account_customer->editCart($this->cart->getCart());
-				
+			if(count($this->cart->getCart())<1){
+				$this->session->data['cart_rest_id'] = 0;
+			}
 			unset($this->session->data['shipping_method']);
 			unset($this->session->data['shipping_methods']);
 			unset($this->session->data['payment_method']);
