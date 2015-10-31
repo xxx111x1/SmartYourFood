@@ -1,4 +1,5 @@
 <div class="cart_dropdown" id="cart_dropdown">
+	<input type='hidden' id="purchaseRest" value="<?php echo $rest_id;?>" />
     <?php if ($products) { ?>
       <div class="cart-thumbnail-head" >
       	<div class="cart-head " style="float:left;width:60px;">购物车</div>

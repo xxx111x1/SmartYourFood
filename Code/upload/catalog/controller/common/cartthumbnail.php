@@ -51,6 +51,10 @@ class ControllerCommonCartthumbnail extends Controller {
 
 		$data['products'] = array();
 		$total_price = 0;
+		$rest_id=0;
+		if(isset($this->session->data['cart_rest_id'])){
+			$rest_id= $this->session->data['cart_rest_id'];
+		}		
 		foreach ($this->cart->getFoods() as $product) {
 			if ($product['image']) {
 				$image = $this->model_tool_image->resize($product['image'], $this->config->get('config_image_cart_width'), $this->config->get('config_image_cart_height'));
@@ -136,6 +140,7 @@ class ControllerCommonCartthumbnail extends Controller {
 		$data['total_taxes'] = round($total_price*0.12,2);
 		$data['total_fees'] = round($total_price*0.1,2);
 		$data['total_sum'] = $data['total_transffer'] +$data['total_price']+$data['total_taxes']+$data['total_fees'];
+		$data['rest_id'] = $rest_id;
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/cart_thumbnail.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/common/cart_thumbnail.tpl', $data);
 		} else {
