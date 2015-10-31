@@ -60,7 +60,35 @@ $(document).ready(function() {
         $('#dialog_updatepassowrd').removeClass('invisible');
     });
 
-
+    $(".deleteAddress").click(function(){
+        var addressId = $(this).attr('addr_id');
+        $.ajax({
+            url: 'index.php?route=api/address/deleteShippingAddress',
+            type: 'post',
+            data: 'addressId='+addressId,
+            timeout: 3000,
+            dataType: 'json',
+            error: function(){
+                alert("删除地址失败");
+            },
+            success: function(data) {
+                if (!data['status'] || !(data['status']==='ok')){
+                	alert("删除地址失败");
+                }
+                else{
+                	alert("地址删除成功");
+                	$('#address_' +addressId).remove();
+                }
+            }
+        });
+    });
+    
+    $(".editAddress").click(function(){
+        var addressId = $(this).attr('addr_id');
+        var phone = $('#phone_' + addressId).text();
+        var contact = $('#contact_' + addressId).text();
+        window.location.href = 'index.php?route=address/address&phone=' +phone+  '&contact=' + contact + '&returnUrl=/index.php?route=account/account&addressId=' + addressId;
+    });
 
     $('#btn_confirmusername').click(function(){
         var new_username = $('#updateusername').val();

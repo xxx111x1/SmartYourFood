@@ -4,6 +4,25 @@ class ControllerAddressAddress extends Controller{
         $data = array();        
         if(isset($this->request->get['returnUrl'])){
         	$data["return_url"] = $this->request->get['returnUrl']; 
+        	
+        }
+        if(isset($this->request->get['addressId'])){
+        	$data["address_id"] = $this->request->get['addressId'];
+        }
+        else{
+        	$data["address_id"] = "";
+        }
+        if(isset($this->request->get['phone'])){
+        	$data["phone"] = $this->request->get['phone'];
+        }
+        else{
+        	$data["phone"] = "";
+        }
+        if(isset($this->request->get['contact'])){
+        	$data["contact"] = $this->request->get['contact'];
+        }
+        else{
+        	$data["contact"] = "";
         }
         $this->response->setOutput($this->load->view('default/template/address/address.tpl', $data));
     }    

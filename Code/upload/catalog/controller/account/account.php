@@ -105,7 +105,12 @@ class ControllerAccountAccount extends Controller {
 			$address_data['address']=$this->request->get['address'];
 			$address_data['phone']=$this->request->get['phone'];
 			$address_data['contact']=$this->request->get['contact'];
-			$this->model_sfcheckout_shippingaddress->addAddress($address_data);
+			if(isset($this->request->get['addressId'])){
+				$this->model_sfcheckout_shippingaddress->editAddress($this->request->get['addressId'],$address_data);
+			}
+			else{
+				$this->model_sfcheckout_shippingaddress->addAddress($address_data);
+			}			
 		}
 		
 		$this->document->setTitle($this->language->get('heading_title'));
