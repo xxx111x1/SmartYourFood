@@ -8,7 +8,7 @@
 </div>
 <div class="backtop_section" id="backtop_section" >	
 	<div class="backtopIcons" id="my_message">消息</div>
-	<div class="backtopIcons" id="orders">订单</div>	
+	<div class="backtopIcons" id="orders" onclick="window.location.href= '/index.php?route=sfcheckout/checkout';return false">订单</div>
 	<div class="backtopIcons" id="feedback">反馈</div>
 	<div class="backtopIcons" id="call_center">客服</div>		
 	<div class="backtopIcons" id="back_top">返回顶部</div>
@@ -40,7 +40,7 @@
 		</div>
 		<div class="callcenter-wrap unvisible">
 		    <div class="callcenter-contact">
-		    	联系电话： 7788886311
+		    	联系电话： 6048325933
 		    </div>
 		    <input type="button" value="返回" class="cancelBtn callcenter-cancel">
 		</div>

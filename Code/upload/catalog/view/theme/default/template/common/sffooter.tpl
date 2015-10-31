@@ -3,9 +3,11 @@
       <div class="foot-col">
         <h5>帮助</h5>
         <div class="list-unstyled">
+            <!--
           <div class="footer-list-content"><a href="">建议与反馈</a></div>
           <div class="footer-list-content"><a href="">使用帮助</a></div>
           <div class="footer-list-content"><a href="">意见问题</a></div>
+          -->
         </div>
       </div>
       <div class="foot-col">
