@@ -230,7 +230,7 @@ $(document).ready(function () {
 					
 					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';
 					$('.product_area').append(ele);
-				});					
+				});		
 				$('div.stars').stars();		
 			}
 		});		
