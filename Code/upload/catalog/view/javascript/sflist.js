@@ -231,7 +231,7 @@ $(document).ready(function () {
 						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /></div>';
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname">'+v.name+'</div>' +
 											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
-											'<div class="thumb_desc_productprice">平均价格：$ '+cost+'</div></div></div>';
+											'<!--<div class="thumb_desc_productprice">平均价格：$ '+cost+'</div>--></div></div>';
 					}     					
 					
 					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';

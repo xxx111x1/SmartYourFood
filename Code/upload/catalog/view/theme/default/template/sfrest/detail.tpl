@@ -13,7 +13,7 @@
 		<div class="rest-detail">
 			<div class="rest-basic">
 				<div class="rest-name"><?php echo $restaurant['name']; ?></div>
-				<div class="rest-average">人均： <?php echo $restaurant['avg_cost']; ?></div>
+				<!--<div class="rest-average">人均： <?php echo $restaurant['avg_cost']; ?></div>-->
 			</div>
 			<div class="rest-review">
 				<div class="sf_product_stars stars" rate="<?php echo $restaurant['review_score']; ?>" ></div>
