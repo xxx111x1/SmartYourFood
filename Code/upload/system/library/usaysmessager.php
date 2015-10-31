@@ -8,8 +8,9 @@
 class UsaysMessager{
     //只发送订单消息， 不发送订单详情
     //private $deliveryid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//zoumin
+    private $operatorid = 'omiagw0Fg6sXNqbbq91jV9X2pS6w';//zoumin
     private $deliveryid = 'omiagwzBMqBnpGLL5o6qAhUNOZlg';//yinghui
-    private $operatorid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//zoumin
+
 
     public function __construct($registry) {
         $this->config = $registry->get('config');
