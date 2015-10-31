@@ -92,7 +92,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['beforetax'] =  $total_before_tax;
         $data['tax'] = $tax;
         //$data['tips'] = $tips;
-        $fast_deliverfee = 5;
+        $fast_deliverfee = round($total_before_tax*0.05,2);
         $data['deliverfee'] = $deliverfee;
         $data['fast_deliverfee'] = $fast_deliverfee;
         $data['totalcost'] = round($total_before_tax + $tax + $deliverfee +$fast_deliverfee,2);
