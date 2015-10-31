@@ -6,10 +6,10 @@
  * Time: 20:40
  */
 class UsaysMessager{
-    //Ö»·¢ËÍ¶©µ¥ÏûÏ¢£¬ ²»·¢ËÍ¶©µ¥ÏêÇé
-    private $deliveryid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//zoumin
-    //private $operatorid = 'omiagwzBMqBnpGLL5o6qAhUNOZlg';//yinghui
-    private $operatorid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//yinghui
+    //åªå‘é€è®¢å•æ¶ˆæ¯ï¼Œ ä¸å‘é€è®¢å•è¯¦æƒ…
+    //private $deliveryid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//zoumin
+    private $deliveryid = 'omiagwzBMqBnpGLL5o6qAhUNOZlg';//yinghui
+    private $operatorid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//zoumin
 
     public function __construct($registry) {
         $this->config = $registry->get('config');
@@ -24,7 +24,7 @@ class UsaysMessager{
         return file_get_contents($request_str);
     }
 
-    //·¢ËÍ¶©µ¥ÌáĞÑ
+    //å‘é€è®¢å•æé†’
     public function notifydeliveryman($orderid)
     {
         $msg = $this->getShippingInfo($orderid);
@@ -36,14 +36,14 @@ class UsaysMessager{
         $query_str = "select name,model,quantity,price,total,tax from ".DB_PREFIX."order_product where order_id=".$orderid;
         $this->log->write($query_str);
         $query_res = $this->db->query($query_str);
-        $order_detail=' OrderDetail: ';
+        $order_detail=' è®¢å•è¯¦æƒ…: ';
         foreach($query_res->rows as $query_res)
         {
-            $order_detail = $order_detail.'\n FoodName: '.$query_res['name'].' Qty: '.$query_res['quantity'].' SubTotal: '.round($query_res['total'],2).' Tax: '.round($query_res['tax'],2);
+            $order_detail = $order_detail.'\n èœå“åç§°: '.$query_res['name'].' æ•°é‡: '.$query_res['quantity'].' å°è®¡: '.round($query_res['total'],2).' ç¨: '.round($query_res['tax'],2);
         }
         $query_str = "select deliverfee,total, extra_cost from ".DB_PREFIX."order where order_id=".$orderid;
         $query_res = $this->db->query($query_str);
-        $order_detail = $order_detail.'  DeliverFee: '.round($query_res->row['deliverfee'],2).'  FastDeliverFee: '.round($query_res->row['extra_cost'],2).'   Total Cost: '.round($query_res->row['total'],2);
+        $order_detail = $order_detail.' \n é…é€è´¹: '.round($query_res->row['deliverfee'],2).'  ä¼˜å…ˆé…é€è´¹: '.round($query_res->row['extra_cost'],2).'   æ€»è®¡: '.round($query_res->row['total'],2);
         return $order_detail;
     }
 
@@ -59,35 +59,36 @@ class UsaysMessager{
 		                        telephone,
 		                        date_modified from ".DB_PREFIX."order where order_id=".$orderid);
         $order_detail = $query_res->row;
-       /* $msg = '¶©µ¥±àºÅ: '.$order_detail['order_id'].
-            '·¢»õµØÖ·: '.$order_detail['store_address'].
-            '·¢»õ²Í¹İ: '.$order_detail['store_name'].
-            '²Í¹İÁªÏµµç»°: '.$order_detail['store_telephone'].
-            'ÊÕ»õµØÖ·: '.$order_detail['shipping_address_1'].' '.$order_detail['shipping_address_2'].
-            'ÊÕ»õÁªÏµÈË: '.$order_detail['shipping_firstname'].
-            'ÊÕ»õÁªÏµµç»°: '.$order_detail['telephone'].
-            ' ¶©µ¥Ê±¼ä: '.$order_detail['date_modified'];*/
-        $msg = 'OrderID: '.$order_detail['order_id'].
+        $msg = 'è®¢å•ç¼–å·: '.$order_detail['order_id'].
+            '\nå‘è´§åœ°å€: '.$order_detail['store_address'].
+            '\nå‘è´§é¤é¦†: '.$order_detail['store_name'].
+            '\né¤é¦†è”ç³»ç”µè¯: '.$order_detail['store_telephone'].
+            '\næ”¶è´§åœ°å€: '.$order_detail['shipping_address_1'].' '.$order_detail['shipping_address_2'].
+            '\næ”¶è´§è”ç³»äºº: '.$order_detail['shipping_firstname'].
+            '\næ”¶è´§è”ç³»ç”µè¯: '.$order_detail['telephone'].
+            '\nè®¢å•æ—¶é—´: '.$order_detail['date_modified'];
+        /*$msg = 'OrderID: '.$order_detail['order_id'].
             'RestAddr: '.$order_detail['store_address'].
             'RestName: '.$order_detail['store_name'].
             'RestPhone: '.$order_detail['store_telephone'].
             'CustomerAddr: '.$order_detail['shipping_address_1'].' '.$order_detail['shipping_address_2'].
             'CustomerName: '.$order_detail['shipping_firstname'].
             'Contact: '.$order_detail['telephone'].
-            ' OrderTime: '.$order_detail['date_modified'];
+            ' OrderTime: '.$order_detail['date_modified'];*/
         return $msg;
     }
-    //·¢ËÍ¶©µ¥ÏêÇé
+    //å‘é€è®¢å•è¯¦æƒ…
     public function sendDeliverymanDetail($orderid)
     {
         $msg = $this->getShippingInfo($orderid);
         $detail = $this->getOrderDetail($orderid);
         $this->log->write($detail);
-        return $this->sendmsg($this->operatorid,$msg.'\n'.$detail);
+        $this->sendmsg($this->deliveryid,$msg.'\n'.$detail);
+        return 'å·²é€šçŸ¥è·‘è…¿å¸®';
     }
 
 
-    //È·ÈÏÅäËÍÈËÔ±ÊÕµ½ÏûÏ¢£¬Ë¾»úÒÑ¾­³ö·¢
+    //ç¡®è®¤é…é€äººå‘˜æ”¶åˆ°æ¶ˆæ¯ï¼Œå¸æœºå·²ç»å‡ºå‘
     public function receive_logistic_confirmmsg($orderid)
     {
         //update
@@ -95,15 +96,16 @@ class UsaysMessager{
 
 
 
-//·¢ËÍ¸ø¿Í·şµÄÏûÏ¢£¬ ¶©µ¥ÏêÇé
+//å‘é€ç»™å®¢æœçš„æ¶ˆæ¯ï¼Œ è®¢å•è¯¦æƒ…
     public function sendOperatorDetail($orderid)
     {
         $msg = $this->getShippingInfo($orderid);
         $detail = $this->getOrderDetail($orderid);
-        return $this->sendmsg($this->deliveryid,$msg.'\n'.$detail);
+        $confirm = 'å›å¤:\n  ä¸‹å•æˆåŠŸ:'.$orderid."\n é€šçŸ¥è·‘è…¿å¸®";
+        return $this->sendmsg($this->operatorid,$msg.'\n'.$detail.'\n'.$confirm);
     }
-//½ÓÊÕ¿Í·ş²¿·ÖµÄÏûÏ¢
-    //½ÓÊÕÀ´×Ô¿Í·şµÄÏÂµ¥³É¹¦ÏûÏ¢
+//æ¥æ”¶å®¢æœéƒ¨åˆ†çš„æ¶ˆæ¯
+    //æ¥æ”¶æ¥è‡ªå®¢æœçš„ä¸‹å•æˆåŠŸæ¶ˆæ¯
 
     public function recieve_order_succeed($orderid)
     {
@@ -115,13 +117,13 @@ class UsaysMessager{
     }
 
 
-    //È¡Ïû¶©µ¥
+    //å–æ¶ˆè®¢å•
     public function recieve_order_cancelletion($orderid)
     {
 
     }
 
-    //¶©µ¥ĞèÒªĞŞ¸Ä
+    //è®¢å•éœ€è¦ä¿®æ”¹
     public function  recieve_order_update($orderid)
     {
 
