@@ -8,8 +8,10 @@
 class UsaysMessager{
     //只发送订单消息， 不发送订单详情
     //private $deliveryid = 'omiagw6HuwXD95DmvmpY27rs1y1c';//zoumin
-    private $operatorid = 'omiagw0Fg6sXNqbbq91jV9X2pS6w';//zoumin
-    private $deliveryid = 'omiagwzBMqBnpGLL5o6qAhUNOZlg';//yinghui
+    //private $operator_idlist = ['omiagw0Fg6sXNqbbq91jV9X2pS6w','omiagw8PiuGfQQfVabDMtAlQI_vo','omiagwyIv-qIg2UHGRoHAtHuN-Hk','omiagw6HuwXD95DmvmpY27rs1y1c'];
+    private $operator_idlist = ['omiagw6HuwXD95DmvmpY27rs1y1c'];
+    //private $operatorid = 'omiagw0Fg6sXNqbbq91jV9X2pS6w';//
+    private $deliveryid = 'omiagwzBMqBnpGLL5o6qAhUNOZlg';//zoumin
 
 
     public function __construct($registry) {
@@ -70,13 +72,13 @@ class UsaysMessager{
 
         $order_detail = $query_res->row;
         $msg = '订单编号: '.$order_detail['order_id'].
-            '\n发货地址: '.$order_detail['store_address'].
-            '\n发货餐馆: '.$order_detail['store_name'].
-            '\n餐馆联系电话: '.$order_detail['store_telephone'].
-            '\n收货地址: '.$order_detail['shipping_address_1'].' '.$order_detail['shipping_address_2'].
-            '\n收货联系人: '.$order_detail['shipping_firstname'].
-            '\n收货联系电话: '.$order_detail['telephone'].
-            '\n订单时间: '.$order_detail['date_modified'];
+            "\n发货地址: ".$order_detail['store_address'].
+            "\n发货餐馆: ".$order_detail['store_name'].
+            "\n餐馆联系电话: ".$order_detail['store_telephone'].
+            "\n收货地址: ".$order_detail['shipping_address_1'].' '.$order_detail['shipping_address_2'].
+            "\n收货联系人: ".$order_detail['shipping_firstname'].
+            "\n收货联系电话: ".$order_detail['telephone'].
+            "\n订单时间: ".$order_detail['date_modified'];
         /*$msg = 'OrderID: '.$order_detail['order_id'].
             'RestAddr: '.$order_detail['store_address'].
             'RestName: '.$order_detail['store_name'].
@@ -93,7 +95,7 @@ class UsaysMessager{
         $msg = $this->getShippingInfo($orderid);
         $detail = $this->getOrderDetail($orderid);
         $this->log->write($detail);
-        $this->sendmsg($this->deliveryid,$msg.'\n'.$detail);
+        $this->sendmsg($this->deliveryid,$msg."\n".$detail);
         return '已通知跑腿帮';
     }
 
@@ -111,14 +113,18 @@ class UsaysMessager{
     {
         $msg = $this->getShippingInfo($orderid);
         $detail = $this->getOrderDetail($orderid);
-        $confirm = '回复:\n  下单成功 '.$orderid."\n 通知跑腿帮";
-        return $msg.'\n'.$detail.'\n'.$confirm;
+        $confirm = "回复:\n  下单成功 ".$orderid."\n 通知跑腿帮";
+        return $msg."\n".$detail."\n".$confirm;
     }
 
     public function sendOperatorDetail($orderid)
     {
         $msg = $this->makeOperatorDetail($orderid);
-        return $this->sendmsg($this->operatorid,$msg);
+        foreach($this->operator_idlist as $opid)
+        {
+            $this->sendmsg($opid,$msg);
+        }
+        return "ok";
     }
 //接收客服部分的消息
     //接收来自客服的下单成功消息

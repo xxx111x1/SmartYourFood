@@ -6,7 +6,9 @@
  * Time: 14:19
  */
 class ControllerWechatMsghandler extends Controller{
-    private $operatorid='omiagw0Fg6sXNqbbq91jV9X2pS6w';
+   // private $operatorid='omiagw0Fg6sXNqbbq91jV9X2pS6w';
+    //private $operator_idlist = ['omiagw0Fg6sXNqbbq91jV9X2pS6w','omiagw8PiuGfQQfVabDMtAlQI_vo','omiagwyIv-qIg2UHGRoHAtHuN-Hk','omiagw6HuwXD95DmvmpY27rs1y1c'];
+    private $operator_idlist = ['omiagw6HuwXD95DmvmpY27rs1y1c'];
     private $deliveryid='omiagwzBMqBnpGLL5o6qAhUNOZlg';
 
     public function index()
@@ -59,7 +61,14 @@ class ControllerWechatMsghandler extends Controller{
 
     public function fromOperator($openid)
     {
-        return $openid==$this->operatorid;
+        foreach($this->operator_idlist as $opid)
+        {
+            if($opid==$openid)
+            {
+                return true;
+            }
+        }
+        return false;
     }
 
     public function fromDeliveryService($openid)
