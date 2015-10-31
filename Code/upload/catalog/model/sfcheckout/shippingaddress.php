@@ -61,7 +61,8 @@ class ModelSfcheckoutShippingaddress extends Model
             lng = '" . $this->db->escape($data['lng']) . "',
             address = '" . $this->db->escape($data['address']) . "',
             phone = '" . $this->db->escape($data['phone']) . "',
-            date_updated=now()");
+            date_updated=now()
+        	where address_id = '" . $address_id . "'");
 
         $this->event->trigger('post.shipping_address.edit.address', $address_id);
     }

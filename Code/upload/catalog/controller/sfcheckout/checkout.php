@@ -49,7 +49,12 @@ class ControllerSfcheckoutCheckout extends Controller{
         	$address_data['address']=$this->request->get['address'];
         	$address_data['phone']=$this->request->get['phone'];
         	$address_data['contact']=$this->request->get['contact'];
-        	$this->model_sfcheckout_shippingaddress->addAddress($address_data);
+        	if(isset($this->request->get['addressId'])){
+				$this->model_sfcheckout_shippingaddress->editAddress($this->request->get['addressId'],$address_data);
+			}
+			else{
+				$this->model_sfcheckout_shippingaddress->addAddress($address_data);
+			}	
         }
         else{
         	$this->log->write('no returned url');
@@ -79,8 +84,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         date_default_timezone_set('Canada/Pacific');
 	    if (date('H') >= 22.5 || date('H')<9) {
 	    	$deliverfee += 2;
-	    }
-        
+	    }        
         
         $total_before_tax = round($total_before_tax,2);
         $tax=round(0.12*$total_before_tax,2);

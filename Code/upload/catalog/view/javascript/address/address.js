@@ -104,8 +104,14 @@
 
     function getReturnUrl(lat,lng,address,contact_name, phone_num){
         var returnUrl = document.getElementById("returnUrl").value;
-        if(returnUrl.indexOf("route") > 0){
-            return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name);
+        var addressId = document.getElementById("addressId").value;
+        var modifyAddress = "";
+        if(addressId != ""){
+        	modifyAddress= "&addressId=" + addressId;
         }
-        return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name);
+        if(returnUrl.indexOf("route") > 0){
+        	
+            return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name) + modifyAddress;
+        }
+        return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name) +modifyAddress;
     }

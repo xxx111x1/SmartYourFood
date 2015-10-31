@@ -25,5 +25,20 @@ class ControllerApiAddress extends Controller {
 		}
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
+	}	
+
+	public function deleteShippingAddress()
+	{
+		if(isset($this->request->post['addressId'])){
+			$address_id = $this->request->post['addressId'];
+			$this->load->model('sfcheckout/shippingaddress');
+			$this->model_sfcheckout_shippingaddress->deleteAddress($address_id);
+			$json['status'] = 'ok';
+		}
+		else{
+			$json['status'] = 'failed';
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
 	}
 }

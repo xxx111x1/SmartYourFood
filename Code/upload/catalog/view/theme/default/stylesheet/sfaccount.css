@@ -414,3 +414,10 @@ margin-top:15px;
     background-color: rgb(255, 255, 255);
     border: 1px solid #f65053;
 }
+
+.deleteAddress, .editAddress{
+	float: right;
+	margin-right: 20px;
+	color: red;
+	cursor: pointer;
+}
