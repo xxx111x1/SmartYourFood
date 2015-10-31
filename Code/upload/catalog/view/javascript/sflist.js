@@ -114,6 +114,8 @@ $(document).ready(function () {
 		$(this).find(".thumboverlay").hide();
 	});
 	
+	
+	
 	$(document).on('click', '.thumb_add2cart', function(){
 		var id = $(this).attr('foodid');
 		var number = $(this).attr('number');
@@ -214,13 +216,13 @@ $(document).ready(function () {
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
 						name = v.rest_name
-						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+v.name+'" >'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
 											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
 											'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
 					}
 					else{
-						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  restId='+restId+' /></div>';
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /></div>';
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname">'+v.name+'</div>' +
 											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
 											'<div class="thumb_desc_productprice">平均价格：$ '+cost+'</div></div></div>';
@@ -262,5 +264,14 @@ $(document).ready(function () {
 		if (unit=="N") { dist = dist * 0.8684; }
 		return dist.toFixed(2);
 	}
-
 });
+
+function onDishImgError(source){
+	source.src = "./catalog/view/theme/default/image/foodImages/dish_default.jpg";
+	source.onerror="";
+}
+
+function onRestImgError(source){
+	source.src = "./catalog/view/theme/default/image/foodImages/restaurant_default.jpg";
+	source.onerror="";
+}

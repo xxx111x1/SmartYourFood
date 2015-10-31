@@ -344,3 +344,1198 @@
 2015-10-29 13:37:32 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
 2015-10-29 13:37:32 - PHP 1024:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
 2015-10-29 13:37:32 - PHP 8:  Notice in D:\Projects\SmartYourFood\Code\upload\system\library\cart.php on line 40
+2015-10-31 2:15:36 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:15:36 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:15:37 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 2:15:48 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:15:48 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:15:48 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:15:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:15:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:15:53 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = '哈密尔顿 哈密尔顿 ON' and
+            phone = '1501071261'
+2015-10-31 2:15:53 - row num: 1
+2015-10-31 2:15:53 - update oc_shipping_address set date_updated=NOW() where address_id=9
+2015-10-31 2:15:53 - no returned url
+2015-10-31 2:15:55 - set shipping address id: 11
+2015-10-31 2:15:56 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:15:56 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:15:57 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:15:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:15:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:15:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:41:28 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:41:28 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:41:28 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:41:28 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:41:28 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:41:28 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:44:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:44:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:44:17 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:44:17 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:44:17 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:44:17 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:44:36 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:44:36 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:44:37 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:44:37 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:44:37 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:44:37 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:45:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:45:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:45:12 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:45:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:45:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:45:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:45:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:45:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:45:20 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:45:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:45:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:45:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:46:24 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = 'CA  ' and
+            phone = '1501022154'
+2015-10-31 2:46:24 - row num: 0
+2015-10-31 2:46:24 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'tom1',
+            lat = '49.282483',
+            lng = '-123.11855500000001',
+            address = 'CA  ',
+            phone = '1501022154',date_updated=NOW()
+2015-10-31 2:46:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:46:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:46:24 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:46:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:46:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:46:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:48:53 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = 'CA  ' and
+            phone = '1501022154'
+2015-10-31 2:48:53 - row num: 1
+2015-10-31 2:48:53 - update oc_shipping_address set date_updated=NOW() where address_id=20
+2015-10-31 2:48:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:48:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:48:53 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:48:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:48:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:48:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:48:54 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = 'CA  ' and
+            phone = '1501022154'
+2015-10-31 2:48:54 - row num: 1
+2015-10-31 2:48:54 - update oc_shipping_address set date_updated=NOW() where address_id=20
+2015-10-31 2:48:54 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:48:54 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:48:55 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:48:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:48:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:48:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:49:00 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = 'CA  ' and
+            phone = '1501022154'
+2015-10-31 2:49:00 - row num: 1
+2015-10-31 2:49:00 - update oc_shipping_address set date_updated=NOW() where address_id=20
+2015-10-31 2:49:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:49:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:49:00 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:49:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:49:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:49:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:49:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:49:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:49:05 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'CA  ' and
+            phone = '1501071261'
+2015-10-31 2:49:05 - row num: 0
+2015-10-31 2:49:05 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'Tom1234',
+            lat = '49.282483',
+            lng = '-123.11855500000001',
+            address = 'CA  ',
+            phone = '1501071261',date_updated=NOW()
+2015-10-31 2:49:05 - no returned url
+2015-10-31 2:49:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:49:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:49:06 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:49:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:49:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:49:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:49:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:49:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:49:16 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:49:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:49:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:49:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 2:55:08 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:55:08 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:55:08 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:55:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:55:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:55:57 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'CA  ' and
+            phone = '1501071261'
+2015-10-31 2:55:57 - row num: 1
+2015-10-31 2:55:57 - update oc_shipping_address set date_updated=NOW() where address_id=21
+2015-10-31 2:55:57 - no returned url
+2015-10-31 2:56:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 2:56:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 2:56:05 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 2:56:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 2:56:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 2:56:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:05:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:05:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:05:11 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:05:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:05:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:05:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:05:13 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:05:13 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:05:13 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:05:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:05:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:05:18 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:05:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:05:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:05:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:05:22 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:05:22 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:05:22 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:05:22 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:05:22 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:05:22 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:07:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:07:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:07:15 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:07:15 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:07:15 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:07:15 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:10:38 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = '9555 128 St Surrey' and
+            phone = '1234567890'
+2015-10-31 3:10:38 - row num: 0
+2015-10-31 3:10:38 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'tom1',
+            lat = '49.176225',
+            lng = '-122.86805500000002',
+            address = '9555 128 St Surrey',
+            phone = '1234567890',date_updated=NOW()
+2015-10-31 3:10:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:10:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:10:38 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:10:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:10:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:10:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:31:41 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = '9555 128 St Surrey' and
+            phone = '1234567890'
+2015-10-31 3:31:41 - row num: 1
+2015-10-31 3:31:41 - update oc_shipping_address set date_updated=NOW() where address_id=22
+2015-10-31 3:31:41 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:31:41 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:31:41 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:31:41 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:31:41 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:31:41 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:32:01 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = '温哥华 Greater Vancouver BC' and
+            phone = '2222222222'
+2015-10-31 3:32:01 - row num: 0
+2015-10-31 3:32:01 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'tom1',
+            lat = '49.2827291',
+            lng = '-123.12073750000002',
+            address = '温哥华 Greater Vancouver BC',
+            phone = '2222222222',date_updated=NOW()
+2015-10-31 3:32:01 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:32:01 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:32:01 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:32:01 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:32:01 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:32:01 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:32:18 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = '温哥华 Greater Vancouver BC' and
+            phone = '2222222222'
+2015-10-31 3:32:18 - row num: 1
+2015-10-31 3:32:18 - update oc_shipping_address set date_updated=NOW() where address_id=23
+2015-10-31 3:32:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:32:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:32:18 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:32:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:32:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:32:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:32:24 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom1' and
+            address = '温哥华 Greater Vancouver BC' and
+            phone = '2222222222'
+2015-10-31 3:32:24 - row num: 1
+2015-10-31 3:32:24 - update oc_shipping_address set date_updated=NOW() where address_id=23
+2015-10-31 3:32:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:32:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:32:24 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:32:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:32:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:32:24 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:33:46 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:33:46 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:33:46 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:33:46 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:33:46 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:33:46 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:37:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:37:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:37:05 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:37:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:37:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:37:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:37:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:37:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:37:21 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:37:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:37:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:37:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:38:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:38:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:38:43 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:38:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:38:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:38:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:38:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:38:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:38:49 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:38:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:38:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:38:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:42:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:42:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:42:07 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:42:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:42:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:42:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:42:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:42:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:42:16 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:42:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:42:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:42:18 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 3:42:18 - row num: 0
+2015-10-31 3:42:18 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'Tom1234',
+            lat = '49.24508849999999',
+            lng = '-123.1012672',
+            address = 'Main St Vancouver BC',
+            phone = '1501071261',date_updated=NOW()
+2015-10-31 3:42:18 - no returned url
+2015-10-31 3:43:42 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 3:43:42 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-31 3:43:42 - PHP 2:  Warning in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-31 3:43:42 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 3:43:42 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\model\sffood\food.php on line 86
+2015-10-31 3:43:42 - PHP 2:  Warning in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\api\food.php on line 13
+2015-10-31 3:49:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:49:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:49:21 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:49:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:49:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:49:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:49:40 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:49:40 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:49:40 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:49:40 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:49:40 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:49:40 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:49:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:49:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:49:50 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:49:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:49:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:49:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:50:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:50:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:50:06 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:50:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:50:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:50:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:51:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:51:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:51:04 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:51:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:51:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:51:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:51:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:51:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:51:07 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:51:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:51:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:51:07 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:53:10 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:53:10 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:53:10 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:53:10 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:53:10 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:53:10 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:53:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:53:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:53:12 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:53:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:53:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:53:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:53:19 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:53:19 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:53:19 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:53:19 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:53:19 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:53:19 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:53:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:53:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:53:21 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:53:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:53:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:53:21 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:53:52 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:53:52 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:53:53 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:53:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:53:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:53:53 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:56:30 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:56:30 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:56:30 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:56:30 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:56:30 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:56:30 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:56:34 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\address\address.tpl on line 14
+2015-10-31 3:56:34 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\address\address.tpl on line 15
+2015-10-31 3:56:34 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\address\address.tpl on line 16
+2015-10-31 3:57:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\address\address.tpl on line 14
+2015-10-31 3:57:10 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:57:10 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:57:11 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:57:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:57:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:57:11 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:57:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:57:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:57:16 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 3:57:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 3:57:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 3:57:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 3:57:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:57:18 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:57:18 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 3:57:18 - row num: 0
+2015-10-31 3:57:18 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'Tom1234',
+            lat = '49.24508849999999',
+            lng = '-123.1012672',
+            address = 'Main St Vancouver BC',
+            phone = '1501071261',date_updated=NOW()
+2015-10-31 3:57:18 - no returned url
+2015-10-31 3:57:20 - set shipping address id: undefined
+2015-10-31 3:57:20 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\address\address.tpl on line 14
+2015-10-31 3:58:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:58:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:58:55 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 3:58:55 - row num: 1
+2015-10-31 3:58:55 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 3:58:55 - no returned url
+2015-10-31 3:58:58 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:58:58 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:58:58 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 3:58:58 - row num: 1
+2015-10-31 3:58:58 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 3:58:58 - no returned url
+2015-10-31 3:59:01 - set shipping address id: 25
+2015-10-31 3:59:04 - set shipping address id: 25
+2015-10-31 3:59:05 - set shipping address id: undefined
+2015-10-31 3:59:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 3:59:16 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 3:59:16 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 3:59:16 - row num: 1
+2015-10-31 3:59:16 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 3:59:16 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom' and
+            address = 'Main St Vancouver BC' and
+            phone = 'fdsaf'
+2015-10-31 3:59:16 - row num: 0
+2015-10-31 3:59:16 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'tom',
+            lat = '49.24508849999999',
+            lng = '-123.1012672',
+            address = 'Main St Vancouver BC',
+            phone = 'fdsaf',date_updated=NOW()
+2015-10-31 4:02:31 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:02:31 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:02:31 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 4:02:31 - row num: 1
+2015-10-31 4:02:31 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 4:02:31 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom' and
+            address = 'Main St Vancouver BC' and
+            phone = 'fdsaf'
+2015-10-31 4:02:31 - row num: 1
+2015-10-31 4:02:31 - update oc_shipping_address set date_updated=NOW() where address_id=26
+2015-10-31 4:02:33 - set shipping address id: 26
+2015-10-31 4:02:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:02:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:02:49 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 4:02:49 - row num: 1
+2015-10-31 4:02:49 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 4:02:49 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom' and
+            address = 'Main St Vancouver BC' and
+            phone = 'fdsaf'
+2015-10-31 4:02:49 - row num: 1
+2015-10-31 4:02:49 - update oc_shipping_address set date_updated=NOW() where address_id=26
+2015-10-31 4:02:51 - set shipping address id: 26
+2015-10-31 4:02:51 - set shipping address id: 26
+2015-10-31 4:02:51 - set shipping address id: 26
+2015-10-31 4:04:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:04:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:04:05 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 4:04:05 - row num: 1
+2015-10-31 4:04:05 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 4:04:05 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom' and
+            address = 'Main St Vancouver BC' and
+            phone = 'fdsaf'
+2015-10-31 4:04:05 - row num: 1
+2015-10-31 4:04:05 - update oc_shipping_address set date_updated=NOW() where address_id=26
+2015-10-30 21:04:05 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 4:08:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:08:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:08:12 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 4:08:12 - row num: 1
+2015-10-31 4:08:12 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 4:08:12 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'tom' and
+            address = 'Main St Vancouver BC' and
+            phone = 'fdsaf'
+2015-10-31 4:08:12 - row num: 1
+2015-10-31 4:08:12 - update oc_shipping_address set date_updated=NOW() where address_id=26
+2015-10-30 21:08:12 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 4:08:17 - set shipping address id: undefined
+2015-10-31 4:08:33 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:08:33 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:08:33 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 4:08:33 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 4:08:33 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 4:08:33 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 4:09:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:09:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:09:06 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 4:09:06 - row num: 1
+2015-10-31 4:09:06 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 4:09:06 - no returned url
+2015-10-30 21:09:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 4:09:39 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:09:39 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:09:39 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 4:09:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:09:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:09:43 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 4:09:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 13
+2015-10-31 4:09:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\cart.tpl on line 19
+2015-10-31 4:09:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 4:09:48 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:09:48 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:09:48 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = '哈密尔顿 哈密尔顿 ON' and
+            phone = '1501071261'
+2015-10-31 4:09:48 - row num: 0
+2015-10-31 4:09:48 - INSERT INTO oc_shipping_address SET customer_id = '5',
+            contact = 'Tom1234',
+            lat = '43.25002080',
+            lng = '-79.86609140000001',
+            address = '哈密尔顿 哈密尔顿 ON',
+            phone = '1501071261',date_updated=NOW()
+2015-10-31 4:09:48 - no returned url
+2015-10-30 21:09:48 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 4:09:51 - set shipping address id: undefined
+2015-10-31 4:10:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 4:10:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 4:10:00 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = '哈密尔顿 哈密尔顿 ON' and
+            phone = '1501071261'
+2015-10-31 4:10:00 - row num: 1
+2015-10-31 4:10:00 - update oc_shipping_address set date_updated=NOW() where address_id=27
+2015-10-30 21:10:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 4:10:07 - set shipping address id: undefined
+2015-10-31 4:10:11 - set shipping address id: undefined
+2015-10-31 4:10:13 - set shipping address id: undefined
+2015-10-31 5:46:31 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 5:46:31 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 5:46:31 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 5:46:33 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 5:46:33 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 5:46:33 - modeltotalSubtotal: $sub_total: .1.98
+2015-10-31 5:47:36 - log for cart.addone method. 
+2015-10-31 5:47:36 - modeltotalSubtotal: $sub_total: .15.97
+2015-10-31 5:47:36 - modeltotalSubtotal: $sub_total: .15.97
+2015-10-31 5:47:37 - log for cart.addone method. 
+2015-10-31 5:47:37 - modeltotalSubtotal: $sub_total: .16.96
+2015-10-31 5:47:37 - modeltotalSubtotal: $sub_total: .16.96
+2015-10-31 5:47:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 5:47:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 5:47:38 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 5:47:38 - row num: 1
+2015-10-31 5:47:38 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 5:47:38 - no returned url
+2015-10-30 22:47:38 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 5:47:42 - set shipping address id: undefined
+2015-10-30 22:47:43 - ' store_id = '3
+2015-10-30 22:47:43 - ' store_name = 'Sushi Maro
+2015-10-30 22:47:43 - ' store_url = 'smartyourfood
+2015-10-30 22:47:43 - ' customer_id = '5
+2015-10-30 22:47:43 - ' customer_group_id = '1
+2015-10-30 22:47:43 - ' firstname = 'Tom1234
+2015-10-30 22:47:43 - ' lastname = 'null
+2015-10-30 22:47:43 - ' email = 'minzou@live.com
+2015-10-30 22:47:43 - ' telephone = '1501071261
+2015-10-30 22:47:43 - ' fax = 'null
+2015-10-30 22:47:43 - ' custom_field = 'b:0;
+2015-10-30 22:47:43 - ' payment_firstname = '
+2015-10-30 22:47:43 - ' payment_lastname = '
+2015-10-30 22:47:43 - ' payment_company = '
+2015-10-30 22:47:43 - ' payment_address_1 = '
+2015-10-30 22:47:43 - ' payment_address_2 = '
+2015-10-30 22:47:43 - ' payment_city = '
+2015-10-30 22:47:43 - ' payment_postcode = '
+2015-10-30 22:47:43 - ' payment_country = '
+2015-10-30 22:47:43 - ' payment_country_id = '0
+2015-10-30 22:47:43 - ' payment_zone = '
+2015-10-30 22:47:43 - ' payment_zone_id = '0
+2015-10-30 22:47:43 - ' payment_address_format = '
+2015-10-30 22:47:43 - ' payment_custom_field = 'a:0:{}
+2015-10-30 22:47:43 - ' payment_method = '
+2015-10-30 22:47:43 - ' payment_code = '
+2015-10-30 22:47:43 - ' shipping_firstname = '
+2015-10-30 22:47:43 - ' shipping_lastname = '
+2015-10-30 22:47:43 - ' shipping_company = 'u-says.com
+2015-10-30 22:47:43 - ' shipping_address_1 = '
+2015-10-30 22:47:43 - ' shipping_address_2 = '
+2015-10-30 22:47:43 - ' shipping_city = 'Vancouvor
+2015-10-30 22:47:43 - ' shipping_postcode = '
+2015-10-30 22:47:43 - ' shipping_country = 'CA
+2015-10-30 22:47:43 - ' shipping_country_id = '0
+2015-10-30 22:47:43 - ' shipping_zone = '
+2015-10-30 22:47:43 - ' shipping_zone_id = '0
+2015-10-30 22:47:43 - ' shipping_address_format = '
+2015-10-30 22:47:43 - ' shipping_custom_field = 'a:0:{}
+2015-10-30 22:47:43 - ' shipping_method = '
+2015-10-30 22:47:43 - ' shipping_code = '
+2015-10-30 22:47:43 - ' comment = '
+2015-10-30 22:47:43 - ' total = '28
+2015-10-30 22:47:43 - ' affiliate_id = '0
+2015-10-30 22:47:43 - ' commission = '0
+2015-10-30 22:47:43 - ' marketing_id = '0
+2015-10-30 22:47:43 - ' tracking = '
+2015-10-30 22:47:43 - ' language_id = '1
+2015-10-30 22:47:43 - ' currency_id = '4
+2015-10-30 22:47:43 - ' currency_code = 'CAD
+2015-10-30 22:47:43 - ' currency_value = '1
+2015-10-30 22:47:43 - ' ip = '::1
+2015-10-30 22:47:43 - ' forwarded_ip = '
+2015-10-30 22:47:43 - ' user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+2015-10-30 22:47:43 - ' accept_language = 'zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+2015-10-30 22:47:43 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-30 22:47:43 - food number: 3
+2015-10-30 22:47:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-30 22:47:43 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-30 22:47:56 - ' store_id = '3
+2015-10-30 22:47:56 - ' store_name = 'Sushi Maro
+2015-10-30 22:47:56 - ' store_url = 'smartyourfood
+2015-10-30 22:47:56 - ' customer_id = '5
+2015-10-30 22:47:56 - ' customer_group_id = '1
+2015-10-30 22:47:56 - ' firstname = 'Tom1234
+2015-10-30 22:47:56 - ' lastname = 'null
+2015-10-30 22:47:56 - ' email = 'minzou@live.com
+2015-10-30 22:47:56 - ' telephone = '1501071261
+2015-10-30 22:47:56 - ' fax = 'null
+2015-10-30 22:47:56 - ' custom_field = 'b:0;
+2015-10-30 22:47:56 - ' payment_firstname = '
+2015-10-30 22:47:56 - ' payment_lastname = '
+2015-10-30 22:47:56 - ' payment_company = '
+2015-10-30 22:47:56 - ' payment_address_1 = '
+2015-10-30 22:47:56 - ' payment_address_2 = '
+2015-10-30 22:47:56 - ' payment_city = '
+2015-10-30 22:47:56 - ' payment_postcode = '
+2015-10-30 22:47:56 - ' payment_country = '
+2015-10-30 22:47:56 - ' payment_country_id = '0
+2015-10-30 22:47:56 - ' payment_zone = '
+2015-10-30 22:47:56 - ' payment_zone_id = '0
+2015-10-30 22:47:56 - ' payment_address_format = '
+2015-10-30 22:47:56 - ' payment_custom_field = 'a:0:{}
+2015-10-30 22:47:56 - ' payment_method = '
+2015-10-30 22:47:56 - ' payment_code = '
+2015-10-30 22:47:56 - ' shipping_firstname = '
+2015-10-30 22:47:56 - ' shipping_lastname = '
+2015-10-30 22:47:56 - ' shipping_company = 'u-says.com
+2015-10-30 22:47:56 - ' shipping_address_1 = '
+2015-10-30 22:47:56 - ' shipping_address_2 = '
+2015-10-30 22:47:56 - ' shipping_city = 'Vancouvor
+2015-10-30 22:47:56 - ' shipping_postcode = '
+2015-10-30 22:47:56 - ' shipping_country = 'CA
+2015-10-30 22:47:56 - ' shipping_country_id = '0
+2015-10-30 22:47:56 - ' shipping_zone = '
+2015-10-30 22:47:56 - ' shipping_zone_id = '0
+2015-10-30 22:47:56 - ' shipping_address_format = '
+2015-10-30 22:47:56 - ' shipping_custom_field = 'a:0:{}
+2015-10-30 22:47:56 - ' shipping_method = '
+2015-10-30 22:47:56 - ' shipping_code = '
+2015-10-30 22:47:56 - ' comment = '
+2015-10-30 22:47:56 - ' total = '28
+2015-10-30 22:47:56 - ' affiliate_id = '0
+2015-10-30 22:47:56 - ' commission = '0
+2015-10-30 22:47:56 - ' marketing_id = '0
+2015-10-30 22:47:56 - ' tracking = '
+2015-10-30 22:47:56 - ' language_id = '1
+2015-10-30 22:47:56 - ' currency_id = '4
+2015-10-30 22:47:56 - ' currency_code = 'CAD
+2015-10-30 22:47:56 - ' currency_value = '1
+2015-10-30 22:47:56 - ' ip = '::1
+2015-10-30 22:47:56 - ' forwarded_ip = '
+2015-10-30 22:47:56 - ' user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+2015-10-30 22:47:56 - ' accept_language = 'zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+2015-10-30 22:47:56 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-30 22:47:56 - food number: 3
+2015-10-30 22:47:56 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-30 22:47:56 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 5:56:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 5:56:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 5:56:57 - modeltotalSubtotal: $sub_total: .16.96
+2015-10-31 5:57:03 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 5:57:03 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 5:57:03 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 5:57:03 - row num: 1
+2015-10-31 5:57:03 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 5:57:03 - no returned url
+2015-10-30 22:57:03 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 5:57:05 - set shipping address id: undefined
+2015-10-30 22:57:06 - ' store_id = '3
+2015-10-30 22:57:06 - ' store_name = 'Sushi Maro
+2015-10-30 22:57:06 - ' store_url = 'smartyourfood
+2015-10-30 22:57:06 - ' customer_id = '5
+2015-10-30 22:57:06 - ' customer_group_id = '1
+2015-10-30 22:57:06 - ' firstname = 'Tom1234
+2015-10-30 22:57:06 - ' lastname = 'null
+2015-10-30 22:57:06 - ' email = 'minzou@live.com
+2015-10-30 22:57:06 - ' telephone = '1501071261
+2015-10-30 22:57:06 - ' fax = 'null
+2015-10-30 22:57:06 - ' custom_field = 'b:0;
+2015-10-30 22:57:06 - ' payment_firstname = '
+2015-10-30 22:57:06 - ' payment_lastname = '
+2015-10-30 22:57:06 - ' payment_company = '
+2015-10-30 22:57:06 - ' payment_address_1 = '
+2015-10-30 22:57:06 - ' payment_address_2 = '
+2015-10-30 22:57:06 - ' payment_city = '
+2015-10-30 22:57:06 - ' payment_postcode = '
+2015-10-30 22:57:06 - ' payment_country = '
+2015-10-30 22:57:06 - ' payment_country_id = '0
+2015-10-30 22:57:06 - ' payment_zone = '
+2015-10-30 22:57:06 - ' payment_zone_id = '0
+2015-10-30 22:57:06 - ' payment_address_format = '
+2015-10-30 22:57:06 - ' payment_custom_field = 'a:0:{}
+2015-10-30 22:57:06 - ' payment_method = '
+2015-10-30 22:57:06 - ' payment_code = '
+2015-10-30 22:57:06 - ' shipping_firstname = '
+2015-10-30 22:57:06 - ' shipping_lastname = '
+2015-10-30 22:57:06 - ' shipping_company = 'u-says.com
+2015-10-30 22:57:06 - ' shipping_address_1 = '
+2015-10-30 22:57:06 - ' shipping_address_2 = '
+2015-10-30 22:57:06 - ' shipping_city = 'Vancouvor
+2015-10-30 22:57:06 - ' shipping_postcode = '
+2015-10-30 22:57:06 - ' shipping_country = 'CA
+2015-10-30 22:57:06 - ' shipping_country_id = '0
+2015-10-30 22:57:06 - ' shipping_zone = '
+2015-10-30 22:57:06 - ' shipping_zone_id = '0
+2015-10-30 22:57:06 - ' shipping_address_format = '
+2015-10-30 22:57:06 - ' shipping_custom_field = 'a:0:{}
+2015-10-30 22:57:06 - ' shipping_method = '
+2015-10-30 22:57:06 - ' shipping_code = '
+2015-10-30 22:57:06 - ' comment = '
+2015-10-30 22:57:06 - ' total = '28
+2015-10-30 22:57:06 - ' affiliate_id = '0
+2015-10-30 22:57:06 - ' commission = '0
+2015-10-30 22:57:06 - ' marketing_id = '0
+2015-10-30 22:57:06 - ' tracking = '
+2015-10-30 22:57:06 - ' language_id = '1
+2015-10-30 22:57:06 - ' currency_id = '4
+2015-10-30 22:57:06 - ' currency_code = 'CAD
+2015-10-30 22:57:06 - ' currency_value = '1
+2015-10-30 22:57:06 - ' ip = '::1
+2015-10-30 22:57:06 - ' forwarded_ip = '
+2015-10-30 22:57:06 - ' user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+2015-10-30 22:57:06 - ' accept_language = 'zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+2015-10-30 22:57:06 - food number: 3
+2015-10-30 22:57:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-30 22:57:06 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:02:09 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:02:09 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:02:09 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 6:02:09 - row num: 1
+2015-10-31 6:02:09 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 6:02:09 - no returned url
+2015-10-30 23:02:09 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 6:02:11 - set shipping address id: undefined
+2015-10-31 6:06:39 - set shipping address id: undefined
+2015-10-31 6:06:40 - set shipping address id: undefined
+2015-10-31 6:07:01 - set shipping address id: undefined
+2015-10-31 6:07:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:07:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:07:49 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 6:07:49 - row num: 1
+2015-10-31 6:07:49 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 6:07:49 - no returned url
+2015-10-30 23:07:49 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 6:07:50 - set shipping address id: address_25
+2015-10-30 23:07:51 - ' store_id = '3
+2015-10-30 23:07:51 - ' store_name = 'Sushi Maro
+2015-10-30 23:07:51 - ' store_url = 'smartyourfood
+2015-10-30 23:07:51 - ' customer_id = '5
+2015-10-30 23:07:51 - ' customer_group_id = '1
+2015-10-30 23:07:51 - ' firstname = 'Tom1234
+2015-10-30 23:07:51 - ' lastname = 'null
+2015-10-30 23:07:51 - ' email = 'minzou@live.com
+2015-10-30 23:07:51 - ' telephone = '1501071261
+2015-10-30 23:07:51 - ' fax = 'null
+2015-10-30 23:07:51 - ' custom_field = 'b:0;
+2015-10-30 23:07:51 - ' payment_firstname = '
+2015-10-30 23:07:51 - ' payment_lastname = '
+2015-10-30 23:07:51 - ' payment_company = '
+2015-10-30 23:07:51 - ' payment_address_1 = '
+2015-10-30 23:07:51 - ' payment_address_2 = '
+2015-10-30 23:07:51 - ' payment_city = '
+2015-10-30 23:07:51 - ' payment_postcode = '
+2015-10-30 23:07:51 - ' payment_country = '
+2015-10-30 23:07:51 - ' payment_country_id = '0
+2015-10-30 23:07:51 - ' payment_zone = '
+2015-10-30 23:07:51 - ' payment_zone_id = '0
+2015-10-30 23:07:51 - ' payment_address_format = '
+2015-10-30 23:07:51 - ' payment_custom_field = 'a:0:{}
+2015-10-30 23:07:51 - ' payment_method = '
+2015-10-30 23:07:51 - ' payment_code = '
+2015-10-30 23:07:51 - ' shipping_firstname = '
+2015-10-30 23:07:51 - ' shipping_lastname = '
+2015-10-30 23:07:51 - ' shipping_company = 'u-says.com
+2015-10-30 23:07:51 - ' shipping_address_1 = '
+2015-10-30 23:07:51 - ' shipping_address_2 = '
+2015-10-30 23:07:51 - ' shipping_city = 'Vancouvor
+2015-10-30 23:07:51 - ' shipping_postcode = '
+2015-10-30 23:07:51 - ' shipping_country = 'CA
+2015-10-30 23:07:51 - ' shipping_country_id = '0
+2015-10-30 23:07:51 - ' shipping_zone = '
+2015-10-30 23:07:51 - ' shipping_zone_id = '0
+2015-10-30 23:07:51 - ' shipping_address_format = '
+2015-10-30 23:07:51 - ' shipping_custom_field = 'a:0:{}
+2015-10-30 23:07:51 - ' shipping_method = '
+2015-10-30 23:07:51 - ' shipping_code = '
+2015-10-30 23:07:51 - ' comment = '
+2015-10-30 23:07:51 - ' total = '30
+2015-10-30 23:07:51 - ' affiliate_id = '0
+2015-10-30 23:07:51 - ' commission = '0
+2015-10-30 23:07:51 - ' marketing_id = '0
+2015-10-30 23:07:51 - ' tracking = '
+2015-10-30 23:07:51 - ' language_id = '1
+2015-10-30 23:07:51 - ' currency_id = '4
+2015-10-30 23:07:51 - ' currency_code = 'CAD
+2015-10-30 23:07:51 - ' currency_value = '1
+2015-10-30 23:07:51 - ' ip = '::1
+2015-10-30 23:07:51 - ' forwarded_ip = '
+2015-10-30 23:07:51 - ' user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+2015-10-30 23:07:51 - ' accept_language = 'zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+2015-10-30 23:07:51 - food number: 3
+2015-10-30 23:07:51 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-30 23:07:51 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:07:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:07:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:07:55 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 6:07:55 - row num: 1
+2015-10-31 6:07:55 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 6:07:55 - no returned url
+2015-10-30 23:07:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 6:07:56 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:07:56 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:07:56 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 6:07:56 - row num: 1
+2015-10-31 6:07:56 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 6:07:56 - no returned url
+2015-10-30 23:07:56 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 6:07:58 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:07:58 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:07:58 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 6:07:58 - row num: 1
+2015-10-31 6:07:58 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 6:07:58 - no returned url
+2015-10-30 23:07:58 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 6:08:01 - set shipping address id: address_25
+2015-10-30 23:08:02 - ' store_id = '3
+2015-10-30 23:08:02 - ' store_name = 'Sushi Maro
+2015-10-30 23:08:02 - ' store_url = 'smartyourfood
+2015-10-30 23:08:02 - ' customer_id = '5
+2015-10-30 23:08:02 - ' customer_group_id = '1
+2015-10-30 23:08:02 - ' firstname = 'Tom1234
+2015-10-30 23:08:02 - ' lastname = 'null
+2015-10-30 23:08:02 - ' email = 'minzou@live.com
+2015-10-30 23:08:02 - ' telephone = '1501071261
+2015-10-30 23:08:02 - ' fax = 'null
+2015-10-30 23:08:02 - ' custom_field = 'b:0;
+2015-10-30 23:08:02 - ' payment_firstname = '
+2015-10-30 23:08:02 - ' payment_lastname = '
+2015-10-30 23:08:02 - ' payment_company = '
+2015-10-30 23:08:02 - ' payment_address_1 = '
+2015-10-30 23:08:02 - ' payment_address_2 = '
+2015-10-30 23:08:02 - ' payment_city = '
+2015-10-30 23:08:02 - ' payment_postcode = '
+2015-10-30 23:08:02 - ' payment_country = '
+2015-10-30 23:08:02 - ' payment_country_id = '0
+2015-10-30 23:08:02 - ' payment_zone = '
+2015-10-30 23:08:02 - ' payment_zone_id = '0
+2015-10-30 23:08:02 - ' payment_address_format = '
+2015-10-30 23:08:02 - ' payment_custom_field = 'a:0:{}
+2015-10-30 23:08:02 - ' payment_method = '
+2015-10-30 23:08:02 - ' payment_code = '
+2015-10-30 23:08:02 - ' shipping_firstname = '
+2015-10-30 23:08:02 - ' shipping_lastname = '
+2015-10-30 23:08:02 - ' shipping_company = 'u-says.com
+2015-10-30 23:08:02 - ' shipping_address_1 = '
+2015-10-30 23:08:02 - ' shipping_address_2 = '
+2015-10-30 23:08:02 - ' shipping_city = 'Vancouvor
+2015-10-30 23:08:02 - ' shipping_postcode = '
+2015-10-30 23:08:02 - ' shipping_country = 'CA
+2015-10-30 23:08:02 - ' shipping_country_id = '0
+2015-10-30 23:08:02 - ' shipping_zone = '
+2015-10-30 23:08:02 - ' shipping_zone_id = '0
+2015-10-30 23:08:02 - ' shipping_address_format = '
+2015-10-30 23:08:02 - ' shipping_custom_field = 'a:0:{}
+2015-10-30 23:08:02 - ' shipping_method = '
+2015-10-30 23:08:02 - ' shipping_code = '
+2015-10-30 23:08:02 - ' comment = '
+2015-10-30 23:08:02 - ' total = '30
+2015-10-30 23:08:02 - ' affiliate_id = '0
+2015-10-30 23:08:02 - ' commission = '0
+2015-10-30 23:08:02 - ' marketing_id = '0
+2015-10-30 23:08:02 - ' tracking = '
+2015-10-30 23:08:02 - ' language_id = '1
+2015-10-30 23:08:02 - ' currency_id = '4
+2015-10-30 23:08:02 - ' currency_code = 'CAD
+2015-10-30 23:08:02 - ' currency_value = '1
+2015-10-30 23:08:02 - ' ip = '::1
+2015-10-30 23:08:02 - ' forwarded_ip = '
+2015-10-30 23:08:02 - ' user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+2015-10-30 23:08:02 - ' accept_language = 'zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+2015-10-30 23:08:02 - food number: 3
+2015-10-30 23:08:02 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-30 23:08:02 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:08:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:08:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:08:04 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 6:08:04 - row num: 1
+2015-10-31 6:08:04 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 6:08:04 - no returned url
+2015-10-30 23:08:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 6:08:26 - set shipping address id: address_25
+2015-10-31 6:08:52 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:08:52 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:08:52 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 6:08:52 - row num: 1
+2015-10-31 6:08:52 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 6:08:52 - no returned url
+2015-10-30 23:08:52 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 6:09:02 - set shipping address id: 25
+2015-10-30 23:09:04 - ' store_id = '3
+2015-10-30 23:09:04 - ' store_name = 'Sushi Maro
+2015-10-30 23:09:04 - ' store_url = 'smartyourfood
+2015-10-30 23:09:04 - ' customer_id = '5
+2015-10-30 23:09:04 - ' customer_group_id = '1
+2015-10-30 23:09:04 - ' firstname = 'Tom1234
+2015-10-30 23:09:04 - ' lastname = 'null
+2015-10-30 23:09:04 - ' email = 'minzou@live.com
+2015-10-30 23:09:04 - ' telephone = '1501071261
+2015-10-30 23:09:04 - ' fax = 'null
+2015-10-30 23:09:04 - ' custom_field = 'b:0;
+2015-10-30 23:09:04 - ' payment_firstname = '
+2015-10-30 23:09:04 - ' payment_lastname = '
+2015-10-30 23:09:04 - ' payment_company = '
+2015-10-30 23:09:04 - ' payment_address_1 = '
+2015-10-30 23:09:04 - ' payment_address_2 = '
+2015-10-30 23:09:04 - ' payment_city = '
+2015-10-30 23:09:04 - ' payment_postcode = '
+2015-10-30 23:09:04 - ' payment_country = '
+2015-10-30 23:09:04 - ' payment_country_id = '0
+2015-10-30 23:09:04 - ' payment_zone = '
+2015-10-30 23:09:04 - ' payment_zone_id = '0
+2015-10-30 23:09:04 - ' payment_address_format = '
+2015-10-30 23:09:04 - ' payment_custom_field = 'a:0:{}
+2015-10-30 23:09:04 - ' payment_method = '
+2015-10-30 23:09:04 - ' payment_code = '
+2015-10-30 23:09:04 - ' shipping_firstname = 'Tom1234
+2015-10-30 23:09:04 - ' shipping_lastname = '
+2015-10-30 23:09:04 - ' shipping_company = 'u-says.com
+2015-10-30 23:09:04 - ' shipping_address_1 = 'Main St Vancouver BC
+2015-10-30 23:09:04 - ' shipping_address_2 = '1501071261
+2015-10-30 23:09:04 - ' shipping_city = 'Vancouvor
+2015-10-30 23:09:04 - ' shipping_postcode = '
+2015-10-30 23:09:04 - ' shipping_country = 'CA
+2015-10-30 23:09:04 - ' shipping_country_id = '0
+2015-10-30 23:09:04 - ' shipping_zone = '
+2015-10-30 23:09:04 - ' shipping_zone_id = '0
+2015-10-30 23:09:04 - ' shipping_address_format = '
+2015-10-30 23:09:04 - ' shipping_custom_field = 'a:0:{}
+2015-10-30 23:09:04 - ' shipping_method = '
+2015-10-30 23:09:04 - ' shipping_code = '
+2015-10-30 23:09:04 - ' comment = '
+2015-10-30 23:09:04 - ' total = '30
+2015-10-30 23:09:04 - ' affiliate_id = '0
+2015-10-30 23:09:04 - ' commission = '0
+2015-10-30 23:09:04 - ' marketing_id = '0
+2015-10-30 23:09:04 - ' tracking = '
+2015-10-30 23:09:04 - ' language_id = '1
+2015-10-30 23:09:04 - ' currency_id = '4
+2015-10-30 23:09:04 - ' currency_code = 'CAD
+2015-10-30 23:09:04 - ' currency_value = '1
+2015-10-30 23:09:04 - ' ip = '::1
+2015-10-30 23:09:04 - ' forwarded_ip = '
+2015-10-30 23:09:04 - ' user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+2015-10-30 23:09:04 - ' accept_language = 'zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+2015-10-30 23:09:04 - food number: 3
+2015-10-30 23:09:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-30 23:09:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-30 23:10:47 - ' store_id = '3
+2015-10-30 23:10:47 - ' store_name = 'Sushi Maro
+2015-10-30 23:10:47 - ' store_url = 'smartyourfood
+2015-10-30 23:10:47 - ' customer_id = '5
+2015-10-30 23:10:47 - ' customer_group_id = '1
+2015-10-30 23:10:47 - ' firstname = 'Tom1234
+2015-10-30 23:10:47 - ' lastname = 'null
+2015-10-30 23:10:47 - ' email = 'minzou@live.com
+2015-10-30 23:10:47 - ' telephone = '1501071261
+2015-10-30 23:10:47 - ' fax = 'null
+2015-10-30 23:10:47 - ' custom_field = 'b:0;
+2015-10-30 23:10:47 - ' payment_firstname = '
+2015-10-30 23:10:47 - ' payment_lastname = '
+2015-10-30 23:10:47 - ' payment_company = '
+2015-10-30 23:10:47 - ' payment_address_1 = '
+2015-10-30 23:10:47 - ' payment_address_2 = '
+2015-10-30 23:10:47 - ' payment_city = '
+2015-10-30 23:10:47 - ' payment_postcode = '
+2015-10-30 23:10:47 - ' payment_country = '
+2015-10-30 23:10:47 - ' payment_country_id = '0
+2015-10-30 23:10:47 - ' payment_zone = '
+2015-10-30 23:10:47 - ' payment_zone_id = '0
+2015-10-30 23:10:47 - ' payment_address_format = '
+2015-10-30 23:10:47 - ' payment_custom_field = 'a:0:{}
+2015-10-30 23:10:47 - ' payment_method = '
+2015-10-30 23:10:47 - ' payment_code = '
+2015-10-30 23:10:47 - ' shipping_firstname = 'Tom1234
+2015-10-30 23:10:47 - ' shipping_lastname = '
+2015-10-30 23:10:47 - ' shipping_company = 'u-says.com
+2015-10-30 23:10:47 - ' shipping_address_1 = 'Main St Vancouver BC
+2015-10-30 23:10:47 - ' shipping_address_2 = '1501071261
+2015-10-30 23:10:47 - ' shipping_city = 'Vancouvor
+2015-10-30 23:10:47 - ' shipping_postcode = '
+2015-10-30 23:10:47 - ' shipping_country = 'CA
+2015-10-30 23:10:47 - ' shipping_country_id = '0
+2015-10-30 23:10:47 - ' shipping_zone = '
+2015-10-30 23:10:47 - ' shipping_zone_id = '0
+2015-10-30 23:10:47 - ' shipping_address_format = '
+2015-10-30 23:10:47 - ' shipping_custom_field = 'a:0:{}
+2015-10-30 23:10:47 - ' shipping_method = '
+2015-10-30 23:10:47 - ' shipping_code = '
+2015-10-30 23:10:47 - ' comment = '
+2015-10-30 23:10:47 - ' total = '30
+2015-10-30 23:10:47 - ' affiliate_id = '0
+2015-10-30 23:10:47 - ' commission = '0
+2015-10-30 23:10:47 - ' marketing_id = '0
+2015-10-30 23:10:47 - ' tracking = '
+2015-10-30 23:10:47 - ' language_id = '1
+2015-10-30 23:10:47 - ' currency_id = '4
+2015-10-30 23:10:47 - ' currency_code = 'CAD
+2015-10-30 23:10:47 - ' currency_value = '1
+2015-10-30 23:10:47 - ' ip = '::1
+2015-10-30 23:10:47 - ' forwarded_ip = '
+2015-10-30 23:10:47 - ' user_agent = 'Mozilla/5.0 (Windows NT 10.0; WOW64; Trident/7.0; Touch; rv:11.0) like Gecko
+2015-10-30 23:10:47 - ' accept_language = 'zh-Hans-CN,zh-Hans;q=0.8,en-US;q=0.5,en;q=0.3
+2015-10-30 23:10:47 - food number: 3
+2015-10-30 23:10:47 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-30 23:10:47 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:10:52 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\mail\order.tpl on line 106
+2015-10-31 6:10:52 - PHP 2:  Warning in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\mail\order.tpl on line 106
+2015-10-31 6:10:52 - start to notify admin, order id: 75
+2015-10-31 6:10:54 - select name,model,quantity,price,total,tax from oc_order_product where order_id=75
+2015-10-31 6:10:55 - end of notifying admin
+2015-10-31 6:10:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 6:10:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 6:10:55 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 6:10:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\account\account.tpl on line 34
+2015-10-31 6:24:55 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:25:39 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:26:10 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:29:41 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 6:33:35 - PHP 1024:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\system\library\db\mysqli.php on line 41
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 11
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 12
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 13
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 14
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 15
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 16
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 17
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 18
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 19
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 20
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 21
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 22
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 23
+2015-10-31 7:17:14 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\controller\sfrest\uploadrests.php on line 24
+2015-10-31 7:39:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:39:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:39:58 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:40:29 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:40:29 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:40:29 - select address_id from oc_shipping_address where customer_id = '5' and
+            contact = 'Tom1234' and
+            address = 'Main St Vancouver BC' and
+            phone = '1501071261'
+2015-10-31 7:40:29 - row num: 1
+2015-10-31 7:40:29 - update oc_shipping_address set date_updated=NOW() where address_id=25
+2015-10-31 7:40:29 - no returned url
+2015-10-31 0:40:29 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\sfcheckout\cart.tpl on line 84
+2015-10-31 7:42:40 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:42:40 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:42:40 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:47:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:47:57 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:47:57 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:48:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:48:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:48:50 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:49:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:49:50 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:49:50 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:52:29 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:52:29 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:52:29 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:52:46 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:52:46 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:52:46 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:55:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:55:00 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:55:00 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:58:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:58:04 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:58:04 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 7:58:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 7:58:55 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 7:58:55 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 8:00:36 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 8:00:36 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 8:00:36 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 8:01:28 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 3
+2015-10-31 8:01:28 - PHP 8:  Notice in C:\Users\v-yhe\git\SmartYourFood\Code\upload\catalog\view\theme\default\template\common\sfheader.tpl on line 4
+2015-10-31 8:01:28 - modeltotalSubtotal: $sub_total: .0
+2015-10-31 8:01:45 - log for cart.addone method. 
+2015-10-31 8:01:45 - modeltotalSubtotal: $sub_total: .12.5
+2015-10-31 8:01:45 - modeltotalSubtotal: $sub_total: .12.5
+2015-10-31 8:01:46 - log for cart.addone method. 
+2015-10-31 8:01:46 - modeltotalSubtotal: $sub_total: .19.4
+2015-10-31 8:01:46 - modeltotalSubtotal: $sub_total: .19.4
+2015-10-31 8:01:47 - log for cart.addone method. 
+2015-10-31 8:01:47 - modeltotalSubtotal: $sub_total: .26.3
+2015-10-31 8:01:47 - modeltotalSubtotal: $sub_total: .26.3

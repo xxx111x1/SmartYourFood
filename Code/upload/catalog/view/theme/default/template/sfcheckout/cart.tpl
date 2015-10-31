@@ -68,7 +68,7 @@
     </div>
     ﻿<div class="addressarea">
     <?php foreach ($addresslist as $address) { ?>
-    <div class="addressbox" id="address_<?php echo $address['address_id'];?>">
+    <div class="addressbox" id="address_<?php echo $address['address_id'];?>" addr_id="<?php echo $address['address_id'];?>">
         <div style="margin-bottom: 20px;margin-top: 20px">
             <span id="contact_<?php echo $address['address_id'];?>" ><?php echo $address['contact'];?></span>
             <span class='deleteAddress' addr_id="<?php echo $address['address_id'];?>" >删除</span>
