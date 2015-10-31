@@ -36,6 +36,10 @@ class UsaysMessager{
         $query_str = "select name,model,quantity,price,total,tax from ".DB_PREFIX."order_product where order_id=".$orderid;
         $this->log->write($query_str);
         $query_res = $this->db->query($query_str);
+        if(count($query_res->rows)<1)
+        {
+            return "无效的订单编号: ".$orderid;
+        }
         $order_detail=' 订单详情: ';
         foreach($query_res->rows as $query_res)
         {
@@ -58,6 +62,11 @@ class UsaysMessager{
 		                        shipping_address_2,
 		                        telephone,
 		                        date_modified from ".DB_PREFIX."order where order_id=".$orderid);
+        if(count($query_res->rows)<1)
+        {
+            return "无效的订单编号: ".$orderid;
+        }
+
         $order_detail = $query_res->row;
         $msg = '订单编号: '.$order_detail['order_id'].
             '\n发货地址: '.$order_detail['store_address'].
@@ -91,18 +100,24 @@ class UsaysMessager{
     //确认配送人员收到消息，司机已经出发
     public function receive_logistic_confirmmsg($orderid)
     {
-        //update
+        return "系统已经收到确认信息";
     }
 
 
 
 //发送给客服的消息， 订单详情
-    public function sendOperatorDetail($orderid)
+    public function makeOperatorDetail($orderid)
     {
         $msg = $this->getShippingInfo($orderid);
         $detail = $this->getOrderDetail($orderid);
-        $confirm = '回复:\n  下单成功:'.$orderid."\n 通知跑腿帮";
-        return $this->sendmsg($this->operatorid,$msg.'\n'.$detail.'\n'.$confirm);
+        $confirm = '回复:\n  下单成功 '.$orderid."\n 通知跑腿帮";
+        return $msg.'\n'.$detail.'\n'.$confirm;
+    }
+
+    public function sendOperatorDetail($orderid)
+    {
+        $msg = $this->makeOperatorDetail($orderid);
+        return $this->sendmsg($this->operatorid,$msg);
     }
 //接收客服部分的消息
     //接收来自客服的下单成功消息
@@ -113,7 +128,7 @@ class UsaysMessager{
         //1. first update database
 
         //2.send detail information to deliver man
-        $this->sendDeliverymanDetail($orderid);
+        return $this->makeOperatorDetail($orderid);
     }
 
 
