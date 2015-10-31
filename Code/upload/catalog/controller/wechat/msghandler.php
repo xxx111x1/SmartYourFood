@@ -6,7 +6,7 @@
  * Time: 14:19
  */
 class ControllerWechatMsghandler extends Controller{
-    private $operatorid='omiagw6HuwXD95DmvmpY27rs1y1c';
+    private $operatorid='omiagw0Fg6sXNqbbq91jV9X2pS6w';
     private $deliveryid='omiagwzBMqBnpGLL5o6qAhUNOZlg';
 
     public function index()
