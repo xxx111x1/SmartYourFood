@@ -62,7 +62,7 @@
     </div>
     <div class="addressarea">
         <?php if($validaddress){ ?>
-        <div class="addressbox">
+        <div class="addressbox" style="border-style: solid;border-color: #f65053;border-width: 1px;">
             <div style="margin-bottom: 20px;margin-top: 20px">
                 <span><?php echo $contact;?></span>
             </div>
