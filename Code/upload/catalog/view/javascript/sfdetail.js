@@ -125,7 +125,7 @@ $(document).ready(function () {
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
 						name = v.rest_name
-						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
 											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
 											'<div class="thumb_desc_productprice">C$ '+v.price+'</div></div></div>';
@@ -134,7 +134,11 @@ $(document).ready(function () {
 					
 					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';
 					$('.product_area').append(ele);
-				});					
+				});			
+				var url =window.location.href; 
+				if(url.indexOf('#')>0){
+					window.location.href=window.location.href;
+				}
 			}
 		});		
 	}
@@ -168,3 +172,13 @@ $(document).ready(function () {
 		return dist.toFixed(2);
 	}
 });
+
+function onDishImgError(source){
+	source.src = "./catalog/view/theme/default/image/foodImages/dish_default.jpg";
+	source.onerror="";
+}
+
+function onRestImgError(source){
+	source.src = "./catalog/view/theme/default/image/foodImages/restaurant_default.jpg";
+	source.onerror="";
+}
