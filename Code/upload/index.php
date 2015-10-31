@@ -127,6 +127,9 @@ $wechat = new Wechat($registry);
 $registry->set('wechat',$wechat);
 // Session
 $session = new Session();
+//
+$msg = new UsaysMessager($registry);
+$registry->set('msg',$msg);
 
 // For API requests we need to create a separate cookie
 if (isset($request->get['token']) && isset($request->get['route']) && substr($request->get['route'], 0, 4) == 'api/') {
