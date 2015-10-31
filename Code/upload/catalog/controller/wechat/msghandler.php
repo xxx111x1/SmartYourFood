@@ -24,7 +24,8 @@ class ControllerWechatMsghandler extends Controller{
     public function process($from, $msg)
     {
         $msg=trim($msg);
-        $parts = explode(':',$msg);
+        $parts = explode(' ',$msg);
+        $parts = array_filter($msg, 'strlen');
         if(count($parts)!=2)
         {
             return $this->invalid_msg_reply($from,$msg);
