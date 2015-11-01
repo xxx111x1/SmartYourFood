@@ -40,21 +40,20 @@ class ControllerSffoodSearch extends Controller{
         $food_list = $this->model_sffood_food->getFoodByName($food_name);
         if(isset($this->session->data['lat'])&&isset($this->session->data['lng']))
         {
-            foreach($food_list as $food)
+            foreach($food_list as $key => $value)
             {
                 $dist = $this->model_account_address->getDistance($this->session->data['lat'],
                     $this->session->data['lng'],
-                    $food['lat'],
-                    $food['lng']);
+                    $food_list[$key]['lat'],
+                    $food_list[$key]['lng']);
 
-                $food['dist'] = round($dist/1000,2);
+                $food_list[$key]['dist'] = $dist;
             }
         }
         $data['foods'] =$food_list;
         $rest_list = $this->model_sfrest_information->getRestaurantsByName($food_name);
         foreach ($rest_list as $key => $value){
         	if(isset($this->session->data['address'])){
-        		$this->load->model('account/address');
         		$rest_list[$key]['distance'] = $this->model_account_address->getDistance($this->session->data['lat'], $this->session->data['lng'], $rest_list[$key]['lat'], $rest_list[$key]['lng']);
         	}
         	else{
