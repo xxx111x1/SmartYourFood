@@ -1,4 +1,20 @@
+	function swapImages(){
+		if($('#ads .active:hover').length <= 0){
+			var $active = $('#ads .active');
+			var $next = ($('#ads .active').next().length > 0) ? $('#ads .active').next() : $('#ads img:first');
+			$active.fadeOut(function(){
+			 $active.removeClass('active');
+			  $next.fadeIn().addClass('active');
+			});
+		}
+	}
+	
 $(document).ready(function () {
+	setInterval('swapImages()', 5000);
+    
+	$(document).on('click','#showRestaurant',function(){
+		window.location.href="/index.php?route=sfrest/detail&restaurant_id=8&returnUrl=/index.php?route=common/list";
+	});
 	
 	var type=$('#searchType').val();	
 	if(window.location.search.indexOf('restaurant') >= 0){
