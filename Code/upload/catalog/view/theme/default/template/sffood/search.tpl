@@ -27,7 +27,7 @@
             <div class=food_information <?php echo $nofood?>>
             <?php foreach ($foods as $food) { ?>
             <div class=sf_product id="<?php echo $food['food_id'];?>" title="<?php echo $food['name'];?>" >
-                <img class=sf_product_preview src="<?php echo $food['img_url'];?>" />
+                <img class=sf_product_preview src="<?php echo $food['img_url'];?>"  alt="Image not found" onerror="onDishImgError(this)"  />
                 <div class=sf_product_title ><?php echo $food['name'];?></div>
                 <img class=sf_product_stars src="img/stars_2.png">
                 <div class=sf_product_sv>本月销量-份</div>
@@ -50,7 +50,7 @@
             <div class="food_information">
                 <?php foreach ($rests as $restaurant) { ?>
                 <div class=sf_product id=<?php echo $restaurant['restaurant_id']; ?> title=<?php echo $restaurant['name']; ?> >
-                <img class=sf_product_preview src=<?php echo $restaurant['img_url']?> />
+                <img class=sf_product_preview src=<?php echo $restaurant['img_url']?>  alt="Image not found" onerror="onRestImgError(this)" />
                 <div class=sf_product_title ><?php echo $restaurant['name']; ?></div>
                 <img class=sf_product_stars src="img/stars_2.png">
                 <div class=sf_product_sv><?php echo "本月销量-份" ?></div>

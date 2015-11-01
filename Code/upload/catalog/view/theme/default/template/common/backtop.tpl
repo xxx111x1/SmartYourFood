@@ -40,7 +40,7 @@
 		</div>
 		<div class="callcenter-wrap unvisible">
 		    <div class="callcenter-contact">
-		    	联系电话： 6048325933
+		    	email地址:  info@usays.ca
 		    </div>
 		    <input type="button" value="返回" class="cancelBtn callcenter-cancel">
 		</div>

@@ -31,7 +31,7 @@
         <?php $productnum=0; foreach ($foods as $food) { ?>
         <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
             <div class="thumb" id="<?php echo $food['food_id'];?>">
-                <img  class="thumb_preview" width="370" height="256" src="<?php echo $food['img_url'];?>"/>
+                <img  class="thumb_preview" width="370" height="256" src="<?php echo $food['img_url'];?>"  alt="Image not found" onerror="onDishImgError(this)" />
                 <div class="thumboverlay">
                     <div class="thumb_add2cart" foodid="<?php echo $food['food_id'];?>">
                     </div>
@@ -65,7 +65,7 @@
         <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
             <div class="thumb" id="<?php echo $restaurant['restaurant_id']; ?> ">
                 <a href="/index.php?route=sfrest/detail&restaurant_id=<?php echo $restaurant['restaurant_id']; ?>">
-                <img  class="thumb_preview" width="370" height="256" src="<?php echo $restaurant['img_url']?>"/>
+                <img  class="thumb_preview" width="370" height="256" src="<?php echo $restaurant['img_url']?>" alt="Image not found" onerror="onRestImgError(this)"/>
                 </a>
             </div>
             <div class="thumb_desc">
