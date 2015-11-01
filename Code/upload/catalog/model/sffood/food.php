@@ -76,7 +76,7 @@ class ModelSffoodFood extends Model{
     }
     
     public function getFoodsWithRestaurantInfo($filters = "0", $sort = " sell_number desc, review_score desc", $start = 0, $number = 16) {
-    	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b where a.restaurant_id = b.restaurant_id ";
+    	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b where a.restaurant_id = b.restaurant_id and a.available =1 ";
     	if($filters != "0"){
     		$sql .= " and a.tags in (" . $filters .") ";
     	}
@@ -88,7 +88,7 @@ class ModelSffoodFood extends Model{
     
     
     public function getFood($food_id){
-    	$sql = "SELECT * FROM " . DB_PREFIX . "food where food_id = '" . (int)$food_id . "'" ;
+    	$sql = "SELECT * FROM " . DB_PREFIX . "food where available = 1 and food_id = '" . (int)$food_id . "'" ;
     	$query = $this->db->query($sql);
     	return $query->row;
     }
