@@ -20,8 +20,14 @@ $(document).ready(function () {
 			isRefreshType = true;
 			$('#food_tab').addClass('selected_type_tab');
 			$('#restaurant_tab').removeClass('selected_type_tab');
-			$('.filter_field').remove();
+			$('.filteritem').removeClass('filter_field_selected');	
+			$('.filtericon').each(function(){
+				var backgroundImage = $(this).css('background-image');
+				$(this).css('background-image',backgroundImage.replace('on.','off.'));
+			});
 			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+			$('#filter_0').addClass('filter_field_selected');
+			$('#filters').val('0');
 			isRefreshType = false;
 		}		
 	});
@@ -32,8 +38,14 @@ $(document).ready(function () {
 			isRefreshType = true;
 			$('#restaurant_tab').addClass('selected_type_tab');
 			$('#food_tab').removeClass('selected_type_tab');
-			$('.filter_field').remove();
+			$('.filteritem').removeClass('filter_field_selected');
+			$('.filtericon').each(function(){
+				var backgroundImage = $(this).css('background-image');
+				$(this).css('background-image',backgroundImage.replace('on.','off.'));
+			});
 			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
+			$('#filter_0').addClass('filter_field_selected');
+			$('#filters').val('0');
 			isRefreshType = false;
 		}		
 	});	

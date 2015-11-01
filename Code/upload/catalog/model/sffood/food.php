@@ -66,9 +66,10 @@ class ModelSffoodFood extends Model{
     }
 
     public function getFoods($filters = "0", $sort = " sell_number desc, review_score desc", $start = 0, $number = 16) {
-    	$sql = "SELECT *,0 as cart_number FROM " . DB_PREFIX . "food ";
+    	$sql = "SELECT *,0 as cart_number FROM " . DB_PREFIX . "food where available= 1";
     	if($filters != "0"){
-    		$sql .= "where tags in (" . $filters .") ";
+    		$filters = str_replace(',','|',$filters);
+    		$sql .= "and tags REGEXP '" . $filters ."' ";
     	}
     	$sql .= " order by " . $sort . " limit " . $start . "," . $number;
     	$query = $this->db->query($sql);
@@ -78,7 +79,8 @@ class ModelSffoodFood extends Model{
     public function getFoodsWithRestaurantInfo($filters = "0", $sort = " sell_number desc, review_score desc", $start = 0, $number = 16) {
     	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b where a.restaurant_id = b.restaurant_id and a.available =1 ";
     	if($filters != "0"){
-    		$sql .= " and a.tags in (" . $filters .") ";
+    		$filters = str_replace(',','|',$filters);
+    		$sql .= "and a.tags REGEXP '" . $filters ."' ";
     	}
     	$sql .= " order by " . $sort . " limit " . $start . "," . $number;
     	//echo $sql;
