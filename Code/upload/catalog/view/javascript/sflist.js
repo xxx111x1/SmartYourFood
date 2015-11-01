@@ -102,7 +102,11 @@ $(document).ready(function () {
 		if (type=='food'){			
 			var foodId = $(this).attr('foodid');
 			url = url+ '&food_id=' + foodId;
-		}						
+			url = url + "&returnUrl=/index.php?route=common/list";
+		}
+		else{
+			url = url + "&returnUrl=/index.php?route=common/list&restaurant=1";
+		}
 		window.location.href = url;
 	});
 	

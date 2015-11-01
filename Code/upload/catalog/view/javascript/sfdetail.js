@@ -74,6 +74,10 @@ $(document).ready(function () {
 	$('#sort_default').addClass('sort_field_selected');
 	initialContent();
 	
+	$('#back-tab').click(function() {
+		window.location.href =$('#back-tab').attr('url');  
+	});
+	
 	$('#food-tab').click(function() {
 		if(!$('#food-tab').hasClass('selected_type_tab')){
 			$('#food-tab').addClass('selected_type_tab');
@@ -136,7 +140,7 @@ $(document).ready(function () {
 						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
 											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
-											'<div class="thumb_desc_productprice">C$ '+v.price+'</div></div></div>';
+											'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
 					
 					      					
 					

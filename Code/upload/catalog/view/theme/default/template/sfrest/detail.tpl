@@ -43,7 +43,8 @@
     <div class="tabmenu">
         <div class="contenttab">
         	<div id="sepcial-tab" class="type_tab">特色菜品</div>
-        	<div id="food-tab" class="type_tab">全部菜品</div>                        
+        	<div id="food-tab" class="type_tab">全部菜品</div>
+        	<div id="back-tab" class="type_tab" url="<?php echo $return_url;?>">返回重选</div>                           
         </div>
 		<div class="search-bar">
 			<input id="searchType" type="hidden" value="food" />

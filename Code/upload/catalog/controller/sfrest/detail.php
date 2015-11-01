@@ -3,7 +3,16 @@ class ControllerSfrestDetail extends Controller{
 
     public function index(){
         $data = array();        
+        
         $restaurant_id = $this->request->get['restaurant_id'];
+        if(isset($this->request->get['returnUrl'])){
+        	$returnUrl = $this->request->get['returnUrl'];
+        }
+        else{
+        	$returnUrl = '/index.php?route=common/list';
+        }        
+        
+        $data["return_url"] =$returnUrl; 
         $data["rest_id"] = $restaurant_id;
         if (isset($this->request->get['food_id'])) {
         	$food_id = $this->request->get['food_id'];
