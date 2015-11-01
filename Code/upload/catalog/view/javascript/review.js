@@ -2,11 +2,11 @@ window.onload = function() {
 	$(document).ready(function () {
 		
 	$(".rest-score-label").click(function(){
-		$('.review-dialog-frame').removeClass('unvisible');
+		$('.review-dialog-frame').css('display','block');
 	});
 	
 	$(".review-close").click(function(){
-		$('.review-dialog-frame').addClass('unvisible');
+		$('.review-dialog-frame').css('display','none');
 	});
 	
 	$(".score1,.score2,.score3,.score4,.score5").click(function(){

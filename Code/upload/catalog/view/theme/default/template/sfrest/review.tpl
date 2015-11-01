@@ -1,6 +1,6 @@
 <script src="catalog/view/javascript/review.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/review.css">
-<div class="review-dialog-frame  unvisible">
+<div class="review-dialog-frame" style="display: none;">
 	<input id="rest-id" type="hidden" value="<?php echo $rest_id; ?>">
 	<div class="review-dialog-wrap">
 		<div class="review-header">
