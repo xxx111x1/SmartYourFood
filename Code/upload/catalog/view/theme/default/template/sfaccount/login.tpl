@@ -66,12 +66,6 @@
     <div class="regtxt">
         <span style="font-weight: bold">还未注册？ 请点击 </span><a href="/index.php?route=sfaccount/register" style="text-decoration: none"><span style="color: #f94e4e;font-weight: bold">注册</span></a>
     </div>
-    <div class="regtxt">
-        <span style="font-weight: bold">可使用以下账号登陆:</span>
-    </div>
-    <div class="regtxt">
-        <img src="catalog/view/theme/default/image/icons/sociallogin.png">
-    </div>
 
 </div>
 </body>
