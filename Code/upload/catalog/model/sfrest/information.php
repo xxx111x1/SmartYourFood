@@ -99,15 +99,15 @@ class ModelSfRestInformation extends Model{
 	}
 	
 	public function getRestaurant($restaurant_id) {
-		$sql = "SELECT * FROM " . DB_PREFIX . "restaurant_info WHERE restaurant_id = '" . $restaurant_id . "'";
+		$sql = "SELECT * FROM " . DB_PREFIX . "restaurant_info WHERE available = 1 and restaurant_id = '" . $restaurant_id . "'";
 		$query = $this->db->query($sql);
 		return $query->row;
 	}
 	
 	public function getRestaurants($filters = "0", $sort = " sell_number desc, review_score desc", $start = 0, $number = 16) {	
-		$sql = "SELECT * FROM " . DB_PREFIX . "restaurant_info ";
+		$sql = "SELECT * FROM " . DB_PREFIX . "restaurant_info where available =1 ";
 		if($filters != "0"){
-			$sql .= "where tags in (" . $filters .") ";
+			$sql .= "and tags in (" . $filters .") ";
 		}
 		$sql .= " order by " . $sort . " limit " . $start . "," . $number;
 		$query = $this->db->query($sql);
@@ -115,12 +115,12 @@ class ModelSfRestInformation extends Model{
 	}
 		
 	public function getRestaurantsByFilters($filters,$start = 0, $number = 16) {
-		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info where restaurant_type in (" . $filters .") limit " . $start . "," . $number);
+		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_info where available =1 and restaurant_type in (" . $filters .") limit " . $start . "," . $number);
 		return $query->rows;
 	}
 
     public function getRestaurantsByName($name) {
-        $sql = "SELECT * FROM " . DB_PREFIX."restaurant_info where name like '%".$name."%'";
+        $sql = "SELECT * FROM " . DB_PREFIX."restaurant_info where available = 1 and name like '%".$name."%'";
         $this->log->write($sql);
         $query = $this->db->query($sql);
         return $query->rows;
