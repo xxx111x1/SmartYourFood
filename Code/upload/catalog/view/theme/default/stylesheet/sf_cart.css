@@ -67,7 +67,7 @@ body{
 
 .container{
     width: 1230px;
-    min-height: 1400px;
+    min-height: 1200px;
     margin-top: 22px;
     margin-right: auto;
     margin-left: auto;
@@ -300,16 +300,13 @@ input[type="checkbox"]{
 #payment{    
 clear:both;
 margin-left:60px;
-margin-top:245px;
-border-bottom-style:solid;
-border-bottom-width:1px;
-padding-bottom:40px;
+float:left;
 border-bottom-color:#F1F1F1;
 }
 
 #paymentlabel{
     margin-left:60px;
-    margin-top:60px;
+    margin-top:30px;
     font-weight:bolder;
 }
 
@@ -351,4 +348,12 @@ border-bottom-color:#F1F1F1;
 	margin-right: 20px;
 	color: red;
 	cursor: pointer;
+}
+
+.orderPreview{
+	cursor: pointer;
+}
+
+.orderPreview:hover{
+	background-color: #f65053;
 }

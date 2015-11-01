@@ -2,6 +2,14 @@
  * Created by Min on 2015/8/29.
  */
 $(document).ready(function () {
+	
+	$('.orderPreview').click(function(){
+		var foodId = $(this).attr('foodId');
+		var restId = $(this).attr('restId');		
+		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId + '&food_id=' + foodId +'#' + foodId;
+		window.location.href=url;
+	})
+	
     $('.ck_add_food').click(function(){
             var id = $(this).attr('value');
             console.log('id: '+id);
@@ -15,7 +23,7 @@ $(document).ready(function () {
             }
         }
     );
-
+    
     $('.ck_remove_food').click(function(){
             var id = $(this).attr('value');
             var number = parseInt($('#food_'+id+'_number').text());
