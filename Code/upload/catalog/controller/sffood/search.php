@@ -52,6 +52,15 @@ class ControllerSffoodSearch extends Controller{
         }
         $data['foods'] =$food_list;
         $rest_list = $this->model_sfrest_information->getRestaurantsByName($food_name);
+        foreach ($rest_list as $key => $value){
+        	if(isset($this->session->data['address'])){
+        		$this->load->model('account/address');
+        		$rest_list[$key]['distance'] = $this->model_account_address->getDistance($this->session->data['lat'], $this->session->data['lng'], $rest_list[$key]['lat'], $rest_list[$key]['lng']);
+        	}
+        	else{
+        		$rest_list[$key]['distance'] = "未知";
+        	}
+        }        
         $data['rests'] = $rest_list;
         $food_result_num =count($food_list);
         $data['food_result_num'] = $food_result_num;
@@ -100,7 +109,17 @@ class ControllerSffoodSearch extends Controller{
             $data['first_name'] = "";
             $data['history_address'] = "";
         }
-
-        $this->response->setOutput($this->load->view('default/template/sffood/search.2.tpl', $data));
+		if(isset($this->request->get['type'])){
+			if($this->request->get['type'] == "rest"){
+				$this->response->setOutput($this->load->view('default/template/sfrest/search.2.tpl', $data));
+			}
+			else{
+				$this->response->setOutput($this->load->view('default/template/sffood/search.2.tpl', $data));
+			}			
+		}
+		else{
+			$this->response->setOutput($this->load->view('default/template/sffood/search.2.tpl', $data));
+		}
+        
     }
 }

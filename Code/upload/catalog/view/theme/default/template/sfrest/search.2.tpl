@@ -27,8 +27,32 @@
     <div class="sepline">
         <hr width="1230px" color="#DFDFDF"/>
     </div>
+    
     <div class="product_area">
-        <?php $productnum=0; foreach ($foods as $food) { ?>
+        <?php $productnum=0; foreach ($rests as $restaurant) { ?>
+        <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
+            <div class="thumb" id="<?php echo $restaurant['restaurant_id']; ?> ">
+                <a href="/index.php?route=sfrest/detail&restaurant_id=<?php echo $restaurant['restaurant_id']; ?>">
+                <img  class="thumb_preview" width="370" height="256" src="<?php echo $restaurant['img_url']?>" alt="Image not found" onerror="onRestImgError(this)"/>
+                </a>
+            </div>
+            <div class="thumb_desc">
+                <div class="thumb_desc_foodname"><?php echo $restaurant['name']; ?></div>
+                <div class="thumb_desc_restname"></div>
+                <div class="thumb_desc_restdist">距离： <?php echo $restaurant['distance']; ?>KM</div>
+                <div class="thumb_desc_productinfo">
+                    <div class="thumb_desc_productfav">评分： <?php echo $restaurant['review_score']; ?></div>
+                </div>
+            </div>
+        </div>
+        <?php  $productnum++; } ?>
+    </div>
+    <div class="sepline">
+        <hr width="1230px" color="#DFDFDF"/>
+    </div>
+    <!--rest list-->
+	<div class="product_area">
+        <?php foreach ($foods as $food) { ?>
         <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
             <div class="thumb" id="<?php echo $food['food_id'];?>">
                 <img  class="thumb_preview" width="370" height="256" src="<?php echo $food['img_url'];?>"  alt="Image not found" onerror="onDishImgError(this)" />
@@ -54,30 +78,6 @@
         <div class="search_desc">
             <span class="bold">共搜到 <?php echo $rest_num;?>个和</span> <span class="highlight">[<?php echo $query;?>]</span><span class="bold">相关的餐馆:</span>
         </div>
-    </div>
-    <div class="sepline">
-        <hr width="1230px" color="#DFDFDF"/>
-    </div>
-    <!--rest list-->
-
-    <div class="product_area">
-        <?php foreach ($rests as $restaurant) { ?>
-        <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
-            <div class="thumb" id="<?php echo $restaurant['restaurant_id']; ?> ">
-                <a href="/index.php?route=sfrest/detail&restaurant_id=<?php echo $restaurant['restaurant_id']; ?>">
-                <img  class="thumb_preview" width="370" height="256" src="<?php echo $restaurant['img_url']?>" alt="Image not found" onerror="onRestImgError(this)"/>
-                </a>
-            </div>
-            <div class="thumb_desc">
-                <div class="thumb_desc_foodname"><?php echo $restaurant['name']; ?></div>
-                <div class="thumb_desc_restname"></div>
-                <div class="thumb_desc_restdist">距离： <?php echo $restaurant['distance']; ?>KM</div>
-                <div class="thumb_desc_productinfo">
-                    <div class="thumb_desc_productfav">评分： <?php echo $restaurant['review_score']; ?></div>
-                </div>
-            </div>
-        </div>
-        <?php  $productnum++; } ?>
     </div>
 </div>
 <?php echo $backtop; ?>

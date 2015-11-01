@@ -17,6 +17,7 @@ $(document).ready(function () {
 	$(document).on('click','#food_tab',function() {
 		if(!$('#food_tab').hasClass('selected_type_tab')){
 			type = 'food';
+			$('#searchType').val(type);
 			isRefreshType = true;
 			$('#food_tab').addClass('selected_type_tab');
 			$('#restaurant_tab').removeClass('selected_type_tab');
@@ -35,6 +36,7 @@ $(document).ready(function () {
 	$('#restaurant_tab').click(function() {
 		if(!$('#restaurant_tab').hasClass('selected_type_tab')){
 			type='rest';
+			$('#searchType').val(type);
 			isRefreshType = true;
 			$('#restaurant_tab').addClass('selected_type_tab');
 			$('#food_tab').removeClass('selected_type_tab');
