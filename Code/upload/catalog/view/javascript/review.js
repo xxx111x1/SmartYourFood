@@ -1,6 +1,4 @@
 window.onload = function() {
-	$(document).ready(function () {
-		
 	$(".rest-score-label").click(function(){
 		$('.review-dialog-frame').css('display','block');
 	});
@@ -9,6 +7,8 @@ window.onload = function() {
 		$('.review-dialog-frame').css('display','none');
 	});
 	
+	$(document).ready(function () {
+			
 	$(".score1,.score2,.score3,.score4,.score5").click(function(){
 		var rate = parseInt($(this).attr("rate"));
 		for (var i=1;i<=5;i++)
