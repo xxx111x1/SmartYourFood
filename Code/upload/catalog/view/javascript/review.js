@@ -62,10 +62,10 @@ window.onload = function() {
 			dataType: 'json',
 			error: function(){
 				alert("发表失败, 请稍后再试");
-				$('.review-dialog-frame').addClass('unvisible');
+				$('.review-dialog-frame').css('display','none');
 			},
 			success: function(data) {
-				$('.review-dialog-frame').addClass('unvisible');
+				$('.review-dialog-frame').css('display','none');
 			}
 		});		
 	});
