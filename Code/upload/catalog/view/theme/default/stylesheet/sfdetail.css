@@ -24,7 +24,7 @@
 	float:left;
 	width: 460px;
 	font-weight: bolder;
-	height: 40px;
+	height: 35px;
 }
 
 .rest-name{
@@ -44,8 +44,7 @@
 .rest-review{
 	float:left;
 	width: 100%;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 5px;
 	height: 30px;
 	color: #f65053;
 }
@@ -81,10 +80,10 @@ div.stars div {
 	margin-top: 5px;
 	cursor: pointer;
 }
-.rest-contact, .rest-address{
+.rest-contact, .rest-address, .rest-workinghour{
 	width: 100%;
 	float:left;
-	font-size: 16px;
+	font-size: 15px;
 	height: 30px;
 	color: #666666;
 }

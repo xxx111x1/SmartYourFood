@@ -22,6 +22,7 @@
 			</div>
 			<div class="rest-contact">联系电话： <?php echo $restaurant['phone']; ?></div>
 			<div class="rest-address">商户地址： <?php echo $restaurant['address']; ?></div>
+			<div class="rest-workinghour">营业时间： <?php echo $restaurant['working_hour']; ?></div>
 		</div>
 		<div class="rest-distance-info">
 			<!--
