@@ -1,6 +1,6 @@
 $(document).ready(function () {
 	$(document).on('click','#go-to-home,#logo', function(){
-		window.location.href='/index.php?route=common/sfhome';
+		window.location.href='/index.php?route=common/sfhome&restaurant=1';
 	});
 	$(document).on('click','#go-to-food', function(){
 		window.location.href='/index.php?route=common/list';
