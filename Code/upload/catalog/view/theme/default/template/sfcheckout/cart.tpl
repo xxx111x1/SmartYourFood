@@ -29,7 +29,7 @@
                     <td class="col1">
                         <div class="orderthumb">
                             <div class="foodpic">
-                                <img width="65px" height="65px" src="<?php echo $food['image'];?>"/>
+                                <img width="65px" height="65px" src="<?php echo $food['image'];?>"   alt="Image not found" onerror="onDishImgError(this)"/>
                             </div>
                             <div class="orderdesc">
                                 <div class="foodname">
@@ -88,7 +88,7 @@
     </a>
 </div>
     <div id="payment">
-        <div id="paymentlabel">	付款方式: 货到付款   </div>        
+        <div id="paymentlabel" style="margin-top: 30px;">	付款方式: 现金支付(货到付款)   </div>        
     </div>
     <a id="orderConfirm" href="/index.php?route=sfcheckout/confirm&isFast=true">
         <div class="btn" style="float: right;margin-right: 20px">结算</div>

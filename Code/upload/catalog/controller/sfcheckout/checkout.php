@@ -122,7 +122,8 @@ class ControllerSfcheckoutCheckout extends Controller{
         }
         $data['msg']='Hello World!';*/
 
-       
+        $returnUrl = explode("&", $_SERVER['REQUEST_URI'])[0];
+        $data['returnUrl'] = $returnUrl;
         $this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));
     }
 

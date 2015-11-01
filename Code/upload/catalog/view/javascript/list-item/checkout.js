@@ -27,6 +27,14 @@ $(document).ready(function () {
             }
         }
     );
+    
+    intialAddress();
+    
+    function intialAddress(){
+    	$('.addressbox').first().addClass('addressbox_selected');
+    	var addr_id = $('.addressbox').first().attr('addr_id');
+    	shippaddress.set_address(addr_id);
+    }
 
     $('.addressbox').click(function(){
             $('.addressbox').removeClass('addressbox_selected');
@@ -103,4 +111,8 @@ var shippaddress = {
     }
 }
 
+function onDishImgError(source){
+	source.src = "./catalog/view/theme/default/image/foodImages/dish_default.jpg";
+	source.onerror="";
+}
 
