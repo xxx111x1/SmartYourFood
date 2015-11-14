@@ -8,6 +8,8 @@ class ControllerCommonSfhome extends Controller {
 		$this->load->model('sffood/food');
 		//$data["foods"] = $this->model_sffood_food->getSpecialFoods();
 		$data["foods"] = $this->model_sffood_food->getTempSpecialFoods();
+		$data['first_name'] = "";
+		$data['history_address'] = "";
 		if(isset($this->request->get['lat'])){
 			$this->session->data['lat'] = $this->request->get['lat'];
 			$this->session->data['lng'] = $this->request->get['lng'];
@@ -15,7 +17,10 @@ class ControllerCommonSfhome extends Controller {
 			$data['address'] =$this->request->get['address'];
 			if($this->customer->isLogged()){
 				$this->load->model('account/customer');
+				$data['first_name'] = $this->customer->getFirstName();
 				$this->model_account_customer->editAddress($this->session->data);
+				$this->load->model('account/address');
+				$data['history_address'] = $this->model_account_address->getAddressesHistory();
 			}
 		}
 		elseif($this->customer->isLogged() || isset($this->session->data['address']))
@@ -27,8 +32,6 @@ class ControllerCommonSfhome extends Controller {
 		}
 		else{
 			$data['address'] = "请输入送餐地址";
-			$data['first_name'] = "";
-			$data['history_address'] = "";
 		}
 		
 		if(isset($this->session->data['cart_rest_id'])){

@@ -73,6 +73,10 @@ $(document).ready(function () {
 		window.location.href = url;
 	});
 	
+	$(document).on('click', '#mapSelect', function(){
+		var url = '/index.php?route=address/address&isFromHome=1&returnUrl=/index.php?route=common/sfhome';				
+		window.location.href = url;
+	});	
 	
 	$(document).on('focusout', '#pac-input', function() {
 		var focusClasses = $(":focus").attr('class');

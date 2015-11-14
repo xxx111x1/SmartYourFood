@@ -1,10 +1,15 @@
 <?php
 class ControllerAddressAddress extends Controller{
     public function index(){
-        $data = array();        
+        $data = array();  
+        if(isset($this->request->get['isFromHome'])){
+        	$data["is_from_home"] = 1;
+        }
+        else{
+        	$data["is_from_home"] = 0;
+        }
         if(isset($this->request->get['returnUrl'])){
-        	$data["return_url"] = $this->request->get['returnUrl']; 
-        	
+        	$data["return_url"] = $this->request->get['returnUrl'];        	
         }
         if(isset($this->request->get['addressId'])){
         	$data["address_id"] = $this->request->get['addressId'];
