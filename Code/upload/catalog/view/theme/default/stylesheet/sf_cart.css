@@ -357,3 +357,20 @@ border-bottom-color:#F1F1F1;
 .orderPreview:hover{
 	background-color: #f65053;
 }
+
+
+.gobackcart{
+    font-size: 18px;
+    float: right;
+    font-weight: bold;
+    margin-top: 50px;
+    /*color: #A5A5A5;*/
+}
+
+.confirmlabel{
+    font-size: 32px;
+    float: left;
+    font-weight: bolder;
+    margin-top: 20px;
+    text-decoration: none;
+}

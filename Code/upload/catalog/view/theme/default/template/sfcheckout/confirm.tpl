@@ -8,7 +8,9 @@
 <div class="container" style="opacity: 1.0">
     <div class="cart_panel">
         <div class="cart_header">
-            <h2 style="float: left;">订单确认</h2>
+            <!--<h2 style="float: left;">订单确认</h2>-->
+            <div class="confirmlabel">订单确认</div>
+            <div class="gobackcart"><a href="/index.php?route=sfcheckout/checkout" style="text-decoration: none;color: #555555">返回购物车修改</a></div>
         </div>
         <hr width="96%" color="#DFDFDF" style="margin-left: auto;margin-right: auto"/>
         <table id="cart">

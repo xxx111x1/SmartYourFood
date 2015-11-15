@@ -15,7 +15,7 @@
 <body>
     <a href="/">
         <div id="gotohome" style="color: white; font-size: 64px;font-weight: bolder;position: absolute;margin-top: 140px;margin-left: 150px; text-decoration: none;text-decoration-line: none">
-            悠选
+            <img src="/catalog/view/theme/default/image/youxuan.png"/>
         </div>
     </a>
     <div id="welcome" class="welcome owl-carousel owl-theme" style="width: 540px;height: 330px">
