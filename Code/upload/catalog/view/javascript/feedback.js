@@ -24,6 +24,8 @@ $(document).ready(function () {
 			success: function(data) {
 				if (data['success']) {
 					alert("多谢您的宝贵意见，我们会继续改进。");
+					$('.mod-dialog-frame').addClass('unvisible');
+					$('.feedback-wrap').addClass('unvisible');
 				}
 				if(data['error']){
 					alert(data['error']);
