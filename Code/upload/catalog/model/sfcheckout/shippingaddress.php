@@ -97,7 +97,7 @@ class ModelSfcheckoutShippingaddress extends Model
     public function getAddresses() {
         $address_data = array();
 
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "shipping_address WHERE customer_id = '" . (int)$this->customer->getId() . "' order by address_id desc");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "shipping_address WHERE customer_id = '" . (int)$this->customer->getId() . "' order by address_id desc limit 5");
 
         foreach ($query->rows as $result) {
             $address_data[$result['address_id']] = array(

@@ -6,13 +6,13 @@ class ControllerApiFeedback extends Controller {
 			if(isset($this->request->post['sender'])){
 				$data = array();
 				$sender = $this->request->post['sender'];
-				if(strpos($sender,'@') !== false && !filter_var($sender, FILTER_VALIDATE_EMAIL)){					
+				if(strpos($sender,'@') == true && !filter_var($sender, FILTER_VALIDATE_EMAIL)){
 						$json['error'] = "Invalid Email Address.";					
 				}
 				else{
 					$data['email'] = $this->request->post['sender'];
 				}
-				if (strpos($sender,'@') !== false && !filter_var($sender, FILTER_VALIDATE_INT)) {
+				if (strpos($sender,'@') == false && !filter_var($sender, FILTER_VALIDATE_INT)) {
 						$json['error'] = "Invalid Phone Number.";
 				}
 				else{
@@ -23,8 +23,9 @@ class ControllerApiFeedback extends Controller {
 					$data['message'] = $this->request->post['message'];
 					//insert suggestion
 					$this->load->model('catalog/feedback');
-						
+					$this->log->write('start to insert feedback');
 					$this->model_catalog_feedback->addFeedback($data);
+					$this->log->write('after add feedback');
 					$json['success'] = $this->language->get('text_success');
 				}
 				
