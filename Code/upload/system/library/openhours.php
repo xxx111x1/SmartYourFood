@@ -36,7 +36,7 @@ class OpenHours{
             $query = $this->db->query($sql);
             foreach($query->rows as $rest_id)
             {
-                $this->schedule[$rest_id]=0;
+                $this->schedule[$rest_id['rest_id']]=0;
             }
 
             $sql = "SELECT * FROM ".DB_PREFIX."rest_opening_times";
