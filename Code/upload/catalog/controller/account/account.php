@@ -105,6 +105,13 @@ class ControllerAccountAccount extends Controller {
 			$address_data['address']=$this->request->get['address'];
 			$address_data['phone']=$this->request->get['phone'];
 			$address_data['contact']=$this->request->get['contact'];
+			
+			//set delivery fee
+// 			if(isset($this->request->get['geoResult'])){
+// 				$region_string = $this->request->get['geoResult'];
+// 				$this->session->data['delivery_fee'] = $this->model_account_address->getRegionFee($region_string);
+// 			}
+			
 			if(isset($this->request->get['addressId'])){
 				$this->model_sfcheckout_shippingaddress->editAddress($this->request->get['addressId'],$address_data);
 			}

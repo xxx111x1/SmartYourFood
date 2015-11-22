@@ -11,15 +11,21 @@ class ControllerCommonSfhome extends Controller {
 		$data['first_name'] = "";
 		$data['history_address'] = "";
 		if(isset($this->request->get['lat'])){
+			$this->load->model('account/address');
 			$this->session->data['lat'] = $this->request->get['lat'];
 			$this->session->data['lng'] = $this->request->get['lng'];
 			$this->session->data['address'] = $this->request->get['address'];
 			$data['address'] =$this->request->get['address'];
+			
+			//set delivery fee
+// 			if(isset($this->request->get['geoResult'])){
+// 				$region_string = $this->request->get['geoResult'];
+// 				$this->session->data['delivery_fee'] = $this->model_account_address->getRegionFee($region_string);
+// 			}			
 			if($this->customer->isLogged()){
 				$this->load->model('account/customer');
 				$data['first_name'] = $this->customer->getFirstName();
-				$this->model_account_customer->editAddress($this->session->data);
-				$this->load->model('account/address');
+				$this->model_account_customer->editAddress($this->session->data);				
 				$data['history_address'] = $this->model_account_address->getAddressesHistory();
 			}
 		}

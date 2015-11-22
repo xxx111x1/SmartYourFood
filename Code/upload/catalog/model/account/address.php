@@ -196,4 +196,27 @@ class ModelAccountAddress extends Model {
 	
 		return round($calculatedDistance*1.00/1000,1);
 	}
+	
+	public function getRegionFee($region_string){
+		$regions = explode(":", $region_string);
+		foreach ($regions as $region) {
+			if (strpos($region,'Downtown') !== false) {
+			    return 20;
+			} elseif (strpos($region,'Richmond') !== false) {
+			    return 10;
+			} elseif (strpos($region,'Burnaby') !== false) {
+			    return 20;
+			}elseif (strpos($region,'Coquitlam') !== false) {
+			    return 30;
+			}elseif (strpos($region,'Port Moody') !== false) {
+			    return 40;
+			}elseif (strpos($region,'Surrey') !== false) {
+			    return 50;
+			}elseif (strpos($region,'White Rock') !== false) {
+			    return 70;
+			}elseif (strpos($region,'Vancouver') !== false) {
+			    return 15;
+			}						
+		}
+	}
 }
