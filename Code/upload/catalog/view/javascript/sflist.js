@@ -247,7 +247,7 @@ $(document).ready(function () {
 					var thumbEle = "";
 					var thumbDescEle = "";
 					var distance = gpsDistance(v.lat,v.lng,data['lat'],data['lng'],'K');
-					var is_open = 0;
+					var is_open = 1;
 					if(distance>40){
 						distance = '-';
 					}
