@@ -7,3 +7,4 @@ CREATE TABLE IF NOT EXISTS oc_rest_opening_times(
 );
 
  LOAD DATA INFILE '/opt/release/SmartYourFood/Code/upload/admin/mysqlupdate/open_hours.csv' INTO TABLE  oc_restaurant_info CHARACTER SET utf8 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '"' lines terminated by '\n';
+insert into table oc_open_times values(26 ,7 ,0 ,24)

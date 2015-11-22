@@ -144,7 +144,9 @@ if (isset($request->get['token']) && isset($request->get['route']) && substr($re
 
 $session->start();
 $registry->set('session', $session);
-
+//open hours
+$openhours = new OpenHours($registry);
+$registry->set('openhours',$openhours);
 // Language Detection
 $languages = array();
 

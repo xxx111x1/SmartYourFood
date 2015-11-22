@@ -394,6 +394,19 @@ body{
     cursor: pointer;
 }
 
+.thumb_closed{
+    margin-left: 260px;
+   /* margin-top: 12px;*/
+    width: 64px;
+    height: 64px;
+    border-radius: 8px;
+    font-size: 24px;
+    font-weight: bold;
+    background-image: url(../image/icons/closed.png);
+    background-repeat: no-repeat;
+    /*cursor: pointer;*/
+}
+
 .thumb_detail{
     opacity: 0.3;
     filter:alpha(opacity=30);

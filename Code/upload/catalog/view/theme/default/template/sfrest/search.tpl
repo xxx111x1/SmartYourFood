@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>Smart Your Food</title>
+    <title>usays</title>
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/javascript/bootstrap/css/bootstrap-theme.min.css">
@@ -50,6 +50,7 @@
                     <div class=sf_product_title ><?php echo $food['name'];?></div>
                     <img class=sf_product_stars src="img/stars_2.png">
                     <div class=sf_product_sv>本月销量-份</div>
+                    <div class=sf_product_sv>closed</div>
                     <div class=sf_product_price>
                         <span style="MARGIN-RIGHT: 10px">价格:<?php echo $food['price'];?></span>
                         <span>配送: </span>

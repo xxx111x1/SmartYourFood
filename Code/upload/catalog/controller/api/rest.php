@@ -7,7 +7,11 @@ class ControllerApiRest extends Controller {
 		$page_content_number = 12;
 		$start_position = $page_number * $page_content_number;
 		$this->load->model('sfrest/information');	
-		$restaurants = $this->model_sfrest_information->getRestaurants($filters,$sort,$start_position,$page_content_number);			
+		$restaurants = $this->model_sfrest_information->getRestaurants($filters,$sort,$start_position,$page_content_number);
+		foreach($restaurants as $rest)
+		{
+			$rest['is_open']=$this->openhours->is_open($rest['restaurant_id']);
+		}
 		if ($restaurants) {			
 			$json['success'] = $this->language->get('text_success');
 			$json['results'] = $restaurants;

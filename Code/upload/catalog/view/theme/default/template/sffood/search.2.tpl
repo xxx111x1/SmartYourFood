@@ -32,10 +32,16 @@
         <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
             <div class="thumb" id="<?php echo $food['food_id'];?>">
                 <img  class="thumb_preview" width="370" height="256" src="<?php echo $food['img_url'];?>"  alt="Image not found" onerror="onDishImgError(this)" />
+                <?php if($food['is_open']==1){ ?>
                 <div class="thumboverlay">
                     <div class="thumb_add2cart" foodid="<?php echo $food['food_id'];?>" restId = "<?php echo $food['restaurant_id']; ?>">
                     </div>
                 </div>
+                <?php } ?>
+                <?php if($food['is_open']==0){ ?>
+                <div class="thumb_closed">
+                </div>
+                <?php } ?>
             </div>
             <div class="thumb_desc">
                 <div class="thumb_desc_foodname"><?php echo $food['food_name'];?></div>
