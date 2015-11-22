@@ -131,4 +131,10 @@ class ModelSfRestInformation extends Model{
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "restaurant_type ");
 		return $query->rows;
 	}
+	
+	public function getRestaurantTags($restaurant_id) {
+		$sql = "SELECT distinct b.tag_id, b.tag_name_cn, b.tag_name_en FROM " . DB_PREFIX . "food_tag_detail a inner join ". DB_PREFIX ."food_tag b on a.tag_id = b.tag_id where a.rest_id = '" . $restaurant_id . "' order by tag_id";
+		$query = $this->db->query($sql);
+		return $query->rows;
+	}
 }

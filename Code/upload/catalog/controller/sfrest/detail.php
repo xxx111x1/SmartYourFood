@@ -28,7 +28,7 @@ class ControllerSfrestDetail extends Controller{
         }
         $this->load->model('sfrest/information');
 		$data['restaurant'] = $this->model_sfrest_information->getRestaurant($restaurant_id);
-		
+		$data['tags'] = $this->model_sfrest_information->getRestaurantTags($restaurant_id);
     	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];

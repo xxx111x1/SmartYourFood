@@ -52,6 +52,36 @@ class ModelSffoodFood extends Model{
     	if(array_key_exists('sell_number'     , $data)){ $query .= ", sell_number      = '" . $data['sell_number']      . "'"; }
     	return $query . ";\r\n";
     }
+    
+    public function getFoodTypeAddSql($data){
+    	$query =  "";
+    	if(strpos($data['tags'],',') !== false){
+    		$tags = explode(",", $data['tags']);
+    		foreach ($tags as $tag) {
+    			$query .= $this->buildFoodTypeSql($data,$tag);
+    		}
+    	}
+    	else{
+    		$tag = $data['tags'];
+    		$query = $this->buildFoodTypeSql($data,$tag);
+    	}
+    	
+    	return $query;
+    }
+    
+    public function buildFoodTypeSql($data,$tag){
+    	$query =  "INSERT INTO " . DB_PREFIX . "food_tag_detail	SET food_name_cn             = '" . $data['name'] . "' ";
+    	$query .= ", tag_id      = '" . $tag      ."'"; 
+    	if(array_key_exists('is_special'   , $data)){ 
+    		if($data['is_special'] != 1){
+    			$data['is_special'] = 0;
+    		}
+    		$query .= ", is_special    =  '" . $data['is_special']    . "'"; 
+    	}
+    	if(array_key_exists('keywords'    , $data)){ $query .= ", keywords     = '" . $data['keywords']     . "'"; }
+    	if(array_key_exists('rest_name'            , $data)){ $query .= ", rest_name_cn             = '" . $data['rest_name']             . "'"; }
+    	return $query . ";\r\n";
+    }
 
     public function delete($food_id){
     	$this->db->query("DELETE " . DB_PREFIX . "food WHERE food_id = '" . (int)$food_id . "'");
@@ -127,6 +157,17 @@ class ModelSffoodFood extends Model{
     	$query = $this->db->query($sql);
     	return $query->rows;
     }
+    
+    public function getFoodsByRestIDAndTags($restaurant_id,$tag, $sort)
+    {
+    	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b, " . DB_PREFIX . "food_tag_detail c where a.restaurant_id = '" . $restaurant_id . "' and a.restaurant_id = b.restaurant_id and a.food_id = c.food_id and c.tag_id ='".$tag."'";
+    	if(isset($sort)){
+    		$sql .= " order by " . $sort ;
+    	}
+    	$query = $this->db->query($sql);
+    	return $query->rows;
+    }
+    
     
     public function getTypes() {
     	$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "food_type order by type_id");

@@ -93,6 +93,15 @@ $(document).ready(function () {
 		}		
 	});	
 	
+	$('.tagitem').click(function(){
+		var restId = $('#rest-id').val();
+		var sort = getSortString($('#sort').val());	
+		var tag = $(this).attr('value');
+		$('.tagitem').removeClass('tagitemSelected');
+		$(this).addClass('tagitemSelected');
+		addContents(sort,restId,tag);
+	});
+	
 	$('.sort_field').click(function(){
 		$('.sort_field').removeClass('sort_selected');
 		$(this).addClass('sort_selected');
@@ -112,11 +121,14 @@ $(document).ready(function () {
 		addContents(sort,restId);
 	}
 		
-	function addContents(sort,restId){
+	function addContents(sort,restId,tag){
+		if(!tag){
+			tag = 0 ;
+		}
 		$.ajax({
-			url: 'index.php?route=api/food/getFoodByRestaurantId',
+			url: 'index.php?route=api/food/getFoodByRestaurantAndTagId',
 			type: 'post',
-			data: 'sort=' + sort+ '&restid=' + restId,
+			data: 'sort=' + sort+ '&restid=' + restId + '&tagid=' + tag,
 			dataType: 'json',	
 			success: function(data) {
 				$('.product_area').empty();						
