@@ -8,10 +8,10 @@ class ControllerApiRest extends Controller {
 		$start_position = $page_number * $page_content_number;
 		$this->load->model('sfrest/information');	
 		$restaurants = $this->model_sfrest_information->getRestaurants($filters,$sort,$start_position,$page_content_number);
-		foreach($restaurants as $rest)
-		{
-			$rest['is_open']=$this->openhours->is_open($rest['restaurant_id']);
-		}
+        foreach ($restaurants as $key => $rest) {
+            $restaurants[$key]['is_open']=$this->openhours->is_open($restaurants[$key]['restaurant_id']);
+        }
+
 		if ($restaurants) {			
 			$json['success'] = $this->language->get('text_success');
 			$json['results'] = $restaurants;

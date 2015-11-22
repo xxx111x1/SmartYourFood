@@ -60,19 +60,18 @@ class ControllerApiFood extends Controller {
 		$sort = $this->request->post['sort'];
 		$this->load->model('sffood/food');
 		$foods = $this->model_sffood_food->getFoodsByRestID($restaurant_id,$sort);
-		foreach($foods as $food)
-		{
-			$food['is_open']=$this->openhours->is_open($food['restaurant_id']);
-		}
+
 		$cart_foods = $this->cart->getFoods();
-		if(count($cart_foods)){
-			foreach ($foods as $key => $food) {
+
+		foreach ($foods as $key => $food) {
+			if(count($cart_foods)){
 				foreach($cart_foods as $product){
 					if((int)$food['food_id'] == (int)$product['product_id']){
 						$foods[$key]['cart_number'] = $product['quantity'];
 					}
 				}
 			}
+			$foods[$key]['is_open']= $this->openhours->is_open($foods[$key]['restaurant_id']);
 		}
 		if ($foods) {
 			$json['success'] = $this->language->get('text_success');
@@ -104,15 +103,18 @@ class ControllerApiFood extends Controller {
 			$foods = $this->model_sffood_food->getFoodsByRestID($restaurant_id,$sort);
 		}		
 		$cart_foods = $this->cart->getFoods();
-		if(count($cart_foods)){
-			foreach ($foods as $key => $food) {
+
+		foreach ($foods as $key => $food) {
+			if(count($cart_foods)){
 				foreach($cart_foods as $product){
 					if((int)$food['food_id'] == (int)$product['product_id']){
 						$foods[$key]['cart_number'] = $product['quantity'];
 					}
 				}
 			}
+			$foods[$key]['is_open']= $this->openhours->is_open($foods[$key]['restaurant_id']);
 		}
+
 		if ($foods) {
 			$json['success'] = $this->language->get('text_success');
 			$json['results'] = $foods;
