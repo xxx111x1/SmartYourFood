@@ -42,11 +42,15 @@
 		</div>
 	</div>
     <div class="tabmenu">
-        <div class="contenttab">
+        <!--<div class="contenttab">
         	<div id="sepcial-tab" class="type_tab">特色菜品</div>
         	<div id="food-tab" class="type_tab">全部菜品</div>
         	<div id="back-tab" class="type_tab" url="<?php echo $return_url;?>">返回重选</div>                           
         </div>
+        -->
+        
+
+    
 		<div class="search-bar">
 			<input id="searchType" type="hidden" value="food" />
   			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
@@ -62,7 +66,15 @@
   			</div>
   		</div>
     </div>   
-        
+    
+    
+    <div class="tagarea">
+        	<div class="tagitem" value="0">全部菜品</div>	
+	    	<?php foreach ($tags as $tag) { ?>
+				<div class="tagitem" value="<?php echo $tag['tag_id'];?>"><?php echo $tag['tag_name_cn'];?></div>	
+			<?php } ?>	       
+	    </div>
+	        
 	<div class=sort_option>
 		<div class="sortlabel glyphicon">排序:</div>
 		<span class="sort_field glyphicon sort_selected" id="sort_default" >默认</span>

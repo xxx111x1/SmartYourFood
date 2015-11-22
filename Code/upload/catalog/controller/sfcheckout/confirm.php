@@ -7,7 +7,7 @@
  */
 class ControllerSfcheckoutConfirm extends Controller{
     private $tax_rate = 0.05;
-    private $deliver_fee_rate = 0;
+    private $deliver_fee_rate = 1;
     public function index()
     {
         $data=array();

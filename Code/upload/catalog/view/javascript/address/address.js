@@ -24,7 +24,7 @@
 			 };
 	  var autocomplete = new google.maps.places.Autocomplete(input, options);
 	  autocomplete.bindTo('bounds', map);
-	
+
 	  var infowindow = new google.maps.InfoWindow();
 	  var marker = new google.maps.Marker({
 	    map: map,
@@ -67,19 +67,52 @@
 	    }
 		var latitude = place.geometry.location.lat();
 		var longitude = place.geometry.location.lng();
-        if (typeof(phone) != 'undefined' && phone != null&&typeof(contact) != 'undefined' && contact != null)
-        {
-            var phone_num = phone.value;
-            console.log(phone_num);
-            var contanct_name = contact.value;
-            console.log(contanct_name);
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address,contanct_name,phone_num)+' >确定</a>' );
-        }
-	    else{
-            infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address)+' >确定</a>' );
-        }
+		
+		//Get geocode
+//		var geocoder = new google.maps.Geocoder;
+//		var latlng = {lat: latitude, lng: longitude};
+//		var geoResult ="";
+//		geocoder.geocode({'location': latlng}, function(results, status) {
+//		    if (status === google.maps.GeocoderStatus.OK) {
+//		      if (results[0]) {
+//		    	  for(var i=0;i<results.length && i<5 ;i++){
+//		    		  if(results[i].formatted_address){
+//		    			  geoResult = geoResult + results[i].formatted_address + ":";
+//		    		  }
+//		    	  }
+//		    	  
+//			  	  if (typeof(phone) != 'undefined' && phone != null&&typeof(contact) != 'undefined' && contact != null)
+//			      {
+//			          var phone_num = phone.value;
+//			          console.log(phone_num);
+//			          var contanct_name = contact.value;
+//			          console.log(contanct_name);
+//			          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address,contanct_name,phone_num,geoResult)+' >确定</a>' );
+//			      }
+//				    else{
+//			          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrlWithoutContactor(latitude,longitude,address,geoResult)+' >确定</a>' );
+//			      }
+//		      } else {
+//		        window.alert('No results found');
+//		      }
+//		    } else {
+//		      window.alert('Geocoder failed due to: ' + status);
+//		    }
+//		  });		
+		if (typeof(phone) != 'undefined' && phone != null&&typeof(contact) != 'undefined' && contact != null)
+	      {
+	          var phone_num = phone.value;
+	          console.log(phone_num);
+	          var contanct_name = contact.value;
+	          console.log(contanct_name);
+	          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address,contanct_name,phone_num)+' >确定</a>' );
+	      }
+		    else{
+	          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrlWithoutContactor(latitude,longitude,address)+' >确定</a>' );
+	      }
 	    infowindow.open(map, marker);
-	  });
+        
+	});
 	
 	  // Autocomplete.
 	  function setupClickListener(id, types) {
@@ -94,15 +127,15 @@
 	  setupClickListener('changetype-geocode', ['geocode']);
 	}
 	
-	function getReturnUrl(lat,lng,address){
+	function getReturnUrlWithoutContactor(lat,lng,address,geoResult){
 		var returnUrl = document.getElementById("returnUrl").value;
 		if(returnUrl.indexOf("route") > 0){
-			return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address);
+			return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address);// + '&geoResult=' + encodeURIComponent(geoResult);
 		} 
-		return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address);
+		return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address);// + '&geoResult=' + encodeURIComponent(geoResult);
 	}
 
-    function getReturnUrl(lat,lng,address,contact_name, phone_num){
+    function getReturnUrl(lat,lng,address,contact_name, phone_num,geoResult){
         var returnUrl = document.getElementById("returnUrl").value;
         var addressId = document.getElementById("addressId").value;
         var modifyAddress = "";
@@ -111,7 +144,7 @@
         }
         if(returnUrl.indexOf("route") > 0){
         	
-            return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name) + modifyAddress;
+            return returnUrl +'&lat=' + lat + '&lng='+lng + '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name) + modifyAddress;// '&geoResult=' + encodeURIComponent(geoResult);
         }
-        return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name) +modifyAddress;
+        return 'index.php?route=sffood/list&lat=' + lat + '&lng='+lng+ '&address=' +encodeURIComponent(address)+'&phone='+encodeURIComponent(phone_num)+'&contact='+encodeURIComponent(contact_name) +modifyAddress;// + '&geoResult=' + encodeURIComponent(geoResult);
     }
