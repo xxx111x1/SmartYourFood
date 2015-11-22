@@ -70,9 +70,20 @@
         <?php foreach ($rests as $restaurant) { ?>
         <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
             <div class="thumb" id="<?php echo $restaurant['restaurant_id']; ?> ">
+                <?php if($restaurant['is_open']==0){ ?>
+                <img  class="thumb_preview" width="370" height="256" src="<?php echo $restaurant['img_url']?>" alt="Image not found" onerror="onRestImgError(this)"/>
+                <?php }?>
+
+                <?php if($restaurant['is_open']==1){ ?>
                 <a href="/index.php?route=sfrest/detail&restaurant_id=<?php echo $restaurant['restaurant_id']; ?>">
                 <img  class="thumb_preview" width="370" height="256" src="<?php echo $restaurant['img_url']?>" alt="Image not found" onerror="onRestImgError(this)"/>
                 </a>
+                <?php }?>
+
+                <?php if($restaurant['is_open']==0){ ?>
+                <div class="thumb_closed">
+                </div>
+                <?php } ?>
             </div>
             <div class="thumb_desc">
                 <div class="thumb_desc_foodname"><?php echo $restaurant['name']; ?></div>
