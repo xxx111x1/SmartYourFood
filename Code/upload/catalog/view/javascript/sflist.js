@@ -238,7 +238,7 @@ $(document).ready(function () {
 					$('.product_area').empty();
 					$('#page_number').val(0);
 				}							
-				$.each(data['results'], function(i, v) {	
+				$.each(data['results'], function(i, v) {
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;
 					var review_score = v.review_score;
@@ -247,7 +247,7 @@ $(document).ready(function () {
 					var thumbEle = "";
 					var thumbDescEle = "";
 					var distance = gpsDistance(v.lat,v.lng,data['lat'],data['lng'],'K');
-					var is_open = 1;
+					var is_open = v.is_open;
 					if(distance>40){
 						distance = '-';
 					}
@@ -257,7 +257,6 @@ $(document).ready(function () {
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
 						name = v.rest_name
-						is_open = v.is_open;
 						if(is_open==1)
 						{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
