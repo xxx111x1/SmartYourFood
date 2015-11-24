@@ -21,6 +21,8 @@ class OpenHours{
         $close_hour = $open_info['close_hour'];
         $cur_weekday = $datetime->format('N');
         $cur_hour = $datetime->format('H');
+        $cur_min = $datetime->format('i');
+        $cur_hour = $cur_hour+$cur_min/60;
         return $cur_weekday==$day && $cur_hour>=$start_hour && $cur_hour<$close_hour;
     }
 
