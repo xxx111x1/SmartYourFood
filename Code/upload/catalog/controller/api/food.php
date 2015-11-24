@@ -9,9 +9,9 @@ class ControllerApiFood extends Controller {
 		$this->load->model('sffood/food');
 		$foods = $this->model_sffood_food->getFoodsWithRestaurantInfo($filters,$sort,$start_position,$page_content_number);
 		//check if restaurant still open
-		foreach($foods as $food)
+		foreach($foods as $key =>$food)
 		{
-			$food['is_open']=$this->openhours->is_open($food['restaurant_id']);
+			$foods[$key]['is_open']=$this->openhours->is_open($foods[$key]['restaurant_id']);
 		}
 
 		$cart_foods = $this->cart->getFoods();
