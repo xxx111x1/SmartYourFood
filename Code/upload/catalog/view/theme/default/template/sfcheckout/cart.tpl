@@ -6,6 +6,7 @@
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 
 <div class="container" style="<?php echo $nofood;?>">
+	<input type="hidden" id="deliveryFeeInfor" lat="<?php echo $rest_lat ;?>" lng="<?php echo $rest_lng ;?>" isNight="<?php echo $is_night ;?>" />
     <div class="cart_panel">
         <div class="cart_header">
             <h2 style="float: left;">我的餐车</h2>
@@ -68,7 +69,7 @@
     </div>
     ﻿<div class="addressarea">
     <?php foreach ($addresslist as $address) { ?>
-    <div class="addressbox" id="address_<?php echo $address['address_id'];?>" addr_id="<?php echo $address['address_id'];?>">
+    <div class="addressbox" id="address_<?php echo $address['address_id'];?>" addr_id="<?php echo $address['address_id'];?>" lat="<?php echo $address['lat'];?>" lng="<?php echo $address['lng'];?>">
         <div style="margin-bottom: 20px;margin-top: 20px">
             <span id="contact_<?php echo $address['address_id'];?>" ><?php echo $address['contact'];?></span>
             <span class='deleteAddress' addr_id="<?php echo $address['address_id'];?>" >删除</span>

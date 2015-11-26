@@ -80,12 +80,15 @@ class ControllerSfcheckoutCheckout extends Controller{
         	$this->load->model('account/address');
         	$distance = $this->model_account_address->getDistance($address_data['lat'],$address_data['lng'],explode(',',$lat_lng['0'])['0'],explode(',',$lat_lng['0'])['1']);
         	$deliverfee = 4 + max(0,round($distance-4,0,PHP_ROUND_HALF_UP)) + (max(0,round($distance-8,0,PHP_ROUND_HALF_UP)))*0.5;
+        	$data['rest_lat'] = explode(',',$lat_lng['0'])['0'];
+        	$data['rest_lng'] = explode(',',$lat_lng['0'])['1'];
         }
         
         //GetTime Canada/Pacific
         date_default_timezone_set('Canada/Pacific');
 	    if (date('H') >= 22.5 || date('H')<9) {
 	    	$deliverfee += 2;
+	    	$data['is_night'] = 1;
 	    }        
         $deliverfee = $deliverfee*$this->deliver_fee_rate;
 
@@ -137,6 +140,9 @@ class ControllerSfcheckoutCheckout extends Controller{
         $shippingaddress['firstname'] = $addr['contact'];
         $shippingaddress['address_1'] = $addr['address'];
         $shippingaddress['address_2'] = $addr['phone'];
+        $this->session->data['lat'] = $addr['lat'];
+        $this->session->data['lng'] = $addr['lng'];
+        $this->session->data['address'] = $addr['address'];
         $this->session->data['shipping_address'] = $shippingaddress;
     }
 

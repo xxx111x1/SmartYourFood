@@ -2,7 +2,6 @@
 <title>订单确认</title>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf_cart.css">
 <script src="catalog/view/javascript/list-item/item-content.js" type="text/javascript"></script>
-<script src="catalog/view/javascript/list-item/checkout.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 
 <div class="container" style="opacity: 1.0">

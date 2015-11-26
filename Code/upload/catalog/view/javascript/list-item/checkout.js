@@ -47,8 +47,28 @@ $(document).ready(function () {
     $('.addressbox').click(function(){
             $('.addressbox').removeClass('addressbox_selected');
             $(this).addClass('addressbox_selected');
+            var isNight = $('#deliveryFeeInfor').attr('isNight');
             var addr_id = $(this).attr('addr_id');
+            var restLat = $('#deliveryFeeInfor').attr('lat');
+            var restLng = $('#deliveryFeeInfor').attr('lng');
+            var lat = $(this).attr('lat');
+            var lng = $(this).attr('lng');
+            var distance = gpsDistance(lat,lng,restLat,restLng,'K');
+            var deliveryFee = 4 + Math.max(0,Math.round(distance-4)) + (Math.max(0,Math.round(distance-8)))*0.5;
+            if(isNight == 1 ){
+            	deliveryFee = deliveryFee + 2;
+            }
+            $('#deliverfee').text(" $"+deliveryFee);
+            var beforetax = parseFloat($('#beforetax').text().replace('$',''));
+            var taxcost = parseFloat($('#taxcost').text().replace('$',''));
+            var sum = beforetax + deliveryFee + taxcost;
+            if($("#fastDelivery").is(':checked')){
+            	var fastdeliverfee = parseFloat($('#fastdeliverfee').text().replace('$',''));
+            	sum = sum + fastdeliverfee
+            }
+            $('#totalcost').text(" $ "+sum.toFixed(2));
             shippaddress.set_address(addr_id);
+            
         }
     );
     
@@ -58,7 +78,7 @@ $(document).ready(function () {
     	var taxcost = parseFloat($('#taxcost').text().replace('$', ''));
     	var total = beforeTax + deliverfee + taxcost;
     	if($("#fastDelivery").is(':checked')){
-    		total += 5;
+    		total += beforeTax * 0.05;
     		$('#orderConfirm').attr("href","/index.php?route=sfcheckout/confirm&isFast=true");
     	}
     	else{
@@ -67,7 +87,8 @@ $(document).ready(function () {
     	$('#totalcost').text("$" + total.toFixed(2));
     });
     
-    $(".deleteAddress").click(function(){
+    $(".deleteAddress").click(function(e){
+    	e.stopPropagation();
         var addressId = $(this).attr('addr_id');
         $.ajax({
             url: 'index.php?route=api/address/deleteShippingAddress',
@@ -90,7 +111,8 @@ $(document).ready(function () {
         });
     });
     
-    $(".editAddress").click(function(){
+    $(".editAddress").click(function(e){
+    	e.stopPropagation();
         var addressId = $(this).attr('addr_id');
         var phone = $('#phone_' + addressId).text();
         var contact = $('#contact_' + addressId).text();
@@ -99,6 +121,25 @@ $(document).ready(function () {
 
     
 });
+
+function gpsDistance(lat1, lon1, lat2, lon2, unit) {
+	if(lat2<=0){
+		return 0 ;
+	}
+	var radlat1 = Math.PI * lat1/180;
+	var radlat2 = Math.PI * lat2/180;
+	var radlon1 = Math.PI * lon1/180;
+	var radlon2 = Math.PI * lon2/180;
+	var theta = lon1-lon2;
+	var radtheta = Math.PI * theta/180;
+	var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+	dist = Math.acos(dist);
+	dist = dist * 180/Math.PI;
+	dist = dist * 60 * 1.1515;
+	if (unit=="K") { dist = dist * 1.609344; }
+	if (unit=="N") { dist = dist * 0.8684; }
+	return dist.toFixed(2);
+}
 
 //shipping address
 var shippaddress = {
