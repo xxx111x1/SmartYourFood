@@ -14,12 +14,12 @@ class ControllerCommonSfheader extends Controller {
 			$data['first_name'] = "";
 		}
 		
-		$this->load->language('sfcheckout/checkout');
+		$this->load->language('common/list');
 		$data['Login_Register'] =                            $this->language->get('Login_Register');
 		$data['Logo'] =                                      $this->language->get('Logo');
 		$data['Home'] =                                      $this->language->get('Home');
 		$data['Food'] =                                      $this->language->get('Food');
-		$data['Order'] =                                     $this->language->get('Order');
+		$data['Order_Amount'] =                                     $this->language->get('Order_Amount');
 		$data['Language'] =                                  $this->language->get('Language');
 		$data['Welcome'] =                                  $this->language->get('Welcome');
 		

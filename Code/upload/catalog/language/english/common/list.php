@@ -3,7 +3,7 @@
 $_['Logo'] =                                         'Usays';
 $_['Home'] =                                         'Home';
 $_['Food'] =                                         'Food';
-$_['Order'] =                                        'Order';
+$_['Order_Amount'] =                                 'Order Amount';
 $_['Selected_Restaurants'] =                         'Select Restaurants';
 $_['Selected_Food'] =                                'Select Food';
 $_['Search_Restaurant_name_Food_Keywords'] =         'Search Restaurant name/Food/Keywords';
@@ -46,3 +46,5 @@ $_['Help_Center'] =                                  'Help Center';
 $_['Follow_Us'] =                                    'Follow Us';
 $_['Contact_Us'] =                                   'Business Opportunities';
 $_['Scan_here'] =                                    'Scan Here';
+$_['Language'] =                                     '中文';
+$_['Welcome'] =                                     'Welcome';

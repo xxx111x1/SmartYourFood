@@ -20,7 +20,7 @@
 	  <div id="logo"></div>
 	  <div class="tag" id="go-to-food"><?php echo $Home; ?></div>
 	  <div class="tag" id="go-to-food"><?php echo $Food; ?></div>
-	  <div class="tag" id="go-to-order"><?php echo $Order; ?></div>
+	  <div class="tag" id="go-to-order"><?php echo $Order_Amount; ?></div>
 	  <div class="language"><?php echo $Language; ?></div>
 	  		<div class="dash">|</div>
 	  		<div class="account">

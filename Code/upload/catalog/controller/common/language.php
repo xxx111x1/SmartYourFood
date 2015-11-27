@@ -63,4 +63,16 @@ class ControllerCommonLanguage extends Controller {
 			$this->response->redirect($this->url->link('common/home'));
 		}
 	}
+	
+	public function changeLanguage() {
+		if (isset($this->request->get['code'])) {
+			$this->session->data['language'] = $this->request->get['code'];
+		}
+	
+		if (isset($this->request->get['redirect'])) {
+			$this->response->redirect($this->request->get['redirect']);
+		} else {
+			$this->response->redirect($this->url->link('common/sfhome'));
+		}
+	}
 }

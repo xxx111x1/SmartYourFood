@@ -17,7 +17,7 @@ class ControllerCommonList extends Controller{
 		$data['Logo'] =                                      $this->language->get('Logo');
 		$data['Home'] =                                      $this->language->get('Home');
 		$data['Food'] =                                      $this->language->get('Food');
-		$data['Order'] =                                     $this->language->get('Order');
+		$data['Order_Amount'] =                                     $this->language->get('Order_Amount');
 		$data['Selected_Restaurants'] =                      $this->language->get('Selected_Restaurants');
 		$data['Selected_Food'] =                             $this->language->get('Selected_Food');
 		$data['Search_Restaurant_name_Food_Keywords'] =      $this->language->get('Search_Restaurant_name_Food_Keywords');
@@ -28,10 +28,10 @@ class ControllerCommonList extends Controller{
 		$data['All'] =                                       $this->language->get('All');
 		$data['Chinese'] =                                   $this->language->get('Chinese');
 		$data['Spicy'] =                                     $this->language->get('Spicy');
-		$data['Noodle_Congee'] =                             $this->language->get('Noodle&Congee');
+		$data['Noodle_Congee'] =                             $this->language->get('Noodle_Congee');
 		$data['Chinese_Traditional'] =                       $this->language->get('Chinese_Traditional');
 		$data['Snack_Fast_Food'] =                           $this->language->get('Snack_Fast_Food');
-		$data['Dessert_Drink'] =                             $this->language->get('Dessert&Drink');
+		$data['Dessert_Drink'] =                             $this->language->get('Dessert_Drink');
 		$data['Cantonese'] =                                 $this->language->get('Cantonese');
 		$data['Beef_Lamb'] =                                 $this->language->get('Beef_Lamb');
 		$data['Vegetarian'] =                                $this->language->get('Vegetarian');
