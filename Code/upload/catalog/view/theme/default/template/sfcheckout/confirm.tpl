@@ -1,5 +1,5 @@
 <?php echo $header;?>
-<title>订单确认</title>
+<title><?php echo $Confirm_Your_Order; ?></title>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf_cart.css">
 <script src="catalog/view/javascript/list-item/item-content.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
@@ -7,23 +7,21 @@
 <div class="container" style="opacity: 1.0">
     <div class="cart_panel">
         <div class="cart_header">
-            <!--<h2 style="float: left;">订单确认</h2>-->
-            <div class="confirmlabel">订单确认</div>
-            <div class="gobackcart"><a href="/index.php?route=sfcheckout/checkout" style="text-decoration: none;color: #555555">返回购物车修改</a></div>
+            <!--<h2 style="float: left;"><?php echo $Confirm_Your_Order; ?></h2>-->
+            <div class="confirmlabel"><?php echo $Confirm_Your_Order; ?></div>
+            <div class="gobackcart"><a href="/index.php?route=sfcheckout/checkout" style="text-decoration: none;color: #555555"><?php echo $Back_to_your_cart; ?></a></div>
         </div>
         <hr width="96%" color="#DFDFDF" style="margin-left: auto;margin-right: auto"/>
         <table id="cart">
-            <caption>订单编号: <?php echo $order_id;?></caption>
+            <caption><?php echo $Order_Number; ?>: <?php echo $order_id;?></caption>
             <tbody>
                 <tr class="carttableheader">
                     <th class="col1">
-                        <div class="header_foodname" style="margin-left: 40px">
-                            菜品
-                        </div>
+                        <div class="header_foodname" style="margin-left: 40px"><?php echo $Order; ?></div>
                     </th>
-                    <th class="col2">单价</th>
-                    <th class="col3">数量</th>
-                    <th class="col4">小计</th>
+                    <th class="col2"><?php echo $Price; ?></th>
+                    <th class="col3"><?php echo $Count; ?></th>
+                    <th class="col4"><?php echo $Total_Price; ?></th>
                 </tr>
                 <?php foreach ($food_list as $food) { ?>
                 <tr>
@@ -51,15 +49,15 @@
             </tbody>
         </table>
         <div id="cost_summary">
-            <span class="summary_item">菜品总价:<span id="beforetax">$<?php echo $beforetax;?></span></span>
-            <span class="summary_item">配送费:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>            
-            <span class="summary_item">税(5%):<span id="taxcost"> $<?php echo $tax;?></span></span>
-            <span class="summary_item">优先配送:<span id="deliverfee"><?php if($fast_deliverfee > 0) {echo " 是";} else {echo " 否" ;}?> ($<?php echo $fast_deliverfee;?>) </span></span>
-            <span class="summary_item" style="float:right;margin-right:120px">总金额: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
+            <span class="summary_item"><?php echo $Sub_Total; ?>:<span id="beforetax">$<?php echo $beforetax;?></span></span>
+            <span class="summary_item"><?php echo $Delivery; ?>:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>            
+            <span class="summary_item"><?php echo $Tax; ?>(5%):<span id="taxcost"> $<?php echo $tax;?></span></span>
+            <span class="summary_item"><?php echo $Priority_Delivery; ?>:<span id="deliverfee"><?php if($fast_deliverfee > 0) {echo " 是";} else {echo " 否" ;}?> ($<?php echo $fast_deliverfee;?>) </span></span>
+            <span class="summary_item" style="float:right;margin-right:120px"><?php echo $Total; ?>: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
         </div>
     </div>
     <div id="deliverlabel">
-    配送信息
+   <?php echo $Delivery_Information; ?>
     </div>
     <div class="addressarea">
         <?php if($validaddress){ ?>
@@ -76,11 +74,11 @@
         <?php } else { echo '配送信息不完整，请返回购物车修改';}?>
     </div>
     <div id="payment">
-        <div id="paymentlabel">付款方式：货到付款</div>
+        <div id="paymentlabel"><?php echo $Payment_Cash; ?></div>
     </div>
-    <div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555">打印订单</div>
+    <!--<div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555"><?php echo $Print; ?></div> -->
     <a href="/index.php?route=sfcheckout/success">
-        <div class="btn" style="float: right;margin-right: 20px">确认付款</div>
+        <div class="btn" style="float: right;margin-right: 20px"><?php echo $Confirm; ?></div>
     </a>
 </div>
 

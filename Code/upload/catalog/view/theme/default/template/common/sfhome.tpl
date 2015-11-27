@@ -20,7 +20,7 @@
 	            	<a href="index.php?route=account/account" style="text-decoration: none;"> <?php echo $first_name ;?></a>
 	            <?php }?>
 	            <?php } else { ?>
-	    		<a href="index.php?route=sfaccount/login">登陆/注册</a>
+	    		<a href="index.php?route=sfaccount/login"><?php echo $Login_Register; ?></a>
 	        <?php } ?>  		
   		</div>
 		<a href="index.php?route=sfaccount/login">
@@ -33,10 +33,10 @@
   			<img id="mapSelect" /> 
   			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
   			<div id="dropdown"></div>
-  			<input id="serach-input" class="controls" type="text" placeholder="请输入餐馆、菜品关键字" />
-  			<div id="search-button">查找美食</div>
+  			<input id="serach-input" class="controls" type="text" placeholder="<?php echo $Search_Restaurant_name_Food_Keywords; ?>" />
+  			<div id="search-button"><?php echo $Search; ?></div>
   			<div class="history-addresses hide">
-  				<div id="history-label">历史记录</div>
+  				<div id="history-label"><?php echo $History; ?></div>
   				<?php if($history_address) {?>
   				<?php foreach ($history_address as $address) { ?>
 					<div class='address' lat='<?php echo $address['lat']; ?>' lng='<?php echo $address['lng']; ?>'><?php echo $address['address']; ?></div>	
@@ -47,7 +47,7 @@
   		<div class="first-info">
 	  		<div class="first-triangle-left"> </div>
 	  		<div class="first-tip">
-	  			<div class="first-tip-content"><a href="index.php?route=common/list">更多美食</a></div>
+	  			<div class="first-tip-content"><a href="index.php?route=common/list"><?php echo $More_Dishes; ?></a></div>
 	  		</div>
   		</div>
   		
@@ -55,7 +55,7 @@
   		<div class="second-info">
   			<div class="second-triangle-left"> </div>
 	  		<div class="second-tip">
-	  			<div class="second-tip-content"><a href="index.php?route=common/list&type=restaurant">精品餐馆</a></div>
+	  			<div class="second-tip-content"><a href="index.php?route=common/list&type=restaurant"><?php echo $Selected_Restaurants; ?></a></div>
 	  		</div>
   		</div>
   	</div>

@@ -18,6 +18,32 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
         
+        $this->load->language('sfcheckout/checkout');
+        $data['Logo'] =                                      $this->language->get('Logo');
+        $data['Home'] =                                      $this->language->get('Home');
+        $data['Food'] =                                      $this->language->get('Food');
+        $data['Order'] =                                     $this->language->get('Order');
+        $data['Selected_Restaurants'] =                      $this->language->get('Selected_Restaurants');
+        $data['Selected_Food'] =                             $this->language->get('Selected_Food');
+        $data['My_Cart'] =                                   $this->language->get('My_Cart');
+        $data['Order_Detail'] =                              $this->language->get('Order_Detail');
+        $data['Order'] =                                     $this->language->get('Order');
+        $data['Price'] =                                     $this->language->get('Price');
+        $data['Count'] =                                     $this->language->get('Count');
+        $data['Total_Price'] =                               $this->language->get('Total_Price');
+        $data['Sub_Total'] =                                 $this->language->get('Sub_Total');
+        $data['Delivery'] =                                  $this->language->get('Delivery');
+        $data['Tax'] =                                       $this->language->get('Tax');
+        $data['Priority_Delivery'] =                         $this->language->get('Priority_Delivery');
+        $data['Total'] =                                     $this->language->get('Total');
+        $data['Delivery_Information'] =                      $this->language->get('Delivery_Information');
+        $data['Payment_Cash'] =                             $this->language->get('Payment_Cash');
+        $data['Pay_Bill'] =                                  $this->language->get('Pay_Bill');
+        $data['Help_Center'] =                               $this->language->get('Help_Center');
+        $data['Follow_Us'] =                                 $this->language->get('Follow_Us');
+        $data['Contact_Us'] =                                $this->language->get('Contact_Us');
+        $data['Scan_here'] =                                 $this->language->get('Scan_here');
+        
         //Get Address
         $this->load->model('sfcheckout/shippingaddress');
         if(isset($this->session->data['address'])

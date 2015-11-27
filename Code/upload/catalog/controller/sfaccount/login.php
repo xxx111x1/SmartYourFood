@@ -127,7 +127,13 @@ class ControllerSfaccountLogin extends Controller{
         else{
             $data['redirect'] = '';
         }
-
+        
+        $this->load->language('sfaccount/login');
+        $data['Logo'] =                                      $this->language->get('Logo');
+        $data['Log_In'] =                                    $this->language->get('Log_In');
+        $data['Phone_Number'] =                              $this->language->get('Phone_Number');
+        $data['Enter_a_Password'] =                          $this->language->get('Enter_a_Password');
+        $data['Register_here'] =                             $this->language->get('Register_here');
         $this->response->setOutput($this->load->view('default/template/sfaccount/login.tpl', $data));
     }
 

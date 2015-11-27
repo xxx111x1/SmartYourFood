@@ -39,6 +39,16 @@ class ControllerSfaccountRegister extends Controller{
         {
             $data['error']=$this->error['error'];
         }
+        
+        $this->load->language('sfaccount/register');
+        $data['Register'] =                                  $this->language->get('Register');
+        $data['Your_Name'] =                                 $this->language->get('Your_Name');
+        $data['Cell-Phone_Number'] =                         $this->language->get('Cell-Phone_Number');
+        $data['Enter_a_Password'] =                          $this->language->get('Enter_a_Password');
+        $data['Enter_Password_Again'] =                      $this->language->get('Enter_Password_Again');
+        $data['Jion_Us'] =                                   $this->language->get('Jion_Us');
+        $data['By_clicking_Join_Now'] =                      $this->language->get('By_clicking_Join_Now');
+        $data['Already_on_Usays'] =                          $this->language->get('Already_on_Usays');
         $this->response->setOutput($this->load->view('default/template/sfaccount/register.tpl', $data));
     }
 

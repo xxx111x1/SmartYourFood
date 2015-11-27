@@ -10,6 +10,17 @@ class ControllerCommonSfhome extends Controller {
 		$data["foods"] = $this->model_sffood_food->getTempSpecialFoods();
 		$data['first_name'] = "";
 		$data['history_address'] = "";
+		
+		$this->load->language('common/sfhome');
+		$data['Logo'] =                                      $this->language->get('Logo');
+		$data['Search'] =                                    $this->language->get('Search');
+		$data['Login_Register'] =                            $this->language->get('Login_Register');
+		$data['Please_enter_your_address'] =                 $this->language->get('Please_enter_your_address');
+		$data['Search_Restaurant_name_Food_Keywords'] =      $this->language->get('Search_Restaurant_name_Food_Keywords');
+		$data['History'] =                                   $this->language->get('History');
+		$data['More_Dishes'] =                               $this->language->get('More_Dishes');
+		$data['Selected_Restaurants'] =                      $this->language->get('Selected_Restaurants');
+		
 		if(isset($this->request->get['lat'])){
 			$this->load->model('account/address');
 			$this->session->data['lat'] = $this->request->get['lat'];
@@ -37,7 +48,7 @@ class ControllerCommonSfhome extends Controller {
 			$data['history_address'] = $this->model_account_address->getAddressesHistory();
 		}
 		else{
-			$data['address'] = "请输入送餐地址";
+			$data['address'] = $data['Please_enter_your_address'];
 		}
 		
 		if(isset($this->session->data['cart_rest_id'])){
@@ -46,6 +57,8 @@ class ControllerCommonSfhome extends Controller {
 		else{
 			$data['cart_rest_id'] = 0;
 		}
+		
+
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/sfhome.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/common/sfhome.tpl', $data));
 		} else {

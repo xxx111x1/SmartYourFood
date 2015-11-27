@@ -13,6 +13,44 @@ class ControllerCommonList extends Controller{
         	$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
         }        
         
+        $this->load->language('common/list');
+		$data['Logo'] =                                      $this->language->get('Logo');
+		$data['Home'] =                                      $this->language->get('Home');
+		$data['Food'] =                                      $this->language->get('Food');
+		$data['Order'] =                                     $this->language->get('Order');
+		$data['Selected_Restaurants'] =                      $this->language->get('Selected_Restaurants');
+		$data['Selected_Food'] =                             $this->language->get('Selected_Food');
+		$data['Search_Restaurant_name_Food_Keywords'] =      $this->language->get('Search_Restaurant_name_Food_Keywords');
+		$data['Go'] =                                        $this->language->get('Go');
+		$data['Selected_Dishes'] =                           $this->language->get('Selected_Dishes');
+		$data['Selected_Restaurants'] =                      $this->language->get('Selected_Restaurants');
+		$data['Categories'] =                                $this->language->get('Categories');
+		$data['All'] =                                       $this->language->get('All');
+		$data['Chinese'] =                                   $this->language->get('Chinese');
+		$data['Spicy'] =                                     $this->language->get('Spicy');
+		$data['Noodle_Congee'] =                             $this->language->get('Noodle&Congee');
+		$data['Chinese_Traditional'] =                       $this->language->get('Chinese_Traditional');
+		$data['Snack_Fast_Food'] =                           $this->language->get('Snack_Fast_Food');
+		$data['Dessert_Drink'] =                             $this->language->get('Dessert&Drink');
+		$data['Cantonese'] =                                 $this->language->get('Cantonese');
+		$data['Beef_Lamb'] =                                 $this->language->get('Beef_Lamb');
+		$data['Vegetarian'] =                                $this->language->get('Vegetarian');
+		$data['Dim_Sum'] =                                   $this->language->get('Dim_Sum');
+		$data['Soup'] =                                      $this->language->get('Soup');
+		$data['BBQ'] =                                       $this->language->get('BBQ');
+		$data['Sushi'] =                                     $this->language->get('Sushi');
+		$data['Hot_Pot'] =                                   $this->language->get('Hot_Pot');
+		$data['Southeast_Asia'] =                            $this->language->get('Southeast_Asia');
+		$data['Deep_Fries'] =                                $this->language->get('Deep_Fries');
+		$data['Bakeries'] =                                  $this->language->get('Bakeries');
+		$data['North_China'] =                               $this->language->get('North_China');
+		$data['Korean'] =                                    $this->language->get('Korean');
+		$data['Filter'] =                                    $this->language->get('Filter');
+		$data['Default'] =                                   $this->language->get('Default');
+		$data['Popular'] =                                   $this->language->get('Popular');
+		$data['Comments'] =                                  $this->language->get('Comments');
+		$data['Delivery_Time'] =                                  $this->language->get('Delivery_Time');
+        
     	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];
@@ -31,7 +69,7 @@ class ControllerCommonList extends Controller{
         	$data['history_address'] = $this->model_account_address->getAddressesHistory();
         }
         else{
-        	$data['address'] = "请输入送餐地址按回车确认";
+        	$data['address'] = $data['Selected_Restaurants'];
         	$data['first_name'] = "";
         	$data['history_address'] = "";
         }        

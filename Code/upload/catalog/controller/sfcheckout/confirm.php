@@ -277,6 +277,8 @@ class ControllerSfcheckoutConfirm extends Controller{
         $order_data['currency_code'] = $this->currency->getCode();
         $order_data['currency_value'] = $this->currency->getValue($this->currency->getCode());
         $order_data['ip'] = $this->request->server['REMOTE_ADDR'];
+        
+        
 
         if (!empty($this->request->server['HTTP_X_FORWARDED_FOR'])) {
             $order_data['forwarded_ip'] = $this->request->server['HTTP_X_FORWARDED_FOR'];
@@ -342,6 +344,28 @@ class ControllerSfcheckoutConfirm extends Controller{
         $this->log->write('food number: '.count($food_list));
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
+        
+        $this->load->language('sfcheckout/confirm');
+        $data['Logo'] =                                      $this->language->get('Logo');
+        $data['Home'] =                                      $this->language->get('Home');
+        $data['Food'] =                                      $this->language->get('Food');
+        $data['Order'] =                                     $this->language->get('Order');
+        $data['Confirm_Your_Order'] =                        $this->language->get('Confirm_Your_Order');
+        $data['Back_to_your_cart'] =                         $this->language->get('Back_to_your_cart');
+        $data['Order_Number'] =                              $this->language->get('Order_Number');
+        $data['Order'] =                                     $this->language->get('Order');
+        $data['Price'] =                                     $this->language->get('Price');
+        $data['Count'] =                                     $this->language->get('Count');
+        $data['Total_Price'] =                               $this->language->get('Total_Price');
+        $data['Sub_Total'] =                                 $this->language->get('Sub_Total');
+        $data['Delivery'] =                                  $this->language->get('Delivery');
+        $data['Tax'] =                                       $this->language->get('Tax');
+        $data['Priority_Delivery'] =                         $this->language->get('Priority_Delivery');
+        $data['Total'] =                                     $this->language->get('Total');
+        $data['Delivery_Information'] =                      $this->language->get('Delivery_Information');
+        $data['Payment_Cash'] =                             $this->language->get('Payment_Cash');
+        $data['Confirm'] =                                   $this->language->get('Confirm');
+        $data['Print'] =                                     $this->language->get('Print');
         
         if(isset($this->session->data['shipping_address'])
             &&isset($this->session->data['shipping_address']['address_1'])

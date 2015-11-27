@@ -1,5 +1,5 @@
 <?php echo $header;?>
-<title>我的餐车</title>
+<title><?php echo $My_Cart; ?></title>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sf_cart.css">
 <script src="catalog/view/javascript/list-item/item-content.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/list-item/checkout.js" type="text/javascript"></script>
@@ -9,21 +9,19 @@
 	<input type="hidden" id="deliveryFeeInfor" lat="<?php echo $rest_lat ;?>" lng="<?php echo $rest_lng ;?>" isNight="<?php echo $is_night ;?>" />
     <div class="cart_panel">
         <div class="cart_header">
-            <h2 style="float: left;">我的餐车</h2>
+            <h2 style="float: left;"><?php echo $My_Cart; ?></h2>
         </div>
         <hr width="96%" color="#DFDFDF" style="margin-left: auto;margin-right: auto"/>
         <table id="cart">
-            <caption>订单详情</caption>
+            <caption><?php echo $Order_Detail; ?></caption>
             <tbody>
                 <tr class="carttableheader">
                     <th class="col1">
-                        <div class="header_foodname" style="margin-left: 40px">
-                            菜品
-                        </div>
+                        <div class="header_foodname" style="margin-left: 40px"><?php echo $Order; ?></div>
                     </th>
-                    <th class="col2">单价</th>
-                    <th class="col3">数量</th>
-                    <th class="col4">小计</th>
+                    <th class="col2"><?php echo $Price; ?></th>
+                    <th class="col3"><?php echo $Count; ?></th>
+                    <th class="col4"><?php echo $Total_Price; ?></th>
                 </tr>
                 <?php foreach ($food_list as $food) { ?>
                 <tr>
@@ -57,15 +55,15 @@
             </tbody>
         </table>
         <div id="cost_summary">
-            <span class="summary_item">菜品总价:<span id="beforetax">$<?php echo $beforetax;?></span></span>
-            <span class="summary_item">配送费:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>
-            <span class="summary_item">税(5%):<span id="taxcost"> $<?php echo $tax;?></span></span>
-            <span class="summary_item">优先配送:<span id="fastdeliverfee"> $<?php echo $fast_deliverfee;?> </span><input type="checkbox" id="fastDelivery" checked></span>
-            <span class="summary_item" style="float:right;margin-right:120px">总金额: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
+            <span class="summary_item"><?php echo $Sub_Total; ?>:<span id="beforetax">$<?php echo $beforetax;?></span></span>
+            <span class="summary_item"><?php echo $Delivery; ?>:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>
+            <span class="summary_item"><?php echo $Tax; ?>(5%):<span id="taxcost"> $<?php echo $tax;?></span></span>
+            <span class="summary_item"><?php echo $Priority_Delivery; ?>:<span id="fastdeliverfee"> $<?php echo $fast_deliverfee;?> </span><input type="checkbox" id="fastDelivery" checked></span>
+            <span class="summary_item" style="float:right;margin-right:120px"><?php echo $Total; ?>: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
         </div>
     </div>
     <div id="deliverlabel">
-    配送信息
+    <?php echo $Delivery_Information; ?>
     </div>
     ﻿<div class="addressarea">
     <?php foreach ($addresslist as $address) { ?>
@@ -89,10 +87,10 @@
     </a>
 </div>
     <div id="payment">
-        <div id="paymentlabel" >	付款方式: 现金支付(货到付款)   </div>        
+        <div id="paymentlabel" >	<?php echo $Payment_Cash; ?>  </div>        
     </div>
     <a id="orderConfirm" href="/index.php?route=sfcheckout/confirm&isFast=true">
-        <div class="btn" style="float: right;margin-right: 20px">结算</div>
+        <div class="btn" style="float: right;margin-right: 20px"><?php echo $Pay_Bill; ?></div>
     </a>
 </div>
 <h2 style="<?php echo $hasfood;?>">您还没有点餐</h2>

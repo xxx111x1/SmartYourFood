@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>注册</title>
+    <title><?php echo $Register; ?></title>
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/reg.css">
     <script type="text/javascript" src="/catalog/view/javascript/jquery/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="/catalog/view/javascript/owl-carousel/owl.carousel.js"></script>
@@ -47,40 +47,40 @@
                     <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/account_icon.png);">
                     </div>
                 </div>
-                <input class="reg_input" name="accountname" id="accountname" placeholder="您的姓名"/>
+                <input class="reg_input" name="accountname" id="accountname" placeholder="<?php echo $Your_Name; ?>"/>
             </div>
             <div class="regitem">
                 <div class="regtips">
                     <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/mobile_icon.png);">
                     </div>
                 </div>
-                <input id="phonenumber"  name="phonenumber" class="reg_input"  placeholder="手机号码"/>
+                <input id="phonenumber"  name="phonenumber" class="reg_input"  placeholder="<?php echo $Cell-Phone_Number; ?>"/>
             </div>
             <div class="regitem">
                 <div class="regtips">
                     <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
                     </div>
                 </div>
-                <input id="pwd_1st" class="reg_input"  name="pwd_1st" type="password" placeholder="输入密码"/>
+                <input id="pwd_1st" class="reg_input"  name="pwd_1st" type="password" placeholder="<?php echo $Enter_a_Password; ?>"/>
             </div>
             <div class="regitem">
                 <div class="regtips">
                     <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
                     </div>
                 </div>
-                <input id="pwd_2nd" name="pwd_2nd" class="reg_input" type="password" placeholder="确认密码"/>
+                <input id="pwd_2nd" name="pwd_2nd" class="reg_input" type="password" placeholder="<?php echo $Enter_Password_Again; ?>"/>
             </div>
-            <!--<input type="submit" class="reg_btn"><img style="z-index: 10" src="catalog/view/theme/default/image/icons/regbtn.png" alt="同意并注册"></input>-->
+            <!--<input type="submit" class="reg_btn"><img style="z-index: 10" src="catalog/view/theme/default/image/icons/regbtn.png" alt="<?php echo $Jion_Us; ?>"></input>-->
             <div class="reg_btn" type="submit">
-                <!--<a href="#" id="reg_btn" onclick="document.getElementById('regform').submit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="同意并注册"></a>-->
-                <a href="#" id="reg_btn" onclick="regsubmit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="同意并注册"></a>
+                <!--<a href="#" id="reg_btn" onclick="document.getElementById('regform').submit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="<?php echo $Jion_Us; ?>"></a>-->
+                <a href="#" id="reg_btn" onclick="regsubmit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="<?php echo $Jion_Us; ?>"></a>
             </div>
         </form>
         <div class="regtxt">
-            <span style="color: #f94e4e;font-weight: bold">《使用条款和协议》</span>
+            <span style="color: #f94e4e;font-weight: bold">《<?php echo $By_clicking_Join_Now; ?>》</span>
         </div>
         <div class="regtxt">
-            <span style="font-weight: bold">已经注册过？ 请点击 </span><a href="/index.php?route=sfaccount/login" style="text-decoration: none"><span style="color: #f94e4e;font-weight: bold"> 直接登录</span></a>
+            <span style="font-weight: bold"></span><a href="/index.php?route=sfaccount/login" style="text-decoration: none"><span style="color: #f94e4e;font-weight: bold"> <?php echo $Already_on_Usays; ?></span></a>
         </div>
 
     </div>

@@ -18,19 +18,19 @@
 <div class="header">
 	<div class="header-content">
 	  <div id="logo"></div>
-	  <div class="tag" id="go-to-food">首页</div>
-	  <div class="tag" id="go-to-food">美食</div>
-	  <div class="tag" id="go-to-order">订单结算</div>
-	  <div class="language">English</div>
+	  <div class="tag" id="go-to-food"><?php echo $Home; ?></div>
+	  <div class="tag" id="go-to-food"><?php echo $Food; ?></div>
+	  <div class="tag" id="go-to-order"><?php echo $Order; ?></div>
+	  <div class="language"><?php echo $Language; ?></div>
 	  		<div class="dash">|</div>
 	  		<div class="account">
 		  		<?php if ($first_name) { ?>
 		  			<?php if($first_name=='null') {?>
-		  			<?php echo "欢迎光临"; } else { ?>
+		  			<?php echo $Welcome; } else { ?>
 		            	<?php echo $first_name ;?>
 		            <?php }?>
 		            <?php } else { ?>
-		    		<a href="index.php?route=sfaccount/login">登陆/注册</a>
+		    		<a href="index.php?route=sfaccount/login"><?php echo $Login_Register; ?></a>
 		        <?php } ?>  		
 	  		</div>
 		<a href="index.php?route=account/account">

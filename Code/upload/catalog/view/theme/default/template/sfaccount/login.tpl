@@ -2,7 +2,7 @@
 <html>
 <head lang="en">
     <meta charset="UTF-8">
-    <title>登录</title>
+    <title><?php echo $Log_In; ?></title>
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/reg.css">
     <script type="text/javascript" src="/catalog/view/javascript/jquery/jquery-1.11.3.js"></script>
     <script type="text/javascript" src="/catalog/view/javascript/owl-carousel/owl.carousel.js"></script>
@@ -37,7 +37,7 @@
 <div class="regarea">
     <!--<div style="background-color: #FA7171;margin-top: 0px;width: 100%;height: 8px;border-top-left-radius: 5px;border-top-right-radius: 5px;"></div>-->
     <div style="padding-top: 36px;padding-bottom: 32px; font-size: 32px;font-weight: bolder; margin-left: 175px">
-        登录
+        <?php echo $Log_In; ?>
     </div>
     <div style="margin-left: 30px;color: #f65053;<?php if(!$validfailed) echo 'display:none;';?>">*用户名或密码错误</div>
     <form method="post" id="loginform">
@@ -47,24 +47,24 @@
                 <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/mobile_icon.png);">
                 </div>
             </div>
-            <input class="reg_input" id="phonenum" name="phonenumber" placeholder="手机号码"/>
+            <input class="reg_input" id="phonenum" name="phonenumber" placeholder="<?php echo $Phone_Number; ?>"/>
         </div>
         <div class="regitem">
             <div class="regtips">
                 <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/lock.png);">
                 </div>
             </div>
-            <input class="reg_input" id="password" name="password" type="password" placeholder="输入密码"/>
+            <input class="reg_input" id="password" name="password" type="password" placeholder="<?php echo $Enter_a_Password; ?>"/>
         </div>
         <a href="#" onclick="loginsubmit();" style="text-decoration: none">
         <div class="reg_btn" style="vertical-align:middle;text-align: center;color: white;font-size: 22px;font-weight: bolder;line-height: 50px">
-             <span>登录</span>
+             <span><?php echo $Log_In; ?></span>
         </div>
         </a>
     </form>
 
     <div class="regtxt">
-        <span style="font-weight: bold">还未注册？ 请点击 </span><a href="/index.php?route=sfaccount/register" style="text-decoration: none"><span style="color: #f94e4e;font-weight: bold">注册</span></a>
+        <span style="font-weight: bold"></span><a href="/index.php?route=sfaccount/register" style="text-decoration: none"><span style="color: #f94e4e;font-weight: bold"><?php echo $Register_here; ?></span></a>
     </div>
 
 </div>
