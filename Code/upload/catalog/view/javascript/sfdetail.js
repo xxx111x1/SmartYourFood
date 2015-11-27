@@ -1,4 +1,5 @@
 $(document).ready(function () {
+	var language =  $('html').attr('lang');
 	$(document).on('mouseover','.thumb', function(){
 		$(this).find(".thumboverlay").show();
 	});
@@ -15,7 +16,12 @@ $(document).ready(function () {
 		number++;
 		var cartRestId = document.getElementById('purchaseRest').value;
 		if(cartRestId!="0" && cartRestId != restId){
-			alert("请在同一家餐厅选餐");
+			if(language.indexOf("en")> -1){
+				alert("Please order in one restaurant.");
+			}
+			else{
+				alert("请在同一家餐厅选餐");
+			}
 		}else{
 			cart.add(id,number);
 			$(this).attr('number',number);
@@ -132,7 +138,20 @@ $(document).ready(function () {
 			dataType: 'json',	
 			success: function(data) {
 				$('.product_area').empty();						
-				$.each(data['results'], function(i, v) {	
+				$.each(data['results'], function(i, v) {
+					var stringAddCart = "";
+					var stringDistance = "";
+					var stringRest = "";
+					if(language.indexOf("en")>-1){
+						stringAddCart = "Add to cart";
+						stringDistance = "Distance";
+						stringRest = "Restaurant";
+					}
+					else{
+						stringAddCart = "添加到餐车";
+						stringDistance = "距离";
+						stringRest = "餐馆";
+					}
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;
 					var review_score = v.review_score;
@@ -149,9 +168,9 @@ $(document).ready(function () {
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
 						name = v.rest_name
-						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
-											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
+						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ '+stringAddCart+'</div></div></div>';
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+v.rest_name+'</a>' +
+											'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
 											'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
 					
 					      					

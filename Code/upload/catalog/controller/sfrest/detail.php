@@ -4,7 +4,12 @@ class ControllerSfrestDetail extends Controller{
     public function index(){
         $data = array();        
         
-        $restaurant_id = $this->request->get['restaurant_id'];
+        if(isset($this->request->get['restaurant_id'])){
+        	$restaurant_id = $this->request->get['restaurant_id'];
+        }
+        else{
+        	$restaurant_id = 1;
+        }
         if(isset($this->request->get['returnUrl'])){
         	$returnUrl = $this->request->get['returnUrl'];
         }

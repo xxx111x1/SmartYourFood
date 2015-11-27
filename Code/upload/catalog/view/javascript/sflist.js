@@ -11,7 +11,7 @@
 	
 $(document).ready(function () {
 	setInterval('swapImages()', 5000);
-    
+    var language =  $('html').attr('lang');
 	$(document).on('click','#showRestaurant',function(){
 		window.location.href="/index.php?route=sfrest/detail&restaurant_id=8&returnUrl=/index.php?route=common/list";
 	});
@@ -157,7 +157,13 @@ $(document).ready(function () {
 		number++;
 		var cartRestId = document.getElementById('purchaseRest').value;
 		if(cartRestId!="0" && cartRestId != restId){
-			alert("请在同一家餐厅选餐");
+			if(language.indexOf("en")> -1){
+				alert("Please order in one restaurant.");
+			}
+			else{
+				alert("请在同一家餐厅选餐");
+			}
+			
 		}else{
 			cart.addone(id,restId);
 			$(this).attr('number',number);
@@ -252,6 +258,19 @@ $(document).ready(function () {
 						distance = '-';
 					}
 					if(type=='food'){
+						var stringAddCart = "";
+						var stringDistance = "";
+						var stringRest = "";
+						if(language.indexOf("en")>-1){
+							stringAddCart = "Add to cart";
+							stringDistance = "Distance";
+							stringRest = "Restaurant";
+						}
+						else{
+							stringAddCart = "添加到餐车";
+							stringDistance = "距离";
+							stringRest = "餐馆";
+						}
 						id = v.food_id;
 						cost = v.price;
 						review_score = v.rest_review;
@@ -259,17 +278,28 @@ $(document).ready(function () {
 						name = v.rest_name
 						if(is_open==1)
 						{
-							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ 添加到餐车</div></div></div>';
+							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ '+ stringAddCart +'</div></div></div>';
 						}
 						else{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+v.name+'" >'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >餐馆 '+v.rest_name+'</a>' +
-							'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+v.name+'" >'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+v.rest_name+'</a>' +
+							'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
 							'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
 
 					}
 					else{
+						var stringCost = "";
+						var stringDistance = "";
+						if(language.indexOf("en")>-1){
+							stringCost = "Average cost:";
+							stringDistance = "Distance";
+						}
+						else{
+							stringCost = "平均价格：";
+							stringDistance = "距离";
+						}
+						
 						if(is_open==1)
 						{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /></div>';
@@ -278,8 +308,8 @@ $(document).ready(function () {
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /><div class="thumb_closed"></div></div>';
 						}
 						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname">'+v.name+'</div>' +
-											'<div class="thumb_desc_restdist">距离 '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
-											'<!--<div class="thumb_desc_productprice">平均价格：$ '+cost+'</div>--></div></div>';
+											'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
+											'<!--<div class="thumb_desc_productprice">'+stringCost+'$ '+cost+'</div>--></div></div>';
 					}     					
 					
 					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';
