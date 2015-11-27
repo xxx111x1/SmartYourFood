@@ -20,7 +20,8 @@ class ControllerCommonSfhome extends Controller {
 		$data['History'] =                                   $this->language->get('History');
 		$data['More_Dishes'] =                               $this->language->get('More_Dishes');
 		$data['Selected_Restaurants'] =                      $this->language->get('Selected_Restaurants');
-		
+		$data['Language'] =                                  $this->language->get('Language');
+		$data['Welcome'] =                                  $this->language->get('Welcome');
 		if(isset($this->request->get['lat'])){
 			$this->load->model('account/address');
 			$this->session->data['lat'] = $this->request->get['lat'];

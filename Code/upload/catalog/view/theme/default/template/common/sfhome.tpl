@@ -7,16 +7,17 @@
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfhome.css">
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&language=en&callback=initMap" async defer></script>
-    <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>    
+    <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
+    <script src="catalog/view/javascript/language.js" type="text/javascript"></script>    
   </head>
   <body>
   	<div class="header">
-  		<div class="language">English</div>
+  		<div class="language"><?php echo $Language; ?></div>
   		<div class="dash">|</div>
   		<div class="account">
 	  		<?php if ($first_name) { ?>
 	  			<?php if($first_name=='null') { ?>
-	  			<?php echo "欢迎光临"; } else { ?>
+	  			<?php echo $Welcome; } else { ?>
 	            	<a href="index.php?route=account/account" style="text-decoration: none;"> <?php echo $first_name ;?></a>
 	            <?php }?>
 	            <?php } else { ?>

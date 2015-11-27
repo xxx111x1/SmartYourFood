@@ -10,3 +10,5 @@ $_['Search_Restaurant_name_Food_Keywords'] = 'Search Restaurant name / Food / Ke
 $_['History'] = 'History';
 $_['More_Dishes'] = 'More Food';
 $_['Selected_Restaurants'] = 'Select Restaurants';
+$_['Language'] =                                     '中文';
+$_['Welcome'] =                                     'Welcome';

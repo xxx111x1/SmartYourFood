@@ -10,3 +10,5 @@ $_['Search_Restaurant_name_Food_Keywords'] = '请输入餐馆、菜品关键字'
 $_['History'] = '历史记录';
 $_['More_Dishes'] = '更多美食';
 $_['Selected_Restaurants'] = '精品餐馆';
+$_['Language'] =                                     'English';
+$_['Welcome'] =                                      '欢迎光临';
