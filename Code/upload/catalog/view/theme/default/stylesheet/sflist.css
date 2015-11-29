@@ -117,11 +117,13 @@ body{
     color: white;
     height: 46px;
     float: left;
-    padding-top:17px;
+    padding-top:16px;
     text-align: center;
-    font-size: 18px;
+    font-size: 16px;
     font-weight:bold;
     cursor:pointer;
+    float:left;
+    min-width: 68px;
 }
 
 .history-addresses{
@@ -183,7 +185,7 @@ body{
     padding-top: 15px;
 }
 .filteritem{
-    min-width: 60px;
+    min-width: 10px;
     margin-left: 5px;
     height: 60px;
     float:left;
@@ -205,8 +207,8 @@ body{
     float: left;
 }
 .filtername{
-    width: 50px;
-    margin-left: 5px;
+    min-width: 10px;
+    margin-left: 10px;
     float: left;
 }
 .sort_option{

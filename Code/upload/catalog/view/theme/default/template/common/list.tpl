@@ -38,47 +38,36 @@
 			<div class="filtername"><?php echo $All; ?></div>
 		</div>
         <div class="filteritem" id="filter_1" value="1">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/zhongcanoff.png)"></div>
             <div class="filtername"><?php echo $Chinese; ?></div>
         </div>
         <div class="filteritem" id="filter_2" value="2">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/chuancaioff.png)"></div>
             <div class="filtername"><?php echo $Spicy; ?></div>
         </div>
         <div class="filteritem" id="filter_3" value="3">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/xiangcaioff.png)"></div>
             <div class="filtername" ><?php echo $Chinese_Traditional; ?></div>
         </div>
         <div class="filteritem" id="filter_4" value="4">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/xicanoff.png)"></div>
             <div class="filtername" ><?php echo $Deep_Fries; ?></div>
         </div>
         <div class="filteritem" id="filter_5" value="5">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/hancanoff.png)"></div>
             <div class="filtername" ><?php echo $Noodle_Congee; ?></div>
         </div>
-        <div class="filteritem" id="filter_6" value="6">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/ricanoff.png)"></div>
+        <div class="filteritem" id="filter_6" value="6">           
             <div class="filtername" ><?php echo $Sushi; ?></div>
         </div>
         <div class="filteritem" id="filter_7" value="7">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/gangshioff.png)"></div>
             <div class="filtername" ><?php echo $Cantonese; ?></div>
         </div>
         <div class="filteritem" id="filter_8" value="8">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/zaochaoff.png)"></div>
             <div class="filtername" ><?php echo $Snack_Fast_Food; ?></div>
         </div>
         <div class="filteritem" id="filter_9" value="9">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/zhajioff.png)"></div>
             <div class="filtername" ><?php echo $Deep_Fries; ?></div>
         </div>
         <div class="filteritem" id="filter_10" value="10">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/tiandianoff.png)"></div>
             <div class="filtername" ><?php echo $Dessert_Drink; ?></div>
         </div>
         <div class="filteritem" id="filter_11" value="11">
-            <div class="filtericon" style="background-image: url(./catalog/view/theme/default/image/bingjilingoff.png)"></div>
             <div class="filtername" >冰激凌</div>
         </div>
     </div>

@@ -38,10 +38,6 @@ $(document).ready(function () {
 			$('#food_tab').addClass('selected_type_tab');
 			$('#restaurant_tab').removeClass('selected_type_tab');
 			$('.filteritem').removeClass('filter_field_selected');	
-			$('.filtericon').each(function(){
-				var backgroundImage = $(this).css('background-image');
-				$(this).css('background-image',backgroundImage.replace('on.','off.'));
-			});
 			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
 			$('#filter_0').addClass('filter_field_selected');
 			$('#filters').val('0');
@@ -57,10 +53,6 @@ $(document).ready(function () {
 			$('#restaurant_tab').addClass('selected_type_tab');
 			$('#food_tab').removeClass('selected_type_tab');
 			$('.filteritem').removeClass('filter_field_selected');
-			$('.filtericon').each(function(){
-				var backgroundImage = $(this).css('background-image');
-				$(this).css('background-image',backgroundImage.replace('on.','off.'));
-			});
 			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
 			$('#filter_0').addClass('filter_field_selected');
 			$('#filters').val('0');
@@ -78,14 +70,9 @@ $(document).ready(function () {
 		$(this).toggleClass('filter_field_selected');
 		var tagId = $(this).attr('value');
 		var filters = $('#filters').attr('value');
-		var background = $(this).find('.filtericon').css('background-image');
 		if($(this).hasClass('filter_field_selected')){						
 			if(tagId=='0'){
 				$('.filteritem').removeClass('filter_field_selected');
-				$('.filtericon').each(function(){
-					var backgroundImage = $(this).css('background-image');
-					$(this).css('background-image',backgroundImage.replace('on.','off.'));
-				});
 				$(this).addClass('filter_field_selected');				
 				filters = '0';				
 			}
@@ -95,7 +82,6 @@ $(document).ready(function () {
 				}
 				$('#filter_0').removeClass('filter_field_selected');
 				filters = filters + ','+tagId;
-				$(this).find('.filtericon').css('background-image',background.replace('off.','on.'));
 			}				
 		}
 		else{
@@ -104,7 +90,6 @@ $(document).ready(function () {
 				$('#filter_0').addClass('filter_field_selected');
 				filters='0';
 			}
-			$(this).find('.filtericon').css('background-image',background.replace('on.','off.'));
 		}
 		if(filters.substring(0,1)==','){
 			filters = filters.replace(',','');
