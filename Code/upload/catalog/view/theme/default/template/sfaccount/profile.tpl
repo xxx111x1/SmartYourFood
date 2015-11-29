@@ -55,7 +55,7 @@
 <div class="review-dialog-frame invisible" id="dialog_updateemail">
     <div class="update-dialog-wrap">
         <div class="review-header">
-            <div class="review-title">修改用邮箱</div>
+            <div class="review-title">修改邮箱</div>
             <div class="review-close"></div>
         </div>
 

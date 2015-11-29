@@ -7,7 +7,7 @@
 <div id="message" class="unvisible" >
 </div>
 <div class="backtop_section" id="backtop_section" >	
-	<div class="backtopIcons" id="my_message">消息</div>
+	<!--<div class="backtopIcons" id="my_message">消息</div>-->
 	<div class="backtopIcons" id="orders" onclick="window.location.href= '/index.php?route=sfcheckout/checkout';return false">订单</div>
 	<div class="backtopIcons" id="feedback">反馈</div>
 	<div class="backtopIcons" id="call_center">客服</div>		
