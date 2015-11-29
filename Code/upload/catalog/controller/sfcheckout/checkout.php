@@ -170,6 +170,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         $this->session->data['lng'] = $addr['lng'];
         $this->session->data['address'] = $addr['address'];
         $this->session->data['shipping_address'] = $shippingaddress;
+        $this->model_sfcheckout_shippingaddress->updateAddressDate($addr_id);
     }
 
     public function set_address()

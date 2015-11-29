@@ -97,7 +97,7 @@ class ModelSfcheckoutShippingaddress extends Model
     public function getAddresses() {
         $address_data = array();
 
-        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "shipping_address WHERE customer_id = '" . (int)$this->customer->getId() . "' order by address_id desc limit 5");
+        $query = $this->db->query("SELECT * FROM " . DB_PREFIX . "shipping_address WHERE customer_id = '" . (int)$this->customer->getId() . "' order by date_updated desc limit 5");
 
         foreach ($query->rows as $result) {
             $address_data[$result['address_id']] = array(
@@ -120,6 +120,13 @@ class ModelSfcheckoutShippingaddress extends Model
         return $query->row['total'];
     }
 
+    public function updateAddressDate($address_id){
+    	$this->event->trigger('pre.shipping_address.update.address', $address_id);
+    	
+    	$this->db->query("UPDATE " . DB_PREFIX . "shipping_address SET date_updated=now() where address_id = '" . $address_id . "'");
+    	
+    	$this->event->trigger('post.shipping_address.update.address', $address_id);
+    }
     public function getDistance($lat1, $lng1, $lat2, $lng2)
     {
         $earthRadius = 6367000; //approximate radius of earth in meters

@@ -399,12 +399,10 @@ class Cart {
 	}
 	
 	public function getFoodSubTotal() {
-		$total = 0;
-	
+		$total = 0;	
 		foreach ($this->getFoods() as $product) {
 			$total += $product['total'];
-		}
-	
+		}	
 		return $total;
 	}
 	
