@@ -26,7 +26,10 @@ function initMap() {
 		data: 'lat=' + latitude + '&lng=' + longitude+ '&address=' + encodeURIComponent(address) + '&isInsert=1',
 		dataType: 'json',
 		success: function(data) {
-			if(window.location.search.indexOf('common/list') >= 0){
+			if(window.location.search.indexOf('sfrest/detail') >= 0){
+				window.location.href =window.location.href; 
+			}
+			else if(window.location.search.indexOf('common/list') >= 0){
 				var searchtype =document.getElementById('searchType').value;
 				if(searchtype=="food"){
 					window.location.href = "index.php?route=common/list";
@@ -111,7 +114,10 @@ $(document).ready(function () {
 			data: 'lat=' + lat + '&lng=' + lng + '&address=' + encodeURIComponent(address) + '&isInsert=0',
 			dataType: 'json',
 			success: function(data) {
-				if(window.location.search.indexOf('common/list') >= 0){
+				if(window.location.search.indexOf('sfrest/detail') >= 0){
+					window.location.href =window.location.href; 
+				}
+				else if(window.location.search.indexOf('common/list') >= 0){
 					var searchtype =document.getElementById('searchType').value;
 					if(searchtype=="food"){
 						window.location.href = "index.php?route=common/list";
