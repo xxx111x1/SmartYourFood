@@ -402,6 +402,7 @@ body{
     font-weight: bold;
     color: #999999;
     padding-left:30px;
+    padding-top: 5px;
 }
 
 .thumb_desc_productinfo{
@@ -409,14 +410,10 @@ body{
     height: 25px;
     float: left;
     font-weight: bold;
-}
-
-.thumb_desc_productinfo{
-    height: 25px;
-    float: left;
-    margin-top: 10px;
+    margin-top: 5px;
     color: #f1f1f1;
 }
+
 .thumb_desc_productfav{
 	background-image: url(../image/favorite.png);
 	background-repeat: no-repeat;
@@ -427,6 +424,7 @@ body{
     margin-top: 0px;
     color: #f65053;
     padding-left:30px;
+    padding-top: 3px;
 }
 .thumb_desc_productprice{
     height: 25px;
