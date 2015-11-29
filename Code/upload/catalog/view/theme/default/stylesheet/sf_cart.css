@@ -268,7 +268,11 @@ input[type="checkbox"]{
     display: block;
 }
 
-.addressbox_selected .mark{
+.addressbox_selected{
+	border-color: #f65053;
+}
+
+.addressbox_selected .mark{	
     display: block;
 }
 
