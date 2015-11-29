@@ -5,11 +5,12 @@
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 
 <div class="container" style="opacity: 1.0">
+	<input type="hidden" id="orderNumber" value="<?php echo count($food_list)?>" />
     <div class="cart_panel">
         <div class="cart_header">
             <!--<h2 style="float: left;"><?php echo $Confirm_Your_Order; ?></h2>-->
             <div class="confirmlabel"><?php echo $Confirm_Your_Order; ?></div>
-            <div class="gobackcart"><a href="/index.php?route=sfcheckout/checkout" style="text-decoration: none;color: #555555"><?php echo $Back_to_your_cart; ?></a></div>
+            <div class="gobackcart"><a href="/index.php?route=sfcheckout/checkout" style="text-decoration: none;color: #555555;float:right;margin-right: 40px;"><?php echo $Back_to_your_cart; ?></a></div>
         </div>
         <hr width="96%" color="#DFDFDF" style="margin-left: auto;margin-right: auto"/>
         <table id="cart">
@@ -39,7 +40,7 @@
                     </td>
                     <td class="col2"> $<?php echo $food['price'];?></td>
                     <td class="col3">
-                        <div style="margin-left:50px;margin-top:10px">
+                        <div style="margin-left: 60px;">
                             <div class="foodnum" id="food_<?php echo $food['product_id']?>_number"><?php echo $food['quantity'];?></div>
                         </div>
                     </td>
@@ -59,7 +60,7 @@
     <div id="deliverlabel">
    <?php echo $Delivery_Information; ?>
     </div>
-    <div class="addressarea">
+    <div class="addressarea" style="height: 200px;">
         <?php if($validaddress){ ?>
         <div class="addressbox" style="border-style: solid;border-color: #f65053;border-width: 1px;">
             <div style="margin-bottom: 20px;margin-top: 20px">
@@ -76,8 +77,8 @@
     <div id="payment">
         <div id="paymentlabel"><?php echo $Payment_Cash; ?></div>
     </div>
-    <!--<div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555"><?php echo $Print; ?></div> -->
-    <a href="/index.php?route=sfcheckout/success">
+    <!--<div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555"><?php echo $Print; ?></div> -->   
+    <a id="orderConfirm" href="/index.php?route=sfcheckout/success">
         <div class="btn" style="float: right;margin-right: 20px"><?php echo $Confirm; ?></div>
     </a>
 </div>

@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: #f1f1f1;!important;
+    background-color: #f1f1f1 !important;
     color: #555555;
 }
 
@@ -67,7 +67,7 @@ body{
 
 .container{
     width: 1230px;
-    min-height: 1200px;
+    height: 900px;
     margin-top: 22px;
     margin-right: auto;
     margin-left: auto;
@@ -76,9 +76,10 @@ body{
 }
 
 .cart_panel{
-    width: 1000px;
+    width: 1100px;
     margin-top: 20px;
-    margin-left: 70px;
+    margin-left: auto;
+    margin-right: auto;
     background-color: #FFFFFF;
 }
 .cart_header{
@@ -87,13 +88,14 @@ body{
 }
 #cart{
     margin-top:20px;
-    margin-left:40px;
-    width:1100px;
+    margin-left: auto;
+    margin-right: auto;
+    width:1000px;
 }
 #cart > caption{
     font-size:18px;
     float:left;
-    margin-bottom:40px;
+    margin-bottom:20px;
     font-weight:bolder;
 }
 #cart > th{
@@ -186,7 +188,7 @@ input[type="checkbox"]{
 }
 
 .btn{
-    padding-top:5px;
+    padding-top:9px;
     width:80px;
     height:25px;
     color:white;
@@ -199,16 +201,19 @@ input[type="checkbox"]{
     margin-left:auto;
     margin-right:auto;
     margin-top:5px;
+    border-bottom: 0;
+    text-decoration: none !important; 
 }
 
 #cost_summary{
     margin-top:20px;
-    margin-left: 40px;
+    margin-left:auto;
+    margin-right:auto;
     padding-top:20px;
     background-color: #fafafa;
     font-weight:bolder;
     height:35px;
-    width: 1100px;
+    width: 1000px;
     border-bottom-style:solid;
     border-bottom-color:red;
     border-bottom-width:1px;
@@ -224,88 +229,66 @@ input[type="checkbox"]{
     color:#f65053;
     font-size:20px;
     float:right;
+    margin-top: -2px;
+    margin-left: 5px;
 }
 #tips{
     
 }
 .addressarea{
-    margin-left:100px;    
+	margin-left:auto;
+    margin-right:auto;
+    width: 1000px;
+    height: 350px;
 }
 
 .addressbox{
-    margin-top:30px;
-    margin-left:5px;
+    margin-top:20px;
+    margin-left:20px;
     border-style: solid;
     border-color: #D0D0D0;
     border-width: 1px;
     font-weight:bolder;
     width: 270px;
     height: 150px;
-    padding-left:10px;
+    padding-left:5px;
     float:left;
 }
 .addressarea:first-child{
-    margin-top:30px;
-    margin-left:5px;
-    border-style: solid;
     border-color: #f65053;
-    border-width: 1px;
-    font-weight:bolder;
-    width: 270px;
-    height: 150px;
-    padding-left:10px;
-    float:left;
 }
 .addressbox .mark{
     display: none;
 }
 
 .addressbox:hover{
-    margin-top:30px;
-    margin-left:5px;
-    border-style: solid;
     border-color: #f65053;
-    border-width: 1px;
-    font-weight:bolder;
-    width: 270px;
-    height: 150px;
-    padding-left:10px;
-    float:left;
 }
 .addressbox:hover .mark{
     display: block;
 }
-.addressbox_selected{
-    margin-top:30px;
-    margin-left:5px;
-    border-style: solid;
-    border-color: #f65053;
-    border-width: 1px;
-    font-weight:bolder;
-    width: 270px;
-    height: 150px;
-    padding-left:10px;
-    float:left;
-}
+
 .addressbox_selected .mark{
     display: block;
 }
 
 #deliverlabel{
-    margin-left:120px;
+    margin-left:auto;
+    margin-right:auto;
+    width: 1000px;
     margin-top:40px;
     font-weight:bolder;
 }
 
-#payment{    
-clear:both;
-margin-left:60px;
-float:left;
-border-bottom-color:#F1F1F1;
+#payment{ 
+	margin-left:auto;
+    margin-right:auto;
+    width: 1000px;
+	border-bottom-color:#F1F1F1;
 }
 
 #paymentlabel{
-    margin-left:60px;
+	width: 100%;
     margin-top:30px;
     font-weight:bolder;
 }
@@ -335,6 +318,12 @@ border-bottom-color:#F1F1F1;
     margin-left:10px;
 }
 
+#orderConfirm{
+	float: right;
+	margin-right: 140px;   
+    text-decoration: none !important; 
+}
+
 .ck_add_food{
     cursor: pointer;
 }
@@ -362,15 +351,16 @@ border-bottom-color:#F1F1F1;
 .gobackcart{
     font-size: 18px;
     float: right;
+    width: 40%;
     font-weight: bold;
-    margin-top: 50px;
+    margin-top: 30px;
     /*color: #A5A5A5;*/
 }
 
 .confirmlabel{
     font-size: 32px;
-    float: left;
     font-weight: bolder;
-    margin-top: 20px;
-    text-decoration: none;
+    margin-top: 20px;    
+    width: 40%;
+    float: left;
 }

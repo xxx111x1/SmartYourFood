@@ -1,5 +1,6 @@
 $(document).ready(function () {
 	
+	initialContainHeight();
 	var type='';	
 	if(window.location.search.indexOf('restaurant') >= 0){
 		type='rest'
@@ -133,6 +134,12 @@ $(document).ready(function () {
 			  $('#page_number').val(pageNumber);
 		   }
 	});
+	
+	function initialContainHeight(){
+		var orderNumber = $('#orderNumber').val();
+		var height = 800 + parseInt(orderNumber)*85;
+		$('.container').css('height',height);
+	}
 	
 	function addContents(filters,sort,pageNumber,isRefresh, isRefreshType){
 		if(isRefreshType){			

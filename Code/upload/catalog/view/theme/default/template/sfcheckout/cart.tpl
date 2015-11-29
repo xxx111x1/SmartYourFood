@@ -7,6 +7,7 @@
 
 <div class="container" style="<?php echo $nofood;?>">
 	<input type="hidden" id="deliveryFeeInfor" lat="<?php echo $rest_lat ;?>" lng="<?php echo $rest_lng ;?>" isNight="<?php echo $is_night ;?>" />
+	<input type="hidden" id="orderNumber" value="<?php echo count($food_list)?>" />
     <div class="cart_panel">
         <div class="cart_header">
             <h2 style="float: left;"><?php echo $My_Cart; ?></h2>
@@ -87,11 +88,12 @@
     </a>
 </div>
     <div id="payment">
-        <div id="paymentlabel" >	<?php echo $Payment_Cash; ?>  </div>        
+        <div id="paymentlabel" >	<?php echo $Payment_Cash; ?>  </div>     
     </div>
     <a id="orderConfirm" href="/index.php?route=sfcheckout/confirm&isFast=true">
-        <div class="btn" style="float: right;margin-right: 20px"><?php echo $Pay_Bill; ?></div>
-    </a>
+        <div class="btn"><?php echo $Pay_Bill; ?></div>
+    </a>      
+    
 </div>
 <h2 style="<?php echo $hasfood;?>">您还没有点餐</h2>
 <?php echo $footer;?>
