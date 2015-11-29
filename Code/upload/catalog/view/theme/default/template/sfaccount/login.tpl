@@ -39,7 +39,7 @@
     <div style="padding-top: 36px;padding-bottom: 32px; font-size: 32px;font-weight: bolder; margin-left: 175px">
         <?php echo $Log_In; ?>
     </div>
-    <div style="margin-left: 30px;color: #f65053;<?php if(!$validfailed) echo 'display:none;';?>">*用户名或密码错误</div>
+    <div style="margin-left: 30px;color: #f65053;<?php if(!$validfailed) echo 'display:none;';?>">*<?php echo $Incorrect_User_Name ;?></div>
     <form method="post" id="loginform">
     	<input type="hidden" id="redirect" name="redirect" value="<?php echo $redirect;?>"/>
         <div class="regitem">

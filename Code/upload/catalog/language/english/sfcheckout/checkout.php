@@ -26,3 +26,9 @@ $_['Contact_Us'] =                                   'Business Opportunities';
 $_['Scan_here'] =                                    'Scan here';
 $_['Language'] =                                     '中文';
 $_['Welcome'] =                                     'Welcome';
+
+$_['Delivery_Information_Not_Complete'] = 'Delivery information is not complete, please return to the shopping cart';
+$_['Delete'] = 'Delete';
+$_['Edit'] = 'Edit';
+$_['New_Address'] = 'New address';
+$_['No_Any_Order'] = 'No any order can be found here';

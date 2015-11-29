@@ -1,18 +1,19 @@
     <div class="rightpanel" id="orderhistory_">
-        <div class="right_header">
+        <!--<div class="right_header">
             <div class="btn" style="float:left">
             全部
             </div>
         </div>
+        -->
         <div class="ordertable" <?php if (!$noorder) echo "style='display:none;'"?>>
-        暂无购买记录。
+        <?php echo $No_Order_History ;?>
         </div>
         <table class="ordertable" style="<?php if ($noorder) echo 'display:none;'?>">
             <tr class="orderheader">
-                <th class="col1">订单详情</th>
-                <th class="col2">收货人</th>
-                <th class="col3">总计金额</th>
-                <th class="col4">状态</th>
+                <th class="col1"><?php echo $Order_Detail ;?></th>
+                <th class="col2"><?php echo $Receiver ;?></th>
+                <th class="col3"><?php echo $Total ;?></th>
+                <th class="col4"><?php echo $Status ;?></th>
                 <!--<th class="col5">操作</th>-->
             </tr>
             <?php foreach ($orders as $order) { ?>

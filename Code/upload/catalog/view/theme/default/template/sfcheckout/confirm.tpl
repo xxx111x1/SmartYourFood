@@ -72,7 +72,7 @@
             <br/>
             <span><?php echo $phone;?></span>
         </div>
-        <?php } else { echo '配送信息不完整，请返回购物车修改';}?>
+        <?php } else { echo $Delivery_Information_Not_Complete;}?>
     </div>
     <div id="payment">
         <div id="paymentlabel"><?php echo $Payment_Cash; ?></div>

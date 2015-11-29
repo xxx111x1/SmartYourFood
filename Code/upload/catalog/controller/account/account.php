@@ -119,6 +119,22 @@ class ControllerAccountAccount extends Controller {
 				$this->model_sfcheckout_shippingaddress->addAddress($address_data);
 			}			
 		}
+		$this->load->language('account/account');
+		$data['My_Account'] = $this->language->get('My_Account');
+		$data['Change_Account_Information'] = $this->language->get('Change_Account_Information');
+		
+		$data['Profile'] = $this->language->get('Profile');
+		$data['HistoryOrders'] = $this->language->get('HistoryOrders');
+		$data['All'] = $this->language->get('All');
+		$data['Order_Detail'] = $this->language->get('Order_Detail');
+		$data['Receiver'] = $this->language->get('Receiver');
+		$data['Total'] = $this->language->get('Total');
+		$data['Status'] = $this->language->get('Status');
+		$data['Address_Management'] = $this->language->get('Address_Management');
+		$data['Edit'] = $this->language->get('Edit');
+		$data['Delete'] = $this->language->get('Delete');
+		$data['Wecome_Here'] = $this->language->get('Wecome_Here');
+		$data['Log_Out'] = $this->language->get('Log_Out');
 		
 		$this->document->setTitle($this->language->get('heading_title'));
 		$data['header'] = $this->load->controller('common/sfheader');

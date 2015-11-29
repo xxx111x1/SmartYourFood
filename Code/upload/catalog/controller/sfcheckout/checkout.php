@@ -43,7 +43,10 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['Follow_Us'] =                                 $this->language->get('Follow_Us');
         $data['Contact_Us'] =                                $this->language->get('Contact_Us');
         $data['Scan_here'] =                                 $this->language->get('Scan_here');
-        
+        $data['Delete'] = $this->language->get('Delete');
+		$data['Edit'] = $this->language->get('Edit');
+		$data['New_Address'] = $this->language->get('New_Address');
+		$data['No_Any_Order'] = $this->language->get('No_Any_Order');
         //Get Address
         $this->load->model('sfcheckout/shippingaddress');
         if(isset($this->session->data['address'])

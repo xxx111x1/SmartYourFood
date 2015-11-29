@@ -54,6 +54,13 @@ class ControllerSfaccountOrder extends Controller {
 		$data['footer'] = $this->load->controller('common/footer');
 		$data['header'] = $this->load->controller('common/header');
 
+		$this->load->language('account/account');
+		$data['No_Order_History'] = $this->language->get('No_Order_History');
+		$data['Order_Detail'] = $this->language->get('Order_Detail');
+		$data['Receiver'] = $this->language->get('Receiver');
+		$data['Total'] = $this->language->get('Total');
+		$data['Status'] = $this->language->get('Status');
+		
 		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl', $data);
 		} else {

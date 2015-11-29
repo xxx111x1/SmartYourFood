@@ -71,8 +71,8 @@
     <div class="addressbox" id="address_<?php echo $address['address_id'];?>" addr_id="<?php echo $address['address_id'];?>" lat="<?php echo $address['lat'];?>" lng="<?php echo $address['lng'];?>">
         <div style="margin-bottom: 20px;margin-top: 20px">
             <span id="contact_<?php echo $address['address_id'];?>" ><?php echo $address['contact'];?></span>
-            <span class='deleteAddress' addr_id="<?php echo $address['address_id'];?>" >删除</span>
-            <span class='editAddress' addr_id="<?php echo $address['address_id'];?>" >修改</span>
+            <span class='deleteAddress' addr_id="<?php echo $address['address_id'];?>" ><?php echo $Delete ;?></span>
+            <span class='editAddress' addr_id="<?php echo $address['address_id'];?>" ><?php echo $Edit ;?></span>
         </div>
         <br/>
         <line title="<?php echo $address['address'];?>"><?php echo $address['address'];?></line>
@@ -83,7 +83,7 @@
     <?php } ?>
     <a href="/index.php?route=address/address&returnUrl=<?php echo $returnUrl;?>">
         <div class="addressbox" style="line-height: 130px;vertical-align: middle;text-align: center;color: #D8D8D8;font-size: 22px">
-            <span>添加新的地址</span>
+            <span><?php echo $New_Address ;?></span>
         </div>
     </a>
 </div>
@@ -95,5 +95,5 @@
     </a>      
     
 </div>
-<h2 style="<?php echo $hasfood;?>">您还没有点餐</h2>
+<h2 style="<?php echo $hasfood;?>"><?php echo $No_Any_Order ;?></h2>
 <?php echo $footer;?>

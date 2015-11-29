@@ -26,3 +26,9 @@ $_['Contact_Us'] =                                   '商务合作';
 $_['Scan_here'] =                                    '二维码';
 $_['Language'] =                                     'English';
 $_['Welcome'] =                                      '欢迎光临';
+
+$_['Delivery_Information_Not_Complete'] = '配送信息不完整，请返回购物车修改';
+$_['Delete'] = '删除';
+$_['Edit'] = '修改';
+$_['New_Address'] = '添加新的地址';
+$_['No_Any_Order'] = '您还没有点餐';

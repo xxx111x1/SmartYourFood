@@ -134,6 +134,7 @@ class ControllerSfaccountLogin extends Controller{
         $data['Phone_Number'] =                              $this->language->get('Phone_Number');
         $data['Enter_a_Password'] =                          $this->language->get('Enter_a_Password');
         $data['Register_here'] =                             $this->language->get('Register_here');
+        $data['Incorrect_User_Name'] =                             $this->language->get('Incorrect_User_Name');
         $this->response->setOutput($this->load->view('default/template/sfaccount/login.tpl', $data));
     }
 

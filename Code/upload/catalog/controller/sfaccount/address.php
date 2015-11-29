@@ -14,6 +14,13 @@ class ControllerSfaccountAddress extends Controller {
         $this->load->model('sfcheckout/shippingaddress');
         $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
         $data['addresslist']=$addresses;
+        
+        $this->load->language('account/account');
+        $this->load->language('sfcheckout/checkout');
+        $data['Edit'] = $this->language->get('Edit');
+        $data['Delete'] = $this->language->get('Delete');
+        $data['New_Address'] = $this->language->get('New_Address');
+        
         return $this->load->view('default/template/sfaccount/address.tpl', $data);
     }
 }
