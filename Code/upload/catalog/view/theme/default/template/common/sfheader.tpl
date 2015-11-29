@@ -12,6 +12,8 @@
 <link href="catalog/view/theme/default/stylesheet/sfcommon.css" rel="stylesheet">
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/sfheader.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mediumfontstyle.css">
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/common.css">
 </head>
 
 <body>

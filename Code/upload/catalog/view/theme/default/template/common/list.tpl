@@ -3,8 +3,6 @@
 <script src="catalog/view/javascript/sflist.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&callback=initMap" async defer></script>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mediumfontstyle.css">
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/common.css">
 
 <div class="container">
 	<div id="ads" >

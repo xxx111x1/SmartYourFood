@@ -8,7 +8,9 @@
     <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&language=en&callback=initMap" async defer></script>
     <script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
-    <script src="catalog/view/javascript/language.js" type="text/javascript"></script>    
+    <script src="catalog/view/javascript/language.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mediumfontstyle.css">
+	<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/common.css">    
   </head>
   <body>
   	<div class="header">
