@@ -169,7 +169,7 @@ $(document).ready(function () {
 				$(".first-tip-content,.first-triangle-left").css("opacity","");
 			}
 	);
-	
+	/*
 	$(".food").hover(
 			function(){
 				$(this).addClass( "food-hover" );
@@ -184,5 +184,20 @@ $(document).ready(function () {
 				$(this).find(".buy-cart").addClass("hide");
 				$(this).removeClass( "food-hover" );				
 			}
-	);	
+	);*/
+	$(".food").hover(
+		function(){
+			$(this).removeClass("food").addClass( "food-hover" );
+			//$(this).addClass( "food-hover" );
+			$(this).find(".food-background").removeClass("food-background").addClass("food-background-hover");
+			$(this).find(".buy-cart").removeClass("hide");
+			$(this).find(".food-hover-content").removeClass("hide");
+		},
+		function(){
+			$(this).removeClass("food-hover").addClass( "food" );
+			$(this).find(".food-background-hover").removeClass("food-background-hover").addClass("food-background");
+			$(this).find(".buy-cart").addClass("hide");
+			$(this).find(".food-hover-content").addClass("hide");
+		}
+	);
 });

@@ -45,7 +45,8 @@
 					<div class='address' lat='<?php echo $address['lat']; ?>' lng='<?php echo $address['lng']; ?>'><?php echo $address['address']; ?></div>	
 				<?php } } ?>
   			</div>
-  		</div>  		  		
+  		</div>
+		<!--
   		<div class="click-point-first"></div>
   		<div class="first-info">
 	  		<div class="first-triangle-left"> </div>
@@ -61,6 +62,14 @@
 	  			<div class="second-tip-content"><a href="index.php?route=common/list&type=restaurant"><?php echo $Selected_Restaurants; ?></a></div>
 	  		</div>
   		</div>
+  		-->
+		<div id="first-honey-point">
+			<div class="tip-content"><a href="index.php?route=common/list"><?php echo $More_Dishes; ?></a></div>
+		</div>
+
+		<div id="second-honey-point">
+			<div class="tip-content"><a href="index.php?route=common/list&type=restaurant"><?php echo $Selected_Restaurants; ?></a></div>
+		</div>
   	</div>
   	<div class="special-foods">
   		<input type="hidden" id="restId" value="<?php echo $cart_rest_id;?>" />
@@ -68,7 +77,7 @@
   			<?php foreach ($foods as $food) { ?>
 				<div class="food" restid="<?php echo $food['restaurant_id']; ?>" foodid="<?php echo $food['food_id'] ;?>">
 	  				<div class="food-background">
-	  					<div class="food-thumb" style="background-image: url('<?php echo $food['img_url'] ;?>'); backgournd-repeat: no-repeat;background-size: 140px 140px;">
+	  					<div class="food-thumb" style="background-image: url('<?php echo $food['img_url'] ;?>');">
 	  					</div>
   					</div>
   					<div class="food-hover-content hide">推荐美食</div>
