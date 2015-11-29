@@ -67,35 +67,10 @@ $(document).ready(function () {
 	isRefreshType = false;
 	
 	$(document).on('click', '.filteritem', function(){
-		$(this).toggleClass('filter_field_selected');
-		var tagId = $(this).attr('value');
-		var filters = $('#filters').attr('value');
-		if($(this).hasClass('filter_field_selected')){						
-			if(tagId=='0'){
-				$('.filteritem').removeClass('filter_field_selected');
-				$(this).addClass('filter_field_selected');				
-				filters = '0';				
-			}
-			else{
-				if(filters == "0," || filters == "0"){
-					filters = "";
-				}
-				$('#filter_0').removeClass('filter_field_selected');
-				filters = filters + ','+tagId;
-			}				
-		}
-		else{
-			filters = filters.replace(','+ tagId,'').replace(tagId,'');
-			if(filters==''){
-				$('#filter_0').addClass('filter_field_selected');
-				filters='0';
-			}
-		}
-		if(filters.substring(0,1)==','){
-			filters = filters.replace(',','');
-		}
-		$('#filters').attr('value',filters);
-		
+		$('.filteritem').removeClass('filter_field_selected');
+		$(this).addClass('filter_field_selected');				
+		var filters = $(this).attr('value');
+		$('#filters').attr('value',filters);		
 		var sortId = $('#sort').attr('value');
 		var sort = getSortString(sortId);				
 		addContents(filters,sort,0,1,isRefreshType);
