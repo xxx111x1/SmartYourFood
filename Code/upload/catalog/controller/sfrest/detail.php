@@ -19,6 +19,34 @@ class ControllerSfrestDetail extends Controller{
         
         $data["return_url"] =$returnUrl; 
         $data["rest_id"] = $restaurant_id;
+        
+        $this->load->language('sfrest/detail');
+        $data['Comment_Here'] = $this->language->get('Comment_Here');
+        $data['Comment'] = $this->language->get('Comment');
+        $data['Ratings'] = $this->language->get('Ratings');
+        $data['Taste'] = $this->language->get('Taste');
+        $data['Service'] = $this->language->get('Service');
+        $data['Share_Feeling'] = $this->language->get('Share_Feeling');
+        $data['ContactNumber'] = $this->language->get('ContactNumber');
+        $data['RestaurantAddress'] = $this->language->get('RestaurantAddress');
+        $data['BusinessHours'] = $this->language->get('BusinessHours');
+        $data['Averagearrivaltime'] = $this->language->get('Averagearrivaltime');
+        $data['Distance'] = $this->language->get('Distance');
+        $data['Rank'] = $this->language->get('Rank');
+        $data['Default'] = $this->language->get('Default');
+        $data['Popularity'] = $this->language->get('Popularity');
+        $data['Ratings'] = $this->language->get('Ratings');
+        
+        $this->load->language('common/list');
+        $data['Search_Restaurant_name_Food_Keywords'] =      $this->language->get('Search_Restaurant_name_Food_Keywords');
+        $data['Go'] =                                        $this->language->get('Go');
+        $data['Filter'] =                                    $this->language->get('Filter');
+        $data['Default'] =                                   $this->language->get('Default');
+        $data['Popular'] =                                   $this->language->get('Popular');
+        $data['Comments'] =                                  $this->language->get('Comments');
+        $data['Delivery_Time'] =                                  $this->language->get('Delivery_Time');
+        $data['All'] =                                       $this->language->get('All');
+        $data['History_Record'] =                                       $this->language->get('History_Record');
         if (isset($this->request->get['food_id'])) {
         	$food_id = $this->request->get['food_id'];
         	$data['food_id'] = $food_id;

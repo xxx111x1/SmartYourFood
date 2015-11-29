@@ -47,7 +47,7 @@ $_['Contact_Us'] =                                   'Business Opportunities';
 $_['Scan_here'] =                                    'Scan Here';
 $_['Language'] =                                     '中文';
 $_['Welcome'] =                                     'Welcome';
-
+$_['History_Record'] = 'History adress';
 $_['Search_Results_For '] =                                    'Search results for {1},';
 $_['Dishes_Found'] =                                     '{0} dishes found';
 $_['Restaurants_Found'] =                                     '{0} restaurants found related to {1}';

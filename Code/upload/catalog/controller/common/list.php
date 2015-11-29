@@ -50,7 +50,7 @@ class ControllerCommonList extends Controller{
 		$data['Popular'] =                                   $this->language->get('Popular');
 		$data['Comments'] =                                  $this->language->get('Comments');
 		$data['Delivery_Time'] =                                  $this->language->get('Delivery_Time');
-        
+		$data['History_Record'] =                                       $this->language->get('History_Record');
     	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];

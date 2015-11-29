@@ -48,7 +48,7 @@ $_['Contact_Us'] =                                   '商务合作';
 $_['Scan_here'] =                                    '二维码';
 $_['Language'] =                                     'English';
 $_['Welcome'] =                                      '欢迎光临';
-
+$_['History_Record'] = '历史记录';
 $_['Search_Results_For '] =                                    '搜索{1}的结果:';
 $_['Dishes_Found'] =                                     '共搜到{0}个菜品';
 $_['Restaurants_Found'] =                                     '共搜到{0}个和{1}相关的餐馆';

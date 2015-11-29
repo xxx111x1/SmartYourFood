@@ -22,7 +22,7 @@
   			<input id="serach-input" class="controls" type="text" placeholder="<?php echo $Search_Restaurant_name_Food_Keywords; ?>" />
   			<div id="search-button"><?php echo $Go; ?></div>
   			<div class="history-addresses hide">
-  				<div id="history-label">历史记录</div>
+  				<div id="history-label"><?php echo $History_Record;?></div>
   				<?php if($history_address) {?>
   				<?php foreach ($history_address as $address) { ?>
 					<div class='address' lat='<?php echo $address['lat']; ?>' lng='<?php echo $address['lng']; ?>'><?php echo $address['address']; ?></div>	
