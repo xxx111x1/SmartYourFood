@@ -267,7 +267,7 @@ $(document).ready(function () {
 						else{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname">'+v.name+'</div>' +
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname" restId='+restId+'>'+v.name+'</div>' +
 											'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
 											'<!--<div class="thumb_desc_productprice">'+stringCost+'$ '+cost+'</div>--></div></div>';
 					}     					
