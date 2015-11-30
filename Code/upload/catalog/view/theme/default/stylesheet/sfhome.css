@@ -125,14 +125,15 @@
         cursor:pointer;
     }
 
-    .history-addresses{
+    .history-addresses{    	
         width: 253px;
         margin-top:48px;
         margin-left:1px;
         background: #ffffff;
         min-height:100px;
         border: 1px solid #d3d3d3;
-        z-index:100;
+        position: absolute;
+        z-index:300;
     }
 
     #history-label{
@@ -157,7 +158,6 @@
         font-size:14px;
         border-bottom: 1px solid #d3d3d3;
         cursor: pointer;
-        z-index:100;
     }
 
     .address:hover{
@@ -516,7 +516,8 @@
         background: #ffffff;
         min-height:100px;
         border: 1px solid #d3d3d3;
-        z-index:100;
+        position: absolute;
+        z-index:300;
     }
 
     #history-label{
@@ -541,7 +542,6 @@
         font-size:14px;
         border-bottom: 1px solid #d3d3d3;
         cursor: pointer;
-        z-index:100;
     }
 
     .address:hover{
@@ -926,7 +926,8 @@
         background: #ffffff;
         min-height:100px;
         border: 1px solid #d3d3d3;
-        z-index:100;
+        position: absolute;
+        z-index:300;
     }
 
     #history-label{
@@ -951,7 +952,6 @@
         font-size:14px;
         border-bottom: 1px solid #d3d3d3;
         cursor: pointer;
-        z-index:100;
     }
 
     .address:hover{
