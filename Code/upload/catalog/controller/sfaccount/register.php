@@ -43,7 +43,7 @@ class ControllerSfaccountRegister extends Controller{
         $this->load->language('sfaccount/register');
         $data['Register'] =                                  $this->language->get('Register');
         $data['Your_Name'] =                                 $this->language->get('Your_Name');
-        $data['Cell-Phone_Number'] =                         $this->language->get('Cell-Phone_Number');
+        $data['Cell_Phone_Number'] =                         $this->language->get('Cell_Phone_Number');
         $data['Enter_a_Password'] =                          $this->language->get('Enter_a_Password');
         $data['Enter_Password_Again'] =                      $this->language->get('Enter_Password_Again');
         $data['Jion_Us'] =                                   $this->language->get('Jion_Us');

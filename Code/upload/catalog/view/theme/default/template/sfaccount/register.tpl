@@ -54,7 +54,7 @@
                     <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/mobile_icon.png);">
                     </div>
                 </div>
-                <input id="phonenumber"  name="phonenumber" class="reg_input"  placeholder="<?php echo $Cell-Phone_Number; ?>"/>
+                <input id="phonenumber"  name="phonenumber" class="reg_input"  placeholder="<?php echo $Cell_Phone_Number; ?>"/>
             </div>
             <div class="regitem">
                 <div class="regtips">

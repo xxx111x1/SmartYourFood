@@ -2,7 +2,7 @@
 
 $_['Register'] =                                     '注册';
 $_['Your_Name'] =                                    '您的姓名';
-$_['Cell-Phone_Number'] =                            '手机号码';
+$_['Cell_Phone_Number'] =                            '手机号码';
 $_['Enter_a_Password'] =                             '输入密码';
 $_['Enter_Password_Again'] =                         '确认密码';
 $_['Jion_Us'] =                                      '同意并注册';

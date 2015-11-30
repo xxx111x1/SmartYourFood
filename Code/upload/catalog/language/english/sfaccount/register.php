@@ -2,7 +2,7 @@
 
 $_['Register'] =                                     'Register';
 $_['Your_Name'] =                                    'Your Name';
-$_['Cell-Phone_Number'] =                            'Cellphone Number';
+$_['Cell_Phone_Number'] =                            'Cellphone Number';
 $_['Enter_a_Password'] =                             'Password (6 or more characters)';
 $_['Enter_Password_Again'] =                         'Enter Again ';
 $_['Jion_Us'] =                                      'Agree & Join Now ';
