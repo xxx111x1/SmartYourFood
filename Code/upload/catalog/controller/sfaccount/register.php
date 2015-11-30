@@ -30,7 +30,7 @@ class ControllerSfaccountRegister extends Controller{
             $customer_data['fax']='null';
             $customer_id = $this->model_account_customer->addSFCustomer($customer_data);
             $this->customer->loginbytelephone($customer_data['telephone'], $customer_data['password']);
-            $this->response->redirect($this->url->link('account/success'));
+            $this->response->redirect($this->url->link('common/sfhome'));
         }
 
         $data=array();
