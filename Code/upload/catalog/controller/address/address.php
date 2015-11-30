@@ -2,7 +2,7 @@
 class ControllerAddressAddress extends Controller{
     public function index(){
         $data = array();  
-        
+        $data['lang'] = $this->language->get('code');
         if(isset($this->request->get['isFromHome'])){
         	$data["is_from_home"] = 1;
         }
@@ -34,7 +34,7 @@ class ControllerAddressAddress extends Controller{
         else{
         	$data["contact"] = "";
         }
-        
+        $data['random'] = rand(0,1000);
         $this->response->setOutput($this->load->view('default/template/address/address.tpl', $data));
     }   
 }

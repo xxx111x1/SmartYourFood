@@ -99,16 +99,24 @@
 //		      window.alert('Geocoder failed due to: ' + status);
 //		    }
 //		  });		
+		var language = document.documentElement.lang;
+		var confirmString = "";
+		if(language.indexOf("en")> -1){
+			confirmString = "Ok";
+		}
+		else{
+			confirmString = "确定";
+		}
 		if (typeof(phone) != 'undefined' && phone != null&&typeof(contact) != 'undefined' && contact != null)
 	      {
 	          var phone_num = phone.value;
 	          console.log(phone_num);
 	          var contanct_name = contact.value;
 	          console.log(contanct_name);
-	          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address,contanct_name,phone_num)+' >确定</a>' );
+	          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrl(latitude,longitude,address,contanct_name,phone_num)+' >'+confirmString+'</a>' );
 	      }
 		    else{
-	          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrlWithoutContactor(latitude,longitude,address)+' >确定</a>' );
+	          infowindow.setContent('<div><strong>' + place.name + '</strong><br>' + address + '<br><a id=selectAddress class=select_address href='+getReturnUrlWithoutContactor(latitude,longitude,address)+' >'+confirmString+'</a>' );
 	      }
 	    infowindow.open(map, marker);
         
