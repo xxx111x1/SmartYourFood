@@ -5,12 +5,19 @@ class ControllerSfaccountOrder extends Controller {
 			$this->session->data['redirect'] = $this->url->link('sfaccount/order', '', 'SSL');
 			$this->response->redirect($this->url->link('sfaccount/login', '', 'SSL'));
 		}
-
+		$content_number = 5;
 		$data['orders'] = array();
 		$this->load->model('account/order');
 		$order_total = $this->model_account_order->getTotalOrders();
-		$page=1;
-		$results = $this->model_account_order->getOrders(($page - 1) * 10, 10);
+		if(isset($this->request->get['page'])){
+			$page = $this->request->get['page'];
+		}
+		else{
+			$page=1;
+		}		
+		$results = $this->model_account_order->getOrders(($page - 1) * $content_number, $content_number);
+		$data['page'] = $page;
+		$data['page_number'] = ceil($order_total/$content_number);
 		if(count($results)==0)
 		{
             $data['noorder']=true;
@@ -21,7 +28,7 @@ class ControllerSfaccountOrder extends Controller {
 
 		foreach ($results as $result) {
 			$product_total = $this->model_account_order->getTotalOrderProductsByOrderId($result['order_id']);
-			$voucher_total = $this->model_account_order->getTotalOrderVouchersByOrderId($result['order_id']);
+			//$voucher_total = $this->model_account_order->getTotalOrderVouchersByOrderId($result['order_id']);
 
 			$data['orders'][] = array(
 				'shipping_address_1' => $result['shipping_address_1'],
@@ -35,24 +42,7 @@ class ControllerSfaccountOrder extends Controller {
 			);
 		}
 
-		$pagination = new Pagination();
-		$pagination->total = $order_total;
-		$pagination->page = $page;
-		$pagination->limit = 10;
-		$pagination->url = $this->url->link('account/order', 'page={page}', 'SSL');
-
-		$data['pagination'] = $pagination->render();
-
-		$data['results'] = sprintf($this->language->get('text_pagination'), ($order_total) ? (($page - 1) * 10) + 1 : 0, ((($page - 1) * 10) > ($order_total - 10)) ? $order_total : ((($page - 1) * 10) + 10), $order_total, ceil($order_total / 10));
-
-		$data['continue'] = $this->url->link('account/account', '', 'SSL');
-
-		$data['column_left'] = $this->load->controller('common/column_left');
-		$data['column_right'] = $this->load->controller('common/column_right');
-		$data['content_top'] = $this->load->controller('common/content_top');
-		$data['content_bottom'] = $this->load->controller('common/content_bottom');
-		$data['footer'] = $this->load->controller('common/footer');
-		$data['header'] = $this->load->controller('common/header');
+		
 
 		$this->load->language('account/account');
 		$data['No_Order_History'] = $this->language->get('No_Order_History');

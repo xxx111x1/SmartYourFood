@@ -1,10 +1,7 @@
+    <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sforder.css">
     <div class="rightpanel" id="orderhistory_">
-        <!--<div class="right_header">
-            <div class="btn" style="float:left">
-            全部
-            </div>
-        </div>
-        -->
+    	<input type='hidden' id='pageNumber' value='<?php echo $page;?>'>
+    	<input type='hidden' id='totalPageNumber' value='<?php echo $page_number;?>'>
         <div class="ordertable" <?php if (!$noorder) echo "style='display:none;'"?>>
         <?php echo $No_Order_History ;?>
         </div>
@@ -14,10 +11,9 @@
                 <th class="col2"><?php echo $Receiver ;?></th>
                 <th class="col3"><?php echo $Total ;?></th>
                 <th class="col4"><?php echo $Status ;?></th>
-                <!--<th class="col5">操作</th>-->
             </tr>
             <?php foreach ($orders as $order) { ?>
-            <tr>
+            <tr class="orderContent">
                 <td class="col1">
                     <div class="orderthumb">
                         <div class="foodpic">
@@ -34,15 +30,14 @@
                 <td class="col2"><?php echo $order['name'];?></td>
                 <td class="col3"><?php echo $order['total'];?></td>
                 <td class="col4"><?php echo $order['status'];?></td>
-                <!--
-                <td class="col5">
-                    <div><strong>评价</strong></div>
-                    <div class="btn">                        
-                            再次购买                        
-                    </div>
-                </td>
-                -->
             </tr>
             <?php } ?>
         </table>
+        <div class="pagefoot">
+        	<div class="pagebutton minus">Last Page</div>
+        	<?php for ($i = 1; $i <= $page_number; $i++) { ?>
+            	<div class="pagenumber">[<?php echo $i;?>]</div>
+            <?php } ?>
+            <div class="pagebutton add">Next Page</div>
+        </div>
     </div>

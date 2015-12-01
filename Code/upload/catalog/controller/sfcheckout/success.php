@@ -9,11 +9,7 @@ class ControllerSfcheckoutSuccess extends Controller {
 		
 		if (isset($this->session->data['order_id'])) {
 			$order_id = $this->session->data['order_id'];
-			$this->log->write('start to notify admin, order id: '.$order_id);
-			//$this->model_checkout_order->notifyAdmin($order_id);
-			$this->msg->notifydeliveryman($order_id);
-			$this->msg->sendOperatorDetail($order_id);
-			$this->log->write('end of notifying admin');
+			
 
 			$this->cart->clear();
 
@@ -36,6 +32,12 @@ class ControllerSfcheckoutSuccess extends Controller {
 
 				$this->model_account_activity->addActivity('order_guest', $activity_data);
 			}
+			
+			$this->log->write('start to notify admin, order id: '.$order_id);
+			//$this->model_checkout_order->notifyAdmin($order_id);
+			$this->msg->notifydeliveryman($order_id);
+			$this->msg->sendOperatorDetail($order_id);
+			$this->log->write('end of notifying admin');
 
 			unset($this->session->data['shipping_method']);
 			unset($this->session->data['shipping_methods']);
@@ -58,9 +60,9 @@ class ControllerSfcheckoutSuccess extends Controller {
 	public function getOrderString($order_id){
 		$order = $this->model_checkout_order->getOrder($order_id);
 		$foods = $this->model_checkout_order->getOrderProducts($order_id);
-		$content = "¶©µ¥ºÅ£º  " .$order_id.  " ×Ü½ð¶î£¨²»º¬Ð¡·Ñ£©£º¡¡" . $order['total'] . " ËÍ²ÍµØÖ·£º " . $order['shipping_address_1']. " ÁªÏµÈË£º ". $order['firstname'] . " ÁªÏµµç»°£º" . $order['shipping_address_2'] . "\n" ;
+		$content = "ï¿½ï¿½ï¿½ï¿½ï¿½Å£ï¿½  " .$order_id.  " ï¿½Ü½ï¿½î£¨ï¿½ï¿½ï¿½ï¿½Ð¡ï¿½Ñ£ï¿½ï¿½ï¿½ï¿½ï¿½" . $order['total'] . " ï¿½Í²Íµï¿½Ö·ï¿½ï¿½ " . $order['shipping_address_1']. " ï¿½ï¿½Ïµï¿½Ë£ï¿½ ". $order['firstname'] . " ï¿½ï¿½Ïµï¿½ç»°ï¿½ï¿½" . $order['shipping_address_2'] . "\n" ;
 		foreach ($foods as $key => $v) {
-			$content .= "²Í¹Ý£º " . $foods[$key]['model'] . " ²ËÆ·£º " . $foods[$key]['name'] . " ÊýÁ¿£º " . $foods[$key]['quantity'] . " µ¥·Ý¼Û¸ñ£º" . $foods[$key]['price'] .  " ²ËÆ·×Ü¼Û£º " . $foods[$key]['total'] . "\n";
+			$content .= "ï¿½Í¹Ý£ï¿½ " . $foods[$key]['model'] . " ï¿½ï¿½Æ·ï¿½ï¿½ " . $foods[$key]['name'] . " ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ " . $foods[$key]['quantity'] . " ï¿½ï¿½ï¿½Ý¼Û¸ï¿½" . $foods[$key]['price'] .  " ï¿½ï¿½Æ·ï¿½Ü¼Û£ï¿½ " . $foods[$key]['total'] . "\n";
 		
 		}
 		$content .= "-------------------------------------------------------------------------------------------------------";

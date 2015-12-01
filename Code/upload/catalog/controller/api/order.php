@@ -742,4 +742,43 @@ class ControllerApiOrder extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+	
+	public function getHistoryOrderByPage(){
+		if (!$this->customer->isLogged()) {
+			$json['error'] = "Not logged";
+			$this->response->addHeader('Content-Type: application/json');
+			$this->response->setOutput(json_encode($json));
+		}
+		$content_number = 5;
+		$orders = array();
+		$this->load->model('account/order');
+		$order_total = $this->model_account_order->getTotalOrders();
+		if(isset($this->request->get['page'])){
+			$page = $this->request->get['page'];
+		}
+		else{
+			$page=1;
+		}		
+		$results = $this->model_account_order->getOrders(($page - 1) * $content_number, $content_number);
+		$json['page'] = $page;
+
+		foreach ($results as $result) {
+			$product_total = $this->model_account_order->getTotalOrderProductsByOrderId($result['order_id']);
+			//$voucher_total = $this->model_account_order->getTotalOrderVouchersByOrderId($result['order_id']);
+
+			$orders[] = array(
+				'shipping_address_1' => $result['shipping_address_1'],
+				'order_id'   => $result['order_id'],
+				'name'       => $result['firstname'],
+				'status'     => $result['status'],
+				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
+				'products'   => ($product_total),
+				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
+				'href'       => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], 'SSL'),
+			);
+		}
+		$json['orders'] = $orders;
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
 }
