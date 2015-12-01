@@ -222,7 +222,8 @@ body{
 .first-tip-content a, .second-tip-content a{
 	color:white;
 	font-size:18px;
-	font-weight:bolder;    
+	font-weight:bolder;  
+	text-decoration: none;  
 }
 
 .special-foods {

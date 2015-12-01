@@ -95,5 +95,5 @@
     </a>      
     
 </div>
-<h2 style="<?php echo $hasfood;?>"><?php echo $No_Any_Order ;?></h2>
+<h2 style="<?php echo $hasfood;?> text-align:center;"><?php echo $No_Any_Order ;?></h2>
 <?php echo $footer;?>
