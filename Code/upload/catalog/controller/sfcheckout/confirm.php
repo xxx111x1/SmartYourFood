@@ -367,6 +367,8 @@ class ControllerSfcheckoutConfirm extends Controller{
         $data['Confirm'] =                                   $this->language->get('Confirm');
         $data['Print'] =                                     $this->language->get('Print');
         $data['Delivery_Information_Not_Complete'] =                                     $this->language->get('Delivery_Information_Not_Complete');
+        $data['Yes'] =                                     $this->language->get('Yes');
+        $data['No'] =                                     $this->language->get('No');
         
         if(isset($this->session->data['shipping_address'])
             &&isset($this->session->data['shipping_address']['address_1'])

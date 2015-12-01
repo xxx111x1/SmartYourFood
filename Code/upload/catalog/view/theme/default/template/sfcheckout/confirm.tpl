@@ -53,7 +53,7 @@
             <span class="summary_item"><?php echo $Sub_Total; ?>:<span id="beforetax">$<?php echo $beforetax;?></span></span>
             <span class="summary_item"><?php echo $Delivery; ?>:<span id="deliverfee"> $<?php echo $deliverfee;?> </span></span>            
             <span class="summary_item"><?php echo $Tax; ?>(5%):<span id="taxcost"> $<?php echo $tax;?></span></span>
-            <span class="summary_item"><?php echo $Priority_Delivery; ?>:<span id="deliverfee"><?php if($fast_deliverfee > 0) {echo " 是";} else {echo " 否" ;}?> ($<?php echo $fast_deliverfee;?>) </span></span>
+            <span class="summary_item"><?php echo $Priority_Delivery; ?>:<span id="deliverfee"><?php if($fast_deliverfee > 0) {echo " <?php echo $Yes ;?>";} else {echo " <?php echo $No ;?>" ;}?> ($<?php echo $fast_deliverfee;?>) </span></span>
             <span class="summary_item" style="float:right;margin-right:120px"><?php echo $Total; ?>: <span id="totalcost">$ <?php echo $totalcost;?></span></span>
         </div>
     </div>

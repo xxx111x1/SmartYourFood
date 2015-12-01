@@ -316,7 +316,6 @@ var cart = {
 }
 
 function update_cost_info(json){
-	console.log('start to update cost summary');
     if($('#cost_summary').length)
     {
         console.log('total cost: '+json['total_cost']);
@@ -326,6 +325,7 @@ function update_cost_info(json){
         $('#deliverfee').text(json['deliverfee']);
         $('#taxcost').text(json['tax']);
         $('#tipscost').text(json['tips']);
+        $('#fastdeliverfee').text(json['fastdeliverfee']);
     }
 }
 

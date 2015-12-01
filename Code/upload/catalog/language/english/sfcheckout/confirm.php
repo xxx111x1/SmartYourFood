@@ -20,3 +20,5 @@ $_['Delivery_Information'] =                         'Delivery Information';
 $_['Payment_Cash'] =                                 'Payment Method: Cash (Cash on Delivery)';
 $_['Confirm'] =                                      'Confirm';
 $_['Print'] =                                        'Print';
+$_['Yes'] =                                        	 'Yes';
+$_['No'] =                                        	 'No';

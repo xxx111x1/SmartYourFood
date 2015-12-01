@@ -21,3 +21,5 @@ $_['Delivery_Information'] =                         '配送信息';
 $_['Payment_Cash'] =                                '付款方式：现金付款（货到付款）';
 $_['Confirm'] =                                      '确认订单';
 $_['Print'] =                                        '打印订单';
+$_['Yes'] =                                        '是';
+$_['No'] =                                        '否';
