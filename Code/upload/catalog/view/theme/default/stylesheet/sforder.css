@@ -22,3 +22,22 @@
 	margin-left: 10px;
 	cursor: pointer;
 }
+
+.selectedPage{
+	color: blue;
+	font-weight: bolder;
+}
+
+.morePage{
+	float: left;
+	margin-left: 0px;
+}
+
+.inputNumber{
+	float:left;
+}
+
+#choosePage{
+	width: 15px;
+	margin-top: -5px;
+}

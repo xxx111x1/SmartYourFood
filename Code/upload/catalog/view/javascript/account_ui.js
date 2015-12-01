@@ -204,31 +204,58 @@ $(document).ready(function() {
         	alert('It is the last page.');
         	return;
         }
-       	$.ajax({
-                url: 'index.php?route=api/order/getHistoryOrderByPage&page=' + page,
-                type: 'get',
-                timeout: 32000,
-                dataType: 'json',
-                error: function(){
-                    alert("Sorry, there is an error, please try again later.");
-                    
-                },
-                success: function(data) {
-                	if (data['error']){
-                        alert("Please login again.");
-                    }
-                	else{
-                		$( ".orderContent" ).remove()
-    					$('#pageNumber').val(data['page']);
-    					var elementString = "";
-                		$.each(data['orders'], function(i, v) {
-                			 elementString = elementString + '<tr class="orderContent"><td class="col1"><div class="orderthumb"><div class="foodpic"><img width="85px" height="85px" src="img/shop.1.jpg"/></div><div class="orderdesc"><div class="foodname">'+v.shipping_address_1+'</div>';
-                			elementString = elementString + '<div class="ordertime">' + v.date_added + '</div></div></div></td><td class="col2">'+v.name+'</td><td class="col3">'+v.total+'</td><td class="col4">'+ v.status + '</td></tr>';
-                		});
-    					$('.ordertable').append(elementString);
-                	}
-                }
-         });               
+        updateOrderContent(page);
+       	            
+    });
+    
+    $('.pagenumber').click(function(){    	
+        var page = $(this).attr('value');  
+        updateOrderContent(page);
+       	            
+    });
+    
+    $( "input[type='text']" ).change(function() {
+    	  var page = $(this).val();
+    	  var totalPageNumber = $('#totalPageNumber').val();
+    	  if(page>0 && page<=totalPageNumber){
+    		  updateOrderContent(page);  
+    	  }
+    	  else if(page<1){
+    		  updateOrderContent(1);
+    	  }
+    	  else if(page>totalPageNumber){
+    		  updateOrderContent(totalPageNumber);
+    	  }
+    	  
     });
 
+    function updateOrderContent(page){
+    	$.ajax({
+            url: 'index.php?route=api/order/getHistoryOrderByPage&page=' + page,
+            type: 'get',
+            timeout: 32000,
+            dataType: 'json',
+            error: function(){
+                alert("Sorry, there is an error, please try again later.");
+                
+            },
+            success: function(data) {
+            	if (data['error']){
+                    alert("Please login again.");
+                }
+            	else{
+            		$('.pagenumber').removeClass('selectedPage');
+                    $('#page'+page).addClass('selectedPage');
+            		$( ".orderContent" ).remove()
+					$('#pageNumber').val(data['page']);
+					var elementString = "";
+            		$.each(data['orders'], function(i, v) {
+            			 elementString = elementString + '<tr class="orderContent"><td class="col1"><div class="orderthumb"><div class="foodpic"><img width="85px" height="85px" src="img/shop.1.jpg"/></div><div class="orderdesc"><div class="foodname">'+v.shipping_address_1+'</div>';
+            			elementString = elementString + '<div class="ordertime">' + v.date_added + '</div></div></div></td><td class="col2">'+v.name+'</td><td class="col3">'+v.total+'</td><td class="col4">'+ v.status + '</td></tr>';
+            		});
+					$('.ordertable').append(elementString);
+            	}
+            }
+     });   
+    }
 });
