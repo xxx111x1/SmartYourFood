@@ -19,6 +19,7 @@ class ControllerSffoodSearch extends Controller{
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
         $data['backtop'] = $this->load->controller('common/backtop');
+        
         if (isset($this->request->get['search'])) {
             $food_name = $this->request->get['search'];
         }
@@ -35,7 +36,6 @@ class ControllerSffoodSearch extends Controller{
         }
         
         $data['query']=$food_name;
-
         $this->log->write('food name '.$food_name);
         $food_list = $this->model_sffood_food->getFoodByName($food_name);
 
@@ -68,6 +68,23 @@ class ControllerSffoodSearch extends Controller{
         $data['rests'] = $rest_list;
         $food_result_num =count($food_list);
         $data['food_result_num'] = $food_result_num;
+        
+        $this->load->language('sfrest/search');
+        $data['Search_Results_For'] =                               $this->language->get('Search_Results_For');
+        $data['Dishes_Found'] =                                      $this->language->get('Dishes_Found');
+        $data['Restaurants_Found'] =                                 $this->language->get('Restaurants_Found');
+        $data['Search_Results_For'] = str_replace("{1}",$food_name,$data['Search_Results_For']);
+        $data['Dishes_Found'] = str_replace("{0}",$food_result_num,$data['Dishes_Found']);
+        $data['Restaurants_Found'] = str_replace("{1}",$food_name,$data['Restaurants_Found']);
+        $data['Restaurants_Found'] = str_replace("{0}",$food_result_num,$data['Restaurants_Found']);
+        $this->load->language('common/sfhome');
+		$data['Search'] =                                    $this->language->get('Search');
+		$data['Search_Restaurant_name_Food_Keywords'] =      $this->language->get('Search_Restaurant_name_Food_Keywords');
+		$data['History'] =                                   $this->language->get('History');
+		$this->load->language('sfrest/detail');
+		$data['Distance'] = $this->language->get('Distance');
+		$data['Rank'] = $this->language->get('Rank');
+		
         if($food_result_num==0)
         {
             $data['nofood']="style=\"display: none\"";
