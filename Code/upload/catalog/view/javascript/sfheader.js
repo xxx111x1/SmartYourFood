@@ -3,8 +3,11 @@ $(document).ready(function () {
 		window.location.href='/index.php?route=common/sfhome';
 	});
 	$(document).on('click','#go-to-food', function(){
+		window.location.href='/index.php?route=common/list&food=1';
+	});
+	$(document).on('click','#go-to-rest', function(){
 		window.location.href='/index.php?route=common/list&restaurant=1';
-	});	
+	});
 	$(document).on('click','#go-to-order', function(){
 		window.location.href='/index.php?route=sfcheckout/checkout';
 	});
