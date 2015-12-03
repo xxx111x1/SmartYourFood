@@ -138,7 +138,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         }
         else{
             $data['nofood']="";
-            $data['hasfood']="display: none";
+            $data['hasfood']="display: none;";
         }
         /*
         foreach ($food_list as $food) {

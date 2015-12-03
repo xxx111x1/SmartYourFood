@@ -45,7 +45,7 @@
             </div>
             <div class="thumb_desc">
                 <div class="thumb_desc_foodname"><?php echo $food['food_name'];?></div>
-                <div class="thumb_desc_restname"><?php echo $food['rest_name'];?></div>
+                <div class="thumb_desc_restname"> <a href="/index.php?route=sfrest/detail&restaurant_id=<?php echo $food['restaurant_id']; ?>" ><?php echo $food['rest_name'];?></a></div>
                 <div class="thumb_desc_restdist"><?php echo $Distance ;?> <?php if($food['dist']==-1) echo '--'; else echo $food['dist'];?>km</div>
                 <div class="thumb_desc_productinfo">
                     <div class="thumb_desc_productfav"><?php echo $food['score'];?></div>
@@ -67,7 +67,7 @@
     <!--rest list-->
 
     <div class="product_area">
-        <?php foreach ($rests as $restaurant) { ?>
+        <?php $productnum = 0;foreach ($rests as $restaurant) { ?>
         <div class="<?php if( ($productnum+1)%3==0) echo 'product_end'; else echo 'product';?>">
             <div class="thumb" id="<?php echo $restaurant['restaurant_id']; ?> ">
                 <?php if($restaurant['is_open']==0){ ?>

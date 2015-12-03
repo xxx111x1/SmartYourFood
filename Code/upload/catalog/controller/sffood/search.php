@@ -67,6 +67,7 @@ class ControllerSffoodSearch extends Controller{
         }        
         $data['rests'] = $rest_list;
         $food_result_num =count($food_list);
+        $rest_result_num =count($rest_list);
         $data['food_result_num'] = $food_result_num;
         
         $this->load->language('sfrest/search');
@@ -76,7 +77,7 @@ class ControllerSffoodSearch extends Controller{
         $data['Search_Results_For'] = str_replace("{1}",$food_name,$data['Search_Results_For']);
         $data['Dishes_Found'] = str_replace("{0}",$food_result_num,$data['Dishes_Found']);
         $data['Restaurants_Found'] = str_replace("{1}",$food_name,$data['Restaurants_Found']);
-        $data['Restaurants_Found'] = str_replace("{0}",$food_result_num,$data['Restaurants_Found']);
+        $data['Restaurants_Found'] = str_replace("{0}",$rest_result_num,$data['Restaurants_Found']);
         $this->load->language('common/sfhome');
 		$data['Search'] =                                    $this->language->get('Search');
 		$data['Search_Restaurant_name_Food_Keywords'] =      $this->language->get('Search_Restaurant_name_Food_Keywords');
