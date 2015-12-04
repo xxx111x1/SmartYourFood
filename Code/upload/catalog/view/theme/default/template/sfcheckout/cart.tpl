@@ -7,7 +7,8 @@
 
 <div class="container" style="<?php echo $nofood;?>">
 	<input type="hidden" id="deliveryFeeInfor" lat="<?php echo $rest_lat ;?>" lng="<?php echo $rest_lng ;?>" isNight="<?php echo $is_night ;?>" />
-	<input type="hidden" id="orderNumber" value="<?php echo count($food_list)?>" />
+	<input type="hidden" id="orderNumber" value="<?php echo count($food_list);?>" />
+	<input type="hidden" id="moreRest" value="<?php echo $more_rests;?>" />
     <div class="cart_panel">
         <div class="cart_header">
             <h2 style="float: left;"><?php echo $My_Cart; ?></h2>

@@ -66,7 +66,7 @@
                         <div class="reg_icon" style="background-image: url(/catalog/view/theme/default/image/icons/account_icon.png);">
                         </div>
                     </div>
-                    <input class="reg_input" name="updateemail" id="updateemail" placeholder="<?php echo $Enter_Your_New_Email ;?>/>
+                    <input class="reg_input" name="updateemail" id="updateemail" placeholder="<?php echo $Enter_Your_New_Email ;?>" />
                 </div>
                 <div class="reg_btn" id="btn_confirmemail" style="vertical-align:middle;text-align: center;color: white;font-size: 22px;font-weight: bolder;line-height: 50px">
                     <span><?php echo $Confirm ;?></span>
