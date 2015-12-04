@@ -106,15 +106,16 @@ class ControllerCommonCartthumbnail extends Controller {
 				'text'  => $this->currency->format($result['value']),
 			);
 		}
+		
 		$this->load->language('common/backtop');
 		$data['Cart'] = $this->language->get('Cart');
-		$data['Clear'] = $this->language->get('Clear');
+		$data['Clear_Cart'] = $this->language->get('Clear_Cart');
 		$data['Food'] = $this->language->get('Food');
-		$data['Number'] = $this->language->get('Number');
+		$data['Select_Number'] = $this->language->get('Select_Number');
 		$data['Price'] = $this->language->get('Price');
-		$data['Sum'] = $this->language->get('Sum');
-		$data['Pay'] = $this->language->get('Pay');
-		$data['Empty'] = $this->language->get('Empty');
+		$data['Sum_Food'] = $this->language->get('Sum_Food');
+		$data['Pay_Food'] = $this->language->get('Pay_Food');
+		$data['Empty_Cart'] = $this->language->get('Empty_Cart');
 		
 		$data['cart'] = $this->url->link('checkout/cart');
 		$data['checkout'] = $this->url->link('sfcheckout/checkout', '', 'SSL');

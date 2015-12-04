@@ -3,12 +3,12 @@
     <?php if ($products) { ?>
       <div class="cart-thumbnail-head" >
       	<div class="cart-head " style="float:left;width:60px;"><?php echo $Cart;?></div>
-      	<div class="cart-head claer-all" style="float:right;width:100px;margin-right:0px;"><?php echo $Clear;?></div>
+      	<div class="cart-head claer-all" style="float:right;width:100px;margin-right:0px;"><?php echo $Clear_Cart;?></div>
       </div>
       <table class="cart-thumbnail-table">
       	<tr>
       		<td class="food-name table-head"><?php echo $Food;?></td>
-      		<td class="food-number table-head"><?php echo $Number;?></td>
+      		<td class="food-number table-head"><?php echo $Select_Number;?></td>
       		<td class="food-price table-head" ><?php echo $Price;?></td>
       		<td></td>
       	</tr>
@@ -44,15 +44,15 @@
         -->
       </table>
       <div class="cart-thumbnail-bottom">
-        <div class="sum-all"><?php echo $Sum;?>$<?php echo $total_sum; ?></div>
+        <div class="sum-all"><?php echo $Sum_Food;?>$<?php echo $total_sum; ?></div>
         <div class="cart-checkout">
         	<a href="<?php echo $checkout; ?>">
-        		<?php echo $Pay;?>
+        		<?php echo $Pay_Food;?>
         	</a>
         </div>
 
       </div>
     <?php } else { ?>
-    <div class="empty-cart"><?php echo $Empty;?> </div>
+    <div class="empty-cart"><?php echo $Empty_Cart;?> </div>
     <?php } ?>
   </div>
