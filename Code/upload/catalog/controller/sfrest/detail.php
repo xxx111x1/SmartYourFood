@@ -97,7 +97,7 @@ class ControllerSfrestDetail extends Controller{
         $data['review'] = $this->load->controller('sfrest/review');
         $data['footer'] = $this->load->controller('common/sffooter');
         $data['backtop'] = $this->load->controller('common/backtop');
-        
+        $data['language'] = $this->session->data['language'];
         $this->response->setOutput($this->load->view('default/template/sfrest/detail.tpl', $data));
     }
 }
