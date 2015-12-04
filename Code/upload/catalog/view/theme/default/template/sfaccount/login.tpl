@@ -57,7 +57,7 @@
             <input class="reg_input" id="password" name="password" type="password" placeholder="<?php echo $Enter_a_Password; ?>"/>
         </div>
         <a href="#" onclick="loginsubmit();" style="text-decoration: none">
-        <div class="reg_btn" style="vertical-align:middle;text-align: center;color: white;font-size: 22px;font-weight: bolder;line-height: 50px">
+        <div class="reg_btn" >
              <span><?php echo $Log_In; ?></span>
         </div>
         </a>

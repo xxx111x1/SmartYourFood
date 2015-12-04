@@ -8,11 +8,11 @@
 </div>
 <div class="backtop_section" id="backtop_section" >	
 	<!--<div class="backtopIcons" id="my_message">消息</div>-->
-	<div class="backtopIcons" id="orders" onclick="window.location.href= '/index.php?route=sfcheckout/checkout';return false">订单</div>
-	<div class="backtopIcons" id="feedback">反馈</div>
-	<div class="backtopIcons" id="call_center">客服</div>		
-	<div class="backtopIcons" id="back_top">返回顶部</div>
-	<div class="backtopIcons" id="cart_thumbnail">餐车</div>
+	<div class="backtopIcons" id="orders" onclick="window.location.href= '/index.php?route=sfcheckout/checkout';return false"><?php echo $My_Order ;?></div>
+	<div class="backtopIcons" id="feedback"><?php echo $Feedback ;?></div>
+	<div class="backtopIcons" id="call_center"><?php echo $Customer_Service ;?></div>		
+	<div class="backtopIcons" id="back_top"><?php echo $Back_Top ;?></div>
+	<div class="backtopIcons" id="cart_thumbnail"><?php echo $Cart ;?></div>
 </div>
 
 <div class="mod-dialog-frame unvisible" style="overflow: auto; position: fixed; left: 0px; top: 0px; right: 0px; bottom: 0px; z-index: 1000; background-color: rgba(0, 0, 0, 0.54902);">
@@ -20,29 +20,29 @@
 		<div class="feedback-wrap unvisible">
 		    <div class="f-form">
 		        <div class="form-group">
-		            <label>功能建议：</label>
+		            <label><?php echo $Feedback ;?>：</label>
 		            <div class="input-control">
 		                <textarea name="content" id="feedback_content"  placeholder="我们真诚的期望听到您的反馈和建议" class="input placeholder-con">
 						</textarea>
 		            </div>
 		        </div>
 		        <div class="form-group">
-		            <label>联系方式：</label>
+		            <label><?php echo $Contact_Info ;?>：</label>
 		            <div class="input-control">
-		                <input type="text" name="contact" id="contact" placeholder="请留下您的手机号或邮箱" class="input placeholder-con">
+		                <input type="text" name="contact" id="contact" placeholder="<?php echo $Leave_Your_Connection ;?>" class="input placeholder-con">
 		            </div>
 		        </div>
 		        <div class="form-submit">
-		            <input type="button" value="提交" class="submitBtn">
-		            <input type="button" value="取消" class="cancelBtn">
+		            <input type="button" value="<?php echo $Submit ;?>" class="submitBtn">
+		            <input type="button" value="<?php echo $Cancel ;?>" class="cancelBtn">
 		        </div>
 		    </div>
 		</div>
 		<div class="callcenter-wrap unvisible">
 		    <div class="callcenter-contact">
-		    	email地址:  info@usays.ca
+		    	email :  info@usays.ca
 		    </div>
-		    <input type="button" value="返回" class="cancelBtn callcenter-cancel">
+		    <input type="button" value="<?php echo $Back ;?>" class="cancelBtn callcenter-cancel">
 		</div>
 	</div>
 </div>

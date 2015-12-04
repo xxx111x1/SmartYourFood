@@ -8,3 +8,4 @@ $_['Enter_Password_Again'] =                         '确认密码';
 $_['Jion_Us'] =                                      '同意并注册';
 $_['By_clicking_Join_Now'] =                         '使用条款和协议';
 $_['Already_on_Usays'] =                             '已经注册过？请点击直接登陆';
+$_['Agree_Register'] =                               '同意并注册';

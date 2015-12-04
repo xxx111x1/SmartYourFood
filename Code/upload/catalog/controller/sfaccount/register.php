@@ -49,6 +49,8 @@ class ControllerSfaccountRegister extends Controller{
         $data['Jion_Us'] =                                   $this->language->get('Jion_Us');
         $data['By_clicking_Join_Now'] =                      $this->language->get('By_clicking_Join_Now');
         $data['Already_on_Usays'] =                          $this->language->get('Already_on_Usays');
+        $data['Agree_Register'] =                            $this->language->get('Agree_Register');
+        
         $this->response->setOutput($this->load->view('default/template/sfaccount/register.tpl', $data));
     }
 

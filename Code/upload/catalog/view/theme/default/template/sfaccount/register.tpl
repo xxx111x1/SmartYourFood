@@ -38,7 +38,7 @@
     <div class="regarea">
         <!--<div style="background-color: #FA7171;margin-top: 0px;width: 100%;height: 8px;border-top-left-radius: 5px;border-top-right-radius: 5px;"></div>-->
         <div style="padding-top: 36px;padding-bottom: 32px; font-size: 32px;font-weight: bolder; margin-left: 175px">
-            注册
+            <?php echo $Register;?>
         </div>
         <div style="margin-left: 30px;color: #f65053;<?php if(empty($error)) echo 'display:none;';?>"><?php if(!empty($error)) echo '*'.$error;?></div>
         <form method="post" id="regform">
@@ -73,12 +73,14 @@
             <!--<input type="submit" class="reg_btn"><img style="z-index: 10" src="catalog/view/theme/default/image/icons/regbtn.png" alt="<?php echo $Jion_Us; ?>"></input>-->
             <div class="reg_btn" type="submit">
                 <!--<a href="#" id="reg_btn" onclick="document.getElementById('regform').submit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="<?php echo $Jion_Us; ?>"></a>-->
-                <a href="#" id="reg_btn" onclick="regsubmit();"><img src="/catalog/view/theme/default/image/icons/regbtn.png" alt="<?php echo $Jion_Us; ?>"></a>
+                <a href="#" id="reg_btn" onclick="regsubmit();"><?php echo $Agree_Register;?></a>
             </div>
         </form>
+        <!--
         <div class="regtxt">
             <span style="color: #f94e4e;font-weight: bold">《<?php echo $By_clicking_Join_Now; ?>》</span>
         </div>
+        -->
         <div class="regtxt">
             <span style="font-weight: bold"></span><a href="/index.php?route=sfaccount/login" style="text-decoration: none"><span style="color: #f94e4e;font-weight: bold"> <?php echo $Already_on_Usays; ?></span></a>
         </div>

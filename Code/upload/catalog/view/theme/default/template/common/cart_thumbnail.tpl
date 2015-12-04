@@ -2,14 +2,14 @@
 	<input type='hidden' id="purchaseRest" value="<?php echo $rest_id;?>" />
     <?php if ($products) { ?>
       <div class="cart-thumbnail-head" >
-      	<div class="cart-head " style="float:left;width:60px;">购物车</div>
-      	<div class="cart-head claer-all" style="float:right;width:100px;margin-right:0px;">清空</div>
+      	<div class="cart-head " style="float:left;width:60px;"><?php echo $Cart;?></div>
+      	<div class="cart-head claer-all" style="float:right;width:100px;margin-right:0px;"><?php echo $Clear;?></div>
       </div>
       <table class="cart-thumbnail-table">
       	<tr>
-      		<td class="food-name table-head">菜品</td>
-      		<td class="food-number table-head">份数</td>
-      		<td class="food-price table-head" >单价</td>
+      		<td class="food-name table-head"><?php echo $Food;?></td>
+      		<td class="food-number table-head"><?php echo $Number;?></td>
+      		<td class="food-price table-head" ><?php echo $Price;?></td>
       		<td></td>
       	</tr>
         <?php foreach ($products as $product) { ?>
@@ -44,15 +44,15 @@
         -->
       </table>
       <div class="cart-thumbnail-bottom">
-        <div class="sum-all">共 $<?php echo $total_sum; ?></div>
+        <div class="sum-all"><?php echo $Sum;?>$<?php echo $total_sum; ?></div>
         <div class="cart-checkout">
         	<a href="<?php echo $checkout; ?>">
-        		结算
+        		<?php echo $Pay;?>
         	</a>
         </div>
 
       </div>
     <?php } else { ?>
-    <div class="empty-cart">购物车是空的  </div>
+    <div class="empty-cart"><?php echo $Empty;?> </div>
     <?php } ?>
   </div>
