@@ -62,13 +62,10 @@
             <div class="filtername" ><?php echo $Snack_Fast_Food; ?></div>
         </div>
         <div class="filteritem" id="filter_9" value="9">
-            <div class="filtername" ><?php echo $Deep_Fries; ?></div>
+            <div class="filtername" ><?php echo $Vegetarian; ?></div>
         </div>
         <div class="filteritem" id="filter_10" value="10">
             <div class="filtername" ><?php echo $Dessert_Drink; ?></div>
-        </div>
-        <div class="filteritem" id="filter_11" value="11">
-            <div class="filtername" >冰激凌</div>
         </div>
     </div>
     
