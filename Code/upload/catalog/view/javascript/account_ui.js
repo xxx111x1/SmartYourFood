@@ -201,7 +201,13 @@ $(document).ready(function() {
         	page--;
         }
         else{
-        	alert('It is the last page.');
+        	if($(this).text().indexOf('Next')>-1){
+        		alert('It is the last page.');
+        	}
+        	else{
+        		alert('It is the first page.');
+        	}
+        	
         	return;
         }
         updateOrderContent(page);

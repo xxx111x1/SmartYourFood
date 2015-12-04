@@ -34,7 +34,7 @@
             <?php } ?>
         </table>
         <div class="pagefoot">
-        	<div class="pagebutton minus">Last Page</div>
+        	<div class="pagebutton minus">Previous Page</div>
         	<?php for ($i = 1; $i <= $page_number && $i<=5; $i++) { ?>
             	<div class="pagenumber <?php if($i==1) echo 'selectedPage';?>" id="page<?php echo $i;?>" value="<?php echo $i;?>">[<?php echo $i;?>]</div>
             <?php } ?>
