@@ -69,14 +69,14 @@ $(document).ready(function() {
             timeout: 3000,
             dataType: 'json',
             error: function(){
-                alert("删除地址失败");
+                alert("Delete address failed, please try later.(删除地址失败,请稍后再试)");
             },
             success: function(data) {
                 if (!data['status'] || !(data['status']==='ok')){
-                	alert("删除地址失败");
+                	alert("Delete address failed, please try later.(删除地址失败,请稍后再试)");
                 }
                 else{
-                	alert("地址删除成功");
+                	alert("Delete succeed.(地址删除成功)");
                 	$('#address_' +addressId).remove();
                 }
             }
@@ -99,12 +99,12 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("修改用户名失败");
+                alert("Modify username failed, please try later. (修改用户名失败,请稍后再试)");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
                 if (!data['status'] || !(data['status']==='ok')){
-                    alert("修改用户名失败");
+                    alert("Modify username failed, please try later. (修改用户名失败,请稍后再试)");
                 }
                 else{
                 	window.location.href=window.location.href;
@@ -122,12 +122,12 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("修改手机失败，请联系客服");
+                alert("Modify phone number failed, please try later. (修改手机号码失败,请稍后再试)");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
                 if (!data['status'] || !(data['status']==='ok')){
-                    alert("修改手机号码失败，该手机号已被注册，请使用其他手机号。");
+                    alert("This phone has been registered, please try another one. (修改手机号码失败，该手机号已被注册，请使用其他手机号)");
                 }
                 else{
                 	window.location.href=window.location.href;
@@ -146,12 +146,12 @@ $(document).ready(function() {
             timeout: 32000,
             dataType: 'json',
             error: function(){
-                alert("修改邮箱失败");
+                alert("Modify email failed, please try later. (修改邮箱失败)");
                 $('.review-dialog-frame').addClass('invisible');
             },
             success: function(data) {
             	if (!data['status'] || !(data['status']==='ok')){
-                    alert("修改邮箱失败");
+                    alert("Modify email failed, please try later. (修改邮箱失败)");
                 }
                 else{
                 	window.location.href=window.location.href;
@@ -165,7 +165,7 @@ $(document).ready(function() {
         var newpwd=$('#input_updatepassword').val();
         var newpwdConfirm=$('#input_confirmpassword').val();
         if(newpwd != newpwdConfirm){
-        	alert("输入的新密码不一致，请重新输入新密码");
+        	alert("The passwords are different, please input again. (输入的新密码不一致，请重新输入新密码)");
         }
         else{
         	$.ajax({
@@ -175,15 +175,15 @@ $(document).ready(function() {
                 timeout: 32000,
                 dataType: 'json',
                 error: function(){
-                    alert("修改密码失败");
+                    alert("Moidfy password failed, please try again. (修改密码失败)");
                     $('.review-dialog-frame').addClass('invisible');
                 },
                 success: function(data) {
                 	if (!data['status'] || !(data['status']==='ok')){
-                        alert("修改密码失败");
+                        alert("Moidfy password failed, please try again. (修改密码失败)");
                     }
                 	else{
-                		alert("密码修改成功");
+                		alert("Modify password succeed. (密码修改成功)");
                 		$('.review-dialog-frame').addClass('invisible');
                 	}
                 }
