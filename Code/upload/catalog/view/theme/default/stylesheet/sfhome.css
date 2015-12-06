@@ -838,7 +838,7 @@ body{
         background:  no-repeat top left;
         background-size: 100% 100%;
         border-radius: 75px;
-        -webkit-border-radius:85px;
+        -webkit-border-radius:75px;
     }
     .bottom_label{
         margin-left: auto;
