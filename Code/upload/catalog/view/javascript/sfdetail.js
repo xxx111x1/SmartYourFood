@@ -142,20 +142,37 @@ $(document).ready(function () {
 					var stringAddCart = "";
 					var stringDistance = "";
 					var stringRest = "";
+					var name = "";
+					var restName = "";
 					if(language.indexOf("en")>-1){
 						stringAddCart = "Add to cart";
 						stringDistance = "Distance";
 						stringRest = "Restaurant";
+						if(v.name_en != null && v.name_en != ''){
+							name = v.name_en;
+						}
+						else{
+							name = v.name;
+						}
+						
+						if(v.rest_name_en != null && v.rest_name_en != ''){
+							restName = v.rest_name_en;
+						}
+						else{
+							restName = v.rest_name;
+						}
+						
 					}
 					else{
 						stringAddCart = "添加到餐车";
 						stringDistance = "距离";
 						stringRest = "餐馆";
+						name = v.name;
+						restName = v.rest_name;
 					}
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;
-					var review_score = v.review_score;
-					var name = v.name;
+					var review_score = v.review_score;					
 					var restId = id;
 					var thumbEle = "";
 					var thumbDescEle = "";
@@ -167,9 +184,9 @@ $(document).ready(function () {
 						cost = v.price;
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
-						name = v.rest_name
+						
 						thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ '+stringAddCart+'</div></div></div>';
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+v.rest_name+'</a>' +
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname">'+name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+restName+'</a>' +
 											'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="thumb_desc_productfav">'+v.review_score+'</div>' +
 											'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
 					

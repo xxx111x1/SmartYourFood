@@ -9,7 +9,7 @@ class ControllerSfcheckoutCheckout extends Controller{
     private $tax_rate = 0.05;
     private $deliver_fee_rate = 1;
     public function index()
-    {
+    {    	
     	if(!$this->customer->isLogged()){
     		$redirect = $this->url->link('common/sfhome');
     		$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
@@ -163,7 +163,7 @@ class ControllerSfcheckoutCheckout extends Controller{
             );
         }
         $data['msg']='Hello World!';*/
-
+        $data['lang'] = $this->language->get('code');
         $returnUrl = explode("&", $_SERVER['REQUEST_URI'])[0];
         $data['returnUrl'] = $returnUrl;
         $this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));

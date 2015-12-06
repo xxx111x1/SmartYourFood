@@ -10,7 +10,7 @@ class ControllerCommonSfhome extends Controller {
 		$data["foods"] = $this->model_sffood_food->getTempSpecialFoods();
 		$data['first_name'] = "";
 		$data['history_address'] = "";
-		
+		$data['lang'] = $this->language->get('code');
 		$this->load->language('common/sfhome');
 		$data['Logo'] =                                      $this->language->get('Logo');
 		$data['Search'] =                                    $this->language->get('Search');

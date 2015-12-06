@@ -212,7 +212,8 @@ $(document).ready(function () {
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;
 					var review_score = v.review_score;
-					var name = v.name;
+					var name = "";
+					var foodname = "";
 					var restId = id;
 					var thumbEle = "";
 					var thumbDescEle = "";
@@ -229,17 +230,31 @@ $(document).ready(function () {
 							stringAddCart = "Add to cart";
 							stringDistance = "Distance";
 							stringRest = "Restaurant";
+							if(v.name_en!='' &&v.name_en!=null ){
+								foodName = v.name_en;
+							}
+							else{
+								foodName = v.name;
+							}
+							if(v.rest_name_en!=''&&v.rest_name_en!=null ){
+								name = v.rest_name_en;
+							}
+							else{
+								name = v.rest_name;
+							}		
 						}
 						else{
 							stringAddCart = "添加到餐车";
 							stringDistance = "距离";
 							stringRest = "餐馆";
+							foodName = v.name;
+							name = v.rest_name;
 						}
 						id = v.food_id;
 						cost = v.price;
 						review_score = v.rest_review;
 						restId = v.restaurant_id;
-						name = v.rest_name
+						
 						if(is_open==1)
 						{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ '+ stringAddCart +'</div></div></div>';
@@ -247,7 +262,7 @@ $(document).ready(function () {
 						else{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+v.name+'" >'+v.name+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+v.rest_name+'</a>' +
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+foodName+'" >'+foodName+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+v.rest_name+'</a>' +
 							'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
 							'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
 
@@ -255,13 +270,22 @@ $(document).ready(function () {
 					else{
 						var stringCost = "";
 						var stringDistance = "";
+						var name = "";
 						if(language.indexOf("en")>-1){
 							stringCost = "Average cost:";
 							stringDistance = "Distance";
+							if(v.name_en!=''&&v.name_en!=null){
+								name = v.name_en;
+							}
+							else{
+								name = v.name;
+							}						
+							
 						}
 						else{
 							stringCost = "平均价格：";
 							stringDistance = "距离";
+							name = v.name;
 						}
 						
 						if(is_open==1)
@@ -271,7 +295,7 @@ $(document).ready(function () {
 						else{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname" restId='+restId+'>'+v.name+'</div>' +
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname" restId='+restId+'>'+name+'</div>' +
 											'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
 											'<!--<div class="thumb_desc_productprice">'+stringCost+'$ '+cost+'</div>--></div></div>';
 					}     					

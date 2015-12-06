@@ -12,7 +12,7 @@
 		<img class="rest-img" src="<?php echo $restaurant['img_url']; ?>" />
 		<div class="rest-detail">
 			<div class="rest-basic">
-				<div class="rest-name"><?php echo $restaurant['name']; ?></div>
+				<div class="rest-name"><?php if($language=='en' && $restaurant['name_en'] != ''){echo $restaurant['name_en'];} else {echo $restaurant['name'];} ?></div>
 				<!--<div class="rest-average">人均： <?php echo $restaurant['avg_cost']; ?></div>-->
 			</div>
 			<div class="rest-review">

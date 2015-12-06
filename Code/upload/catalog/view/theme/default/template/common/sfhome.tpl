@@ -72,7 +72,7 @@
 	  					</div>
   					</div>
   					<div class="food-hover-content hide">推荐美食</div>
-  					<div class="food-name"><?php echo $food['food_name'];?></div>
+  					<div class="food-name"><?php if($lang == 'en' && isset($food['food_name_en'])) {echo $food['food_name_en'];} else {echo $food['food_name'];}?></div>
   					<div class="food-desc">Dragon House 龙顺园</div>
   					<div class="buy-cart hide" ></div>  					
   				</div>

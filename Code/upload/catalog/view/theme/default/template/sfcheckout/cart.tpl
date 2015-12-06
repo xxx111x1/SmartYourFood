@@ -34,7 +34,7 @@
                             </div>
                             <div class="orderdesc">
                                 <div class="foodname">
-                                    <?php echo $food['food_name']; ?> (<?php echo $food['rest_name']; ?>)
+                                    <?php if($lang == 'en' && isset($food['food_name_en'])) {echo $food['food_name_en'];} else {echo $food['food_name'];} ?> (<?php if($lang=='en' && isset($food['rest_name_en'])){echo $food['rest_name_en'];} else {echo $food['rest_name'];} ?>)
                                 </div>
                             </div>
                         </div>
