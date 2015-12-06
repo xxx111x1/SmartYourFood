@@ -262,7 +262,7 @@ $(document).ready(function () {
 						else{
 							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+foodName+'" >'+foodName+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+v.rest_name+'</a>' +
+						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+foodName+'" >'+foodName+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+name+'</a>' +
 							'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
 							'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
 
