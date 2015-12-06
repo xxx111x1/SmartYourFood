@@ -27,7 +27,7 @@ function initMap() {
 		dataType: 'json',
 		success: function(data) {
 			if(window.location.search.indexOf('sfrest/detail') >= 0){
-				window.location.href =window.location.href; 
+				window.location.href =window.location.href;
 			}
 			else if(window.location.search.indexOf('common/list') >= 0){
 				var searchtype =document.getElementById('searchType').value;
@@ -115,7 +115,7 @@ $(document).ready(function () {
 			dataType: 'json',
 			success: function(data) {
 				if(window.location.search.indexOf('sfrest/detail') >= 0){
-					window.location.href =window.location.href; 
+					window.location.href =window.location.href;
 				}
 				else if(window.location.search.indexOf('common/list') >= 0){
 					var searchtype =document.getElementById('searchType').value;
@@ -148,41 +148,43 @@ $(document).ready(function () {
 		}
 	});
 
-	$(".click-point-first,.first-triangle-left,.first-tip").hover(
+	$("#first-honey-point").hover(
 			function(){
-				$(".second-tip").css("background","rgba(0, 0, 0, 0)");
-				$(".second-tip-content,.second-triangle-left").css("opacity","0");
+				$("#second-honey-point").addClass("hide");//css("background","rgba(0, 0, 0, 0)");//.addClass( "bottom_item" );
 			},
 			function(){
-				$(".second-tip").css("background","rgba(0, 0, 0, .4)");
-				$(".second-tip-content,.second-triangle-left").css("opacity","");
+				$("#second-honey-point").removeClass("hide");
 			}
 	);
 	
-	$(".click-point-second,.second-triangle-left,.second-tip").hover(
+	$("#second-honey-point").hover(
 			function(){
-				$(".first-tip").css("background","rgba(0, 0, 0, 0)");
-				$(".first-tip-content,.first-triangle-left").css("opacity","0");
+				$("#first-honey-point").addClass("hide");
 			},
 			function(){
-				$(".first-tip").css("background","rgba(0, 0, 0, .4)");
-				$(".first-tip-content,.first-triangle-left").css("opacity","");
+				$("#first-honey-point").removeClass("hide");
 			}
 	);
-	
-	$(".food").hover(
-			function(){
-				$(this).addClass( "food-hover" );
-				$(this).find(".food-background").css("margin-top","-50px");
-				$(this).find(".food-hover-content").removeClass("hide");
-				$(this).find(".buy-cart").removeClass("hide");
-			},
-			function(){
-				$(this).find(".fond-hover-content").hide();
-				$(this).find(".food-background").css("margin-top","28px");
-				$(this).find(".food-hover-content").addClass("hide");
-				$(this).find(".buy-cart").addClass("hide");
-				$(this).removeClass( "food-hover" );				
-			}
-	);	
+
+
+    $(".bottom_item").hover(
+        function(){
+            $(this).removeClass("bottom_item").addClass( "bottom_item_hover" );
+            //$(this).addClass( "food-hover" );
+            $(this).find(".bottom_out_circle").removeClass("bottom_out_circle").addClass("bottom_out_circle_hover");
+            $(this).find(".bottom_food_name").removeClass("bottom_food_name").addClass("bottom_food_name_hover");
+            $(this).find(".bottom_rest_name").removeClass("bottom_rest_name").addClass("bottom_rest_name_hover");
+            $(this).find(".bottom-cart").removeClass("hide");
+            $(this).find(".bottom_label").removeClass("hide");
+        },
+        function(){
+            $(this).removeClass("bottom_item_hover").addClass( "bottom_item" );
+            $(this).find(".bottom_out_circle_hover").removeClass("bottom_out_circle_hover").addClass("bottom_out_circle");
+            $(this).find(".bottom_food_name_hover").removeClass("bottom_food_name_hover").addClass("bottom_food_name");
+            $(this).find(".bottom_rest_name_hover").removeClass("bottom_rest_name_hover").addClass("bottom_rest_name");
+
+            $(this).find(".bottom-cart").addClass("hide");
+            $(this).find(".bottom_label").addClass("hide");
+        }
+    );
 });
