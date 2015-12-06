@@ -21,17 +21,20 @@ $(document).ready(function () {
 		type='rest';
 		$('#restaurant_tab').addClass('selected_type_tab');
 		$('#food_tab').removeClass('selected_type_tab');
+		$('#send_time').show();
 	
 	}
 	else{		
 		type = 'food';
 		$('#food_tab').addClass('selected_type_tab');
 		$('#restaurant_tab').removeClass('selected_type_tab');
+		$('#send_time').hide();
 	}
 	$('#searchType').val(type);
 	var isRefreshType = true;
 	$(document).on('click','#food_tab',function() {
-		if(!$('#food_tab').hasClass('selected_type_tab')){
+		$('#send_time').hide();
+		if(!$('#food_tab').hasClass('selected_type_tab')){			
 			type = 'food';
 			$('#searchType').val(type);
 			isRefreshType = true;
@@ -46,6 +49,7 @@ $(document).ready(function () {
 	});
 	
 	$('#restaurant_tab').click(function() {
+		$('#send_time').show();
 		if(!$('#restaurant_tab').hasClass('selected_type_tab')){
 			type='rest';
 			$('#searchType').val(type);
@@ -282,12 +286,15 @@ $(document).ready(function () {
 	
 	function getSortString(sortId){
 		if(sortId=="sell_number"){
-			return " sell_number desc, review_score desc ";
+			return " sell_number desc, review_score desc";
 		}else if(sortId=="review_score"){
-			return " review_score desc,sell_number desc ";
-		}else{
-			return " sell_number desc, review_score desc ";
-		}	
+			return " review_score desc,sell_number desc";
+		}else if(sortId=="send_time"){
+			return " sell_number desc, review_score desc&isDistance=1";
+		}
+		else{
+			return " sell_number desc, review_score desc";	
+		}
 	}
 	
 	function gpsDistance(lat1, lon1, lat2, lon2, unit) {

@@ -11,6 +11,20 @@ class ControllerApiRest extends Controller {
         foreach ($restaurants as $key => $rest) {
             $restaurants[$key]['is_open']=$this->openhours->is_open($restaurants[$key]['restaurant_id']);
         }
+        
+        if(isset($this->request->post['isDistance'])){
+        	$user_lat = $this->session->data['lat'];
+        	$user_lng = $this->session->data['lng'];
+        	$this->load->model('account/address');
+        	foreach($restaurants as $key =>$restaurant)
+        	{
+        		$restaurants[$key]['distance']=$this->model_account_address->getDistance($user_lat, $user_lng, $restaurants[$key]['lat'], $restaurants[$key]['lng']);
+        	}
+        	function distanceSort( $a, $b ) {
+        		return $a['distance'] == $b['distance'] ? 0 : ( $a['distance'] > $b['distance'] ) ? 1 : -1;
+        	}
+        	usort($restaurants, 'distanceSort' );
+        }
 
 		if ($restaurants) {			
 			$json['success'] = $this->language->get('text_success');

@@ -8,6 +8,7 @@ class ControllerApiFood extends Controller {
 		$start_position = $page_number * $page_content_number;
 		$this->load->model('sffood/food');
 		$foods = $this->model_sffood_food->getFoodsWithRestaurantInfo($filters,$sort,$start_position,$page_content_number);
+		
 		//check if restaurant still open
 		foreach($foods as $key =>$food)
 		{
@@ -23,7 +24,23 @@ class ControllerApiFood extends Controller {
 					}
 				}	
 			}
-		}		
+		}
+		
+		//sort foods
+		if(isset($this->request->post['isDistance'])){
+			$user_lat = $this->session->data['lat'];
+			$user_lng = $this->session->data['lng'];
+			$this->load->model('account/address');
+			foreach($foods as $key =>$food)
+			{
+				$foods[$key]['distance']=$this->model_account_address->getDistance($user_lat, $user_lng, $foods[$key]['lat'], $foods[$key]['lng']);
+			}
+			function distanceSort( $a, $b ) {
+				return $a['distance'] == $b['distance'] ? 0 : ( $a['distance'] > $b['distance'] ) ? 1 : -1;
+			}
+			usort($foods, 'distanceSort' );
+		}
+		
 		if ($foods) {			
 			$json['success'] = $this->language->get('text_success');
 			$json['results'] = $foods;
@@ -132,4 +149,5 @@ class ControllerApiFood extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+	
 }
