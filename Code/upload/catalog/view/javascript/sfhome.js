@@ -181,7 +181,7 @@ $(document).ready(function () {
             $(this).find(".bottom_out_circle").removeClass("bottom_out_circle").addClass("bottom_out_circle_hover");
             $(this).find(".bottom_food_name").removeClass("bottom_food_name").addClass("bottom_food_name_hover");
             $(this).find(".bottom_rest_name").removeClass("bottom_rest_name").addClass("bottom_rest_name_hover");
-            $(this).find(".bottom-cart").removeClass("hide");
+            $(this).find(".buy-cart").removeClass("hide");
             $(this).find(".bottom_label").removeClass("hide");
         },
         function(){
@@ -190,7 +190,7 @@ $(document).ready(function () {
             $(this).find(".bottom_food_name_hover").removeClass("bottom_food_name_hover").addClass("bottom_food_name");
             $(this).find(".bottom_rest_name_hover").removeClass("bottom_rest_name_hover").addClass("bottom_rest_name");
 
-            $(this).find(".bottom-cart").addClass("hide");
+            $(this).find(".buy-cart").addClass("hide");
             $(this).find(".bottom_label").addClass("hide");
         }
     );
