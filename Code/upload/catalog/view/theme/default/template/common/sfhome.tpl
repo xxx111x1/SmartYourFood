@@ -61,7 +61,7 @@
             <?php foreach ($foods as $food) { ?>
             <div class="bottom_item" restid="<?php echo $food['restaurant_id']; ?>" foodid="<?php echo $food['food_id'] ;?>">
                 <div class="bottom_out_circle">
-                    <div class="bottom_inner_circle" style="background-image: url('<?php echo $food['img_url'] ;?>');">
+                    <div class="bottom_inner_circle" style="background-image: url('<?php echo $food['img_url'] ;?>');" restid="<?php echo $food['restaurant_id']; ?>" foodid="<?php echo $food['food_id'] ;?>">
 
                     </div>
                 </div>

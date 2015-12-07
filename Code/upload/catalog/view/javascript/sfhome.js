@@ -76,6 +76,14 @@ $(document).ready(function () {
 		window.location.href = url;
 	});
 
+
+	$(document).on('click', '.bottom_inner_circle', function(){
+		var restId = $(this).attr('restid');
+		var foodId = $(this).attr('foodid');
+		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId + '&food_id=' + foodId + '#' + foodId;
+		window.location.href = url;
+	});
+
 	$(document).on('click', '.food-background,.food-hover-content,.food-name,.food-desc', function(){
 		var restId = $(this).parent().attr('restid');
 		var foodId = $(this).parent().attr('foodid');
