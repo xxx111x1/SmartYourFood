@@ -563,7 +563,7 @@ body{
     cursor:pointer;
 }
 
-.bottom-cart{
+.buy-cart{
     position: absolute;
     right: 0;
     bottom: 0;
@@ -674,7 +674,7 @@ body{
         cursor:pointer;
     }
 
-    .bottom-cart{
+    .buy-cart{
         position: absolute;
         right: 0;
         bottom: 0;
@@ -784,7 +784,7 @@ body{
         cursor:pointer;
     }
 
-    .bottom-cart{
+    .buy-cart{
         position: absolute;
         right: 0;
         bottom: 0;
@@ -894,7 +894,7 @@ body{
         cursor:pointer;
     }
 
-    .bottom-cart{
+    .buy-cart{
         position: absolute;
         right: 0;
         bottom: 0;

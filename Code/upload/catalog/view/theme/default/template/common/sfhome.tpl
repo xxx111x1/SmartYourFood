@@ -76,7 +76,7 @@
                         Dragon House 龙顺园
                     </div>
                 </div>
-                <div class="bottom-cart hide">
+                <div class="buy-cart hide">
 
                 </div>
             </div>
