@@ -36,7 +36,7 @@
   			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
   			<div id="dropdown"></div>
   			<input id="serach-input" class="controls" type="text" placeholder="<?php echo $Search_Restaurant_name_Food_Keywords; ?>" />
-  			<div id="search-button"><?php echo $Search; ?></div>
+  			<div id="search-button"><span><?php echo $Search; ?></span></div>
   			<div class="history-addresses hide">
   				<div id="history-label"><?php echo $History; ?></div>
   				<?php if($history_address) {?>
