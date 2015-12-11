@@ -32,7 +32,8 @@
   	<div class="content">
   		<div class="search-bar">
   			<input id="searchType" type="hidden" value="food" />
-  			<img id="mapSelect" />
+  			<div id="mapSelect" >
+            </div>
   			<input id="pac-input" class="controls" type="text" placeholder="<?php echo $address ; ?>" />
   			<div id="dropdown"></div>
   			<input id="serach-input" class="controls" type="text" placeholder="<?php echo $Search_Restaurant_name_Food_Keywords; ?>" />
