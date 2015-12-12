@@ -390,7 +390,7 @@ body{
     border-radius: 8px;
     font-size: 24px;
     font-weight: bold;
-    background-image: url(../image/icons/add2cart.png);
+    /*background-image: url(../image/icons/add2cart.png);*/
     cursor: pointer;
 }
 

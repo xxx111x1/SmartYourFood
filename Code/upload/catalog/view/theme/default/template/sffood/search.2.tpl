@@ -34,7 +34,7 @@
                 <img  class="thumb_preview" width="370" height="256" src="<?php echo $food['img_url'];?>"  alt="Image not found" onerror="onDishImgError(this)" />
                 <?php if($food['is_open']==1){ ?>
                 <div class="thumboverlay">
-                    <div class="thumb_add2cart" foodid="<?php echo $food['food_id'];?>" restId = "<?php echo $food['restaurant_id']; ?>">
+                    <div class="thumb_add2cart" style="background-image: url(<?php echo $add2cartbtn;?>)" foodid="<?php echo $food['food_id'];?>" restId = "<?php echo $food['restaurant_id']; ?>">
                     </div>
                 </div>
                 <?php } ?>
