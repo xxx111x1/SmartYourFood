@@ -510,7 +510,7 @@ body{
 
 div.stars, div.stars div {
     display: block;
-    background: url(../image/smallStars.png) 0 -18px repeat-x;
+    background: url(../image/smallStars.1.png) 0 -18px repeat-x;
     width: 118px;
     height: 18px;
     margin-left: -1px;
