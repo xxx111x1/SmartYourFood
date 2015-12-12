@@ -108,7 +108,6 @@ class ControllerSffoodSearch extends Controller{
 		$data['Distance'] = $this->language->get('Distance');
 		$data['Rank'] = $this->language->get('Rank');
 		$data['add2cartbtn'] = $this->language->get('add2cartbtn');
-        echo $data['add2cartbtn'];
         if($food_result_num==0)
         {
             $data['nofood']="style=\"display: none\"";
