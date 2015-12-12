@@ -37,8 +37,14 @@ class ControllerSffoodSearch extends Controller{
         
         $data['query']=$food_name;
         $this->log->write('food name '.$food_name);
-        $food_list = $this->model_sffood_food->getFoodByName($food_name);
-
+        if(strlen($food_name)>0)
+        {
+            $food_list = $this->model_sffood_food->getFoodByName($food_name);
+        }
+        else{
+            $food_list = array();
+        }
+        $lang = $this->session->data['language'];
         foreach($food_list as $key => $value)
         {
             if(isset($this->session->data['lat'])&&isset($this->session->data['lng']))
@@ -50,10 +56,21 @@ class ControllerSffoodSearch extends Controller{
                 $food_list[$key]['dist'] = $dist;
             }
             $food_list[$key]['is_open'] = $this->openhours->is_open($food_list[$key]['restaurant_id']);
+            if($lang=='en')
+            {
+                $food_list[$key]['food_name'] = $food_list[$key]['food_name_en'];
+                $food_list[$key]['rest_name'] = $food_list[$key]['rest_name_en'];
+            }
          }
 
         $data['foods'] =$food_list;
-        $rest_list = $this->model_sfrest_information->getRestaurantsByName($food_name);
+        if(strlen($food_name)>0)
+        {
+            $rest_list = $this->model_sfrest_information->getRestaurantsByName($food_name);
+        }
+        else{
+            $rest_list = array();
+        }
 
         foreach ($rest_list as $key => $value){
         	if(isset($this->session->data['address'])){
@@ -63,6 +80,11 @@ class ControllerSffoodSearch extends Controller{
         		$rest_list[$key]['distance'] = "未知";
         	}
             $rest_list[$key]['is_open'] = $this->openhours->is_open($rest_list[$key]['restaurant_id']);
+            if($lang=='en')
+            {
+                $rest_list[$key]['name'] = $rest_list[$key]['name_en'];
+            }
+
            // $this->log->write('rest id: '.$rest_list[$key]['restaurant_id'].' is_open '.$rest_list[$key]['is_open']);
         }        
         $data['rests'] = $rest_list;

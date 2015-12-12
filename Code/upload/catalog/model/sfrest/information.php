@@ -121,7 +121,7 @@ class ModelSfRestInformation extends Model{
 	}
 
     public function getRestaurantsByName($name) {
-        $sql = "SELECT * FROM " . DB_PREFIX."restaurant_info where available = 1 and name like '%".$name."%'";
+        $sql = "SELECT * FROM " . DB_PREFIX."restaurant_info where available = 1 and ( LOWER(name) like LOWER('%".$name."%') or LOWER(name_en) like LOWER('%".$name."%') )";
         $this->log->write($sql);
         $query = $this->db->query($sql);
         return $query->rows;
