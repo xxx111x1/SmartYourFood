@@ -3,11 +3,17 @@
  */
 $(document).ready(function() {
     var curpage="#updateaccount_";
-    if(window.location.href.indexOf("success")>0){
+    var url=window.location.href;
+    if(url.indexOf("success")>0){
     	curpage = "#orderhistory_";
-    }else if(window.location.href.indexOf("address")>0){
+    }else if(url.indexOf("updateaddress_")>0){
     	curpage = "#updateaddress_";
     }
+    else if(url.indexOf('orderhistory_')>0)
+    {
+        curpage='#orderhistory_';
+    }
+
     var pageid = $("#currentpage").attr('pageid');
     if(pageid)
     {
@@ -16,26 +22,35 @@ $(document).ready(function() {
     $(".rightpanel").hide();
     console.log(curpage);
     $(curpage).show();
+
     // all jQuery code goes here
     $("#orderhistory").click(function(){
             $(".rightpanel").hide();
+            url='/index.php?route=account/account#orderhistory_';
+            window.location.href = url;
             $("#orderhistory_").show();
         }
     );
     $("#updateaddress").click(function(){
             $(".rightpanel").hide();
+            url='/index.php?route=account/account#updateaddress_';
+            window.location.href = url;
             $("#updateaddress_").show();
         }
     );
 
     $("#updateaccount").click(function(){
             $(".rightpanel").hide();
+            url='/index.php?route=account/account#updateaccount_';
+            window.location.href = url;
             $("#updateaccount_").show();
         }
     );
 
     $("#newsletter").click(function(){
             $(".rightpanel").hide();
+            url='/index.php?route=account/account#newsletter_';
+            window.location.href = url;
             $("#newsletter_").show();
         }
     );

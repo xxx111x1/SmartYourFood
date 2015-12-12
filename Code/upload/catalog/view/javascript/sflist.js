@@ -301,6 +301,10 @@ $(document).ready(function () {
 					}     					
 					
 					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';
+					if(is_open==0)
+					{
+						ele = '<div class="product" style="background-color: #DDDDDD">' +thumbEle+ thumbDescEle + '</div>';
+					}
 					$('.product_area').append(ele);
 				});		
 				$('div.stars').stars();		
