@@ -13,7 +13,7 @@
         <span id="phone_<?php echo $address['address_id'];?>" ><?php echo $address['phone'];?></span><span style="float: right;margin-top: -21px" class="mark"><img src="catalog/view/theme/default/image/icons/marked.png"></span>
     </div>
     <?php } ?>
-    <a href="/index.php?route=address/address&returnUrl=<?php echo $returnUrl;?>">
+    <a href="/index.php?route=address/address&returnUrl=<?php echo $returnUrl;?>#updateaddress_">
         <div class="addressbox" style="line-height: 130px;vertical-align: middle;text-align: center;color: #D8D8D8;font-size: 22px">
             <span><?php echo $New_Address ;?></span>
         </div>

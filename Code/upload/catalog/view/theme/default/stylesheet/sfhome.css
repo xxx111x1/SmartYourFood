@@ -8,6 +8,11 @@ body{
 	margin:0;
 }
 
+*, *:after, *:before {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
 textarea:focus,input:focus{
     outline: 0;
 }
@@ -148,6 +153,7 @@ span {
     float: left;
     margin-left: 0px;
     margin: 0;
+    font-size: 16px;
     /* border: 1px solid #d3d3d3; */
     /* border-left: 0px; */
     /* border-right: 0px; */
@@ -192,25 +198,47 @@ span {
     border-bottom: 0;
     border-bottom: solid 1px #f65053;    
     border-right: solid 1px #f65053;    border-top: solid 1px #f65053;
+    font-size: 16px;
 }
 
+#search-button {
+    top: 25px;
+    z-index: 100;
+    width: 140px;
+    height: 50px;
+    overflow: hidden;
+    text-align: center;
+    float: left;
+}
 
+.btn-search {
+    font-size: 20px;
+    /*letter-spacing: 5px;*/
+    text-indent: 5px;
+    font-weight: 700;
+    color: #FFF;
+    background-color: #f65053;
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    width: 100%;
+}
+/*
 #search-button {
     margin-left: 0px;
     width: 140px;
     color: white;
     height: 53px;
     float: left;
-    /* padding-top: 5px; */
+
     text-align: center;
     font-size: 18px;
     font-weight:bold;
     cursor:pointer;
     background-color: #f65053;
     margin: 0;
-    /* border: 0; */
-    /* border: solid 1px #f65053; */
 }
+*/
 
 .history-addresses{
 	width: 253px;
@@ -427,9 +455,9 @@ span {
     color:white;
     font-size:18px;
     font-weight:bolder;
-    margin-left: 88px;
+    margin-left: 92px;
     /* float: right; */
-    margin-top: 15px;
+    margin-top: 17px;
 }
 
 .tip-content a{
