@@ -50,11 +50,11 @@
 
 
         <div id="first-honey-point">
-            <div class="tip-content"><a href="index.php?route=common/list&type=restaurant"><?php echo $More_Dishes; ?></a></div>
+            <div class="tip-content"><a href="index.php?route=common/list&type=food"><?php echo $More_Dishes; ?></a></div>
         </div>
 
   		<div id="second-honey-point">
-            <div class="tip-content"><a href="http://www.usays.ca/index.php?route=common/list&type=restaurant"><?php echo $Selected_Restaurants; ?></a></div>
+            <div class="tip-content"><a href="index.php?route=common/list&type=restaurant"><?php echo $Selected_Restaurants; ?></a></div>
   		</div>
   	</div>
     <div id="bottom_part">
