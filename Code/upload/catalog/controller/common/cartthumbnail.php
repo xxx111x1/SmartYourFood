@@ -5,11 +5,11 @@ class ControllerCommonCartthumbnail extends Controller {
 
 		// Totals
 		$this->load->model('extension/extension');
-
+		
 		$total_data = array();
 		$total = 0;
 		$taxes = $this->cart->getTaxes();
-		
+		$data['lang'] = $this->language->get('code');
 		//Display prices
 		if (($this->config->get('config_customer_price') && $this->customer->isLogged()) || !$this->config->get('config_customer_price')) {
 			$sort_order = array();
@@ -74,6 +74,7 @@ class ControllerCommonCartthumbnail extends Controller {
 				'key'       => $product['key'],
 				'thumb'     => $image,
 				'name'      => $product['food_name'],
+				'name_en'      => $product['food_name_en'],
 				'product_id'    => $product['product_id'],
 				//'model'     => $product['model'],
 				//'option'    => $option_data,
