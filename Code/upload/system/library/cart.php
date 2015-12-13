@@ -426,7 +426,11 @@ class Cart {
 	}
 	
 	public function getRestId() {
-		return array_values($this->getFoods())[0]['rest_id'];
+		$foods = $this->getFoods();
+		if(isset($foods[0])){
+			return array_values($this->getFoods())[0]['rest_id']; 
+		}
+		return 0;
 	}
 
 	public function getSubTotal() {
