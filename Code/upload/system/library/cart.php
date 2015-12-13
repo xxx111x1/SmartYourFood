@@ -424,6 +424,10 @@ class Cart {
 		}	
 		return $rest_latlng;
 	}
+	
+	public function getRestId() {
+		return array_values($this->getFoods())[0]['rest_id'];
+	}
 
 	public function getSubTotal() {
 		$total = 0;

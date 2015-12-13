@@ -30,7 +30,7 @@
 				<div class="info-label border-right"><?php echo $Averagearrivaltime ;?></div>
 			</div>
 			<div class="info-col">
-				<div class="info-value"><?php echo $distance; ?>K</div>
+				<div class="info-value"><?php echo $distance; ?>KM</div>
 				<div class="info-label"><?php echo $Distance ;?></div>
 			</div>
 		</div>

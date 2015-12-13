@@ -68,12 +68,12 @@ class ControllerSfaccountLogin extends Controller{
 
             // Restore customers cart
             if ($this->customer->getCart()) {
-            	//echo "in get cart";
                 foreach ($this->customer->getCart() as $key => $value) {
                     $this->cart->add($key, $value);
                     $this->session->data['cart'][$key]= $value;
                 }
-            }
+            }            
+            $this->session->data['cart_rest_id'] = $this->cart->getRestId();
 
             // Restore customers wish list
             if ($this->customer->getWishlist()) {

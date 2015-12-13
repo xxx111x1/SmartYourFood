@@ -53,8 +53,15 @@ $(document).ready(function () {
 		var foodId = $(this).parent().attr('foodid');
 		var restId = $(this).parent().attr('restid');
 		var cartRestId = $('#restId').attr('value');
+		
 		if(cartRestId!="0" && cartRestId != restId){
-			alert("请在同一家餐厅选餐");
+			var language =  $('html').attr('lang');
+			if(language.indexOf("en")> -1){
+				alert("Please order in one restaurant.");
+			}
+			else{
+				alert("请在同一家餐厅选餐");
+			}
 		}else{
 			$.ajax({
 				url: 'index.php?route=checkout/cart/add',

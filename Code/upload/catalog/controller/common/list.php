@@ -12,7 +12,6 @@ class ControllerCommonList extends Controller{
         	$redirect = $this->url->link('common/list'); 
         	$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
         }        
-        
         $this->load->language('common/list');
 		$data['Logo'] =                                      $this->language->get('Logo');
 		$data['Home'] =                                      $this->language->get('Home');

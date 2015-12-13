@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html lang="<?php echo $lang; ?>"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Usays</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" >
     <meta charset="utf-8">
@@ -29,6 +29,7 @@
   			<div class="account-icon"></div>
 		</a>
   	</div>
+  	<input type='hidden' id="restId" value="<?php echo $cart_rest_id;?>" />
   	<div class="content">
   		<div class="search-bar">
   			<input id="searchType" type="hidden" value="food" />
