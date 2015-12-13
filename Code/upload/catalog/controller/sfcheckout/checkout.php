@@ -165,6 +165,10 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['msg']='Hello World!';*/
         $data['lang'] = $this->language->get('code');
         $returnUrl = explode("&", $_SERVER['REQUEST_URI'])[0];
+        $data['multiple_rest'] = 0;
+        if($this->cart->getRestNumber()>1){
+        	$data['multiple_rest'] = 1;
+        }
         $data['returnUrl'] = $returnUrl;
         $this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));
     }

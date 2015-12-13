@@ -12,6 +12,7 @@
     <div class="cart_panel">
         <div class="cart_header">
             <h2 style="float: left;"><?php echo $My_Cart; ?></h2>
+            <h2 style="float:left; margin-left: 200px; color: red;"><?php if($multiple_rest==1){ if($lang == 'en'){echo "Please order in one restaurant.";} else {echo "请在同一家餐厅选餐.";}}?></h2>
         </div>
         <hr width="96%" color="#DFDFDF" style="margin-left: auto;margin-right: auto"/>
         <table id="cart">

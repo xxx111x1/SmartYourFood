@@ -11,6 +11,9 @@ class ControllerSfcheckoutConfirm extends Controller{
     public function index()
     {
         $data=array();
+        if($this->cart->getRestNumber()>1){
+    		$this->response->redirect($this->url->link('sfcheckout/checkout'));
+        }
         $food_list = $this->cart->getFoods();
         //start to make order data here
         $order_data = array();

@@ -64,6 +64,22 @@ class Cart {
         }
         return $this->data;
 	}
+	
+	public function getRestNumber(){
+		$restNumber = array();
+			foreach ($this->session->data['cart'] as $key => $quantity) {
+				$product = unserialize(base64_decode($key));
+	
+				$product_id = $product['product_id'];
+				#$product_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "product p LEFT JOIN " . DB_PREFIX . "product_description pd ON (p.product_id = pd.product_id) WHERE p.product_id = '" . (int)$product_id . "' AND pd.language_id = '" . (int)$this->config->get('config_language_id') . "' AND p.date_available <= NOW() AND p.status = '1'");
+				$product_query = $this->db->query("SELECT restaurant_id as restaurant_id FROM " . DB_PREFIX ."food WHERE food_id = ".$product_id);
+				if ($product_query->num_rows) {
+					$restNumber[$product_query->row['restaurant_id']] = 1;				
+				}
+			}
+		
+		return count($restNumber);
+	}
 
 	public function getProducts() {
 		if (!$this->data) {
@@ -351,6 +367,9 @@ class Cart {
             //$this->log->write('session key: .'.$key.' qty: .'.$this->session->data['cart'][$key]);
 		} else {
 			$this->remove($key);
+			if($this->getRestNumber() < 1){
+				$this->session->data['cart_rest_id'] = 0;
+			}
 		}
 	}
 	
@@ -377,6 +396,9 @@ class Cart {
 			$this->session->data['cart'][$key] = (int)$qty;
 		} else {
 			$this->remove($key);
+			if($this->getRestNumber() < 1){
+				$this->session->data['cart_rest_id'] = 0;
+			}
 		}
 	}
 
