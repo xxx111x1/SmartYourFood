@@ -21,12 +21,13 @@ input{
     border-left: 0;
     border-right:0;
 }
+/*
 span {
     display: inline-block;
     vertical-align: middle;
     margin-top: 12px;
 }
-
+*/
 @media (max-width: 1200px) {
     body{
         width:100%;

@@ -1,39 +1,51 @@
 body{
-    width:1600px;
+    width:100%;
     background: url(/catalog/view/theme/default/image/bkg.png) no-repeat top left;
     background-size: 100% 100%;
     background-attachment:fixed;
     min-height:400px;
     float:left;
 }
+
 .welcome{
-    margin-top: 380px;
-    margin-left: 320px;
-    width: 540px;
+    margin-top: 100px;
+    /*margin-left: 320px;*/
+    width: 85%;
     height: 330px;
     font-family: Gabirola;
     font-size: 64px;
     color: white;
     float: left;
+    opacity: 1;
 }
 #welcome .item{
     display: block;
-    width: 535px;
+    width: 100%;
     height: 320px;
 }
+
+#gotohome{
+    color: white;
+    /*position: absolute;*/
+    margin-top: 80px;
+    text-decoration: none;
+    text-decoration-line: none;
+}
+
 .regarea{
-    margin-left: 40px;
-    margin-top: 192px;
+    /* clear: both; */
+    /* margin-left: 40px; */
+    float: left;
+    margin-top: 80px;
     width: 450px;
-    height: 650px;
+    height: 400px;
     background-color: white;
     border-radius: 5px;
-    float: left;
 }
 
 .regitem{
-    width: 383px;
     height: 54px;
+    width: 83.333%;
     margin-left: auto;
     margin-right: auto;
     margin-top: 15px;
@@ -52,7 +64,7 @@ body{
 .reg_input{
     margin-top: 2px;
     margin-right: 2px;
-    width: 330px;
+    width: 85%;
     height: 90%;
     border: 0;
     float:right;
@@ -62,13 +74,6 @@ body{
     border-left-color: #f1f1f1;*/
 }
 .reg_input:focus{
-    margin-top: 2px;
-    margin-right: 2px;
-    width: 330px;
-    height: 90%;
-    border: 0;
-    float:right;
-    border-style: none;
     outline-width: 0;
     font-size: 16px;
     font-weight: bold;
@@ -84,18 +89,27 @@ body{
 }
 .reg_btn{
     width: 383px;
-    height: 40px;
+    border-radius: 5px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 15px;
-    background-color: #f94e4e;
-    border-radius: 5px;
     cursor: pointer;
+    margin-top: 15px;
+    height: 50px;
+    overflow: hidden;
     text-align: center;
-    padding-top: 13px;
-    color: white;
-	font-size: 20px;
-	font-weight: bolder;
+}
+
+.btn-search {
+    font-size: 20px;
+    /*letter-spacing: 5px;*/
+    text-indent: 5px;
+    font-weight: 700;
+    color: #FFF;
+    background-color: #f65053;
+    cursor: pointer;
+    height: 100%;
+    border: none;
+    width: 100%;
 }
 
 .regtxt{
@@ -121,6 +135,6 @@ body{
 }
 
 #reg_btn{
-	text-decoration: none;
-	color: white;
+    text-decoration: none;
+    color: white;
 }
