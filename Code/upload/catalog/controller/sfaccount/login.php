@@ -8,13 +8,6 @@
 class ControllerSfaccountLogin extends Controller{
     public function index(){
 
-    	$useragent=$_SERVER['HTTP_USER_AGENT'];
-    	if($this->detector->isMobile($useragent)){
-    		echo "yes";
-    	}
-    	else{
-    		echo "no";
-    	}    	
         $this->load->model('account/customer');
         // Login override for admin users
         if (!empty($this->request->get['token'])) {
@@ -143,7 +136,19 @@ class ControllerSfaccountLogin extends Controller{
         $data['Enter_a_Password'] =                          $this->language->get('Enter_a_Password');
         $data['Register_here'] =                             $this->language->get('Register_here');
         $data['Incorrect_User_Name'] =                             $this->language->get('Incorrect_User_Name');
-        $this->response->setOutput($this->load->view('default/template/sfaccount/login.tpl', $data));
+        $data['Cellphone'] =                          $this->language->get('Enter_a_Password');
+        $data['Quick_Register'] =                             $this->language->get('Register_here');
+        $data['Find_Password'] =                             $this->language->get('Incorrect_User_Name');
+        $data['Sign_In'] =                             $this->language->get('Sign_In');
+        
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	$this->response->setOutput($this->load->view('default/mobile/sfaccount/login.tpl', $data));
+        }
+        else{
+        	$this->response->setOutput($this->load->view('default/template/sfaccount/login.tpl', $data));
+        }
+        
     }
 
     protected function validate() {
