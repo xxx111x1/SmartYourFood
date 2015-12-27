@@ -251,6 +251,10 @@ $registry->set('openbay', new Openbay($registry));
 $event = new Event($registry);
 $registry->set('event', $event);
 
+// Detector
+$detector = new Detector();
+$registry->set('detector', $detector);
+
 $query = $db->query("SELECT * FROM " . DB_PREFIX . "event");
 
 foreach ($query->rows as $result) {

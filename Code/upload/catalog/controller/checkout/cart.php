@@ -345,7 +345,7 @@ class ControllerCheckoutCart extends Controller {
                 $sf_fastDelivery = $total*0.05;
                 //Distance and price
                 $lat_lng = $this->cart->getRestAddress();
-                if(isset($lat_lng['0'])){
+                if(isset($lat_lng['0'])&&isset($this->session->data['lat'])){
                 	$this->load->model('account/address');
                 	$distance = $this->model_account_address->getDistance($this->session->data['lat'],$this->session->data['lng'],explode(',',$lat_lng['0'])['0'],explode(',',$lat_lng['0'])['1']);
                 	$sf_deliverfee = 4 + max(0,round($distance-4,0,PHP_ROUND_HALF_UP)) + (max(0,round($distance-8,0,PHP_ROUND_HALF_UP)))*0.5;

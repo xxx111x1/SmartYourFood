@@ -7,6 +7,14 @@
  */
 class ControllerSfaccountLogin extends Controller{
     public function index(){
+
+    	$useragent=$_SERVER['HTTP_USER_AGENT'];
+    	if($this->detector->isMobile($useragent)){
+    		echo "yes";
+    	}
+    	else{
+    		echo "no";
+    	}    	
         $this->load->model('account/customer');
         // Login override for admin users
         if (!empty($this->request->get['token'])) {
