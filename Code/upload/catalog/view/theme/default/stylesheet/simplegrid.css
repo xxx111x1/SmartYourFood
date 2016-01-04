@@ -278,3 +278,12 @@ body {
 		height: 0;
 	}
 }
+
+
+.float-left{
+	float:left;
+}
+
+.float-right{
+	float:right;
+}

@@ -136,9 +136,9 @@ class ControllerSfaccountLogin extends Controller{
         $data['Enter_a_Password'] =                          $this->language->get('Enter_a_Password');
         $data['Register_here'] =                             $this->language->get('Register_here');
         $data['Incorrect_User_Name'] =                             $this->language->get('Incorrect_User_Name');
-        $data['Cellphone'] =                          $this->language->get('Enter_a_Password');
-        $data['Quick_Register'] =                             $this->language->get('Register_here');
-        $data['Find_Password'] =                             $this->language->get('Incorrect_User_Name');
+        $data['Cellphone'] =                          $this->language->get('Cellphone');
+        $data['Quick_Register'] =                             $this->language->get('Quick_Register');
+        $data['Find_Password'] =                             $this->language->get('Find_Password');
         $data['Sign_In'] =                             $this->language->get('Sign_In');
         
         $useragent=$_SERVER['HTTP_USER_AGENT'];
