@@ -1,9 +1,9 @@
 $(document).ready(function() {
     var screenWidth = effectiveDeviceWidth;
     var height = effectiveDeviceHeight;
-    $('html').width(screenWidth);
-    $('html').height(height);
-    $('body').width(screenWidth);
+//    $('html').width(screenWidth);
+//    $('html').height(height);
+//    $('body').width(screenWidth);
     
     function effectiveDeviceWidth() {
         var deviceWidth = window.orientation == 0 ? window.screen.width : window.screen.height;
