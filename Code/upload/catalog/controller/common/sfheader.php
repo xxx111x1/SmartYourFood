@@ -22,11 +22,18 @@ class ControllerCommonSfheader extends Controller {
 		$data['Order_Amount'] =                                     $this->language->get('Order_Amount');
 		$data['Language'] =                                  $this->language->get('Language');
 		$data['Welcome'] =                                  $this->language->get('Welcome');
-		
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/sfheader.tpl')) {
-			return $this->load->view($this->config->get('config_template') . '/template/common/sfheader.tpl', $data);
-		} else {
-			return $this->load->view('default/template/common/sfheader.tpl', $data);
+		$data['Category'] = $this->language->get('Category');
+		$useragent=$_SERVER['HTTP_USER_AGENT'];
+		if($this->detector->isMobile($useragent)){
+			return $this->load->view('default/mobile/common/sfheader.tpl', $data);
 		}
+		else{
+			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/sfheader.tpl')) {
+				return $this->load->view($this->config->get('config_template') . '/template/common/sfheader.tpl', $data);
+			} else {
+				return $this->load->view('default/template/common/sfheader.tpl', $data);
+			}	
+		}
+		
 	}
 }

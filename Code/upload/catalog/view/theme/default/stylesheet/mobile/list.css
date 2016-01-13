@@ -1,0 +1,44 @@
+.header{
+	background-color: #f65053;
+	float:left;
+	color: white;
+	font-weight: bolder;
+	height: 40px;
+}
+.headerImg{
+    max-height: 20px;   
+	vertical-align: middle;
+}
+
+.placeImg{
+	margin-left: 16%;
+}
+
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#categoryLabel,#categoryImg,.imgFrame,#addressname{
+	float:left;
+	height: 100%;
+}
+
+#categoryImg{
+	width: 11%;
+}
+
+.imgFrameRight{
+	float:right;
+	height: 100%;
+}
+#categoryImg{
+	margin-left: 10px;
+}
+
+#searchImg{
+	float:right;
+	height: 100%;
+	margin-right: 10px;
+}

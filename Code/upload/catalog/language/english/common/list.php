@@ -60,3 +60,5 @@ $_['Leave_Your_Connection'] =                         'Please leave your cellpho
 $_['Submit'] =                                   'Submit';
 $_['Cancel'] =                                    'Cancel';
 $_['History'] =                                    'History ';
+
+$_['Category'] =                                    'Category';

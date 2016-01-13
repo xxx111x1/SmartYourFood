@@ -72,7 +72,14 @@ class ControllerCommonList extends Controller{
         	$data['address'] = $data['Selected_Restaurants'];
         	$data['first_name'] = "";
         	$data['history_address'] = "";
-        }        
-        $this->response->setOutput($this->load->view('default/template/common/list.tpl', $data));
+        }
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	$this->response->setOutput($this->load->view('default/mobile/common/list.tpl', $data));
+        }
+        else{
+        	$this->response->setOutput($this->load->view('default/template/common/list.tpl', $data));
+        }
+        
     }
 }
