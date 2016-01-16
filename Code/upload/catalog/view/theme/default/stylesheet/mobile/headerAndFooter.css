@@ -1,0 +1,87 @@
+.header{
+	background-color: #f65053;
+	float:left;
+	color: white;
+	font-weight: bolder;
+	height: 40px;
+}
+.headerImg, .footerImg{
+    max-height: 30px;   
+	vertical-align: middle;
+}
+.label{	   
+	height:40px;
+	line-height: 40px;
+}
+.helper {
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+#categoryImg,.imgFrame,.labelFrame,.navigationLabel{
+	float:left;
+	height: 100%;
+}
+
+.labelFrame {
+	width: 22%;
+}
+
+#categoryImg{
+	width: 11%;
+}
+
+.imgFrameRight{
+	float:right;
+	height: 100%;
+}
+#categoryImg{
+	margin-left: 10px;
+}
+
+#searchImg{
+	float:right;
+	height: 100%;
+	margin-right: 10px;
+}
+
+.footer{
+	height:50px;
+	float:left;
+	color: #f65053;
+	font-weight: bolder;
+	position:fixed;
+	bottom:0;
+	left:0;
+	background-color: rgba(255,255,255,1);
+	width:100%;
+}
+
+.footLogoFrame{
+	background-color:#f65053;
+	text-align: center;
+	margin-left: 7%;
+}
+
+.footLogo{	
+	width: 80%;
+}
+
+.navigationItem{
+	float:left;
+	width: 22%;
+}
+
+.navigationFrame{
+	width: 100%;
+	text-align: center;
+}
+.navigationLabel{
+	float:left;
+	height: 100%;
+}
+
+.navigationIcon{
+	max-height:28px;
+}
