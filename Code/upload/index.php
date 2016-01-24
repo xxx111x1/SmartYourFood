@@ -202,8 +202,16 @@ $registry->set('language', $language);
 $registry->set('document', new Document());
 
 // Customer
-$customer = new Customer($registry);
-$registry->set('customer', $customer);
+if (isset($session->data['customer_id']))
+{
+	$customer = new Customer($registry);
+	$registry->set('customer', $customer);
+}
+else{
+	$customer = new Guest($registry);
+	$registry->set('customer', $customer);
+}
+
 
 // Customer Group
 if ($customer->isLogged()) {
