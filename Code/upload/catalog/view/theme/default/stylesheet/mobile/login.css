@@ -34,26 +34,26 @@ button{
 	margin-right: auto;
 	margin-bottom: 100px;
 }
-.loginInput{
+.login_input{
 	float:left;
 	min-height: 45px;
 	margin-left: 5%;
 	color: white;
 }
 
-.inputLine{
+.input_line{
 	border-bottom: 1px solid #888888;
 	padding-bottom: 5px;
 	margin-bottom: 10px;
 	float:left;
 }
 
-.inputIcon{
+.input_icon{
 	float:left;
 	margin-left: 9%;
 }
 
-.bottomNav{
+.bottom_nav{
 	margin-top: 10%;
 	text-decoration: none;
 	color: white;

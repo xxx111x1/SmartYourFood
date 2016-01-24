@@ -14,26 +14,26 @@
 
 <body>
 <div class="header col-1-1">
-	<div id="categoryImg" >
+	<div id="category_img" >
 		<span class="helper"></span>
-		<img class="headerImg" src="../catalog/view/theme/default/image/mobile/mobileMore.png" height="20" />		
+		<img class="header_img" src="../catalog/view/theme/default/image/mobile/mobileMore.png" height="20" />		
 	</div>
-	<div class="labelFrame">
+	<div class="label_frame">
 		<div id="categoryLabel" class="label"><?php echo $Category; ?></div>
 	</div>	
-	<div class="imgFrame placeImg">
+	<div class="img_frame place_img">
 		<span class="helper"></span>
-		<img class="headerImg" src="../catalog/view/theme/default/image/mobile/mobilePlace.png" />
+		<img class="header_img" src="../catalog/view/theme/default/image/mobile/mobilePlace.png" />
 	</div>
-	<div class="labelFrame">
-		<div id="addressname" class="label">Just test</div>
+	<div class="label_frame">
+		<div id="address_name" class="label">Just test</div>
 	</div>	
-	<div class="imgFrame">
+	<div class="img_frame">
 		<span class="helper"></span>
-		<img class="headerImg" src="../catalog/view/theme/default/image/mobile/mobileGoto.png" />
+		<img class="header_img" src="../catalog/view/theme/default/image/mobile/mobileGoto.png" />
 	</div>	
-	<div class="imgFrameRight col-1-12">
+	<div class="img_frame_right col-1-12">
 		<span class="helper"></span>
-		<img class="headerImg" id="search" class="col-1-12" src="../catalog/view/theme/default/image/mobile/mobileSearch.png"/>
+		<img class="header_img" id="search" class="col-1-12" src="../catalog/view/theme/default/image/mobile/mobileSearch.png"/>
 	</div>	
 </div>

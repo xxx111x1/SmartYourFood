@@ -19,78 +19,47 @@ $(document).ready(function () {
 	var type=$('#searchType').val();	
 	if(window.location.search.indexOf('restaurant') >= 0){
 		type='rest';
-		$('#restaurant_tab').addClass('selected_type_tab');
-		$('#food_tab').removeClass('selected_type_tab');
+		$('#restaurant_tab').addClass('selected');
+		$('#food_tab').removeClass('selected');
 		$('#send_time').show();
 	
 	}
 	else{		
 		type = 'food';
-		$('#food_tab').addClass('selected_type_tab');
-		$('#restaurant_tab').removeClass('selected_type_tab');
+		$('#food_tab').addClass('selected');
+		$('#restaurant_tab').removeClass('selected');
 		$('#send_time').hide();
 	}
 	$('#searchType').val(type);
 	var isRefreshType = true;
-	$(document).on('click','#food_tab',function() {
-		$('#send_time').hide();
-		if(!$('#food_tab').hasClass('selected_type_tab')){			
+	
+	$('#food_tab').click(function() {
+		if(!$('#food_tab').hasClass('selected')){			
 			type = 'food';
 			$('#searchType').val(type);
 			isRefreshType = true;
-			$('#food_tab').addClass('selected_type_tab');
-			$('#restaurant_tab').removeClass('selected_type_tab');
-			$('.filteritem').removeClass('filter_field_selected');	
+			$('#food_tab').addClass('selected');
+			$('#restaurant_tab').removeClass('selected');
 			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
-			$('#filter_0').addClass('filter_field_selected');
-			$('#filters').val('0');
 			isRefreshType = false;
 		}		
 	});
 	
 	$('#restaurant_tab').click(function() {
-		$('#send_time').show();
-		if(!$('#restaurant_tab').hasClass('selected_type_tab')){
+		if(!$('#restaurant_tab').hasClass('selected')){
 			type='rest';
 			$('#searchType').val(type);
 			isRefreshType = true;
-			$('#restaurant_tab').addClass('selected_type_tab');
-			$('#food_tab').removeClass('selected_type_tab');
-			$('.filteritem').removeClass('filter_field_selected');
+			$('#restaurant_tab').addClass('selected');
+			$('#food_tab').removeClass('selected');
 			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
-			$('#filter_0').addClass('filter_field_selected');
-			$('#filters').val('0');
 			isRefreshType = false;
 		}		
-	});	
-			
-	$('#filter_0').addClass('filter_field_selected');
-	$('#sort_default').addClass('sort_field_selected');
-	
+	});		
 	addContents('0',getSortString('sort_default'),0,1,isRefreshType);
 	isRefreshType = false;
-	
-	$(document).on('click', '.filteritem', function(){
-		$('.filteritem').removeClass('filter_field_selected');
-		$(this).addClass('filter_field_selected');				
-		var filters = $(this).attr('value');
-		$('#filters').attr('value',filters);		
-		var sortId = $('#sort').attr('value');
-		var sort = getSortString(sortId);				
-		addContents(filters,sort,0,1,isRefreshType);
-	});
-	
-	$('.sort_field').click(function(){
-		$('.sort_field').removeClass('sort_selected');
-		$(this).addClass('sort_selected');
-		var filters = $('#filters').attr('value');
-		var sortId = $(this).attr('id');
-		$('#sort').val(sortId);
-		var sort = getSortString(sortId);				
-		addContents(filters,sort,0,1,isRefreshType);
-	});
-	
-	$(document).on('click', '.thumb_view,.thumb_desc_restname,.thumb_rest_img', function(){
+		
+	$(document).on('click', '.resturantName,.productFrame', function(){
 		var restId = $(this).attr('restid');
 		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId;
 		if (type=='food'){			
@@ -103,18 +72,8 @@ $(document).ready(function () {
 		}
 		window.location.href = url;
 	});
-	
-	$(document).on('mouseover','.thumb', function(){
-		$(this).find(".thumboverlay").show();
-	});
-	
-	$(document).on('mouseout','.thumb', function(){
-		$(this).find(".thumboverlay").hide();
-	});
-	
-	
-	
-	$(document).on('click', '.thumb_add2cart', function(){
+		
+	$(document).on('click', '.minusProduct,.addProduct', function(){
 		var id = $(this).attr('foodid');
 		var restId = $(this).attr('restid');
 		var number = $(this).attr('number');
@@ -131,45 +90,6 @@ $(document).ready(function () {
 		}else{
 			cart.addone(id,restId);
 			$(this).attr('number',number);
-			
-			var cartIcon = $('#cart_thumbnail');
-	        var imgtodrag = $(this).parent('.thumboverlay').siblings(".thumb_preview").eq(0);
-	        if (imgtodrag) {
-	            var imgclone = imgtodrag.clone()
-	                .offset({
-	                top: imgtodrag.offset().top,
-	                left: imgtodrag.offset().left
-	            })
-	                .css({
-	                'opacity': '0.5',
-	                    'position': 'absolute',
-	                    'height': '150px',
-	                    'width': '150px',
-	                    'z-index': '100'
-	            })
-	                .appendTo($('body'))
-	                .animate({
-	                'top': cartIcon.offset().top + 10,
-	                    'left': cartIcon.offset().left + 10,
-	                    'width': 75,
-	                    'height': 75
-	                	},          1000
-	               );
-	            
-	            setTimeout(function () {
-	            	cartIcon.effect("shake", {
-	                    times: 2
-	                }, 200);
-	            }, 1500);
-
-	            imgclone.animate({
-	                'width': 0,
-	                    'height': 0
-	            }, function () {
-	                $(this).detach()
-	            });
-	        	$('#cart_preview').removeClass('unvisible');        	
-	        }
 		}
 		
 	});		
@@ -186,11 +106,6 @@ $(document).ready(function () {
 		   }
 	});
 	
-	$.fn.stars = function() {
-		return $(this).each(function() {
-	        $(this).html($('<div />').width(Math.max(0, (Math.min(5, parseFloat($(this).attr('rate'))))) * 23));
-		});
-	}
 	
 	function addContents(filters,sort,pageNumber,isRefresh, isRefreshType){
 		$.ajax({
@@ -344,7 +259,7 @@ $(document).ready(function () {
 		return dist.toFixed(2);
 	}
 });
-
+ 
 function onDishImgError(source){
 	source.src = "./catalog/view/theme/default/image/foodImages/dish_default.jpg";
 	source.onerror="";

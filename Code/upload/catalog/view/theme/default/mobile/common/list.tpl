@@ -1,133 +1,50 @@
 <?php echo $header;?>
 <script src="catalog/view/javascript/mobile/stars.js" type="text/javascript"></script>
+<!--<script src="catalog/view/javascript/mobile/sflist.js" type="text/javascript"></script>-->
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/list.css">
 <div class="container">
 	<div id="ads" >
-		 <img class="advertisement col-1-1" id="showRestaurant" src="../catalog/view/theme/default/image/mobile/Ad1.jpg"></img>
+		 <img class="advertisement col-1-1" id="show_restaurant" src="../catalog/view/theme/default/image/mobile/Ad1.jpg"></img>
 	</div>
     <div class="tabmenu">
-        <div id="restaurant_tab" class="typeTab">
-        	<div class="tabLabel"><?php echo $Selected_Restaurants; ?></div>
-        	<div class="imgFrame tabFrame" >
+        <div id="restaurant_tab" class="type_tab">
+        	<div class="tab_label"><?php echo $Selected_Restaurants; ?></div>
+        	<div class="img_frame tab_frame" >
 				<span class="helper"></span>
-	  			<img class="tabIcon" src="../catalog/view/theme/default/image/mobile/mobileHomeChooseRest.png" />
+	  			<img class="tab_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeChooseRest.png" />
 	  		</div>
 	  	</div>
-        <div id="food_tab" class="typeTab">        	
-        	<div class="tabLabel"><?php echo $Selected_Food; ?></div>
-        	<div class="imgFrame tabFrame" >
+        <div id="food_tab" class="type_tab">        	
+        	<div class="tab_label"><?php echo $Selected_Food; ?></div>
+        	<div class="img_frame tab_frame" >
 				<span class="helper"></span>
-	  			<img class="tabIcon" src="../catalog/view/theme/default/image/mobile/mobileHomeChooseFood.png" />
+	  			<img class="tab_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeChooseFood.png" />
 	  		</div>
  	    </div>
-            <!--<div class="typeTab">猜你喜欢</div>-->
+            <!--<div class="type_tab">猜你喜欢</div>-->
     </div>  
 
-	<div class="productContent">
+	<div class="product_content">
 		<input type=hidden id=page_number value=0 />
-		<div class=productArea >
+		<div class="product_area" >
 			<div class="product">
-				<div class="imgFrame productFrame" id="22">
+				<div class="img_frame product_frame" restid="0" foodid="22">
 					<span class="helper"></span>
 					<img class="preview" src="http://img.epochtimes.com/i6/1105290902081983.jpg" alt="Image not found" onerror="onDishImgError(this)" />
 				</div>
 				<div class="description">
-					<div class="productName" title="每月特例">每月特例</div>
+					<div class="product_name" title="每月特例">每月特例</div>
 					<div class="sf_product_stars stars" rate="4.00">
 						<span />
 					</div>
-					<div class="purchaseArea">
-						<img class="minusProduct" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" foodid="22" />
-						<div class="productNumber">1</div>
-						<img class="addProduct" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" foodId="22"/> 
+					<div class="purchase_area">
+						<img class="minus_product" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="0" foodid="22" />
+						<div class="product_number">1</div>
+						<img class="add_product" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="0" foodId="22"/> 
 					</div>
-					<div class="productPrice col-1-1">$ 12.50</div>
-					<a class="resturantName" restid="0" foodid="22">Food Special</a>
-					<div class="dileveryTime">|90分钟内送达</div>
-				</div>
-			</div>		
-			
-			<div class="product">
-				<div class="imgFrame productFrame" id="22">
-					<span class="helper"></span>
-					<img class="preview" src="http://img.epochtimes.com/i6/1105290902081983.jpg" alt="Image not found" onerror="onDishImgError(this)" />
-				</div>
-				<div class="description">
-					<div class="productName" title="每月特例">每月特例</div>
-					<div class="sf_product_stars stars" rate="4.00">
-						<span />
-					</div>
-					<div class="purchaseArea">
-						<img class="minusProduct" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" foodid="22" />
-						<div class="productNumber">1</div>
-						<img class="addProduct" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" foodId="22"/> 
-					</div>
-					<div class="productPrice col-1-1">$ 12.50</div>
-					<a class="resturantName" restid="0" foodid="22">Food Special</a>
-					<div class="dileveryTime">|90分钟内送达</div>
-				</div>
-			</div>		
-			
-			<div class="product">
-				<div class="imgFrame productFrame" id="22">
-					<span class="helper"></span>
-					<img class="preview" src="http://img.epochtimes.com/i6/1105290902081983.jpg" alt="Image not found" onerror="onDishImgError(this)" />
-				</div>
-				<div class="description">
-					<div class="productName" title="每月特例">每月特例</div>
-					<div class="sf_product_stars stars" rate="4.00">
-						<span />
-					</div>
-					<div class="purchaseArea">
-						<img class="minusProduct" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" foodid="22" />
-						<div class="productNumber">1</div>
-						<img class="addProduct" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" foodId="22"/> 
-					</div>
-					<div class="productPrice col-1-1">$ 12.50</div>
-					<a class="resturantName" restid="0" foodid="22">Food Special</a>
-					<div class="dileveryTime">|90分钟内送达</div>
-				</div>
-			</div>		
-			
-			<div class="product">
-				<div class="imgFrame productFrame" id="22">
-					<span class="helper"></span>
-					<img class="preview" src="http://img.epochtimes.com/i6/1105290902081983.jpg" alt="Image not found" onerror="onDishImgError(this)" />
-				</div>
-				<div class="description">
-					<div class="productName" title="每月特例">每月特例</div>
-					<div class="sf_product_stars stars" rate="4.00">
-						<span />
-					</div>
-					<div class="purchaseArea">
-						<img class="minusProduct" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" foodid="22" />
-						<div class="productNumber">1</div>
-						<img class="addProduct" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" foodId="22"/> 
-					</div>
-					<div class="productPrice col-1-1">$ 12.50</div>
-					<a class="resturantName" restid="0" foodid="22">Food Special</a>
-					<div class="dileveryTime">|90分钟内送达</div>
-				</div>
-			</div>		
-			
-			<div class="product">
-				<div class="imgFrame productFrame" id="22">
-					<span class="helper"></span>
-					<img class="preview" src="http://img.epochtimes.com/i6/1105290902081983.jpg" alt="Image not found" onerror="onDishImgError(this)" />
-				</div>
-				<div class="description">
-					<div class="productName" title="每月特例">每月特例</div>
-					<div class="sf_product_stars stars" rate="4.00">
-						<span />
-					</div>
-					<div class="purchaseArea">
-						<img class="minusProduct" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" foodid="22" />
-						<div class="productNumber">1</div>
-						<img class="addProduct" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" foodId="22"/> 
-					</div>
-					<div class="productPrice col-1-1">$ 12.50</div>
-					<a class="resturantName" restid="0" foodid="22">Food Special</a>
-					<div class="dileveryTime">|90分钟内送达</div>
+					<div class="product_price col-1-1">$ 12.50</div>
+					<a class="resturant_name" restid="0" foodid="22">Food Special</a>
+					<div class="dilevery_time">|90分钟内送达</div>
 				</div>
 			</div>			
 		</div>
