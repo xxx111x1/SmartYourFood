@@ -41,7 +41,7 @@ $(document).ready(function () {
     function intialAddress(){
     	$('.addressbox').first().addClass('addressbox_selected');
     	var addr_id = $('.addressbox').first().attr('addr_id');
-    	shippaddress.set_address(addr_id);
+    	//shippaddress.set_address(addr_id);
     }
 
     $('.addressbox').click(function(){
@@ -67,7 +67,7 @@ $(document).ready(function () {
             	sum = sum + fastdeliverfee
             }
             $('#totalcost').text(" $ "+sum.toFixed(2));
-            shippaddress.set_address(addr_id);
+            //shippaddress.set_address(addr_id);
             
         }
     );
