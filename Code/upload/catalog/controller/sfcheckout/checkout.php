@@ -9,11 +9,13 @@ class ControllerSfcheckoutCheckout extends Controller{
     private $tax_rate = 0.05;
     private $deliver_fee_rate = 1;
     public function index()
-    {    	
+    {
+        /*
     	if(!$this->customer->isLogged()){
     		$redirect = $this->url->link('common/sfhome');
     		$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
-    	}
+    	}*/
+
         $data=array();
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
@@ -49,6 +51,7 @@ class ControllerSfcheckoutCheckout extends Controller{
 		$data['No_Any_Order'] = $this->language->get('No_Any_Order');
         //Get Address
         $this->load->model('sfcheckout/shippingaddress');
+        $has_address = false;
         if(isset($this->session->data['address'])
         		&& isset($this->session->data['lat'])
         		&& isset($this->session->data['lng'])
@@ -62,7 +65,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         	$address_data['contact']=$this->customer->getFirstName();
         	$this->model_sfcheckout_shippingaddress->addAddress($address_data);
         }
-        
+
         //check if current page is returned from address pickup page        
         if(isset($this->request->get['lat'])
         		&&isset($this->request->get['lng'])
@@ -87,14 +90,49 @@ class ControllerSfcheckoutCheckout extends Controller{
 				$this->model_sfcheckout_shippingaddress->addAddress($address_data);
 			}	
         }
-        else{
-        	$this->log->write('no returned url');
-        }
-        $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
-        if(count($addresses)>0 && isset($addresses->rows[0]['address_id']))
+        //session stores the address information
+        else if(isset($this->session->data['lat'])&&
+                 isset($this->session->data['lng'])&&
+                 isset($this->session->data['address'])&&
+            isset($this->session->data['shipping_address_phone'])&&
+            isset($this->session->data['shipping_address_contact']))
         {
-        	$this->set_shipping_address($addresses->rows[0]['address_id']);
+            $address_data['lat']=$this->session->data['lat'];
+            $address_data['lng']=$this->session->data['lng'];
+            $address_data['address']=$this->session->data['address'];
+            $address_data['phone']=$this->session->data['shipping_address_phone'];
+            $address_data['contact']=$this->session->data['shipping_address_contact'];
+            $this->model_sfcheckout_shippingaddress->addAddress($address_data);
         }
+
+        /*
+        if($this->customer->isLogged())
+        {
+            $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
+            if(count($addresses)>0 && isset($addresses->rows[0]['address_id']))
+            {
+                $this->set_shipping_address($addresses->rows[0]['address_id']);
+            }
+        }
+        else{
+            //TODO: get guest's address
+            $addresses = array();
+            $addresses[0] = $address_data;
+            //$addresses = $this->customer->getAddresses();
+        }*/
+
+        $addresses = $this->model_sfcheckout_shippingaddress->getAddresses();
+        if(count($addresses)>0 )
+        {
+            $first_addr = reset($addresses);
+            printf('first addr');
+            var_dump($first_addr);
+            $this->set_shipping_address($first_addr['address_id']);
+            $this->log->write('try to set current shipping address, address id '.$first_addr['address_id']);
+            $this->customer->setShippingAddress($first_addr);
+        }
+
+        //TODO: test if has address cookie
         $data['addresslist']=$addresses;  
         
         $food_list = $this->cart->getFoods();
@@ -175,25 +213,25 @@ class ControllerSfcheckoutCheckout extends Controller{
 
     public function set_shipping_address($addr_id)
     {
-        $this->log->write('set shipping address id: '.$addr_id);
         $this->load->model('sfcheckout/shippingaddress');
-        $this->session->data['shipping_address_id'] = $addr_id;
         $addr = $this->model_sfcheckout_shippingaddress->getAddress($addr_id);
-        $shippingaddress = array();
-        $shippingaddress['firstname'] = $addr['contact'];
-        $shippingaddress['address_1'] = $addr['address'];
-        $shippingaddress['address_2'] = $addr['phone'];
+        $this->session->data['shipping_address_id'] = $addr_id;
         $this->session->data['lat'] = $addr['lat'];
         $this->session->data['lng'] = $addr['lng'];
         $this->session->data['address'] = $addr['address'];
-        $this->session->data['shipping_address'] = $shippingaddress;
+        $this->session->data['shipping_address_addr'] =  $addr['address'];
+        $this->session->data['shipping_address_contact'] = $addr['contact'];
+        $this->session->data['shipping_address_phone'] = $addr['phone'];
         $this->model_sfcheckout_shippingaddress->updateAddressDate($addr_id);
     }
 
     public function set_address()
     {
-        $addr_id =$this->request->post['addr_id'];
-        $this->set_shipping_address($addr_id);
+        if(isset($this->request->post['addr_id']))
+        {
+            $addr_id =$this->request->post['addr_id'];
+            $this->set_shipping_address($addr_id);
+        }
     }
 
 }
