@@ -73,11 +73,10 @@ $(document).ready(function () {
 		window.location.href = url;
 	});
 		
-	$(document).on('click', '.minusProduct,.addProduct', function(){
+	$(document).on('click', '.minus_product,.add_product', function(){
 		var id = $(this).attr('foodid');
 		var restId = $(this).attr('restid');
-		var number = $(this).attr('number');
-		number++;
+		var number = $('#product_'+id).text();
 		var cartRestId = document.getElementById('purchaseRest').value;
 		if(cartRestId!="0" && cartRestId != restId){
 			if(language.indexOf("en")> -1){
@@ -88,20 +87,32 @@ $(document).ready(function () {
 			}
 			
 		}else{
-			cart.addone(id,restId);
-			$(this).attr('number',number);
+			if($(this).hasClass("minus_product")&&number>0){
+				number--;
+				if(number<=0){
+					$('#minus_product_'+id).addClass('product_number_0');
+					$('#product_'+id).addClass('product_number_0');
+				}
+			}
+			else{
+				number++;
+				$('#minus_product_'+id).removeClass('product_number_0');
+				$('#product_'+id).removeClass('product_number_0');
+			}
+			cart.add(id,number);
+			$('#product_'+id).text(number);
+			updateRestId();
 		}
-		
 	});		
 	
 	$(window).scroll(function () { 
 		   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
 			  var pageNumber = $('#page_number').val();
-			  var filters = $('#filters').attr('value');
-			  var sortId = $('#sort').attr('value');
+			  //var filters = $('#filters').attr('value');
+			  //var sortId = $('#sort').attr('value');
 			  pageNumber = parseInt(pageNumber) + 1;
-			  var sort = getSortString(sortId);
-			  addContents(filters,sort,pageNumber,0);
+			  //var sort = getSortString(sortId);
+			  addContents("0"," sell_number desc, review_score desc",pageNumber,0);
 			  $('#page_number').val(pageNumber);
 		   }
 	});
@@ -172,15 +183,14 @@ $(document).ready(function () {
 						
 						if(is_open==1)
 						{
-							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumboverlay" style="display: none;"><div class="thumb_add2cart" restId='+restId+' foodId='+id+' id="food_'+id+'_number" number="'+v.cart_number+'">+ '+ stringAddCart +'</div></div></div>';
+							thumbEle = '<div class="img_frame product_frame" restid="'+restId+'"foodid="'+id+'"><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /></div>';
 						}
 						else{
-							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
+							thumbEle = '<div class="img_frame product_frame" restid="'+restId+'"foodid="'+id+'"><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_foodname" title="'+foodName+'" >'+foodName+'</div><a class="thumb_desc_restname" restId='+restId+' foodId='+id+' >'+stringRest+': '+name+'</a>' +
-							'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
-							'<div class="thumb_desc_productprice">$ '+v.price+'</div></div></div>';
-
+						thumbDescEle = '<div class="food_description"><div class="product_name" title="'+foodName+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+'" id="minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
+						'<div class="product_number product_number_'+v.cart_number+'" id="product_'+id+'" foodId="'+id+'">'+v.cart_number+'</div><img class="add_product" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="'+restId+'" foodId="'+id+'"/></div><div class="product_price col-1-1">$ '+v.price+'</div><a class="resturant_name" restid="'+restId+'" foodid="'+id+'">'+name+'</a>' +
+						'<div class="dilevery_time">|'+stringDistance+' '+distance+'KM</div></div>';
 					}
 					else{
 						var stringCost = "";

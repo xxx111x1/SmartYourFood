@@ -274,4 +274,14 @@ class ControllerApiCart extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
+	
+	public function getPurchaseRestId() {
+		$rest_id=0;
+		if(isset($this->session->data['cart_rest_id'])){
+			$rest_id= $this->session->data['cart_rest_id'];
+		}
+		$data['rest_id'] = $rest_id;
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($data));
+	}
 }

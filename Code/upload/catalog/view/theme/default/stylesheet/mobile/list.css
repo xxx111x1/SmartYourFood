@@ -77,10 +77,6 @@ div.stars span {
     background-position: 0 0;
 }
 
-.product_price {
-	float:left;
-}
-
 .purchase_area{
 	float: right;
 	width: 30%;
@@ -93,18 +89,37 @@ div.stars span {
 	width: 25%;
 }
 
-.description{
+.food_description{
 	float:left;
 	padding-top: 10px;
 	width: 66%;
 }
 
-.product_name{
-	font-weight: bolder;
-	font-size: 17px;
+.rest_description{
+	float:left;
+	padding-top: 10px;
+	width: 56%;
 }
 
-.resturant_name, .dilevery_time{
+.product_name{
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+.resturant_name, .dilevery_time, .extra_info, .product_price{
 	float:left;
+	margin-top: 2px;
+	font-size: 12px;
+}
+
+.resturant_name, .dilevery_time, .extra_info{
 	color: #939598;
+}
+
+.product_number_0{
+	visibility:hidden;
+}
+
+.go_to_rest{
+	float:right;
 }
