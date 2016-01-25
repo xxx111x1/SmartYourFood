@@ -28,12 +28,11 @@ class ControllerSfcheckoutConfirm extends Controller{
         $total_before_tax = $this->cart->getFoodSubTotal();
         $total_before_tax = round($total_before_tax,2);
         $tax=round($this->tax_rate*$total_before_tax,2);
-        //$tips = round(0.1*$total_before_tax,2);
         $data['beforetax'] = $total_before_tax;
+        $this->session->data['order_beforetax'] = $total_before_tax;
         $data['tax'] = $tax;
-        //$data['tips'] = $tips;
-        $deliverfee = 5;
-        
+        $this->session->data['order_tax'] = $tax;
+
         //Distance and price
         $deliverfee = 5;
         $rest_addr = '';
@@ -74,6 +73,12 @@ class ControllerSfcheckoutConfirm extends Controller{
         $data['deliverfee'] = $deliverfee;
         $data['fast_deliverfee'] = $fast_deliverfee;
         $data['totalcost'] = round($total_before_tax + $tax + $deliverfee + $fast_deliverfee,2);
+        $this->session->data['order_deliverfee'] = $deliverfee;
+        $this->session->data['order_fastdeliverfee'] = $fast_deliverfee;
+        $this->session->data['order_totalcost'] = $data['totalcost'];
+        $order_data['deliverfee'] = $deliverfee;
+        $order_data['extra_cost'] = $fast_deliverfee;
+
         if(count($food_list)==0)
         {
         	$data['nofood']="display: none";
@@ -83,8 +88,7 @@ class ControllerSfcheckoutConfirm extends Controller{
         	$data['nofood']="";
         	$data['hasfood']="display: none";
         }
-        $order_data['deliverfee'] = $deliverfee;
-        $order_data['extra_cost'] = $fast_deliverfee;
+
         // Create Order
         if ($this->customer->isLogged()) {
             $this->load->model('account/customer');
@@ -99,15 +103,17 @@ class ControllerSfcheckoutConfirm extends Controller{
             $order_data['telephone'] = $customer_info['telephone'];
             $order_data['fax'] = $customer_info['fax'];
             $order_data['custom_field'] = unserialize($customer_info['custom_field']);
-        } elseif (isset($this->session->data['guest'])) {
-            $order_data['customer_id'] = 0;
-            $order_data['customer_group_id'] = $this->session->data['guest']['customer_group_id'];
-            $order_data['firstname'] = $this->session->data['guest']['firstname'];
-            $order_data['lastname'] = $this->session->data['guest']['lastname'];
-            $order_data['email'] = $this->session->data['guest']['email'];
-            $order_data['telephone'] = $this->session->data['guest']['telephone'];
-            $order_data['fax'] = $this->session->data['guest']['fax'];
-            $order_data['custom_field'] = $this->session->data['guest']['custom_field'];
+        } else{
+            //get customer infor from guest data
+            $shippingAddress = $this->customer->getShippingAddress();
+            $order_data['customer_id'] = $this->customer->getId();
+            $order_data['customer_group_id'] = $this->customer->getGroupId();
+            $order_data['firstname'] = $shippingAddress['contact'];
+            $order_data['lastname'] = '';
+            $order_data['email'] = '';
+            $order_data['telephone'] = $shippingAddress['phone'];
+            $order_data['fax'] = '';
+            $order_data['custom_field'] = '';
         }
         if(isset($this->session->data['payment_address']['firstname']))
             $order_data['payment_firstname'] = $this->session->data['payment_address']['firstname'];
@@ -341,10 +347,10 @@ class ControllerSfcheckoutConfirm extends Controller{
             $total+=$product['total'];
         }
         $order_data['total'] = $data['totalcost'];
+        $this->session->data['total'] = $data['totalcost'];
         $this->load->model('checkout/order');
         $this->session->data['order_id'] = $this->model_checkout_order->addOrder($order_data);
         $data['order_id']=$this->session->data['order_id'];
-        $this->log->write('food number: '.count($food_list));
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
         
@@ -372,17 +378,16 @@ class ControllerSfcheckoutConfirm extends Controller{
         $data['Delivery_Information_Not_Complete'] =                                     $this->language->get('Delivery_Information_Not_Complete');
         $data['Yes'] =                                     $this->language->get('Yes');
         $data['No'] =                                     $this->language->get('No');
-        
-        if(isset($this->session->data['shipping_address'])
-            &&isset($this->session->data['shipping_address']['address_1'])
-            &&isset($this->session->data['shipping_address']['firstname'])
-            &&isset($this->session->data['shipping_address']['address_2']))
+
+        if(isset($this->session->data['shipping_address_addr'])
+            &&isset($this->session->data['shipping_address_contact'])
+            &&isset($this->session->data['shipping_address_phone'])
+            )
         {
-            $data['address'] =$this->session->data['shipping_address']['address_1'];
-            $data['contact'] =$this->session->data['shipping_address']['firstname'];
-            $data['phone'] = $this->session->data['shipping_address']['address_2'];
+            $data['address'] = $this->session->data['shipping_address_addr'];
+            $data['contact'] = $this->session->data['shipping_address_contact'];
+            $data['phone'] =  $this->session->data['shipping_address_phone'];
             $data['validaddress']=true;
-          //  $data['telephone']=$this->telephone;
         }
         else{
             $data['validaddress'] = false;

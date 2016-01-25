@@ -7,11 +7,7 @@ class ControllerCommonList extends Controller{
 		$data['header'] = $this->load->controller('common/sfheader');
 		$data['footer'] = $this->load->controller('common/sffooter');
         $data['backtop'] = $this->load->controller('common/backtop');
-        
-        if(!$this->customer->isLogged()){
-        	$redirect = $this->url->link('common/list'); 
-        	$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
-        }        
+
         $this->load->language('common/list');
 		$data['Logo'] =                                      $this->language->get('Logo');
 		$data['Home'] =                                      $this->language->get('Home');

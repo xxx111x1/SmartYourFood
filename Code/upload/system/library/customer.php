@@ -1,22 +1,25 @@
 <?php
 class Customer {
-	private $customer_id;
-	private $firstname;
-	private $lastname;
-	private $customer_group_id;
-	private $email;
-	private $telephone;
-	private $fax;
-	private $newsletter;
-	private $address_id;
-	private $cart;
-	private $wishlist;
-
+	protected $customer_id;
+    protected $firstname;
+    protected $lastname;
+    protected $customer_group_id;
+    protected $email;
+    protected $telephone;
+    protected $fax;
+    protected $newsletter;
+    protected $address_id;
+    protected $cart;
+    protected $wishlist;
+    protected $guest_mode;
+    protected $cookie;
+    protected $shipping_address;
 	public function __construct($registry) {
 		$this->config = $registry->get('config');
 		$this->db = $registry->get('db');
 		$this->request = $registry->get('request');
 		$this->session = $registry->get('session');
+		$this->guest_mode = false; // guest mode by default.
 
 		if (isset($this->session->data['customer_id'])) {
 			$customer_query = $this->db->query("SELECT * FROM " . DB_PREFIX . "customer WHERE customer_id = '" . (int)$this->session->data['customer_id'] . "' AND status = '1'");
@@ -33,6 +36,7 @@ class Customer {
 				$this->address_id = $customer_query->row['address_id'];
 				$this->cart = unserialize($customer_query->row['cart']);
 				$this->wishlist = unserialize($customer_query->row['cart']);
+				$this->guest_mode = false;
                 //$this->address = $customer_query->row['address'];
 				$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
 
@@ -45,6 +49,10 @@ class Customer {
 				$this->logout();
 			}
 		}
+	}
+
+	public function is_guest(){
+		return $this->guest_mode;
 	}
 
 	public function login($email, $password, $override = false) {
@@ -71,8 +79,10 @@ class Customer {
         	$this->session->data['lng'] = $customer_query->row['lng'];
         	$this->session->data['address'] = $customer_query->row['address'];
 			$this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
+			$this->guest_mode = false;
 			return true;
 		} else {
+			$this->guest_mode = true;
 			return false;
 		}
 	}
@@ -102,9 +112,10 @@ class Customer {
             $this->session->data['lng'] = $customer_query->row['lng'];
             $this->session->data['address'] = $customer_query->row['address'];
             $this->db->query("UPDATE " . DB_PREFIX . "customer SET ip = '" . $this->db->escape($this->request->server['REMOTE_ADDR']) . "' WHERE customer_id = '" . (int)$this->customer_id . "'");
-
+			$this->guest_mode = false;
             return true;
         } else {
+			$this->guest_mode = true;
             return false;
         }
     }
@@ -122,7 +133,8 @@ class Customer {
 		$this->newsletter = '';
 		$this->address_id = '';
 		$this->cart = array();
-		$this->wishlist = array();		
+		$this->wishlist = array();
+		$this->guest_mode = true;
 	}
 
 	public function isLogged() {
@@ -130,11 +142,11 @@ class Customer {
 	}
 
 	public function getId() {
-		return $this->customer_id;
+        return $this->customer_id;
 	}
 
 	public function getFirstName() {
-		return $this->firstname;
+        return $this->firstname;
 	}
 
 	public function getLastName() {
@@ -164,7 +176,19 @@ class Customer {
 	public function getAddressId() {
 		return $this->address_id;
 	}
-	
+
+    public function setShippingAddress($addr){
+        $this->shipping_address = array();
+        $this->shipping_address['address_id'] = $addr['address_id'];
+        $this->shipping_address['contact'] = $addr['contact'];
+        $this->shipping_address['phone'] = $addr['phone'];
+        var_dump($this->shipping_address);
+    }
+
+    public function getShippingAddress(){
+        var_dump($this->shipping_address);
+        return $this->shipping_address;
+    }
 	public function getCart() {
         return $this->cart;	
 	}

@@ -51,14 +51,14 @@ class ControllerSfrestDetail extends Controller{
         	$food_id = $this->request->get['food_id'];
         	$data['food_id'] = $food_id;
         }  
-        
+        /*
         if(!$this->customer->isLogged()){
         	if (isset($this->request->get['food_id'])) {
         		$food_id = $this->request->get['food_id'];
         	}
         	$redirect = urlencode($this->url->link('sfrest/detail').'&restaurant_id='.$restaurant_id.'&food_id='.$food_id);
         	$this->response->redirect($this->url->link('sfaccount/login','redirect=' . $redirect));
-        }
+        }*/
         $this->load->model('sfrest/information');
 		$data['restaurant'] = $this->model_sfrest_information->getRestaurant($restaurant_id);
 		$data['tags'] = $this->model_sfrest_information->getRestaurantTags($restaurant_id);

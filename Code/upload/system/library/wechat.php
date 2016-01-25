@@ -14,6 +14,7 @@ class Wechat{
     public function __construct($registry)
     {
         $this->db = $registry->get('db');
+        $this->log = $registry->get('log');
     }
 
     public function notifycarrior($msg)
@@ -30,7 +31,8 @@ class Wechat{
         $APPID="wx47180ba69fa68387";
         $APPSECRET="978a3e249a1980827fed107003227cdd";
         $TOKEN_URL="https://api.weixin.qq.com/cgi-bin/token?grant_type=client_credential&appid=".$APPID."&secret=".$APPSECRET;
-        $json=file_get_contents($TOKEN_URL);
+        //$json=file_get_contents($TOKEN_URL);
+        $json=$this->http_get($TOKEN_URL);
         $result=json_decode($json);
         $this->ACC_TOKEN=$result->access_token;
     }
@@ -51,6 +53,26 @@ class Wechat{
 
         $final = json_decode($result);
         return $final;
+    }
+
+    function http_get($url)
+    {
+        $this->log->write('start to get access token '.$url);
+        $ch = curl_init();
+        $timeout = 10; // set to zero for no timeout
+        curl_setopt ($ch, CURLOPT_URL,$url);
+        curl_setopt ($ch, CURLOPT_RETURNTRANSFER, true);
+
+        //curl_setopt ($ch, CURLOPT_USERAGENT, 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.131 Safari/537.36');
+        curl_setopt ($ch, CURLOPT_CONNECTTIMEOUT, $timeout);
+        $html = curl_exec($ch);
+
+        curl_close($ch);
+
+        $this->log->write($html);
+        $this->log->write('response length: '.count($html));
+        $this->log->write('finish get access token');
+        return $html;
     }
 
     function https_post($url,$data)

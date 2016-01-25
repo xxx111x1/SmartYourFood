@@ -59,7 +59,8 @@ class Mail {
 	public function send() {
 		if (!$this->to) {
 			trigger_error('Error: E-Mail to required!');
-			exit();
+			return;
+			//exit();
 		}
 
 		if (!$this->from) {
