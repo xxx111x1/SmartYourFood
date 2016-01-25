@@ -329,6 +329,18 @@ function update_cost_info(json){
     }
 }
 
+function updateRestId(){
+	$.ajax({
+		url: 'index.php?route=api/cart/getPurchaseRestId',
+		type: 'GET',
+		dataType: 'json',			
+		success: function(data) {
+			 var restId = data['rest_id'];
+			 $('#purchaseRest').val(restId);
+		}
+	});
+}
+
 var voucher = {
 	'add': function() {
 

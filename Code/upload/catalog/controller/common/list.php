@@ -51,6 +51,12 @@ class ControllerCommonList extends Controller{
 		$data['Delivery_Time'] =                                  $this->language->get('Delivery_Time');
 		$data['History_Record'] =                                       $this->language->get('History_Record');
 		$data['random'] = rand(0,1000);
+		$rest_id=0;
+		if(isset($this->session->data['cart_rest_id'])){
+			$rest_id= $this->session->data['cart_rest_id'];
+		}
+		
+		$data['rest_id'] = $rest_id;
     	if(isset($this->request->get['lat'])){
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];
