@@ -77,10 +77,12 @@
     <div id="payment">
         <div id="paymentlabel"><?php echo $Payment_Cash; ?></div>
     </div>
-    <!--<div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555"><?php echo $Print; ?></div> -->   
+    <!--<div class="btn" style="float: right;margin-right: 20px;background-color: #f1f1f1;color: #555555"><?php echo $Print; ?></div> -->
+    <?php if($validaddress) { ?>
     <a id="orderConfirm" href="/index.php?route=sfcheckout/success">
         <div class="btn" style="float: right;margin-right: 20px"><?php echo $Confirm; ?></div>
     </a>
+    <?php } ?>
 </div>
 
 <?php echo $footer;?>

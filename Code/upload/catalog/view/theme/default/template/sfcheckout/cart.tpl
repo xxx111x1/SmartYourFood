@@ -92,10 +92,11 @@
     <div id="payment">
         <div id="paymentlabel" >	<?php echo $Payment_Cash; ?>  </div>     
     </div>
+    <?php if($validaddress) { ?>
     <a id="orderConfirm" href="/index.php?route=sfcheckout/confirm&isFast=true">
         <div class="btn"><?php echo $Pay_Bill; ?></div>
-    </a>      
-    
+    </a>
+    <?php } ?>
 </div>
 <h2 style="<?php echo $hasfood;?> text-align:center;"><?php echo $No_Any_Order ;?></h2>
 <?php echo $footer;?>
