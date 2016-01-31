@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/cart.css">
-<div class="cart_dropdown" id="cart_dropdown"  style="display: none;">
+<div class="cart_dropdown" id="cart_dropdown" style="display: none;">
       <div class="cart_thumbenail_head" >
 	      <div class="img_frame cart_hide" >
 				<span class="helper"></span>
@@ -28,9 +28,9 @@
           <div class="food_number col-3-12" foodId ="<?php echo $product['product_id']; ?>" >
           	  <div class="img_frame col-4-12" >
 				<span class="helper"></span>
-		  		<img class="minus_product product_number_<?php echo $product['quantity']; ?> cart_operation" id="minus_product_<?php echo $product['product_id']; ?>" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="<?php echo $product['rest_id']; ?>" foodid="<?php echo $product['product_id']; ?>" />
+		  		<img class="minus_product product_number_<?php echo $product['quantity']; ?> minus_product_<?php echo $product['product_id']; ?> cart_operation" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="<?php echo $product['rest_id']; ?>" foodid="<?php echo $product['product_id']; ?>" />
 		  	  </div>	          
-	          <div class="product_number product_number_<?php echo $product['quantity']; ?> col-4-12" id="product_<?php echo $product['product_id']; ?>" foodId="<?php echo $product['product_id']; ?>"><?php echo $product['quantity']; ?></div>
+	          <div class="product_number product_number_<?php echo $product['quantity']; ?> product_<?php echo $product['product_id']; ?> col-4-12" foodId="<?php echo $product['product_id']; ?>"><?php echo $product['quantity']; ?></div>
 	          <div class="img_frame col-4-12" >
 				<span class="helper"></span>
 		  		<img class="add_product cart_operation" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="<?php echo $product['rest_id']; ?>" foodId="<?php echo $product['product_id']; ?>"/>

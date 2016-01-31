@@ -54,8 +54,24 @@ $(document).ready(function () {
 			isRefreshType = false;
 		}		
 	});		
+	
+	$('#filter_0').addClass('filter_field_selected');
 	addContents('0',getSortString('sort_default'),0,1,isRefreshType);
 	isRefreshType = false;
+	
+	$(document).on('click', '.filteritem', function(){
+		$('.filteritem').removeClass('filter_field_selected');
+		$(this).addClass('filter_field_selected');				
+		var filters = $(this).attr('value');
+		$('#filters').attr('value',filters);		
+		var sortId = $('#sort').attr('value');
+		var sort = getSortString(sortId);				
+		addContents(filters,sort,0,1,isRefreshType);
+		$('.filterarea').css('display','none');
+		$('.cart_background').css('display','none');
+		$('.filterarea').css('z-index','0');
+		$('.header').css('z-index','0');
+	});
 		
 	$(document).on('click', '.resturantName,.productFrame', function(){
 		var restId = $(this).attr('restid');
@@ -74,7 +90,7 @@ $(document).ready(function () {
 	$(document).on('click', '.minus_product,.add_product', function(){
 		var id = $(this).attr('foodid');
 		var restId = $(this).attr('restid');
-		var number = $('#product_'+id).text();
+		var number = $('.product_'+id).first().text();
 		var cartRestId = document.getElementById('purchaseRest').value;
 		if(cartRestId!="0" && cartRestId != restId){
 			if(language.indexOf("en")> -1){
@@ -88,20 +104,34 @@ $(document).ready(function () {
 			if($(this).hasClass("minus_product")&&number>0){
 				number--;
 				if(number<=0){
-					$('#minus_product_'+id).addClass('product_number_0');
-					$('#product_'+id).addClass('product_number_0');
+					$('.minus_product_'+id).addClass('product_number_0');
+					$('.product_'+id).addClass('product_number_0');
 				}
+				cart.add(id,number);
+				$('.product_'+id).text(number);
+				updateRestId();
 			}
 			else{
 				number++;
-				$('#minus_product_'+id).removeClass('product_number_0');
-				$('#product_'+id).removeClass('product_number_0');
+				$('.minus_product_'+id).removeClass('product_number_0');
+				$('.product_'+id).removeClass('product_number_0');
+				cart.add(id,number);
+				$('.product_'+id).text(number);
+				updateRestId();
+				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
 			}
-			cart.add(id,number);
-			$('#product_'+id).text(number);
-			updateRestId();
+			
+			
 		}
 	});		
+	
+	$(document).on('click', '.claer_all', function(){
+		cart.clear();
+		$('.product_number').text('0');
+		$('.product_number').addClass('product_number_0');
+		$('.minus_product').addClass('product_number_0');		
+		updateRestId();
+	});
 	
 	
 	$(document).on('click', '.product_rest,.resturant_name,.go_to_rest,.product_frame,.product_name', function(){
@@ -202,8 +232,8 @@ $(document).ready(function () {
 						else{
 							thumbEle = '<div class="img_frame product_frame" restid="'+restId+'"foodid="'+id+'"><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="food_description"><div class="product_name" title="'+foodName+'"  restid="'+restId+'"foodid="'+id+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+'" id="minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
-						'<div class="product_number product_number_'+v.cart_number+'" id="product_'+id+'" foodId="'+id+'">'+v.cart_number+'</div><img class="add_product" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="'+restId+'" foodId="'+id+'"/></div><div class="product_price col-1-1">$ '+v.price+'</div><a class="resturant_name" restid="'+restId+'" foodid="'+id+'">'+name+'</a>' +
+						thumbDescEle = '<div class="food_description"><div class="product_name" title="'+foodName+'"  restid="'+restId+'"foodid="'+id+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+' minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
+						'<div class="product_number product_number_'+v.cart_number+' product_'+id+'" foodId="'+id+'">'+v.cart_number+'</div><img class="add_product" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="'+restId+'" foodId="'+id+'"/></div><div class="product_price col-1-1">$ '+v.price+'</div><a class="resturant_name" restid="'+restId+'" foodid="'+id+'">'+name+'</a>' +
 						'<div class="dilevery_time">|'+stringDistance+' '+distance+'KM</div></div>';
 					}
 					else{

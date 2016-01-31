@@ -1,5 +1,8 @@
 <script src="catalog/view/javascript/mobile/sffooter.js" type="text/javascript"></script>
-<?php echo $cartthumbnail;?>
+<div id="cart_thumbnail">
+	<?php echo $cartthumbnail;?>
+</div>
+
 <div class="footer col-1-1">
 	<div class="img_frame foot_logo_frame" >
 		<span class="helper"></span>
