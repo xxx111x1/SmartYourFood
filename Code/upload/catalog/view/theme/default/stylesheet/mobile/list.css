@@ -123,3 +123,19 @@ div.stars span {
 .go_to_rest{
 	float:right;
 }
+
+.selected {
+    border-bottom: solid 4px #f65053;
+}
+
+.cart_background{
+    background: url(../../image/mobile/mobileCartBackground.jpg);
+    overflow: auto; 
+	position: fixed; 
+	left: 0px; 
+	top: 0px; 
+	right: 0px; 
+	bottom: 0px; 
+	z-index: 1; 
+	opacity: 0.95;
+}

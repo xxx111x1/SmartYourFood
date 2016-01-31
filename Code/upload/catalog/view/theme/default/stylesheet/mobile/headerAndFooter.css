@@ -56,6 +56,7 @@
 	left:0;
 	background-color: rgba(255,255,255,1);
 	width:100%;
+	z-index: 2; 
 }
 
 .foot_logo_frame{
@@ -71,6 +72,10 @@
 .navigation_item{
 	float:left;
 	width: 22%;
+}
+
+.navigation_item: hover{
+	cursor: pointer;
 }
 
 .navigation_frame{

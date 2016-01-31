@@ -11,6 +11,7 @@ class ControllerCommonSffooter extends Controller {
 		$data['Follow_Us'] =                                 $this->language->get('Follow_Us');
 		$useragent=$_SERVER['HTTP_USER_AGENT'];
 		if($this->detector->isMobile($useragent)){
+			$data['cartthumbnail'] = $this->load->controller('common/cartthumbnail');
 			return $this->load->view('default/mobile/common/sffooter.tpl', $data);
 		}
 		else{

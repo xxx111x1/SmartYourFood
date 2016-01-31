@@ -21,14 +21,12 @@ $(document).ready(function () {
 		type='rest';
 		$('#restaurant_tab').addClass('selected');
 		$('#food_tab').removeClass('selected');
-		$('#send_time').show();
 	
 	}
 	else{		
 		type = 'food';
 		$('#food_tab').addClass('selected');
 		$('#restaurant_tab').removeClass('selected');
-		$('#send_time').hide();
 	}
 	$('#searchType').val(type);
 	var isRefreshType = true;
@@ -105,6 +103,21 @@ $(document).ready(function () {
 		}
 	});		
 	
+	
+	$(document).on('click', '.product_rest,.resturant_name,.go_to_rest,.product_frame,.product_name', function(){
+		var restId = $(this).attr('restid');
+		var url = '/index.php?route=sfrest/detail&restaurant_id=' + restId;
+		if (type=='food'){			
+			var foodId = $(this).attr('foodid');
+			url = url+ '&food_id=' + foodId;
+			url = url + "&returnUrl=/index.php?route=common/list";
+		}
+		else{
+			url = url + "&returnUrl=/index.php?route=common/list&restaurant=1";
+		}
+		window.location.href = url;
+	});
+	
 	$(window).scroll(function () { 
 		   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
 			  var pageNumber = $('#page_number').val();
@@ -148,6 +161,7 @@ $(document).ready(function () {
 					if(distance>40){
 						distance = '-';
 					}
+					var ele = '<div class="product';
 					if(type=='food'){
 						var stringAddCart = "";
 						var stringDistance = "";
@@ -188,11 +202,12 @@ $(document).ready(function () {
 						else{
 							thumbEle = '<div class="img_frame product_frame" restid="'+restId+'"foodid="'+id+'"><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="food_description"><div class="product_name" title="'+foodName+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+'" id="minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
+						thumbDescEle = '<div class="food_description"><div class="product_name" title="'+foodName+'"  restid="'+restId+'"foodid="'+id+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+'" id="minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
 						'<div class="product_number product_number_'+v.cart_number+'" id="product_'+id+'" foodId="'+id+'">'+v.cart_number+'</div><img class="add_product" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="'+restId+'" foodId="'+id+'"/></div><div class="product_price col-1-1">$ '+v.price+'</div><a class="resturant_name" restid="'+restId+'" foodid="'+id+'">'+name+'</a>' +
 						'<div class="dilevery_time">|'+stringDistance+' '+distance+'KM</div></div>';
 					}
 					else{
+						ele = ele + ' product_rest" restid="' + id ;
 						var stringCost = "";
 						var stringDistance = "";
 						var name = "";
@@ -215,20 +230,23 @@ $(document).ready(function () {
 						
 						if(is_open==1)
 						{
-							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /></div>';
+							thumbEle = '<div class="img_frame product_frame" ><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /></div>';
 						}
 						else{
-							thumbEle = '<div class="thumb" id='+id+'><img class="thumb_preview thumb_rest_img" src="'+v.img_url+'"  alt="Image not found" onerror="onRestImgError(this)"  restId='+restId+' /><div class="thumb_closed"></div></div>';
+							thumbEle = '<div class="img_frame product_frame" ><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="thumb_desc"><div class="thumb_desc_restname" restId='+restId+'>'+name+'</div>' +
-											'<div class="thumb_desc_restdist">'+stringDistance+' '+distance+'KM</div><div class="thumb_desc_productinfo"><div class="sf_product_stars stars" rate="'+v.review_score+'" ></div>' +
-											'<!--<div class="thumb_desc_productprice">'+stringCost+'$ '+cost+'</div>--></div></div>';
+						thumbDescEle = '<div class="rest_description"><div class="product_name" title="'+v.name+'">'+v.name+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="product_price col-1-1">'+stringCost+'$ '+cost+'</div><div class="extra_info">'+stringDistance+' '+distance+'KM</div></div>' +
+											'<div class="go_to_rest img_frame col-1-12" restid="' + id +'"><span class="helper"></span><img class="preview" src="../catalog/view/theme/default/image/mobile/mobileGotoGrey.png"/></div>'
 					}     					
 					
-					var ele = '<div class="product">' +thumbEle+ thumbDescEle + '</div>';
+					
+					
 					if(is_open==0)
 					{
-						ele = '<div class="product" style="background-color: #DDDDDD">' +thumbEle+ thumbDescEle + '</div>';
+						ele = ele +'" style="background-color: #DDDDDD">' +thumbEle+ thumbDescEle + '</div>';
+					}
+					else {
+						ele = ele +'">' +thumbEle+ thumbDescEle + '</div>';
 					}
 					$('.product_area').append(ele);
 				});		

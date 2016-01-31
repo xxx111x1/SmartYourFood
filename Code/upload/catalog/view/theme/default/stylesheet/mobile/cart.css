@@ -1,0 +1,74 @@
+.cart_dropdown{
+	float:left;
+	position:fixed;
+	bottom:50px;
+	left:0;
+	background-color: rgba(255,255,255,1);
+	width:100%;
+	z-index: 2; 
+}
+
+.cart_thumbenail_head {
+	height: 36px;
+	color: #aaaaaa;
+	border-bottom: solid 1px #aaaaaa;
+	padding-top: 3px;
+}
+
+.cart_hide {
+	margin-left: 45%;
+}
+.claer_all{
+	float:right;
+	margin-right:5%;
+}
+.cart_label{
+	margin-left: 2%;
+	height: 30px;
+	line-height: 30px;
+}
+
+.cart_table{
+	float:left;
+	width: 100%;
+}
+
+.food_row{
+	float:left;
+	height: 60px;
+	border-bottom: solid 1px #aaaaaa;
+	width: 100%;
+}
+
+.food_infor,.food_number,.food_all_price{
+	height: 100%;
+	float:left;
+}
+
+.food_name_detail,.food_price{
+	float:left;
+	width: 100%;
+	margin-left: 8%;
+}
+.food_name_detail{
+	line-height:40px;
+}
+.food_price{
+	margin-top: -10px;
+	color: #aaaaaa;
+}
+
+.food_number{
+	line-height: 60px;
+}
+
+.cart_operation{
+	margin-top: 20px;
+	width: 20px;
+	max-height: 20px;
+    vertical-align: middle;
+}
+
+.food_all_price{
+	line-height: 60px;
+}

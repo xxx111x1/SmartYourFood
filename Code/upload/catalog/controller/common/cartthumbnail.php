@@ -76,6 +76,7 @@ class ControllerCommonCartthumbnail extends Controller {
 				'name'      => $product['food_name'],
 				'name_en'      => $product['food_name_en'],
 				'product_id'    => $product['product_id'],
+				'rest_id'     => $product['rest_id'],
 				//'model'     => $product['model'],
 				//'option'    => $option_data,
 				//'recurring' => ($product['recurring'] ? $product['recurring']['name'] : ''),
@@ -145,10 +146,16 @@ class ControllerCommonCartthumbnail extends Controller {
 		$data['total_fees'] = round($total_price*0.1,2);
 		$data['total_sum'] = $data['total_transffer'] +$data['total_price']+$data['total_taxes']+$data['total_fees'];
 		$data['rest_id'] = $rest_id;
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/cart_thumbnail.tpl')) {
-			return $this->load->view($this->config->get('config_template') . '/template/common/cart_thumbnail.tpl', $data);
-		} else {
-			return $this->load->view('default/template/common/cart_thumbnail.tpl', $data);
+		$useragent=$_SERVER['HTTP_USER_AGENT'];
+		if($this->detector->isMobile($useragent)){
+			return $this->load->view('default/mobile/common/cart_thumbnail.tpl', $data);
+		}
+		else{
+			if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/common/cart_thumbnail.tpl')) {
+				return $this->load->view($this->config->get('config_template') . '/template/common/cart_thumbnail.tpl', $data);
+			} else {
+				return $this->load->view('default/template/common/cart_thumbnail.tpl', $data);
+			}
 		}
 	}
 
