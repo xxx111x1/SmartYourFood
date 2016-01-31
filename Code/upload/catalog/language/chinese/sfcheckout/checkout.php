@@ -18,6 +18,7 @@ $_['Tax'] =                                          '税';
 $_['Priority_Delivery'] =                            '优先配送';
 $_['Total'] =                                        '总金额';
 $_['Delivery_Information'] =                         '配送信息';
+$_['Require_Address'] =                         '*请添加配送信息';
 $_['Payment_Cash'] =                                 '付款方式：现金付款（货到付款）';
 $_['Pay_Bill'] =                                     '结算';
 $_['Help_Center'] =                                  '帮助';
