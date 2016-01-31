@@ -18,6 +18,7 @@ $_['Tax'] =                                          'Tax';
 $_['Priority_Delivery'] =                            'Priority Delivery';
 $_['Total'] =                                        'Total';
 $_['Delivery_Information'] =                         'Delivery Information';
+$_['Require_Address'] =                         '*DELIVERY ADDRESS IS REQUIRED';
 $_['Payment_Cash'] =                                 'Payment Method: Cash (Cash on Delivery)';
 $_['Pay_Bill'] =                                     'Pay Bill';
 $_['Help_Center'] =                                  'Help Center';

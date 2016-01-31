@@ -125,10 +125,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         if(count($addresses)>0 )
         {
             $first_addr = reset($addresses);
-            printf('first addr');
-            var_dump($first_addr);
             $this->set_shipping_address($first_addr['address_id']);
-            $this->log->write('try to set current shipping address, address id '.$first_addr['address_id']);
             $this->customer->setShippingAddress($first_addr);
         }
 
@@ -185,6 +182,7 @@ class ControllerSfcheckoutCheckout extends Controller{
             $data['totalcost'] = '--';
             $data['fast_deliverfee'] = '--';
             $data['validaddress'] = false;
+            $data['Delivery_Information'] =                      $this->language->get('Require_Address');
         }
         else{
             $data['deliverfee'] = $deliverfee;
