@@ -44,7 +44,7 @@
         -->
       </table>
       <div class="cart-thumbnail-bottom">
-        <div class="sum-all"><?php echo $Sum_Food;?>$<?php echo $total_sum; ?></div>
+        <div class="sum-all">$<?php echo $total_sum; ?></div>
         <div class="cart-checkout">
         	<a href="<?php echo $checkout; ?>">
         		<?php echo $Pay_Food;?>

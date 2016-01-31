@@ -153,7 +153,10 @@ class ControllerSfcheckoutCheckout extends Controller{
         //Distance and price
         $deliverfee = 5;
         $lat_lng = $this->cart->getRestAddress();
-        if(isset($lat_lng['0'])){
+        $distance = -1;
+        if(isset($lat_lng['0']) &&
+            isset($address_data['lat']) &&
+            isset($address_data['lng'])){
         	$this->load->model('account/address');
         	$distance = $this->model_account_address->getDistance($address_data['lat'],$address_data['lng'],explode(',',$lat_lng['0'])['0'],explode(',',$lat_lng['0'])['1']);
         	$deliverfee = 4 + max(0,round($distance-4,0,PHP_ROUND_HALF_UP)) + (max(0,round($distance-8,0,PHP_ROUND_HALF_UP)))*0.5;
@@ -176,9 +179,24 @@ class ControllerSfcheckoutCheckout extends Controller{
         $data['tax'] = $tax;
         //$data['tips'] = $tips;
         $fast_deliverfee = round($total_before_tax*0.05,2);
-        $data['deliverfee'] = $deliverfee;
-        $data['fast_deliverfee'] = $fast_deliverfee;
-        $data['totalcost'] = round($total_before_tax + $tax + $deliverfee +$fast_deliverfee,2);
+        if($distance<0)
+        {
+            $data['deliverfee'] = '--';
+            $data['totalcost'] = '--';
+            $data['fast_deliverfee'] = '--';
+            $data['validaddress'] = false;
+        }
+        else{
+            $data['deliverfee'] = $deliverfee;
+            $data['fast_deliverfee'] = $fast_deliverfee;
+            $data['totalcost'] = round($total_before_tax + $tax + $deliverfee +$fast_deliverfee,2);
+            $data['validaddress'] = true;
+        }
+        $this->session->data['order_beforetax'] = $total_before_tax;
+        $this->session->data['order_tax'] = $tax;
+        $this->session->data['order_deliverfee'] = $deliverfee;
+        $this->session->data['order_fastdeliverfee'] = $fast_deliverfee;
+        $this->session->data['order_totalcost'] = $data['totalcost'];
         if(count($food_list)==0)
         {
             $data['nofood']="display: none";
@@ -188,19 +206,6 @@ class ControllerSfcheckoutCheckout extends Controller{
             $data['nofood']="";
             $data['hasfood']="display: none;";
         }
-        /*
-        foreach ($food_list as $food) {
-            $this->log->write('img: '.$food['image'].' name:'.$food['name'].' price: '.$food['price']);
-            $data['food_list'] = array(
-                'img_url' => $food['image'],
-                'name' => $food['name'],
-                'price' => $food['price'],
-                'rest_address'=>$food['rest_address'],
-                'phone' => $food['phone'],
-                'qty' => 2
-            );
-        }
-        $data['msg']='Hello World!';*/
         $data['lang'] = $this->language->get('code');
         $returnUrl = explode("&", $_SERVER['REQUEST_URI'])[0];
         $data['multiple_rest'] = 0;
