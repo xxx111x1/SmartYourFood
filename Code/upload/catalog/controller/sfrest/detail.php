@@ -98,6 +98,13 @@ class ControllerSfrestDetail extends Controller{
         $data['footer'] = $this->load->controller('common/sffooter');
         $data['backtop'] = $this->load->controller('common/backtop');
         $data['language'] = $this->session->data['language'];
-        $this->response->setOutput($this->load->view('default/template/sfrest/detail.tpl', $data));
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	$this->response->setOutput($this->load->view('default/mobile/sfrest/detail.tpl', $data));
+        }
+        else{
+        	$this->response->setOutput($this->load->view('default/template/sfrest/detail.tpl', $data));
+        }
+        
     }
 }

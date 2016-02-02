@@ -15,3 +15,6 @@ $_['Rank'] = 'Rank';
 $_['Default'] = 'Default';
 $_['Popularity'] = 'Popularity';
 $_['Ratings'] = 'Ratings';
+$_['Order'] = 'Order';
+$_['Shop'] = 'Shop';
+$_['GoToCart'] = 'Go to cart';

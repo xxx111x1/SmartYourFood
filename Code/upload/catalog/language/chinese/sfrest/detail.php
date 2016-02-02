@@ -15,3 +15,6 @@ $_['Rank'] = '排序';
 $_['Default'] = '默认';
 $_['Popularity'] = '销量';
 $_['Ratings'] = '评价';
+$_['Order'] = '点餐';
+$_['Shop'] = '商家';
+$_['GoToCart'] = '选好咯';
