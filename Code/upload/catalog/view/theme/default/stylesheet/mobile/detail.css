@@ -1,0 +1,154 @@
+.container {
+	background-color: #f1f2f2;
+	float:left;
+	width: 100%;
+	margin-top: 40px;
+}
+
+.back_button{
+	text-align: center;
+	height: 30px;
+}
+.tabmenu{
+	margin-top: 3px;
+	margin-bottom: 3px;
+	height: 80px;
+	width: 100%;
+	background-color: white;
+}
+
+.type_tab{
+	width:50%;
+	height: 100%;
+	color: #f65053;
+	float:left;
+	text-align: center;	
+}
+
+.tab_label{
+	margin-left: 15px;
+	margin-right: 15px;
+    height: 40px;
+    line-height: 40px;
+    float: left;
+}
+
+.tab_frame{
+	margin-top: 10px;
+}
+
+.tab_icon{
+	max-height:20px;
+}
+.tagarea{
+	width: 30%;
+	float:left;
+	height: 100%;
+	background-color: #eeeeee;
+}
+
+.product_content{
+	width: 70%;
+	float:left;
+	height: 100%;
+}
+
+.product_area{
+	float:left;
+	width: 100%;
+	background-color: #f1f2f2;
+	padding-top:5px;
+	padding-bottom: 60px;
+}
+.product{
+	width: 100%;
+	margin-top:3px;
+	margin-bottom: 3px;
+	float:left;
+	height:70px;
+	background-color: white;
+}
+
+.product_frame{
+	width: 30%;
+	margin-left: 2%;
+	margin-right: 2%;
+}
+
+.preview{
+	max-height: 59px;
+	vertical-align: middle;
+}
+
+.sf_product_stars{
+    height: 21px;
+    float: left;
+}
+
+div.stars, div.stars span {
+    display: block;
+    background: url(../../image/mobile/mobileOrderStarts.png) 0 -22px repeat-x;
+    width: 110px;
+    height: 21px;
+    margin-left: -2px;
+}
+
+div.stars span {
+    background-position: 0 0;
+}
+
+.purchase_area{
+	float: right;
+	width: 30%;
+	text-align: center;
+}
+
+.minus_product, .add_product, .product_number{
+	float: left;
+	margin-left: 0px;
+	width: 25%;
+}
+
+.food_description{
+	float:left;
+	padding-top: 2px;
+	width: 66%;
+}
+
+.rest_description{
+	float:left;
+	padding-top: 10px;
+	width: 56%;
+}
+
+.product_name,.product_price{
+	font-size: 14px;
+	margin-top: 2px;
+	margin-bottom: 5px;
+	float:left;
+	width: 100%;
+}
+
+.product_number_0{
+	visibility:hidden;
+}
+
+.go_to_rest{
+	float:right;
+}
+
+.selected {
+    border-bottom: solid 4px #f65053;
+}
+
+.cart_background{
+    background: url(../../image/mobile/mobileCartBackground.jpg);
+    overflow: auto; 
+	position: fixed; 
+	left: 0px; 
+	top: 0px; 
+	right: 0px; 
+	bottom: 0px; 
+	z-index: 1; 
+	opacity: 0.95;
+}

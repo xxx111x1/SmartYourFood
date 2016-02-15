@@ -103,6 +103,7 @@ class ControllerSfrestDetail extends Controller{
         	$data['Order'] = $this->language->get('Order');
         	$data['Shop'] = $this->language->get('Shop');
         	$data['GoToCart'] = $this->language->get('GoToCart');
+        	$data['cartthumbnail'] = $this->load->controller('common/cartthumbnail');
         	$this->response->setOutput($this->load->view('default/mobile/sfrest/detail.tpl', $data));
         }
         else{
