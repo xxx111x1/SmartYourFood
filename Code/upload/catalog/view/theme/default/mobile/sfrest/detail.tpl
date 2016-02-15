@@ -1,10 +1,39 @@
-<?php echo $header;?>
-<?php echo $review;?>
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sflist.css">
-<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/sfdetail.css">
-<script src="catalog/view/javascript/sfdetail.js" type="text/javascript"></script>
-<script src="catalog/view/javascript/sfhome.js" type="text/javascript"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkvY-Zv3LB0uIoS-Yt4MMYyi0gug1ykCg&libraries=places&callback=initMap" async defer></script>
+<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!-->
+<html lang="<?php echo $lang; ?>">
+<!--<![endif]-->
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title><?php echo $title; ?></title>
+<script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/jquery/jquery-ui.min.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/common.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/mobile/stars.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/mobile/sflist.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/list.css">
+<link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/simplegrid.css">
+</head>
+<body>
+
+<div class="header">
+	<div class="img_frame tab_frame" >
+		<span class="helper"></span>
+	  	<img class="tab_icon" src="../catalog/view/theme/default/image/mobile/mobileRestDetailBack.png" />
+	</div>
+	<div id="order_tab" class="type_tab">        	
+        <div class="tab_label"><?php echo $Order; ?></div>
+ 	</div>
+	<div id="restaurant_tab" class="type_tab">
+        <div class="tab_label"><?php echo $Selected_Restaurants; ?></div>
+        <div class="img_frame tab_frame" >
+			<span class="helper"></span>
+	  		<img class="tab_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeChooseRest.png" />
+	  	</div>
+	</div>
+
+</div>
 
 <div class="container">
 	<input id="rest-id" type="hidden" value="<?php echo $rest_id; ?>" />

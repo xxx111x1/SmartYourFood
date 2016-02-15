@@ -100,6 +100,9 @@ class ControllerSfrestDetail extends Controller{
         $data['language'] = $this->session->data['language'];
         $useragent=$_SERVER['HTTP_USER_AGENT'];
         if($this->detector->isMobile($useragent)){
+        	$data['Order'] = $this->language->get('Order');
+        	$data['Shop'] = $this->language->get('Shop');
+        	$data['GoToCart'] = $this->language->get('GoToCart');
         	$this->response->setOutput($this->load->view('default/mobile/sfrest/detail.tpl', $data));
         }
         else{
