@@ -8,12 +8,10 @@ $(document).ready(function () {
 		$(this).find(".thumboverlay").hide();
 	});
 		
-	$(document).on('click', '.thumb_add2cart', function(){
-			
+	$(document).on('click', '.minus_product,.add_product', function(){
 		var id = $(this).attr('foodid');
 		var restId = $(this).attr('restid');
-		var number = $(this).attr('number');
-		number++;
+		var number = $('.product_'+id).first().text();
 		var cartRestId = document.getElementById('purchaseRest').value;
 		if(cartRestId!="0" && cartRestId != restId){
 			if(language.indexOf("en")> -1){
@@ -22,51 +20,29 @@ $(document).ready(function () {
 			else{
 				alert("请在同一家餐厅选餐");
 			}
-		}else{
-			cart.add(id,number);
-			$(this).attr('number',number);
-			var cartIcon = $('#cart_thumbnail');
-	        var imgtodrag = $(this).parent('.thumboverlay').siblings(".thumb_preview").eq(0);
-	        if (imgtodrag) {
-	            var imgclone = imgtodrag.clone()
-	                .offset({
-	                top: imgtodrag.offset().top,
-	                left: imgtodrag.offset().left
-	            })
-	                .css({
-	                'opacity': '0.5',
-	                    'position': 'absolute',
-	                    'height': '150px',
-	                    'width': '150px',
-	                    'z-index': '100'
-	            })
-	                .appendTo($('body'))
-	                .animate({
-	                'top': cartIcon.offset().top + 10,
-	                    'left': cartIcon.offset().left + 10,
-	                    'width': 75,
-	                    'height': 75
-	                	},          1000
-	               );
-	            
-	            setTimeout(function () {
-	            	cartIcon.effect("shake", {
-	                    times: 2
-	                }, 200);
-	            }, 1500);
-
-	            imgclone.animate({
-	                'width': 0,
-	                    'height': 0
-	            }, function () {
-	                $(this).detach()
-	            });
-	        	$('#cart_preview').removeClass('unvisible');        	
-	        }
 			
+		}else{
+			if($(this).hasClass("minus_product")&&number>0){
+				number--;
+				if(number<=0){
+					$('.minus_product_'+id).addClass('product_number_0');
+					$('.product_'+id).addClass('product_number_0');
+				}
+				cart.add(id,number);
+				$('.product_'+id).text(number);
+				updateRestId();
+			}
+			else{
+				number++;
+				$('.minus_product_'+id).removeClass('product_number_0');
+				$('.product_'+id).removeClass('product_number_0');
+				cart.add(id,number);
+				$('.product_'+id).text(number);
+				updateRestId();
+				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
+			}	
 		}
-		
-	});	
+	});		
 	
 	$.fn.stars = function() {
 		return $(this).each(function() {

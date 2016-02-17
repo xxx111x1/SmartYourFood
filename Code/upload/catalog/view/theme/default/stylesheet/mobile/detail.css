@@ -18,7 +18,6 @@
 }
 
 .type_tab{
-	width:50%;
 	height: 100%;
 	color: #f65053;
 	float:left;
@@ -31,6 +30,12 @@
     height: 40px;
     line-height: 40px;
     float: left;
+    width: 100%;
+}
+
+.tab_selected,.tab_label:hover{
+	border-bottom: 2px solid #f65053;
+	color:#f65053;
 }
 
 .tab_frame{
@@ -47,6 +52,20 @@
 	background-color: #eeeeee;
 }
 
+.tagitem{
+	width: 100%;
+	height: 70px;
+	line-height: 70px;
+	text-align: center;
+	border-top: 1px solid #dddddd;
+}
+
+.tagitemSelected,.tagitem:hover {
+	border-left: 3px solid #f65053;
+	background-color: white;
+	color: #f65053;
+}
+
 .product_content{
 	width: 70%;
 	float:left;
@@ -56,17 +75,14 @@
 .product_area{
 	float:left;
 	width: 100%;
-	background-color: #f1f2f2;
-	padding-top:5px;
 	padding-bottom: 60px;
 }
 .product{
 	width: 100%;
-	margin-top:3px;
-	margin-bottom: 3px;
 	float:left;
 	height:70px;
 	background-color: white;
+	border-top: 1px solid #dddddd;
 }
 
 .product_frame{

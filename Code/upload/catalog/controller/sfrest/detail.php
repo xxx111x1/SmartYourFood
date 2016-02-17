@@ -100,6 +100,14 @@ class ControllerSfrestDetail extends Controller{
         $data['language'] = $this->session->data['language'];
         $useragent=$_SERVER['HTTP_USER_AGENT'];
         if($this->detector->isMobile($useragent)){
+        	$data['cart_rest_id'] = 0;
+        	if(isset($this->session->data['cart_rest_id'])){
+        		$cart_rest_id= $this->session->data['cart_rest_id'];
+        	}
+        	
+        	$data['cart_rest_id'] = $cart_rest_id;
+        	$data['lang'] = $this->language->get('code');
+        	$data['title'] = "restaurant detail";
         	$data['Order'] = $this->language->get('Order');
         	$data['Shop'] = $this->language->get('Shop');
         	$data['GoToCart'] = $this->language->get('GoToCart');

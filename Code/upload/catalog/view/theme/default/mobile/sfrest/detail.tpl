@@ -34,13 +34,14 @@
 <div class="container">
 	<input id="rest-id" type="hidden" value="<?php echo $rest_id; ?>" />
 	<div class="tagarea">
-        	<div class="tagitem" value="0"><?php echo $All; ?></div>	
+        	<div class="tagitem tagitemSelected" value="0"><?php echo $All; ?></div>	
 	    	<?php foreach ($tags as $tag) { ?>
 				<div class="tagitem" value="<?php echo $tag['tag_id'];?>"><?php if($language == 'en') { echo $tag['tag_name_en'];} else {echo $tag['tag_name_cn'];} ?></div>	
 			<?php } ?>	       
 	</div>
 	
 	<div class="product_content">
+		<input type='hidden' id="purchaseRest" value="<?php echo $cart_rest_id;?>" />
 		<input type=hidden id=page_number value=0 />
 		<div class=product_area >
 			
