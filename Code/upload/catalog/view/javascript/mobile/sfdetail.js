@@ -1,11 +1,8 @@
 $(document).ready(function () {
 	var language =  $('html').attr('lang');
-	$(document).on('mouseover','.thumb', function(){
-		$(this).find(".thumboverlay").show();
-	});
 	
-	$(document).on('mouseout','.thumb', function(){
-		$(this).find(".thumboverlay").hide();
+	$(document).on('click','.back_button', function(){
+		window.history.back()
 	});
 		
 	$(document).on('click', '.minus_product,.add_product', function(){
