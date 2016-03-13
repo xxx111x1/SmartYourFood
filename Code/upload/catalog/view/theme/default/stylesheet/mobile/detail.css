@@ -1,3 +1,109 @@
+.rest_info{
+	width: 100%;
+	margin-left: auto;
+	margin-right: auto;
+	height:600px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: white;	
+	margin-top: 40px;
+	border-top: 1px solid #f1f2f2;
+	color: #555555;
+}
+.rest_basic{
+	width: 100%;
+	font-weight: bolder;
+	height: 90px;
+}
+.rest_img{
+	float:left;
+	width:100%;
+	max-height: 74px;
+}
+
+.rest_info_description{
+	float:left;
+	margin-left: 10px;
+	height: 80px;
+	padding-top: 15px;
+}
+
+.rest_distance_info{
+	width: 100%;
+	font-weight: bolder;
+	height: 80px;
+	padding-left: 5%;
+	padding-right: 5%;		
+	border-top: 1px solid #f1f2f2; 
+}
+
+.info_col{
+	width: 50%;
+	float:left;
+	text-align: center;	
+	line-height: 25px;
+	padding-top: 10px;
+}
+
+.info_value{
+	font-size: 18px;
+}
+
+.info_label{
+	font-size: 16px;
+	color: #ababab;
+	margin-top: -5px;
+}
+
+.left_border {
+	border-left: 1px solid #f1f2f2;
+}
+
+.rest_name{
+	float:left;
+	font-size: 21px;
+	width: 100%;
+	margin-bottom: 10px;
+}
+
+.rest_average{
+	float:left;
+	margin-left: 15px;
+	font-size: 16px;
+	margin-top: 3px;
+	font-weight: bolder;
+	color: #f65053;
+}
+
+.rest_review{
+	float:left;
+	width: 100%;
+	margin-bottom: 5px;
+	height: 30px;
+	color: #f65053;
+}
+
+.rest_detail{
+	background-color: #eeeeee;
+	padding-top:35px;
+	width: 100%;
+	min-height:300px; 
+}
+
+.rest_detail_content{
+	width: 100%;
+	height: 40px;
+	float:left;
+	font-size: 12px;
+	color: #555555;
+	font-weight: bolder;
+	line-height: 40px;
+	border-top: 1px solid #f1f2f2;
+	padding-left: 10px;
+	padding-right: 10px;
+	background-color: white;
+}
+
 .container {
 	background-color: #f1f2f2;
 	float:left;
@@ -150,6 +256,16 @@ div.stars span {
 	margin-bottom: 5px;
 	float:left;
 	width: 100%;
+}
+
+.product_name{
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	text-overflow: ellipsis;/* IE/Safari */ 
+	-ms-text-overflow: ellipsis; 
+	-o-text-overflow: ellipsis;/* Opera */ 
+	-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/ 
 }
 
 .product_number_0{

@@ -24,11 +24,42 @@
 	  	<img class="tab_icon" src="../catalog/view/theme/default/image/mobile/mobileRestDetailBack.png" />
 	</div>
 	<div id="order_tab" class="type_tab col-3-12">        	
-        <div class="tab_label"><?php echo $Order; ?></div>
+        <div class="tab_label tab_selected"><?php echo $Order; ?></div>
  	</div>
 	<div id="restaurant_tab" class="type_tab col-3-12">
         <div class="tab_label"><?php echo $Shop; ?></div>
 	</div>
+</div>
+
+<div class="rest_info" style="display: none;">
+		<div class="rest_basic">
+			<div class="img_frame tab_frame back_button col-3-12" >
+				<span class="helper"></span>
+			  	<img class="rest_img" src="<?php echo $restaurant['img_url']; ?>" />
+			</div>
+			<div class="rest_info_description col-8-12">
+				<div class="rest_name"><?php if($language=='en' && $restaurant['name_en'] != ''){echo $restaurant['name_en'];} else {echo $restaurant['name'];} ?></div>
+				<div class="sf_product_stars stars" rate="<?php echo $restaurant['review_score']; ?>" ></div>
+			</div>
+		</div>
+		
+
+		<div class="rest_distance_info">
+			<div class="info_col">
+				<div class="info_value border-right">45min</div>
+				<div class="info_label border-right"><?php echo $Averagearrivaltime ;?></div>
+			</div>
+			<div class="info_col">
+				<div class="info_value  left_border"><?php echo $distance; ?>KM</div>
+				<div class="info_label  left_border"><?php echo $Distance ;?></div>
+			</div>
+		</div>
+		<div class="rest_detail">
+			<div class="rest_detail_content rest_workinghour"><?php echo $BusinessHours ;?>： <?php echo $restaurant['working_hour']; ?></div>
+			<div class="rest_detail_content rest_address"><?php echo $RestaurantAddress ;?>： <?php echo $restaurant['address']; ?></div>
+			<div class="rest_detail_content rest_contact"><?php echo $ContactNumber ;?>： <?php echo $restaurant['phone']; ?></div>	
+			
+		</div>
 </div>
 
 <div class="container">
@@ -48,6 +79,8 @@
 		</div>
 	</div>
 </div>
+
+
 
 <div id="cart_thumbnail">
 	<?php echo $cartthumbnail;?>

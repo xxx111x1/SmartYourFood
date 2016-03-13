@@ -4,6 +4,8 @@ $(document).ready(function () {
 	$(document).on('click','.back_button', function(){
 		window.history.back()
 	});
+	
+	
 		
 	$(document).on('click', '.minus_product,.add_product', function(){
 		var id = $(this).attr('foodid');
@@ -40,23 +42,28 @@ $(document).ready(function () {
 			}	
 		}
 	});		
-	
-	$.fn.stars = function() {
-		return $(this).each(function() {
-	        $(this).html($('<div />').width(Math.max(0, (Math.min(5, parseFloat($(this).attr('rate'))))) * 29));
-		});
-	}
-	
+		
 	$('div.stars').stars();
 	
 	$('#food-tab').addClass('selected_type_tab');
 	$('#sort_default').addClass('sort_field_selected');
 	initialContent();
 	
-	$('#back-tab').click(function() {
-		window.location.href =$('#back-tab').attr('url');  
+	$('#order_tab').click(function() {
+		$('.rest_info').css('display','none');
+		$('.container').css('display','block');
+		$('#restaurant_tab .tab_label').removeClass('tab_selected');
+		$('#order_tab .tab_label').addClass('tab_selected');
+		
 	});
 	
+	$('#restaurant_tab').click(function() {
+		$('.rest_info').css('display','block');
+		$('.container').css('display','none');
+		$('#restaurant_tab .tab_label').addClass('tab_selected');
+		$('#order_tab .tab_label').removeClass('tab_selected');
+	});
+		
 	$('#food-tab').click(function() {
 		if(!$('#food-tab').hasClass('selected_type_tab')){
 			$('#food-tab').addClass('selected_type_tab');
@@ -178,13 +185,15 @@ $(document).ready(function () {
 						ele = ele +'">' +thumbEle+ thumbDescEle + '</div>';
 					}
 					$('.product_area').append(ele);
+					$('div.stars').stars();
 				});			
 				var url =window.location.href; 
 				if(url.indexOf('#')>0){
 					window.location.href=window.location.href;
 				}
 			}
-		});		
+		});	
+		
 	}
 	
 	function getSortString(sortId){
