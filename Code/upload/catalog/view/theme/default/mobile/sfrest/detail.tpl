@@ -12,11 +12,13 @@
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/mobile/stars.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/mobile/sfdetail.js" type="text/javascript"></script>
+<script src="catalog/view/javascript/mobile/sffooter.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/headerAndFooter.css">
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/detail.css">
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/simplegrid.css">
 </head>
 <body>
+<div class="cart_background" style="display: none;"></div>
 
 <div class="header col-1-1" style="background-color: white;">
 	<div class="img_frame tab_frame back_button col-3-12" >
@@ -88,31 +90,23 @@
 
 
 <div class="footer col-1-1">
-	<div class="img_frame foot_logo_frame" >
-		<span class="helper"></span>
-  		<img class="foot_logo footer_img" src="../catalog/view/theme/default/image/mobile/mobileHomeLogoCn.png" />
-	</div>
-  <div class="navigation">
-  	<div id="cart_nav" class="navigation_item">
-  		<div class="img_frame navigation_frame" >
-			<span class="helper"></span>
-	  		<img class="navigation_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeCart.png" />
+  <div class="detail_navigation">
+  	<div id="cart_nav" class="detail_navigation_item cart_navigation">
+  		<div class="cart_number_frame"> 
+  			<div id="cart_number">1</div>
   		</div>
-  		<div class="navigation_label navigation_frame">cart</div>
+  		<div class="img_frame navigation_frame cart_img_navigation" >
+	  		<img class="navigation_icon cart_icon" src="../catalog/view/theme/default/image/mobile/mobileRestDetailCart.png" />
+  		</div>
   	</div>
-  	<div class="navigation_item">
-  		<div class="img_frame navigation_frame" >
-			<span class="helper"></span>
-  			<img class="navigation_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeOrder.png" />
-  		</div>
-  		<div class="navigation_label navigation_frame">order</div>
+  	<div class="detail_navigation_item">
+  		<div class="cart_navigation_label navigation_frame" style="font-size: 22px; font-weight: bolder;">$12.99</div>
   	</div>
-  	<div class="navigation_item">
-  		<div class="img_frame navigation_frame" >
-			<span class="helper"></span>
-  			<img class="navigation_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeMe.png" />
-  		</div>
-  		<div class="navigation_label navigation_frame">my</div>
+  	<div class="detail_navigation_item">
+  		<div class="cart_navigation_label navigation_frame" style="font-size: 10px; color: #888888;font-weight: normal;margin-left: 5px;">另需$15配送费</div>
+  	</div>
+  	<div class="detail_navigation_item col-3-12" style="float:right;margin-right: 20px;">
+  		<div class="cart_navigation_label navigation_frame" style="margin-top: 5px;height: 40px; line-height: 40px;margin-right: 20px;width: 100%;background: #f65053; text-align: center; color: white;-moz-border-radius: 9px; -webkit-border-radius: 9px; border-radius: 9px;">选好了</div>
   	</div>
   </div>      
 </div>

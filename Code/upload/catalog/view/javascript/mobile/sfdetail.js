@@ -37,9 +37,14 @@ $(document).ready(function () {
 				$('.product_'+id).removeClass('product_number_0');
 				cart.add(id,number);
 				$('.product_'+id).text(number);
-				updateRestId();
+				updateRestId();				
+			}
+			if($('#cart_dropdown').css('display') == 'block'){
+				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo');
+			}
+			else{
 				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
-			}	
+			}
 		}
 	});		
 		
@@ -98,6 +103,22 @@ $(document).ready(function () {
 		var sort = getSortString(sortId);				
 		addContents(sort,restId);
 	});
+	
+	$(document).on('click', '.claer_all', function(){
+		cart.clear();
+		$('.product_number').text('0');
+		$('.product_number').addClass('product_number_0');
+		$('.minus_product').addClass('product_number_0');		
+		updateRestId();
+		if($('#cart_dropdown').css('display') == 'block'){
+			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo');
+		}
+		else{
+			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
+		}
+		
+	});
+	
 	
 	function initialContent(){
 		var restId = $('#rest-id').val();
@@ -172,7 +193,7 @@ $(document).ready(function () {
 						else{
 							thumbEle = '<div class="img_frame product_frame" restid="'+restId+'"foodid="'+id+'"><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
 						}
-						thumbDescEle = '<div class="food_description"><div class="product_name" title="'+foodName+'"  restid="'+restId+'"foodid="'+id+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+' minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
+						thumbDescEle = '<div class="food_description"><div class="product_name product_name_overflow" title="'+foodName+'"  restid="'+restId+'"foodid="'+id+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+' minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
 						'<div class="product_number product_number_'+v.cart_number+' product_'+id+'" foodId="'+id+'">'+v.cart_number+'</div><img class="add_product" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="'+restId+'" foodId="'+id+'"/></div><div class="product_price col-1-1">$ '+v.price+'</div>' +
 						'</div>';
 					

@@ -16,10 +16,12 @@
 
 .cart_hide {
 	margin-left: 45%;
+	cursor: pointer;
 }
 .claer_all{
 	float:right;
 	margin-right:5%;
+	cursor: pointer;
 }
 .cart_label{
 	margin-left: 2%;
@@ -46,12 +48,13 @@
 
 .food_name_detail,.food_price{
 	float:left;
-	width: 100%;
+	width: 90%;
 	margin-left: 8%;
 }
 .food_name_detail{
 	line-height:40px;
 }
+
 .food_price{
 	margin-top: -10px;
 	color: #aaaaaa;

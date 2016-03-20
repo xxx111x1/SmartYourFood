@@ -176,6 +176,16 @@ div.stars span {
 	font-size: 18px;
 }
 
+.product_name_overflow{
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	text-overflow: ellipsis;/* IE/Safari */ 
+	-ms-text-overflow: ellipsis; 
+	-o-text-overflow: ellipsis;/* Opera */ 
+	-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/ 
+}
+
 .resturant_name, .dilevery_time, .extra_info, .product_price{
 	float:left;
 	margin-top: 2px;

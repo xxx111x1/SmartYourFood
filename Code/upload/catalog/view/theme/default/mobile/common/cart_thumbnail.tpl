@@ -1,5 +1,5 @@
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/cart.css">
-<div class="cart_dropdown" id="cart_dropdown" style="display: none;">
+<div class="cart_dropdown" id="cart_dropdown" style="display: <?php echo $is_block ?>; z-index: <?php echo $z_index;?>">
       <div class="cart_thumbenail_head" >
 	      <div class="img_frame cart_hide" >
 				<span class="helper"></span>
@@ -20,7 +20,7 @@
         <?php foreach ($products as $product) { ?>
         <div class="food_row">
           <div class="food_infor col-7-12" >
-	          	<div class="food_name_detail" title="<?php if($lang ==  'en'){echo $product['name_en'];} else {echo $product['name'];} ?>" href="<?php echo $product['href']; ?>">
+	          	<div class="food_name_detail product_name_overflow" title="<?php if($lang ==  'en'){echo $product['name_en'];} else {echo $product['name'];} ?>" href="<?php echo $product['href']; ?>">
 	          		<?php if($lang ==  'en'){echo $product['name_en'];} else {echo $product['name'];} ?>
 	          	</div>
 	          	<div class="food_price"><?php echo $product['price']; ?></div>
