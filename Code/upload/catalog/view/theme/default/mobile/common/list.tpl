@@ -3,7 +3,18 @@
 <script src="catalog/view/javascript/mobile/sflist.js" type="text/javascript"></script>
 <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/list.css">
 <div class="cart_background" style="display: none;"></div>
-
+<div class="search_background" style="display: none;">
+	<div class="search_title" style="display: none;">热门搜索词</div>
+	<div class="search_keywords" style="display: none;">
+		<div class="keywords">水煮鱼</div>
+		<div class="keywords">牛肉面</div>
+		<div class="keywords">龙顺园</div>
+		<div class="keywords">牛肉面</div>
+		<div class="keywords">牛肉</div>
+	</div>
+	<div class="search_result">
+	</div>
+</div>
 <div class="container">
 	<div id="ads" >
 		 <img class="advertisement col-1-1" id="show_restaurant" src="../catalog/view/theme/default/image/mobile/Ad1.jpg"></img>

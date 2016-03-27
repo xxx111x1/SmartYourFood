@@ -4,8 +4,6 @@ $(document).ready(function () {
 	$(document).on('click','.back_button', function(){
 		window.history.back()
 	});
-	
-	
 		
 	$(document).on('click', '.minus_product,.add_product', function(){
 		var id = $(this).attr('foodid');

@@ -150,4 +150,83 @@ class ControllerApiFood extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 	
+	public function searchFood(){
+		$food_name="";
+		$lat = "";
+		$lng = "";
+		$address = "";
+		$data=array();
+		$this->load->model('sffood/food');
+		$this->load->model('sfrest/information');
+		$this->load->model('account/address');
+		
+		if (isset($this->request->post['search'])) {
+			$food_name = $this->request->post['search'];
+		}
+				
+		$data['query']=$food_name;
+		$this->log->write('food name '.$food_name);
+		if(strlen($food_name)>0)
+		{
+			$food_list = $this->model_sffood_food->getFoodByName($food_name);
+			$rest_list = $this->model_sfrest_information->getRestaurantsByName($food_name);
+		}
+		else{
+			$food_list = array();
+			$rest_list = array();
+		}
+		
+		$cart_foods = $this->cart->getFoods();
+		if(count($cart_foods)){
+			foreach ($food_list as $key => $food) {
+				foreach($cart_foods as $product){
+					if((int)$food['food_id'] == (int)$product['product_id']){
+						$food_list[$key]['cart_number'] = $product['quantity'];
+					}
+				}
+			}
+		}
+		$lang = $this->session->data['language'];	
+		
+		foreach($food_list as $key => $value)
+		{
+			if(isset($this->session->data['lat'])&&isset($this->session->data['lng']))
+			{
+				$dist = $this->model_account_address->getDistance($this->session->data['lat'],
+						$this->session->data['lng'],
+						$food_list[$key]['lat'],
+						$food_list[$key]['lng']);
+				$food_list[$key]['dist'] = $dist;
+			}
+			$food_list[$key]['is_open'] = $this->openhours->is_open($food_list[$key]['restaurant_id']);
+			if($lang=='en')
+			{
+				$food_list[$key]['food_name'] = $food_list[$key]['food_name_en'];
+				$food_list[$key]['rest_name'] = $food_list[$key]['rest_name_en'];
+			}
+		}
+		
+		$data['foods'] =$food_list;
+		foreach ($rest_list as $key => $value){
+			if(isset($this->session->data['address'])){
+				$rest_list[$key]['distance'] = $this->model_account_address->getDistance($this->session->data['lat'], $this->session->data['lng'], $rest_list[$key]['lat'], $rest_list[$key]['lng']);
+			}
+			else{
+				$rest_list[$key]['distance'] = "未知";
+			}
+			$rest_list[$key]['is_open'] = $this->openhours->is_open($rest_list[$key]['restaurant_id']);
+			if($lang=='en')
+			{
+				$rest_list[$key]['name'] = $rest_list[$key]['name_en'];
+			}
+		}
+		$data['rests'] = $rest_list;
+				
+		//set search history
+		
+		//return result
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($data));
+	}
+	
 }

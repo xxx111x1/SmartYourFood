@@ -22,6 +22,8 @@ class ControllerCommonSfheader extends Controller {
 		$data['Order_Amount'] =                                     $this->language->get('Order_Amount');
 		$data['Language'] =                                  $this->language->get('Language');
 		$data['Welcome'] =                                  $this->language->get('Welcome');
+		$data['Search_Restaurant_name_Food_Keywords'] =      $this->language->get('Search_Restaurant_name_Food_Keywords');
+		$data['Go'] =                                        $this->language->get('Go');
 		$data['Category'] = $this->language->get('Category');
 		$useragent=$_SERVER['HTTP_USER_AGENT'];
 		if($this->detector->isMobile($useragent)){

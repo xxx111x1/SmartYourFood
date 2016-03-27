@@ -16,6 +16,14 @@ $(document).ready(function () {
 		window.location.href="/index.php?route=sfrest/detail&restaurant_id=8&returnUrl=/index.php?route=common/list";
 	});
 	
+	$(document).on('click','.back_button', function(){
+		$('.search_result').empty();
+		$('.search_title').css('display','none');
+		$('.search_keywords').css('display','none');
+		$('.search_bar').css('display','none');
+		$('.search_background').css('display','none');
+	});
+	
 	var type=$('#searchType').val();	
 	if(window.location.search.indexOf('restaurant') >= 0){
 		type='rest';
@@ -53,7 +61,22 @@ $(document).ready(function () {
 			addContents('0',getSortString('sort_default'),0,1,isRefreshType);
 			isRefreshType = false;
 		}		
-	});		
+	});	
+	
+	$('#search-button').on('click', function () {	
+		$('.search_title').css('display','none');
+		$('.search_keywords').css('display','none');
+        var searchKeyWords = $('#serach-input').val();
+        searchResult(searchKeyWords)
+    });
+	
+	$('.keywords').on('click', function () {	
+		$('.search_title').css('display','none');
+		$('.search_keywords').css('display','none');
+        var searchKeyWords = $(this).text();
+        $('#serach-input').val(searchKeyWords);
+        searchResult(searchKeyWords)
+    });
 	
 	$('#filter_0').addClass('filter_field_selected');
 	addContents('0',getSortString('sort_default'),0,1,isRefreshType);
@@ -71,6 +94,13 @@ $(document).ready(function () {
 		$('.cart_background').css('display','none');
 		$('.filterarea').css('z-index','0');
 		$('.header').css('z-index','0');
+	});
+	
+	$(document).on('click', '#search', function(){		
+		$('.search_bar').css('display','block');
+		$('.search_title').css('display','block');
+		$('.search_keywords').css('display','block');
+		$('.search_background').css('display','block');
 	});
 		
 	$(document).on('click', '.resturantName,.productFrame', function(){
@@ -292,6 +322,161 @@ $(document).ready(function () {
 					$('.product_area').append(ele);
 				});		
 				$('div.stars').stars();		
+			}
+		});		
+	}
+	
+	function searchResult(keyword){
+		$.ajax({
+			url: 'index.php?route=api/food/searchFood',
+			type: 'post',
+			data: 'search=' + keyword,
+			dataType: 'json',
+			/*
+			 * beforeSend: function() { $('#cart >
+			 * button').button('loading'); }, complete: function() {
+			 * $('#cart > button').button('reset'); },
+			 */			
+			success: function(data) {
+				$('.search_title').css('display', 'none');
+				$('.search_keywords').css('display', 'none');
+				$.each(data['foods'], function(i, v) {
+					var id = v.restaurant_id;
+					var cost = v.avg_cost;
+					var review_score = v.review_score;
+					var name = "";
+					var foodname = "";
+					var restId = id;
+					var thumbEle = "";
+					var thumbDescEle = "";
+					var distance = gpsDistance(v.lat,v.lng,data['lat'],data['lng'],'K');
+					var is_open = v.is_open;
+					if(distance>40){
+						distance = '-';
+					}
+					var stringAddCart = "";
+					var stringDistance = "";
+					var stringRest = "";
+					if(language.indexOf("en")>-1){
+						stringAddCart = "Add to cart";
+						stringDistance = "Distance";
+						stringRest = "Restaurant";
+						if(v.name_en!='' &&v.name_en!=null ){
+							foodName = v.name_en;
+						}
+						else{
+							foodName = v.name;
+						}
+						if(v.rest_name_en!=''&&v.rest_name_en!=null ){
+							name = v.rest_name_en;
+						}
+						else{
+							name = v.rest_name;
+						}		
+					}
+					var ele = '<div class="product';
+						var stringAddCart = "";
+						var stringDistance = "";
+						var stringRest = "";
+						foodName = v.food_name;
+						name = v.rest_name;		
+						if(language.indexOf("en")>-1){
+							stringAddCart = "Add to cart";
+							stringDistance = "Distance";
+							stringRest = "Restaurant";
+							
+						}
+						else{
+							stringAddCart = "添加到餐车";
+							stringDistance = "距离";
+							stringRest = "餐馆";
+						}
+						id = v.food_id;
+						cost = v.price;
+						review_score = v.rest_review;
+						restId = v.restaurant_id;
+						
+						if(is_open==1)
+						{
+							thumbEle = '<div class="img_frame product_frame" restid="'+restId+'"foodid="'+id+'"><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /></div>';
+						}
+						else{
+							thumbEle = '<div class="img_frame product_frame" restid="'+restId+'"foodid="'+id+'"><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
+						}
+						thumbDescEle = '<div class="food_description"><div class="product_name product_name_overflow" title="'+foodName+'"  restid="'+restId+'"foodid="'+id+'">'+foodName+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="purchase_area"><img class="minus_product product_number_'+v.cart_number+' minus_product_'+id+'" src="../catalog/view/theme/default/image/mobile/mobileMinus.png" restid="'+restId+'" foodid="'+id+'" />' +
+						'<div class="product_number product_number_'+v.cart_number+' product_'+id+'" foodId="'+id+'">'+v.cart_number+'</div><img class="add_product" src="../catalog/view/theme/default/image/mobile/mobileAdd.png" restid="'+restId+'" foodId="'+id+'"/></div><div class="product_price col-1-1">$ '+v.price+'</div><a class="resturant_name" restid="'+restId+'" foodid="'+id+'">'+name+'</a>' +
+						'<div class="dilevery_time">|'+stringDistance+' '+distance+'KM</div></div>';
+					if(is_open==0)
+					{
+						ele = ele +'" style="background-color: #DDDDDD">' +thumbEle+ thumbDescEle + '</div>';
+					}
+					else {
+						ele = ele +'">' +thumbEle+ thumbDescEle + '</div>';
+					}
+					$('.search_result').append(ele);
+					
+
+				});		
+				
+				
+				$.each(data['rests'], function(i, v) {
+					var id = v.restaurant_id;
+					var cost = v.avg_cost;
+					var review_score = v.review_score;
+					var name = "";
+					var foodname = "";
+					var restId = id;
+					var thumbEle = "";
+					var thumbDescEle = "";
+					var distance = gpsDistance(v.lat,v.lng,data['lat'],data['lng'],'K');
+					var is_open = v.is_open;
+					if(distance>40){
+						distance = '-';
+					}
+					var ele = '<div class="product';
+					ele = ele + ' product_rest" restid="' + id ;
+					var stringCost = "";
+					var stringDistance = "";
+					var name = "";
+					if(language.indexOf("en")>-1){
+						stringCost = "Average cost:";
+						stringDistance = "Distance";
+						if(v.name_en!=''&&v.name_en!=null){
+							name = v.name_en;
+						}
+						else{
+							name = v.name;
+						}						
+						
+					}
+					else{
+						stringCost = "平均价格：";
+						stringDistance = "距离";
+						name = v.name;
+					}
+					
+					if(is_open==1)
+					{
+						thumbEle = '<div class="img_frame product_frame" ><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /></div>';
+					}
+					else{
+						thumbEle = '<div class="img_frame product_frame" ><span class="helper"></span><img class="preview" src="'+v.img_url+'" alt="Image not found" onerror="onDishImgError(this)" /><div class="thumb_closed"></div></div>';
+					}
+					thumbDescEle = '<div class="rest_description"><div class="product_name" title="'+v.name+'">'+v.name+'</div><div class="sf_product_stars stars" rate="'+v.review_score+'"><span /></div><div class="product_price col-1-1">'+stringCost+'$ '+cost+'</div><div class="extra_info">'+stringDistance+' '+distance+'KM</div></div>' +
+										'<div class="go_to_rest img_frame col-1-12" restid="' + id +'"><span class="helper"></span><img class="preview" src="../catalog/view/theme/default/image/mobile/mobileGotoGrey.png"/></div>';
+					
+					if(is_open==0)
+					{
+						ele = ele +'" style="background-color: #DDDDDD">' +thumbEle+ thumbDescEle + '</div>';
+					}
+					else {
+						ele = ele +'">' +thumbEle+ thumbDescEle + '</div>';
+					}
+					$('.search_result').append(ele);
+					
+	
+				});
+				$('div.stars').stars();
 			}
 		});		
 	}

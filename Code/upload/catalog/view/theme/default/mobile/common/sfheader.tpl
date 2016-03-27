@@ -40,3 +40,14 @@
 		<img class="header_img" id="search" class="col-1-12" src="../catalog/view/theme/default/image/mobile/mobileSearch.png"/>
 	</div>	
 </div>
+
+<div class="search_bar col-1-1" style="display: none;">
+	<div class="img_frame col-1-12">
+		<span class="helper"></span>
+	  	<img class="back_button" src="../catalog/view/theme/default/image/mobile/mobileRestDetailBack.png">
+	</div>
+	<input id="searchType" type="hidden" value="food" />
+  	<input id="serach-input" class="controls col-8-12" type="text" placeholder="<?php echo $Search_Restaurant_name_Food_Keywords; ?>" >
+  	</input>
+  	<div id="search-button"><?php echo $Go; ?></div>
+</div>

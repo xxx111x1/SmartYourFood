@@ -8,6 +8,93 @@
 	left:0;
 	position:fixed;
 }
+
+.search_bar{
+	background-color: white;
+	float:left;
+	color: #aaaaaa;
+	font-weight: bolder;
+	height: 40px;
+	top:0;
+	left:0;
+	position:fixed;
+}
+
+.back_button{
+	margin-top: 10px;
+	height: 20px;
+	margin-left: 5px;
+}
+
+#serach-input{
+	margin-left: 5%;
+	margin-top: 5px;
+	float:left;	
+	height: 30px;
+	padding-left: 25px;
+	-moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: solid 1px #dfdfdf;
+
+    background-image: url(../../image/mobile/mobileHeaderSearch.png);
+    background-repeat: no-repeat;
+    background-position-x: 2px;
+    background-position-y: 4px;
+    background-size: 20px;
+}
+
+#search-button{
+	float:left;
+	height: 30px;
+	margin-top: 10px;
+	margin-left: 10px;
+	color: #f65053;
+	font-weight: bolder;
+	font-size: 18px;
+	cursor: pointer;
+}
+
+.search_title{
+	color:#666666;
+	font-size: 16px;
+	width: 100%;
+	float:left;
+	margin-left: 5%;
+	margin-top: 15px;
+}
+
+.search_keywords{
+	color:#666666;
+	font-size: 16px;
+	width: 100%;
+	float:left;
+	margin-left: 5%;	
+}
+
+.keywords{
+	background-color: white;
+	width: 25%;
+	height: 40px;
+	line-height: 40px;
+	color: black;
+	font-size: 16px;	
+	float:left;
+	-moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    border: solid 1px grey;
+    margin-right: 5%;
+    margin-top: 15px;
+    text-align: center;
+    font-weight: bolder;
+}
+
+.keywords:hover{
+	background-color: #f65053;
+	color: white;
+	border: none;
+}
 .header_img, .footer_img{
     max-height: 30px;   
 	vertical-align: middle;
