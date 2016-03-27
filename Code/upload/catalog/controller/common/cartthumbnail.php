@@ -44,6 +44,7 @@ class ControllerCommonCartthumbnail extends Controller {
 
 		$data['products'] = array();
 		$total_price = 0;
+		$total_num = 0;
 		$rest_id=0;
 		if(isset($this->session->data['cart_rest_id'])){
 			$rest_id= $this->session->data['cart_rest_id'];
@@ -70,6 +71,7 @@ class ControllerCommonCartthumbnail extends Controller {
 				$total = false;
 			}			
 			$total_price = $total_price + $product['price']* $product['quantity'];
+			$total_num = $total_num + $product['quantity'];
 			$data['products'][] = array(
 				'key'       => $product['key'],
 				'thumb'     => $image,
@@ -144,6 +146,7 @@ class ControllerCommonCartthumbnail extends Controller {
 		}
 		$data['total_transffer'] = $sf_deliverfee;
 		$data['total_price'] = $total_price;
+		$data['total_num'] = $total_num;
 		$data['total_taxes'] = round($total_price*0.12,2);
 		$data['total_fees'] = round($total_price*0.1,2);
 		$data['total_sum'] = $total_price;//$data['total_transffer'] +$data['total_price']+$data['total_taxes']+$data['total_fees'];
@@ -166,7 +169,7 @@ class ControllerCommonCartthumbnail extends Controller {
 	public function info() {
 		$this->response->setOutput($this->index());
 	}
-	
+		
 	public function showinfo() {
 	// Totals
 		$this->load->model('extension/extension');
@@ -209,6 +212,7 @@ class ControllerCommonCartthumbnail extends Controller {
 
 		$data['products'] = array();
 		$total_price = 0;
+		$total_num= 0;
 		$rest_id=0;
 		if(isset($this->session->data['cart_rest_id'])){
 			$rest_id= $this->session->data['cart_rest_id'];
@@ -235,6 +239,7 @@ class ControllerCommonCartthumbnail extends Controller {
 				$total = false;
 			}			
 			$total_price = $total_price + $product['price']* $product['quantity'];
+			$total_num = $total_num + $product['quantity'];
 			$data['products'][] = array(
 				'key'       => $product['key'],
 				'thumb'     => $image,
@@ -309,6 +314,7 @@ class ControllerCommonCartthumbnail extends Controller {
 		}
 		$data['total_transffer'] = $sf_deliverfee;
 		$data['total_price'] = $total_price;
+		$data['total_num'] = $total_num;
 		$data['total_taxes'] = round($total_price*0.12,2);
 		$data['total_fees'] = round($total_price*0.1,2);
 		$data['total_sum'] = $total_price;//$data['total_transffer'] +$data['total_price']+$data['total_taxes']+$data['total_fees'];

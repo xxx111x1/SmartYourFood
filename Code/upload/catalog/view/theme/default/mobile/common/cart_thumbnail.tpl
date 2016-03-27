@@ -40,7 +40,13 @@
         </div>
         <?php } ?>
      </div>
+     <input type='hidden' id="total_price" value="<?php echo $total_price; ?>"></input>
+     <input type='hidden' id="total_num" value="<?php echo $total_num; ?>"></input>
+     <input type='hidden' id="total_transffer" value="<?php echo $total_transffer; ?>"></input>
     <?php } else { ?>
+    <input type='hidden' id="total_price" value="0"></input>
+     <input type='hidden' id="total_num" value="0"></input>
+     <input type='hidden' id="total_transffer" value="0"></input>
     <div class="empty_cart"><?php echo $Empty_Cart;?> </div>
     <?php } ?>
   </div>

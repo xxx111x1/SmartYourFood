@@ -40,10 +40,10 @@ $(document).ready(function () {
 				updateRestId();				
 			}
 			if($('#cart_dropdown').css('display') == 'block'){
-				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo');
+				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo',updateFooter);
 			}
 			else{
-				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
+				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info',updateFooter);
 			}
 		}
 	});		
@@ -111,21 +111,37 @@ $(document).ready(function () {
 		$('.minus_product').addClass('product_number_0');		
 		updateRestId();
 		if($('#cart_dropdown').css('display') == 'block'){
-			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo');
+			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo',updateFooter);
 		}
 		else{
-			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
+			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info',updateFooter);
 		}
 		
 	});
 	
-	
+	function updateFooter(){
+		var allPrice = $('#total_price').val();
+		var allNum = $('#total_num').val();
+		var delivery = $('#total_transffer').val();
+		$('#cart_number').text(allNum);
+		$('#all_price').text('$' + allPrice);
+		var transferFee = "";
+		if(language.indexOf("en")>-1){
+			transferFee = "另需$"+delivery+"配送费";
+		}
+		else{
+			transferFee = "need more $" +delivery+ " delivery fee";
+		}
+		$('#transfer_fee').text(transferFee);
+		
+	}
 	function initialContent(){
 		var restId = $('#rest-id').val();
 		var sortId = $('#sort_default').attr('id');
 		$('#sort').val(sortId);
 		var sort = getSortString(sortId);				
 		addContents(sort,restId);
+		updateFooter();
 	}
 		
 	function addContents(sort,restId,tag){
