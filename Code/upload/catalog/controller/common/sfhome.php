@@ -2,6 +2,12 @@
 class ControllerCommonSfhome extends Controller {
 	public function index() {
 		$data = array();
+		
+		$useragent=$_SERVER['HTTP_USER_AGENT'];
+		if($this->detector->isMobile($useragent)){
+			$this->response->redirect($this->url->link('sfaccount/login'));
+		}
+		
 		if(isset($this->request->get['logout'])){
 			$this->customer->logout();
 		}

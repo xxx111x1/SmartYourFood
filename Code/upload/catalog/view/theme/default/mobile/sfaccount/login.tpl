@@ -34,7 +34,7 @@
         </form>
     </div>
     <div class="col-2-12">
-    	<a href="" class="push-1-12 bottom_nav float-left"><?php echo $Quick_Register;?></a>
+    	<a href="index.php?route=sfaccount/register" class="push-1-12 bottom_nav float-left"><?php echo $Quick_Register;?></a>
     </div>
 </body>
 </html>

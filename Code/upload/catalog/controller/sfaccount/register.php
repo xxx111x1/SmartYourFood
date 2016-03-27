@@ -13,7 +13,7 @@ class ControllerSfaccountRegister extends Controller{
         }
 
         $this->load->model('account/customer');
-
+        $this->load->language('sfaccount/register');
         if (($this->request->server['REQUEST_METHOD'] == 'POST') && $this->validate()) {
 
             $customer_data = array();
@@ -40,7 +40,7 @@ class ControllerSfaccountRegister extends Controller{
             $data['error']=$this->error['error'];
         }
         
-        $this->load->language('sfaccount/register');
+        
         $data['Register'] =                                  $this->language->get('Register');
         $data['Your_Name'] =                                 $this->language->get('Your_Name');
         $data['Cell_Phone_Number'] =                         $this->language->get('Cell_Phone_Number');
@@ -51,20 +51,26 @@ class ControllerSfaccountRegister extends Controller{
         $data['Already_on_Usays'] =                          $this->language->get('Already_on_Usays');
         $data['Agree_Register'] =                            $this->language->get('Agree_Register');
         
-        $this->response->setOutput($this->load->view('default/template/sfaccount/register.tpl', $data));
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	$this->response->setOutput($this->load->view('default/mobile/sfaccount/register.tpl', $data));
+        }
+        else{
+        	$this->response->setOutput($this->load->view('default/template/sfaccount/register.tpl', $data));
+        }
     }
 
     public function validate() {
-
+    	
         if ((utf8_strlen(trim($this->request->post['accountname'])) < 1) || (utf8_strlen(trim($this->request->post['accountname'])) > 32)) {
             $this->error['firstname'] = $this->language->get('error_firstname');
-            $this->error['error'] = '用户名长度不符合要求';
+            $this->error['error'] = $this->language->get('error_firstname_message');
             return false;
         }
 
         if ((utf8_strlen($this->request->post['phonenumber']) < 3) || (utf8_strlen($this->request->post['phonenumber']) > 32)) {
             $this->error['phonenumber'] = $this->language->get('error_telephone');
-            $this->error['error']='电话号码长度不符合要求';
+            $this->error['error']= $this->language->get('error_telephone_message_length');
             return false;
         }
 
@@ -73,19 +79,19 @@ class ControllerSfaccountRegister extends Controller{
 
         if(!empty($customer))
         {
-            $this->error['error'] = '电话号码已经存在';
+            $this->error['error'] = $this->language->get('error_telephone_message_conflict');
             return false;
         }
 
         if ((utf8_strlen($this->request->post['pwd_1st']) < 4) || (utf8_strlen($this->request->post['pwd_1st']) > 20)) {
             $this->error['password'] = $this->language->get('error_password');
-            $this->error['error'] = '密码长度不符合要求';
+            $this->error['error'] = $this->language->get('error_password_message_length');
             return false;
         }
 
         if ($this->request->post['pwd_2nd'] != $this->request->post['pwd_2nd']) {
             $this->error['confirm'] = $this->language->get('error_confirm');
-            $this->error['error'] ='两次密码输入不一致';
+            $this->error['error'] = $this->language->get('error_password_message_notsame');
         }
         return !$this->error;
     }
