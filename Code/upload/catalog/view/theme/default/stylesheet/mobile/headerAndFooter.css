@@ -102,6 +102,13 @@
 .label{	   
 	height:40px;
 	line-height: 40px;
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	text-overflow: ellipsis;/* IE/Safari */ 
+	-ms-text-overflow: ellipsis; 
+	-o-text-overflow: ellipsis;/* Opera */ 
+	-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/ 
 }
 .helper {
     display: inline-block;
@@ -109,9 +116,14 @@
     vertical-align: middle;
 }
 
-#category_img,.img_frame,.label_frame,.navigation_label{
+#category_img,.img_frame,.label_frame,.navigation_label, .address_frame{
 	float:left;
 	height: 100%;
+}
+
+.address_frame{
+	margin-left: 5px;
+	width: 30%;	
 }
 
 .label_frame {

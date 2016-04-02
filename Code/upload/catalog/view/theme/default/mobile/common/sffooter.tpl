@@ -1,5 +1,5 @@
 <script src="catalog/view/javascript/mobile/sffooter.js" type="text/javascript"></script>
-<div id="cart_thumbnail">
+<div id="cart_preview">
 	<?php echo $cartthumbnail;?>
 </div>
 

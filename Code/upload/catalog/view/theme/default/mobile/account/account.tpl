@@ -6,7 +6,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php echo $title; ?></title>
+<title><?php echo $My_Account; ?></title>
 <script src="catalog/view/javascript/jquery/jquery-2.1.1.min.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/jquery/jquery-ui.min.js" type="text/javascript"></script>
 <script src="catalog/view/javascript/common.js" type="text/javascript"></script>
@@ -99,7 +99,7 @@
 			<span class="helper"></span>
 		  	<img class="back_img" src="../catalog/view/theme/default/image/mobile/mobileBack.png" />
 		</div>
-		<div class="col-5-12 sub_header_title">        	
+		<div class="col-7-12 sub_header_title">        	
 	        <div id="header_title">关于悠选</div>
 	 	</div>
 	</div>
@@ -108,6 +108,12 @@
 	    <div class="edit_content" id="updateaddress_">
 	        <?php echo $addresses;?>
 	    </div>
+	    <div class="edit_content" id="updateaccount_">
+	        <?php echo $profile;?>
+	    </div>
+	    <div class="edit_content" id="orderhistory_">
+	        <?php echo $orderhistory;?>
+	    </div>	    
 	</div>
 </div>
 

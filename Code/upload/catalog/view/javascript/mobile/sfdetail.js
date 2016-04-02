@@ -38,10 +38,10 @@ $(document).ready(function () {
 				updateRestId();				
 			}
 			if($('#cart_dropdown').css('display') == 'block'){
-				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo',updateFooter);
+				$('#cart_preview').load('index.php?route=common/cartthumbnail/showinfo',updateFooter);
 			}
 			else{
-				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info',updateFooter);
+				$('#cart_preview').load('index.php?route=common/cartthumbnail/info',updateFooter);
 			}
 		}
 	});		
@@ -109,10 +109,10 @@ $(document).ready(function () {
 		$('.minus_product').addClass('product_number_0');		
 		updateRestId();
 		if($('#cart_dropdown').css('display') == 'block'){
-			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo',updateFooter);
+			$('#cart_preview').load('index.php?route=common/cartthumbnail/showinfo',updateFooter);
 		}
 		else{
-			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info',updateFooter);
+			$('#cart_preview').load('index.php?route=common/cartthumbnail/info',updateFooter);
 		}
 		
 	});

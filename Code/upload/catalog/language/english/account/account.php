@@ -59,3 +59,6 @@ $_['No_Order_History'] = 'No order history';
 
 $_['Primary_Fooder'] = 'Primary fooder';
 $_['About'] = 'About us';
+$_['New_Password'] = 'New Password';
+$_['Old_Password'] = 'Old Password';
+$_['Password_Confirm'] = 'Password Confirm';

@@ -137,7 +137,7 @@ $(document).ready(function () {
 					$('.minus_product_'+id).addClass('product_number_0');
 					$('.product_'+id).addClass('product_number_0');
 				}
-				cart.add(id,number);
+				cart.addshow(id,number);
 				$('.product_'+id).text(number);
 				updateRestId();
 			}
@@ -145,16 +145,10 @@ $(document).ready(function () {
 				number++;
 				$('.minus_product_'+id).removeClass('product_number_0');
 				$('.product_'+id).removeClass('product_number_0');
-				cart.add(id,number);
+				cart.addshow(id,number);
 				$('.product_'+id).text(number);
 				updateRestId();
 				
-			}
-			if($('#cart_dropdown').css('display') == 'block'){
-				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo');
-			}
-			else{
-				$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
 			}
 			
 		}
@@ -167,10 +161,10 @@ $(document).ready(function () {
 		$('.minus_product').addClass('product_number_0');		
 		updateRestId();
 		if($('#cart_dropdown').css('display') == 'block'){
-			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/showinfo');
+			$('#cart_preview').load('index.php?route=common/cartthumbnail/showinfo');
 		}
 		else{
-			$('#cart_thumbnail').load('index.php?route=common/cartthumbnail/info');
+			$('#cart_preview').load('index.php?route=common/cartthumbnail/info');
 		}
 	});
 	

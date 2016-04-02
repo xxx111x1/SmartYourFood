@@ -22,6 +22,6 @@ $(document).ready(function () {
 	});
 	
 	$(document).on('click', "#account", function () { 
-		window.location.href="/index.php?route=account/account&returnUrl=/index.php?route=common/list";
+		window.location.href="/index.php?route=account/account";
 	});
 });

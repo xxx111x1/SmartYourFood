@@ -88,6 +88,8 @@ class ControllerAccountAccount extends Controller {
 			$this->response->redirect($this->url->link('sfaccount/login', '', 'SSL'));
 		}
 		
+		$data['lang'] = $this->language->get('code');
+		
 		if(isset($this->request->get['lat'])
 				&&isset($this->request->get['lng'])
 				&&isset($this->request->get['address'])
@@ -179,7 +181,36 @@ class ControllerAccountAccount extends Controller {
 		$this->response->addHeader('Content-Type: application/json');
 		$this->response->setOutput(json_encode($json));
 	}
-
+	public function editaccount(){
+		$user_name =$this->request->post['username'];
+		$phone =$this->request->post['phone'];
+		$oldpassword = $this->request->post['oldpassword'];
+		$newpassword = $this->request->post['newpassword'];
+		$this->load->model('account/customer');
+		$this->log->write(__LINE__.'  modify user by phone: '.$user_name);
+		$json = array();
+		$this->response->addHeader('Content-Type: application/json');
+		if($user_name != ""){
+			$this->model_account_customer->editUsername($user_name);
+		}
+		if($phone !=""){
+			if(!is_numeric($phone) || !$this->model_account_customer->editPhone($phone)){
+				$json['status']='modify phone failed, this phone number have been already registered or in wrong format.';
+				$this->response->setOutput(json_encode($json));
+				return ;
+			}
+		}
+		if($oldpassword !="" && $newpassword !=""){
+			if(!$this->model_account_customer->editPasswordByCustomerID($oldpassword,$newpassword)){
+				$json['status']='modify password failed';
+				$this->response->setOutput(json_encode($json));
+				return ;
+			}
+		}
+		
+		$json['status']='ok';		
+		return $this->response->setOutput(json_encode($json));
+	}
 	public function editusername()
 	{
         $user_name =$this->request->post['username'];

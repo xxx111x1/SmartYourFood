@@ -2,37 +2,40 @@
  * Created by Min on 2015/9/30.
  */
 $(document).ready(function() {
-    var curpage="#updateaccount_";
+    var curpage="";
     var url=window.location.href;
     if(url.indexOf("success")>0){
-    	curpage = "#orderhistory_";
-    }else if(url.indexOf("updateaddress_")>0){
-    	curpage = "#updateaddress_";
+    	curpage = "#orderhistory";
+    }else if(url.indexOf("updateaddress")>0){
+    	curpage = "#updateaddress";
+    }else if(url.indexOf("updateaccount")>0){
+    	curpage = "#updateaccount";
+    }else if(url.indexOf('orderhistory')>0){
+    	curpage='#orderhistory';
     }
-    else if(url.indexOf('orderhistory_')>0)
-    {
-        curpage='#orderhistory_';
+    if(curpage!=""){
+    	hideInitalContent();
+		$("html").css("background-color","white");
+		var title = $(curpage).find(".bar_label").text();
+		updateTitle(title);
+		$('.content_modify').css("display","block");
+        $(curpage+"_").show();
     }
-
-    var pageid = $("#currentpage").attr('pageid');
-    if(pageid)
-    {
-        curpage=pageid;
-    }
-    $(".rightpanel").hide();
-    console.log(curpage);
-    $(curpage).show();
+    
 
     // all jQuery code goes here
     $("#orderhistory").click(function(){
-            $(".rightpanel").hide();
-            url='/index.php?route=account/account#orderhistory_';
-            window.location.href = url;
+            hideInitalContent();
+    		$("html").css("background-color","white");
+    		var title = $(this).find(".bar_label").text();
+    		updateTitle(title);
+    		$('.content_modify').css("display","block");
             $("#orderhistory_").show();
-        }
-    );
+            
+    });
     $("#updateaddress").click(function(){
     		hideInitalContent();
+    		$("html").css("background-color","white");
     		var title = $(this).find(".bar_label").text();
     		updateTitle(title);
     		$('.content_modify').css("display","block");
@@ -41,9 +44,10 @@ $(document).ready(function() {
     );
 
     $("#updateaccount").click(function(){
-            $(".rightpanel").hide();
-            url='/index.php?route=account/account#updateaccount_';
-            window.location.href = url;
+    		hideInitalContent();
+    		var title = $(this).find(".bar_label").text();
+    		updateTitle(title);
+    		$('.content_modify').css("display","block");
             $("#updateaccount_").show();
         }
     );
@@ -65,7 +69,6 @@ $(document).ready(function() {
     
     function hideInitalContent(){
     	$(".initial_content").css("display","none");
-    	$("html").css("background-color","white");
     }
     
     function updateTitle(title){
@@ -73,27 +76,14 @@ $(document).ready(function() {
     }
     
     $("#back_initial_content").click(function(){
-    	showInitalContent();
-    });
-
-    $(".review-close").click(function(){
-        $('.review-dialog-frame').addClass('invisible');
-    });
-
-    $("#label_updateusername").click(function(){
-        $('#dialog_updateusername').removeClass('invisible');
-    });
-
-    $("#label_updatephone").click(function(){
-        $('#dialog_updatephone').removeClass('invisible');
-    });
-
-    $("#label_updateemail").click(function(){
-        $('#dialog_updateemail').removeClass('invisible');
-    });
-
-    $("#label_updatepassword").click(function(){
-        $('#dialog_updatepassowrd').removeClass('invisible');
+    	var returnUrl = getParameterByName("returnUrl")
+    	if(returnUrl!= null && returnUrl != ""){
+    		window.location.href=returnUrl;
+    	}
+    	else{
+    		showInitalContent();
+    	}
+    	
     });
 
     $(".deleteAddress").click(function(){
@@ -119,113 +109,51 @@ $(document).ready(function() {
         });
     });
     
+    
+    
     $(".editAddress").click(function(){
         var addressId = $(this).attr('addr_id');
         var phone = $('#phone_' + addressId).text();
         var contact = $('#contact_' + addressId).text();
         window.location.href = 'index.php?route=address/address&phone=' +phone+  '&contact=' + contact + '&returnUrl=/index.php?route=account/account&addressId=' + addressId;
     });
-
-    $('#btn_confirmusername').click(function(){
-        var new_username = $('#updateusername').val();
-        $.ajax({
-            url: 'index.php?route=account/account/editusername',
-            type: 'post',
-            data: 'username='+new_username,
-            timeout: 32000,
-            dataType: 'json',
-            error: function(){
-                alert("Modify username failed, please try later. (修改用户名失败,请稍后再试)");
-                $('.review-dialog-frame').addClass('invisible');
-            },
-            success: function(data) {
-                if (!data['status'] || !(data['status']==='ok')){
-                    alert("Modify username failed, please try later. (修改用户名失败,请稍后再试)");
-                }
-                else{
-                	window.location.href=window.location.href;
-                }
-            }
-        });
-    });
-
-    $('#btn_confirmphone').click(function(){
-        var value = $('#updatephone').val();
-        $.ajax({
-            url: 'index.php?route=account/account/editphone',
-            type: 'post',
-            data: 'phone='+value,
-            timeout: 32000,
-            dataType: 'json',
-            error: function(){
-                alert("Modify phone number failed, please try later. (修改手机号码失败,请稍后再试)");
-                $('.review-dialog-frame').addClass('invisible');
-            },
-            success: function(data) {
-                if (!data['status'] || !(data['status']==='ok')){
-                    alert("This phone has been registered, please try another one. (修改手机号码失败，该手机号已被注册，请使用其他手机号)");
-                }
-                else{
-                	window.location.href=window.location.href;
-                }
-            }
-        });
-    });
-
-
-    $('#btn_confirmemail').click(function(){
-        var value = $('#updateemail').val();
-        $.ajax({
-            url: 'index.php?route=account/account/editemail',
-            type: 'post',
-            data: 'email='+value,
-            timeout: 32000,
-            dataType: 'json',
-            error: function(){
-                alert("Modify email failed, please try later. (修改邮箱失败)");
-                $('.review-dialog-frame').addClass('invisible');
-            },
-            success: function(data) {
-            	if (!data['status'] || !(data['status']==='ok')){
-                    alert("Modify email failed, please try later. (修改邮箱失败)");
-                }
-                else{
-                	window.location.href=window.location.href;
-                }
-            }
-        });
-    });
-
-    $('#btn_confirmpassword').click(function(){
-        var value = $('#input_oldpassword').val();
+    
+    $(".confirm").click(function(){
+    	var username = $('#updateusername').val();
+    	var phone = $('#updatephone').val();
+    	var value = $('#input_oldpassword').val();
         var newpwd=$('#input_updatepassword').val();
         var newpwdConfirm=$('#input_confirmpassword').val();
-        if(newpwd != newpwdConfirm){
+        if(newpwd != "" && newpwdConfirm !="" && newpwd != newpwdConfirm){
         	alert("The passwords are different, please input again. (输入的新密码不一致，请重新输入新密码)");
         }
         else{
         	$.ajax({
-                url: 'index.php?route=account/account/editpassword',
+                url: 'index.php?route=account/account/editaccount',
                 type: 'post',
-                data: 'oldpassword='+value+'&newpassword='+newpwd,
+                data: 'username='+username + '&phone=' + phone + '&oldpassword='+value+'&newpassword='+newpwd,
                 timeout: 32000,
                 dataType: 'json',
                 error: function(){
-                    alert("Moidfy password failed, please try again. (修改密码失败)");
-                    $('.review-dialog-frame').addClass('invisible');
+                    alert("Moidfy failed, please try again. (修改失败)");
                 },
                 success: function(data) {
-                	if (!data['status'] || !(data['status']==='ok')){
-                        alert("Moidfy password failed, please try again. (修改密码失败)");
+                	if (!(data['status']=='ok')){
+                        alert(data['status']);
                     }
                 	else{
-                		alert("Modify password succeed. (密码修改成功)");
-                		$('.review-dialog-frame').addClass('invisible');
+                		alert("Modify succeed. (修改成功)");
+                		window.location.href="/index.php?route=account/account";
                 	}
                 }
             });
-        }        
+        }       
+        
     });
+
+    $('.log_out').click(function(){
+		window.location.href="index.php?route=common/sfhome&logout=1";
+	});
     
     $('.pagebutton').click(function(){    	
         var page = $('#pageNumber').val();
@@ -299,5 +227,15 @@ $(document).ready(function() {
             	}
             }
      });   
+    }
+    
+    function getParameterByName(name) {
+        var url = window.location.href;
+        name = name.replace(/[\[\]]/g, "\\$&");
+        var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)", "i"),
+            results = regex.exec(url);
+        if (!results) return null;
+        if (!results[2]) return '';
+        return decodeURIComponent(results[2].replace(/\+/g, " "));
     }
 });

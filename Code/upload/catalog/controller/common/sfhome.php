@@ -4,13 +4,19 @@ class ControllerCommonSfhome extends Controller {
 		$data = array();
 		
 		$useragent=$_SERVER['HTTP_USER_AGENT'];
+		if(isset($this->request->get['logout'])){
+			$this->customer->logout();
+			if($this->detector->isMobile($useragent)){
+				$this->response->redirect($this->url->link('sfaccount/login'));
+			}
+		}
+		
+		
 		if($this->detector->isMobile($useragent)){
 			$this->response->redirect($this->url->link('sfaccount/login'));
 		}
 		
-		if(isset($this->request->get['logout'])){
-			$this->customer->logout();
-		}
+		
 		$this->load->model('sffood/food');
 		//$data["foods"] = $this->model_sffood_food->getSpecialFoods();
 		$data["foods"] = $this->model_sffood_food->getTempSpecialFoods();

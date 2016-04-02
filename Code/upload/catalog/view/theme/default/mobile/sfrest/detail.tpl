@@ -84,7 +84,7 @@
 
 
 
-<div id="cart_thumbnail">
+<div id="cart_preview">
 	<?php echo $cartthumbnail;?>
 </div>
 

@@ -35,6 +35,14 @@ class ControllerSfaccountProfile extends Controller{
         $customerInfor['Edit_Your_Email'] = $this->language->get('Edit_Your_Email');
         $customerInfor['Enter_Your_New_Email'] = $this->language->get('Enter_Your_New_Email');
         $customerInfor['Profile'] = $this->language->get('Profile');
-        return $this->load->view('default/template/sfaccount/profile.tpl', $customerInfor);
+        $customerInfor['New_Password'] = $this->language->get('New_Password');
+        $customerInfor['Old_Password'] = $this->language->get('Old_Password');
+        $customerInfor['Password_Confirm'] = $this->language->get('Password_Confirm');
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	return $this->load->view('default/mobile/sfaccount/profile.tpl', $customerInfor);
+        }else{
+	        return $this->load->view('default/template/sfaccount/profile.tpl', $customerInfor);
+        }
     }
 }

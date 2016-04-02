@@ -28,10 +28,10 @@
 		<span class="helper"></span>
 		<img class="header_img" src="../catalog/view/theme/default/image/mobile/mobilePlace.png" />
 	</div>
-	<div class="label_frame">
-		<div id="address_name" class="label">Just test</div>
+	<div class="address_frame col-3-12">
+		<div id="address_name" class="label" title="<?php echo $address; ?>" ><?php echo $address; ?></div>
 	</div>	
-	<div class="img_frame">
+	<div id="goto_address" class="img_frame">
 		<span class="helper"></span>
 		<img class="header_img" src="../catalog/view/theme/default/image/mobile/mobileGoto.png" />
 	</div>	

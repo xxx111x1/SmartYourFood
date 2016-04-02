@@ -70,7 +70,7 @@ html{
 	background-color: white;
 	width: 100%;
 }
-.item_bar{
+.item_bar,.edit_item{
 	float:left;
 	width:90%;
 	margin-left:5%;
@@ -132,16 +132,20 @@ html{
 	float:left;
 }
 
+#header_title{
+	width: 100%;	
+}
+
 .sub_content{
 	float:left;
 	width: 100%;
-	padding-bottom: 60px;
 }
 
 .edit_content{
 	display:none;
 	float:left;
-	margin-top: 30px;
+	margin-top: 40px;
+	width: 100%;
 }
 
 
@@ -189,3 +193,96 @@ html{
 	float:right;
 	margin-bottom: -3px;
 }
+
+.user_info_area{
+	float:left;
+	width:100%;
+	background-color: #eeeeee;
+	min-height: 80px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.user_img_frame{
+	margin-left: 10%;
+}
+
+.user_img{
+	width:80%;
+}
+
+.user_info{
+	float:left;
+}
+
+.user_name, .user_phone_number{
+	width: 100%;
+	float:left;
+	font-weight: bolder;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+.user_name{
+	margin-top: 10px;
+}
+.user_phone_number{
+	margin-top: -10px;
+}
+
+.profile_edit_area{
+	float:left;
+	width: 100%;
+}
+
+.edit_item{
+	line-height: 50px;
+}
+
+.item_label{
+	float:left;
+	margin-left: 3%;
+	font-size: 20px;
+	font-weight: bolder;
+	width:40%;
+}
+
+input{
+	float:right;
+	height: 50px;
+	text-align: right;
+	vertical-align: middle;
+	font-size: 18px;
+	font-weight: lighter;
+	border: 0;
+	border-bottom:solid 1px #dddddd;
+	width: 52%;
+	float:left;	
+}
+
+.profile_foot{
+	float:left;
+	width: 100%;
+	height: 60px;
+	margin-top: 0px;
+	padding-top: 30px;
+	background-color: #eeeeee;
+}
+
+.confirm{
+	float:left;
+	width: 46%;
+	margin-left: 27%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #f65053;
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+	text-align: center;
+	vertical-align: middle;
+	-moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
