@@ -7,7 +7,6 @@
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/simplegrid.css">
     <link rel="stylesheet" type="text/css" href="catalog/view/theme/default/stylesheet/mobile/login.css">
     <script type="text/javascript" src="/catalog/view/javascript/jquery/jquery-1.11.3.js"></script>
-    <script type="text/javascript" src="/catalog/view/javascript/mobile/autoFitScreen.js"></script>
     
 </head>
 <body>
