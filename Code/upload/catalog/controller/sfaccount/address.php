@@ -20,7 +20,11 @@ class ControllerSfaccountAddress extends Controller {
         $data['Edit'] = $this->language->get('Edit');
         $data['Delete'] = $this->language->get('Delete');
         $data['New_Address'] = $this->language->get('New_Address');
-        
-        return $this->load->view('default/template/sfaccount/address.tpl', $data);
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	return $this->load->view('default/mobile/sfaccount/address.tpl', $data);
+        }else{
+        	return $this->load->view('default/template/sfaccount/address.tpl', $data);
+        }        
     }
 }

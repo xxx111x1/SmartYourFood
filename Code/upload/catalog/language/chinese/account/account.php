@@ -57,3 +57,6 @@ $_['Delete'] = '删除';
 $_['Wecome_Here'] = 'Wecome!欢迎来到悠选美食服务区，我们将用对待家人的温暖为您递上一份舒适的美食';
 $_['Log_Out'] = '退出登录';
 $_['No_Order_History'] = '暂无购买记录。';
+
+$_['Primary_Fooder'] = '初级吃货';
+$_['About'] = '关于悠选';

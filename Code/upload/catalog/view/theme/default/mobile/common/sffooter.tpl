@@ -3,8 +3,8 @@
 	<?php echo $cartthumbnail;?>
 </div>
 
-<div class="footer col-1-1">
-	<div class="img_frame foot_logo_frame" >
+<div class="footer col-1-1 initial_content">
+	<div id="foot_logo" class="img_frame foot_logo_frame" >
 		<span class="helper"></span>
   		<img class="foot_logo footer_img" src="../catalog/view/theme/default/image/mobile/mobileHomeLogoCn.png" />
 	</div>
@@ -16,14 +16,14 @@
   		</div>
   		<div class="navigation_label navigation_frame">cart</div>
   	</div>
-  	<div class="navigation_item">
+  	<div id="order" class="navigation_item">
   		<div class="img_frame navigation_frame" >
 			<span class="helper"></span>
   			<img class="navigation_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeOrder.png" />
   		</div>
   		<div class="navigation_label navigation_frame">order</div>
   	</div>
-  	<div class="navigation_item">
+  	<div id="account" class="navigation_item">
   		<div class="img_frame navigation_frame" >
 			<span class="helper"></span>
   			<img class="navigation_icon" src="../catalog/view/theme/default/image/mobile/mobileHomeMe.png" />

@@ -12,4 +12,16 @@ $(document).ready(function () {
 			$('.footer').css('z-index','0');
 		}
 	});
+	
+	$(document).on('click', "#foot_logo", function () { 
+		window.location.href="/index.php?route=common/list";
+	});
+	
+	$(document).on('click', "#order", function () { 
+		window.location.href="/index.php?route=sfcheckout/checkout&returnUrl=/index.php?route=common/list";
+	});
+	
+	$(document).on('click', "#account", function () { 
+		window.location.href="/index.php?route=account/account&returnUrl=/index.php?route=common/list";
+	});
 });

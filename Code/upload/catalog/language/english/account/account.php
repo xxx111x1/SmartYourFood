@@ -56,3 +56,6 @@ $_['Delete'] = 'Delete';
 $_['Wecome_Here'] = 'Wecome Here! We are Usays and we deliver delicious, hot and gourmet meals right to your door.';
 $_['Log_Out'] = 'Log Out';
 $_['No_Order_History'] = 'No order history';
+
+$_['Primary_Fooder'] = 'Primary fooder';
+$_['About'] = 'About us';

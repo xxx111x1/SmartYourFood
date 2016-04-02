@@ -119,6 +119,7 @@ class ControllerAccountAccount extends Controller {
 				$this->model_sfcheckout_shippingaddress->addAddress($address_data);
 			}			
 		}
+		$data['first_name'] = $this->customer->getFirstName();
 		$this->load->language('account/account');
 		$data['My_Account'] = $this->language->get('My_Account');
 		$data['Change_Account_Information'] = $this->language->get('Change_Account_Information');
@@ -135,6 +136,8 @@ class ControllerAccountAccount extends Controller {
 		$data['Delete'] = $this->language->get('Delete');
 		$data['Wecome_Here'] = $this->language->get('Wecome_Here');
 		$data['Log_Out'] = $this->language->get('Log_Out');
+		$data['Primary_Fooder'] = $this->language->get('Primary_Fooder');
+		$data['About'] = $this->language->get('About');
 		
 		$this->document->setTitle($this->language->get('heading_title'));
 		$data['header'] = $this->load->controller('common/sfheader');
@@ -142,7 +145,10 @@ class ControllerAccountAccount extends Controller {
 		$data['profile'] = $this->load->controller('sfaccount/profile');
 		$data['orderhistory'] = $this->load->controller('sfaccount/order');
 		$data['addresses'] = $this->load->controller('sfaccount/address');
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account.tpl')) {
+		$useragent=$_SERVER['HTTP_USER_AGENT'];
+		if($this->detector->isMobile($useragent)){
+			$this->response->setOutput($this->load->view('default/mobile/account/account.tpl', $data));
+		}elseif (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/account/account.tpl')) {
 			$this->response->setOutput($this->load->view($this->config->get('config_template') . '/template/account/account.tpl', $data));
 		} else {
 			$this->response->setOutput($this->load->view('default/template/account/account.tpl', $data));
