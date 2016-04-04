@@ -125,6 +125,12 @@ class ModelAccountOrder extends Model {
 
 		return $query->rows;
 	}
+	
+	public function getOrderProductsWithRestInfo($order_id) {
+		$query = $this->db->query("SELECT a.*,c.restaurant_id, c.img_url FROM " . DB_PREFIX . "order_product a inner join " . DB_PREFIX . "food b on a.product_id = b.food_id inner join " . DB_PREFIX . "restaurant_info c on b.restaurant_id = c.restaurant_id WHERE a.order_id = '" . (int)$order_id . "'");
+	
+		return $query->rows;
+	}
 
 	public function getOrderOptions($order_id, $order_product_id) {
 		$query = $this->db->query("SELECT * FROM " . DB_PREFIX . "order_option WHERE order_id = '" . (int)$order_id . "' AND order_product_id = '" . (int)$order_product_id . "'");

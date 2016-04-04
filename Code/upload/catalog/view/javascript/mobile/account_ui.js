@@ -26,7 +26,7 @@ $(document).ready(function() {
     // all jQuery code goes here
     $("#orderhistory").click(function(){
             hideInitalContent();
-    		$("html").css("background-color","white");
+    		$("html").css("background-color","#eeeeee");
     		var title = $(this).find(".bar_label").text();
     		updateTitle(title);
     		$('.content_modify').css("display","block");
@@ -51,6 +51,13 @@ $(document).ready(function() {
             $("#updateaccount_").show();
         }
     );
+    
+    $(".order_rest").click(function(){
+    	var restid = $(this).attr('restid');
+    	if(restid>0){
+    		window.location.href = '/index.php?route=sfrest/detail&restaurant_id=' + restid;
+    	}
+    });
 
     $("#newsletter").click(function(){
             $(".rightpanel").hide();

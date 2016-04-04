@@ -27,8 +27,10 @@ class ControllerSfaccountOrder extends Controller {
         }
 
 		foreach ($results as $result) {
+			$products_detail = $this->model_account_order->getOrderProductsWithRestInfo($result['order_id']);
 			$product_total = $this->model_account_order->getTotalOrderProductsByOrderId($result['order_id']);
 			//$voucher_total = $this->model_account_order->getTotalOrderVouchersByOrderId($result['order_id']);
+			
 
 			$data['orders'][] = array(
 				'shipping_address_1' => $result['shipping_address_1'],
@@ -37,6 +39,7 @@ class ControllerSfaccountOrder extends Controller {
 				'status'     => $result['status'],
 				'date_added' => date($this->language->get('date_format_short'), strtotime($result['date_added'])),
 				'products'   => ($product_total),
+				'products_details' => $products_detail,	
 				'total'      => $this->currency->format($result['total'], $result['currency_code'], $result['currency_value']),
 				'href'       => $this->url->link('account/order/info', 'order_id=' . $result['order_id'], 'SSL'),
 			);
@@ -50,8 +53,12 @@ class ControllerSfaccountOrder extends Controller {
 		$data['Receiver'] = $this->language->get('Receiver');
 		$data['Total'] = $this->language->get('Total');
 		$data['Status'] = $this->language->get('Status');
+		$data['One_More'] = $this->language->get('One_More');
 		
-		if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl')) {
+		$useragent=$_SERVER['HTTP_USER_AGENT'];
+		if($this->detector->isMobile($useragent)){
+			return $this->load->view('default/mobile/sfaccount/orderhistory.tpl', $data);
+		}else if (file_exists(DIR_TEMPLATE . $this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl')) {
 			return $this->load->view($this->config->get('config_template') . '/template/sfaccount/orderhistory.tpl', $data);
 		} else {
 			return $this->load->view('default/template/sfaccount/orderhistory.tpl', $data);

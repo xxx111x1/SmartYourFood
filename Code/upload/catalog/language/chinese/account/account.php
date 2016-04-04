@@ -63,3 +63,4 @@ $_['About'] = '关于悠选';
 $_['Old_Password'] = '旧 密 码';
 $_['New_Password'] = '新 密 码';
 $_['Password_Confirm'] = '密码确认';
+$_['One_More'] = '再来一份';
