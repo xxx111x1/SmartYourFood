@@ -182,11 +182,9 @@ class Customer {
         $this->shipping_address['address_id'] = $addr['address_id'];
         $this->shipping_address['contact'] = $addr['contact'];
         $this->shipping_address['phone'] = $addr['phone'];
-        var_dump($this->shipping_address);
     }
 
     public function getShippingAddress(){
-        var_dump($this->shipping_address);
         return $this->shipping_address;
     }
 	public function getCart() {
