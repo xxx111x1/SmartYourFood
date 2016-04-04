@@ -106,7 +106,9 @@
   		<div id="transfer_fee" class="cart_navigation_label navigation_frame" style="font-size: 10px; color: #888888;font-weight: normal;margin-left: 5px;"></div>
   	</div>
   	<div class="detail_navigation_item col-3-12" style="float:right;margin-right: 20px;">
+  		<a class="cart_navigation_label navigation_frame" id="orderConfirm" href="/index.php?route=sfcheckout/checkout">
   		<div class="cart_navigation_label navigation_frame" style="margin-top: 5px;height: 40px; line-height: 40px;margin-right: 20px;width: 100%;background: #f65053; text-align: center; color: white;-moz-border-radius: 9px; -webkit-border-radius: 9px; border-radius: 9px;">选好了</div>
+  		</a >
   	</div>
   </div>      
 </div>
