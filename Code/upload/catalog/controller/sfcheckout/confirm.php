@@ -11,6 +11,7 @@ class ControllerSfcheckoutConfirm extends Controller{
     public function index()
     {
         $data=array();
+        $data['lang'] = $this->language->get('code');
         if($this->cart->getRestNumber()>1){
     		$this->response->redirect($this->url->link('sfcheckout/checkout'));
         }
@@ -42,6 +43,11 @@ class ControllerSfcheckoutConfirm extends Controller{
         $order_data['store_telephone'] = $rest_phone;
         $order_data['store_address'] = $rest_addr;
         $data['deliverfee'] = $this->session->data['order_deliverfee'];
+        
+        if(!isset($this->request->get['isFast']) || $this->request->get['isFast'] == 'false'){
+        	$this->session->data['order_totalcost'] = $this->session->data['order_totalcost'] -$this->session->data['order_fastdeliverfee'];  
+        	$this->session->data['order_fastdeliverfee'] = 0;
+        }
         $data['fast_deliverfee'] = $this->session->data['order_fastdeliverfee'];
         $data['totalcost'] = $this->session->data['order_totalcost'];
         $data['beforetax'] = $this->session->data['order_beforetax'];
@@ -363,7 +369,22 @@ class ControllerSfcheckoutConfirm extends Controller{
             $data['validaddress'] = false;
         }
 
-
-        $this->response->setOutput($this->load->view('default/template/sfcheckout/confirm.tpl', $data));
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	$this->load->language('sfcheckout/checkout');
+        	$data['Confirm_Order'] =         $this->language->get('Confirm_Order');
+        	$data['Order_Number'] =          $this->language->get('Order_Number');
+        	$data['Memo'] =                  $this->language->get('Memo');
+        	$data['Deliveried_Pay'] =        $this->language->get('Deliveried_Pay');
+        	$data['By_Cash'] =               $this->language->get('By_Cash');
+        	$data['Summary'] =               $this->language->get('Summary');
+        	$data['Fee_Info'] =              $this->language->get('Fee_Info');
+        	$data['Confirm'] =               $this->language->get('Confirm');
+        	$data['Note'] =               $this->language->get('Note');
+        	$this->response->setOutput($this->load->view('default/mobile/sfcheckout/confirm.tpl', $data));
+        }
+        else{
+        	$this->response->setOutput($this->load->view('default/template/sfcheckout/confirm.tpl', $data));
+        }
     }
 }

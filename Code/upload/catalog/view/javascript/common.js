@@ -357,9 +357,7 @@ var cart = {
 function update_cost_info(json){
     if($('#cost_summary').length)
     {
-        console.log('total cost: '+json['total_cost']);
         $('#totalcost').text(json['total_cost']);
-        console.log('before_tax_total: '+json['before_tax_total']);
         $('#beforetax').text(json['before_tax_total']);
         $('#deliverfee').text(json['deliverfee']);
         $('#taxcost').text(json['tax']);

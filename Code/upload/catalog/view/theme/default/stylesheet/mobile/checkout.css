@@ -1,0 +1,450 @@
+html{	
+	background-color: #eeeeee;
+}
+.accoount_header{
+	background-color: #f65053;
+	float:left;
+	color: white;
+	font-weight: bolder;
+	height: 80px;
+	top:0;
+	left:0;
+	position:fixed;
+	padding-left: 5%;
+}
+
+.account_img{
+	width: 80%;
+	vertical-align: middle;
+}
+
+.type_label{
+	height: 80px;
+	line-height: 80px;
+	margin-left: 5%;
+	text-align:right;
+	color: white;
+	font-weight: bolder;
+	font-size: 16px;
+	width: 100%;
+}
+.accoount_label{
+	height: 40px;
+	line-height: 40px;
+	float:left;
+	margin-left: 5%;
+	width:100%;
+	text-decoration: none;
+}
+
+.account_label_frame {
+	float:left;
+}
+
+.account_name{
+	margin-top: 8%;
+	font-size: 22px;	
+	line-height:40px !important;
+}
+
+.log_out{
+	margin-top: -10%;
+	font-size: 6px;	
+	line-height:40px !important;
+}
+
+.content_bar {
+	float:left;
+	background-color: #eeeeee;
+	width:100%;
+	margin-top:80px;
+}
+
+.select_bars{
+	margin-top:20px;
+	float:left;
+	background-color: white;
+	width: 100%;
+}
+.item_bar,.edit_item{
+	float:left;
+	width:90%;
+	margin-left:5%;
+	border-bottom:solid 1px #dddddd;
+	height: 50px;
+}
+
+.bar_img{
+	vertical-align: middle;
+	margin-left: 10%;
+}
+
+.goto_img{
+	vertical-align: middle;
+	margin-right: 10%;
+}
+
+.bar_label{
+	font-size:18px;
+	font-weight: bolder;
+	height: 50px;
+	line-height: 50px;
+	margin-right: 0px;
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	text-overflow: ellipsis;/* IE/Safari */ 
+	-ms-text-overflow: ellipsis; 
+	-o-text-overflow: ellipsis;/* Opera */ 
+	-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/ 
+}
+
+.content_modify{
+	background-color: white;
+	float:left;
+	width: 100%;
+}
+
+.sub_header{
+	background-color: #f65053;
+	float:left;
+	color: white;
+	font-weight: bolder;
+	height: 40px;
+	top:0;
+	left:0;
+	position:fixed;
+	padding-left: 5%;
+}
+
+.back_img{
+	height: 30px;
+	vertical-align: middle;
+}
+.sub_header_title{
+	font-weight: bolder;
+	text-align: center;
+	line-height: 40px;
+	float:left;
+}
+
+#header_title{
+	width: 100%;	
+}
+
+.sub_content{
+	float:left;
+	width: 100%;
+}
+
+.edit_content{
+	display:none;
+	float:left;
+	margin-top: 40px;
+	width: 100%;
+}
+
+
+.addressbox{
+    border-style: solid;
+    border-color: #f65053;
+    border-width: 1px;
+    font-weight:bolder;
+    width: 47%;
+    float:left;
+    margin-left: 2%;
+    margin-top: 20px;
+    padding-top: 5px;
+}
+
+.addressbox line{
+    width: 80%;
+    height: 25px;
+    float:left;
+    white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.deleteAddress, .editAddress, .address_contact,.address, .address_name, .contact_phone{
+	float:left;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+.address_name, .contact_phone{
+	color: #8c8c8c;
+	font-weight: lighter;
+
+	}
+.address_contact{
+	font-weight: bolder;
+	font-size: 20px;	
+}
+.deleteAddress, .editAddress{
+	color:#f65053;
+}
+
+.mark{
+	float:right;
+	margin-bottom: -3px;
+}
+
+.user_info_area{
+	float:left;
+	width:100%;
+	background-color: #eeeeee;
+	min-height: 80px;
+	padding-top: 20px;
+	padding-bottom: 20px;
+}
+
+.user_img_frame{
+	margin-left: 10%;
+}
+
+.user_img{
+	width:80%;
+}
+
+.user_info{
+	float:left;
+}
+
+.user_name, .user_phone_number{
+	width: 100%;
+	float:left;
+	font-weight: bolder;
+	font-size: 22px;
+	line-height: 40px;
+}
+
+.user_name{
+	margin-top: 10px;
+}
+.user_phone_number{
+	margin-top: -20px;
+}
+
+.profile_edit_area{
+	float:left;
+	width: 100%;
+}
+
+.edit_item{
+	line-height: 50px;
+}
+
+.item_label{
+	float:left;
+	margin-left: 3%;
+	font-size: 20px;
+	font-weight: bolder;
+	width:40%;
+}
+
+.profile_foot{
+	float:left;
+	width: 100%;
+	height: 60px;
+	margin-top: 0px;
+	padding-top: 30px;
+	background-color: #eeeeee;
+}
+
+.confirm{
+	float:left;
+	width: 46%;
+	margin-left: 27%;
+	height: 60px;
+	line-height: 60px;
+	background-color: #f65053;
+	color: white;
+	font-size: 20px;
+	font-weight: bolder;
+	text-align: center;
+	vertical-align: middle;
+	-moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+}
+
+.address_area{
+	margin-top: 40px;
+	float:left;
+	width: 100%;
+	position: relative;
+	height: 80px; 
+	background-color: white;
+}
+
+.address_bolder{	
+	position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+
+}
+
+.place_img{
+	vertical-align: middle;
+	margin-left: 15%;
+}
+
+.address_info{
+	float:left;
+	width: 100%;
+}
+
+.address_contact,.address{
+	float:left;
+	height: 40px;
+	line-height: 40px;
+	width: 100%;	
+}
+
+.address_contact{
+	margin-top:10px;
+}
+.address{
+	margin-top: -20px;
+}
+
+.cart_table{
+	border-top: solid 1px #aaaaaa;
+	float:left;
+	width: 100%;
+	margin-top: 10px;
+	background-color: white;
+}
+
+.food_row{
+	float:left;
+	height: 60px;
+	border-bottom: solid 1px #aaaaaa;
+	width: 100%;
+	padding-right: 3%;
+	font-weight:bolder;
+}
+
+.food_infor,.food_number,.food_all_price{
+	height: 100%;
+	float:left;
+}
+
+.food_name_detail,.food_price{
+	float:left;
+	width: 90%;
+	margin-left: 8%;
+}
+.food_name_detail{
+	line-height:40px;
+}
+
+.food_price{
+	margin-top: -10px;
+	color: #aaaaaa;
+}
+
+.food_number{
+	line-height: 60px;
+}
+
+.product_number{
+	float:left;
+	text-align: center;
+}
+
+.overflow{
+	overflow:hidden; 
+	white-space:nowrap; 
+	text-overflow:ellipsis; 
+	text-overflow: ellipsis;/* IE/Safari */ 
+	-ms-text-overflow: ellipsis; 
+	-o-text-overflow: ellipsis;/* Opera */ 
+	-moz-binding: url("ellipsis.xml#ellipsis");/*FireFox*/ 
+}
+
+.cart_operation{
+	width: 60%;
+	max-height: 60%;
+    vertical-align: middle;
+}
+
+.food_all_price{
+	line-height: 60px;
+	text-align: right;
+}
+
+.cost_area{
+	float:left;
+	width: 100%;
+	margin-top: 15px;
+	padding-left: 4%;
+	border-top: solid 1px #aaaaaa;
+	border-bottom: solid 1px #aaaaaa;
+	background-color: white;
+	min-height: 50px
+}
+
+.summary_item{
+	float:left;
+	margin-right: 4%;
+	height: 25px;
+	line-height: 25px;
+}
+
+.summary_item_last{
+	float:left;
+	width: 70%;
+	height: 25px;
+	line-height: 25px;
+}
+
+.summary_item_label{
+	float:left;
+	color: #8c8c8c;
+	font-weight: bolder;
+	font-size: 14px;
+}
+
+.summary_item_price{
+	float:left;
+	font-size: 16px;
+	text-align: left;
+	margin-left: 3px;
+}
+
+.fastDelivery{
+	float:left;
+	width: 20%;
+	margin-left: 5px;
+}
+.note{
+	font-size: 6px;
+	float:left;
+	width: 100%;
+	color:#8c8c8c;
+	padding-left: 4%;
+	padding-right: 4%;
+	margin-top: 10px;
+	margin-bottom: 10px;
+}
+
+.payment_area{
+	float:left;
+	width: 100%;
+	padding-left: 4%;
+	border-top: solid 1px #aaaaaa;
+	border-bottom: solid 1px #aaaaaa;
+	background-color: white;
+}
+
+.payment_label,.payment_method,.payment_selection{
+	height: 40px;
+	line-height: 40px;
+	float:left;
+	font-size: 18px;
+	margin-left: 5px;
+}

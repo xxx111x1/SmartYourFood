@@ -180,7 +180,8 @@
 
 .detail_navigation{
 	height: 50px;
-	float:left£»
+	float:left;
+	width: 100%;
 }
 
 .detail_navigation_item{

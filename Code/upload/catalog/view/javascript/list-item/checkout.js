@@ -59,11 +59,11 @@ $(document).ready(function () {
             	deliveryFee = deliveryFee + 2;
             }
             $('#deliverfee').text(" $"+deliveryFee);
-            var beforetax = parseFloat($('#beforetax').text().replace('$',''));
-            var taxcost = parseFloat($('#taxcost').text().replace('$',''));
+            var beforetax = parseFloat($('#beforetax').text().replace('$','').replace(',', ''));
+            var taxcost = parseFloat($('#taxcost').text().replace('$','').replace(',', ''));
             var sum = beforetax + deliveryFee + taxcost;
             if($("#fastDelivery").is(':checked')){
-            	var fastdeliverfee = parseFloat($('#fastdeliverfee').text().replace('$',''));
+            	var fastdeliverfee = parseFloat($('#fastdeliverfee').text().replace('$','').replace(',', ''));
             	sum = sum + fastdeliverfee
             }
             $('#totalcost').text(" $ "+sum.toFixed(2));
@@ -73,12 +73,12 @@ $(document).ready(function () {
     );
     
     $('#fastDelivery').click(function(){
-    	var beforeTax = parseFloat($('#beforetax').text().replace('$', ''));
-    	var deliverfee = parseFloat($('#deliverfee').text().replace('$', ''));
-    	var taxcost = parseFloat($('#taxcost').text().replace('$', ''));
+    	var beforeTax = parseFloat($('#beforetax').text().replace('$', '').replace(',', ''));
+    	var deliverfee = parseFloat($('#deliverfee').text().replace('$', '').replace(',', ''));
+    	var taxcost = parseFloat($('#taxcost').text().replace('$', '').replace(',', ''));
     	var total = beforeTax + deliverfee + taxcost;
     	if($("#fastDelivery").is(':checked')){
-    		total += beforeTax * 0.05;
+    		total += (Math.round(beforeTax * 5)/100);
     		$('#orderConfirm').attr("href","/index.php?route=sfcheckout/confirm&isFast=true");
     	}
     	else{

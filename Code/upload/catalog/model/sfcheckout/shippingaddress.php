@@ -36,7 +36,7 @@ class ModelSfcheckoutShippingaddress extends Model
             lng = '" . $this->db->escape($data['lng']) . "',
             address = '" . $this->db->escape($data['address']) . "',
             phone = '" . $this->db->escape($data['phone']) . "',date_updated=NOW()";
-        $this->log->write($query_str);
+        //$this->log->write($query_str);
         $this->db->query($query_str);
 
         $address_id = $this->db->getLastId();

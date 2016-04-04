@@ -17,6 +17,8 @@ class ControllerSfcheckoutCheckout extends Controller{
     	}*/
 
         $data=array();
+        
+        $data['lang'] = $this->language->get('code');
         $data['header'] = $this->load->controller('common/sfheader');
         $data['footer'] = $this->load->controller('common/sffooter');
         
@@ -127,7 +129,9 @@ class ControllerSfcheckoutCheckout extends Controller{
             $first_addr = reset($addresses);
             $this->set_shipping_address($first_addr['address_id']);
             $this->customer->setShippingAddress($first_addr);
+            $data['addr']=$first_addr;
         }
+        
 
         //TODO: test if has address cookie
         $data['addresslist']=$addresses;  
@@ -144,7 +148,9 @@ class ControllerSfcheckoutCheckout extends Controller{
         	$data["more_rests"] = 0;
         }
         
-        $data['food_list']= $food_list;              
+        $data['food_list']= $food_list;  
+        $data['food_view'] = $this->load->view('default/mobile/sfcheckout/foodList.tpl', $data);
+        
         $total_before_tax = $this->cart->getFoodSubTotal();
         
         //Distance and price
@@ -204,14 +210,39 @@ class ControllerSfcheckoutCheckout extends Controller{
             $data['nofood']="";
             $data['hasfood']="display: none;";
         }
-        $data['lang'] = $this->language->get('code');
+        
         $returnUrl = explode("&", $_SERVER['REQUEST_URI'])[0];
         $data['multiple_rest'] = 0;
         if($this->cart->getRestNumber()>1){
         	$data['multiple_rest'] = 1;
         }
         $data['returnUrl'] = $returnUrl;
-        $this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));
+        
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	$data['Confirm_Order'] =         $this->language->get('Confirm_Order');
+        	$data['Order_Number'] =          $this->language->get('Order_Number');
+        	$data['Memo'] =                  $this->language->get('Memo');
+        	$data['Deliveried_Pay'] =        $this->language->get('Deliveried_Pay');
+        	$data['By_Cash'] =               $this->language->get('By_Cash');
+        	$data['Summary'] =               $this->language->get('Summary');
+        	$data['Fee_Info'] =              $this->language->get('Fee_Info');
+        	$data['Confirm'] =               $this->language->get('Confirm');
+        	$data['Note'] =               $this->language->get('Note');
+        	$this->response->setOutput($this->load->view('default/mobile/sfcheckout/cart.tpl', $data));
+        }
+        else{
+        	$this->response->setOutput($this->load->view('default/template/sfcheckout/cart.tpl', $data));
+        }
+        
+    }
+    
+    public function info(){
+    	$data['lang'] = $this->language->get('code');
+    	$food_list = $this->cart->getFoods();
+    	$data['food_list']= $food_list;
+    	
+    	$this->response->setOutput($this->load->view('default/mobile/sfcheckout/foodList.tpl', $data));
     }
 
     public function set_shipping_address($addr_id)

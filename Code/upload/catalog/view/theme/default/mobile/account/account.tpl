@@ -45,7 +45,8 @@
 				<img class="bar_img col-4-12" src="../catalog/view/theme/default/image/mobile/mobileAccountPlace.png"/>		
 			</div>			
 			<div class="col-9-12" title="<?php echo $Address_Management ;?>" style="float:left;">
-			<div class="bar_label"><?php echo $Address_Management ;?></div></div>
+				<div class="bar_label"><?php echo $Address_Management ;?></div>
+			</div>
 			<div class="img_frame col-1-12" >
 				<span class="helper"></span>
 				<img class="col-4-12 goto_img" src="../catalog/view/theme/default/image/mobile/mobileGotoGrey.png"/>		
