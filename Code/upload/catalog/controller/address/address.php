@@ -35,6 +35,13 @@ class ControllerAddressAddress extends Controller{
         	$data["contact"] = "";
         }
         $data['random'] = rand(0,1000);
-        $this->response->setOutput($this->load->view('default/template/address/address.tpl', $data));
+        
+        $useragent=$_SERVER['HTTP_USER_AGENT'];
+        if($this->detector->isMobile($useragent)){
+        	$this->response->setOutput($this->load->view('default/mobile/address/address.tpl', $data));
+        }
+        else{
+        	$this->response->setOutput($this->load->view('default/template/address/address.tpl', $data));
+        }
     }   
 }

@@ -21,6 +21,10 @@ $(document).ready(function() {
     	
     });
 	
+	$(".address_area").click(function(){
+		window.location=href="/index.php?route=account/account&updateaddress=1&returnUrl=index.php?route=sfcheckout/checkout";
+	});
+	
 	$(document).on('click', '.minus_product,.add_product', function(){
 		var id = $(this).attr('foodid');
 		var number = $('.product_'+id).first().text();
