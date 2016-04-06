@@ -1,6 +1,6 @@
 ﻿<div class="addressarea">
     <?php foreach ($addresslist as $address) { ?>
-    <div class="addressbox" id="address_<?php echo $address['address_id'];?>">
+    <div class="addressbox" id="address_<?php echo $address['address_id'];?>" addr_id="<?php echo $address['address_id'];?>">
         <div >
             <div id="contact_<?php echo $address['address_id'];?>" class="address_contact col-6-12" ><?php echo $address['contact'];?></div>
             <div class='editAddress' addr_id="<?php echo $address['address_id'];?>" ><?php echo $Edit ;?></div>

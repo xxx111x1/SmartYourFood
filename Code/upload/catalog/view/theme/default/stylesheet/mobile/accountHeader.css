@@ -192,6 +192,7 @@ html{
 .mark{
 	float:right;
 	margin-bottom: -3px;
+	visibility: hidden;
 }
 
 .user_info_area{

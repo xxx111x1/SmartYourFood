@@ -20,6 +20,9 @@ $(document).ready(function() {
 		updateTitle(title);
 		$('.content_modify').css("display","block");
         $(curpage+"_").show();
+        if(curpage == "#updateaddress"){
+            $('.mark').first().css('visibility','visible');
+        }
     }
     
 
@@ -40,6 +43,7 @@ $(document).ready(function() {
     		updateTitle(title);
     		$('.content_modify').css("display","block");
             $("#updateaddress_").show();
+            
         }
     );
 
@@ -49,6 +53,7 @@ $(document).ready(function() {
     		updateTitle(title);
     		$('.content_modify').css("display","block");
             $("#updateaccount_").show();
+            $('.addressbox').first('.mark').css('visibility','visible');
         }
     );
     
@@ -92,7 +97,29 @@ $(document).ready(function() {
     	}
     	
     });
-
+    
+    $('.addressbox').click(function(){
+        $('.addressbox').find('.mark').css('visibility','hidden');
+        $(this).find('.mark').css('visibility','visible');
+        var addr_id = $(this).attr('addr_id');
+        if(addr_id){
+        	setAddress(addr_id);
+    	}
+        //shippaddress.set_address(addr_id);        
+    });
+    function setAddress(addr_id) {
+        console.log('start to set address: '+addr_id);
+        $.ajax({
+            url: 'index.php?route=sfcheckout/checkout/set_address',
+            type: 'post',
+            data: 'addr_id=' + addr_id,
+            dataType: 'json',
+            success: function(json) {
+                
+            }
+        });
+    }
+    
     $(".deleteAddress").click(function(){
         var addressId = $(this).attr('addr_id');
         $.ajax({
