@@ -14,6 +14,6 @@ $(document).ready(function () {
 		});
 		
 		$(".place_img,.address_frame,#goto_address").click(function(){
-			window.location.href="http://localhost:8080/index.php?route=account/account&updateaddress=1&returnUrl=/index.php?route=common/list";
+			window.location.href="/index.php?route=account/account&updateaddress=1&returnUrl=/index.php?route=common/list";
 		});
 });
