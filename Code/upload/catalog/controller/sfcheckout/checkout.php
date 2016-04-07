@@ -54,19 +54,7 @@ class ControllerSfcheckoutCheckout extends Controller{
         //Get Address
         $this->load->model('sfcheckout/shippingaddress');
         $has_address = false;
-        if(isset($this->session->data['address'])
-        		&& isset($this->session->data['lat'])
-        		&& isset($this->session->data['lng'])
-        		&& $this->customer->isLogged())
-        {
-        	$address_data=array();
-        	$address_data['lat']=$this->session->data['lat'];
-        	$address_data['lng']=$this->session->data['lng'];
-        	$address_data['address']=$this->session->data['address'];
-        	$address_data['phone']=$this->customer->getTelephone();
-        	$address_data['contact']=$this->customer->getFirstName();
-        	$this->model_sfcheckout_shippingaddress->addAddress($address_data);
-        }
+
 
         //check if current page is returned from address pickup page        
         if(isset($this->request->get['lat'])
@@ -80,6 +68,8 @@ class ControllerSfcheckoutCheckout extends Controller{
         	$this->session->data['lat'] = $this->request->get['lat'];
         	$this->session->data['lng'] = $this->request->get['lng'];
         	$this->session->data['address'] = $this->request->get['address'];
+        	$this->session->data['shipping_address_phone'] = $this->request->get['phone'];
+        	$this->session->data['shipping_address_contact'] = $this->request->get['contact'];
         	$address_data['lat']=$this->request->get['lat'];
         	$address_data['lng']=$this->request->get['lng'];
         	$address_data['address']=$this->request->get['address'];
@@ -95,16 +85,24 @@ class ControllerSfcheckoutCheckout extends Controller{
         //session stores the address information
         else if(isset($this->session->data['lat'])&&
                  isset($this->session->data['lng'])&&
-                 isset($this->session->data['address'])&&
-            isset($this->session->data['shipping_address_phone'])&&
-            isset($this->session->data['shipping_address_contact']))
-        {
-            $address_data['lat']=$this->session->data['lat'];
-            $address_data['lng']=$this->session->data['lng'];
-            $address_data['address']=$this->session->data['address'];
-            $address_data['phone']=$this->session->data['shipping_address_phone'];
-            $address_data['contact']=$this->session->data['shipping_address_contact'];
-            $this->model_sfcheckout_shippingaddress->addAddress($address_data);
+                 isset($this->session->data['address'])){
+        	
+        	$address_data['lat']=$this->session->data['lat'];
+        	$address_data['lng']=$this->session->data['lng'];
+        	$address_data['address']=$this->session->data['address'];
+        	
+        	if(isset($this->session->data['shipping_address_phone'])&&
+            isset($this->session->data['shipping_address_contact'])){
+        		$address_data['phone']=$this->session->data['shipping_address_phone'];
+        		$address_data['contact']=$this->session->data['shipping_address_contact'];        		
+        	}
+        	else{
+        		$address_data['phone']=$this->customer->getTelephone();
+        		$address_data['contact']=$this->customer->getFirstName();
+        	}
+        	
+        	$this->model_sfcheckout_shippingaddress->addAddress($address_data);
+        	
         }
 
         /*

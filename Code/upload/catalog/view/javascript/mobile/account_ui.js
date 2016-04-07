@@ -43,7 +43,7 @@ $(document).ready(function() {
     		updateTitle(title);
     		$('.content_modify').css("display","block");
             $("#updateaddress_").show();
-            
+            $('.mark').first().css('visibility','visible');            
         }
     );
 
@@ -120,7 +120,8 @@ $(document).ready(function() {
         });
     }
     
-    $(".deleteAddress").click(function(){
+    $(".deleteAddress").click(function(e){
+    	e.stopPropagation();
         var addressId = $(this).attr('addr_id');
         $.ajax({
             url: 'index.php?route=api/address/deleteShippingAddress',

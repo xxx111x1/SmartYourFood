@@ -93,8 +93,6 @@ class ControllerAccountAccount extends Controller {
 		if(isset($this->request->get['lat'])
 				&&isset($this->request->get['lng'])
 				&&isset($this->request->get['address'])
-				&&isset($this->request->get['phone'])
-				&&isset($this->request->get['contact'])
 		)
 		{
 			$this->load->model('sfcheckout/shippingaddress');
@@ -102,11 +100,28 @@ class ControllerAccountAccount extends Controller {
 			$this->session->data['lat'] = $this->request->get['lat'];
 			$this->session->data['lng'] = $this->request->get['lng'];
 			$this->session->data['address'] = $this->request->get['address'];
+
 			$address_data['lat']=$this->request->get['lat'];
 			$address_data['lng']=$this->request->get['lng'];
 			$address_data['address']=$this->request->get['address'];
-			$address_data['phone']=$this->request->get['phone'];
-			$address_data['contact']=$this->request->get['contact'];
+			
+			if(isset($this->request->get['phone'])
+				&&isset($this->request->get['contact'])){
+				
+				$this->session->data['shipping_address_phone'] = $this->request->get['phone'];
+				$this->session->data['shipping_address_contact'] = $this->request->get['contact'];
+				$address_data['phone']=$this->request->get['phone'];
+				$address_data['contact']=$this->request->get['contact'];
+			}
+			else{
+				$this->session->data['shipping_address_phone'] = $this->customer->getTelephone();
+				$this->session->data['shipping_address_contact'] =$this->customer->getFirstName();
+        		$address_data['phone']=$this->customer->getTelephone();
+        		$address_data['contact']=$this->customer->getFirstName();
+        	}
+        	
+			
+			
 			
 			//set delivery fee
 // 			if(isset($this->request->get['geoResult'])){
@@ -119,7 +134,14 @@ class ControllerAccountAccount extends Controller {
 			}
 			else{
 				$this->model_sfcheckout_shippingaddress->addAddress($address_data);
-			}			
+			}
+			
+			$useragent=$_SERVER['HTTP_USER_AGENT'];
+			if($this->detector->isMobile($useragent)){
+				$this->response->redirect($this->url->link('account/account', '#updateaddress_', 'SSL'));
+			}
+			
+			
 		}
 		$data['first_name'] = $this->customer->getFirstName();
 		$this->load->language('account/account');

@@ -12,11 +12,12 @@
   <body>
   	<input type="hidden" id="returnUrl" value="<?php echo $return_url;?>"></input>
   	<input type="hidden" id="addressId" value="<?php echo $address_id;?>"></input>
-  	<?php if ($is_from_home<1) { ?>
-		<input id="contact_input"class="controls"  type="text" placeholder="Enter Contact Name" value="<?php echo $contact ;?>" />
-    	<input id="phone_input" class="controls" type="text" placeholder="Enter Contact Phone" value="<?php echo $phone ;?>" />  			
-	<?php } ?>
-      <input id="pac-input" class="controls" type="text" placeholder="Enter a location">
+	  	<?php if ($is_from_home<1) { ?>
+			<input id="contact_input" class="controls"  type="text" placeholder="Enter Contact Name" value="<?php echo $contact ;?>" />
+	    	<input id="phone_input" class="controls" type="text" placeholder="Enter Contact Phone" value="<?php echo $phone ;?>" />  			
+		<?php } ?>
+	      <input id="pac-input" class="controls" type="text" placeholder="Enter a location" />
+  	
     <div id="map"></div>  
   </body>
 </html>

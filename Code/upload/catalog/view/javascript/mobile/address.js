@@ -9,16 +9,16 @@
 	  var contact = document.getElementById('contact_input');
       var phone = document.getElementById('phone_input');
 	  var types = document.getElementById('type-selector');
-      if (typeof(contact) != 'undefined' && contact != null)
-      {
-          map.controls[google.maps.ControlPosition.TOP_LEFT].push(contact);
-      }
-      if (typeof(phone) != 'undefined' && phone != null)
-      {
-          map.controls[google.maps.ControlPosition.TOP_LEFT].push(phone);
-      }
-	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
-	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
+//      if (typeof(contact) != 'undefined' && contact != null)
+//      {
+//          map.controls[google.maps.ControlPosition.TOP_LEFT].push(contact);
+//      }
+//      if (typeof(phone) != 'undefined' && phone != null)
+//      {
+//          map.controls[google.maps.ControlPosition.TOP_LEFT].push(phone);
+//      }
+//	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+//	  map.controls[google.maps.ControlPosition.TOP_LEFT].push(types);
 	  var options = {
 			  componentRestrictions: {country: "ca"}
 			 };
