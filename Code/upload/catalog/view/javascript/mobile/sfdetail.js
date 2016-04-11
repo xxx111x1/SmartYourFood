@@ -88,7 +88,9 @@ $(document).ready(function () {
 		var tag = $(this).attr('value');
 		$('.tagitem').removeClass('tagitemSelected');
 		$(this).addClass('tagitemSelected');
-		addContents(sort,restId,tag);
+		$('.product_area').empty();	
+		$('#page_number').val('0');
+		addContents(sort,restId,0,tag);
 	});
 	
 	$('.sort_field').click(function(){
@@ -98,8 +100,11 @@ $(document).ready(function () {
 		var filters = $('#filters').attr('value');
 		var sortId = $(this).attr('id');
 		$('#sort').val(sortId);
-		var sort = getSortString(sortId);				
-		addContents(sort,restId);
+		var sort = getSortString(sortId);
+		var tag = $('.tagitemSelected').attr('value');
+		$('.product_area').empty();	
+		$('#page_number').val('0');
+		addContents(sort,restId,0,tag);
 	});
 	
 	$(document).on('click', '.claer_all', function(){
@@ -137,22 +142,33 @@ $(document).ready(function () {
 		var restId = $('#rest-id').val();
 		var sortId = $('#sort_default').attr('id');
 		$('#sort').val(sortId);
-		var sort = getSortString(sortId);				
-		addContents(sort,restId);
+		var sort = getSortString(sortId);	
+		addContents(sort,restId,0);
 		updateFooter();
 	}
+	
+	$(window).scroll(function () { 
+		   if ($(window).scrollTop() >= $(document).height() - $(window).height() - 10) {
+			  var restId = $('#rest-id').val();
+			  var sort = getSortString($('#sort').val());	
+			  var tag = $('.tagitemSelected').attr('value');
+			  var pageNumber = $('#page_number').val();
+			  pageNumber = parseInt(pageNumber) + 1;
+			  addContents(sort,restId,pageNumber,tag);
+			  $('#page_number').val(pageNumber);
+		   }
+	});
 		
-	function addContents(sort,restId,tag){
+	function addContents(sort,restId,pageNumber,tag){
 		if(!tag){
 			tag = 0 ;
 		}
 		$.ajax({
-			url: 'index.php?route=api/food/getFoodByRestaurantAndTagId',
+			url: 'index.php?route=api/food/getFoodByRestaurantAndTagIdWithPage',
 			type: 'post',
-			data: 'sort=' + sort+ '&restid=' + restId + '&tagid=' + tag,
+			data: 'sort=' + sort+ '&restid=' + restId + '&page_number='+ pageNumber +'&tagid=' + tag,
 			dataType: 'json',	
-			success: function(data) {
-				$('.product_area').empty();						
+			success: function(data) {					
 				$.each(data['results'], function(i, v) {
 					var id = v.restaurant_id;
 					var cost = v.avg_cost;

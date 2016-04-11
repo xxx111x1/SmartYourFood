@@ -56,3 +56,7 @@ html, body {
 .pac-container {
   font-family: Roboto;
 }
+
+.gmnoprint{
+	display: none !important;
+}

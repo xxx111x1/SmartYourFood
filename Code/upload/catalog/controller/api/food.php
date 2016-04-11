@@ -150,6 +150,51 @@ class ControllerApiFood extends Controller {
 		$this->response->setOutput(json_encode($json));
 	}
 	
+	public function getFoodByRestaurantAndTagIdWithPage(){
+		$this->load->model('sffood/food');
+		$restaurant_id = $this->request->post['restid'];
+		$sort = $this->request->post['sort'];
+		$page_number = $this->request->post['page_number'];
+		$page_content_number = 12;
+		$start_position = $page_number * $page_content_number;
+		if(isset($this->request->post['tagid']) && $this->request->post['tagid'] != 0){
+			$tag_id = $this->request->post['tagid'];
+			$foods = $this->model_sffood_food->getFoodsByRestIDAndTagsWithPage($restaurant_id,$tag_id,$sort,$start_position,$page_content_number);
+		}
+		else{
+			$foods = $this->model_sffood_food->getFoodsByRestIDWithPage($restaurant_id,$sort,$start_position,$page_content_number);
+		}
+		$cart_foods = $this->cart->getFoods();
+	
+		foreach ($foods as $key => $food) {
+			if(count($cart_foods)){
+				foreach($cart_foods as $product){
+					if((int)$food['food_id'] == (int)$product['product_id']){
+						$foods[$key]['cart_number'] = $product['quantity'];
+					}
+				}
+			}
+			$foods[$key]['is_open']= $this->openhours->is_open($foods[$key]['restaurant_id']);
+		}
+	
+		if ($foods) {
+			$json['success'] = $this->language->get('text_success');
+			$json['results'] = $foods;
+			if(isset($this->session->data['lat'])){
+				$json['lat'] = $this->session->data['lat'];
+				$json['lng'] = $this->session->data['lng'];
+			}
+			else{
+				$json['lat'] = 0;
+				$json['lng'] = 0;
+			}
+		} else {
+			$json['error'] = $this->language->get('error');
+		}
+		$this->response->addHeader('Content-Type: application/json');
+		$this->response->setOutput(json_encode($json));
+	}
+	
 	public function searchFood(){
 		$food_name="";
 		$lat = "";

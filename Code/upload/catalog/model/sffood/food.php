@@ -158,11 +158,37 @@ class ModelSffoodFood extends Model{
     	return $query->rows;
     }
     
+    public function getFoodsByRestIDWithPage($restaurant_id, $sort, $start = 0, $number = 16)
+    {
+    	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, b.name_en as rest_name_en , 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b where a.restaurant_id = '" . $restaurant_id . "' and a.restaurant_id = b.restaurant_id ";
+    	if(isset($sort)){
+    		$sql .= " order by " . $sort . " limit " . $start . "," . $number;
+    	}
+    	else{
+    		$sql .= " limit " . $start . "," . $number;
+    	}
+    	$query = $this->db->query($sql);
+    	return $query->rows;
+    }
+    
     public function getFoodsByRestIDAndTags($restaurant_id,$tag, $sort)
     {
     	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, b.name_en as rest_name_en, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b, " . DB_PREFIX . "food_tag_detail c where a.restaurant_id = '" . $restaurant_id . "' and a.restaurant_id = b.restaurant_id and a.food_id = c.food_id and c.tag_id ='".$tag."'";
     	if(isset($sort)){
     		$sql .= " order by " . $sort ;
+    	}
+    	$query = $this->db->query($sql);
+    	return $query->rows;
+    }
+    
+    public function getFoodsByRestIDAndTagsWithPage($restaurant_id,$tag, $sort, $start = 0, $number = 16)
+    {
+    	$sql = "SELECT a.*, b.lat as lat, b.lng as lng, b.review_score as rest_review, b.name as rest_name, b.name_en as rest_name_en, 0 as cart_number FROM " . DB_PREFIX . "food a, " . DB_PREFIX . "restaurant_info b, " . DB_PREFIX . "food_tag_detail c where a.restaurant_id = '" . $restaurant_id . "' and a.restaurant_id = b.restaurant_id and a.food_id = c.food_id and c.tag_id ='".$tag."'";
+    	if(isset($sort)){
+    		$sql .= " order by " . $sort . " limit " . $start . "," . $number;
+    	}
+    	else{
+    		$sql .= " limit " . $start . "," . $number;
     	}
     	$query = $this->db->query($sql);
     	return $query->rows;

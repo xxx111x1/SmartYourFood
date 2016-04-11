@@ -75,7 +75,7 @@
 	
 	<div class="product_content">
 		<input type='hidden' id="purchaseRest" value="<?php echo $cart_rest_id;?>" />
-		<input type=hidden id=page_number value=0 />
+		<input type="hidden" id="page_number" value="0" />
 		<div class=product_area >
 			
 		</div>
